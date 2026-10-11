@@ -215,3 +215,38 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .connexion .principal { margin-top: 8px; }
 .compte { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 20px; }
 .compte p { font-size: 15px; }
+
+/* ---------- Effets ---------- */
+@keyframes apparition { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes flottement { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes respiration { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@keyframes pulsation { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+.ecran { animation: apparition 0.45s ease both; }
+.cartes > .carte, .cartes > .precautions { animation: apparition 0.5s ease both; }
+.cartes > :nth-child(2) { animation-delay: 0.06s; }
+.cartes > :nth-child(3) { animation-delay: 0.12s; }
+.cartes > :nth-child(4) { animation-delay: 0.18s; }
+.cartes > :nth-child(5) { animation-delay: 0.24s; }
+.cartes > :nth-child(n+6) { animation-delay: 0.3s; }
+
+.arche.grande { animation: flottement 6s ease-in-out infinite; }
+.decor-soleil { animation: respiration 7s ease-in-out infinite; }
+.carte.chargement { animation: pulsation 1.4s ease-in-out infinite; }
+
+.tuile, .niveau, .duree, .rond, .badge, .carte, .principal, .secondaire, .composer, .lien {
+  transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.tuile:active, .niveau:active, .rond:active, .principal:active, .secondaire:active, .composer:active { transform: scale(0.96); }
+@media (hover: hover) {
+  .tuile:hover, .niveau:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(46, 38, 34, 0.1); }
+  .principal:hover, .composer:hover { background: var(--accent-fonce); box-shadow: 0 8px 20px rgba(169, 71, 42, 0.3); }
+  .secondaire:hover { background: var(--texte); color: var(--fond); }
+  .carte:hover { box-shadow: 0 6px 18px rgba(46, 38, 34, 0.08); }
+  .badge:hover { background: var(--soleil); }
+  .lien:hover { color: var(--accent-fonce); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

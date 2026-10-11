@@ -126,7 +126,7 @@ export default function App() {
         onOuvrir={(s) => {
           const s2 = hydrater(s);
           setSeance(s2);
-          setParams({ styles: stylesDe(s2), accessoires: s2.accessoires ?? null, duree: s2.duree, niveau: s2.niveau, theme: s2.theme || '', cibleId: s2.cibleId || null });
+          setParams({ styles: stylesDe(s2), accessoires: s2.accessoires ?? [], duree: s2.duree, niveau: s2.niveau, theme: s2.theme || '', cibleId: s2.cibleId || null });
           setEnregistree(true);
           aller('seance');
         }} />

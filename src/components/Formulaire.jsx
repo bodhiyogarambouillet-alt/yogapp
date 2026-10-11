@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { STYLES, DUREES, PAR_ID, nom } from '../bibliotheque.js';
 import { Logo, Livre, Cible } from './Icones.jsx';
 import ChoixCible from './ChoixCible.jsx';
@@ -17,10 +17,14 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
   const [theme, setTheme] = useState(initial?.theme || '');
   const [cible, setCible] = useState(initial?.cibleId ? PAR_ID.get(initial.cibleId) || null : null);
   const [tousStyles, setTousStyles] = useState(styles.some((s) => !PRINCIPAUX.includes(s)));
-  // Accessoires disponibles : aucun par défaut (pratique sans matériel) ; tous cochés = aucun filtre
-  const [dispo, setDispo] = useState(initial ? initial.accessoires ?? ACCESSOIRES : []);
+  // Accessoires disponibles : aucun par défaut (pratique sans matériel), sauf choix explicite reçu ; tous cochés = aucun filtre
+  const [dispo, setDispo] = useState(Array.isArray(initial?.accessoires) ? initial.accessoires : []);
   const [eviter, setEviter] = useState(initial?.eviterRepetition || 0); // 0 = désactivé, sinon nombre de séances précédentes
   const [options, setOptions] = useState(Boolean(initial?.cibleId || initial?.theme || initial?.eviterRepetition));
+
+  // Panneau d'options toujours présent (pour l'animation) mais inaccessible quand il est replié
+  const panneau = useRef(null);
+  useEffect(() => { panneau.current?.toggleAttribute('inert', !options); }, [options]);
 
   const autres = STYLES.filter((s) => !PRINCIPAUX.includes(s));
   const visibles = tousStyles ? [...PRINCIPAUX, ...autres] : PRINCIPAUX;
@@ -86,11 +90,12 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
       </fieldset>
 
       <section className="bloc" style={{ paddingTop: 20 }}>
-        <button type="button" className="ouvrir-options" aria-expanded={options} onClick={() => setOptions(!options)}>
+        <button type="button" className={`ouvrir-options ${options ? 'ouvert' : ''}`} aria-expanded={options} aria-controls="panneau-options" onClick={() => setOptions(!options)}>
           <span className="accent"><Cible /></span>
           <span>Options <span>· posture cible, accessoires, thème</span></span>
+          <span className="fleche-options" aria-hidden="true">▾</span>
         </button>
-        {options && (
+        <div id="panneau-options" ref={panneau} className={`repli-options ${options ? 'ouvert' : ''}`}>
           <div className="options">
             <label htmlFor="cible" className="etiquette">Posture cible</label>
             <ChoixCible cible={cible} onChange={setCible} styles={styles} niveau={niveau} />
@@ -118,7 +123,7 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
             </div>
             {eviter > 0 && <p className="aide">Les postures de vos séances enregistrées les plus récentes sont évitées autant que possible.</p>}
           </div>
-        )}
+        </div>
       </section>
 
       <div className="ressort" />

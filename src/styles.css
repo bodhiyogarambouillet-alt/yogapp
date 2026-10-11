@@ -400,3 +400,22 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .choix-export span { font-size: 13px; color: var(--texte-doux); }
 .feuille .lien { align-self: center; }
 @keyframes glisse-haut { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* Ouverture animée du panneau d'options */
+.ouvrir-options > span:nth-child(2) { flex-grow: 1; }
+.fleche-options { color: var(--accent); font-size: 14px; transition: transform 0.35s ease; }
+.ouvrir-options.ouvert { border-style: solid; border-color: var(--trait); background: var(--surface); }
+.ouvrir-options.ouvert .fleche-options { transform: rotate(180deg); }
+.ouvrir-options.ouvert .accent svg { animation: pop 0.4s ease; }
+.repli-options { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 0.4s ease, opacity 0.3s ease; }
+.repli-options.ouvert { grid-template-rows: 1fr; opacity: 1; }
+.repli-options > .options { min-height: 0; overflow: hidden; }
+.repli-options > .options > * { opacity: 0; transform: translateY(-8px); transition: opacity 0.3s ease, transform 0.3s ease; }
+.repli-options.ouvert > .options > * { opacity: 1; transform: none; }
+.repli-options.ouvert > .options > :nth-child(2) { transition-delay: 0.04s; }
+.repli-options.ouvert > .options > :nth-child(3) { transition-delay: 0.08s; }
+.repli-options.ouvert > .options > :nth-child(4) { transition-delay: 0.12s; }
+.repli-options.ouvert > .options > :nth-child(5) { transition-delay: 0.16s; }
+.repli-options.ouvert > .options > :nth-child(6) { transition-delay: 0.2s; }
+.repli-options.ouvert > .options > :nth-child(n+7) { transition-delay: 0.24s; }
+.repli-options > .options { padding-top: 4px; }

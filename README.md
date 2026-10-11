@@ -110,3 +110,4 @@ Le script les intègre à `src/data/fiches.json` (une fiche existante est rempla
 Séances enregistrées et fiches validées sont stockées dans le navigateur (localStorage) : propres à un appareil. Prochaine étape : Supabase pour synchroniser.
 # yogapp
 # yogapp
+# yogapp

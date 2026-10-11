@@ -6,6 +6,7 @@ import MesSeances from './components/MesSeances.jsx';
 import { PAR_ID, chargerBibliotheque } from './bibliotheque.js';
 import { enregistrerSeance, listerSeances } from './stockage.js';
 import { stylesDe } from './styles-seance.js';
+import { aujourdhui } from './dates.js';
 import { supabase, enteteAuth } from './supabase.js';
 
 // Recolle les données de la bibliothèque sur chaque posture (utile pour les séances enregistrées)
@@ -76,7 +77,7 @@ export default function App() {
       });
       const data = await r.json();
       if (!r.ok) throw new Error(data.erreur || 'Erreur de génération');
-      setSeance(hydrater({ ...data, uid: crypto.randomUUID() }));
+      setSeance(hydrater({ ...data, uid: crypto.randomUUID(), dateSeance: seance?.dateSeance && vue === 'seance' ? seance.dateSeance : aujourdhui() }));
       setEnregistree(false);
       aller('seance');
     } catch (e) {

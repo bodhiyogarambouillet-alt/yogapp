@@ -56,11 +56,12 @@ export function alternatives(posture, seance) {
 
 // Recherche d'une posture par nom français, sanskrit ou anglais (sans tenir compte des accents)
 const sansAccents = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-export function rechercherPostures(texte, styles, limite = 8) {
+// toutes : inclut respirations et relaxations (exclues pour le choix d'une posture cible)
+export function rechercherPostures(texte, styles, limite = 8, toutes = false) {
   const q = sansAccents(texte.trim());
   if (q.length < 2) return [];
   const trouvees = postures.filter((p) =>
-    p.famille !== 'Respiration' && p.famille !== 'Relaxation' &&
+    (toutes || (p.famille !== 'Respiration' && p.famille !== 'Relaxation')) &&
     [p.fr, p.sanskrit, p.en].some((n) => sansAccents(n).includes(q)));
   // Celles du style choisi d'abord, puis par niveau
   trouvees.sort((a, b) => (convientAuxStyles(b, styles) - convientAuxStyles(a, styles)) || a.niveau - b.niveau);

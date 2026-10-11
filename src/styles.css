@@ -297,3 +297,66 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .badge.choix { border: 1.5px solid var(--trait); background: transparent; min-height: 40px; padding: 6px 14px; font-weight: 700; color: var(--texte-doux); }
 .badge.choix.actif { background: var(--texte); border-color: var(--texte); color: var(--fond); }
 .options .badges { margin-top: 0; }
+
+/* Date de la séance */
+.date-seance { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 16px 24px 0; padding: 8px 8px 8px 18px; border-radius: 22px; background: var(--surface); font-size: 14px; font-weight: 700; color: var(--texte-doux); }
+.date-seance input { width: auto; height: 40px; padding: 0 12px; border: none; border-radius: 14px; background: var(--fond); font-size: 15px; color: var(--texte); }
+.ligne-seance { flex-wrap: wrap; }
+.date-ligne { position: relative; order: 3; flex-basis: 100%; display: flex; align-items: center; min-height: 36px; margin: 0 0 8px 16px; }
+.date-texte { padding: 6px 12px; border-radius: 14px; background: var(--fond); font-size: 13px; font-weight: 700; color: var(--accent); }
+.date-texte::first-letter { text-transform: uppercase; }
+.date-texte::after { content: ' ✎'; font-weight: 400; }
+.date-ligne input { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; opacity: 0; cursor: pointer; }
+
+/* Séance en direct */
+.composer.lancer { margin: 18px 24px 0; }
+.live { background: var(--fond); }
+.live-progression { padding: 18px 24px 0; }
+.live-segments { display: flex; gap: 4px; height: 8px; }
+.live-segments span { flex-basis: 0; border-radius: 4px; background: var(--trait); transition: background-color 0.4s ease; }
+.live-segments span.fait { background: var(--sauge); }
+.live-segments span.actuel { background: var(--accent); animation: pulsation 2s ease-in-out infinite; }
+.live-temps { display: flex; justify-content: space-between; margin-top: 6px; font-size: 13px; font-weight: 700; color: var(--texte-doux); font-variant-numeric: tabular-nums; }
+.live-centre { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 20px 24px 0; }
+.live-cercle { position: relative; width: 210px; height: 210px; }
+.live-cercle > svg { position: absolute; inset: 0; transform: rotate(-90deg); }
+.live-picto .picto { background: transparent; }
+.fond-cercle { fill: none; stroke: var(--surface-2); stroke-width: 8; }
+.avance-cercle { fill: none; stroke: var(--accent); stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 0.3s linear; }
+.live-picto { position: absolute; inset: 22px; border: none; border-radius: 50%; background: var(--arche); display: flex; align-items: center; justify-content: center; padding: 0; }
+.live.en-cours .live-picto { animation: respiration 6s ease-in-out infinite; }
+.live-chrono { margin-top: 14px; font-family: var(--titre); font-size: 56px; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+.live-cote { margin: 10px 0 0; padding: 4px 14px; border-radius: 14px; background: var(--sauge-fond); color: var(--sauge-texte); font-size: 14px; font-weight: 700; animation: pop 0.4s ease; }
+.live-nom { margin: 12px 0 0; font-size: 28px; animation: apparition 0.45s ease both; }
+.live-note { margin: 10px 0 0; max-width: 340px; font-size: 15px; line-height: 1.45; color: #4A3F38; }
+.live-ensuite { padding: 22px 16px 0; }
+.live-ensuite .etiquette { margin: 0 8px 8px; }
+.live-suivante { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-radius: 20px; background: var(--surface); }
+.live-commandes { position: sticky; bottom: 0; display: flex; align-items: center; justify-content: center; gap: 18px; padding: 20px 16px 32px; background: linear-gradient(rgba(243, 236, 225, 0), var(--fond) 35%); }
+.live-lecture { width: 76px; height: 76px; border-radius: 38px; border: none; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(169, 71, 42, 0.3); transition: transform 0.15s ease; }
+.live-lecture:active { transform: scale(0.92); }
+.live-plus { min-width: 44px; height: 44px; padding: 0 12px; border: 1.5px solid var(--trait); border-radius: 22px; background: transparent; font-weight: 700; font-size: 14px; color: var(--texte-doux); }
+.live-fin { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 40px 24px 0; text-align: center; }
+.live-fin h1 { margin: 20px 0 0; font-size: 34px; animation: apparition 0.6s ease both; }
+.live-fin .principal { margin-top: 24px; width: 100%; max-width: 320px; }
+@media print { .composer.lancer { display: none; } }
+
+/* Édition d'une séance */
+.mode-edition { position: sticky; top: 8px; z-index: 4; box-shadow: 0 6px 18px rgba(46, 38, 34, 0.12); }
+.mode-edition .principal { height: 44px; padding: 0 18px; flex-shrink: 0; }
+.edition-titre { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 700; color: var(--texte-doux); }
+.edition-titre input { padding: 8px 12px; border-radius: 12px; background: var(--fond); font-size: 15px; color: var(--texte); }
+.ligne:has(.edition-ligne) { flex-wrap: wrap; }
+.edition-ligne { flex-basis: 100%; display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 6px; padding: 0 6px 10px 50px; }
+.edition-ligne input { padding: 8px 10px; border-radius: 12px; background: var(--fond); font-size: 14px; color: var(--texte); }
+.edition-boutons { grid-column: 1 / -1; display: flex; justify-content: flex-end; gap: 2px; }
+.edition-boutons .rond { width: 40px; height: 40px; font-size: 18px; font-weight: 700; }
+.edition-boutons .rond:disabled { opacity: 0.3; }
+.edition-minutes { display: flex; align-items: center; gap: 2px; }
+.edition-minutes input { width: 56px; padding: 4px 6px; border: none; border-radius: 10px; background: var(--fond); font-family: var(--titre); font-size: 18px; color: var(--accent); text-align: right; }
+.phase.pic .edition-ligne input, .phase.pic .edition-minutes input { background: #fff; }
+.phase.pic .edition-boutons .rond { color: #fff; }
+.lien.ajouter { margin-top: 2px; }
+.phase.pic .lien.ajouter { color: #fff; }
+.ajout-posture { padding: 8px 6px 4px 0; }
+.ajout-posture .suggestions { color: var(--texte); }

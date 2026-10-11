@@ -6,6 +6,7 @@
 
 import { supabase, enteteAuth } from './supabase.js';
 import FICHES_REFERENCE from './data/fiches.json';
+import { dateDe } from './dates.js';
 
 const PREFIXE_FICHE = 'yoga:fiche:';
 const CLE_SEANCES = 'yoga:seances';
@@ -50,13 +51,16 @@ const alleger = (seance) => ({
   phases: seance.phases.map((ph) => ({ ...ph, items: ph.items.map(({ posture: _p, ...it }) => it) })),
 });
 
+// Plus récentes d'abord, selon la date prévue de la séance
+const parDate = (liste) => [...liste].sort((a, b) => (dateDe(b) || '').localeCompare(dateDe(a) || ''));
+
 export async function listerSeances() {
   if (await sessionActive()) {
     const { data, error } = await supabase.from('seances').select('id, contenu, maj_le').order('maj_le', { ascending: false }).limit(200);
     if (error) throw error;
-    return data.map((l) => ({ ...l.contenu, uid: l.id, enregistreeLe: l.maj_le }));
+    return parDate(data.map((l) => ({ ...l.contenu, uid: l.id, enregistreeLe: l.maj_le })));
   }
-  return lire(CLE_SEANCES, []);
+  return parDate(lire(CLE_SEANCES, []));
 }
 
 export async function enregistrerSeance(seance) {

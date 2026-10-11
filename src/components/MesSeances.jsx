@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { listerSeances, supprimerSeance, donneesLocales, transfererDonneesLocales } from '../stockage.js';
+import { listerSeances, supprimerSeance, enregistrerSeance, donneesLocales, transfererDonneesLocales } from '../stockage.js';
+import { dateDe, dateLisible } from '../dates.js';
 import { connexionParMotDePasse, deconnexion } from '../supabase.js';
 import { Retour, Poubelle } from './Icones.jsx';
 import { PAR_ID, nom } from '../bibliotheque.js';
@@ -59,6 +60,16 @@ export default function MesSeances({ compte, onRetour, onOuvrir }) {
     }
   };
 
+  const changerDate = async (s, dateSeance) => {
+    if (!dateSeance) return;
+    try {
+      await enregistrerSeance({ ...s, dateSeance });
+      recharger();
+    } catch (e) {
+      setMessage(`Modification impossible : ${e.message}`);
+    }
+  };
+
   const transferer = async () => {
     try {
       const { nSeances } = await transfererDonneesLocales();
@@ -111,9 +122,13 @@ export default function MesSeances({ compte, onRetour, onOuvrir }) {
                 <span className="ligne-nom">{s.style} · {s.duree} min · {s.niveau}</span>
                 {s.cibleId && PAR_ID.get(s.cibleId) && <span className="ligne-infos">Objectif : {nom(PAR_ID.get(s.cibleId))}</span>}
                 <span className="ligne-infos">{s.titre || s.theme || ''}</span>
-                {s.enregistreeLe && <span className="ligne-infos">{new Date(s.enregistreeLe).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>}
               </span>
             </button>
+            <label className="date-ligne">
+              <span className="date-texte">{dateLisible(dateDe(s)) || 'Date à définir'}</span>
+              <input type="date" aria-label="Changer la date de la séance" value={dateDe(s) || ''} onChange={(e) => changerDate(s, e.target.value)}
+                onClick={(e) => { try { e.currentTarget.showPicker?.(); } catch { /* sélecteur indisponible */ } }} />
+            </label>
             <button type="button" className="rond nu" aria-label="Supprimer la séance" onClick={() => supprimer(s.uid)}><Poubelle /></button>
           </div>
         ))}

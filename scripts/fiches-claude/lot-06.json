@@ -28,7 +28,13 @@
   "sortie": "Reposez les pieds et le buste, puis allongez-vous et ramenez les genoux à la poitrine.",
   "variante_facilitee": "Genoux pliés, mains derrière les cuisses.",
   "variante_avancee": "Alterner bateau et demi-bateau plusieurs fois sans poser les pieds.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bas du dos légèrement arrondi",
+   "Jambes et buste près du sol",
+   "Remonter si le dos se creuse"
+  ],
+  "souffle_court": "Expirations actives, bas-ventre qui remonte"
  },
  "P092": {
   "presentation": "Le gainage du transverse allongé apprend à engager le muscle profond du ventre à l'expiration, avec la remontée du périnée. Il protège le dos et le plancher pelvien. C'est un exercice de base en prénatal, postnatal et yoga du dos.",
@@ -60,7 +66,13 @@
   "sortie": "Relâchez, étirez les jambes et respirez librement.",
   "variante_facilitee": "Sans les mains, en se concentrant seulement sur l'expiration longue.",
   "variante_avancee": "Gardez l'engagement en soulevant un pied du sol, puis l'autre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains sous le nombril",
+   "Expirer : périnée puis nombril qui remontent",
+   "Bassin immobile"
+  ],
+  "souffle_court": "Inspiration passive, expiration lente par la bouche"
  },
  "P093": {
   "presentation": "Purvottanasana, la planche inversée, soulève tout le corps face au ciel sur les mains et les talons. Elle ouvre les épaules et la poitrine et renforce les bras et les fessiers. Elle demande des poignets et des épaules en bonne forme.",
@@ -91,7 +103,13 @@
   "sortie": "Expirez en reposant le bassin, puis faites la pince assise.",
   "variante_facilitee": "Table inversée, genoux pliés.",
   "variante_avancee": "Soulevez une jambe en gardant le bassin haut.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains sous les épaules, doigts vers les pieds",
+   "Bassin haut, fessiers engagés",
+   "Nuque longue"
+  ],
+  "souffle_court": "Inspirer pour monter"
  },
  "P094": {
   "presentation": "Ardha Purvottanasana, la table inversée, soulève le bassin genoux pliés, face au ciel. Elle ouvre les épaules et la poitrine et renforce les fessiers. C'est une contre-posture classique des flexions avant.",
@@ -122,7 +140,13 @@
   "sortie": "Expirez en reposant le bassin, puis enchaînez avec une pince assise.",
   "variante_facilitee": "Bassin moins haut, tenue courte.",
   "variante_avancee": "Planche inversée, jambes tendues.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux au-dessus des chevilles",
+   "Bassin à l'horizontale",
+   "Poitrine ouverte"
+  ],
+  "souffle_court": "Inspirer en montant"
  },
  "P095": {
   "presentation": "La posture d'étirement du kundalini yoga soulève la tête, les épaules et les pieds à 15 cm du sol, bras tendus vers les pieds, souvent avec la respiration de feu. Très intense pour la sangle abdominale, elle demande un dos solide. À éviter pendant la grossesse.",
@@ -153,7 +177,13 @@
   "sortie": "Inspirez, puis expirez en reposant la tête et les pieds. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Genoux pliés, ou une jambe au sol.",
   "variante_avancee": "Tenir 1 à 3 minutes en respiration de feu.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bas du dos plaqué au sol",
+   "Tête, épaules et pieds à 15 cm",
+   "Plier les genoux si le dos se creuse"
+  ],
+  "souffle_court": "Respiration de feu, ou souffle long"
  },
  "P096": {
   "presentation": "Bakasana, le corbeau, est le premier équilibre sur les bras : les genoux reposent sur l'arrière des bras et les pieds décollent. Elle renforce les bras, les poignets et le centre et apprend à oser basculer le poids. Une brique sous les pieds aide à démarrer. Déconseillée pendant la grossesse.",
@@ -184,7 +214,13 @@
   "sortie": "Reposez les pieds au sol et revenez accroupi, puis en posture de l'enfant ou en pince debout.",
   "variante_facilitee": "Pieds sur une brique, un seul pied décollé.",
   "variante_avancee": "Tendre les bras (Bakasana bras tendus), ou passer en chaturanga.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux haut sur l'arrière des bras",
+   "Coudes serrés, regard devant",
+   "Basculer le poids vers l'avant"
+  ],
+  "souffle_court": "Expirer pour basculer"
  },
  "P097": {
   "presentation": "Parsva Bakasana, le corbeau latéral, place les deux genoux sur un seul bras après une torsion. Il combine force des bras, rotation et équilibre. Posture avancée, elle se prépare par la chaise en torsion et le corbeau.",
@@ -215,7 +251,13 @@
   "sortie": "Reposez les pieds, revenez accroupi au centre et changez de côté. Terminez par la posture de l'enfant.",
   "variante_facilitee": "Un seul pied décollé, ou bassin posé sur une brique.",
   "variante_avancee": "Tendre la jambe du dessus (Eka Pada Koundinyasana).",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Torsion d'abord, mains au sol",
+   "Cuisse sur le bras, près du coude",
+   "Coudes serrés, regard devant"
+  ],
+  "souffle_court": "Expirer pour basculer"
  },
  "P098": {
   "presentation": "Bhujapidasana, la pression sur les épaules, place les cuisses sur le haut des bras et croise les chevilles en équilibre. Elle demande des hanches ouvertes, des ischio-jambiers souples et des bras solides. Posture avancée, elle se prépare par la guirlande et le corbeau.",
@@ -246,7 +288,13 @@
   "sortie": "Décroisez les chevilles, reposez les pieds et revenez debout. Terminez par la posture de l'enfant.",
   "variante_facilitee": "Pieds au sol, chevilles croisées, poids partiellement sur les mains.",
   "variante_avancee": "Descendre le front vers le sol en gardant les pieds décollés.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Cuisses haut sur les bras",
+   "Chevilles croisées",
+   "Regard vers l'avant"
+  ],
+  "souffle_court": "Expirer pour soulever"
  },
  "P099": {
   "presentation": "Tittibhasana, la luciole, est un équilibre sur les mains, jambes tendues de chaque côté des bras. Elle demande beaucoup de souplesse des ischio-jambiers et des adducteurs et de la force des bras. Posture avancée, elle se prépare par la pression sur les épaules.",
@@ -277,7 +325,13 @@
   "sortie": "Pliez les genoux, reposez les pieds et revenez debout. Terminez par la posture de l'enfant.",
   "variante_facilitee": "Pression sur les épaules, chevilles croisées.",
   "variante_avancee": "Tenir plus longtemps, jambes parfaitement tendues.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Cuisses sur les bras",
+   "Bras tendus, jambes tendues sur les côtés",
+   "Pieds fléchis"
+  ],
+  "souffle_court": "Calme et régulier"
  },
  "P100": {
   "presentation": "Eka Pada Koundinyasana, la pose du sage Koundinya, est un équilibre sur les bras en torsion, une jambe tendue sur le côté et l'autre vers l'arrière. Posture avancée, elle combine force, rotation et équilibre. Elle se prépare par le corbeau latéral.",
@@ -308,7 +362,13 @@
   "sortie": "Pliez les genoux, reposez les pieds et revenez accroupi. Changez de côté, puis faites la posture de l'enfant.",
   "variante_facilitee": "Corbeau latéral, une seule jambe tendue.",
   "variante_avancee": "Enchaîner vers chaturanga.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis le corbeau latéral",
+   "Une jambe en arrière, l'autre sur le côté",
+   "Coudes pliés, poids vers l'avant"
+  ],
+  "souffle_court": "Expirer pour tendre les jambes"
  },
  "P101": {
   "presentation": "Astavakrasana, la pose des huit angles, est un équilibre sur les bras où les jambes croisées se placent sur un bras, corps penché sur le côté. Elle demande force, rotation et souplesse des hanches. Posture avancée.",
@@ -339,7 +399,13 @@
   "sortie": "Reposez le bassin au sol, décroisez les jambes et changez de côté. Terminez par la posture de l'enfant.",
   "variante_facilitee": "Bassin soulevé, pieds au sol.",
   "variante_avancee": "Tenir plus longtemps, jambes parfaitement tendues.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambe haut sur le bras",
+   "Chevilles croisées, jambes tendues",
+   "Coudes pliés, buste parallèle au sol"
+  ],
+  "souffle_court": "Expirer pour soulever"
  },
  "P102": {
   "presentation": "Tolasana, la balance, soulève tout le corps en lotus sur les mains. Elle renforce les bras et le centre et demande un lotus confortable. Posture avancée de l'Ashtanga.",
@@ -370,7 +436,13 @@
   "sortie": "Reposez le bassin, défaites le lotus et allongez les jambes. Terminez par la posture de l'enfant.",
   "variante_facilitee": "En tailleur, mains sur des briques, bassin seul soulevé.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "En lotus, mains à côté des hanches",
+   "Pousser le sol, bras tendus",
+   "Ventre engagé"
+  ],
+  "souffle_court": "Expirer pour soulever"
  },
  "P103": {
   "presentation": "Lolasana, le pendentif, soulève le corps sur les mains, jambes croisées repliées sous le bassin. Elle demande une grande force du centre et des bras. Des briques sous les mains aident à démarrer.",
@@ -401,7 +473,13 @@
   "sortie": "Reposez les genoux, décroisez les chevilles et passez en posture de l'enfant.",
   "variante_facilitee": "Briques sous les mains, pieds seuls décollés.",
   "variante_avancee": "Balancement d'avant en arrière, puis passage en chaturanga.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Chevilles croisées, mains au sol",
+   "Dos arrondi, ventre rentré",
+   "Briques sous les mains si besoin"
+  ],
+  "souffle_court": "Expirer pour soulever"
  },
  "P104": {
   "presentation": "Mayurasana, le paon, tient le corps à l'horizontale sur les mains, coudes plantés dans le ventre. Posture très avancée, elle demande force et équilibre. Elle est contre-indiquée en cas d'hypertension, de grossesse et de troubles digestifs.",
@@ -432,7 +510,13 @@
   "sortie": "Reposez les pieds, puis les genoux, et passez en posture de l'enfant.",
   "variante_facilitee": "Pieds au sol, simple bascule du poids vers l'avant.",
   "variante_avancee": "En lotus (Padma Mayurasana).",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coudes joints sous le ventre",
+   "Corps à l'horizontale",
+   "Pas en cas d'hypertension ou de grossesse"
+  ],
+  "souffle_court": "Court et régulier"
  },
  "P105": {
   "presentation": "Kukkutasana, le coq, passe les bras entre les cuisses et les mollets en lotus puis soulève le corps sur les mains. Elle demande un lotus très libre et des bras solides. Posture avancée de l'Ashtanga.",
@@ -463,7 +547,13 @@
   "sortie": "Reposez le bassin, retirez les bras, défaites le lotus et passez en posture de l'enfant.",
   "variante_facilitee": "Balance (Tolasana) sans passer les bras.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras glissés dans le lotus",
+   "Pousser le sol, buste droit",
+   "Sortir si les genoux protestent"
+  ],
+  "souffle_court": "Régulier"
  },
  "P106": {
   "presentation": "Garbha Pindasana, l'embryon dans l'utérus, passe les bras dans le lotus et porte les mains au visage en équilibre sur les ischions. Elle se termine souvent par des roulades sur le dos. Elle demande un lotus parfaitement libre.",
@@ -494,7 +584,13 @@
   "sortie": "Retirez les bras, défaites le lotus et allongez les jambes.",
   "variante_facilitee": "Bateau genoux pliés.",
   "variante_avancee": "Roulades sur le dos en cercle (neuf roulades).",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras passés dans le lotus",
+   "Mains vers le visage",
+   "Équilibre sur les ischions"
+  ],
+  "souffle_court": "Lent et régulier"
  },
  "P107": {
   "presentation": "Adho Mukha Svanasana, le chien tête en bas, forme un V inversé sur les mains et les pieds. Elle étire l'arrière des jambes et le dos et renforce les bras. Posture de transition et de repos actif, on la retrouve dans presque toutes les séances.",
@@ -525,7 +621,13 @@
   "sortie": "Posez les genoux et passez en posture de l'enfant, ou avancez les pieds en pince debout.",
   "variante_facilitee": "Genoux pliés, ou mains sur une chaise contre un mur.",
   "variante_avancee": "Lever une jambe vers le ciel (chien à trois pattes).",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains larges, pousser le sol",
+   "Dos long, genoux pliés si besoin",
+   "Talons vers le sol, nuque relâchée"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P108": {
   "presentation": "Ardha Pincha Mayurasana, le dauphin, est un chien tête en bas sur les avant-bras. Elle ouvre et renforce les épaules et prépare aux inversions. Elle est déconseillée en cas d'hypertension et demande des épaules saines.",
@@ -556,7 +658,13 @@
   "sortie": "Posez les genoux et passez en posture de l'enfant.",
   "variante_facilitee": "Genoux pliés.",
   "variante_avancee": "Avancer le menton au-delà des mains puis revenir, plusieurs fois.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coudes à largeur d'épaules",
+   "Bassin haut, dos long",
+   "Avant-bras qui poussent le sol"
+  ],
+  "souffle_court": "Régulier"
  },
  "P109": {
   "presentation": "Sirsasana, l'équilibre sur la tête, renverse le corps sur les avant-bras et le sommet du crâne. Posture avancée, elle demande des épaules fortes et un apprentissage progressif, souvent contre un mur. Elle est contre-indiquée en cas de fragilité cervicale, d'hypertension, de glaucome et pendant la grossesse.",
@@ -587,7 +695,13 @@
   "sortie": "Pliez les genoux, redescendez lentement les pieds au sol, puis restez quelques respirations en posture de l'enfant avant de vous redresser.",
   "variante_facilitee": "Dauphin, ou préparation pieds au sol.",
   "variante_avancee": "Sans mur, plusieurs minutes.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Le poids est dans les avant-bras, pas la tête",
+   "Monter genoux pliés, contrôlé",
+   "Sortir au moindre poids sur la nuque"
+  ],
+  "souffle_court": "Lent et régulier"
  },
  "P110": {
   "presentation": "Pincha Mayurasana, l'équilibre sur les avant-bras, renverse le corps sur les avant-bras, la tête décollée du sol. Posture avancée, elle demande des épaules fortes et ouvertes. Le mur sert d'appui pendant l'apprentissage.",
@@ -618,6 +732,12 @@
   "sortie": "Redescendez une jambe puis l'autre et passez en posture de l'enfant.",
   "variante_facilitee": "Dauphin avec une jambe levée.",
   "variante_avancee": "Sans mur.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coudes à largeur d'épaules",
+   "Côtes rentrées, ventre engagé",
+   "Mur derrière pendant l'apprentissage"
+  ],
+  "souffle_court": "Régulier"
  }
 }

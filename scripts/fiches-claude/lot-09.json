@@ -28,7 +28,13 @@
   "sortie": "Relâchez les talons, remontez par les mains puis par la force des cuisses. Asseyez-vous sur les talons et passez en posture de l'enfant.",
   "variante_facilitee": "Chameau, mains sur les talons.",
   "variante_avancee": "Saisir les chevilles, coudes au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Hanches au-dessus des genoux",
+   "Mains puis coudes vers les pieds",
+   "Cuisses actives"
+  ],
+  "souffle_court": "Inspirer pour ouvrir, expirer pour descendre"
  },
  "P152": {
   "presentation": "Setu Bandha Sarvangasana, le pont, soulève le bassin allongé sur le dos, pieds au sol. Il renforce les fessiers et le dos et ouvre l'avant des hanches. Dans la méthode De Gasquet, on monte en expirant, périnée engagé. On ne tourne jamais la tête pendant la posture.",
@@ -59,7 +65,13 @@
   "sortie": "Expirez en déroulant le dos vertèbre par vertèbre jusqu'au bassin. Ramenez les genoux à la poitrine ou faites une torsion allongée.",
   "variante_facilitee": "Petit pont, ou brique sous le sacrum.",
   "variante_avancee": "Mains liées sous le dos, ou une jambe levée vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds parallèles près des fesses",
+   "Dérouler le dos vertèbre par vertèbre",
+   "Ne pas tourner la tête"
+  ],
+  "souffle_court": "Expirer pour monter, périnée engagé"
  },
  "P153": {
   "presentation": "Le pont soutenu pose le sacrum sur une brique ou un bolster. Il ouvre l'avant des hanches et détend le dos sans effort musculaire. Posture restauratrice, elle se tient plusieurs minutes.",
@@ -90,7 +102,13 @@
   "sortie": "Soulevez le bassin, retirez la brique et déroulez le dos. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Brique sur la hauteur la plus basse.",
   "variante_avancee": "Jambes tendues au sol, ou levées vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Brique sous le sacrum",
+   "Pieds stables, genoux parallèles",
+   "Tout relâcher"
+  ],
+  "souffle_court": "Lent et abdominal"
  },
  "P154": {
   "presentation": "Urdhva Dhanurasana, la roue, soulève tout le corps en arc sur les mains et les pieds. Posture avancée, elle ouvre fortement la colonne, les épaules et l'avant des hanches. Elle demande des poignets, des épaules et des lombaires préparés, et ne se pratique pas pendant la grossesse.",
@@ -121,7 +139,13 @@
   "sortie": "Rentrez le menton, pliez les coudes et reposez la nuque puis le dos. Ramenez les genoux à la poitrine, puis torsion allongée.",
   "variante_facilitee": "Pont, ou étape intermédiaire tête au sol.",
   "variante_avancee": "Lever une jambe vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains près des oreilles, doigts vers les épaules",
+   "Coudes serrés, pieds parallèles",
+   "Poitrine vers l'arrière"
+  ],
+  "souffle_court": "Inspirer pour monter"
  },
  "P155": {
   "presentation": "Camatkarasana, la chose sauvage, part de la planche latérale et bascule le pied du dessus vers l'arrière pour ouvrir la poitrine vers le ciel. Extension joyeuse et ouverte, elle demande des épaules stables.",
@@ -152,7 +176,13 @@
   "sortie": "Revenez en planche latérale puis en chien tête en bas. Changez de côté et terminez par la posture de l'enfant.",
   "variante_facilitee": "Genou du dessous au sol.",
   "variante_avancee": "Enchaîner vers la roue.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Main d'appui sous l'épaule",
+   "Pied arrière, bassin haut",
+   "Poitrine vers le ciel"
+  ],
+  "souffle_court": "Inspirer pour ouvrir"
  },
  "P156": {
   "presentation": "Matsyasana, le poisson, soulève la poitrine allongé sur le dos, appui sur les avant-bras, sommet du crâne qui effleure le sol. Il ouvre la poitrine et la gorge et sert de contre-posture à la chandelle. Prudence avec les cervicales.",
@@ -183,7 +213,13 @@
   "sortie": "Rentrez le menton, reposez le dos et la tête. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Poisson soutenu sur un bolster.",
   "variante_avancee": "Poisson jambes levées.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains sous les fesses",
+   "Poids dans les avant-bras, pas la tête",
+   "Poitrine vers le ciel"
+  ],
+  "souffle_court": "Profond, dans la poitrine"
  },
  "P157": {
   "presentation": "Le poisson soutenu ouvre la poitrine allongé sur un bolster placé sous les omoplates. Posture restauratrice, elle libère la respiration et étire l'avant des épaules. Elle se tient plusieurs minutes.",
@@ -214,7 +250,13 @@
   "sortie": "Roulez sur le côté et redressez-vous en poussant dans les mains.",
   "variante_facilitee": "Couverture pliée plutôt que bolster.",
   "variante_avancee": "Papillon allongé sur le bolster.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bolster sous les omoplates",
+   "Tête soutenue",
+   "Bras ouverts"
+  ],
+  "souffle_court": "Lent, dans la poitrine"
  },
  "P158": {
   "presentation": "Supta Virasana, le héros couché, s'allonge vers l'arrière depuis la posture du héros. Elle étire intensément les quadriceps et l'avant des hanches. Un bolster sous le dos est souvent nécessaire ; prudence avec les genoux et les lombaires.",
@@ -245,7 +287,13 @@
   "sortie": "Remontez sur les avant-bras puis les mains, asseyez-vous et allongez les jambes une à une. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Sur un bolster haut, ou une seule jambe pliée.",
   "variante_avancee": "Dos au sol, bras au-dessus de la tête.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis le héros, bolster derrière",
+   "Genoux proches",
+   "Sortir au moindre pincement"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P159": {
   "presentation": "Bhekasana, la grenouille couchée, allongée sur le ventre, appuie les pieds vers le sol à côté des hanches avec les mains. Elle étire fortement les quadriceps et ouvre la poitrine. Posture avancée, à éviter avec des genoux fragiles.",
@@ -276,7 +324,13 @@
   "sortie": "Relâchez les pieds, allongez les jambes et passez en posture de l'enfant.",
   "variante_facilitee": "Demi-grenouille, une jambe à la fois.",
   "variante_avancee": "Les deux jambes, poitrine haute.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied tenu, doigts vers l'avant",
+   "Appuyer doucement vers le sol",
+   "Pubis au sol"
+  ],
+  "souffle_court": "Régulier"
  },
  "P160": {
   "presentation": "Uttana Padasana, le poisson jambes levées, prolonge le poisson en levant les jambes et les bras tendus. Elle renforce la sangle abdominale et ouvre la poitrine. Prudence avec les cervicales.",
@@ -306,7 +360,13 @@
   "sortie": "Reposez les jambes et les bras, rentrez le menton et reposez le dos. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Poisson, jambes au sol.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis le poisson",
+   "Jambes et bras levés à 45°",
+   "Peu de poids sur la tête"
+  ],
+  "souffle_court": "Régulier"
  },
  "P161": {
   "presentation": "Makarasana, le crocodile, est une posture de détente allongée sur le ventre, front sur les bras croisés. Elle détend le dos et favorise la respiration abdominale. À éviter pendant la grossesse.",
@@ -337,7 +397,13 @@
   "sortie": "Posez les mains sous les épaules, reculez en posture de l'enfant et redressez-vous lentement.",
   "variante_facilitee": "Coussin sous le ventre.",
   "variante_avancee": "Tenir dix minutes en relaxation.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Front sur les bras croisés",
+   "Pieds écartés",
+   "Ventre contre le sol"
+  ],
+  "souffle_court": "Abdominal, le ventre pousse le sol"
  },
  "P162": {
   "presentation": "Ardha Matsyendrasana, la demi-torsion assise, croise une jambe par-dessus l'autre et tourne le buste vers la jambe pliée. Elle mobilise la colonne en rotation. Pendant la grossesse, on ne pratique que la torsion ouverte.",
@@ -368,7 +434,13 @@
   "sortie": "Inspirez en revenant au centre, décroisez et changez de côté.",
   "variante_facilitee": "Bras enlaçant le genou plutôt que coude à l'extérieur.",
   "variante_avancee": "Liaison des mains derrière le dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied à l'extérieur du genou opposé",
+   "Ischions ancrés, colonne verticale",
+   "Coude contre le genou"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P163": {
   "presentation": "Bharadvajasana, la torsion du sage Bharadvaja, se pratique assis, les deux jambes repliées sur le côté. Torsion douce, elle convient à la grossesse en version ouverte. Elle mobilise la colonne sans charger les hanches.",
@@ -399,7 +471,13 @@
   "sortie": "Revenez au centre et changez de côté.",
   "variante_facilitee": "Sur une chaise, de côté.",
   "variante_avancee": "Demi-lotus et liaison de la main au pied.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambes repliées sur le côté",
+   "Coussin sous la fesse si besoin",
+   "Tourner du côté opposé aux jambes si grossesse"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P164": {
   "presentation": "Marichyasana C, la torsion du sage Marichi C, plie une jambe pied au sol et tourne le buste vers elle, bras enroulé autour du genou. Torsion fermée et profonde, elle est déconseillée pendant la grossesse.",
@@ -430,7 +508,13 @@
   "sortie": "Revenez au centre, allongez la jambe et changez de côté. Terminez par la pince assise.",
   "variante_facilitee": "Bras qui enlace le genou.",
   "variante_avancee": "Liaison des mains derrière le dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied au sol près de la fesse",
+   "Coude à l'extérieur du genou",
+   "Colonne verticale"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P165": {
   "presentation": "Marichyasana D, la torsion du sage Marichi D, combine demi-lotus, jambe pliée et torsion liée. Posture avancée de l'Ashtanga, elle demande des genoux libres.",
@@ -461,7 +545,13 @@
   "sortie": "Déliez, revenez au centre, défaites le demi-lotus et changez de côté. Terminez par la pince assise.",
   "variante_facilitee": "Torsion Marichi C.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Demi-lotus et jambe pliée",
+   "Bras enroulé autour du genou",
+   "Mains liées"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P166": {
   "presentation": "Pasasana, le nœud coulant, est une torsion accroupie, pieds joints, bras qui enlacent les jambes et mains liées. Posture avancée, elle demande des chevilles souples et une forte rotation.",
@@ -492,7 +582,13 @@
   "sortie": "Déliez, revenez au centre et changez de côté. Terminez par la pince debout.",
   "variante_facilitee": "Chaise en torsion.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Accroupi, pieds et genoux joints",
+   "Épaule à l'extérieur du genou",
+   "Mains liées autour des jambes"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P167": {
   "presentation": "Supta Matsyendrasana, la torsion allongée, laisse tomber les genoux sur le côté pendant que les épaules restent au sol. Torsion douce et relaxante, elle détend le dos et les fessiers. On la place souvent en fin de séance.",
@@ -523,7 +619,13 @@
   "sortie": "Inspirez en ramenant les genoux au centre et changez de côté. Terminez genoux à la poitrine.",
   "variante_facilitee": "Coussin sous les genoux.",
   "variante_avancee": "Jambe du dessus tendue, tenue par la main opposée.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras en croix, épaules au sol",
+   "Genoux qui tombent sur le côté",
+   "Laisser le poids faire la torsion"
+  ],
+  "souffle_court": "Lent, l'expiration approfondit"
  },
  "P168": {
   "presentation": "Jathara Parivartanasana, la torsion abdominale jambes tendues, descend les jambes tendues d'un côté puis de l'autre. Elle renforce la sangle abdominale et mobilise la colonne. À éviter pendant la grossesse et avec des lombaires fragiles.",
@@ -554,7 +656,13 @@
   "sortie": "Ramenez les jambes au centre, pliez les genoux et posez les pieds. Terminez genoux à la poitrine.",
   "variante_facilitee": "Genoux pliés.",
   "variante_avancee": "Tenir quelques respirations près du sol de chaque côté.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambes tendues à la verticale",
+   "Descendre d'un côté sans poser",
+   "Remonter avec le ventre"
+  ],
+  "souffle_court": "Expirer pour descendre, inspirer pour remonter"
  },
  "P169": {
   "presentation": "La torsion sur chaise tourne le buste en restant assis, une main sur le dossier. Simple et accessible, elle mobilise la colonne. Pendant la grossesse, on la pratique douce, côté ouvert.",
@@ -585,7 +693,13 @@
   "sortie": "Revenez au centre et changez de côté.",
   "variante_facilitee": "Petite rotation.",
   "variante_avancee": "Tenir plus longtemps.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis de côté, pieds à plat",
+   "Mains sur le dossier",
+   "Tourner avec le buste, pas les bras"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P170": {
   "presentation": "La torsion soutenue pose le buste sur un bolster en rotation. Posture restauratrice, elle détend le dos et calme. Elle se tient plusieurs minutes de chaque côté.",
@@ -616,7 +730,13 @@
   "sortie": "Redressez-vous en poussant dans les mains et changez de côté.",
   "variante_facilitee": "Bolster plus haut.",
   "variante_avancee": "Bolster plus bas.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bolster le long de la hanche",
+   "Buste allongé dessus",
+   "Tête tournée du côté confortable"
+  ],
+  "souffle_court": "Lent"
  },
  "P171": {
   "presentation": "Parighasana, la porte, s'incline sur le côté depuis une position à genoux, une jambe tendue sur le côté. Elle étire les flancs et l'intérieur de la cuisse. Accessible, elle convient au prénatal.",
@@ -647,7 +767,13 @@
   "sortie": "Inspirez en remontant, ramenez la jambe et changez de côté.",
   "variante_facilitee": "Sur une chaise.",
   "variante_avancee": "Main au sol, bras tendu.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "À genoux, une jambe tendue sur le côté",
+   "S'incliner sans tourner",
+   "Couverture sous le genou"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour incliner"
  },
  "P172": {
   "presentation": "Apanasana, genoux poitrine, rapproche les genoux de la poitrine allongé sur le dos. Elle détend le bas du dos et sert de contre-posture aux extensions et aux torsions. On peut se bercer doucement.",
@@ -678,7 +804,13 @@
   "sortie": "Posez les pieds au sol et allongez les jambes.",
   "variante_facilitee": "Un genou à la fois.",
   "variante_avancee": "Cercles des genoux.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux vers la poitrine",
+   "Tête et sacrum au sol",
+   "Se bercer doucement"
+  ],
+  "souffle_court": "Expirer en rapprochant les genoux"
  },
  "P173": {
   "presentation": "La posture de l'enfant soutenue pose le buste sur un bolster. Posture restauratrice, elle détend profondément le dos et calme. Elle convient bien au prénatal, genoux écartés.",
@@ -709,7 +841,13 @@
   "sortie": "Posez les mains, redressez-vous lentement.",
   "variante_facilitee": "Bolster sur des briques.",
   "variante_avancee": "Bolster plus bas.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux écartés, bolster entre eux",
+   "Buste et tête soutenus",
+   "Changer le côté de la tête"
+  ],
+  "souffle_court": "Lent, dans le dos"
  },
  "P174": {
   "presentation": "La pince assise soutenue pose le buste ou les bras sur un bolster ou une chaise. Posture restauratrice, elle étire doucement l'arrière des jambes et calme. Elle se tient plusieurs minutes.",
@@ -740,7 +878,13 @@
   "sortie": "Redressez-vous lentement en poussant dans les mains.",
   "variante_facilitee": "Genoux pliés, coussin dessous.",
   "variante_avancee": "Support plus bas.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bolster sur les jambes ou chaise devant",
+   "Front soutenu",
+   "Genoux pliés si besoin"
+  ],
+  "souffle_court": "Lent"
  },
  "P175": {
   "presentation": "La pince sur chaise plie le buste vers l'avant en restant assis. Elle étire le dos et l'arrière des jambes sans passer par le sol. En cas d'hypertension, on ne reste pas longtemps tête en bas.",
@@ -771,7 +915,13 @@
   "sortie": "Déroulez lentement le dos, la tête en dernier, mains sur les cuisses.",
   "variante_facilitee": "Avant-bras sur les cuisses.",
   "variante_avancee": "Mains à plat au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds écartés, plier depuis les hanches",
+   "Bras et tête qui pendent",
+   "Remonter lentement"
+  ],
+  "souffle_court": "Lent, peu de temps si hypertension"
  },
  "P176": {
   "presentation": "Savasana, la relaxation finale, allongé sur le dos, laisse le corps et l'esprit intégrer la séance. C'est une posture à part entière, à ne jamais sauter. Avec des lombaires sensibles, un coussin sous les genoux aide ; en fin de grossesse, on se place sur le côté.",
@@ -802,7 +952,13 @@
   "sortie": "Approfondissez la respiration, bougez doucement les doigts et les orteils, étirez-vous. Roulez sur le côté droit et restez-y quelques instants avant de vous redresser.",
   "variante_facilitee": "Sur le côté, coussins entre les genoux.",
   "variante_avancee": "Relaxation guidée plus longue, scan corporel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds et bras écartés, paumes vers le ciel",
+   "Coussin sous les genoux si besoin",
+   "Relâcher tout, des pieds à la tête"
+  ],
+  "souffle_court": "Naturel, sans contrôle"
  },
  "P177": {
   "presentation": "La relaxation sur le côté remplace Savasana pendant la grossesse ou quand la position sur le dos est inconfortable. Bien soutenue par des coussins, elle offre une détente complète.",
@@ -833,6 +989,12 @@
   "sortie": "Bougez doucement, puis poussez dans les mains pour vous redresser.",
   "variante_facilitee": "Coussin d'allaitement ou bolster entre les jambes.",
   "variante_avancee": "Relaxation guidée plus longue.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Sur le côté gauche",
+   "Coussin sous la tête et entre les genoux",
+   "Tout relâcher"
+  ],
+  "souffle_court": "Naturel"
  }
 }

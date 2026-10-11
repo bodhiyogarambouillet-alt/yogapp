@@ -91,8 +91,8 @@ export async function supprimerSeance(uid) {
 // ---------- Fiches « Comment faire ? » ----------
 // Forme renvoyée aux écrans : { fiche, validee, source: 'base' | 'locale' | 'reference' }
 
-const LISTES = ['entree', 'alignement', 'tenue', 'erreurs'];
-const CHAMPS = [...LISTES, 'presentation', 'respiration', 'sortie', 'variante_facilitee', 'variante_avancee'];
+const LISTES = ['entree', 'alignement', 'tenue', 'erreurs', 'resume'];
+const CHAMPS = [...LISTES, 'presentation', 'respiration', 'souffle_court', 'sortie', 'variante_facilitee', 'variante_avancee'];
 const VERSION_FICHE = 2; // même valeur que lib/fiche.js
 const contenuDe = (fiche) => ({
   ...Object.fromEntries(CHAMPS.map((k) => [k, fiche[k] ?? (LISTES.includes(k) ? [] : '')])),

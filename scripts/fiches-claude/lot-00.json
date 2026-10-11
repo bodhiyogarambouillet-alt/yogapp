@@ -33,7 +33,13 @@
   "sortie": "Après la dernière expiration, inspirez lentement et profondément, puis expirez longuement. Restez assis quelques respirations naturelles en observant les sensations avant une éventuelle deuxième série, deux ou trois séries au maximum.",
   "variante_facilitee": "Pratiquez lentement, une expiration toutes les deux secondes, sur 10 à 15 expirations seulement, une main sur le ventre pour guider le mouvement.",
   "variante_avancee": "Allongez progressivement les séries jusqu'à 50 ou 60 expirations en gardant un rythme parfaitement égal et le haut du corps immobile.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Expiration sèche par le nez, ventre qui rentre",
+   "Inspiration passive, ventre qui se relâche",
+   "Haut du corps immobile"
+  ],
+  "souffle_court": "20 à 30 expirations, environ une par seconde"
  },
  "P005": {
   "presentation": "Bhramari, la respiration de l'abeille, consiste à expirer lentement en produisant un bourdonnement doux, bouche fermée. La vibration du son se ressent dans le visage et le crâne et apaise le mental. Elle trouve sa place en fin de séance, avant la relaxation, ou pour ouvrir une méditation.",
@@ -66,7 +72,13 @@
   "sortie": "Après 5 à 10 cycles, cessez le son et respirez naturellement, les yeux toujours fermés. Restez quelques instants à l'écoute du silence et des vibrations qui persistent avant d'ouvrir les yeux.",
   "variante_facilitee": "Gardez les mains sur les cuisses et faites seulement 3 à 5 bourdonnements, avec des respirations naturelles entre chacun.",
   "variante_avancee": "Shanmukhi mudra : bouchez doucement les oreilles avec les pouces sur le tragus, posez les index sur les paupières fermées et les autres doigts autour du nez et de la bouche, coudes à hauteur des épaules, pour intérioriser complètement le son.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Lèvres fermées, dents desserrées",
+   "Bourdonnement grave et doux",
+   "Sentir la vibration dans le crâne"
+  ],
+  "souffle_court": "Inspirer lentement, bourdonner sur toute l'expiration"
  },
  "P006": {
   "presentation": "Sitali et Sitkari sont deux respirations rafraîchissantes : on inspire par la bouche, à travers la langue roulée (Sitali) ou entre les dents (Sitkari), puis on expire par le nez. L'air frais apaise et calme. Pratiquez-les après une séquence dynamique, par temps chaud, ou en fin de séance avant la relaxation.",
@@ -99,7 +111,13 @@
   "sortie": "Après le dernier cycle, refermez la bouche et revenez à une respiration nasale naturelle. Restez assis quelques instants en observant la sensation de fraîcheur et de calme.",
   "variante_facilitee": "Faites seulement 4 à 5 cycles, avec une respiration naturelle par le nez entre chacun.",
   "variante_avancee": "Après l'inspiration, gardez les poumons pleins deux ou trois secondes sans forcer, menton légèrement rentré, puis expirez lentement par le nez.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Langue roulée en tube, ou dents serrées",
+   "Inspirer par la bouche, sentir l'air frais",
+   "Expirer par le nez, bouche fermée"
+  ],
+  "souffle_court": "Expiration plus longue que l'inspiration"
  },
  "P007": {
   "presentation": "Viloma, la respiration par paliers, fractionne l'inspiration ou l'expiration en plusieurs étapes séparées de courtes pauses. Elle développe le contrôle et la perception fine du souffle. Elle se pratique assise ou allongée, de préférence en fin de séance, avant la relaxation.",
@@ -132,7 +150,13 @@
   "sortie": "Après 5 à 8 cycles, revenez à une respiration naturelle. Restez allongé quelques instants pour observer l'effet sur le corps et l'esprit avant de bouger.",
   "variante_facilitee": "Faites seulement deux paliers à l'inspiration, avec des pauses très courtes, en position allongée.",
   "variante_avancee": "Fractionnez à la fois l'inspiration et l'expiration en trois ou quatre paliers, en gardant les pauses détendues.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Inspirer en trois paliers, pauses de deux secondes",
+   "Gorge ouverte pendant les pauses",
+   "Expirer d'un seul trait"
+  ],
+  "souffle_court": "Respirations naturelles entre deux cycles"
  },
  "P009": {
   "presentation": "La respiration complète, ou Dirgha Pranayama, remplit successivement le ventre, les côtes puis le haut de la poitrine, et se vide dans l'ordre inverse. C'est la respiration de base du yoga : elle apaise, recentre et prépare à la pratique. Idéale en début de séance, et accessible à tous.",
@@ -166,7 +190,13 @@
   "sortie": "Après 8 à 10 cycles, laissez la respiration redevenir naturelle. Posez les bras le long du corps et observez le calme installé avant de passer à la suite.",
   "variante_facilitee": "Travaillez seulement deux étages, ventre puis côtes, allongé avec les mains posées pour guider le mouvement.",
   "variante_avancee": "Comptez les temps pour une expiration deux fois plus longue que l'inspiration, par exemple 4 temps pour inspirer et 8 pour expirer, sans retenue.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Ventre, puis côtes, puis haut de la poitrine",
+   "Vider dans l'ordre inverse",
+   "Épaules basses en fin d'inspiration"
+  ],
+  "souffle_court": "Comme une vague, expiration un peu plus longue"
  },
  "P010": {
   "presentation": "La respiration abdominale, ou diaphragmatique, consiste à laisser le ventre se gonfler à l'inspiration et se dégonfler à l'expiration, la poitrine restant calme. C'est la respiration la plus apaisante et la plus naturelle. Elle convient en ouverture de séance, pendant la relaxation ou à tout moment pour se recentrer.",
@@ -199,7 +229,13 @@
   "sortie": "Après quelques minutes, posez les bras le long du corps et laissez la respiration redevenir spontanée. Bougez doucement les doigts et les pieds avant de vous redresser en passant par le côté.",
   "variante_facilitee": "Allongez-vous avec un coussin sous les genoux et un livre léger posé sur le ventre pour voir et sentir le mouvement.",
   "variante_avancee": "En position assise, sans les mains, comptez 4 temps à l'inspiration et 6 à 8 temps à l'expiration.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Une main sur le ventre, une sur la poitrine",
+   "Le ventre se gonfle, la poitrine reste calme",
+   "Ventre souple, sans pousser"
+  ],
+  "souffle_court": "Lent et silencieux, expiration qui s'allonge"
  },
  "P012": {
   "presentation": "Agni Pran, la respiration de feu, est une respiration rapide, rythmée et égale par le nez, portée par un mouvement continu du nombril. Elle tonifie la sangle abdominale, réchauffe et dynamise. Pratiquez-la en début de séance ou après l'échauffement, jamais avant la relaxation.",
@@ -232,6 +268,12 @@
   "sortie": "Pour terminer, inspirez profondément, puis expirez lentement et longuement. Revenez à une respiration naturelle et restez assis quelques instants en observant la chaleur et l'énergie dans le corps.",
   "variante_facilitee": "Pratiquez lentement, une respiration par seconde, pendant 15 à 30 secondes, une main sur le ventre pour guider le mouvement.",
   "variante_avancee": "Allongez progressivement la durée jusqu'à 2 ou 3 minutes en gardant un rythme rapide, égal et le haut du corps immobile.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Nombril qui rentre et se relâche en rythme",
+   "Inspiration et expiration égales",
+   "Haut du corps immobile"
+  ],
+  "souffle_court": "Rapide et égal par le nez, 30 s à 1 min"
  }
 }

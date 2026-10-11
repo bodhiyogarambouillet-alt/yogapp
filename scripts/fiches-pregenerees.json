@@ -32,7 +32,13 @@
   "sortie": "Terminez par une expiration à gauche, puis posez la main droite sur le genou. Respirez librement par les deux narines quelques instants en observant le calme installé.",
   "variante_facilitee": "Sans les doigts : imaginez simplement le trajet de l'air dans une narine puis dans l'autre, mains posées sur les genoux.",
   "variante_avancee": "Allongez progressivement l'expiration jusqu'à deux fois la durée de l'inspiration ; ajoutez une courte rétention poumons pleins seulement en l'absence d'hypertension et de grossesse.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pouce sur la narine droite, annulaire sur la gauche",
+   "Expirer et inspirer du même côté, puis changer",
+   "Coude bas, épaule relâchée"
+  ],
+  "souffle_court": "Lent et silencieux, sans rétention"
  },
  "P002": {
   "posture": "Ujjayi",
@@ -66,7 +72,13 @@
   "sortie": "Relâchez la gorge et laissez revenir une respiration naturelle et silencieuse. Observez le calme et la chaleur installés.",
   "variante_facilitee": "Pratiquez seulement à l'expiration, l'inspiration restant naturelle.",
   "variante_avancee": "Maintenez Ujjayi pendant toute une séquence dynamique, en coordonnant chaque mouvement avec une inspiration ou une expiration.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Gorge légèrement resserrée, bouche fermée",
+   "Son doux, comme la mer",
+   "Garder ce souffle d'une posture à l'autre"
+  ],
+  "souffle_court": "Inspiration et expiration longues et égales, par le nez"
  },
  "P003": {
   "posture": "Kapalabhati",
@@ -104,7 +116,13 @@
   "sortie": "Après la dernière expiration, inspirez lentement et profondément, puis expirez longuement. Restez assis quelques respirations naturelles en observant les sensations avant une éventuelle deuxième série, deux ou trois séries au maximum.",
   "variante_facilitee": "Pratiquez lentement, une expiration toutes les deux secondes, sur 10 à 15 expirations seulement, une main sur le ventre pour guider le mouvement.",
   "variante_avancee": "Allongez progressivement les séries jusqu'à 50 ou 60 expirations en gardant un rythme parfaitement égal et le haut du corps immobile.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Expiration sèche par le nez, ventre qui rentre",
+   "Inspiration passive, ventre qui se relâche",
+   "Haut du corps immobile"
+  ],
+  "souffle_court": "20 à 30 expirations, environ une par seconde"
  },
  "P004": {
   "posture": "Bhastrika",
@@ -138,7 +156,13 @@
   "sortie": "Après la dernière série, respirez lentement et naturellement. Restez assis les yeux fermés quelques instants avant de passer à la suite.",
   "variante_facilitee": "Pratiquez Kapalabhati ou une respiration abdominale lente à la place.",
   "variante_avancee": "Allongez la série jusqu'à 20 ou 30 respirations en gardant un rythme parfaitement égal.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Inspiration et expiration actives, de même force",
+   "Mouvement dans le ventre, épaules basses",
+   "Arrêter au moindre vertige"
+  ],
+  "souffle_court": "Rapide et égal par le nez, 10 respirations par série"
  },
  "P005": {
   "posture": "Bhramari",
@@ -173,7 +197,13 @@
   "sortie": "Après 5 à 10 cycles, cessez le son et respirez naturellement, les yeux toujours fermés. Restez quelques instants à l'écoute du silence et des vibrations qui persistent avant d'ouvrir les yeux.",
   "variante_facilitee": "Gardez les mains sur les cuisses et faites seulement 3 à 5 bourdonnements, avec des respirations naturelles entre chacun.",
   "variante_avancee": "Shanmukhi mudra : bouchez doucement les oreilles avec les pouces sur le tragus, posez les index sur les paupières fermées et les autres doigts autour du nez et de la bouche, coudes à hauteur des épaules, pour intérioriser complètement le son.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Lèvres fermées, dents desserrées",
+   "Bourdonnement grave et doux",
+   "Sentir la vibration dans le crâne"
+  ],
+  "souffle_court": "Inspirer lentement, bourdonner sur toute l'expiration"
  },
  "P006": {
   "posture": "Sitali / Sitkari",
@@ -208,7 +238,13 @@
   "sortie": "Après le dernier cycle, refermez la bouche et revenez à une respiration nasale naturelle. Restez assis quelques instants en observant la sensation de fraîcheur et de calme.",
   "variante_facilitee": "Faites seulement 4 à 5 cycles, avec une respiration naturelle par le nez entre chacun.",
   "variante_avancee": "Après l'inspiration, gardez les poumons pleins deux ou trois secondes sans forcer, menton légèrement rentré, puis expirez lentement par le nez.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Langue roulée en tube, ou dents serrées",
+   "Inspirer par la bouche, sentir l'air frais",
+   "Expirer par le nez, bouche fermée"
+  ],
+  "souffle_court": "Expiration plus longue que l'inspiration"
  },
  "P007": {
   "posture": "Viloma",
@@ -243,7 +279,13 @@
   "sortie": "Après 5 à 8 cycles, revenez à une respiration naturelle. Restez allongé quelques instants pour observer l'effet sur le corps et l'esprit avant de bouger.",
   "variante_facilitee": "Faites seulement deux paliers à l'inspiration, avec des pauses très courtes, en position allongée.",
   "variante_avancee": "Fractionnez à la fois l'inspiration et l'expiration en trois ou quatre paliers, en gardant les pauses détendues.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Inspirer en trois paliers, pauses de deux secondes",
+   "Gorge ouverte pendant les pauses",
+   "Expirer d'un seul trait"
+  ],
+  "souffle_court": "Respirations naturelles entre deux cycles"
  },
  "P008": {
   "posture": "Sama Vritti",
@@ -277,7 +319,13 @@
   "sortie": "Reprenez un rythme respiratoire spontané et observez les sensations dans le corps.",
   "variante_facilitee": "Réduisez le compte à 2 ou 3 secondes par phase si le rythme de 4 secondes est trop intense.",
   "variante_avancee": "Augmentez progressivement le compte à 6 ou 8 secondes par phase si le souffle est à l'aise.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Inspirer 4, garder 4, expirer 4, garder 4",
+   "Compter régulièrement, sans accélérer",
+   "Pas de pause si grossesse ou hypertension"
+  ],
+  "souffle_court": "Fluide et silencieux, gorge détendue"
  },
  "P009": {
   "posture": "Respiration complète (yogique)",
@@ -313,7 +361,13 @@
   "sortie": "Après 8 à 10 cycles, laissez la respiration redevenir naturelle. Posez les bras le long du corps et observez le calme installé avant de passer à la suite.",
   "variante_facilitee": "Travaillez seulement deux étages, ventre puis côtes, allongé avec les mains posées pour guider le mouvement.",
   "variante_avancee": "Comptez les temps pour une expiration deux fois plus longue que l'inspiration, par exemple 4 temps pour inspirer et 8 pour expirer, sans retenue.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Ventre, puis côtes, puis haut de la poitrine",
+   "Vider dans l'ordre inverse",
+   "Épaules basses en fin d'inspiration"
+  ],
+  "souffle_court": "Comme une vague, expiration un peu plus longue"
  },
  "P010": {
   "posture": "Respiration abdominale",
@@ -348,7 +402,13 @@
   "sortie": "Après quelques minutes, posez les bras le long du corps et laissez la respiration redevenir spontanée. Bougez doucement les doigts et les pieds avant de vous redresser en passant par le côté.",
   "variante_facilitee": "Allongez-vous avec un coussin sous les genoux et un livre léger posé sur le ventre pour voir et sentir le mouvement.",
   "variante_avancee": "En position assise, sans les mains, comptez 4 temps à l'inspiration et 6 à 8 temps à l'expiration.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Une main sur le ventre, une sur la poitrine",
+   "Le ventre se gonfle, la poitrine reste calme",
+   "Ventre souple, sans pousser"
+  ],
+  "souffle_court": "Lent et silencieux, expiration qui s'allonge"
  },
  "P011": {
   "posture": "Expiration active avec remontée du périnée",
@@ -382,7 +442,13 @@
   "sortie": "Après 8 à 10 respirations, relâchez toute action et respirez naturellement. Restez quelques instants dans la position avant de changer.",
   "variante_facilitee": "Allongée sur le côté, un coussin entre les genoux, en ne travaillant que la remontée du périnée.",
   "variante_avancee": "Gardez cette expiration active pendant les postures et les changements de position, notamment pour se relever ou porter.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Expirer en remontant le périnée",
+   "Puis le bas-ventre vers l'intérieur et le haut",
+   "Ne jamais pousser vers le bas"
+  ],
+  "souffle_court": "Inspiration relâchée, expiration lente par la bouche"
  },
  "P012": {
   "posture": "Agni Pran",
@@ -417,7 +483,13 @@
   "sortie": "Pour terminer, inspirez profondément, puis expirez lentement et longuement. Revenez à une respiration naturelle et restez assis quelques instants en observant la chaleur et l'énergie dans le corps.",
   "variante_facilitee": "Pratiquez lentement, une respiration par seconde, pendant 15 à 30 secondes, une main sur le ventre pour guider le mouvement.",
   "variante_avancee": "Allongez progressivement la durée jusqu'à 2 ou 3 minutes en gardant un rythme rapide, égal et le haut du corps immobile.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Nombril qui rentre et se relâche en rythme",
+   "Inspiration et expiration égales",
+   "Haut du corps immobile"
+  ],
+  "souffle_court": "Rapide et égal par le nez, 30 s à 1 min"
  },
  "P013": {
   "posture": "Sukhasana",
@@ -451,7 +523,13 @@
   "sortie": "Décroisez les jambes et allongez-les devant vous. Secouez doucement les jambes ou massez les genoux avant de poursuivre.",
   "variante_facilitee": "Assis sur une chaise, pieds à plat, ou sur un coussin haut avec des appuis sous les genoux.",
   "variante_avancee": "Sans coussin, en gardant le bassin droit et la colonne longue pendant plusieurs minutes de méditation.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux plus bas que les hanches, coussin si besoin",
+   "Assis sur les ischions, colonne longue",
+   "Épaules et visage relâchés"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour relâcher"
  },
  "P014": {
   "posture": "Tailleur dos au mur, auto-grandissement",
@@ -485,7 +563,13 @@
   "sortie": "Relâchez l'action, décroisez les jambes et allongez-les. Restez quelques instants contre le mur avant de vous lever par le côté.",
   "variante_facilitee": "Sur une chaise, le dos contre le dossier, pieds à plat.",
   "variante_avancee": "Ajoutez une ouverture des bras vers le haut à l'expiration, paumes face à face, en gardant le bas du dos stable.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bassin et dos près du mur",
+   "À l'expiration, le sommet du crâne monte",
+   "Menton rentré, nuque longue"
+  ],
+  "souffle_court": "Expirer en remontant le périnée et en se grandissant"
  },
  "P015": {
   "posture": "Siddhasana",
@@ -518,7 +602,13 @@
   "sortie": "Défaites la jambe du dessus, puis celle du dessous, et allongez les jambes. Bougez doucement les chevilles et les genoux.",
   "variante_facilitee": "Sukhasana, le tailleur simple, sur un coussin.",
   "variante_avancee": "Sans coussin, en tenant la posture plusieurs minutes avec le dos parfaitement droit.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Talon contre le périnée, l'autre devant",
+   "Genoux plus bas que les hanches",
+   "Colonne verticale"
+  ],
+  "souffle_court": "Lent et naturel par le nez"
  },
  "P016": {
   "posture": "Ardha Padmasana",
@@ -552,7 +642,13 @@
   "sortie": "Prenez le pied du dessus à deux mains et reposez-le doucement au sol. Allongez les jambes et bougez les genoux avant de changer de côté.",
   "variante_facilitee": "Pied posé sur le mollet opposé plutôt que sur la cuisse, ou tailleur simple.",
   "variante_avancee": "Padmasana, le lotus complet, si les deux demi-lotus sont confortables.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "La cuisse tourne depuis la hanche",
+   "Pied fléchi près du pli de l'aine",
+   "Aucune douleur au genou"
+  ],
+  "souffle_court": "Expirer pour relâcher la hanche"
  },
  "P017": {
   "posture": "Padmasana",
@@ -586,7 +682,13 @@
   "sortie": "Dégagez d'abord le pied du dessus avec les mains, puis l'autre. Allongez les jambes et faites quelques mouvements de chevilles et de genoux.",
   "variante_facilitee": "Ardha Padmasana, le demi-lotus, ou Siddhasana.",
   "variante_avancee": "Tenir plusieurs minutes de méditation, en alternant la jambe du dessus d'une séance à l'autre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Seulement si le demi-lotus est confortable",
+   "Pieds fléchis sur les cuisses",
+   "Sortir au moindre tiraillement du genou"
+  ],
+  "souffle_court": "Lent et silencieux"
  },
  "P018": {
   "posture": "Vajrasana",
@@ -619,7 +721,13 @@
   "sortie": "Penchez-vous en avant, mains au sol, et soulevez les fesses. Passez à quatre pattes puis étirez les jambes l'une après l'autre.",
   "variante_facilitee": "Bloc ou coussin épais entre les pieds pour s'asseoir plus haut.",
   "variante_avancee": "Sans coussin, en tenant plusieurs minutes de respiration.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis sur les talons, genoux joints",
+   "Coussin entre fesses et talons si besoin",
+   "Dos long, épaules basses"
+  ],
+  "souffle_court": "Naturel et régulier"
  },
  "P019": {
   "posture": "Virasana",
@@ -653,7 +761,13 @@
   "sortie": "Penchez-vous en avant, mains au sol, et soulevez les fesses. Passez à quatre pattes et étirez une jambe après l'autre vers l'arrière.",
   "variante_facilitee": "Vajrasana, assis sur les talons, avec un coussin.",
   "variante_avancee": "Sans brique, puis inclinaison du buste vers l'arrière sur les avant-bras (Supta Virasana).",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis sur une brique entre les pieds",
+   "Pieds dans l'axe des tibias",
+   "Étirement dans les cuisses, jamais dans le genou"
+  ],
+  "souffle_court": "Expirer pour relâcher l'avant des cuisses"
  },
  "P020": {
   "posture": "Dandasana",
@@ -686,7 +800,13 @@
   "sortie": "Relâchez les pieds et les mains, secouez doucement les jambes. Enchaînez avec une flexion avant ou une torsion assise.",
   "variante_facilitee": "Assis sur une couverture pliée, genoux légèrement fléchis.",
   "variante_avancee": "Soulevez légèrement les mains du sol en gardant la colonne droite.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis sur l'avant des ischions",
+   "Pieds fléchis, cuisses actives",
+   "Mains qui poussent, épaules basses"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour engager le ventre"
  },
  "P021": {
   "posture": "Assise sur chaise",
@@ -719,7 +839,13 @@
   "sortie": "Posez les mains sur les cuisses, avancez légèrement le buste et poussez dans les pieds pour vous lever.",
   "variante_facilitee": "Assis au fond de la chaise, le dos soutenu par le dossier et un coussin.",
   "variante_avancee": "Tenir plusieurs minutes de méditation sans dossier, colonne longue.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Sur l'avant de la chaise, pieds à plat",
+   "Bassin droit, colonne longue",
+   "Épaules relâchées"
+  ],
+  "souffle_court": "Calme et régulier"
  },
  "P022": {
   "posture": "Assise sur ballon, cercles du bassin",
@@ -752,7 +878,13 @@
   "sortie": "Arrêtez progressivement les cercles et revenez au centre. Posez les mains sur les cuisses et levez-vous en poussant dans les pieds.",
   "variante_facilitee": "Ballon calé contre un mur ou à côté d'une chaise pour se tenir.",
   "variante_avancee": "Dessinez des huit avec le bassin, ou ajoutez de petits rebonds doux.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds larges et bien ancrés",
+   "Petits cercles du bassin",
+   "Changer de sens à mi-temps"
+  ],
+  "souffle_court": "Expirer sur une moitié du cercle, inspirer sur l'autre"
  },
  "P023": {
   "posture": "Bras tendus en V (Ego Eradicator)",
@@ -785,7 +917,13 @@
   "sortie": "Inspirez profondément en rapprochant les bras jusqu'à faire toucher les pouces au-dessus de la tête. Expirez lentement en abaissant les bras sur les côtés, puis restez quelques instants à observer.",
   "variante_facilitee": "Bras moins hauts et respiration longue et lente.",
   "variante_avancee": "Tenir trois minutes en respiration de feu, bras parfaitement tendus.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras tendus en V, pouces vers le ciel",
+   "Épaules basses",
+   "Finir pouces joints au-dessus de la tête"
+  ],
+  "souffle_court": "Respiration de feu, ou souffle long si contre-indication"
  },
  "P024": {
   "posture": "Marjaryasana-Bitilasana",
@@ -818,7 +956,13 @@
   "sortie": "Revenez au dos plat, puis asseyez-vous sur les talons ou passez en posture de l'enfant.",
   "variante_facilitee": "Sur une chaise : mains sur les cuisses, alternez dos rond et poitrine ouverte.",
   "variante_avancee": "Ajoutez des cercles du buste à quatre pattes, ou soulevez un genou en arrondissant le dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains sous les épaules, genoux sous les hanches",
+   "Le mouvement part du bassin",
+   "Petite amplitude en cas de grossesse"
+  ],
+  "souffle_court": "Inspirer dos creux, expirer dos rond"
  },
  "P025": {
   "posture": "Chat-vache sur chaise",
@@ -851,7 +995,13 @@
   "sortie": "Revenez au dos droit et respirez quelques instants calmement.",
   "variante_facilitee": "Petite amplitude, dos contre le dossier en fin de mouvement si besoin.",
   "variante_avancee": "Ajoutez des cercles du buste assis dans les deux sens.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis à l'avant, pieds à plat",
+   "Le bassin roule sur les ischions",
+   "Mains posées, sans tirer"
+  ],
+  "souffle_court": "Inspirer en ouvrant, expirer en arrondissant"
  },
  "P026": {
   "posture": "Posture à 4 pattes, bascule du bassin à l'expiration",
@@ -884,7 +1034,13 @@
   "sortie": "Revenez au dos plat, puis asseyez-vous sur les talons, genoux écartés si le ventre est présent.",
   "variante_facilitee": "Avant-bras posés sur un coussin ou un ballon pour soulager les poignets.",
   "variante_avancee": "Enchaînez avec le chien-oiseau en gardant la même expiration active.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Partir du dos plat",
+   "Expirer : périnée qui remonte, bassin qui s'enroule",
+   "Revenir au dos plat sans creuser"
+  ],
+  "souffle_court": "Inspiration passive, expiration lente par la bouche"
  },
  "P027": {
   "posture": "Bascule du bassin allongée",
@@ -917,7 +1073,13 @@
   "sortie": "Ramenez les genoux vers la poitrine et bercez-vous doucement. Roulez sur le côté pour vous relever.",
   "variante_facilitee": "Coussin sous la tête et petite amplitude.",
   "variante_avancee": "Prolongez par un pont en déroulant la colonne vertèbre par vertèbre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds au sol, genoux dans l'axe",
+   "Expirer : périnée qui remonte, bas du dos qui se pose",
+   "Fessiers relâchés"
+  ],
+  "souffle_court": "Inspiration passive, expiration lente"
  },
  "P028": {
   "posture": "Rotations du cou et des épaules",
@@ -951,7 +1113,13 @@
   "sortie": "Revenez tête droite, épaules relâchées, et prenez quelques respirations en observant la nuque.",
   "variante_facilitee": "Seulement des haussements d'épaules et des inclinaisons latérales de la tête.",
   "variante_avancee": "Ajoutez des rotations de la tête à droite et à gauche, regard à l'horizontale, en tenant 3 respirations de chaque côté.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Cercles d'épaules vers l'arrière puis l'avant",
+   "Tête en demi-cercles par l'avant",
+   "Jamais la tête en arrière"
+  ],
+  "souffle_court": "Expirer dans les mouvements vers l'avant"
  },
  "P029": {
   "posture": "Pawanmuktasana (série)",
@@ -985,7 +1153,13 @@
   "sortie": "Relâchez les jambes et les bras, secouez doucement et observez les sensations dans les articulations.",
   "variante_facilitee": "Sur une chaise, en ne gardant que les pieds, les mains et les épaules.",
   "variante_avancee": "Ajoutez les rotations de hanches allongé, genoux vers la poitrine.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Une articulation à la fois",
+   "Mouvements lents et complets",
+   "Dos long, mains en appui derrière"
+  ],
+  "souffle_court": "Un mouvement par respiration"
  },
  "P030": {
   "posture": "Flexions de colonne assise",
@@ -1018,7 +1192,13 @@
   "sortie": "Ralentissez jusqu'à l'arrêt, colonne droite, et respirez quelques instants calmement.",
   "variante_facilitee": "Sur une chaise, mains sur les genoux, mouvement lent.",
   "variante_avancee": "Rythme rapide pendant 1 à 3 minutes, puis rétention douce poumons pleins en l'absence de contre-indication.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains sur les chevilles",
+   "Poitrine en avant, puis dos rond",
+   "Tête stable"
+  ],
+  "souffle_court": "Inspirer en avançant, expirer en arrondissant"
  },
  "P031": {
   "posture": "Rotations du buste assis",
@@ -1051,7 +1231,13 @@
   "sortie": "Revenez au centre, posez les mains sur les genoux et respirez calmement.",
   "variante_facilitee": "Petite amplitude, mains sur les genoux.",
   "variante_avancee": "Tenez 3 respirations en fin de rotation de chaque côté, en vous grandissant à chaque inspiration.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bassin immobile, face à l'avant",
+   "Tourner depuis le milieu du dos",
+   "Se grandir avant chaque rotation"
+  ],
+  "souffle_court": "Une respiration par côté"
  },
  "P032": {
   "posture": "Haussements d'épaules rythmés",
@@ -1084,7 +1270,13 @@
   "sortie": "Gardez les épaules basses, immobiles, et respirez quelques instants en observant la détente.",
   "variante_facilitee": "Mouvement lent, une épaule à la fois.",
   "variante_avancee": "Rythme rapide pendant 1 à 2 minutes, puis maintien des épaules en haut sur une inspiration avant de relâcher.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Épaules vers les oreilles",
+   "Relâcher complètement vers le bas",
+   "Tête droite, visage détendu"
+  ],
+  "souffle_court": "Inspirer en montant, expirer en relâchant"
  },
  "P033": {
   "posture": "Sat Kriya",
@@ -1118,7 +1310,13 @@
   "sortie": "Inspirez, retenez légèrement en contractant doucement le périnée et le ventre, puis expirez. Relâchez les bras et allongez-vous sur le dos pour une relaxation au moins aussi longue que l'exercice.",
   "variante_facilitee": "Pratique très courte, une minute, avec un coussin entre les fesses et les talons.",
   "variante_avancee": "Allongez progressivement jusqu'à 11 minutes, toujours suivies d'une relaxation équivalente.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras tendus, index vers le ciel",
+   "« Sat » : nombril qui rentre ; « Nam » : relâché",
+   "Dos immobile"
+  ],
+  "souffle_court": "Le souffle suit le chant, puis longue relaxation"
  },
  "P034": {
   "posture": "Étirement latéral assis",
@@ -1151,7 +1349,13 @@
   "sortie": "Inspirez en remontant au centre, bras levé, puis expirez en le relâchant. Changez de côté.",
   "variante_facilitee": "Main posée sur la tête plutôt que bras tendu.",
   "variante_avancee": "Saisissez le poignet du bras levé avec l'autre main pour accentuer l'étirement.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Les deux ischions restent posés",
+   "S'allonger avant de s'incliner",
+   "Poitrine ouverte vers l'avant"
+  ],
+  "souffle_court": "Inspirer dans le flanc étiré"
  },
  "P035": {
   "posture": "Étirement en suspension (auto-grandissement)",
@@ -1184,7 +1388,13 @@
   "sortie": "Remontez doucement en poussant dans les pieds, puis lâchez la barre. Restez debout quelques instants avant de bouger.",
   "variante_facilitee": "Mains posées plus bas sur l'espalier, genoux plus pliés.",
   "variante_avancee": "Inclinez légèrement le bassin d'un côté puis de l'autre pour étirer les flancs.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds toujours au sol",
+   "Laisser le poids étirer le dos",
+   "Épaules et nuque relâchées"
+  ],
+  "souffle_court": "Expirer en remontant le périnée"
  },
  "P036": {
   "posture": "Livre ouvert (rotation thoracique couchée)",
@@ -1218,7 +1428,13 @@
   "sortie": "Ramenez le bras sur l'autre, restez quelques instants sur le côté, puis passez sur l'autre côté.",
   "variante_facilitee": "Ouverture partielle, main posée sur un coussin derrière vous.",
   "variante_avancee": "Dessinez un grand cercle avec le bras par-dessus la tête avant de revenir.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux empilés, tête sur un coussin",
+   "Ouvrir le bras comme une page",
+   "Le regard suit la main"
+  ],
+  "souffle_court": "Inspirer en levant, expirer en ouvrant"
  },
  "P037": {
   "posture": "Supta Padangusthasana",
@@ -1251,7 +1467,13 @@
   "sortie": "Pliez le genou, retirez la sangle et posez le pied au sol. Allongez la jambe et observez la différence avant de changer de côté.",
   "variante_facilitee": "Genou légèrement plié et autre jambe pliée, pied au sol.",
   "variante_avancee": "Ouvrez la jambe sur le côté en gardant le bassin au sol, puis ramenez-la au centre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Sangle sous le pied, jambe vers le ciel",
+   "Bassin et épaules au sol",
+   "Étirement dans la cuisse, pas derrière le genou"
+  ],
+  "souffle_court": "Expirer pour relâcher l'arrière de la cuisse"
  },
  "P038": {
   "posture": "Anjaneyasana",
@@ -1285,7 +1507,13 @@
   "sortie": "Posez les mains au sol de chaque côté du pied avant, reculez-le et revenez à quatre pattes ou en chien tête en bas. Changez de côté.",
   "variante_facilitee": "Mains sur des briques de chaque côté du pied avant, buste incliné.",
   "variante_avancee": "Bras levés et légère extension du haut du dos, ou saisir le pied arrière avec la main du même côté.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant au-dessus de la cheville",
+   "Bassin qui avance et descend",
+   "Bas-ventre engagé, sans creuser"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour descendre"
  },
  "P039": {
   "posture": "Ardha Hanumanasana",
@@ -1318,7 +1546,13 @@
   "sortie": "Pliez le genou avant, revenez en fente basse, puis à quatre pattes. Changez de côté.",
   "variante_facilitee": "Genou avant légèrement plié et briques à leur hauteur maximale.",
   "variante_avancee": "Glissez progressivement le talon vers l'avant en direction du grand écart, avec une brique sous la cuisse.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Hanche arrière au-dessus du genou",
+   "Pied avant fléchi, briques sous les mains",
+   "Dos long, flexion depuis les hanches"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour avancer"
  },
  "P040": {
   "posture": "Utthan Pristhasana",
@@ -1351,7 +1585,13 @@
   "sortie": "Remontez sur les mains, reculez le pied avant et passez en chien tête en bas, sa contre-posture. Changez de côté.",
   "variante_facilitee": "Mains sur des briques hautes, genou arrière au sol.",
   "variante_avancee": "Genou arrière décollé, jambe arrière tendue, avant-bras au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied avant à l'extérieur des mains",
+   "Genou dans l'axe des orteils",
+   "Mains ou briques, avant-bras si confortable"
+  ],
+  "souffle_court": "Expirer pour relâcher les hanches"
  },
  "P041": {
   "posture": "Malasana",
@@ -1385,7 +1625,13 @@
   "sortie": "Posez les mains au sol devant vous, tendez les jambes et passez en pince debout, sa contre-posture. Déroulez lentement pour vous redresser.",
   "variante_facilitee": "Assis sur une brique haute, ou dos contre un mur.",
   "variante_avancee": "Pieds joints, ou bras qui enroulent les tibias, mains derrière le dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds écartés, genoux dans l'axe",
+   "Brique sous les fesses ou les talons",
+   "Coudes qui ouvrent les genoux, poitrine haute"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour relâcher"
  },
  "P042": {
   "posture": "Accroupi soutenu (préparation à l'accouchement)",
@@ -1418,7 +1664,13 @@
   "sortie": "Tenez la chaise, poussez dans les pieds et remontez lentement. Restez debout quelques instants avant de bouger.",
   "variante_facilitee": "Briques plus hautes, ou assise sur une chaise basse, genoux écartés.",
   "variante_avancee": "Briques plus basses, en gardant toujours l'appui de la chaise.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Chaise devant, briques sous les fesses",
+   "Genoux dans l'axe des pieds",
+   "Ne jamais pousser vers le bas"
+  ],
+  "souffle_court": "Expiration longue, périnée qui remonte"
  },
  "P043": {
   "posture": "Chien-oiseau (à 4 pattes, bras et jambe opposés)",
@@ -1451,7 +1703,13 @@
   "sortie": "Ramenez le genou et la main au sol, revenez au dos plat et changez de côté. Terminez en posture de l'enfant.",
   "variante_facilitee": "Tendre seulement la jambe, ou seulement le bras.",
   "variante_avancee": "Ramenez coude et genou sous le ventre à l'expiration, puis retendez à l'inspiration, plusieurs fois.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras et jambe opposés tendus",
+   "Bassin horizontal, dos plat",
+   "Pied à hauteur de hanche"
+  ],
+  "souffle_court": "Expirer en tendant, bas-ventre qui remonte"
  },
  "P044": {
   "posture": "Surya Namaskar A",
@@ -1485,7 +1743,13 @@
   "sortie": "Après la dernière salutation, restez en montagne quelques respirations, mains jointes devant la poitrine. Vous pouvez aussi passer en posture de l'enfant.",
   "variante_facilitee": "Genoux au sol pour la planche et la descente, cobra bas plutôt que chien tête en haut.",
   "variante_avancee": "Sauter vers l'arrière en chaturanga et vers l'avant entre les mains.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Un mouvement, une respiration",
+   "Genoux au sol si les épaules plongent",
+   "Genoux fléchis en flexion avant si besoin"
+  ],
+  "souffle_court": "Inspirer pour monter, expirer pour descendre"
  },
  "P045": {
   "posture": "Surya Namaskar B",
@@ -1520,7 +1784,13 @@
   "sortie": "Après la dernière salutation, revenez en montagne et laissez la respiration se calmer avant la suite, ou passez en posture de l'enfant.",
   "variante_facilitee": "Genoux au sol pour la planche, guerrier I avec le genou arrière au sol.",
   "variante_avancee": "Sauts vers l'arrière et vers l'avant, chaise plus basse.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Chaise : fesses en arrière, poids dans les talons",
+   "Guerrier I : genou au-dessus de la cheville",
+   "Ralentir si le souffle se perd"
+  ],
+  "souffle_court": "Ujjayi régulier, un mouvement par respiration"
  },
  "P046": {
   "posture": "Surya Namaskar (Sivananda)",
@@ -1555,7 +1825,13 @@
   "sortie": "Terminez debout, mains jointes devant la poitrine, puis allongez-vous quelques instants sur le dos.",
   "variante_facilitee": "Genoux au sol pour la planche et ouverture du haut du corps limitée.",
   "variante_avancee": "Enchaîner 12 tours au rythme du souffle.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Douze positions, des deux côtés",
+   "Fente : genou au-dessus de la cheville",
+   "Huit points : genoux puis poitrine au sol"
+  ],
+  "souffle_court": "Inspirer dans les ouvertures, expirer dans les flexions"
  },
  "P047": {
   "posture": "Chandra Namaskar",
@@ -1589,7 +1865,13 @@
   "sortie": "Revenez debout, pieds joints, mains devant la poitrine, et respirez quelques instants.",
   "variante_facilitee": "Sans fente latérale profonde ; mains sur les cuisses dans les inclinaisons.",
   "variante_avancee": "Ajoutez une fente basse et une planche avec cobra au centre, hors grossesse.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Enchaînement latéral, lent",
+   "Genoux dans l'axe en déesse",
+   "Sans planche ni cobra si grossesse"
+  ],
+  "souffle_court": "Une position par respiration"
  },
  "P048": {
   "posture": "Salutation au soleil sur chaise",
@@ -1623,7 +1905,13 @@
   "sortie": "Revenez assis droit, mains sur les cuisses, et respirez calmement.",
   "variante_facilitee": "Sans la flexion avant complète, mains sur les cuisses.",
   "variante_avancee": "Ajoutez une fente debout, une main sur le dossier de la chaise.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Chaise stable, pieds à plat",
+   "Flexion depuis les hanches",
+   "Genou à la poitrine, un côté puis l'autre"
+  ],
+  "souffle_court": "Inspirer pour ouvrir, expirer pour plier"
  },
  "P049": {
   "posture": "Vinyasa",
@@ -1656,7 +1944,13 @@
   "sortie": "Restez en chien tête en bas quelques respirations, ou posez les genoux et passez en posture de l'enfant.",
   "variante_facilitee": "Genoux au sol pour la planche et la descente, cobra bas à la place du chien tête en haut.",
   "variante_avancee": "Flotter vers l'arrière en chaturanga depuis la flexion avant.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Planche : épaules au-dessus des poignets",
+   "Chaturanga : coudes le long des côtes",
+   "Genoux au sol plutôt que s'effondrer"
+  ],
+  "souffle_court": "Inspirer en planche et en ouverture, expirer en descente"
  },
  "P050": {
   "posture": "Tadasana / Samasthiti",
@@ -1690,7 +1984,13 @@
   "sortie": "Relâchez simplement la posture ou enchaînez avec la posture debout suivante.",
   "variante_facilitee": "Pieds écartés de la largeur du bassin, dos contre un mur pour sentir l'alignement.",
   "variante_avancee": "Yeux fermés, pour affiner l'équilibre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Poids réparti sur toute la plante des pieds",
+   "Bassin neutre, genoux souples",
+   "Épaules basses, sommet du crâne vers le ciel"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour ancrer"
  },
  "P051": {
   "posture": "Urdhva Hastasana",
@@ -1723,7 +2023,13 @@
   "sortie": "Expirez en abaissant les bras sur les côtés, ou enchaînez avec la pince debout.",
   "variante_facilitee": "Bras en V largement écartés, ou mains sur les épaules, coudes vers le ciel.",
   "variante_avancee": "Paumes jointes, légère ouverture du haut du dos vers l'arrière sans creuser les lombaires.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras dans le prolongement des oreilles",
+   "Côtes basses, sans cambrer",
+   "Épaules qui descendent"
+  ],
+  "souffle_court": "Inspirer en levant les bras"
  },
  "P052": {
   "posture": "Uttanasana",
@@ -1756,7 +2062,13 @@
   "sortie": "Pliez les genoux, posez les mains sur les cuisses et déroulez lentement le dos, la tête en dernier. Ou remontez dos plat, bras levés.",
   "variante_facilitee": "Genoux bien fléchis, ventre sur les cuisses, mains aux coudes opposés.",
   "variante_avancee": "Jambes tendues, mains à plat au sol derrière les talons.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Plier depuis les hanches, genoux souples",
+   "Tête et nuque relâchées",
+   "Remonter lentement"
+  ],
+  "souffle_court": "Expirer pour descendre et relâcher"
  },
  "P053": {
   "posture": "Ardha Uttanasana",
@@ -1789,7 +2101,13 @@
   "sortie": "Expirez en revenant en pince debout, ou posez les mains pour reculer en planche.",
   "variante_facilitee": "Mains sur les cuisses, genoux fléchis.",
   "variante_avancee": "Bras tendus vers l'avant dans le prolongement du dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Dos plat à l'horizontale",
+   "Mains sur les tibias, genoux pliés si besoin",
+   "Regard vers le sol"
+  ],
+  "souffle_court": "Inspirer pour allonger le dos"
  },
  "P054": {
   "posture": "Padangusthasana",
@@ -1822,7 +2140,13 @@
   "sortie": "Inspirez en allongeant le dos, lâchez les orteils, mains aux hanches, et remontez dos plat. Enchaînez avec la table inversée, sa contre-posture.",
   "variante_facilitee": "Mains sur les tibias ou une sangle autour des pieds.",
   "variante_avancee": "Jambes tendues, tête vers les tibias, en gardant le dos long.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Index et majeur autour des gros orteils",
+   "Coudes qui s'ouvrent sur les côtés",
+   "Allonger le dos plutôt que tirer"
+  ],
+  "souffle_court": "Inspirer dos long, expirer pour descendre"
  },
  "P055": {
   "posture": "Padahastasana",
@@ -1855,7 +2179,13 @@
   "sortie": "Inspirez en allongeant le dos, retirez les mains, posez-les sur les hanches et remontez dos plat. Enchaînez avec la table inversée.",
   "variante_facilitee": "Mains sur les tibias, genoux fléchis.",
   "variante_avancee": "Jambes tendues, front vers les tibias.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains sous les pieds, orteils aux poignets",
+   "Coudes ouverts, nuque relâchée",
+   "Moins loin si les poignets protestent"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour approfondir"
  },
  "P056": {
   "posture": "Utkatasana",
@@ -1888,7 +2218,13 @@
   "sortie": "Inspirez en tendant les jambes, bras levés ; expirez en revenant en montagne ou en pince debout, sa contre-posture.",
   "variante_facilitee": "Mains sur les cuisses et petite flexion des genoux, ou dos contre un mur.",
   "variante_avancee": "Descendre jusqu'à des cuisses presque horizontales, ou monter sur la pointe des pieds.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Fesses en arrière, poids dans les talons",
+   "Genoux derrière les orteils",
+   "Bas-ventre engagé, épaules basses"
+  ],
+  "souffle_court": "Expirer pour descendre, respirer régulièrement"
  },
  "P057": {
   "posture": "Parivrtta Utkatasana",
@@ -1921,7 +2257,13 @@
   "sortie": "Inspirez en revenant au centre, puis expirez en tendant les jambes. Faites l'autre côté, puis ramenez les genoux à la poitrine allongé.",
   "variante_facilitee": "Main sur la cuisse opposée, sans accrocher le genou.",
   "variante_avancee": "Bras ouverts, une main au sol à l'extérieur du pied et l'autre vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux alignés, fesses en arrière",
+   "Coude à l'extérieur du genou",
+   "Tourner depuis le milieu du dos"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour tourner"
  },
  "P058": {
   "posture": "Utkata Konasana",
@@ -1954,7 +2296,13 @@
   "sortie": "Inspirez en tendant les jambes, ramenez les pieds et revenez en montagne.",
   "variante_facilitee": "Flexion légère, mains sur les cuisses.",
   "variante_avancee": "Talons décollés, ou flexions et extensions rythmées.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds larges, pointes ouvertes",
+   "Genoux dans l'axe des orteils",
+   "Buste au-dessus du bassin"
+  ],
+  "souffle_court": "Expirer pour descendre"
  },
  "P059": {
   "posture": "Virabhadrasana I",
@@ -1987,7 +2335,13 @@
   "sortie": "Expirez en posant les mains au sol ou en ramenant le pied arrière en montagne. Passez par la pince debout et changez de côté.",
   "variante_facilitee": "Pas plus court, mains sur les hanches.",
   "variante_avancee": "Paumes jointes et légère ouverture du haut du dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant au-dessus de la cheville",
+   "Pieds écartés comme sur des rails",
+   "Bassin vers l'avant, coccyx vers le sol"
+  ],
+  "souffle_court": "Inspirer bras levés, expirer pour descendre"
  },
  "P060": {
   "posture": "Virabhadrasana II",
@@ -2021,7 +2375,13 @@
   "sortie": "Inspirez en tendant la jambe avant, tournez les pieds vers l'avant et changez de côté.",
   "variante_facilitee": "Mains sur les hanches et flexion moins profonde.",
   "variante_avancee": "Descendre jusqu'à une cuisse avant parallèle au sol et tenir plus longtemps.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant dans l'axe du pied",
+   "Buste vertical au-dessus du bassin",
+   "Bras longs, épaules basses"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P061": {
   "posture": "Viparita Virabhadrasana",
@@ -2054,7 +2414,13 @@
   "sortie": "Expirez en revenant en guerrier II, puis changez de côté.",
   "variante_facilitee": "Inclinaison légère, main sur la hanche.",
   "variante_avancee": "Passez le bras arrière dans le dos pour saisir la cuisse avant.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant toujours plié",
+   "Bras levé, flanc étiré",
+   "Main arrière légère sur la jambe"
+  ],
+  "souffle_court": "Inspirer en s'inclinant, respirer dans les côtes"
  },
  "P062": {
   "posture": "Baddha Virabhadrasana",
@@ -2087,7 +2453,13 @@
   "sortie": "Inspirez en remontant lentement en guerrier I, relâchez les mains, puis changez de côté. Terminez par la pince debout.",
   "variante_facilitee": "Sangle entre les mains et inclinaison légère.",
   "variante_avancee": "Bras qui descendent vers le sol par-dessus la tête.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains liées dans le dos",
+   "Épaule à l'intérieur du genou avant",
+   "Peu de temps si hypertension"
+  ],
+  "souffle_court": "Inspirer pour ouvrir, expirer pour plonger"
  },
  "P063": {
   "posture": "Virabhadrasana III",
@@ -2120,7 +2492,13 @@
   "sortie": "Expirez en reposant le pied arrière au sol en fente haute, ou en ramenant les pieds joints. Passez par la pince debout et changez de côté.",
   "variante_facilitee": "Mains sur des briques ou sur le dossier d'une chaise, jambe arrière plus basse.",
   "variante_avancee": "Bras tendus vers l'avant, paumes face à face.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bassin horizontal, hanches vers le sol",
+   "Ligne de la tête au talon arrière",
+   "Briques sous les mains si besoin"
+  ],
+  "souffle_court": "Expirer pour basculer, respirer calmement"
  },
  "P064": {
   "posture": "Ashta Chandrasana",
@@ -2153,7 +2531,13 @@
   "sortie": "Expirez en posant les mains de chaque côté du pied avant, reculez en planche ou avancez en pince debout. Changez de côté.",
   "variante_facilitee": "Genou arrière au sol (fente basse) ou mains sur les hanches.",
   "variante_avancee": "Enchaîner vers le guerrier III.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant au-dessus de la cheville",
+   "Talon arrière qui pousse en arrière",
+   "Ventre engagé, sans creuser"
+  ],
+  "souffle_court": "Inspirer bras levés, respirer calmement"
  },
  "P065": {
   "posture": "Parivrtta Anjaneyasana",
@@ -2186,7 +2570,13 @@
   "sortie": "Expirez en reposant la main levée au sol, reculez le pied avant et revenez à quatre pattes. Changez de côté, puis ramenez les genoux à la poitrine allongé.",
   "variante_facilitee": "Main sur la cuisse avant plutôt que bras levé.",
   "variante_avancee": "Genou arrière décollé, coude à l'extérieur du genou avant, mains jointes.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Main sur une brique à l'intérieur du pied",
+   "Bassin stable, face à l'avant",
+   "Tourner depuis le milieu du dos"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P066": {
   "posture": "Skandasana",
@@ -2219,7 +2609,13 @@
   "sortie": "Remontez au centre en poussant dans les pieds, revenez jambes écartées, puis ramenez les genoux à la poitrine allongé.",
   "variante_facilitee": "Petite flexion, mains sur des briques hautes.",
   "variante_avancee": "Mains jointes devant la poitrine, sans appui.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou plié dans l'axe du pied",
+   "Jambe tendue, orteils vers le ciel",
+   "Mains ou briques en appui"
+  ],
+  "souffle_court": "Expirer pour descendre"
  },
  "P067": {
   "posture": "Utthita Trikonasana",
@@ -2252,7 +2648,13 @@
   "sortie": "Inspirez en remontant, bras ouverts, en poussant dans les pieds. Tournez les pieds et changez de côté.",
   "variante_facilitee": "Main sur une brique haute ou sur la cuisse, dos contre un mur.",
   "variante_avancee": "Bras du dessus tendu par-dessus l'oreille, dans le prolongement du buste.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambes tendues, genoux souples",
+   "S'allonger avant de descendre",
+   "Bassin et épaules dans un même plan"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour ouvrir"
  },
  "P068": {
   "posture": "Parivrtta Trikonasana",
@@ -2285,7 +2687,13 @@
   "sortie": "Expirez en reposant la main levée, inspirez en remontant dos plat. Revenez en montagne, passez par la pince debout et changez de côté.",
   "variante_facilitee": "Main à l'intérieur du pied sur une brique haute, autre main sur la hanche.",
   "variante_avancee": "Main au sol à l'extérieur du pied avant.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds écartés de la largeur du bassin",
+   "Main sur une brique, dos long",
+   "Hanches au même niveau"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P069": {
   "posture": "Utthita Parsvakonasana",
@@ -2318,7 +2726,13 @@
   "sortie": "Inspirez en remontant en guerrier II, puis changez de côté.",
   "variante_facilitee": "Avant-bras sur la cuisse, main du dessus sur la hanche.",
   "variante_avancee": "Bras du dessous passé sous la cuisse et mains liées dans le dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant au-dessus de la cheville",
+   "Ligne du talon arrière aux doigts",
+   "Avant-bras léger sur la cuisse"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour ouvrir"
  },
  "P070": {
   "posture": "Parivrtta Parsvakonasana",
@@ -2351,7 +2765,13 @@
   "sortie": "Revenez au centre, posez les mains au sol et reculez en chien tête en bas. Changez de côté, puis ramenez les genoux à la poitrine allongé.",
   "variante_facilitee": "Genou arrière au sol, mains jointes.",
   "variante_avancee": "Main au sol à l'extérieur du pied, bras du dessus tendu par-dessus l'oreille.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coude à l'extérieur du genou avant",
+   "Genou arrière au sol si besoin",
+   "Tourner depuis le milieu du dos"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P071": {
   "posture": "Prasarita Padottanasana",
@@ -2384,7 +2804,13 @@
   "sortie": "Posez les mains sur les hanches, inspirez et remontez dos plat en poussant dans les pieds. Rapprochez les pieds en montagne.",
   "variante_facilitee": "Mains sur des briques, dos à l'horizontale.",
   "variante_avancee": "Mains liées dans le dos, bras vers le sol par-dessus la tête.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds larges et parallèles",
+   "Plier depuis les hanches, mains au sol",
+   "Peu de temps tête en bas si grossesse"
+  ],
+  "souffle_court": "Expirer pour descendre"
  },
  "P072": {
   "posture": "Parsvottanasana",
@@ -2417,7 +2843,13 @@
   "sortie": "Inspirez en remontant dos plat, mains sur les hanches. Ramenez le pied arrière, changez de côté, puis faites la table inversée.",
   "variante_facilitee": "Genou avant légèrement plié et mains sur des briques hautes.",
   "variante_avancee": "Mains en prière inversée dans le dos, ou coudes tenus.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds décalés, largeur du bassin",
+   "Hanches face à l'avant",
+   "Dos long, briques sous les mains"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour avancer"
  },
  "P073": {
   "posture": "Ardha Chandrasana",
@@ -2450,7 +2882,13 @@
   "sortie": "Pliez le genou d'appui, reposez le pied levé en arrière et revenez en triangle ou en fente. Changez de côté.",
   "variante_facilitee": "Dos contre un mur et brique haute.",
   "variante_avancee": "Saisir le pied levé avec la main du dessus (demi-lune en canne à sucre).",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Main sur une brique, sous l'épaule",
+   "Jambe levée à hauteur de hanche",
+   "Ouvrir bassin et poitrine sur le côté"
+  ],
+  "souffle_court": "Lent et régulier"
  },
  "P074": {
   "posture": "Parivrtta Ardha Chandrasana",
@@ -2483,7 +2921,13 @@
   "sortie": "Reposez la main levée sur la hanche, puis le pied arrière au sol. Revenez en pyramide et changez de côté.",
   "variante_facilitee": "Main d'appui sur une brique haute, autre main sur la hanche.",
   "variante_avancee": "Main d'appui au sol, bras du dessus tendu vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bassin face au sol",
+   "Main d'appui sous l'épaule, sur une brique",
+   "Tourner le buste, bras vers le ciel"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P075": {
   "posture": "Vrksasana",
@@ -2516,7 +2960,13 @@
   "sortie": "Abaissez les bras, reposez le pied au sol et revenez en montagne. Changez de côté.",
   "variante_facilitee": "Orteils au sol, talon contre la cheville, une main sur un mur ou une chaise.",
   "variante_avancee": "Pied en demi-lotus sur la cuisse, ou yeux fermés.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied contre la cheville, le mollet ou la cuisse",
+   "Jamais sur le genou",
+   "Regard fixe, bassin horizontal"
+  ],
+  "souffle_court": "Calme et régulier"
  },
  "P076": {
   "posture": "Garudasana",
@@ -2549,7 +2999,13 @@
   "sortie": "Défaites les bras puis les jambes et revenez en montagne. Changez de côté.",
   "variante_facilitee": "Seulement les bras, debout ou assis, ou jambes croisées orteils au sol.",
   "variante_avancee": "Inclinez le buste vers l'avant, coudes vers les genoux.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou d'appui plié",
+   "Cuisse croisée, orteils au sol si besoin",
+   "Coudes à hauteur des épaules"
+  ],
+  "souffle_court": "Respirer entre les omoplates"
  },
  "P077": {
   "posture": "Utthita Hasta Padangusthasana",
@@ -2582,7 +3038,13 @@
   "sortie": "Pliez le genou, lâchez le pied et reposez-le au sol. Changez de côté.",
   "variante_facilitee": "Genou plié tenu à deux mains, ou dos contre un mur.",
   "variante_avancee": "Ouvrez la jambe sur le côté, puis ramenez-la devant et lâchez le pied en gardant la jambe levée.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Gros orteil tenu, ou sangle",
+   "Bassin horizontal, dos droit",
+   "Se grandir plutôt que tirer"
+  ],
+  "souffle_court": "Régulier par le nez"
  },
  "P078": {
   "posture": "Natarajasana",
@@ -2615,7 +3077,13 @@
   "sortie": "Revenez le buste droit, lâchez le pied et reposez-le. Changez de côté, puis faites la pince debout.",
   "variante_facilitee": "Une main sur un mur ou une chaise, sangle autour du pied.",
   "variante_avancee": "Saisir le pied à deux mains par-dessus la tête.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Le pied pousse dans la main",
+   "Genou arrière dans l'axe de la hanche",
+   "Regard fixe devant"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour ouvrir"
  },
  "P079": {
   "posture": "Ardha Baddha Padmottanasana",
@@ -2648,7 +3116,13 @@
   "sortie": "Inspirez en remontant, lâchez le pied et défaites le demi-lotus à deux mains. Changez de côté.",
   "variante_facilitee": "Arbre avec flexion avant légère, mains sur des briques.",
   "variante_avancee": "Front vers le tibia, main d'appui à plat au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Demi-lotus sans forcer le genou",
+   "Main qui lie le pied, ou sur la hanche",
+   "Plier depuis les hanches"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour descendre"
  },
  "P080": {
   "posture": "Guerrier II sur chaise",
@@ -2681,7 +3155,13 @@
   "sortie": "Ramenez la jambe arrière, asseyez-vous face à l'avant et changez de côté.",
   "variante_facilitee": "Mains sur les cuisses plutôt que bras tendus.",
   "variante_avancee": "Inclinez le buste en guerrier inversé, bras avant vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis de côté, genou au-dessus de la cheville",
+   "Jambe arrière tendue, pied posé",
+   "Bras longs, buste droit"
+  ],
+  "souffle_court": "Lent et régulier"
  },
  "P081": {
   "posture": "Fente avec appui sur chaise",
@@ -2714,7 +3194,13 @@
   "sortie": "Ramenez le pied arrière à côté du pied avant, tournez-vous et changez de côté.",
   "variante_facilitee": "Petit pas et faible flexion.",
   "variante_avancee": "Levez le bras libre vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Main légère sur le dossier",
+   "Genou avant au-dessus de la cheville",
+   "Bas-ventre engagé, sans creuser"
+  ],
+  "souffle_court": "Expirer en remontant le périnée et en descendant"
  },
  "P082": {
   "posture": "Archer",
@@ -2747,7 +3233,13 @@
   "sortie": "Inspirez, tendez la jambe avant, relâchez les bras et changez de côté.",
   "variante_facilitee": "Flexion légère et tenue courte.",
   "variante_avancee": "Tenir trois minutes par côté, cuisse avant presque horizontale.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant au-dessus de la cheville",
+   "Bras avant tendu, poing arrière à l'épaule",
+   "Regard au-delà du poing"
+  ],
+  "souffle_court": "Long et profond par le nez"
  },
  "P083": {
   "posture": "Grenouille dynamique (kundalini)",
@@ -2780,7 +3272,13 @@
   "sortie": "Restez accroupi ou asseyez-vous, puis allongez-vous sur le dos pour récupérer.",
   "variante_facilitee": "Talons au sol, petit nombre de répétitions.",
   "variante_avancee": "Jusqu'à 54 ou 108 répétitions à rythme soutenu.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Talons joints et décollés",
+   "Doigts toujours au sol",
+   "Arrêter si les genoux protestent"
+  ],
+  "souffle_court": "Inspirer en montant, expirer en descendant"
  },
  "P084": {
   "posture": "Parsva Tadasana",
@@ -2813,7 +3311,13 @@
   "sortie": "Inspirez en remontant au centre, puis expirez en abaissant les bras.",
   "variante_facilitee": "Un seul bras levé, l'autre main sur la hanche.",
   "variante_avancee": "Pieds joints et inclinaison plus profonde en gardant l'alignement.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras levés, mains jointes",
+   "S'incliner sans tourner",
+   "Hanche qui pousse du côté opposé"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour incliner"
  },
  "P085": {
   "posture": "Phalakasana",
@@ -2845,7 +3349,13 @@
   "sortie": "Posez les genoux et passez en posture de l'enfant, sa contre-posture.",
   "variante_facilitee": "Genoux au sol, corps aligné des genoux à la tête.",
   "variante_avancee": "Soulevez une jambe en gardant le bassin stable.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Épaules au-dessus des poignets",
+   "Corps aligné de la tête aux talons",
+   "Genoux au sol si le bassin tombe"
+  ],
+  "souffle_court": "Régulier, bas-ventre qui remonte à l'expiration"
  },
  "P086": {
   "posture": "Chaturanga Dandasana",
@@ -2878,7 +3388,13 @@
   "sortie": "Inspirez en passant en chien tête en haut ou en cobra, ou posez les genoux et passez en posture de l'enfant.",
   "variante_facilitee": "Genoux au sol, ou descente jusqu'au sol puis poitrine posée.",
   "variante_avancee": "Tenir trois respirations en chaturanga, corps parfaitement aligné.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coudes le long des côtes",
+   "Épaules jamais plus bas que les coudes",
+   "Genoux au sol si besoin"
+  ],
+  "souffle_court": "Expirer en descendant"
  },
  "P087": {
   "posture": "Planche sur avant-bras",
@@ -2911,7 +3427,13 @@
   "sortie": "Posez les genoux et passez en posture de l'enfant.",
   "variante_facilitee": "Genoux au sol.",
   "variante_avancee": "Balancez lentement le corps vers l'avant et l'arrière sur les pointes de pieds.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coudes sous les épaules",
+   "Corps aligné, bassin ni haut ni bas",
+   "Pousser le sol avec les avant-bras"
+  ],
+  "souffle_court": "Régulier, sans bloquer"
  },
  "P088": {
   "posture": "Vasisthasana",
@@ -2944,7 +3466,13 @@
   "sortie": "Revenez en planche, posez les genoux et passez en posture de l'enfant. Changez de côté.",
   "variante_facilitee": "Genou du dessous au sol, ou appui sur l'avant-bras.",
   "variante_avancee": "Levez la jambe du dessus, ou attrapez le gros orteil.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Main sous l'épaule",
+   "Bassin soulevé, corps aligné",
+   "Genou du dessous au sol si besoin"
+  ],
+  "souffle_court": "Régulier, flanc engagé à l'expiration"
  },
  "P089": {
   "posture": "Ardha Vasisthasana",
@@ -2977,7 +3505,13 @@
   "sortie": "Revenez à quatre pattes et changez de côté.",
   "variante_facilitee": "Sur l'avant-bras et le genou.",
   "variante_avancee": "Jambe du dessus levée parallèle au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Main sous l'épaule, genou sous la hanche",
+   "Bassin soulevé",
+   "Bras du dessus vers le ciel"
+  ],
+  "souffle_court": "Régulier, bas-ventre qui remonte"
  },
  "P090": {
   "posture": "Navasana",
@@ -3011,7 +3545,13 @@
   "sortie": "Reposez les pieds au sol, puis allongez-vous genoux vers la poitrine, ou faites le pont.",
   "variante_facilitee": "Genoux pliés, mains derrière les cuisses, ou orteils au sol.",
   "variante_avancee": "Descendre en demi-bateau (jambes et buste plus bas) puis remonter plusieurs fois.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Sur les ischions, dos long",
+   "Genoux pliés si le dos s'arrondit",
+   "Bras parallèles au sol"
+  ],
+  "souffle_court": "Régulier, sans bloquer"
  },
  "P091": {
   "posture": "Ardha Navasana",
@@ -3044,7 +3584,13 @@
   "sortie": "Reposez les pieds et le buste, puis allongez-vous et ramenez les genoux à la poitrine.",
   "variante_facilitee": "Genoux pliés, mains derrière les cuisses.",
   "variante_avancee": "Alterner bateau et demi-bateau plusieurs fois sans poser les pieds.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bas du dos légèrement arrondi",
+   "Jambes et buste près du sol",
+   "Remonter si le dos se creuse"
+  ],
+  "souffle_court": "Expirations actives, bas-ventre qui remonte"
  },
  "P092": {
   "posture": "Gainage du transverse allongé (expiration)",
@@ -3078,7 +3624,13 @@
   "sortie": "Relâchez, étirez les jambes et respirez librement.",
   "variante_facilitee": "Sans les mains, en se concentrant seulement sur l'expiration longue.",
   "variante_avancee": "Gardez l'engagement en soulevant un pied du sol, puis l'autre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains sous le nombril",
+   "Expirer : périnée puis nombril qui remontent",
+   "Bassin immobile"
+  ],
+  "souffle_court": "Inspiration passive, expiration lente par la bouche"
  },
  "P093": {
   "posture": "Purvottanasana",
@@ -3111,7 +3663,13 @@
   "sortie": "Expirez en reposant le bassin, puis faites la pince assise.",
   "variante_facilitee": "Table inversée, genoux pliés.",
   "variante_avancee": "Soulevez une jambe en gardant le bassin haut.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains sous les épaules, doigts vers les pieds",
+   "Bassin haut, fessiers engagés",
+   "Nuque longue"
+  ],
+  "souffle_court": "Inspirer pour monter"
  },
  "P094": {
   "posture": "Ardha Purvottanasana",
@@ -3144,7 +3702,13 @@
   "sortie": "Expirez en reposant le bassin, puis enchaînez avec une pince assise.",
   "variante_facilitee": "Bassin moins haut, tenue courte.",
   "variante_avancee": "Planche inversée, jambes tendues.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux au-dessus des chevilles",
+   "Bassin à l'horizontale",
+   "Poitrine ouverte"
+  ],
+  "souffle_court": "Inspirer en montant"
  },
  "P095": {
   "posture": "Posture d'étirement (Stretch pose)",
@@ -3177,7 +3741,13 @@
   "sortie": "Inspirez, puis expirez en reposant la tête et les pieds. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Genoux pliés, ou une jambe au sol.",
   "variante_avancee": "Tenir 1 à 3 minutes en respiration de feu.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bas du dos plaqué au sol",
+   "Tête, épaules et pieds à 15 cm",
+   "Plier les genoux si le dos se creuse"
+  ],
+  "souffle_court": "Respiration de feu, ou souffle long"
  },
  "P096": {
   "posture": "Bakasana / Kakasana",
@@ -3210,7 +3780,13 @@
   "sortie": "Reposez les pieds au sol et revenez accroupi, puis en posture de l'enfant ou en pince debout.",
   "variante_facilitee": "Pieds sur une brique, un seul pied décollé.",
   "variante_avancee": "Tendre les bras (Bakasana bras tendus), ou passer en chaturanga.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux haut sur l'arrière des bras",
+   "Coudes serrés, regard devant",
+   "Basculer le poids vers l'avant"
+  ],
+  "souffle_court": "Expirer pour basculer"
  },
  "P097": {
   "posture": "Parsva Bakasana",
@@ -3243,7 +3819,13 @@
   "sortie": "Reposez les pieds, revenez accroupi au centre et changez de côté. Terminez par la posture de l'enfant.",
   "variante_facilitee": "Un seul pied décollé, ou bassin posé sur une brique.",
   "variante_avancee": "Tendre la jambe du dessus (Eka Pada Koundinyasana).",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Torsion d'abord, mains au sol",
+   "Cuisse sur le bras, près du coude",
+   "Coudes serrés, regard devant"
+  ],
+  "souffle_court": "Expirer pour basculer"
  },
  "P098": {
   "posture": "Bhujapidasana",
@@ -3276,7 +3858,13 @@
   "sortie": "Décroisez les chevilles, reposez les pieds et revenez debout. Terminez par la posture de l'enfant.",
   "variante_facilitee": "Pieds au sol, chevilles croisées, poids partiellement sur les mains.",
   "variante_avancee": "Descendre le front vers le sol en gardant les pieds décollés.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Cuisses haut sur les bras",
+   "Chevilles croisées",
+   "Regard vers l'avant"
+  ],
+  "souffle_court": "Expirer pour soulever"
  },
  "P099": {
   "posture": "Tittibhasana",
@@ -3309,7 +3897,13 @@
   "sortie": "Pliez les genoux, reposez les pieds et revenez debout. Terminez par la posture de l'enfant.",
   "variante_facilitee": "Pression sur les épaules, chevilles croisées.",
   "variante_avancee": "Tenir plus longtemps, jambes parfaitement tendues.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Cuisses sur les bras",
+   "Bras tendus, jambes tendues sur les côtés",
+   "Pieds fléchis"
+  ],
+  "souffle_court": "Calme et régulier"
  },
  "P100": {
   "posture": "Eka Pada Koundinyasana",
@@ -3342,7 +3936,13 @@
   "sortie": "Pliez les genoux, reposez les pieds et revenez accroupi. Changez de côté, puis faites la posture de l'enfant.",
   "variante_facilitee": "Corbeau latéral, une seule jambe tendue.",
   "variante_avancee": "Enchaîner vers chaturanga.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis le corbeau latéral",
+   "Une jambe en arrière, l'autre sur le côté",
+   "Coudes pliés, poids vers l'avant"
+  ],
+  "souffle_court": "Expirer pour tendre les jambes"
  },
  "P101": {
   "posture": "Astavakrasana",
@@ -3375,7 +3975,13 @@
   "sortie": "Reposez le bassin au sol, décroisez les jambes et changez de côté. Terminez par la posture de l'enfant.",
   "variante_facilitee": "Bassin soulevé, pieds au sol.",
   "variante_avancee": "Tenir plus longtemps, jambes parfaitement tendues.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambe haut sur le bras",
+   "Chevilles croisées, jambes tendues",
+   "Coudes pliés, buste parallèle au sol"
+  ],
+  "souffle_court": "Expirer pour soulever"
  },
  "P102": {
   "posture": "Tolasana / Utplutih",
@@ -3408,7 +4014,13 @@
   "sortie": "Reposez le bassin, défaites le lotus et allongez les jambes. Terminez par la posture de l'enfant.",
   "variante_facilitee": "En tailleur, mains sur des briques, bassin seul soulevé.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "En lotus, mains à côté des hanches",
+   "Pousser le sol, bras tendus",
+   "Ventre engagé"
+  ],
+  "souffle_court": "Expirer pour soulever"
  },
  "P103": {
   "posture": "Lolasana",
@@ -3441,7 +4053,13 @@
   "sortie": "Reposez les genoux, décroisez les chevilles et passez en posture de l'enfant.",
   "variante_facilitee": "Briques sous les mains, pieds seuls décollés.",
   "variante_avancee": "Balancement d'avant en arrière, puis passage en chaturanga.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Chevilles croisées, mains au sol",
+   "Dos arrondi, ventre rentré",
+   "Briques sous les mains si besoin"
+  ],
+  "souffle_court": "Expirer pour soulever"
  },
  "P104": {
   "posture": "Mayurasana",
@@ -3474,7 +4092,13 @@
   "sortie": "Reposez les pieds, puis les genoux, et passez en posture de l'enfant.",
   "variante_facilitee": "Pieds au sol, simple bascule du poids vers l'avant.",
   "variante_avancee": "En lotus (Padma Mayurasana).",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coudes joints sous le ventre",
+   "Corps à l'horizontale",
+   "Pas en cas d'hypertension ou de grossesse"
+  ],
+  "souffle_court": "Court et régulier"
  },
  "P105": {
   "posture": "Kukkutasana",
@@ -3507,7 +4131,13 @@
   "sortie": "Reposez le bassin, retirez les bras, défaites le lotus et passez en posture de l'enfant.",
   "variante_facilitee": "Balance (Tolasana) sans passer les bras.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras glissés dans le lotus",
+   "Pousser le sol, buste droit",
+   "Sortir si les genoux protestent"
+  ],
+  "souffle_court": "Régulier"
  },
  "P106": {
   "posture": "Garbha Pindasana",
@@ -3540,7 +4170,13 @@
   "sortie": "Retirez les bras, défaites le lotus et allongez les jambes.",
   "variante_facilitee": "Bateau genoux pliés.",
   "variante_avancee": "Roulades sur le dos en cercle (neuf roulades).",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras passés dans le lotus",
+   "Mains vers le visage",
+   "Équilibre sur les ischions"
+  ],
+  "souffle_court": "Lent et régulier"
  },
  "P107": {
   "posture": "Adho Mukha Svanasana",
@@ -3573,7 +4209,13 @@
   "sortie": "Posez les genoux et passez en posture de l'enfant, ou avancez les pieds en pince debout.",
   "variante_facilitee": "Genoux pliés, ou mains sur une chaise contre un mur.",
   "variante_avancee": "Lever une jambe vers le ciel (chien à trois pattes).",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains larges, pousser le sol",
+   "Dos long, genoux pliés si besoin",
+   "Talons vers le sol, nuque relâchée"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P108": {
   "posture": "Ardha Pincha Mayurasana",
@@ -3606,7 +4248,13 @@
   "sortie": "Posez les genoux et passez en posture de l'enfant.",
   "variante_facilitee": "Genoux pliés.",
   "variante_avancee": "Avancer le menton au-delà des mains puis revenir, plusieurs fois.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coudes à largeur d'épaules",
+   "Bassin haut, dos long",
+   "Avant-bras qui poussent le sol"
+  ],
+  "souffle_court": "Régulier"
  },
  "P109": {
   "posture": "Sirsasana",
@@ -3639,7 +4287,13 @@
   "sortie": "Pliez les genoux, redescendez lentement les pieds au sol, puis restez quelques respirations en posture de l'enfant avant de vous redresser.",
   "variante_facilitee": "Dauphin, ou préparation pieds au sol.",
   "variante_avancee": "Sans mur, plusieurs minutes.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Le poids est dans les avant-bras, pas la tête",
+   "Monter genoux pliés, contrôlé",
+   "Sortir au moindre poids sur la nuque"
+  ],
+  "souffle_court": "Lent et régulier"
  },
  "P110": {
   "posture": "Pincha Mayurasana",
@@ -3672,7 +4326,13 @@
   "sortie": "Redescendez une jambe puis l'autre et passez en posture de l'enfant.",
   "variante_facilitee": "Dauphin avec une jambe levée.",
   "variante_avancee": "Sans mur.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coudes à largeur d'épaules",
+   "Côtes rentrées, ventre engagé",
+   "Mur derrière pendant l'apprentissage"
+  ],
+  "souffle_court": "Régulier"
  },
  "P111": {
   "posture": "Adho Mukha Vrksasana",
@@ -3705,7 +4365,13 @@
   "sortie": "Redescendez une jambe puis l'autre, restez en pince debout ou en posture de l'enfant.",
   "variante_facilitee": "Pieds contre le mur en L, en marchant les pieds le long du mur.",
   "variante_avancee": "Sans mur, au centre de la pièce.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains à 15 cm du mur",
+   "Bras tendus, pousser le sol",
+   "Côtes rentrées, petits élans"
+  ],
+  "souffle_court": "Régulier, sans bloquer"
  },
  "P112": {
   "posture": "Salamba Sarvangasana",
@@ -3738,7 +4404,13 @@
   "sortie": "Pliez les genoux vers le front, posez les mains au sol et déroulez lentement le dos vertèbre par vertèbre. Enchaînez avec le poisson.",
   "variante_facilitee": "Jambes au mur, ou demi-chandelle avec le bassin soutenu par les mains.",
   "variante_avancee": "Sans les mains, bras le long des jambes.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Couvertures sous les épaules",
+   "Mains dans le dos, coudes serrés",
+   "Ne jamais tourner la tête"
+  ],
+  "souffle_court": "Lent, un peu plus court"
  },
  "P113": {
   "posture": "Halasana",
@@ -3770,7 +4442,13 @@
   "sortie": "Mains au sol, déroulez lentement la colonne vertèbre par vertèbre, puis enchaînez avec le poisson.",
   "variante_facilitee": "Pieds sur une chaise ou des briques.",
   "variante_avancee": "Pression sur les oreilles, genoux de chaque côté de la tête.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Couvertures sous les épaules",
+   "Pieds au sol ou sur une chaise",
+   "Tête immobile"
+  ],
+  "souffle_court": "Lent et court"
  },
  "P114": {
   "posture": "Karnapidasana",
@@ -3802,7 +4480,13 @@
   "sortie": "Revenez en charrue, puis déroulez lentement la colonne au sol. Enchaînez avec le poisson.",
   "variante_facilitee": "Charrue, pieds sur une chaise.",
   "variante_avancee": "Bras qui enserrent l'arrière des genoux.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis la charrue",
+   "Genoux près des oreilles",
+   "Tête immobile, peu de temps"
+  ],
+  "souffle_court": "Lent et court"
  },
  "P115": {
   "posture": "Urdhva Padmasana",
@@ -3834,7 +4518,13 @@
   "sortie": "Défaites le lotus, revenez en chandelle et déroulez au sol. Enchaînez avec le poisson.",
   "variante_facilitee": "Chandelle, jambes croisées en tailleur.",
   "variante_avancee": "Embryon en chandelle.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Lotus depuis la chandelle",
+   "Mains sous les genoux",
+   "Tête immobile"
+  ],
+  "souffle_court": "Lent et régulier"
  },
  "P116": {
   "posture": "Pindasana",
@@ -3866,7 +4556,13 @@
   "sortie": "Relâchez les bras, revenez en lotus en chandelle, défaites le lotus et déroulez au sol. Enchaînez avec le poisson.",
   "variante_facilitee": "Genoux vers le front en tailleur.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Lotus vers le front",
+   "Bras qui enlacent les jambes",
+   "Tête immobile"
+  ],
+  "souffle_court": "Court et régulier"
  },
  "P117": {
   "posture": "Viparita Karani",
@@ -3899,7 +4595,13 @@
   "sortie": "Pliez les genoux, roulez sur le côté et restez-y quelques respirations avant de vous redresser.",
   "variante_facilitee": "Mollets posés sur une chaise, genoux pliés.",
   "variante_avancee": "Jambes écartées en V contre le mur pour ouvrir les adducteurs.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Fesses près du mur, jambes appuyées",
+   "Coussin sous le bassin si besoin",
+   "Tout relâcher"
+  ],
+  "souffle_court": "Lent et abdominal"
  },
  "P118": {
   "posture": "Paschimottanasana",
@@ -3932,7 +4634,13 @@
   "sortie": "Inspirez en remontant dos long, puis enchaînez avec la table inversée.",
   "variante_facilitee": "Genoux pliés, coussin sous les genoux, sangle.",
   "variante_avancee": "Mains qui se rejoignent au-delà des pieds.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis sur une couverture si besoin",
+   "Plier depuis les hanches, dos long",
+   "Sangle plutôt que tirer"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour approfondir"
  },
  "P119": {
   "posture": "Janu Sirsasana",
@@ -3965,7 +4673,13 @@
   "sortie": "Inspirez en remontant, allongez la jambe pliée et changez de côté.",
   "variante_facilitee": "Genou tendu légèrement plié, coussin sous le genou plié.",
   "variante_avancee": "Saisir le poignet au-delà du pied.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied contre l'intérieur de la cuisse",
+   "Buste centré sur la jambe tendue",
+   "Sangle si le dos s'arrondit"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour approfondir"
  },
  "P120": {
   "posture": "Parivrtta Janu Sirsasana",
@@ -3998,7 +4712,13 @@
   "sortie": "Inspirez en remontant au centre, allongez la jambe pliée et changez de côté.",
   "variante_facilitee": "Main du dessus sur la tête, coude sur la cuisse.",
   "variante_avancee": "Main du dessus qui attrape le pied tendu.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coude à l'intérieur de la jambe tendue",
+   "Bras du dessus par-dessus l'oreille",
+   "Poitrine vers le ciel"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour ouvrir"
  },
  "P121": {
   "posture": "Ardha Baddha Padma Paschimottanasana",
@@ -4031,7 +4751,13 @@
   "sortie": "Inspirez en remontant, lâchez le pied, défaites le demi-lotus à deux mains et changez de côté. Terminez par la table inversée.",
   "variante_facilitee": "Tête au genou.",
   "variante_avancee": "Menton vers le tibia.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Demi-lotus sans forcer",
+   "Main qui lie le pied dans le dos",
+   "Plier sur la jambe tendue"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour descendre"
  },
  "P122": {
   "posture": "Triang Mukhaikapada Paschimottanasana",
@@ -4064,7 +4790,13 @@
   "sortie": "Inspirez en remontant, allongez la jambe pliée et changez de côté. Terminez par la table inversée.",
   "variante_facilitee": "Buste droit sans flexion, sangle.",
   "variante_avancee": "Saisir le poignet au-delà du pied.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambe repliée en héros",
+   "Couverture sous la fesse opposée",
+   "Plier sur la jambe tendue"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour descendre"
  },
  "P123": {
   "posture": "Krounchasana",
@@ -4097,7 +4829,13 @@
   "sortie": "Pliez le genou, reposez le pied et allongez les jambes. Changez de côté, puis table inversée.",
   "variante_facilitee": "Genou plié en tailleur, sangle.",
   "variante_avancee": "Menton vers le tibia.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambe tendue vers le ciel, sangle",
+   "Dos droit, poitrine ouverte",
+   "Se grandir plutôt que tirer"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour rapprocher"
  },
  "P124": {
   "posture": "Upavistha Konasana",
@@ -4130,7 +4868,13 @@
   "sortie": "Remontez dos long, rapprochez les jambes avec les mains sous les genoux.",
   "variante_facilitee": "Buste droit ou mains sur un coussin, genoux légèrement pliés.",
   "variante_avancee": "Poitrine au sol, mains qui saisissent les gros orteils.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux et orteils vers le ciel",
+   "Plier depuis les hanches",
+   "Buste droit si grossesse"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour avancer"
  },
  "P125": {
   "posture": "Kurmasana",
@@ -4163,7 +4907,13 @@
   "sortie": "Pliez les genoux, retirez les bras et remontez lentement. Terminez par la table inversée.",
   "variante_facilitee": "Angle assis, mains sur un coussin.",
   "variante_avancee": "Tortue couchée.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras glissés sous les genoux",
+   "Jambes pliées si besoin",
+   "Front vers le sol"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P126": {
   "posture": "Supta Kurmasana",
@@ -4196,7 +4946,13 @@
   "sortie": "Défaites les mains, décroisez les pieds et revenez en tortue, puis assis. Terminez par la table inversée.",
   "variante_facilitee": "Tortue.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis la tortue",
+   "Chevilles croisées devant la tête",
+   "Mains liées dans le dos"
+  ],
+  "souffle_court": "Lent"
  },
  "P127": {
   "posture": "Urdhva Mukha Paschimottanasana",
@@ -4229,7 +4985,13 @@
   "sortie": "Lâchez les pieds, reposez les jambes au sol, allongez-vous et ramenez les genoux à la poitrine.",
   "variante_facilitee": "Bateau, genoux pliés.",
   "variante_avancee": "Menton vers les tibias.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Tenir les pieds, rouler en équilibre",
+   "Jambes vers le ciel",
+   "Buste vers les jambes"
+  ],
+  "souffle_court": "Régulier"
  },
  "P128": {
   "posture": "Ubhaya Padangusthasana",
@@ -4262,7 +5024,13 @@
   "sortie": "Pliez les genoux, lâchez les orteils et reposez les pieds.",
   "variante_facilitee": "Bateau genoux pliés, mains derrière les cuisses.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Gros orteils crochetés",
+   "Équilibre sur les ischions",
+   "Jambes tendues, dos long"
+  ],
+  "souffle_court": "Régulier"
  },
  "P129": {
   "posture": "Marichyasana A",
@@ -4295,7 +5063,13 @@
   "sortie": "Inspirez en remontant, déliez les mains, allongez la jambe et changez de côté. Terminez par la table inversée.",
   "variante_facilitee": "Mains au sol sans liaison, buste droit.",
   "variante_avancee": "Menton vers le tibia tendu.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied au sol, bras autour du tibia",
+   "Mains liées dans le dos",
+   "Plier sur la jambe tendue"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour plier"
  },
  "P130": {
   "posture": "Marichyasana B",
@@ -4328,7 +5102,13 @@
   "sortie": "Remontez, déliez les mains, défaites le demi-lotus et changez de côté. Terminez par la table inversée.",
   "variante_facilitee": "Pose du sage Marichi A.",
   "variante_avancee": "Menton au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Demi-lotus et jambe pliée",
+   "Bras enroulé, mains liées",
+   "Sortir à la moindre gêne au genou"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour plier"
  },
  "P131": {
   "posture": "Balasana",
@@ -4361,7 +5141,13 @@
   "sortie": "Posez les mains sous les épaules et redressez-vous lentement en déroulant le dos, la tête en dernier.",
   "variante_facilitee": "Bolster ou coussins sous le buste, genoux écartés.",
   "variante_avancee": "Bras tendus devant, mains actives pour allonger le dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Fesses vers les talons",
+   "Front posé, sur un coussin si besoin",
+   "Genoux écartés si grossesse"
+  ],
+  "souffle_court": "Respirer dans le dos"
  },
  "P132": {
   "posture": "Uttana Shishosana / Anahatasana",
@@ -4394,7 +5180,13 @@
   "sortie": "Ramenez les mains vers les genoux et asseyez-vous sur les talons, ou passez en posture de l'enfant.",
   "variante_facilitee": "Avant-bras posés, coussin sous la poitrine.",
   "variante_avancee": "Menton au sol et poitrine posée.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Hanches au-dessus des genoux",
+   "Bras tendus devant",
+   "Poitrine qui fond vers le sol"
+  ],
+  "souffle_court": "Respirer dans le haut du dos"
  },
  "P133": {
   "posture": "Baddha Konasana",
@@ -4427,7 +5219,13 @@
   "sortie": "Rapprochez les genoux avec les mains sous les cuisses et allongez les jambes.",
   "variante_facilitee": "Coussins sous les cuisses, dos contre un mur.",
   "variante_avancee": "Flexion avant, buste vers les pieds, dos long.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Plantes de pieds jointes",
+   "Genoux qui descendent seuls, coussins dessous",
+   "Dos long"
+  ],
+  "souffle_court": "Expirer pour relâcher les hanches"
  },
  "P134": {
   "posture": "Supta Baddha Konasana",
@@ -4460,7 +5258,13 @@
   "sortie": "Rapprochez les genoux avec les mains, roulez sur le côté et redressez-vous en poussant dans les mains.",
   "variante_facilitee": "Pieds plus éloignés du bassin, bolster incliné sur des briques.",
   "variante_avancee": "Sans bolster, dos au sol, hors grossesse.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bolster sous le dos, coussins sous les cuisses",
+   "Bras ouverts, paumes vers le ciel",
+   "Buste surélevé si grossesse"
+  ],
+  "souffle_court": "Naturel et lent"
  },
  "P135": {
   "posture": "Eka Pada Rajakapotasana (prép.)",
@@ -4493,7 +5297,13 @@
   "sortie": "Posez les mains sous les épaules, retournez les orteils arrière et reculez la jambe avant en chien tête en bas. Changez de côté.",
   "variante_facilitee": "Pigeon allongé, sur le dos.",
   "variante_avancee": "Tibia avant parallèle au bord du tapis, buste posé.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant vers le poignet",
+   "Coussin sous la hanche avant",
+   "Pied avant fléchi"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P136": {
   "posture": "Eka Pada Rajakapotasana",
@@ -4526,7 +5336,13 @@
   "sortie": "Relâchez le pied lentement, posez les mains et revenez en posture de l'enfant ou en chien tête en bas. Changez de côté.",
   "variante_facilitee": "Pigeon avec quadriceps tenu à la main.",
   "variante_avancee": "Deux mains au pied, tête posée contre le pied.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis le pigeon, pied arrière tenu",
+   "Sangle si besoin",
+   "Allonger avant d'ouvrir"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour ouvrir"
  },
  "P137": {
   "posture": "Supta Kapotasana",
@@ -4559,7 +5375,13 @@
   "sortie": "Reposez le pied gauche, décroisez les jambes et changez de côté.",
   "variante_facilitee": "Pied gauche au sol, sans tirer la cuisse.",
   "variante_avancee": "Tirer la cuisse plus près en gardant le bassin au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Cheville sur le genou opposé, pied fléchi",
+   "Tirer la cuisse vers la poitrine",
+   "Tête et bassin au sol"
+  ],
+  "souffle_court": "Expirer pour relâcher la hanche"
  },
  "P138": {
   "posture": "Agnistambhasana",
@@ -4592,7 +5414,13 @@
   "sortie": "Décroisez les jambes à deux mains, allongez-les et changez de côté. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Tailleur avec un coussin sous les genoux.",
   "variante_avancee": "Flexion avant, buste vers les tibias.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Tibias empilés, parallèles",
+   "Pieds fléchis",
+   "Coussin sous le genou du dessus"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P139": {
   "posture": "Gomukhasana",
@@ -4625,7 +5453,13 @@
   "sortie": "Défaites les bras puis les jambes, et changez de côté. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Jambes en tailleur, bras seuls.",
   "variante_avancee": "Flexion avant, mains liées.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux superposés, coussin sous les fesses",
+   "Mains liées dans le dos, ou sangle",
+   "Dos droit, tête dans l'axe"
+  ],
+  "souffle_court": "Lent et régulier"
  },
  "P140": {
   "posture": "Ananda Balasana",
@@ -4658,7 +5492,13 @@
   "sortie": "Lâchez les pieds, ramenez les genoux à la poitrine et posez les pieds au sol.",
   "variante_facilitee": "Une jambe à la fois.",
   "variante_avancee": "Jambes tendues tenues par les gros orteils.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Tenir l'extérieur des pieds",
+   "Genoux vers les aisselles",
+   "Sacrum et tête au sol"
+  ],
+  "souffle_court": "Lent et détendu"
  },
  "P141": {
   "posture": "Mandukasana",
@@ -4691,7 +5531,13 @@
   "sortie": "Avancez sur les avant-bras, rapprochez les genoux et passez en posture de l'enfant.",
   "variante_facilitee": "Demi-grenouille, une jambe pliée.",
   "variante_avancee": "Poitrine et ventre au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Couvertures sous les genoux",
+   "Chevilles alignées avec les genoux",
+   "Bassin qui recule doucement"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P142": {
   "posture": "Pigeon assis sur chaise (cheville sur genou)",
@@ -4724,7 +5570,13 @@
   "sortie": "Redressez-vous, posez le pied au sol et changez de côté.",
   "variante_facilitee": "Cheville sur le tibia plutôt que sur la cuisse.",
   "variante_avancee": "Flexion avant plus profonde, mains vers le sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Cheville sur le genou opposé",
+   "Pied fléchi",
+   "Pencher depuis les hanches"
+  ],
+  "souffle_court": "Lent"
  },
  "P143": {
   "posture": "Bhujangasana",
@@ -4757,7 +5609,13 @@
   "sortie": "Expirez en reposant la poitrine et le front, puis passez en posture de l'enfant.",
   "variante_facilitee": "Petit cobra, mains qui ne poussent pas.",
   "variante_avancee": "Bras plus tendus, en gardant le pubis au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pubis au sol, coudes près du corps",
+   "Monter avec le dos plus qu'avec les mains",
+   "Épaules basses, nuque longue"
+  ],
+  "souffle_court": "Inspirer pour monter"
  },
  "P144": {
   "posture": "Urdhva Mukha Svanasana",
@@ -4790,7 +5648,13 @@
   "sortie": "Expirez en passant en chien tête en bas, sa contre-posture.",
   "variante_facilitee": "Cobra.",
   "variante_avancee": "Tenir cinq respirations, poitrine ouverte.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Épaules au-dessus des poignets",
+   "Cuisses décollées",
+   "Épaules loin des oreilles"
+  ],
+  "souffle_court": "Inspirer pour monter"
  },
  "P145": {
   "posture": "Salamba Bhujangasana",
@@ -4823,7 +5687,13 @@
   "sortie": "Reposez la poitrine, croisez les bras sous le front et restez quelques respirations. Passez en posture de l'enfant.",
   "variante_facilitee": "Coudes avancés, coussin sous le ventre.",
   "variante_avancee": "Mains à plat, en phoque, hors yoga du dos fragile.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coudes un peu en avant des épaules",
+   "Pubis au sol, fessiers relâchés",
+   "Épaules basses"
+  ],
+  "souffle_court": "Lent, dans le bas du dos"
  },
  "P146": {
   "posture": "Salabhasana",
@@ -4856,7 +5726,13 @@
   "sortie": "Expirez en reposant le corps, tournez la tête sur le côté, puis passez en posture de l'enfant.",
   "variante_facilitee": "Soulever seulement le haut du corps, ou une jambe à la fois.",
   "variante_avancee": "Mains liées dans le dos, bras levés.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pubis au sol",
+   "Jambes tendues, bras longs",
+   "Allonger plutôt que monter haut"
+  ],
+  "souffle_court": "Inspirer pour monter, expirer pour descendre"
  },
  "P147": {
   "posture": "Dhanurasana",
@@ -4889,7 +5765,13 @@
   "sortie": "Expirez en reposant le corps, lâchez les chevilles et passez en posture de l'enfant, ou en torsion allongée.",
   "variante_facilitee": "Demi-arc, une jambe à la fois, ou sangle aux chevilles.",
   "variante_avancee": "Bercement d'avant en arrière.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains aux chevilles, genoux à largeur de bassin",
+   "Les pieds poussent dans les mains",
+   "Poitrine ouverte"
+  ],
+  "souffle_court": "Inspirer pour monter"
  },
  "P148": {
   "posture": "Parsva Dhanurasana",
@@ -4922,7 +5804,13 @@
   "sortie": "Revenez au centre sur le ventre, lâchez les chevilles et passez en posture de l'enfant.",
   "variante_facilitee": "Arc.",
   "variante_avancee": "Enchaîner les deux côtés sans repasser par le centre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis l'arc",
+   "Rouler sur le côté",
+   "Garder les pieds actifs"
+  ],
+  "souffle_court": "Expirer pour rouler"
  },
  "P149": {
   "posture": "Ustrasana",
@@ -4956,7 +5844,13 @@
   "sortie": "Ramenez doucement le menton vers la poitrine, inspirez pour redresser le torse en vous aidant des mains dans le dos, et venez vous asseoir sur les talons.",
   "variante_facilitee": "Gardez les mains fermement ancrées sur le bas du dos et ne cherchez pas à descendre trop bas.",
   "variante_avancee": "Posez les mains sur les talons, ou utilisez des briques à côté des pieds pour approfondir l'ouverture thoracique.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Hanches au-dessus des genoux",
+   "Mains sur le bas du dos",
+   "Poitrine vers le ciel, nuque longue"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour ouvrir"
  },
  "P150": {
   "posture": "Laghu Vajrasana",
@@ -4989,7 +5883,13 @@
   "sortie": "Remontez avec la force des cuisses, asseyez-vous sur les talons et passez en posture de l'enfant.",
   "variante_facilitee": "Chameau.",
   "variante_avancee": "Plusieurs descentes et remontées.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains aux chevilles",
+   "Descendre la tête avec la force des cuisses",
+   "Remonter de même"
+  ],
+  "souffle_court": "Expirer pour descendre, inspirer pour remonter"
  },
  "P151": {
   "posture": "Kapotasana",
@@ -5022,7 +5922,13 @@
   "sortie": "Relâchez les talons, remontez par les mains puis par la force des cuisses. Asseyez-vous sur les talons et passez en posture de l'enfant.",
   "variante_facilitee": "Chameau, mains sur les talons.",
   "variante_avancee": "Saisir les chevilles, coudes au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Hanches au-dessus des genoux",
+   "Mains puis coudes vers les pieds",
+   "Cuisses actives"
+  ],
+  "souffle_court": "Inspirer pour ouvrir, expirer pour descendre"
  },
  "P152": {
   "posture": "Setu Bandha Sarvangasana",
@@ -5055,7 +5961,13 @@
   "sortie": "Expirez en déroulant le dos vertèbre par vertèbre jusqu'au bassin. Ramenez les genoux à la poitrine ou faites une torsion allongée.",
   "variante_facilitee": "Petit pont, ou brique sous le sacrum.",
   "variante_avancee": "Mains liées sous le dos, ou une jambe levée vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds parallèles près des fesses",
+   "Dérouler le dos vertèbre par vertèbre",
+   "Ne pas tourner la tête"
+  ],
+  "souffle_court": "Expirer pour monter, périnée engagé"
  },
  "P153": {
   "posture": "Pont soutenu (brique sous le sacrum)",
@@ -5088,7 +6000,13 @@
   "sortie": "Soulevez le bassin, retirez la brique et déroulez le dos. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Brique sur la hauteur la plus basse.",
   "variante_avancee": "Jambes tendues au sol, ou levées vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Brique sous le sacrum",
+   "Pieds stables, genoux parallèles",
+   "Tout relâcher"
+  ],
+  "souffle_court": "Lent et abdominal"
  },
  "P154": {
   "posture": "Urdhva Dhanurasana",
@@ -5121,7 +6039,13 @@
   "sortie": "Rentrez le menton, pliez les coudes et reposez la nuque puis le dos. Ramenez les genoux à la poitrine, puis torsion allongée.",
   "variante_facilitee": "Pont, ou étape intermédiaire tête au sol.",
   "variante_avancee": "Lever une jambe vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains près des oreilles, doigts vers les épaules",
+   "Coudes serrés, pieds parallèles",
+   "Poitrine vers l'arrière"
+  ],
+  "souffle_court": "Inspirer pour monter"
  },
  "P155": {
   "posture": "Camatkarasana",
@@ -5154,7 +6078,13 @@
   "sortie": "Revenez en planche latérale puis en chien tête en bas. Changez de côté et terminez par la posture de l'enfant.",
   "variante_facilitee": "Genou du dessous au sol.",
   "variante_avancee": "Enchaîner vers la roue.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Main d'appui sous l'épaule",
+   "Pied arrière, bassin haut",
+   "Poitrine vers le ciel"
+  ],
+  "souffle_court": "Inspirer pour ouvrir"
  },
  "P156": {
   "posture": "Matsyasana",
@@ -5187,7 +6117,13 @@
   "sortie": "Rentrez le menton, reposez le dos et la tête. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Poisson soutenu sur un bolster.",
   "variante_avancee": "Poisson jambes levées.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains sous les fesses",
+   "Poids dans les avant-bras, pas la tête",
+   "Poitrine vers le ciel"
+  ],
+  "souffle_court": "Profond, dans la poitrine"
  },
  "P157": {
   "posture": "Poisson soutenu (bolster)",
@@ -5220,7 +6156,13 @@
   "sortie": "Roulez sur le côté et redressez-vous en poussant dans les mains.",
   "variante_facilitee": "Couverture pliée plutôt que bolster.",
   "variante_avancee": "Papillon allongé sur le bolster.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bolster sous les omoplates",
+   "Tête soutenue",
+   "Bras ouverts"
+  ],
+  "souffle_court": "Lent, dans la poitrine"
  },
  "P158": {
   "posture": "Supta Virasana",
@@ -5253,7 +6195,13 @@
   "sortie": "Remontez sur les avant-bras puis les mains, asseyez-vous et allongez les jambes une à une. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Sur un bolster haut, ou une seule jambe pliée.",
   "variante_avancee": "Dos au sol, bras au-dessus de la tête.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis le héros, bolster derrière",
+   "Genoux proches",
+   "Sortir au moindre pincement"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P159": {
   "posture": "Bhekasana",
@@ -5286,7 +6234,13 @@
   "sortie": "Relâchez les pieds, allongez les jambes et passez en posture de l'enfant.",
   "variante_facilitee": "Demi-grenouille, une jambe à la fois.",
   "variante_avancee": "Les deux jambes, poitrine haute.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied tenu, doigts vers l'avant",
+   "Appuyer doucement vers le sol",
+   "Pubis au sol"
+  ],
+  "souffle_court": "Régulier"
  },
  "P160": {
   "posture": "Uttana Padasana",
@@ -5318,7 +6272,13 @@
   "sortie": "Reposez les jambes et les bras, rentrez le menton et reposez le dos. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Poisson, jambes au sol.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis le poisson",
+   "Jambes et bras levés à 45°",
+   "Peu de poids sur la tête"
+  ],
+  "souffle_court": "Régulier"
  },
  "P161": {
   "posture": "Makarasana",
@@ -5351,7 +6311,13 @@
   "sortie": "Posez les mains sous les épaules, reculez en posture de l'enfant et redressez-vous lentement.",
   "variante_facilitee": "Coussin sous le ventre.",
   "variante_avancee": "Tenir dix minutes en relaxation.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Front sur les bras croisés",
+   "Pieds écartés",
+   "Ventre contre le sol"
+  ],
+  "souffle_court": "Abdominal, le ventre pousse le sol"
  },
  "P162": {
   "posture": "Ardha Matsyendrasana",
@@ -5384,7 +6350,13 @@
   "sortie": "Inspirez en revenant au centre, décroisez et changez de côté.",
   "variante_facilitee": "Bras enlaçant le genou plutôt que coude à l'extérieur.",
   "variante_avancee": "Liaison des mains derrière le dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied à l'extérieur du genou opposé",
+   "Ischions ancrés, colonne verticale",
+   "Coude contre le genou"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P163": {
   "posture": "Bharadvajasana",
@@ -5417,7 +6389,13 @@
   "sortie": "Revenez au centre et changez de côté.",
   "variante_facilitee": "Sur une chaise, de côté.",
   "variante_avancee": "Demi-lotus et liaison de la main au pied.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambes repliées sur le côté",
+   "Coussin sous la fesse si besoin",
+   "Tourner du côté opposé aux jambes si grossesse"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P164": {
   "posture": "Marichyasana C",
@@ -5450,7 +6428,13 @@
   "sortie": "Revenez au centre, allongez la jambe et changez de côté. Terminez par la pince assise.",
   "variante_facilitee": "Bras qui enlace le genou.",
   "variante_avancee": "Liaison des mains derrière le dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied au sol près de la fesse",
+   "Coude à l'extérieur du genou",
+   "Colonne verticale"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P165": {
   "posture": "Marichyasana D",
@@ -5483,7 +6467,13 @@
   "sortie": "Déliez, revenez au centre, défaites le demi-lotus et changez de côté. Terminez par la pince assise.",
   "variante_facilitee": "Torsion Marichi C.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Demi-lotus et jambe pliée",
+   "Bras enroulé autour du genou",
+   "Mains liées"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P166": {
   "posture": "Pasasana",
@@ -5516,7 +6506,13 @@
   "sortie": "Déliez, revenez au centre et changez de côté. Terminez par la pince debout.",
   "variante_facilitee": "Chaise en torsion.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Accroupi, pieds et genoux joints",
+   "Épaule à l'extérieur du genou",
+   "Mains liées autour des jambes"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P167": {
   "posture": "Supta Matsyendrasana",
@@ -5549,7 +6545,13 @@
   "sortie": "Inspirez en ramenant les genoux au centre et changez de côté. Terminez genoux à la poitrine.",
   "variante_facilitee": "Coussin sous les genoux.",
   "variante_avancee": "Jambe du dessus tendue, tenue par la main opposée.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras en croix, épaules au sol",
+   "Genoux qui tombent sur le côté",
+   "Laisser le poids faire la torsion"
+  ],
+  "souffle_court": "Lent, l'expiration approfondit"
  },
  "P168": {
   "posture": "Jathara Parivartanasana",
@@ -5582,7 +6584,13 @@
   "sortie": "Ramenez les jambes au centre, pliez les genoux et posez les pieds. Terminez genoux à la poitrine.",
   "variante_facilitee": "Genoux pliés.",
   "variante_avancee": "Tenir quelques respirations près du sol de chaque côté.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambes tendues à la verticale",
+   "Descendre d'un côté sans poser",
+   "Remonter avec le ventre"
+  ],
+  "souffle_court": "Expirer pour descendre, inspirer pour remonter"
  },
  "P169": {
   "posture": "Torsion sur chaise",
@@ -5615,7 +6623,13 @@
   "sortie": "Revenez au centre et changez de côté.",
   "variante_facilitee": "Petite rotation.",
   "variante_avancee": "Tenir plus longtemps.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis de côté, pieds à plat",
+   "Mains sur le dossier",
+   "Tourner avec le buste, pas les bras"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P170": {
   "posture": "Torsion soutenue (bolster)",
@@ -5648,7 +6662,13 @@
   "sortie": "Redressez-vous en poussant dans les mains et changez de côté.",
   "variante_facilitee": "Bolster plus haut.",
   "variante_avancee": "Bolster plus bas.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bolster le long de la hanche",
+   "Buste allongé dessus",
+   "Tête tournée du côté confortable"
+  ],
+  "souffle_court": "Lent"
  },
  "P171": {
   "posture": "Parighasana",
@@ -5681,7 +6701,13 @@
   "sortie": "Inspirez en remontant, ramenez la jambe et changez de côté.",
   "variante_facilitee": "Sur une chaise.",
   "variante_avancee": "Main au sol, bras tendu.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "À genoux, une jambe tendue sur le côté",
+   "S'incliner sans tourner",
+   "Couverture sous le genou"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour incliner"
  },
  "P172": {
   "posture": "Apanasana",
@@ -5714,7 +6740,13 @@
   "sortie": "Posez les pieds au sol et allongez les jambes.",
   "variante_facilitee": "Un genou à la fois.",
   "variante_avancee": "Cercles des genoux.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux vers la poitrine",
+   "Tête et sacrum au sol",
+   "Se bercer doucement"
+  ],
+  "souffle_court": "Expirer en rapprochant les genoux"
  },
  "P173": {
   "posture": "Posture de l'enfant soutenue",
@@ -5747,7 +6779,13 @@
   "sortie": "Posez les mains, redressez-vous lentement.",
   "variante_facilitee": "Bolster sur des briques.",
   "variante_avancee": "Bolster plus bas.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux écartés, bolster entre eux",
+   "Buste et tête soutenus",
+   "Changer le côté de la tête"
+  ],
+  "souffle_court": "Lent, dans le dos"
  },
  "P174": {
   "posture": "Pince assise soutenue",
@@ -5780,7 +6818,13 @@
   "sortie": "Redressez-vous lentement en poussant dans les mains.",
   "variante_facilitee": "Genoux pliés, coussin dessous.",
   "variante_avancee": "Support plus bas.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bolster sur les jambes ou chaise devant",
+   "Front soutenu",
+   "Genoux pliés si besoin"
+  ],
+  "souffle_court": "Lent"
  },
  "P175": {
   "posture": "Pince sur chaise",
@@ -5813,7 +6857,13 @@
   "sortie": "Déroulez lentement le dos, la tête en dernier, mains sur les cuisses.",
   "variante_facilitee": "Avant-bras sur les cuisses.",
   "variante_avancee": "Mains à plat au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds écartés, plier depuis les hanches",
+   "Bras et tête qui pendent",
+   "Remonter lentement"
+  ],
+  "souffle_court": "Lent, peu de temps si hypertension"
  },
  "P176": {
   "posture": "Savasana",
@@ -5846,7 +6896,13 @@
   "sortie": "Approfondissez la respiration, bougez doucement les doigts et les orteils, étirez-vous. Roulez sur le côté droit et restez-y quelques instants avant de vous redresser.",
   "variante_facilitee": "Sur le côté, coussins entre les genoux.",
   "variante_avancee": "Relaxation guidée plus longue, scan corporel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds et bras écartés, paumes vers le ciel",
+   "Coussin sous les genoux si besoin",
+   "Relâcher tout, des pieds à la tête"
+  ],
+  "souffle_court": "Naturel, sans contrôle"
  },
  "P177": {
   "posture": "Relaxation sur le côté",
@@ -5879,7 +6935,13 @@
   "sortie": "Bougez doucement, puis poussez dans les mains pour vous redresser.",
   "variante_facilitee": "Coussin d'allaitement ou bolster entre les jambes.",
   "variante_avancee": "Relaxation guidée plus longue.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Sur le côté gauche",
+   "Coussin sous la tête et entre les genoux",
+   "Tout relâcher"
+  ],
+  "souffle_court": "Naturel"
  },
  "P178": {
   "posture": "Advasana",
@@ -5912,7 +6974,13 @@
   "sortie": "Posez les mains sous les épaules et reculez en posture de l'enfant.",
   "variante_facilitee": "Coussin sous le ventre et sous le front.",
   "variante_avancee": "Relaxation guidée plus longue.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Sur le ventre, front sur les bras",
+   "Jambes détendues",
+   "Pas en cas de grossesse"
+  ],
+  "souffle_court": "Abdominal et lent"
  },
  "P179": {
   "posture": "Papillon (yin)",
@@ -5945,7 +7013,13 @@
   "sortie": "Redressez-vous très lentement, rapprochez les genoux avec les mains et allongez les jambes. Restez un moment immobile pour ressentir.",
   "variante_facilitee": "Bolster sous le buste, coussins sous les genoux.",
   "variante_avancee": "Pieds plus proches et buste plus bas, sans forcer.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds joints, talons loin du bassin",
+   "Dos arrondi, tête relâchée",
+   "Limite douce, puis immobile"
+  ],
+  "souffle_court": "Lent, 3 à 5 min"
  },
  "P180": {
   "posture": "Demi-papillon (yin)",
@@ -5978,7 +7052,13 @@
   "sortie": "Redressez-vous lentement, allongez la jambe pliée et changez de côté.",
   "variante_facilitee": "Coussin sous le genou tendu.",
   "variante_avancee": "Buste plus bas, sans forcer.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Une jambe tendue, l'autre pliée",
+   "Dos arrondi au-dessus de la jambe",
+   "Limite douce, puis immobile"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P181": {
   "posture": "Chenille (yin)",
@@ -6011,7 +7091,13 @@
   "sortie": "Redressez-vous très lentement, vertèbre par vertèbre. Allongez-vous sur le dos quelques instants.",
   "variante_facilitee": "Bolster sur les jambes, genoux pliés.",
   "variante_avancee": "Sans coussin sous les genoux.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambes tendues, coussin sous les genoux",
+   "Dos arrondi, tête relâchée",
+   "Limite douce, puis immobile"
+  ],
+  "souffle_court": "Lent, 3 à 5 min"
  },
  "P182": {
   "posture": "Dragon (yin)",
@@ -6044,7 +7130,13 @@
   "sortie": "Posez les mains, reculez le pied avant à quatre pattes et passez en posture de l'enfant. Changez de côté.",
   "variante_facilitee": "Buste redressé, mains sur la cuisse.",
   "variante_avancee": "Dragon ailé, genou avant qui s'ouvre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Fente basse, couverture sous le genou",
+   "Bassin qui descend",
+   "Mains au sol ou sur des briques"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P183": {
   "posture": "Dragon ailé (yin)",
@@ -6077,7 +7169,13 @@
   "sortie": "Redressez le pied avant, revenez à quatre pattes et passez en posture de l'enfant. Changez de côté.",
   "variante_facilitee": "Dragon.",
   "variante_avancee": "Avant-bras au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis le dragon",
+   "Pied avant sur son bord, genou qui s'ouvre",
+   "Avant-bras si confortable"
+  ],
+  "souffle_court": "Lent, 1 à 3 min"
  },
  "P184": {
   "posture": "Grenouille (yin)",
@@ -6110,7 +7208,13 @@
   "sortie": "Avancez sur les avant-bras, rapprochez les genoux et passez en posture de l'enfant.",
   "variante_facilitee": "Têtard : gros orteils qui se touchent, bassin vers les talons.",
   "variante_avancee": "Poitrine au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Couvertures sous les genoux",
+   "Genoux larges, chevilles alignées",
+   "Sur les avant-bras"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P185": {
   "posture": "Selle (yin)",
@@ -6143,7 +7247,13 @@
   "sortie": "Remontez sur les avant-bras puis les mains, allongez les jambes une à une. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Demi-selle, une jambe pliée.",
   "variante_avancee": "Dos au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis sur les talons, bolster derrière",
+   "Une jambe à la fois si genoux fragiles",
+   "Sortir au moindre pincement"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P186": {
   "posture": "Sphinx (yin)",
@@ -6176,7 +7286,13 @@
   "sortie": "Reposez la poitrine, croisez les bras sous le front, puis passez en posture de l'enfant.",
   "variante_facilitee": "Coussin sous le ventre, coudes plus avancés.",
   "variante_avancee": "Phoque, bras tendus.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Avant-bras au sol, coudes en avant",
+   "Fessiers et jambes relâchés",
+   "Épaules basses"
+  ],
+  "souffle_court": "Lent, 3 à 5 min"
  },
  "P187": {
   "posture": "Phoque (yin)",
@@ -6209,7 +7325,13 @@
   "sortie": "Pliez les coudes, reposez la poitrine et passez en posture de l'enfant.",
   "variante_facilitee": "Sphinx.",
   "variante_avancee": "Mains plus proches du corps.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains loin devant, bras tendus",
+   "Pubis au sol",
+   "Revenir au sphinx si le dos proteste"
+  ],
+  "souffle_court": "Lent, 2 à 3 min"
  },
  "P188": {
   "posture": "Lacet (yin)",
@@ -6242,7 +7364,13 @@
   "sortie": "Redressez-vous, décroisez à deux mains et changez de côté. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Jambe du dessous tendue.",
   "variante_avancee": "Buste posé sur les genoux.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux superposés",
+   "Coussin si une fesse décolle",
+   "Pencher en avant, dos arrondi"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P189": {
   "posture": "Carré (yin)",
@@ -6275,7 +7403,13 @@
   "sortie": "Redressez-vous, décroisez à deux mains et changez de côté.",
   "variante_facilitee": "Tailleur simple.",
   "variante_avancee": "Buste posé sur les tibias.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Tibias empilés",
+   "Pieds fléchis",
+   "Coussin sous le genou du dessus"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P190": {
   "posture": "Cygne (yin)",
@@ -6308,7 +7442,13 @@
   "sortie": "Retournez les orteils, reculez la jambe avant et passez en posture de l'enfant. Changez de côté.",
   "variante_facilitee": "Pigeon allongé.",
   "variante_avancee": "Cygne endormi.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant vers le poignet",
+   "Coussin sous la hanche",
+   "Buste redressé"
+  ],
+  "souffle_court": "Lent, 1 à 3 min"
  },
  "P191": {
   "posture": "Cygne endormi (yin)",
@@ -6341,7 +7481,13 @@
   "sortie": "Remontez sur les mains, reculez la jambe avant et passez en posture de l'enfant. Changez de côté.",
   "variante_facilitee": "Bolster sous le buste.",
   "variante_avancee": "Sans coussin.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis le cygne",
+   "Buste allongé, front soutenu",
+   "Tout relâcher"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P192": {
   "posture": "Escargot (yin)",
@@ -6374,7 +7520,13 @@
   "sortie": "Mains au sol, déroulez lentement la colonne. Enchaînez avec le sphinx ou la torsion couchée.",
   "variante_facilitee": "Jambes au mur.",
   "variante_avancee": "Genoux aux oreilles.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Couverture sous les épaules",
+   "Jambes derrière la tête",
+   "Ne jamais tourner la tête"
+  ],
+  "souffle_court": "Lent, 1 à 3 min"
  },
  "P193": {
   "posture": "Suspendu (yin)",
@@ -6407,7 +7559,13 @@
   "sortie": "Pliez davantage les genoux, mains sur les cuisses, et déroulez très lentement le dos.",
   "variante_facilitee": "Mains sur une chaise.",
   "variante_avancee": "Jambes plus tendues.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux pliés, bras croisés",
+   "Tête qui pend",
+   "Remonter très lentement"
+  ],
+  "souffle_court": "Lent, 1 à 3 min"
  },
  "P194": {
   "posture": "Orteils (yin)",
@@ -6440,7 +7598,13 @@
   "sortie": "Penchez-vous en avant, mains au sol, et relâchez les orteils. Enchaînez avec l'étirement des chevilles.",
   "variante_facilitee": "Mains au sol, poids allégé.",
   "variante_avancee": "Bras levés.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Tous les orteils retournés",
+   "Assis sur les talons",
+   "Mains au sol pour alléger"
+  ],
+  "souffle_court": "Lent, 30 s à 1 min"
  },
  "P195": {
   "posture": "Étirement des chevilles (yin)",
@@ -6473,7 +7637,13 @@
   "sortie": "Reposez les genoux, penchez-vous en avant et étirez les jambes.",
   "variante_facilitee": "Couverture roulée sous les chevilles.",
   "variante_avancee": "Genoux plus hauts.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Dessus des pieds au sol",
+   "Assis sur les talons, mains derrière",
+   "Soulever les genoux si confortable"
+  ],
+  "souffle_court": "Lent, 30 s à 1 min"
  },
  "P196": {
   "posture": "Banane (yin)",
@@ -6506,7 +7676,13 @@
   "sortie": "Revenez au centre et changez de côté.",
   "variante_facilitee": "Bras le long du corps.",
   "variante_avancee": "Chevilles croisées et poignets tenus.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Allongé, bras au-dessus de la tête",
+   "Corps courbé en banane",
+   "Fesses et épaules au sol"
+  ],
+  "souffle_court": "Lent, dans le flanc, 3 à 5 min"
  },
  "P197": {
   "posture": "Racines torsadées (yin)",
@@ -6539,7 +7715,13 @@
   "sortie": "Ramenez les genoux au centre, décroisez et changez de côté.",
   "variante_facilitee": "Coussin sous les genoux.",
   "variante_avancee": "Rotation plus profonde, sans forcer.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambes croisées, genoux qui tombent",
+   "Bras en croix",
+   "Épaules au sol"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P198": {
   "posture": "Torsion couchée (yin)",
@@ -6572,7 +7754,13 @@
   "sortie": "Ramenez le genou au centre et changez de côté.",
   "variante_facilitee": "Coussin sous le genou.",
   "variante_avancee": "Chat qui tire sa queue.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Un genou passe de l'autre côté",
+   "Main posée sur le genou",
+   "Bras opposé ouvert"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P199": {
   "posture": "Daim (yin)",
@@ -6605,7 +7793,13 @@
   "sortie": "Revenez au centre, ramenez les jambes et changez de côté.",
   "variante_facilitee": "Coussin sous les fesses.",
   "variante_avancee": "Buste posé vers l'avant.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Une jambe pliée devant, l'autre sur le côté",
+   "Ischions posés ou soutenus",
+   "Torsion ou flexion douce"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P200": {
   "posture": "Libellule (yin)",
@@ -6638,7 +7832,13 @@
   "sortie": "Redressez-vous lentement, rapprochez les jambes avec les mains.",
   "variante_facilitee": "Bolster sous le buste.",
   "variante_avancee": "Buste plus bas.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambes écartées, assis sur un coussin",
+   "Dos arrondi, tête relâchée",
+   "Limite douce, puis immobile"
+  ],
+  "souffle_court": "Lent, 3 à 5 min"
  },
  "P201": {
   "posture": "Chat qui tire sa queue (yin)",
@@ -6671,7 +7871,13 @@
   "sortie": "Lâchez le pied, revenez au centre et changez de côté. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Torsion couchée.",
   "variante_avancee": "Sans sangle.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Torsion couchée",
+   "Pied arrière tenu, ou sangle",
+   "Épaule vers le sol"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P202": {
   "posture": "Accroupi (yin)",
@@ -6704,7 +7910,13 @@
   "sortie": "Posez les mains, tendez les jambes et passez en suspendu.",
   "variante_facilitee": "Brique sous les fesses.",
   "variante_avancee": "Sans support.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds écartés, pointes ouvertes",
+   "Brique sous les fesses si besoin",
+   "Coudes contre les genoux"
+  ],
+  "souffle_court": "Lent, 1 à 2 min"
  },
  "P203": {
   "posture": "Bébé heureux (yin)",
@@ -6737,6 +7949,12 @@
   "sortie": "Lâchez les pieds, posez-les au sol et allongez les jambes.",
   "variante_facilitee": "Une jambe à la fois.",
   "variante_avancee": "Jambes tendues.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds tenus, genoux vers les aisselles",
+   "Dos et tête au sol",
+   "Laisser les hanches s'ouvrir"
+  ],
+  "souffle_court": "Lent, 1 à 3 min"
  }
 }

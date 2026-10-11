@@ -29,7 +29,13 @@
   "sortie": "Ramenez le bras sur l'autre, restez quelques instants sur le côté, puis passez sur l'autre côté.",
   "variante_facilitee": "Ouverture partielle, main posée sur un coussin derrière vous.",
   "variante_avancee": "Dessinez un grand cercle avec le bras par-dessus la tête avant de revenir.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux empilés, tête sur un coussin",
+   "Ouvrir le bras comme une page",
+   "Le regard suit la main"
+  ],
+  "souffle_court": "Inspirer en levant, expirer en ouvrant"
  },
  "P037": {
   "presentation": "Supta Padangusthasana étire les ischio-jambiers en position allongée, avec une sangle autour du pied. Le dos reste protégé au sol, ce qui en fait un étirement sûr pour tous. Il prépare les flexions avant et le demi-grand écart.",
@@ -60,7 +66,13 @@
   "sortie": "Pliez le genou, retirez la sangle et posez le pied au sol. Allongez la jambe et observez la différence avant de changer de côté.",
   "variante_facilitee": "Genou légèrement plié et autre jambe pliée, pied au sol.",
   "variante_avancee": "Ouvrez la jambe sur le côté en gardant le bassin au sol, puis ramenez-la au centre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Sangle sous le pied, jambe vers le ciel",
+   "Bassin et épaules au sol",
+   "Étirement dans la cuisse, pas derrière le genou"
+  ],
+  "souffle_court": "Expirer pour relâcher l'arrière de la cuisse"
  },
  "P038": {
   "presentation": "Anjaneyasana, la fente basse, place un genou au sol et l'autre pied en avant. Elle étire l'avant de la hanche et la cuisse arrière, souvent raides après une journée assise. C'est une posture clé avant les extensions et le demi-grand écart.",
@@ -92,7 +104,13 @@
   "sortie": "Posez les mains au sol de chaque côté du pied avant, reculez-le et revenez à quatre pattes ou en chien tête en bas. Changez de côté.",
   "variante_facilitee": "Mains sur des briques de chaque côté du pied avant, buste incliné.",
   "variante_avancee": "Bras levés et légère extension du haut du dos, ou saisir le pied arrière avec la main du même côté.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant au-dessus de la cheville",
+   "Bassin qui avance et descend",
+   "Bas-ventre engagé, sans creuser"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour descendre"
  },
  "P039": {
   "presentation": "Ardha Hanumanasana, le demi-grand écart, étire profondément les ischio-jambiers de la jambe avant. Depuis la fente basse, on recule le bassin sur le genou arrière. Les briques sous les mains rendent la posture accessible.",
@@ -123,7 +141,13 @@
   "sortie": "Pliez le genou avant, revenez en fente basse, puis à quatre pattes. Changez de côté.",
   "variante_facilitee": "Genou avant légèrement plié et briques à leur hauteur maximale.",
   "variante_avancee": "Glissez progressivement le talon vers l'avant en direction du grand écart, avec une brique sous la cuisse.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Hanche arrière au-dessus du genou",
+   "Pied avant fléchi, briques sous les mains",
+   "Dos long, flexion depuis les hanches"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour avancer"
  },
  "P040": {
   "presentation": "Utthan Pristhasana, le lézard, est une fente basse où les mains passent à l'intérieur du pied avant. Elle ouvre profondément l'avant de la hanche arrière et l'intérieur de la hanche avant. Posture intense, elle se prépare par la fente basse.",
@@ -154,7 +178,13 @@
   "sortie": "Remontez sur les mains, reculez le pied avant et passez en chien tête en bas, sa contre-posture. Changez de côté.",
   "variante_facilitee": "Mains sur des briques hautes, genou arrière au sol.",
   "variante_avancee": "Genou arrière décollé, jambe arrière tendue, avant-bras au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied avant à l'extérieur des mains",
+   "Genou dans l'axe des orteils",
+   "Mains ou briques, avant-bras si confortable"
+  ],
+  "souffle_court": "Expirer pour relâcher les hanches"
  },
  "P041": {
   "presentation": "Malasana, la guirlande, est la position accroupie pieds écartés, mains jointes devant la poitrine. Elle ouvre les hanches et l'intérieur des cuisses et assouplit les chevilles. Une brique sous les talons ou les fesses la rend accessible.",
@@ -186,7 +216,13 @@
   "sortie": "Posez les mains au sol devant vous, tendez les jambes et passez en pince debout, sa contre-posture. Déroulez lentement pour vous redresser.",
   "variante_facilitee": "Assis sur une brique haute, ou dos contre un mur.",
   "variante_avancee": "Pieds joints, ou bras qui enroulent les tibias, mains derrière le dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds écartés, genoux dans l'axe",
+   "Brique sous les fesses ou les talons",
+   "Coudes qui ouvrent les genoux, poitrine haute"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour relâcher"
  },
  "P042": {
   "presentation": "L'accroupi soutenu prépare à la naissance : on descend en position accroupie avec un appui stable, une chaise devant soi ou des briques sous les fesses. Il ouvre le bassin et détend le périnée. À éviter en cas de placenta bas ou de bébé en siège après 34 semaines, sauf avis médical.",
@@ -217,7 +253,13 @@
   "sortie": "Tenez la chaise, poussez dans les pieds et remontez lentement. Restez debout quelques instants avant de bouger.",
   "variante_facilitee": "Briques plus hautes, ou assise sur une chaise basse, genoux écartés.",
   "variante_avancee": "Briques plus basses, en gardant toujours l'appui de la chaise.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Chaise devant, briques sous les fesses",
+   "Genoux dans l'axe des pieds",
+   "Ne jamais pousser vers le bas"
+  ],
+  "souffle_court": "Expiration longue, périnée qui remonte"
  },
  "P043": {
   "presentation": "Le chien-oiseau se pratique à quatre pattes en tendant un bras et la jambe opposée. Il renforce la sangle abdominale profonde, les fessiers et le dos tout en travaillant l'équilibre. C'est un exercice de stabilisation sûr pour le dos.",
@@ -248,7 +290,13 @@
   "sortie": "Ramenez le genou et la main au sol, revenez au dos plat et changez de côté. Terminez en posture de l'enfant.",
   "variante_facilitee": "Tendre seulement la jambe, ou seulement le bras.",
   "variante_avancee": "Ramenez coude et genou sous le ventre à l'expiration, puis retendez à l'inspiration, plusieurs fois.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras et jambe opposés tendus",
+   "Bassin horizontal, dos plat",
+   "Pied à hauteur de hanche"
+  ],
+  "souffle_court": "Expirer en tendant, bas-ventre qui remonte"
  },
  "P044": {
   "presentation": "Surya Namaskar A, la salutation au soleil A, enchaîne une dizaine de positions au rythme du souffle : montagne, flexion avant, planche, chaturanga, chien tête en haut et chien tête en bas. Elle échauffe tout le corps et installe le rythme de la séance.",
@@ -280,7 +328,13 @@
   "sortie": "Après la dernière salutation, restez en montagne quelques respirations, mains jointes devant la poitrine. Vous pouvez aussi passer en posture de l'enfant.",
   "variante_facilitee": "Genoux au sol pour la planche et la descente, cobra bas plutôt que chien tête en haut.",
   "variante_avancee": "Sauter vers l'arrière en chaturanga et vers l'avant entre les mains.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Un mouvement, une respiration",
+   "Genoux au sol si les épaules plongent",
+   "Genoux fléchis en flexion avant si besoin"
+  ],
+  "souffle_court": "Inspirer pour monter, expirer pour descendre"
  },
  "P045": {
   "presentation": "Surya Namaskar B ajoute la chaise et le guerrier I à la salutation A. Plus longue et plus tonique, elle renforce les jambes et réchauffe intensément. On l'enchaîne après quelques salutations A.",
@@ -313,7 +367,13 @@
   "sortie": "Après la dernière salutation, revenez en montagne et laissez la respiration se calmer avant la suite, ou passez en posture de l'enfant.",
   "variante_facilitee": "Genoux au sol pour la planche, guerrier I avec le genou arrière au sol.",
   "variante_avancee": "Sauts vers l'arrière et vers l'avant, chaise plus basse.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Chaise : fesses en arrière, poids dans les talons",
+   "Guerrier I : genou au-dessus de la cheville",
+   "Ralentir si le souffle se perd"
+  ],
+  "souffle_court": "Ujjayi régulier, un mouvement par respiration"
  },
  "P046": {
   "presentation": "La salutation au soleil Sivananda enchaîne 12 positions, dont la fente basse et la posture des huit points. Plus lente que les salutations A et B, elle étire l'avant des hanches et la colonne. Elle ouvre la séance de Hatha Sivananda.",
@@ -346,7 +406,13 @@
   "sortie": "Terminez debout, mains jointes devant la poitrine, puis allongez-vous quelques instants sur le dos.",
   "variante_facilitee": "Genoux au sol pour la planche et ouverture du haut du corps limitée.",
   "variante_avancee": "Enchaîner 12 tours au rythme du souffle.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Douze positions, des deux côtés",
+   "Fente : genou au-dessus de la cheville",
+   "Huit points : genoux puis poitrine au sol"
+  ],
+  "souffle_court": "Inspirer dans les ouvertures, expirer dans les flexions"
  },
  "P047": {
   "presentation": "Chandra Namaskar, la salutation à la lune, est un enchaînement latéral et doux : déesse, étoile, triangle, fente latérale. Elle ouvre les flancs et les hanches et apporte un rythme calme et fluide. Une version sans planche ni cobra convient à la grossesse.",
@@ -378,7 +444,13 @@
   "sortie": "Revenez debout, pieds joints, mains devant la poitrine, et respirez quelques instants.",
   "variante_facilitee": "Sans fente latérale profonde ; mains sur les cuisses dans les inclinaisons.",
   "variante_avancee": "Ajoutez une fente basse et une planche avec cobra au centre, hors grossesse.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Enchaînement latéral, lent",
+   "Genoux dans l'axe en déesse",
+   "Sans planche ni cobra si grossesse"
+  ],
+  "souffle_court": "Une position par respiration"
  },
  "P048": {
   "presentation": "La salutation au soleil sur chaise reprend les mouvements de la salutation, assis : bras levés, flexion avant, fente, ouverture de poitrine. Elle mobilise toute la colonne sans passer par le sol. Idéale pour les seniors et le yoga du dos.",
@@ -410,7 +482,13 @@
   "sortie": "Revenez assis droit, mains sur les cuisses, et respirez calmement.",
   "variante_facilitee": "Sans la flexion avant complète, mains sur les cuisses.",
   "variante_avancee": "Ajoutez une fente debout, une main sur le dossier de la chaise.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Chaise stable, pieds à plat",
+   "Flexion depuis les hanches",
+   "Genou à la poitrine, un côté puis l'autre"
+  ],
+  "souffle_court": "Inspirer pour ouvrir, expirer pour plier"
  },
  "P049": {
   "presentation": "Le vinyasa enchaîne planche, chaturanga, chien tête en haut et chien tête en bas. C'est la transition qui relie les postures dans les cours dynamiques. Il renforce les bras et le centre et demande des poignets et des épaules préparés.",
@@ -441,7 +519,13 @@
   "sortie": "Restez en chien tête en bas quelques respirations, ou posez les genoux et passez en posture de l'enfant.",
   "variante_facilitee": "Genoux au sol pour la planche et la descente, cobra bas à la place du chien tête en haut.",
   "variante_avancee": "Flotter vers l'arrière en chaturanga depuis la flexion avant.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Planche : épaules au-dessus des poignets",
+   "Chaturanga : coudes le long des côtes",
+   "Genoux au sol plutôt que s'effondrer"
+  ],
+  "souffle_court": "Inspirer en planche et en ouverture, expirer en descente"
  },
  "P050": {
   "presentation": "Tadasana, la montagne, est la posture debout de référence : pieds ancrés, colonne longue, présence tranquille. Elle sert de point de départ et de retour à toutes les postures debout. Simple en apparence, elle enseigne l'alignement de tout le corps.",
@@ -473,6 +557,12 @@
   "sortie": "Relâchez simplement la posture ou enchaînez avec la posture debout suivante.",
   "variante_facilitee": "Pieds écartés de la largeur du bassin, dos contre un mur pour sentir l'alignement.",
   "variante_avancee": "Yeux fermés, pour affiner l'équilibre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Poids réparti sur toute la plante des pieds",
+   "Bassin neutre, genoux souples",
+   "Épaules basses, sommet du crâne vers le ciel"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour ancrer"
  }
 }

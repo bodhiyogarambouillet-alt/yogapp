@@ -28,7 +28,13 @@
   "sortie": "Posez les mains sous les épaules et reculez en posture de l'enfant.",
   "variante_facilitee": "Coussin sous le ventre et sous le front.",
   "variante_avancee": "Relaxation guidée plus longue.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Sur le ventre, front sur les bras",
+   "Jambes détendues",
+   "Pas en cas de grossesse"
+  ],
+  "souffle_court": "Abdominal et lent"
  },
  "P179": {
   "presentation": "Le papillon yin est une flexion avant passive, plantes de pieds jointes et talons éloignés du bassin. Tenu plusieurs minutes, muscles relâchés, il étire le bas du dos et les hanches. Avec des lombaires sensibles ou une sciatique, on soutient le dos.",
@@ -59,7 +65,13 @@
   "sortie": "Redressez-vous très lentement, rapprochez les genoux avec les mains et allongez les jambes. Restez un moment immobile pour ressentir.",
   "variante_facilitee": "Bolster sous le buste, coussins sous les genoux.",
   "variante_avancee": "Pieds plus proches et buste plus bas, sans forcer.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds joints, talons loin du bassin",
+   "Dos arrondi, tête relâchée",
+   "Limite douce, puis immobile"
+  ],
+  "souffle_court": "Lent, 3 à 5 min"
  },
  "P180": {
   "presentation": "Le demi-papillon yin plie le buste sur une jambe tendue, l'autre pied contre l'intérieur de la cuisse. Passif et tenu plusieurs minutes, il étire l'arrière de la jambe et le dos.",
@@ -90,7 +102,13 @@
   "sortie": "Redressez-vous lentement, allongez la jambe pliée et changez de côté.",
   "variante_facilitee": "Coussin sous le genou tendu.",
   "variante_avancee": "Buste plus bas, sans forcer.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Une jambe tendue, l'autre pliée",
+   "Dos arrondi au-dessus de la jambe",
+   "Limite douce, puis immobile"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P181": {
   "presentation": "La chenille yin est une pince assise passive, jambes tendues et dos arrondi. Tenue plusieurs minutes, elle étire l'arrière des jambes et tout le dos. Prudence en cas de sciatique ou de lombaires sensibles.",
@@ -121,7 +139,13 @@
   "sortie": "Redressez-vous très lentement, vertèbre par vertèbre. Allongez-vous sur le dos quelques instants.",
   "variante_facilitee": "Bolster sur les jambes, genoux pliés.",
   "variante_avancee": "Sans coussin sous les genoux.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambes tendues, coussin sous les genoux",
+   "Dos arrondi, tête relâchée",
+   "Limite douce, puis immobile"
+  ],
+  "souffle_court": "Lent, 3 à 5 min"
  },
  "P182": {
   "presentation": "Le dragon yin est une fente basse tenue passivement, mains de chaque côté du pied avant. Elle ouvre l'avant de la hanche arrière et les hanches. Une couverture sous le genou arrière la rend confortable.",
@@ -152,7 +176,13 @@
   "sortie": "Posez les mains, reculez le pied avant à quatre pattes et passez en posture de l'enfant. Changez de côté.",
   "variante_facilitee": "Buste redressé, mains sur la cuisse.",
   "variante_avancee": "Dragon ailé, genou avant qui s'ouvre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Fente basse, couverture sous le genou",
+   "Bassin qui descend",
+   "Mains au sol ou sur des briques"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P183": {
   "presentation": "Le dragon ailé est une variante du dragon yin où le genou avant s'ouvre vers l'extérieur. Il ouvre plus intensément la hanche avant et l'intérieur de la cuisse. Il se prépare par le dragon.",
@@ -183,7 +213,13 @@
   "sortie": "Redressez le pied avant, revenez à quatre pattes et passez en posture de l'enfant. Changez de côté.",
   "variante_facilitee": "Dragon.",
   "variante_avancee": "Avant-bras au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis le dragon",
+   "Pied avant sur son bord, genou qui s'ouvre",
+   "Avant-bras si confortable"
+  ],
+  "souffle_court": "Lent, 1 à 3 min"
  },
  "P184": {
   "presentation": "La grenouille yin écarte largement les genoux à quatre pattes et laisse le bassin descendre passivement. Elle ouvre intensément l'intérieur des cuisses. Des couvertures sous les genoux sont indispensables ; prudence avec les genoux et les aines.",
@@ -214,7 +250,13 @@
   "sortie": "Avancez sur les avant-bras, rapprochez les genoux et passez en posture de l'enfant.",
   "variante_facilitee": "Têtard : gros orteils qui se touchent, bassin vers les talons.",
   "variante_avancee": "Poitrine au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Couvertures sous les genoux",
+   "Genoux larges, chevilles alignées",
+   "Sur les avant-bras"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P185": {
   "presentation": "La selle yin s'allonge vers l'arrière depuis une assise sur les talons ou entre les pieds. Tenue passivement, elle étire les quadriceps et l'avant des hanches et ouvre le bas du dos. Avec des genoux ou des lombaires fragiles, on la fait une jambe à la fois.",
@@ -245,7 +287,13 @@
   "sortie": "Remontez sur les avant-bras puis les mains, allongez les jambes une à une. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Demi-selle, une jambe pliée.",
   "variante_avancee": "Dos au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis sur les talons, bolster derrière",
+   "Une jambe à la fois si genoux fragiles",
+   "Sortir au moindre pincement"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P186": {
   "presentation": "Le sphinx yin soulève la poitrine sur les avant-bras, allongé sur le ventre, et reste passif plusieurs minutes. Extension douce, il réveille le bas du dos. À éviter pendant la grossesse.",
@@ -276,7 +324,13 @@
   "sortie": "Reposez la poitrine, croisez les bras sous le front, puis passez en posture de l'enfant.",
   "variante_facilitee": "Coussin sous le ventre, coudes plus avancés.",
   "variante_avancee": "Phoque, bras tendus.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Avant-bras au sol, coudes en avant",
+   "Fessiers et jambes relâchés",
+   "Épaules basses"
+  ],
+  "souffle_court": "Lent, 3 à 5 min"
  },
  "P187": {
   "presentation": "Le phoque yin soulève la poitrine sur les bras tendus, allongé sur le ventre. Extension plus intense que le sphinx, il demande un bas du dos à l'aise.",
@@ -307,7 +361,13 @@
   "sortie": "Pliez les coudes, reposez la poitrine et passez en posture de l'enfant.",
   "variante_facilitee": "Sphinx.",
   "variante_avancee": "Mains plus proches du corps.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains loin devant, bras tendus",
+   "Pubis au sol",
+   "Revenir au sphinx si le dos proteste"
+  ],
+  "souffle_court": "Lent, 2 à 3 min"
  },
  "P188": {
   "presentation": "Le lacet yin croise les genoux l'un au-dessus de l'autre, pieds de chaque côté des hanches. Il ouvre intensément les hanches et les fessiers. Les genoux sensibles le pratiquent avec un coussin.",
@@ -338,7 +398,13 @@
   "sortie": "Redressez-vous, décroisez à deux mains et changez de côté. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Jambe du dessous tendue.",
   "variante_avancee": "Buste posé sur les genoux.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux superposés",
+   "Coussin si une fesse décolle",
+   "Pencher en avant, dos arrondi"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P189": {
   "presentation": "Le carré yin superpose les deux tibias, comme la bûche, et se tient passivement. Il ouvre profondément les hanches. Les genoux sensibles le pratiquent avec des coussins.",
@@ -369,7 +435,13 @@
   "sortie": "Redressez-vous, décroisez à deux mains et changez de côté.",
   "variante_facilitee": "Tailleur simple.",
   "variante_avancee": "Buste posé sur les tibias.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Tibias empilés",
+   "Pieds fléchis",
+   "Coussin sous le genou du dessus"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P190": {
   "presentation": "Le cygne yin est la préparation au pigeon tenue passivement, buste redressé. Il ouvre la hanche avant et étire l'avant de la hanche arrière. Un coussin sous la hanche équilibre le bassin.",
@@ -400,7 +472,13 @@
   "sortie": "Retournez les orteils, reculez la jambe avant et passez en posture de l'enfant. Changez de côté.",
   "variante_facilitee": "Pigeon allongé.",
   "variante_avancee": "Cygne endormi.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant vers le poignet",
+   "Coussin sous la hanche",
+   "Buste redressé"
+  ],
+  "souffle_court": "Lent, 1 à 3 min"
  },
  "P191": {
   "presentation": "Le cygne endormi est le cygne yin avec le buste allongé vers l'avant, front posé. Il ouvre profondément la hanche et les fessiers dans un relâchement complet. Prudence avec les genoux.",
@@ -431,7 +509,13 @@
   "sortie": "Remontez sur les mains, reculez la jambe avant et passez en posture de l'enfant. Changez de côté.",
   "variante_facilitee": "Bolster sous le buste.",
   "variante_avancee": "Sans coussin.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis le cygne",
+   "Buste allongé, front soutenu",
+   "Tout relâcher"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P192": {
   "presentation": "L'escargot yin est une charrue passive, jambes derrière la tête, dos arrondi. Il étire tout l'arrière du corps. Il est contre-indiqué en cas de fragilité cervicale, d'hypertension et pendant la grossesse.",
@@ -462,7 +546,13 @@
   "sortie": "Mains au sol, déroulez lentement la colonne. Enchaînez avec le sphinx ou la torsion couchée.",
   "variante_facilitee": "Jambes au mur.",
   "variante_avancee": "Genoux aux oreilles.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Couverture sous les épaules",
+   "Jambes derrière la tête",
+   "Ne jamais tourner la tête"
+  ],
+  "souffle_court": "Lent, 1 à 3 min"
  },
  "P193": {
   "presentation": "Le suspendu yin est une pince debout passive, genoux pliés, bras croisés. Il étire l'arrière des jambes et le dos. En cas d'hypertension, on reste peu de temps et on se relève lentement.",
@@ -493,7 +583,13 @@
   "sortie": "Pliez davantage les genoux, mains sur les cuisses, et déroulez très lentement le dos.",
   "variante_facilitee": "Mains sur une chaise.",
   "variante_avancee": "Jambes plus tendues.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux pliés, bras croisés",
+   "Tête qui pend",
+   "Remonter très lentement"
+  ],
+  "souffle_court": "Lent, 1 à 3 min"
  },
  "P194": {
   "presentation": "La posture des orteils yin s'assoit sur les talons, orteils retournés. Elle étire intensément la plante des pieds. Courte et souvent intense, elle se tient environ une minute.",
@@ -524,7 +620,13 @@
   "sortie": "Penchez-vous en avant, mains au sol, et relâchez les orteils. Enchaînez avec l'étirement des chevilles.",
   "variante_facilitee": "Mains au sol, poids allégé.",
   "variante_avancee": "Bras levés.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Tous les orteils retournés",
+   "Assis sur les talons",
+   "Mains au sol pour alléger"
+  ],
+  "souffle_court": "Lent, 30 s à 1 min"
  },
  "P195": {
   "presentation": "L'étirement des chevilles yin s'assoit sur les talons, dessus des pieds au sol, et peut soulever les genoux. Il étire l'avant des chevilles et des tibias. Il suit souvent la posture des orteils.",
@@ -555,7 +657,13 @@
   "sortie": "Reposez les genoux, penchez-vous en avant et étirez les jambes.",
   "variante_facilitee": "Couverture roulée sous les chevilles.",
   "variante_avancee": "Genoux plus hauts.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Dessus des pieds au sol",
+   "Assis sur les talons, mains derrière",
+   "Soulever les genoux si confortable"
+  ],
+  "souffle_court": "Lent, 30 s à 1 min"
  },
  "P196": {
   "presentation": "La banane yin s'allonge sur le dos en courbant tout le corps sur le côté. Elle étire passivement tout le flanc. Douce et accessible, elle se tient plusieurs minutes.",
@@ -586,7 +694,13 @@
   "sortie": "Revenez au centre et changez de côté.",
   "variante_facilitee": "Bras le long du corps.",
   "variante_avancee": "Chevilles croisées et poignets tenus.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Allongé, bras au-dessus de la tête",
+   "Corps courbé en banane",
+   "Fesses et épaules au sol"
+  ],
+  "souffle_court": "Lent, dans le flanc, 3 à 5 min"
  },
  "P197": {
   "presentation": "Les racines torsadées croisent les jambes allongé sur le dos et les laissent tomber sur le côté. Torsion passive, elle étire les fessiers et la colonne.",
@@ -617,7 +731,13 @@
   "sortie": "Ramenez les genoux au centre, décroisez et changez de côté.",
   "variante_facilitee": "Coussin sous les genoux.",
   "variante_avancee": "Rotation plus profonde, sans forcer.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambes croisées, genoux qui tombent",
+   "Bras en croix",
+   "Épaules au sol"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P198": {
   "presentation": "La torsion couchée yin laisse tomber un genou sur le côté opposé, allongé sur le dos. Torsion passive, elle détend la colonne et les fessiers.",
@@ -648,7 +768,13 @@
   "sortie": "Ramenez le genou au centre et changez de côté.",
   "variante_facilitee": "Coussin sous le genou.",
   "variante_avancee": "Chat qui tire sa queue.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Un genou passe de l'autre côté",
+   "Main posée sur le genou",
+   "Bras opposé ouvert"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P199": {
   "presentation": "Le daim yin s'assoit avec une jambe pliée devant et l'autre pliée sur le côté. Il ouvre les hanches dans des directions opposées et peut s'accompagner d'une torsion.",
@@ -679,7 +805,13 @@
   "sortie": "Revenez au centre, ramenez les jambes et changez de côté.",
   "variante_facilitee": "Coussin sous les fesses.",
   "variante_avancee": "Buste posé vers l'avant.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Une jambe pliée devant, l'autre sur le côté",
+   "Ischions posés ou soutenus",
+   "Torsion ou flexion douce"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P200": {
   "presentation": "La libellule yin est l'angle assis tenu passivement, jambes écartées, dos arrondi. Elle ouvre l'intérieur des cuisses et étire l'arrière des jambes.",
@@ -710,7 +842,13 @@
   "sortie": "Redressez-vous lentement, rapprochez les jambes avec les mains.",
   "variante_facilitee": "Bolster sous le buste.",
   "variante_avancee": "Buste plus bas.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambes écartées, assis sur un coussin",
+   "Dos arrondi, tête relâchée",
+   "Limite douce, puis immobile"
+  ],
+  "souffle_court": "Lent, 3 à 5 min"
  },
  "P201": {
   "presentation": "Le chat qui tire sa queue combine torsion couchée et étirement du quadriceps en tenant le pied arrière. Torsion passive plus intense, elle ouvre aussi l'avant de la hanche. Une sangle aide à attraper le pied.",
@@ -741,7 +879,13 @@
   "sortie": "Lâchez le pied, revenez au centre et changez de côté. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Torsion couchée.",
   "variante_avancee": "Sans sangle.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Torsion couchée",
+   "Pied arrière tenu, ou sangle",
+   "Épaule vers le sol"
+  ],
+  "souffle_court": "Lent, 2 à 4 min"
  },
  "P202": {
   "presentation": "L'accroupi yin est une position accroupie tenue passivement, avec une brique sous les fesses ou les talons si besoin. Elle ouvre les hanches et assouplit les chevilles. Prudence avec les genoux.",
@@ -772,7 +916,13 @@
   "sortie": "Posez les mains, tendez les jambes et passez en suspendu.",
   "variante_facilitee": "Brique sous les fesses.",
   "variante_avancee": "Sans support.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds écartés, pointes ouvertes",
+   "Brique sous les fesses si besoin",
+   "Coudes contre les genoux"
+  ],
+  "souffle_court": "Lent, 1 à 2 min"
  },
  "P203": {
   "presentation": "Le bébé heureux yin tient les pieds sur le dos, genoux vers les aisselles, dans un relâchement complet. Il ouvre les hanches et détend le bas du dos.",
@@ -803,6 +953,12 @@
   "sortie": "Lâchez les pieds, posez-les au sol et allongez les jambes.",
   "variante_facilitee": "Une jambe à la fois.",
   "variante_avancee": "Jambes tendues.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds tenus, genoux vers les aisselles",
+   "Dos et tête au sol",
+   "Laisser les hanches s'ouvrir"
+  ],
+  "souffle_court": "Lent, 1 à 3 min"
  }
 }

@@ -28,7 +28,13 @@
   "sortie": "Expirez en abaissant les bras sur les côtés, ou enchaînez avec la pince debout.",
   "variante_facilitee": "Bras en V largement écartés, ou mains sur les épaules, coudes vers le ciel.",
   "variante_avancee": "Paumes jointes, légère ouverture du haut du dos vers l'arrière sans creuser les lombaires.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras dans le prolongement des oreilles",
+   "Côtes basses, sans cambrer",
+   "Épaules qui descendent"
+  ],
+  "souffle_court": "Inspirer en levant les bras"
  },
  "P052": {
   "presentation": "Uttanasana, la pince debout, plie le buste vers l'avant depuis les hanches, la tête relâchée vers le sol. Elle étire l'arrière des jambes et détend le dos et la nuque. Genoux fléchis, elle reste accessible aux dos sensibles.",
@@ -59,7 +65,13 @@
   "sortie": "Pliez les genoux, posez les mains sur les cuisses et déroulez lentement le dos, la tête en dernier. Ou remontez dos plat, bras levés.",
   "variante_facilitee": "Genoux bien fléchis, ventre sur les cuisses, mains aux coudes opposés.",
   "variante_avancee": "Jambes tendues, mains à plat au sol derrière les talons.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Plier depuis les hanches, genoux souples",
+   "Tête et nuque relâchées",
+   "Remonter lentement"
+  ],
+  "souffle_court": "Expirer pour descendre et relâcher"
  },
  "P053": {
   "presentation": "Ardha Uttanasana, la demi-pince, allonge le dos à l'horizontale entre deux flexions avant. Elle apprend à plier depuis les hanches en gardant la colonne longue. On la retrouve dans toutes les salutations.",
@@ -90,7 +102,13 @@
   "sortie": "Expirez en revenant en pince debout, ou posez les mains pour reculer en planche.",
   "variante_facilitee": "Mains sur les cuisses, genoux fléchis.",
   "variante_avancee": "Bras tendus vers l'avant dans le prolongement du dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Dos plat à l'horizontale",
+   "Mains sur les tibias, genoux pliés si besoin",
+   "Regard vers le sol"
+  ],
+  "souffle_court": "Inspirer pour allonger le dos"
  },
  "P054": {
   "presentation": "Padangusthasana, mains aux gros orteils, est une flexion avant debout où les doigts crochètent les gros orteils. La prise des pieds aide à allonger le dos et à approfondir l'étirement des ischio-jambiers. Elle se prépare par la demi-pince et la pince debout.",
@@ -121,7 +139,13 @@
   "sortie": "Inspirez en allongeant le dos, lâchez les orteils, mains aux hanches, et remontez dos plat. Enchaînez avec la table inversée, sa contre-posture.",
   "variante_facilitee": "Mains sur les tibias ou une sangle autour des pieds.",
   "variante_avancee": "Jambes tendues, tête vers les tibias, en gardant le dos long.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Index et majeur autour des gros orteils",
+   "Coudes qui s'ouvrent sur les côtés",
+   "Allonger le dos plutôt que tirer"
+  ],
+  "souffle_court": "Inspirer dos long, expirer pour descendre"
  },
  "P055": {
   "presentation": "Padahastasana, mains sous les pieds, est une flexion avant debout où l'on glisse les mains sous les pieds. Elle étire les ischio-jambiers et le dessus des poignets. Elle demande une flexion avant déjà confortable.",
@@ -152,7 +176,13 @@
   "sortie": "Inspirez en allongeant le dos, retirez les mains, posez-les sur les hanches et remontez dos plat. Enchaînez avec la table inversée.",
   "variante_facilitee": "Mains sur les tibias, genoux fléchis.",
   "variante_avancee": "Jambes tendues, front vers les tibias.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains sous les pieds, orteils aux poignets",
+   "Coudes ouverts, nuque relâchée",
+   "Moins loin si les poignets protestent"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour approfondir"
  },
  "P056": {
   "presentation": "Utkatasana, la chaise, plie les genoux comme pour s'asseoir, bras levés. Elle renforce les cuisses et les fessiers et réchauffe rapidement. La clé est de reculer les fesses et de garder le poids dans les talons.",
@@ -183,7 +213,13 @@
   "sortie": "Inspirez en tendant les jambes, bras levés ; expirez en revenant en montagne ou en pince debout, sa contre-posture.",
   "variante_facilitee": "Mains sur les cuisses et petite flexion des genoux, ou dos contre un mur.",
   "variante_avancee": "Descendre jusqu'à des cuisses presque horizontales, ou monter sur la pointe des pieds.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Fesses en arrière, poids dans les talons",
+   "Genoux derrière les orteils",
+   "Bas-ventre engagé, épaules basses"
+  ],
+  "souffle_court": "Expirer pour descendre, respirer régulièrement"
  },
  "P057": {
   "presentation": "Parivrtta Utkatasana, la chaise en torsion, ajoute une rotation du buste à la chaise. Elle renforce les cuisses et mobilise la colonne en rotation. Torsion fermée, elle est déconseillée pendant la grossesse.",
@@ -214,7 +250,13 @@
   "sortie": "Inspirez en revenant au centre, puis expirez en tendant les jambes. Faites l'autre côté, puis ramenez les genoux à la poitrine allongé.",
   "variante_facilitee": "Main sur la cuisse opposée, sans accrocher le genou.",
   "variante_avancee": "Bras ouverts, une main au sol à l'extérieur du pied et l'autre vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux alignés, fesses en arrière",
+   "Coude à l'extérieur du genou",
+   "Tourner depuis le milieu du dos"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour tourner"
  },
  "P058": {
   "presentation": "Utkata Konasana, la déesse, est une posture jambes écartées, genoux pliés vers l'extérieur. Elle renforce les cuisses et ouvre les hanches et l'intérieur des cuisses. Les genoux doivent toujours suivre la direction des pieds.",
@@ -245,7 +287,13 @@
   "sortie": "Inspirez en tendant les jambes, ramenez les pieds et revenez en montagne.",
   "variante_facilitee": "Flexion légère, mains sur les cuisses.",
   "variante_avancee": "Talons décollés, ou flexions et extensions rythmées.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds larges, pointes ouvertes",
+   "Genoux dans l'axe des orteils",
+   "Buste au-dessus du bassin"
+  ],
+  "souffle_court": "Expirer pour descendre"
  },
  "P059": {
   "presentation": "Virabhadrasana I, le guerrier I, est une fente debout, bassin tourné vers l'avant, bras levés. Elle renforce les jambes et étire l'avant de la hanche arrière. Posture d'ancrage et de force, elle se prépare par la fente basse.",
@@ -276,7 +324,13 @@
   "sortie": "Expirez en posant les mains au sol ou en ramenant le pied arrière en montagne. Passez par la pince debout et changez de côté.",
   "variante_facilitee": "Pas plus court, mains sur les hanches.",
   "variante_avancee": "Paumes jointes et légère ouverture du haut du dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant au-dessus de la cheville",
+   "Pieds écartés comme sur des rails",
+   "Bassin vers l'avant, coccyx vers le sol"
+  ],
+  "souffle_court": "Inspirer bras levés, expirer pour descendre"
  },
  "P060": {
   "presentation": "Virabhadrasana II, le guerrier II, ouvre le bassin sur le côté, bras tendus à l'horizontale. Elle renforce les jambes, ouvre les hanches et développe l'endurance. C'est une posture debout de base, accessible à presque tous.",
@@ -308,7 +362,13 @@
   "sortie": "Inspirez en tendant la jambe avant, tournez les pieds vers l'avant et changez de côté.",
   "variante_facilitee": "Mains sur les hanches et flexion moins profonde.",
   "variante_avancee": "Descendre jusqu'à une cuisse avant parallèle au sol et tenir plus longtemps.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant dans l'axe du pied",
+   "Buste vertical au-dessus du bassin",
+   "Bras longs, épaules basses"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P061": {
   "presentation": "Viparita Virabhadrasana, le guerrier inversé, part du guerrier II et incline le buste vers l'arrière. Elle étire le flanc côté jambe avant tout en gardant la force des jambes. Elle se prépare par le guerrier II.",
@@ -339,7 +399,13 @@
   "sortie": "Expirez en revenant en guerrier II, puis changez de côté.",
   "variante_facilitee": "Inclinaison légère, main sur la hanche.",
   "variante_avancee": "Passez le bras arrière dans le dos pour saisir la cuisse avant.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant toujours plié",
+   "Bras levé, flanc étiré",
+   "Main arrière légère sur la jambe"
+  ],
+  "souffle_court": "Inspirer en s'inclinant, respirer dans les côtes"
  },
  "P062": {
   "presentation": "Baddha Virabhadrasana, le guerrier humble, part du guerrier I : les mains se croisent dans le dos et le buste se penche à l'intérieur du genou avant. Elle ouvre les épaules et étire l'avant de la hanche. Tête sous le cœur, elle est déconseillée en cas d'hypertension et pendant la grossesse.",
@@ -370,7 +436,13 @@
   "sortie": "Inspirez en remontant lentement en guerrier I, relâchez les mains, puis changez de côté. Terminez par la pince debout.",
   "variante_facilitee": "Sangle entre les mains et inclinaison légère.",
   "variante_avancee": "Bras qui descendent vers le sol par-dessus la tête.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains liées dans le dos",
+   "Épaule à l'intérieur du genou avant",
+   "Peu de temps si hypertension"
+  ],
+  "souffle_court": "Inspirer pour ouvrir, expirer pour plonger"
  },
  "P063": {
   "presentation": "Virabhadrasana III, le guerrier III, est un équilibre sur une jambe, le buste et la jambe arrière à l'horizontale. Elle renforce la jambe d'appui, les fessiers et le centre, et développe la concentration. Des briques sous les mains facilitent l'équilibre.",
@@ -401,7 +473,13 @@
   "sortie": "Expirez en reposant le pied arrière au sol en fente haute, ou en ramenant les pieds joints. Passez par la pince debout et changez de côté.",
   "variante_facilitee": "Mains sur des briques ou sur le dossier d'une chaise, jambe arrière plus basse.",
   "variante_avancee": "Bras tendus vers l'avant, paumes face à face.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bassin horizontal, hanches vers le sol",
+   "Ligne de la tête au talon arrière",
+   "Briques sous les mains si besoin"
+  ],
+  "souffle_court": "Expirer pour basculer, respirer calmement"
  },
  "P064": {
   "presentation": "Ashta Chandrasana, la fente haute, est une fente debout avec le talon arrière décollé. Elle renforce les jambes, étire l'avant de la hanche et travaille l'équilibre. Elle se prépare par la fente basse.",
@@ -432,7 +510,13 @@
   "sortie": "Expirez en posant les mains de chaque côté du pied avant, reculez en planche ou avancez en pince debout. Changez de côté.",
   "variante_facilitee": "Genou arrière au sol (fente basse) ou mains sur les hanches.",
   "variante_avancee": "Enchaîner vers le guerrier III.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant au-dessus de la cheville",
+   "Talon arrière qui pousse en arrière",
+   "Ventre engagé, sans creuser"
+  ],
+  "souffle_court": "Inspirer bras levés, respirer calmement"
  },
  "P065": {
   "presentation": "Parivrtta Anjaneyasana, la fente en torsion, ajoute une rotation du buste à la fente. Elle mobilise la colonne en rotation et étire l'avant de la hanche arrière. Torsion fermée, elle est déconseillée pendant la grossesse.",
@@ -463,7 +547,13 @@
   "sortie": "Expirez en reposant la main levée au sol, reculez le pied avant et revenez à quatre pattes. Changez de côté, puis ramenez les genoux à la poitrine allongé.",
   "variante_facilitee": "Main sur la cuisse avant plutôt que bras levé.",
   "variante_avancee": "Genou arrière décollé, coude à l'extérieur du genou avant, mains jointes.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Main sur une brique à l'intérieur du pied",
+   "Bassin stable, face à l'avant",
+   "Tourner depuis le milieu du dos"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P066": {
   "presentation": "Skandasana, la fente latérale, plie une jambe sur le côté pendant que l'autre reste tendue, orteils vers le ciel. Elle ouvre l'intérieur des cuisses et les hanches et étire les ischio-jambiers. Une brique sous les mains ou les fesses aide à trouver l'équilibre.",
@@ -494,7 +584,13 @@
   "sortie": "Remontez au centre en poussant dans les pieds, revenez jambes écartées, puis ramenez les genoux à la poitrine allongé.",
   "variante_facilitee": "Petite flexion, mains sur des briques hautes.",
   "variante_avancee": "Mains jointes devant la poitrine, sans appui.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou plié dans l'axe du pied",
+   "Jambe tendue, orteils vers le ciel",
+   "Mains ou briques en appui"
+  ],
+  "souffle_court": "Expirer pour descendre"
  },
  "P067": {
   "presentation": "Utthita Trikonasana, le triangle, étire les flancs, l'arrière des jambes et l'intérieur des cuisses, jambes tendues et bras ouverts. Posture debout fondamentale, elle développe la stabilité et l'ouverture. En cas de fragilité cervicale, on garde le regard vers le sol.",
@@ -525,7 +621,13 @@
   "sortie": "Inspirez en remontant, bras ouverts, en poussant dans les pieds. Tournez les pieds et changez de côté.",
   "variante_facilitee": "Main sur une brique haute ou sur la cuisse, dos contre un mur.",
   "variante_avancee": "Bras du dessus tendu par-dessus l'oreille, dans le prolongement du buste.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambes tendues, genoux souples",
+   "S'allonger avant de descendre",
+   "Bassin et épaules dans un même plan"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour ouvrir"
  },
  "P068": {
   "presentation": "Parivrtta Trikonasana, le triangle en torsion, associe flexion avant et rotation, bassin face à l'avant. Elle étire les ischio-jambiers et mobilise la colonne, tout en demandant un bon équilibre. À éviter pendant la grossesse et à pratiquer avec prudence en cas de fragilité lombaire ou sacro-iliaque.",
@@ -556,7 +658,13 @@
   "sortie": "Expirez en reposant la main levée, inspirez en remontant dos plat. Revenez en montagne, passez par la pince debout et changez de côté.",
   "variante_facilitee": "Main à l'intérieur du pied sur une brique haute, autre main sur la hanche.",
   "variante_avancee": "Main au sol à l'extérieur du pied avant.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds écartés de la largeur du bassin",
+   "Main sur une brique, dos long",
+   "Hanches au même niveau"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P069": {
   "presentation": "Utthita Parsvakonasana, l'angle latéral étiré, prolonge le guerrier II en inclinant le buste sur la cuisse avant. Elle étire tout le côté du corps, du talon arrière aux doigts. Elle renforce les jambes et ouvre la poitrine.",
@@ -587,7 +695,13 @@
   "sortie": "Inspirez en remontant en guerrier II, puis changez de côté.",
   "variante_facilitee": "Avant-bras sur la cuisse, main du dessus sur la hanche.",
   "variante_avancee": "Bras du dessous passé sous la cuisse et mains liées dans le dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant au-dessus de la cheville",
+   "Ligne du talon arrière aux doigts",
+   "Avant-bras léger sur la cuisse"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour ouvrir"
  },
  "P070": {
   "presentation": "Parivrtta Parsvakonasana, l'angle latéral en torsion, combine fente, rotation et équilibre. Posture exigeante, elle mobilise fortement la colonne et renforce les jambes. Elle se prépare par la chaise et la fente en torsion, et ne se pratique pas pendant la grossesse.",
@@ -618,6 +732,12 @@
   "sortie": "Revenez au centre, posez les mains au sol et reculez en chien tête en bas. Changez de côté, puis ramenez les genoux à la poitrine allongé.",
   "variante_facilitee": "Genou arrière au sol, mains jointes.",
   "variante_avancee": "Main au sol à l'extérieur du pied, bras du dessus tendu par-dessus l'oreille.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coude à l'extérieur du genou avant",
+   "Genou arrière au sol si besoin",
+   "Tourner depuis le milieu du dos"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  }
 }

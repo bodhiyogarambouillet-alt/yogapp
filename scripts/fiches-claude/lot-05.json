@@ -28,7 +28,13 @@
   "sortie": "Posez les mains sur les hanches, inspirez et remontez dos plat en poussant dans les pieds. Rapprochez les pieds en montagne.",
   "variante_facilitee": "Mains sur des briques, dos à l'horizontale.",
   "variante_avancee": "Mains liées dans le dos, bras vers le sol par-dessus la tête.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds larges et parallèles",
+   "Plier depuis les hanches, mains au sol",
+   "Peu de temps tête en bas si grossesse"
+  ],
+  "souffle_court": "Expirer pour descendre"
  },
  "P072": {
   "presentation": "Parsvottanasana, la pyramide, est une flexion avant sur la jambe avant tendue, pieds décalés. Elle étire intensément les ischio-jambiers et demande de l'équilibre. Des briques sous les mains la rendent accessible.",
@@ -59,7 +65,13 @@
   "sortie": "Inspirez en remontant dos plat, mains sur les hanches. Ramenez le pied arrière, changez de côté, puis faites la table inversée.",
   "variante_facilitee": "Genou avant légèrement plié et mains sur des briques hautes.",
   "variante_avancee": "Mains en prière inversée dans le dos, ou coudes tenus.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds décalés, largeur du bassin",
+   "Hanches face à l'avant",
+   "Dos long, briques sous les mains"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour avancer"
  },
  "P073": {
   "presentation": "Ardha Chandrasana, la demi-lune, est un équilibre sur une jambe, corps ouvert sur le côté, jambe levée à l'horizontale. Elle renforce la jambe d'appui, étire l'intérieur des cuisses et ouvre la poitrine. Une brique sous la main facilite beaucoup l'équilibre.",
@@ -90,7 +102,13 @@
   "sortie": "Pliez le genou d'appui, reposez le pied levé en arrière et revenez en triangle ou en fente. Changez de côté.",
   "variante_facilitee": "Dos contre un mur et brique haute.",
   "variante_avancee": "Saisir le pied levé avec la main du dessus (demi-lune en canne à sucre).",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Main sur une brique, sous l'épaule",
+   "Jambe levée à hauteur de hanche",
+   "Ouvrir bassin et poitrine sur le côté"
+  ],
+  "souffle_court": "Lent et régulier"
  },
  "P074": {
   "presentation": "Parivrtta Ardha Chandrasana, la demi-lune en torsion, est un équilibre sur une jambe avec rotation du buste. Posture exigeante, elle combine équilibre, étirement des ischio-jambiers et rotation. Une brique sous la main est presque toujours utile.",
@@ -121,7 +139,13 @@
   "sortie": "Reposez la main levée sur la hanche, puis le pied arrière au sol. Revenez en pyramide et changez de côté.",
   "variante_facilitee": "Main d'appui sur une brique haute, autre main sur la hanche.",
   "variante_avancee": "Main d'appui au sol, bras du dessus tendu vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bassin face au sol",
+   "Main d'appui sous l'épaule, sur une brique",
+   "Tourner le buste, bras vers le ciel"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour tourner"
  },
  "P075": {
   "presentation": "Vrksasana, l'arbre, est un équilibre sur une jambe, le pied de l'autre jambe posé contre la jambe d'appui. Elle développe la stabilité, la concentration et l'ouverture des hanches. Un mur ou une chaise rassure pendant l'apprentissage.",
@@ -152,7 +176,13 @@
   "sortie": "Abaissez les bras, reposez le pied au sol et revenez en montagne. Changez de côté.",
   "variante_facilitee": "Orteils au sol, talon contre la cheville, une main sur un mur ou une chaise.",
   "variante_avancee": "Pied en demi-lotus sur la cuisse, ou yeux fermés.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied contre la cheville, le mollet ou la cuisse",
+   "Jamais sur le genou",
+   "Regard fixe, bassin horizontal"
+  ],
+  "souffle_court": "Calme et régulier"
  },
  "P076": {
   "presentation": "Garudasana, l'aigle, enroule une jambe autour de l'autre et un bras autour de l'autre en équilibre. Elle ouvre le haut du dos et les épaules, renforce la jambe d'appui et demande de la concentration. Les genoux sensibles adaptent l'enroulement.",
@@ -183,7 +213,13 @@
   "sortie": "Défaites les bras puis les jambes et revenez en montagne. Changez de côté.",
   "variante_facilitee": "Seulement les bras, debout ou assis, ou jambes croisées orteils au sol.",
   "variante_avancee": "Inclinez le buste vers l'avant, coudes vers les genoux.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou d'appui plié",
+   "Cuisse croisée, orteils au sol si besoin",
+   "Coudes à hauteur des épaules"
+  ],
+  "souffle_court": "Respirer entre les omoplates"
  },
  "P077": {
   "presentation": "Utthita Hasta Padangusthasana, main au gros orteil debout, tend une jambe vers l'avant tenue par la main. Elle combine équilibre et étirement des ischio-jambiers. Une sangle autour du pied la rend accessible.",
@@ -214,7 +250,13 @@
   "sortie": "Pliez le genou, lâchez le pied et reposez-le au sol. Changez de côté.",
   "variante_facilitee": "Genou plié tenu à deux mains, ou dos contre un mur.",
   "variante_avancee": "Ouvrez la jambe sur le côté, puis ramenez-la devant et lâchez le pied en gardant la jambe levée.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Gros orteil tenu, ou sangle",
+   "Bassin horizontal, dos droit",
+   "Se grandir plutôt que tirer"
+  ],
+  "souffle_court": "Régulier par le nez"
  },
  "P078": {
   "presentation": "Natarajasana, le danseur, est un équilibre sur une jambe où l'on tient le pied arrière pour ouvrir la poitrine et l'avant de la hanche. Elle associe équilibre, extension et ouverture des épaules. Une sangle aide à atteindre le pied.",
@@ -245,7 +287,13 @@
   "sortie": "Revenez le buste droit, lâchez le pied et reposez-le. Changez de côté, puis faites la pince debout.",
   "variante_facilitee": "Une main sur un mur ou une chaise, sangle autour du pied.",
   "variante_avancee": "Saisir le pied à deux mains par-dessus la tête.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Le pied pousse dans la main",
+   "Genou arrière dans l'axe de la hanche",
+   "Regard fixe devant"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour ouvrir"
  },
  "P079": {
   "presentation": "Ardha Baddha Padmottanasana, la pince debout en demi-lotus, est une posture avancée de l'Ashtanga : un pied en demi-lotus sur la cuisse, une main lie le pied dans le dos, puis on plie en avant. Elle demande des genoux et des hanches très libres.",
@@ -276,7 +324,13 @@
   "sortie": "Inspirez en remontant, lâchez le pied et défaites le demi-lotus à deux mains. Changez de côté.",
   "variante_facilitee": "Arbre avec flexion avant légère, mains sur des briques.",
   "variante_avancee": "Front vers le tibia, main d'appui à plat au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Demi-lotus sans forcer le genou",
+   "Main qui lie le pied, ou sur la hanche",
+   "Plier depuis les hanches"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour descendre"
  },
  "P080": {
   "presentation": "Le guerrier II sur chaise permet de travailler la force des jambes et l'ouverture des hanches avec l'appui d'une assise. Accessible aux seniors et aux dos fragiles, il garde l'esprit du guerrier sans risque de chute.",
@@ -307,7 +361,13 @@
   "sortie": "Ramenez la jambe arrière, asseyez-vous face à l'avant et changez de côté.",
   "variante_facilitee": "Mains sur les cuisses plutôt que bras tendus.",
   "variante_avancee": "Inclinez le buste en guerrier inversé, bras avant vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis de côté, genou au-dessus de la cheville",
+   "Jambe arrière tendue, pied posé",
+   "Bras longs, buste droit"
+  ],
+  "souffle_court": "Lent et régulier"
  },
  "P081": {
   "presentation": "La fente avec appui sur chaise étire l'avant de la hanche et renforce les jambes en gardant une main sur une chaise. Elle convient au prénatal, au postnatal et aux seniors. L'appui permet de se concentrer sur l'alignement plutôt que sur l'équilibre.",
@@ -338,7 +398,13 @@
   "sortie": "Ramenez le pied arrière à côté du pied avant, tournez-vous et changez de côté.",
   "variante_facilitee": "Petit pas et faible flexion.",
   "variante_avancee": "Levez le bras libre vers le ciel.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Main légère sur le dossier",
+   "Genou avant au-dessus de la cheville",
+   "Bas-ventre engagé, sans creuser"
+  ],
+  "souffle_court": "Expirer en remontant le périnée et en descendant"
  },
  "P082": {
   "presentation": "L'archer est une posture du kundalini yoga : en fente, on tend un bras vers l'avant comme pour tenir un arc et on ramène l'autre poing près de l'épaule. Elle renforce les jambes et ouvre la poitrine, et se tient souvent plusieurs minutes.",
@@ -369,7 +435,13 @@
   "sortie": "Inspirez, tendez la jambe avant, relâchez les bras et changez de côté.",
   "variante_facilitee": "Flexion légère et tenue courte.",
   "variante_avancee": "Tenir trois minutes par côté, cuisse avant presque horizontale.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant au-dessus de la cheville",
+   "Bras avant tendu, poing arrière à l'épaule",
+   "Regard au-delà du poing"
+  ],
+  "souffle_court": "Long et profond par le nez"
  },
  "P083": {
   "presentation": "La grenouille dynamique du kundalini yoga alterne une position accroupie sur la pointe des pieds et une flexion avant jambes tendues, au rythme du souffle. Très tonique, elle renforce les jambes et dynamise. À éviter avec des genoux fragiles et pendant la grossesse.",
@@ -400,7 +472,13 @@
   "sortie": "Restez accroupi ou asseyez-vous, puis allongez-vous sur le dos pour récupérer.",
   "variante_facilitee": "Talons au sol, petit nombre de répétitions.",
   "variante_avancee": "Jusqu'à 54 ou 108 répétitions à rythme soutenu.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Talons joints et décollés",
+   "Doigts toujours au sol",
+   "Arrêter si les genoux protestent"
+  ],
+  "souffle_court": "Inspirer en montant, expirer en descendant"
  },
  "P084": {
   "presentation": "Parsva Tadasana, le croissant debout, est une inclinaison latérale bras levés depuis la montagne. Elle étire tout le flanc et libère la respiration. Simple, elle convient en échauffement pour tous les publics.",
@@ -431,7 +509,13 @@
   "sortie": "Inspirez en remontant au centre, puis expirez en abaissant les bras.",
   "variante_facilitee": "Un seul bras levé, l'autre main sur la hanche.",
   "variante_avancee": "Pieds joints et inclinaison plus profonde en gardant l'alignement.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras levés, mains jointes",
+   "S'incliner sans tourner",
+   "Hanche qui pousse du côté opposé"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour incliner"
  },
  "P085": {
   "presentation": "Phalakasana, la planche, aligne tout le corps sur les mains et les pointes de pieds. Elle renforce la sangle abdominale, les bras et les épaules. En post-partum, on attend la récupération du périnée et des grands droits avant de la pratiquer.",
@@ -461,7 +545,13 @@
   "sortie": "Posez les genoux et passez en posture de l'enfant, sa contre-posture.",
   "variante_facilitee": "Genoux au sol, corps aligné des genoux à la tête.",
   "variante_avancee": "Soulevez une jambe en gardant le bassin stable.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Épaules au-dessus des poignets",
+   "Corps aligné de la tête aux talons",
+   "Genoux au sol si le bassin tombe"
+  ],
+  "souffle_court": "Régulier, bas-ventre qui remonte à l'expiration"
  },
  "P086": {
   "presentation": "Chaturanga Dandasana est une planche basse, coudes pliés près du corps, juste au-dessus du sol. Elle renforce intensément les bras et le centre, et se tient très peu de temps. Mal exécutée, elle charge les épaules : la version genoux au sol est souvent préférable.",
@@ -492,7 +582,13 @@
   "sortie": "Inspirez en passant en chien tête en haut ou en cobra, ou posez les genoux et passez en posture de l'enfant.",
   "variante_facilitee": "Genoux au sol, ou descente jusqu'au sol puis poitrine posée.",
   "variante_avancee": "Tenir trois respirations en chaturanga, corps parfaitement aligné.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coudes le long des côtes",
+   "Épaules jamais plus bas que les coudes",
+   "Genoux au sol si besoin"
+  ],
+  "souffle_court": "Expirer en descendant"
  },
  "P087": {
   "presentation": "La planche sur avant-bras aligne le corps sur les avant-bras et les pointes de pieds. Elle renforce la sangle abdominale sans charger les poignets. C'est une bonne préparation au chaturanga.",
@@ -523,7 +619,13 @@
   "sortie": "Posez les genoux et passez en posture de l'enfant.",
   "variante_facilitee": "Genoux au sol.",
   "variante_avancee": "Balancez lentement le corps vers l'avant et l'arrière sur les pointes de pieds.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coudes sous les épaules",
+   "Corps aligné, bassin ni haut ni bas",
+   "Pousser le sol avec les avant-bras"
+  ],
+  "souffle_court": "Régulier, sans bloquer"
  },
  "P088": {
   "presentation": "Vasisthasana, la planche latérale, s'appuie sur une main et le bord d'un pied, corps ouvert sur le côté. Elle renforce les flancs, les bras et l'équilibre. Elle se prépare par la planche et la planche latérale genou au sol.",
@@ -554,7 +656,13 @@
   "sortie": "Revenez en planche, posez les genoux et passez en posture de l'enfant. Changez de côté.",
   "variante_facilitee": "Genou du dessous au sol, ou appui sur l'avant-bras.",
   "variante_avancee": "Levez la jambe du dessus, ou attrapez le gros orteil.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Main sous l'épaule",
+   "Bassin soulevé, corps aligné",
+   "Genou du dessous au sol si besoin"
+  ],
+  "souffle_court": "Régulier, flanc engagé à l'expiration"
  },
  "P089": {
   "presentation": "Ardha Vasisthasana, la planche latérale genou au sol, prend appui sur une main et un genou. Elle renforce les flancs et la sangle abdominale en douceur. Accessible, elle convient au postnatal et au yoga du dos.",
@@ -585,7 +693,13 @@
   "sortie": "Revenez à quatre pattes et changez de côté.",
   "variante_facilitee": "Sur l'avant-bras et le genou.",
   "variante_avancee": "Jambe du dessus levée parallèle au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Main sous l'épaule, genou sous la hanche",
+   "Bassin soulevé",
+   "Bras du dessus vers le ciel"
+  ],
+  "souffle_court": "Régulier, bas-ventre qui remonte"
  },
  "P090": {
   "presentation": "Navasana, le bateau, est un équilibre sur les ischions, jambes et buste levés en V. Elle renforce intensément la sangle abdominale et les fléchisseurs de hanche. Avec des lombaires sensibles, on garde les genoux pliés ; elle est déconseillée pendant la grossesse et le post-partum.",
@@ -617,6 +731,12 @@
   "sortie": "Reposez les pieds au sol, puis allongez-vous genoux vers la poitrine, ou faites le pont.",
   "variante_facilitee": "Genoux pliés, mains derrière les cuisses, ou orteils au sol.",
   "variante_avancee": "Descendre en demi-bateau (jambes et buste plus bas) puis remonter plusieurs fois.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Sur les ischions, dos long",
+   "Genoux pliés si le dos s'arrondit",
+   "Bras parallèles au sol"
+  ],
+  "souffle_court": "Régulier, sans bloquer"
  }
 }

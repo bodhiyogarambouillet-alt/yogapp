@@ -23,7 +23,9 @@ function useFiches(seance) {
 function Resume({ posture, fiche }) {
   const [ouvert, setOuvert] = useState(false);
   useEffect(() => setOuvert(false), [posture.id]);
-  const reperes = fiche?.alignement || [];
+  // Résumé dédié (3 consignes + souffle en bref) ; à défaut, les premiers repères et la respiration de la fiche
+  const reperes = fiche?.resume?.length ? fiche.resume : (fiche?.alignement || []).slice(0, 3);
+  const souffle = fiche?.souffle_court || fiche?.respiration;
   if (fiche !== undefined && !fiche && !posture.precautions) return null;
   return (
     <div className={`live-resume ${ouvert ? 'ouvert' : ''}`} key={posture.id}>
@@ -35,8 +37,8 @@ function Resume({ posture, fiche }) {
       {ouvert && (
         <div className="live-resume-corps">
           {fiche === undefined && <p className="aide chargement-resume">Chargement des repères…</p>}
-          {reperes.length > 0 && <ul className="live-reperes">{reperes.slice(0, 3).map((r, i) => <li key={i}>{r}</li>)}</ul>}
-          {fiche?.respiration && <p className="live-souffle"><strong>Souffle :</strong> {fiche.respiration}</p>}
+          {reperes.length > 0 && <ul className="live-reperes">{reperes.map((r, i) => <li key={i}>{r}</li>)}</ul>}
+          {souffle && <p className="live-souffle"><strong>Souffle :</strong> {souffle}</p>}
           {posture.precautions && <p className="live-precaution"><Attention /> {posture.precautions}</p>}
           {fiche?.entree?.length > 0 && (
             <>

@@ -28,7 +28,13 @@
   "sortie": "Posez les mains sur les cuisses, avancez légèrement le buste et poussez dans les pieds pour vous lever.",
   "variante_facilitee": "Assis au fond de la chaise, le dos soutenu par le dossier et un coussin.",
   "variante_avancee": "Tenir plusieurs minutes de méditation sans dossier, colonne longue.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Sur l'avant de la chaise, pieds à plat",
+   "Bassin droit, colonne longue",
+   "Épaules relâchées"
+  ],
+  "souffle_court": "Calme et régulier"
  },
  "P022": {
   "presentation": "Assis sur un ballon, on dessine des cercles avec le bassin. Ce mouvement doux mobilise le bas du dos et les hanches et détend le périnée. Très utilisé en préparation à la naissance et en postnatal.",
@@ -59,7 +65,13 @@
   "sortie": "Arrêtez progressivement les cercles et revenez au centre. Posez les mains sur les cuisses et levez-vous en poussant dans les pieds.",
   "variante_facilitee": "Ballon calé contre un mur ou à côté d'une chaise pour se tenir.",
   "variante_avancee": "Dessinez des huit avec le bassin, ou ajoutez de petits rebonds doux.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds larges et bien ancrés",
+   "Petits cercles du bassin",
+   "Changer de sens à mi-temps"
+  ],
+  "souffle_court": "Expirer sur une moitié du cercle, inspirer sur l'autre"
  },
  "P023": {
   "presentation": "L'Ego Eradicator est un exercice de kundalini yoga : assis, les bras tendus en V vers le ciel, pouces vers le haut, on pratique souvent la respiration de feu. Il renforce les épaules et dynamise. Il se tient quelques minutes, puis se termine par une inspiration et une remontée des bras.",
@@ -90,7 +102,13 @@
   "sortie": "Inspirez profondément en rapprochant les bras jusqu'à faire toucher les pouces au-dessus de la tête. Expirez lentement en abaissant les bras sur les côtés, puis restez quelques instants à observer.",
   "variante_facilitee": "Bras moins hauts et respiration longue et lente.",
   "variante_avancee": "Tenir trois minutes en respiration de feu, bras parfaitement tendus.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras tendus en V, pouces vers le ciel",
+   "Épaules basses",
+   "Finir pouces joints au-dessus de la tête"
+  ],
+  "souffle_court": "Respiration de feu, ou souffle long si contre-indication"
  },
  "P024": {
   "presentation": "Marjaryasana-Bitilasana, le chat-vache, alterne à quatre pattes un dos rond et un dos creux. Ce mouvement simple mobilise toute la colonne et accorde le corps au souffle. C'est un échauffement de base, adaptable à presque tous les publics.",
@@ -121,7 +139,13 @@
   "sortie": "Revenez au dos plat, puis asseyez-vous sur les talons ou passez en posture de l'enfant.",
   "variante_facilitee": "Sur une chaise : mains sur les cuisses, alternez dos rond et poitrine ouverte.",
   "variante_avancee": "Ajoutez des cercles du buste à quatre pattes, ou soulevez un genou en arrondissant le dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains sous les épaules, genoux sous les hanches",
+   "Le mouvement part du bassin",
+   "Petite amplitude en cas de grossesse"
+  ],
+  "souffle_court": "Inspirer dos creux, expirer dos rond"
  },
  "P025": {
   "presentation": "Le chat-vache sur chaise reprend le mouvement d'alternance dos rond, dos creux en position assise. Il mobilise toute la colonne sans charge sur les poignets ni les genoux. Idéal pour le yoga doux, le prénatal ou au bureau.",
@@ -152,7 +176,13 @@
   "sortie": "Revenez au dos droit et respirez quelques instants calmement.",
   "variante_facilitee": "Petite amplitude, dos contre le dossier en fin de mouvement si besoin.",
   "variante_avancee": "Ajoutez des cercles du buste assis dans les deux sens.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis à l'avant, pieds à plat",
+   "Le bassin roule sur les ischions",
+   "Mains posées, sans tirer"
+  ],
+  "souffle_court": "Inspirer en ouvrant, expirer en arrondissant"
  },
  "P026": {
   "presentation": "À quatre pattes, on fait basculer le bassin à l'expiration en remontant le périnée et le bas-ventre. Ce mouvement de la méthode De Gasquet soulage le bas du dos et tonifie la sangle abdominale profonde sans pression vers le bas. Particulièrement adapté à la grossesse et au postnatal.",
@@ -183,7 +213,13 @@
   "sortie": "Revenez au dos plat, puis asseyez-vous sur les talons, genoux écartés si le ventre est présent.",
   "variante_facilitee": "Avant-bras posés sur un coussin ou un ballon pour soulager les poignets.",
   "variante_avancee": "Enchaînez avec le chien-oiseau en gardant la même expiration active.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Partir du dos plat",
+   "Expirer : périnée qui remonte, bassin qui s'enroule",
+   "Revenir au dos plat sans creuser"
+  ],
+  "souffle_court": "Inspiration passive, expiration lente par la bouche"
  },
  "P027": {
   "presentation": "Allongé sur le dos, genoux pliés, on fait basculer le bassin pour allonger le bas du dos à l'expiration. Ce petit mouvement soulage les lombaires et réveille la sangle abdominale profonde. En fin de grossesse, préférez la version à quatre pattes.",
@@ -214,7 +250,13 @@
   "sortie": "Ramenez les genoux vers la poitrine et bercez-vous doucement. Roulez sur le côté pour vous relever.",
   "variante_facilitee": "Coussin sous la tête et petite amplitude.",
   "variante_avancee": "Prolongez par un pont en déroulant la colonne vertèbre par vertèbre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds au sol, genoux dans l'axe",
+   "Expirer : périnée qui remonte, bas du dos qui se pose",
+   "Fessiers relâchés"
+  ],
+  "souffle_court": "Inspiration passive, expiration lente"
  },
  "P028": {
   "presentation": "Les rotations du cou et des épaules délient la nuque et le haut du dos. Faits lentement, ces mouvements préparent les postures et soulagent les tensions accumulées. En cas de fragilité cervicale, on se limite aux demi-cercles vers l'avant.",
@@ -246,7 +288,13 @@
   "sortie": "Revenez tête droite, épaules relâchées, et prenez quelques respirations en observant la nuque.",
   "variante_facilitee": "Seulement des haussements d'épaules et des inclinaisons latérales de la tête.",
   "variante_avancee": "Ajoutez des rotations de la tête à droite et à gauche, regard à l'horizontale, en tenant 3 respirations de chaque côté.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Cercles d'épaules vers l'arrière puis l'avant",
+   "Tête en demi-cercles par l'avant",
+   "Jamais la tête en arrière"
+  ],
+  "souffle_court": "Expirer dans les mouvements vers l'avant"
  },
  "P029": {
   "presentation": "Pawanmuktasana est une série de mouvements de déblocage articulaire : orteils, chevilles, genoux, hanches, poignets, coudes, épaules et cou. Pratiquée assise ou allongée, elle échauffe en douceur et convient à tous. Elle se place en début de séance.",
@@ -278,7 +326,13 @@
   "sortie": "Relâchez les jambes et les bras, secouez doucement et observez les sensations dans les articulations.",
   "variante_facilitee": "Sur une chaise, en ne gardant que les pieds, les mains et les épaules.",
   "variante_avancee": "Ajoutez les rotations de hanches allongé, genoux vers la poitrine.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Une articulation à la fois",
+   "Mouvements lents et complets",
+   "Dos long, mains en appui derrière"
+  ],
+  "souffle_court": "Un mouvement par respiration"
  },
  "P030": {
   "presentation": "Les flexions de colonne assise sont un exercice du kundalini yoga : en tailleur, mains sur les chevilles, on avance la poitrine à l'inspiration et on arrondit le dos à l'expiration. Rythmé, il échauffe et mobilise toute la colonne.",
@@ -309,7 +363,13 @@
   "sortie": "Ralentissez jusqu'à l'arrêt, colonne droite, et respirez quelques instants calmement.",
   "variante_facilitee": "Sur une chaise, mains sur les genoux, mouvement lent.",
   "variante_avancee": "Rythme rapide pendant 1 à 3 minutes, puis rétention douce poumons pleins en l'absence de contre-indication.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains sur les chevilles",
+   "Poitrine en avant, puis dos rond",
+   "Tête stable"
+  ],
+  "souffle_court": "Inspirer en avançant, expirer en arrondissant"
  },
  "P031": {
   "presentation": "Les rotations du buste assis font tourner doucement la colonne de droite à gauche. Elles délient le dos, les côtes et les épaules et préparent aux torsions. Accessibles à tous, elles se pratiquent en tailleur ou sur une chaise.",
@@ -340,7 +400,13 @@
   "sortie": "Revenez au centre, posez les mains sur les genoux et respirez calmement.",
   "variante_facilitee": "Petite amplitude, mains sur les genoux.",
   "variante_avancee": "Tenez 3 respirations en fin de rotation de chaque côté, en vous grandissant à chaque inspiration.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bassin immobile, face à l'avant",
+   "Tourner depuis le milieu du dos",
+   "Se grandir avant chaque rotation"
+  ],
+  "souffle_court": "Une respiration par côté"
  },
  "P032": {
   "presentation": "Les haussements d'épaules rythmés font monter les épaules vers les oreilles à l'inspiration et les relâchent à l'expiration. Simples et énergisants, ils libèrent la nuque et le haut du dos. On les retrouve en kundalini yoga et en yoga doux.",
@@ -371,7 +437,13 @@
   "sortie": "Gardez les épaules basses, immobiles, et respirez quelques instants en observant la détente.",
   "variante_facilitee": "Mouvement lent, une épaule à la fois.",
   "variante_avancee": "Rythme rapide pendant 1 à 2 minutes, puis maintien des épaules en haut sur une inspiration avant de relâcher.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Épaules vers les oreilles",
+   "Relâcher complètement vers le bas",
+   "Tête droite, visage détendu"
+  ],
+  "souffle_court": "Inspirer en montant, expirer en relâchant"
  },
  "P033": {
   "presentation": "Sat Kriya est un exercice central du kundalini yoga : assis sur les talons, bras tendus au-dessus de la tête, on chante « Sat » en rentrant le nombril et « Nam » en le relâchant. Puissant et énergisant, il se tient peu de temps au début. Il est contre-indiqué pendant la grossesse.",
@@ -403,7 +475,13 @@
   "sortie": "Inspirez, retenez légèrement en contractant doucement le périnée et le ventre, puis expirez. Relâchez les bras et allongez-vous sur le dos pour une relaxation au moins aussi longue que l'exercice.",
   "variante_facilitee": "Pratique très courte, une minute, avec un coussin entre les fesses et les talons.",
   "variante_avancee": "Allongez progressivement jusqu'à 11 minutes, toujours suivies d'une relaxation équivalente.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras tendus, index vers le ciel",
+   "« Sat » : nombril qui rentre ; « Nam » : relâché",
+   "Dos immobile"
+  ],
+  "souffle_court": "Le souffle suit le chant, puis longue relaxation"
  },
  "P034": {
   "presentation": "L'étirement latéral assis ouvre les flancs et l'espace entre les côtes. Simple et accessible, il libère la respiration et prépare aux postures debout. Il se pratique en tailleur ou sur une chaise, des deux côtés.",
@@ -434,7 +512,13 @@
   "sortie": "Inspirez en remontant au centre, bras levé, puis expirez en le relâchant. Changez de côté.",
   "variante_facilitee": "Main posée sur la tête plutôt que bras tendu.",
   "variante_avancee": "Saisissez le poignet du bras levé avec l'autre main pour accentuer l'étirement.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Les deux ischions restent posés",
+   "S'allonger avant de s'incliner",
+   "Poitrine ouverte vers l'avant"
+  ],
+  "souffle_court": "Inspirer dans le flanc étiré"
  },
  "P035": {
   "presentation": "Suspendu à un espalier ou à une barre, on laisse le poids du corps étirer doucement la colonne. Cet auto-grandissement de la méthode De Gasquet décomprime le dos et ouvre les épaules. Les pieds restent au sol, on ne se suspend jamais entièrement.",
@@ -465,6 +549,12 @@
   "sortie": "Remontez doucement en poussant dans les pieds, puis lâchez la barre. Restez debout quelques instants avant de bouger.",
   "variante_facilitee": "Mains posées plus bas sur l'espalier, genoux plus pliés.",
   "variante_avancee": "Inclinez légèrement le bassin d'un côté puis de l'autre pour étirer les flancs.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pieds toujours au sol",
+   "Laisser le poids étirer le dos",
+   "Épaules et nuque relâchées"
+  ],
+  "souffle_court": "Expirer en remontant le périnée"
  }
 }

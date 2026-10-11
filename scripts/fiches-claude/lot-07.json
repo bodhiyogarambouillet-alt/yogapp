@@ -28,7 +28,13 @@
   "sortie": "Redescendez une jambe puis l'autre, restez en pince debout ou en posture de l'enfant.",
   "variante_facilitee": "Pieds contre le mur en L, en marchant les pieds le long du mur.",
   "variante_avancee": "Sans mur, au centre de la pièce.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains à 15 cm du mur",
+   "Bras tendus, pousser le sol",
+   "Côtes rentrées, petits élans"
+  ],
+  "souffle_court": "Régulier, sans bloquer"
  },
  "P112": {
   "presentation": "Salamba Sarvangasana, la chandelle, élève les jambes et le bassin à la verticale, appui sur les épaules, mains dans le dos. Elle est classiquement suivie du poisson. Elle se pratique avec des couvertures sous les épaules pour protéger la nuque, et est contre-indiquée en cas de fragilité cervicale, d'hypertension, de glaucome et pendant la grossesse.",
@@ -59,7 +65,13 @@
   "sortie": "Pliez les genoux vers le front, posez les mains au sol et déroulez lentement le dos vertèbre par vertèbre. Enchaînez avec le poisson.",
   "variante_facilitee": "Jambes au mur, ou demi-chandelle avec le bassin soutenu par les mains.",
   "variante_avancee": "Sans les mains, bras le long des jambes.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Couvertures sous les épaules",
+   "Mains dans le dos, coudes serrés",
+   "Ne jamais tourner la tête"
+  ],
+  "souffle_court": "Lent, un peu plus court"
  },
  "P113": {
   "presentation": "Halasana, la charrue, prolonge la chandelle en posant les pieds au sol derrière la tête. Elle étire tout l'arrière du corps et la nuque. Contre-indiquée en cas de fragilité cervicale, d'hypertension et pendant la grossesse, elle se pratique avec des couvertures sous les épaules.",
@@ -89,7 +101,13 @@
   "sortie": "Mains au sol, déroulez lentement la colonne vertèbre par vertèbre, puis enchaînez avec le poisson.",
   "variante_facilitee": "Pieds sur une chaise ou des briques.",
   "variante_avancee": "Pression sur les oreilles, genoux de chaque côté de la tête.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Couvertures sous les épaules",
+   "Pieds au sol ou sur une chaise",
+   "Tête immobile"
+  ],
+  "souffle_court": "Lent et court"
  },
  "P114": {
   "presentation": "Karnapidasana, la pression sur les oreilles, prolonge la charrue en posant les genoux de chaque côté de la tête. Elle étire fortement le dos et la nuque. Elle est réservée aux pratiquants à l'aise en charrue, sans fragilité cervicale.",
@@ -119,7 +137,13 @@
   "sortie": "Revenez en charrue, puis déroulez lentement la colonne au sol. Enchaînez avec le poisson.",
   "variante_facilitee": "Charrue, pieds sur une chaise.",
   "variante_avancee": "Bras qui enserrent l'arrière des genoux.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis la charrue",
+   "Genoux près des oreilles",
+   "Tête immobile, peu de temps"
+  ],
+  "souffle_court": "Lent et court"
  },
  "P115": {
   "presentation": "Urdhva Padmasana, le lotus en chandelle, place les jambes en lotus depuis la chandelle. Elle demande un lotus parfaitement libre et une chandelle stable. Posture avancée de l'Ashtanga.",
@@ -149,7 +173,13 @@
   "sortie": "Défaites le lotus, revenez en chandelle et déroulez au sol. Enchaînez avec le poisson.",
   "variante_facilitee": "Chandelle, jambes croisées en tailleur.",
   "variante_avancee": "Embryon en chandelle.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Lotus depuis la chandelle",
+   "Mains sous les genoux",
+   "Tête immobile"
+  ],
+  "souffle_court": "Lent et régulier"
  },
  "P116": {
   "presentation": "Pindasana, l'embryon en chandelle, replie le lotus vers la poitrine et l'enlace avec les bras. Posture avancée de l'Ashtanga, elle suit le lotus en chandelle.",
@@ -179,7 +209,13 @@
   "sortie": "Relâchez les bras, revenez en lotus en chandelle, défaites le lotus et déroulez au sol. Enchaînez avec le poisson.",
   "variante_facilitee": "Genoux vers le front en tailleur.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Lotus vers le front",
+   "Bras qui enlacent les jambes",
+   "Tête immobile"
+  ],
+  "souffle_court": "Court et régulier"
  },
  "P117": {
   "presentation": "Viparita Karani, les jambes au mur, est une inversion douce et reposante : allongé, les jambes reposent à la verticale contre un mur. Elle soulage les jambes lourdes et calme le système nerveux. En fin de grossesse, on évite de rester longtemps sur le dos.",
@@ -210,7 +246,13 @@
   "sortie": "Pliez les genoux, roulez sur le côté et restez-y quelques respirations avant de vous redresser.",
   "variante_facilitee": "Mollets posés sur une chaise, genoux pliés.",
   "variante_avancee": "Jambes écartées en V contre le mur pour ouvrir les adducteurs.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Fesses près du mur, jambes appuyées",
+   "Coussin sous le bassin si besoin",
+   "Tout relâcher"
+  ],
+  "souffle_court": "Lent et abdominal"
  },
  "P118": {
   "presentation": "Paschimottanasana, la pince assise, plie le buste sur les jambes tendues. Elle étire tout l'arrière du corps et invite au calme. Avec des lombaires sensibles ou une sciatique, on plie les genoux.",
@@ -241,7 +283,13 @@
   "sortie": "Inspirez en remontant dos long, puis enchaînez avec la table inversée.",
   "variante_facilitee": "Genoux pliés, coussin sous les genoux, sangle.",
   "variante_avancee": "Mains qui se rejoignent au-delà des pieds.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Assis sur une couverture si besoin",
+   "Plier depuis les hanches, dos long",
+   "Sangle plutôt que tirer"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour approfondir"
  },
  "P119": {
   "presentation": "Janu Sirsasana, la tête au genou, plie le buste sur une jambe tendue, l'autre pied contre l'intérieur de la cuisse. Elle étire les ischio-jambiers et ouvre la hanche de la jambe pliée. Plus accessible que la pince assise.",
@@ -272,7 +320,13 @@
   "sortie": "Inspirez en remontant, allongez la jambe pliée et changez de côté.",
   "variante_facilitee": "Genou tendu légèrement plié, coussin sous le genou plié.",
   "variante_avancee": "Saisir le poignet au-delà du pied.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied contre l'intérieur de la cuisse",
+   "Buste centré sur la jambe tendue",
+   "Sangle si le dos s'arrondit"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour approfondir"
  },
  "P120": {
   "presentation": "Parivrtta Janu Sirsasana, la tête au genou en torsion, incline le buste sur le côté au-dessus de la jambe tendue. Elle étire puissamment le flanc et les ischio-jambiers. Déconseillée pendant la grossesse.",
@@ -303,7 +357,13 @@
   "sortie": "Inspirez en remontant au centre, allongez la jambe pliée et changez de côté.",
   "variante_facilitee": "Main du dessus sur la tête, coude sur la cuisse.",
   "variante_avancee": "Main du dessus qui attrape le pied tendu.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coude à l'intérieur de la jambe tendue",
+   "Bras du dessus par-dessus l'oreille",
+   "Poitrine vers le ciel"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour ouvrir"
  },
  "P121": {
   "presentation": "Ardha Baddha Padma Paschimottanasana, la pince assise en demi-lotus, place un pied en demi-lotus et le lie avec la main derrière le dos avant de plier en avant. Elle demande des genoux et des hanches libres. Posture de l'Ashtanga.",
@@ -334,7 +394,13 @@
   "sortie": "Inspirez en remontant, lâchez le pied, défaites le demi-lotus à deux mains et changez de côté. Terminez par la table inversée.",
   "variante_facilitee": "Tête au genou.",
   "variante_avancee": "Menton vers le tibia.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Demi-lotus sans forcer",
+   "Main qui lie le pied dans le dos",
+   "Plier sur la jambe tendue"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour descendre"
  },
  "P122": {
   "presentation": "Triang Mukhaikapada Paschimottanasana, la pince assise une jambe repliée, plie une jambe en héros à côté de la hanche et l'autre tendue. Elle étire les ischio-jambiers et les quadriceps. Les genoux sensibles s'en abstiennent.",
@@ -365,7 +431,13 @@
   "sortie": "Inspirez en remontant, allongez la jambe pliée et changez de côté. Terminez par la table inversée.",
   "variante_facilitee": "Buste droit sans flexion, sangle.",
   "variante_avancee": "Saisir le poignet au-delà du pied.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambe repliée en héros",
+   "Couverture sous la fesse opposée",
+   "Plier sur la jambe tendue"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour descendre"
  },
  "P123": {
   "presentation": "Krounchasana, le héron, lève une jambe tendue vers le visage, l'autre pliée en héros. Elle étire intensément les ischio-jambiers en gardant le dos droit. Une sangle la rend accessible.",
@@ -396,7 +468,13 @@
   "sortie": "Pliez le genou, reposez le pied et allongez les jambes. Changez de côté, puis table inversée.",
   "variante_facilitee": "Genou plié en tailleur, sangle.",
   "variante_avancee": "Menton vers le tibia.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Jambe tendue vers le ciel, sangle",
+   "Dos droit, poitrine ouverte",
+   "Se grandir plutôt que tirer"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour rapprocher"
  },
  "P124": {
   "presentation": "Upavistha Konasana, l'angle assis jambes écartées, ouvre l'intérieur des cuisses et étire l'arrière des jambes. Le buste peut rester droit ou plier en avant. Pendant la grossesse, on garde le buste droit ou les mains sur un coussin.",
@@ -427,7 +505,13 @@
   "sortie": "Remontez dos long, rapprochez les jambes avec les mains sous les genoux.",
   "variante_facilitee": "Buste droit ou mains sur un coussin, genoux légèrement pliés.",
   "variante_avancee": "Poitrine au sol, mains qui saisissent les gros orteils.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux et orteils vers le ciel",
+   "Plier depuis les hanches",
+   "Buste droit si grossesse"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour avancer"
  },
  "P125": {
   "presentation": "Kurmasana, la tortue, glisse les bras sous les genoux en flexion avant, jambes écartées. Posture avancée, elle demande des hanches et des ischio-jambiers très souples.",
@@ -458,7 +542,13 @@
   "sortie": "Pliez les genoux, retirez les bras et remontez lentement. Terminez par la table inversée.",
   "variante_facilitee": "Angle assis, mains sur un coussin.",
   "variante_avancee": "Tortue couchée.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bras glissés sous les genoux",
+   "Jambes pliées si besoin",
+   "Front vers le sol"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P126": {
   "presentation": "Supta Kurmasana, la tortue couchée, prolonge la tortue en croisant les pieds devant la tête et en liant les mains dans le dos. Posture très avancée de l'Ashtanga.",
@@ -489,7 +579,13 @@
   "sortie": "Défaites les mains, décroisez les pieds et revenez en tortue, puis assis. Terminez par la table inversée.",
   "variante_facilitee": "Tortue.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis la tortue",
+   "Chevilles croisées devant la tête",
+   "Mains liées dans le dos"
+  ],
+  "souffle_court": "Lent"
  },
  "P127": {
   "presentation": "Urdhva Mukha Paschimottanasana, la pince assise inversée, tient les pieds jambes tendues en équilibre sur les ischions, buste vers les jambes. Elle demande souplesse et force du centre. Posture avancée de l'Ashtanga.",
@@ -520,7 +616,13 @@
   "sortie": "Lâchez les pieds, reposez les jambes au sol, allongez-vous et ramenez les genoux à la poitrine.",
   "variante_facilitee": "Bateau, genoux pliés.",
   "variante_avancee": "Menton vers les tibias.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Tenir les pieds, rouler en équilibre",
+   "Jambes vers le ciel",
+   "Buste vers les jambes"
+  ],
+  "souffle_court": "Régulier"
  },
  "P128": {
   "presentation": "Ubhaya Padangusthasana, l'équilibre aux deux gros orteils, tient les gros orteils jambes tendues en équilibre sur les ischions. Elle combine souplesse des ischio-jambiers et force du centre. Posture avancée.",
@@ -551,7 +653,13 @@
   "sortie": "Pliez les genoux, lâchez les orteils et reposez les pieds.",
   "variante_facilitee": "Bateau genoux pliés, mains derrière les cuisses.",
   "variante_avancee": "Tenir dix respirations.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Gros orteils crochetés",
+   "Équilibre sur les ischions",
+   "Jambes tendues, dos long"
+  ],
+  "souffle_court": "Régulier"
  },
  "P129": {
   "presentation": "Marichyasana A, la pose du sage Marichi A, plie une jambe pied au sol et enroule le bras autour du tibia pour lier les mains dans le dos avant de plier sur la jambe tendue. Elle étire les ischio-jambiers et ouvre les épaules.",
@@ -582,7 +690,13 @@
   "sortie": "Inspirez en remontant, déliez les mains, allongez la jambe et changez de côté. Terminez par la table inversée.",
   "variante_facilitee": "Mains au sol sans liaison, buste droit.",
   "variante_avancee": "Menton vers le tibia tendu.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pied au sol, bras autour du tibia",
+   "Mains liées dans le dos",
+   "Plier sur la jambe tendue"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour plier"
  },
  "P130": {
   "presentation": "Marichyasana B, la pose du sage Marichi B, combine demi-lotus et jambe pliée, bras enroulé et mains liées, puis flexion avant. Posture avancée de l'Ashtanga, elle demande des genoux libres.",
@@ -613,6 +727,12 @@
   "sortie": "Remontez, déliez les mains, défaites le demi-lotus et changez de côté. Terminez par la table inversée.",
   "variante_facilitee": "Pose du sage Marichi A.",
   "variante_avancee": "Menton au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Demi-lotus et jambe pliée",
+   "Bras enroulé, mains liées",
+   "Sortir à la moindre gêne au genou"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour plier"
  }
 }

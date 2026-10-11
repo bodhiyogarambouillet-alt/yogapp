@@ -11,11 +11,13 @@ const CHAMPS_LISTE = [
   ['alignement', "Points d'alignement", 'un par ligne', 4],
   ['tenue', 'Pendant la posture', 'une consigne par ligne', 3],
   ['erreurs', 'Erreurs fréquentes', 'une par ligne', 3],
+  ['resume', 'Résumé (séance en direct)', '3 consignes courtes, une par ligne', 3],
 ];
 
 const CHAMPS_TEXTE = [
   ['presentation', 'Présentation'],
   ['respiration', 'Respiration'],
+  ['souffle_court', 'Souffle en bref (séance en direct)'],
   ['sortie', 'Sortie'],
   ['variante_facilitee', 'Variante facilitée'],
   ['variante_avancee', 'Variante avancée'],

@@ -28,7 +28,13 @@
   "sortie": "Posez les mains sous les épaules et redressez-vous lentement en déroulant le dos, la tête en dernier.",
   "variante_facilitee": "Bolster ou coussins sous le buste, genoux écartés.",
   "variante_avancee": "Bras tendus devant, mains actives pour allonger le dos.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Fesses vers les talons",
+   "Front posé, sur un coussin si besoin",
+   "Genoux écartés si grossesse"
+  ],
+  "souffle_court": "Respirer dans le dos"
  },
  "P132": {
   "presentation": "Le chiot, ou cœur fondant, part de quatre pattes et laisse la poitrine descendre vers le sol, bras tendus devant, bassin au-dessus des genoux. Il ouvre les épaules et étire le haut du dos. En yin, on le tient plusieurs minutes.",
@@ -59,7 +65,13 @@
   "sortie": "Ramenez les mains vers les genoux et asseyez-vous sur les talons, ou passez en posture de l'enfant.",
   "variante_facilitee": "Avant-bras posés, coussin sous la poitrine.",
   "variante_avancee": "Menton au sol et poitrine posée.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Hanches au-dessus des genoux",
+   "Bras tendus devant",
+   "Poitrine qui fond vers le sol"
+  ],
+  "souffle_court": "Respirer dans le haut du dos"
  },
  "P133": {
   "presentation": "Baddha Konasana, le papillon, rapproche les plantes de pieds et laisse les genoux s'ouvrir sur les côtés. Elle ouvre les hanches et l'intérieur des cuisses. Douce, elle convient au prénatal et au postnatal, avec des coussins sous les cuisses.",
@@ -90,7 +102,13 @@
   "sortie": "Rapprochez les genoux avec les mains sous les cuisses et allongez les jambes.",
   "variante_facilitee": "Coussins sous les cuisses, dos contre un mur.",
   "variante_avancee": "Flexion avant, buste vers les pieds, dos long.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Plantes de pieds jointes",
+   "Genoux qui descendent seuls, coussins dessous",
+   "Dos long"
+  ],
+  "souffle_court": "Expirer pour relâcher les hanches"
  },
  "P134": {
   "presentation": "Supta Baddha Konasana, le papillon allongé, combine ouverture des hanches et repos sur le dos, avec des coussins sous les genoux et souvent un bolster sous le dos. Très reposante, elle ouvre la poitrine et le bassin. Pendant la grossesse, le buste reste surélevé.",
@@ -121,7 +139,13 @@
   "sortie": "Rapprochez les genoux avec les mains, roulez sur le côté et redressez-vous en poussant dans les mains.",
   "variante_facilitee": "Pieds plus éloignés du bassin, bolster incliné sur des briques.",
   "variante_avancee": "Sans bolster, dos au sol, hors grossesse.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Bolster sous le dos, coussins sous les cuisses",
+   "Bras ouverts, paumes vers le ciel",
+   "Buste surélevé si grossesse"
+  ],
+  "souffle_court": "Naturel et lent"
  },
  "P135": {
   "presentation": "La préparation au pigeon place une jambe pliée devant soi au sol et l'autre tendue vers l'arrière. Elle ouvre profondément la hanche avant et étire l'avant de la hanche arrière. Avec des genoux sensibles, on préfère le pigeon allongé.",
@@ -152,7 +176,13 @@
   "sortie": "Posez les mains sous les épaules, retournez les orteils arrière et reculez la jambe avant en chien tête en bas. Changez de côté.",
   "variante_facilitee": "Pigeon allongé, sur le dos.",
   "variante_avancee": "Tibia avant parallèle au bord du tapis, buste posé.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genou avant vers le poignet",
+   "Coussin sous la hanche avant",
+   "Pied avant fléchi"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P136": {
   "presentation": "Eka Pada Rajakapotasana, le roi des pigeons, part du pigeon et saisit le pied arrière pour l'amener vers la tête. Posture très avancée d'extension, elle ouvre la colonne, l'avant des hanches et les épaules. Une sangle est souvent nécessaire.",
@@ -183,7 +213,13 @@
   "sortie": "Relâchez le pied lentement, posez les mains et revenez en posture de l'enfant ou en chien tête en bas. Changez de côté.",
   "variante_facilitee": "Pigeon avec quadriceps tenu à la main.",
   "variante_avancee": "Deux mains au pied, tête posée contre le pied.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis le pigeon, pied arrière tenu",
+   "Sangle si besoin",
+   "Allonger avant d'ouvrir"
+  ],
+  "souffle_court": "Inspirer pour allonger, expirer pour ouvrir"
  },
  "P137": {
   "presentation": "Supta Kapotasana, le pigeon allongé ou chiffre 4, ouvre la hanche sur le dos, une cheville posée sur le genou opposé. Douce et sans charge sur le genou, elle convient à tous. C'est la meilleure préparation au pigeon.",
@@ -214,7 +250,13 @@
   "sortie": "Reposez le pied gauche, décroisez les jambes et changez de côté.",
   "variante_facilitee": "Pied gauche au sol, sans tirer la cuisse.",
   "variante_avancee": "Tirer la cuisse plus près en gardant le bassin au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Cheville sur le genou opposé, pied fléchi",
+   "Tirer la cuisse vers la poitrine",
+   "Tête et bassin au sol"
+  ],
+  "souffle_court": "Expirer pour relâcher la hanche"
  },
  "P138": {
   "presentation": "Agnistambhasana, la bûche ou double pigeon, superpose les deux tibias parallèles, l'un sur l'autre. Elle ouvre intensément les hanches en rotation externe. Les genoux sensibles la pratiquent avec des coussins.",
@@ -245,7 +287,13 @@
   "sortie": "Décroisez les jambes à deux mains, allongez-les et changez de côté. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Tailleur avec un coussin sous les genoux.",
   "variante_avancee": "Flexion avant, buste vers les tibias.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Tibias empilés, parallèles",
+   "Pieds fléchis",
+   "Coussin sous le genou du dessus"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P139": {
   "presentation": "Gomukhasana, la tête de vache, croise les genoux l'un au-dessus de l'autre et lie les mains dans le dos. Elle ouvre les hanches et les épaules. Une sangle et un coussin aident beaucoup.",
@@ -276,7 +324,13 @@
   "sortie": "Défaites les bras puis les jambes, et changez de côté. Ramenez les genoux à la poitrine.",
   "variante_facilitee": "Jambes en tailleur, bras seuls.",
   "variante_avancee": "Flexion avant, mains liées.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Genoux superposés, coussin sous les fesses",
+   "Mains liées dans le dos, ou sangle",
+   "Dos droit, tête dans l'axe"
+  ],
+  "souffle_court": "Lent et régulier"
  },
  "P140": {
   "presentation": "Ananda Balasana, le bébé heureux, tient les pieds sur le dos, genoux vers les aisselles. Elle ouvre les hanches et détend le bas du dos. À éviter en fin de grossesse à cause de la position sur le dos.",
@@ -307,7 +361,13 @@
   "sortie": "Lâchez les pieds, ramenez les genoux à la poitrine et posez les pieds au sol.",
   "variante_facilitee": "Une jambe à la fois.",
   "variante_avancee": "Jambes tendues tenues par les gros orteils.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Tenir l'extérieur des pieds",
+   "Genoux vers les aisselles",
+   "Sacrum et tête au sol"
+  ],
+  "souffle_court": "Lent et détendu"
  },
  "P141": {
   "presentation": "Mandukasana, la grenouille, écarte largement les genoux à quatre pattes, chevilles dans l'alignement des genoux. Elle ouvre intensément l'intérieur des cuisses. Des couvertures sous les genoux sont indispensables.",
@@ -338,7 +398,13 @@
   "sortie": "Avancez sur les avant-bras, rapprochez les genoux et passez en posture de l'enfant.",
   "variante_facilitee": "Demi-grenouille, une jambe pliée.",
   "variante_avancee": "Poitrine et ventre au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Couvertures sous les genoux",
+   "Chevilles alignées avec les genoux",
+   "Bassin qui recule doucement"
+  ],
+  "souffle_court": "Lent et profond"
  },
  "P142": {
   "presentation": "Le pigeon assis sur chaise pose une cheville sur le genou opposé. Il ouvre la hanche et la fesse sans passer par le sol. Idéal pour les seniors, le prénatal et le yoga du dos.",
@@ -369,7 +435,13 @@
   "sortie": "Redressez-vous, posez le pied au sol et changez de côté.",
   "variante_facilitee": "Cheville sur le tibia plutôt que sur la cuisse.",
   "variante_avancee": "Flexion avant plus profonde, mains vers le sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Cheville sur le genou opposé",
+   "Pied fléchi",
+   "Pencher depuis les hanches"
+  ],
+  "souffle_court": "Lent"
  },
  "P143": {
   "presentation": "Bhujangasana, le cobra, soulève la poitrine allongé sur le ventre, mains sous les épaules. Il renforce le dos et ouvre la poitrine. Les lombaires sensibles restent dans un petit cobra ; à éviter pendant la grossesse.",
@@ -400,7 +472,13 @@
   "sortie": "Expirez en reposant la poitrine et le front, puis passez en posture de l'enfant.",
   "variante_facilitee": "Petit cobra, mains qui ne poussent pas.",
   "variante_avancee": "Bras plus tendus, en gardant le pubis au sol.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pubis au sol, coudes près du corps",
+   "Monter avec le dos plus qu'avec les mains",
+   "Épaules basses, nuque longue"
+  ],
+  "souffle_court": "Inspirer pour monter"
  },
  "P144": {
   "presentation": "Urdhva Mukha Svanasana, le chien tête en haut, soulève le corps sur les mains et le dessus des pieds, cuisses décollées. Elle ouvre la poitrine et renforce les bras. Elle est déconseillée pendant la grossesse et avec des lombaires ou des poignets fragiles.",
@@ -431,7 +509,13 @@
   "sortie": "Expirez en passant en chien tête en bas, sa contre-posture.",
   "variante_facilitee": "Cobra.",
   "variante_avancee": "Tenir cinq respirations, poitrine ouverte.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Épaules au-dessus des poignets",
+   "Cuisses décollées",
+   "Épaules loin des oreilles"
+  ],
+  "souffle_court": "Inspirer pour monter"
  },
  "P145": {
   "presentation": "Salamba Bhujangasana, le sphinx, soulève la poitrine sur les avant-bras, allongé sur le ventre. Extension douce, il réveille le bas du dos. En yin, on le tient plusieurs minutes. À éviter pendant la grossesse.",
@@ -462,7 +546,13 @@
   "sortie": "Reposez la poitrine, croisez les bras sous le front et restez quelques respirations. Passez en posture de l'enfant.",
   "variante_facilitee": "Coudes avancés, coussin sous le ventre.",
   "variante_avancee": "Mains à plat, en phoque, hors yoga du dos fragile.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Coudes un peu en avant des épaules",
+   "Pubis au sol, fessiers relâchés",
+   "Épaules basses"
+  ],
+  "souffle_court": "Lent, dans le bas du dos"
  },
  "P146": {
   "presentation": "Salabhasana, la sauterelle, soulève la poitrine et les jambes allongé sur le ventre. Elle renforce tout l'arrière du corps. Les lombaires sensibles travaillent une moitié à la fois ; à éviter pendant la grossesse.",
@@ -493,7 +583,13 @@
   "sortie": "Expirez en reposant le corps, tournez la tête sur le côté, puis passez en posture de l'enfant.",
   "variante_facilitee": "Soulever seulement le haut du corps, ou une jambe à la fois.",
   "variante_avancee": "Mains liées dans le dos, bras levés.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Pubis au sol",
+   "Jambes tendues, bras longs",
+   "Allonger plutôt que monter haut"
+  ],
+  "souffle_court": "Inspirer pour monter, expirer pour descendre"
  },
  "P147": {
   "presentation": "Dhanurasana, l'arc, saisit les chevilles allongé sur le ventre et soulève le corps en arc. Elle ouvre l'avant du corps et renforce le dos. Elle est déconseillée pendant la grossesse et avec des lombaires ou des genoux fragiles.",
@@ -524,7 +620,13 @@
   "sortie": "Expirez en reposant le corps, lâchez les chevilles et passez en posture de l'enfant, ou en torsion allongée.",
   "variante_facilitee": "Demi-arc, une jambe à la fois, ou sangle aux chevilles.",
   "variante_avancee": "Bercement d'avant en arrière.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains aux chevilles, genoux à largeur de bassin",
+   "Les pieds poussent dans les mains",
+   "Poitrine ouverte"
+  ],
+  "souffle_court": "Inspirer pour monter"
  },
  "P148": {
   "presentation": "Parsva Dhanurasana, l'arc latéral, roule l'arc sur le côté. Posture avancée, elle demande un arc confortable et un bon contrôle.",
@@ -555,7 +657,13 @@
   "sortie": "Revenez au centre sur le ventre, lâchez les chevilles et passez en posture de l'enfant.",
   "variante_facilitee": "Arc.",
   "variante_avancee": "Enchaîner les deux côtés sans repasser par le centre.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Depuis l'arc",
+   "Rouler sur le côté",
+   "Garder les pieds actifs"
+  ],
+  "souffle_court": "Expirer pour rouler"
  },
  "P149": {
   "presentation": "Ustrasana, le chameau, est une extension à genoux : les mains soutiennent le bas du dos, puis peuvent descendre vers les talons. Elle ouvre la poitrine, l'avant des hanches et les épaules. Elle est déconseillée pendant la grossesse et demande de la prudence avec des cervicales ou des lombaires sensibles.",
@@ -587,7 +695,13 @@
   "sortie": "Ramenez doucement le menton vers la poitrine, inspirez pour redresser le torse en vous aidant des mains dans le dos, et venez vous asseoir sur les talons.",
   "variante_facilitee": "Gardez les mains fermement ancrées sur le bas du dos et ne cherchez pas à descendre trop bas.",
   "variante_avancee": "Posez les mains sur les talons, ou utilisez des briques à côté des pieds pour approfondir l'ouverture thoracique.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Hanches au-dessus des genoux",
+   "Mains sur le bas du dos",
+   "Poitrine vers le ciel, nuque longue"
+  ],
+  "souffle_court": "Inspirer pour grandir, expirer pour ouvrir"
  },
  "P150": {
   "presentation": "Laghu Vajrasana, le petit diamant, part du chameau et pose le sommet du crâne au sol, mains sur les genoux. Posture très avancée de l'Ashtanga, elle demande une grande ouverture du dos et de la force des cuisses.",
@@ -618,6 +732,12 @@
   "sortie": "Remontez avec la force des cuisses, asseyez-vous sur les talons et passez en posture de l'enfant.",
   "variante_facilitee": "Chameau.",
   "variante_avancee": "Plusieurs descentes et remontées.",
-  "version": 2
+  "version": 2,
+  "resume": [
+   "Mains aux chevilles",
+   "Descendre la tête avec la force des cuisses",
+   "Remonter de même"
+  ],
+  "souffle_court": "Expirer pour descendre, inspirer pour remonter"
  }
 }

@@ -15,14 +15,15 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
   const [theme, setTheme] = useState(initial?.theme || '');
   const [cible, setCible] = useState(initial?.cibleId ? PAR_ID.get(initial.cibleId) || null : null);
   const [tousStyles, setTousStyles] = useState(!PRINCIPAUX.includes(initial?.style || 'Hatha'));
-  const [options, setOptions] = useState(Boolean(initial?.cibleId || initial?.theme));
+  const [eviter, setEviter] = useState(initial?.eviterRepetition || 0); // 0 = désactivé, sinon nombre de séances précédentes
+  const [options, setOptions] = useState(Boolean(initial?.cibleId || initial?.theme || initial?.eviterRepetition));
 
   const autres = STYLES.filter((s) => !PRINCIPAUX.includes(s));
   const visibles = tousStyles ? [...PRINCIPAUX, ...autres] : PRINCIPAUX;
 
   const soumettre = (e) => {
     e.preventDefault();
-    if (!chargement) onGenerer({ style, duree, niveau, theme: theme.trim(), cibleId: cible?.id || null });
+    if (!chargement) onGenerer({ style, duree, niveau, theme: theme.trim(), cibleId: cible?.id || null, eviterRepetition: eviter });
   };
 
   return (
@@ -87,6 +88,14 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
             <label htmlFor="theme" className="etiquette">Thème ou contraintes</label>
             <textarea id="theme" rows="2" maxLength={500} value={theme} onChange={(e) => setTheme(e.target.value)}
               placeholder="Ex. : ancrage, deux élèves aux lombaires fragiles" />
+            <span className="etiquette">Éviter les répétitions</span>
+            <div className="niveaux" style={{ gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' }} role="group" aria-label="Éviter les postures des séances précédentes">
+              {[[0, 'Non'], [1, 'Dernière'], [3, '3 dernières'], [5, '5 dernières']].map(([n, nom]) => (
+                <button type="button" key={n} className={`niveau ${n === eviter ? 'actif' : ''}`} aria-pressed={n === eviter}
+                  onClick={() => setEviter(n)}>{nom}</button>
+              ))}
+            </div>
+            {eviter > 0 && <p className="aide">Les postures de vos séances enregistrées les plus récentes sont évitées autant que possible.</p>}
           </div>
         )}
       </section>

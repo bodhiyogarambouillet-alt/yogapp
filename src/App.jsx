@@ -4,7 +4,7 @@ import Seance from './components/Seance.jsx';
 import Fiche from './components/Fiche.jsx';
 import MesSeances from './components/MesSeances.jsx';
 import { PAR_ID, chargerBibliotheque } from './bibliotheque.js';
-import { enregistrerSeance } from './stockage.js';
+import { enregistrerSeance, listerSeances } from './stockage.js';
 import { supabase, enteteAuth } from './supabase.js';
 
 // Recolle les données de la bibliothèque sur chaque posture (utile pour les séances enregistrées)
@@ -59,10 +59,19 @@ export default function App() {
     setChargement(true);
     setErreur(null);
     try {
+      // « Éviter les répétitions » : postures des n dernières séances enregistrées
+      let evites = [];
+      if (p.eviterRepetition > 0) {
+        try {
+          const dernieres = (await listerSeances()).slice(0, p.eviterRepetition);
+          evites = [...new Set(dernieres.flatMap((s) => s.phases.flatMap((ph) => ph.items.map((it) => it.id))))];
+        } catch { /* séances illisibles : on compose sans */ }
+      }
+      const { eviterRepetition: _n, ...corps } = p;
       const r = await fetch('/api/generer-seance', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(p),
+        body: JSON.stringify({ ...corps, evites }),
       });
       const data = await r.json();
       if (!r.ok) throw new Error(data.erreur || 'Erreur de génération');
@@ -96,7 +105,7 @@ export default function App() {
       <Seance seance={seance} chargement={chargement} enregistree={enregistree}
         onChange={modifierSeance}
         onRetour={() => aller('formulaire')}
-        onRegenerer={() => generer(params || { style: seance.style, duree: seance.duree, niveau: seance.niveau, theme: seance.theme || '', cibleId: seance.cibleId || null })}
+        onRegenerer={() => generer(params || { style: seance.style, duree: seance.duree, niveau: seance.niveau, theme: seance.theme || '', cibleId: seance.cibleId || null, eviterRepetition: params?.eviterRepetition || 0 })}
         onEnregistrer={enregistrer}
         onOuvrirPosture={(p) => { setPosture(p); aller('fiche'); }} />
     );

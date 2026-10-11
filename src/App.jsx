@@ -106,7 +106,7 @@ export default function App() {
       <Seance seance={seance} chargement={chargement} enregistree={enregistree}
         onChange={modifierSeance}
         onRetour={() => aller('formulaire')}
-        onRegenerer={() => generer(params || { styles: stylesDe(seance), duree: seance.duree, niveau: seance.niveau, theme: seance.theme || '', cibleId: seance.cibleId || null, eviterRepetition: params?.eviterRepetition || 0 })}
+        onRegenerer={() => generer(params || { styles: stylesDe(seance), accessoires: seance.accessoires ?? null, duree: seance.duree, niveau: seance.niveau, theme: seance.theme || '', cibleId: seance.cibleId || null, eviterRepetition: params?.eviterRepetition || 0 })}
         onEnregistrer={enregistrer}
         onOuvrirPosture={(p) => { setPosture(p); aller('fiche'); }} />
     );
@@ -120,7 +120,7 @@ export default function App() {
         onOuvrir={(s) => {
           const s2 = hydrater(s);
           setSeance(s2);
-          setParams({ styles: stylesDe(s2), duree: s2.duree, niveau: s2.niveau, theme: s2.theme || '', cibleId: s2.cibleId || null });
+          setParams({ styles: stylesDe(s2), accessoires: s2.accessoires ?? null, duree: s2.duree, niveau: s2.niveau, theme: s2.theme || '', cibleId: s2.cibleId || null });
           setEnregistree(true);
           aller('seance');
         }} />

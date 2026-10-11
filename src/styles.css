@@ -292,3 +292,8 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Choix d'accessoires */
+.badge.choix { border: 1.5px solid var(--trait); background: transparent; min-height: 40px; padding: 6px 14px; font-weight: 700; color: var(--texte-doux); }
+.badge.choix.actif { background: var(--texte); border-color: var(--texte); color: var(--fond); }
+.options .badges { margin-top: 0; }

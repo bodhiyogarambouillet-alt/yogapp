@@ -1,6 +1,7 @@
 import posturesLocales from './data/postures.json';
 import structures from './data/structures.json';
 import { stylesDe, convientAuxStyles } from './styles-seance.js';
+import { faisableAvec } from './accessoires.js';
 import { supabase } from './supabase.js';
 
 // Bibliothèque en mémoire. Au démarrage : copie locale (JSON), puis remplacée par
@@ -43,7 +44,7 @@ export function alternatives(posture, seance) {
   const max = structures.niveaux[seance.niveau]?.max ?? 1;
   const dejaLa = new Set(seance.phases.flatMap((ph) => ph.items.map((it) => it.id)));
   const stylesSeance = stylesDe(seance);
-  const ok = (p) => convientAuxStyles(p, stylesSeance) && p.niveau <= max && !dejaLa.has(p.id);
+  const ok = (p) => convientAuxStyles(p, stylesSeance) && faisableAvec(p, seance.accessoires) && p.niveau <= max && !dejaLa.has(p.id);
   // Score : zones communes (pour garder l'effet de la posture remplacée), puis même famille, puis même phase
   const zones = new Set(posture.zones || []);
   return postures

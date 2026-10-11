@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { STYLES, DUREES, PAR_ID, nom } from '../bibliotheque.js';
 import { Logo, Livre, Cible } from './Icones.jsx';
 import ChoixCible from './ChoixCible.jsx';
+import { ACCESSOIRES } from '../accessoires.js';
 
 // Les 6 styles les plus courants en tuiles, les autres derrière « + n autres styles »
 const PRINCIPAUX = ['Hatha', 'De Gasquet', 'Yin', 'Doux / seniors', 'Yoga du dos', 'Prénatal'];
@@ -16,15 +17,18 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
   const [theme, setTheme] = useState(initial?.theme || '');
   const [cible, setCible] = useState(initial?.cibleId ? PAR_ID.get(initial.cibleId) || null : null);
   const [tousStyles, setTousStyles] = useState(styles.some((s) => !PRINCIPAUX.includes(s)));
+  // Accessoires disponibles : tous cochés = aucun filtre
+  const [dispo, setDispo] = useState(initial?.accessoires || ACCESSOIRES);
   const [eviter, setEviter] = useState(initial?.eviterRepetition || 0); // 0 = désactivé, sinon nombre de séances précédentes
-  const [options, setOptions] = useState(Boolean(initial?.cibleId || initial?.theme || initial?.eviterRepetition));
+  const [options, setOptions] = useState(Boolean(initial?.cibleId || initial?.theme || initial?.eviterRepetition || initial?.accessoires));
 
   const autres = STYLES.filter((s) => !PRINCIPAUX.includes(s));
   const visibles = tousStyles ? [...PRINCIPAUX, ...autres] : PRINCIPAUX;
 
   const soumettre = (e) => {
     e.preventDefault();
-    if (!chargement) onGenerer({ styles, duree, niveau, theme: theme.trim(), cibleId: cible?.id || null, eviterRepetition: eviter });
+    if (!chargement) onGenerer({ styles, duree, niveau, theme: theme.trim(), cibleId: cible?.id || null, eviterRepetition: eviter,
+      accessoires: dispo.length === ACCESSOIRES.length ? null : dispo });
   };
 
   return (
@@ -84,7 +88,7 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
       <section className="bloc" style={{ paddingTop: 20 }}>
         <button type="button" className="ouvrir-options" aria-expanded={options} onClick={() => setOptions(!options)}>
           <span className="accent"><Cible /></span>
-          <span>Viser une posture <span>· thème · facultatif</span></span>
+          <span>Options <span>· posture cible, accessoires, thème</span></span>
         </button>
         {options && (
           <div className="options">
@@ -93,6 +97,18 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
             <label htmlFor="theme" className="etiquette">Thème ou contraintes</label>
             <textarea id="theme" rows="2" maxLength={500} value={theme} onChange={(e) => setTheme(e.target.value)}
               placeholder="Ex. : ancrage, deux élèves aux lombaires fragiles" />
+            <span className="etiquette">Accessoires disponibles</span>
+            <div className="badges" role="group" aria-label="Accessoires disponibles">
+              {ACCESSOIRES.map((a) => (
+                <button type="button" key={a} className={`badge choix ${dispo.includes(a) ? 'actif' : ''}`} aria-pressed={dispo.includes(a)}
+                  onClick={() => setDispo(dispo.includes(a) ? dispo.filter((x) => x !== a) : [...dispo, a])}>{a}</button>
+              ))}
+            </div>
+            <p className="aide">
+              {dispo.length === ACCESSOIRES.length ? 'Tout le matériel est disponible.'
+                : dispo.length === 0 ? 'Aucun accessoire : seules les postures sans matériel sont proposées.'
+                  : 'Seules les postures faisables avec ce matériel sont proposées.'}
+            </p>
             <span className="etiquette">Éviter les répétitions</span>
             <div className="niveaux" style={{ gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' }} role="group" aria-label="Éviter les postures des séances précédentes">
               {[[0, 'Non'], [1, 'Dernière'], [3, '3 dernières'], [5, '5 dernières']].map(([n, nom]) => (

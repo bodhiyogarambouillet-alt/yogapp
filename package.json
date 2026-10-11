@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "import-bibliotheque": "node scripts/import-bibliotheque.mjs",
     "import-fiches": "node scripts/import-fiches.mjs",
+    "creer-admin": "node scripts/creer-admin.mjs",
     "sync-bibliotheque": "node scripts/import-bibliotheque.mjs"
   },
   "dependencies": {

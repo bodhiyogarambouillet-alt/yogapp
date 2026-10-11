@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   listerSeances, supprimerSeance, fichesValidees, importerFiches, donneesLocales, transfererDonneesLocales,
 } from '../stockage.js';
-import { connexionParEmail, deconnexion } from '../supabase.js';
+import { connexionParEmail, connexionParMotDePasse, deconnexion } from '../supabase.js';
 import { Retour, Poubelle } from './Icones.jsx';
 import { PAR_ID } from '../bibliotheque.js';
 
@@ -30,15 +30,22 @@ function telecharger(fiches) {
 
 function Connexion() {
   const [email, setEmail] = useState('');
+  const [admin, setAdmin] = useState(false); // connexion administrateur : email + mot de passe
+  const [motDePasse, setMotDePasse] = useState('');
   const [etat, setEtat] = useState(null); // null | 'envoi' | 'envoye' | message d'erreur
   const envoyer = async (e) => {
     e.preventDefault();
     setEtat('envoi');
     try {
+      if (admin) {
+        await connexionParMotDePasse(email, motDePasse); // la session met l'écran à jour
+        setEtat(null);
+        return;
+      }
       await connexionParEmail(email);
       setEtat('envoye');
     } catch (err) {
-      setEtat(`Envoi impossible : ${err.message}`);
+      setEtat(admin ? err.message : `Envoi impossible : ${err.message}`);
     }
   };
   if (etat === 'envoye') {
@@ -47,11 +54,24 @@ function Connexion() {
   return (
     <form className="carte connexion" onSubmit={envoyer}>
       <h2>Se connecter</h2>
-      <p className="aide" style={{ marginTop: 0 }}>Pour retrouver vos séances et vos fiches sur tous vos appareils. Pas de mot de passe : un lien arrive par email.</p>
+      <p className="aide" style={{ marginTop: 0 }}>
+        {admin ? 'Accès administrateur : email et mot de passe.' : 'Pour retrouver vos séances et vos fiches sur tous vos appareils. Pas de mot de passe : un lien arrive par email.'}
+      </p>
       <label htmlFor="email" className="etiquette">Email</label>
       <input id="email" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="vous@exemple.fr" />
+      {admin && (
+        <>
+          <label htmlFor="mdp" className="etiquette" style={{ marginTop: 12 }}>Mot de passe</label>
+          <input id="mdp" type="password" required autoComplete="current-password" value={motDePasse} onChange={(e) => setMotDePasse(e.target.value)} />
+        </>
+      )}
       {etat && etat !== 'envoi' && <p className="erreur" role="alert">{etat}</p>}
-      <button type="submit" className="principal" disabled={etat === 'envoi'}>{etat === 'envoi' ? 'Envoi…' : 'Recevoir le lien'}</button>
+      <button type="submit" className="principal" disabled={etat === 'envoi'}>
+        {etat === 'envoi' ? (admin ? 'Connexion…' : 'Envoi…') : admin ? 'Se connecter' : 'Recevoir le lien'}
+      </button>
+      <button type="button" className="lien" onClick={() => { setAdmin(!admin); setEtat(null); setMotDePasse(''); }}>
+        {admin ? 'Retour à la connexion par lien' : 'Je suis administrateur'}
+      </button>
     </form>
   );
 }

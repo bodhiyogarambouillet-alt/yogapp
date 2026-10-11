@@ -20,7 +20,7 @@ Le script crée :
 | `seances` | les séances enregistrées | chacun les siennes | chacun les siennes |
 | `admins` | les emails administrateurs | personne depuis l'appli | SQL Editor uniquement |
 
-Pour ajouter un admin plus tard : `insert into public.admins (email) values ('autre@email.fr');`
+Pour ajouter un admin (avec mot de passe) : `npm run creer-admin -- autre@email.fr` — le mot de passe est demandé dans le terminal. Le script crée le compte (ou change son mot de passe) et l'ajoute à `admins`. Les admins se connectent via « Je suis administrateur » (email + mot de passe) dans l'écran « Mes séances et fiches ».
 
 ## 3. Configurer la connexion par email
 

@@ -10,6 +10,17 @@ try {
 const url = (process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || '').replace(/\/$/, '');
 const cle = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 
+// Appel à l'API d'administration des comptes (création / mise à jour d'un utilisateur)
+export async function auth(chemin, { method = 'GET', body } = {}) {
+  const res = await fetch(`${url}/auth/v1/${chemin}`, {
+    method,
+    headers: { ...entetesCle(), 'Content-Type': 'application/json' },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  if (!res.ok) throw new Error(`Supabase auth ${res.status} : ${(await res.text()).slice(0, 400)}`);
+  return res.json();
+}
+
 export const supabaseConfigure = Boolean(url && cle);
 
 // Deux formats de clé secrète :

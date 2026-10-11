@@ -1,0 +1,416 @@
+{
+ "P001": {
+  "presentation": "Nadi Shodhana, la respiration alternée, fait passer le souffle d'une narine à l'autre en les fermant tour à tour avec les doigts. Elle équilibre, apaise et concentre l'attention. Elle se place volontiers en début de séance, avant une méditation, ou juste avant la relaxation.",
+  "entree": [
+   "Asseyez-vous en tailleur, sur les talons ou sur une chaise, la colonne longue.",
+   "Posez la main gauche sur le genou gauche.",
+   "Main droite : repliez l'index et le majeur dans la paume (Vishnu mudra), gardez le pouce, l'annulaire et l'auriculaire libres.",
+   "Fermez la narine droite avec le pouce et expirez lentement par la gauche.",
+   "Inspirez par la gauche, fermez-la avec l'annulaire, libérez la droite et expirez par la droite.",
+   "Inspirez par la droite, fermez-la, libérez la gauche et expirez par la gauche : c'est un cycle complet.",
+   "Enchaînez 5 à 10 cycles à un rythme lent et régulier."
+  ],
+  "alignement": [
+   "Ischions ancrés, bassin droit, colonne verticale.",
+   "Coude droit relâché vers le bas, sans lever l'épaule.",
+   "Les doigts se posent sur les ailes du nez sans les écraser.",
+   "Tête droite, nuque longue, visage détendu."
+  ],
+  "tenue": [
+   "Gardez des inspirations et des expirations de même durée, ou une expiration un peu plus longue.",
+   "Suivez le trajet de l'air dans chaque narine.",
+   "Si le bras fatigue, posez le coude sur la main gauche ou sur un coussin."
+  ],
+  "erreurs": [
+   "Appuyer fort sur le nez : effleurez la narine, une pression légère suffit à la fermer.",
+   "Hausser l'épaule du bras actif : laissez le coude descendre et l'épaule se relâcher.",
+   "Accélérer le rythme : ralentissez, le souffle doit rester silencieux et fluide."
+  ],
+  "respiration": "On expire et on inspire par la même narine avant de changer de côté. Le souffle reste lent, silencieux et sans rétention.",
+  "sortie": "Terminez par une expiration à gauche, puis posez la main droite sur le genou. Respirez librement par les deux narines quelques instants en observant le calme installé.",
+  "variante_facilitee": "Sans les doigts : imaginez simplement le trajet de l'air dans une narine puis dans l'autre, mains posées sur les genoux.",
+  "variante_avancee": "Allongez progressivement l'expiration jusqu'à deux fois la durée de l'inspiration ; ajoutez une courte rétention poumons pleins seulement en l'absence d'hypertension et de grossesse.",
+  "version": 2
+ },
+ "P002": {
+  "presentation": "Ujjayi, la respiration victorieuse, se fait par le nez en resserrant légèrement l'arrière de la gorge, ce qui produit un souffle doux et audible comme le bruit de la mer. Elle rythme et accompagne les postures, réchauffe et aide à rester concentré. Elle s'utilise tout au long d'une séance dynamique.",
+  "entree": [
+   "Asseyez-vous confortablement, colonne longue, ou restez dans la posture que vous pratiquez.",
+   "Respirez quelques instants calmement par le nez.",
+   "Pour sentir le geste, expirez une fois bouche ouverte en chuchotant « haaa », comme pour faire de la buée sur un miroir.",
+   "Refaites ce même geste de gorge bouche fermée, à l'expiration.",
+   "Gardez ce léger resserrement de la gorge à l'inspiration aussi.",
+   "Laissez le souffle devenir long, régulier et légèrement sonore."
+  ],
+  "alignement": [
+   "Colonne longue, poitrine ouverte, épaules basses.",
+   "Mâchoire desserrée, langue détendue, lèvres jointes.",
+   "Nuque longue, menton à l'horizontale.",
+   "Le resserrement se fait au fond de la gorge, pas dans le nez."
+  ],
+  "tenue": [
+   "Le son doit rester doux, audible pour vous et à peine pour votre voisin.",
+   "Utilisez le son comme repère : s'il devient haché ou forcé, ralentissez ou faites une pause.",
+   "Gardez la même qualité de souffle en entrant et en sortant des postures."
+  ],
+  "erreurs": [
+   "Faire du bruit avec le nez : le son vient de la gorge, narines détendues.",
+   "Serrer trop la gorge : relâchez jusqu'à un souffle doux et sans effort.",
+   "Retenir l'air entre inspiration et expiration : cherchez un mouvement continu."
+  ],
+  "respiration": "Inspiration et expiration par le nez, longues et de durée égale, avec un léger resserrement de la gorge qui rend le souffle audible.",
+  "sortie": "Relâchez la gorge et laissez revenir une respiration naturelle et silencieuse. Observez le calme et la chaleur installés.",
+  "variante_facilitee": "Pratiquez seulement à l'expiration, l'inspiration restant naturelle.",
+  "variante_avancee": "Maintenez Ujjayi pendant toute une séquence dynamique, en coordonnant chaque mouvement avec une inspiration ou une expiration.",
+  "version": 2
+ },
+ "P004": {
+  "presentation": "Bhastrika, la respiration du soufflet, enchaîne des inspirations et des expirations actives, rapides et égales par le nez, portées par le ventre. Plus intense que Kapalabhati, elle réchauffe et dynamise fortement. Réservée à des pratiquants expérimentés, elle se place en début de séance.",
+  "entree": [
+   "Asseyez-vous en tailleur ou sur les talons, colonne bien droite, mains sur les genoux.",
+   "Respirez calmement par le nez quelques instants.",
+   "Inspirez activement par le nez en gonflant le ventre.",
+   "Expirez activement par le nez en rentrant le ventre, avec la même force.",
+   "Enchaînez à un rythme modéré, environ une respiration par seconde, sur 10 respirations.",
+   "Terminez la série par une inspiration lente et une longue expiration."
+  ],
+  "alignement": [
+   "Ischions ancrés, colonne longue et immobile.",
+   "Épaules basses et relâchées : elles ne montent pas à l'inspiration.",
+   "Poitrine stable, le mouvement vient du ventre.",
+   "Visage et mâchoire détendus."
+  ],
+  "tenue": [
+   "Gardez inspiration et expiration égales en durée et en force.",
+   "Restez à l'écoute : arrêtez au moindre vertige, picotement ou mal de tête.",
+   "Faites au maximum trois séries, avec plusieurs respirations calmes entre chaque."
+  ],
+  "erreurs": [
+   "Respirer avec les épaules : ramenez le mouvement dans le ventre.",
+   "Aller trop vite : un rythme modéré et égal suffit.",
+   "Enchaîner les séries : laissez la respiration redevenir calme avant de recommencer."
+  ],
+  "respiration": "Inspiration et expiration sont toutes deux actives, rapides et de même intensité, par le nez. Le ventre se gonfle et se rentre comme un soufflet.",
+  "sortie": "Après la dernière série, respirez lentement et naturellement. Restez assis les yeux fermés quelques instants avant de passer à la suite.",
+  "variante_facilitee": "Pratiquez Kapalabhati ou une respiration abdominale lente à la place.",
+  "variante_avancee": "Allongez la série jusqu'à 20 ou 30 respirations en gardant un rythme parfaitement égal.",
+  "version": 2
+ },
+ "P008": {
+  "presentation": "Sama Vritti, la respiration carrée, découpe le souffle en quatre temps égaux : inspiration, poumons pleins, expiration, poumons vides. Ce rythme régulier calme le mental et aide à se concentrer. Elle convient en ouverture de séance ou avant la relaxation.",
+  "entree": [
+   "Installez-vous en position assise confortable, le dos bien droit.",
+   "Posez les mains sur les genoux, paumes vers le haut ou vers le bas.",
+   "Fermez doucement les yeux pour vous tourner vers votre intériorité.",
+   "Prenez une respiration naturelle pour arriver dans l'instant.",
+   "Inspirez par le nez en comptant 4 temps, gardez les poumons pleins 4 temps.",
+   "Expirez sur 4 temps, gardez les poumons vides 4 temps, puis recommencez."
+  ],
+  "alignement": [
+   "Allongez la colonne vertébrale depuis le coccyx jusqu'au sommet du crâne.",
+   "Ischions ancrés, bassin droit.",
+   "Relâchez les épaules, la mâchoire et le visage.",
+   "Gorge détendue pendant les pauses."
+  ],
+  "tenue": [
+   "Comptez à un rythme régulier, sans accélérer en fin de cycle.",
+   "Pendant les pauses, suspendez simplement le mouvement, sans serrer la gorge.",
+   "Gardez un souffle silencieux et fluide."
+  ],
+  "erreurs": [
+   "Bloquer l'air en serrant la gorge : relâchez la gorge et laissez la cage thoracique immobile.",
+   "Forcer un compte trop long : raccourcissez dès qu'un manque d'air apparaît.",
+   "Faire des pauses en cas de grossesse ou d'hypertension : supprimez-les et gardez seulement inspiration et expiration égales."
+  ],
+  "respiration": "Inspirez sur 4 temps, retenez poumons pleins sur 4 temps, expirez sur 4 temps, puis retenez poumons vides sur 4 temps. Gardez un flux fluide et régulier.",
+  "sortie": "Reprenez un rythme respiratoire spontané et observez les sensations dans le corps.",
+  "variante_facilitee": "Réduisez le compte à 2 ou 3 secondes par phase si le rythme de 4 secondes est trop intense.",
+  "variante_avancee": "Augmentez progressivement le compte à 6 ou 8 secondes par phase si le souffle est à l'aise.",
+  "version": 2
+ },
+ "P011": {
+  "presentation": "Cette respiration de la méthode De Gasquet associe chaque expiration à une remontée douce du périnée et du bas-ventre. Elle protège le plancher pelvien et apprend à souffler sans pousser vers le bas. C'est la base de toute la pratique prénatale, postnatale et du yoga du dos.",
+  "entree": [
+   "Asseyez-vous sur un coussin ou sur une chaise, ou allongez-vous sur le côté.",
+   "Grandissez-vous en poussant doucement le sommet du crâne vers le haut.",
+   "Inspirez par le nez sans forcer, en laissant le ventre se relâcher.",
+   "Expirez lentement par la bouche, comme dans une paille.",
+   "Pendant l'expiration, remontez doucement le périnée, comme pour retenir une envie, puis le bas-ventre vers l'intérieur et le haut.",
+   "Relâchez tout à l'inspiration suivante, puis recommencez."
+  ],
+  "alignement": [
+   "Bassin posé, ni cambré ni enroulé.",
+   "Colonne en auto-grandissement, nuque longue.",
+   "Épaules relâchées, cage thoracique libre.",
+   "Le mouvement part du bas : périnée d'abord, puis bas-ventre."
+  ],
+  "tenue": [
+   "Sentez le ventre « plat qui remonte » et non le ventre qui pousse.",
+   "Gardez l'expiration longue et douce, sans bloquer.",
+   "Relâchez complètement à l'inspiration."
+  ],
+  "erreurs": [
+   "Pousser vers le bas en expirant : remontez le périnée avant de souffler.",
+   "Rentrer le ventre en bloquant la respiration : l'action accompagne toujours l'expiration.",
+   "Serrer les fessiers : seul le périnée et le bas-ventre travaillent."
+  ],
+  "respiration": "L'inspiration est passive et relâchée. L'expiration est lente, par la bouche, et s'accompagne de la remontée du périnée puis du bas-ventre.",
+  "sortie": "Après 8 à 10 respirations, relâchez toute action et respirez naturellement. Restez quelques instants dans la position avant de changer.",
+  "variante_facilitee": "Allongée sur le côté, un coussin entre les genoux, en ne travaillant que la remontée du périnée.",
+  "variante_avancee": "Gardez cette expiration active pendant les postures et les changements de position, notamment pour se relever ou porter.",
+  "version": 2
+ },
+ "P013": {
+  "presentation": "Sukhasana, la posture facile, est l'assise en tailleur. Stable et accessible, elle sert aux respirations, aux méditations et aux temps de centrage. Bien installée, elle permet de garder le dos long sans effort.",
+  "entree": [
+   "Asseyez-vous sur le tapis, jambes allongées.",
+   "Pliez une jambe puis l'autre et croisez-les au niveau des tibias, chaque pied sous le genou opposé.",
+   "Placez un coussin ou une couverture sous les fesses si les genoux sont plus hauts que les hanches.",
+   "Avec les mains, écartez légèrement les fessiers pour bien sentir les ischions.",
+   "Posez les mains sur les genoux ou les cuisses.",
+   "Grandissez-vous du bassin jusqu'au sommet du crâne."
+  ],
+  "alignement": [
+   "Genoux au niveau ou plus bas que les hanches.",
+   "Bassin droit, ni basculé en arrière ni cambré.",
+   "Colonne longue, épaules au-dessus des hanches.",
+   "Épaules basses, nuque longue, menton légèrement rentré."
+  ],
+  "tenue": [
+   "Laissez le poids descendre dans les ischions et la colonne s'allonger vers le haut.",
+   "Relâchez les épaules et le visage à chaque expiration.",
+   "Changez le croisement des jambes à chaque séance ou à mi-temps."
+  ],
+  "erreurs": [
+   "Dos arrondi, bassin qui part en arrière : surélevez davantage les fesses.",
+   "Genoux qui tirent : glissez des coussins sous les genoux.",
+   "Raideur pour rester droit : cherchez la longueur, pas la rigidité."
+  ],
+  "respiration": "Respiration naturelle ou complète, par le nez. À chaque inspiration, la colonne s'allonge ; à chaque expiration, les épaules se relâchent.",
+  "sortie": "Décroisez les jambes et allongez-les devant vous. Secouez doucement les jambes ou massez les genoux avant de poursuivre.",
+  "variante_facilitee": "Assis sur une chaise, pieds à plat, ou sur un coussin haut avec des appuis sous les genoux.",
+  "variante_avancee": "Sans coussin, en gardant le bassin droit et la colonne longue pendant plusieurs minutes de méditation.",
+  "version": 2
+ },
+ "P014": {
+  "presentation": "Assis en tailleur dos au mur, on pratique l'auto-grandissement de la méthode De Gasquet : à l'expiration, le sommet du crâne monte vers le plafond. Le mur sert de repère pour placer la colonne. Idéal pour le centrage en prénatal et postnatal.",
+  "entree": [
+   "Asseyez-vous en tailleur sur un coussin, les fesses contre le mur.",
+   "Placez le bas du dos et l'arrière du bassin au contact du mur.",
+   "Posez les mains sur les genoux.",
+   "Inspirez en relâchant le ventre.",
+   "Expirez en remontant le périnée et en poussant le sommet du crâne vers le haut, le long du mur.",
+   "Relâchez à l'inspiration en gardant la hauteur gagnée."
+  ],
+  "alignement": [
+   "Bassin et omoplates proches du mur, sans forcer la tête contre lui.",
+   "Genoux plus bas que les hanches grâce au coussin.",
+   "Menton légèrement rentré, nuque qui s'allonge.",
+   "Épaules relâchées vers le bas."
+  ],
+  "tenue": [
+   "Sentez la colonne qui s'étire à chaque expiration, sans creuser les reins.",
+   "Gardez l'action du périnée à chaque expiration.",
+   "Restez détendu des épaules et de la mâchoire."
+  ],
+  "erreurs": [
+   "Coller la tête au mur en relevant le menton : rentrez le menton et allongez la nuque.",
+   "Cambrer pour se grandir : l'étirement vient du sommet du crâne, pas du ventre qui avance.",
+   "Pousser vers le bas en expirant : remontez le périnée."
+  ],
+  "respiration": "Inspiration passive par le nez. Expiration lente avec remontée du périnée et auto-grandissement.",
+  "sortie": "Relâchez l'action, décroisez les jambes et allongez-les. Restez quelques instants contre le mur avant de vous lever par le côté.",
+  "variante_facilitee": "Sur une chaise, le dos contre le dossier, pieds à plat.",
+  "variante_avancee": "Ajoutez une ouverture des bras vers le haut à l'expiration, paumes face à face, en gardant le bas du dos stable.",
+  "version": 2
+ },
+ "P015": {
+  "presentation": "Siddhasana, la posture parfaite, est une assise de méditation où un talon se place près du périnée et l'autre devant ou au-dessus. Plus stable que le tailleur, elle demande une bonne ouverture des hanches. On la choisit pour les respirations et les méditations longues.",
+  "entree": [
+   "Asseyez-vous sur un coussin, jambes allongées.",
+   "Pliez la jambe gauche et placez le talon gauche contre le périnée, plante contre l'intérieur de la cuisse droite.",
+   "Pliez la jambe droite et placez le talon droit devant le talon gauche, ou juste au-dessus si la hanche le permet.",
+   "Laissez les deux genoux descendre vers le sol.",
+   "Posez les mains sur les genoux, colonne longue."
+  ],
+  "alignement": [
+   "Genoux au sol ou soutenus, plus bas que les hanches.",
+   "Talons alignés dans l'axe du corps.",
+   "Bassin droit, colonne verticale.",
+   "Épaules relâchées, nuque longue."
+  ],
+  "tenue": [
+   "Laissez les hanches s'ouvrir à chaque expiration sans pousser sur les genoux.",
+   "Gardez la colonne longue et le visage détendu.",
+   "Inversez le placement des jambes à la séance suivante."
+  ],
+  "erreurs": [
+   "Forcer le pied du dessus : laissez-le devant plutôt qu'au-dessus si le genou proteste.",
+   "Genoux en l'air et dos arrondi : surélevez le bassin avec un coussin plus haut.",
+   "Douleur aux chevilles : glissez une couverture pliée sous les pieds."
+  ],
+  "respiration": "Respiration lente et naturelle par le nez, ou la respiration choisie pour la méditation.",
+  "sortie": "Défaites la jambe du dessus, puis celle du dessous, et allongez les jambes. Bougez doucement les chevilles et les genoux.",
+  "variante_facilitee": "Sukhasana, le tailleur simple, sur un coussin.",
+  "variante_avancee": "Sans coussin, en tenant la posture plusieurs minutes avec le dos parfaitement droit.",
+  "version": 2
+ },
+ "P016": {
+  "presentation": "Ardha Padmasana, le demi-lotus, place un pied sur la cuisse opposée et l'autre sous le genou. Étape vers le lotus, il ouvre les hanches en rotation externe. La rotation doit toujours venir de la hanche, jamais du genou.",
+  "entree": [
+   "Asseyez-vous sur un coussin en tailleur.",
+   "Prenez le pied droit à deux mains et faites tourner toute la cuisse vers l'extérieur.",
+   "Posez le pied droit sur le haut de la cuisse gauche, près du pli de l'aine, plante vers le ciel.",
+   "Gardez le pied gauche au sol, sous le genou droit.",
+   "Grandissez-vous, mains sur les genoux.",
+   "Changez de côté après le temps prévu."
+  ],
+  "alignement": [
+   "Pied du dessus fléchi, cheville dans l'axe, sans s'affaisser.",
+   "Genou du dessus qui descend vers le sol sans être poussé.",
+   "Bassin droit, poids réparti sur les deux ischions.",
+   "Colonne longue, épaules relâchées."
+  ],
+  "tenue": [
+   "Restez attentif au genou : aucune douleur ne doit apparaître à l'intérieur ou à l'extérieur.",
+   "Respirez dans les hanches et laissez-les s'ouvrir peu à peu.",
+   "Tenez des durées égales des deux côtés."
+  ],
+  "erreurs": [
+   "Tirer le pied vers la cuisse en tordant le genou : faites tourner la cuisse depuis la hanche.",
+   "Laisser la cheville se plier en faucille : gardez le pied fléchi.",
+   "Rester malgré une douleur au genou : revenez au tailleur."
+  ],
+  "respiration": "Respiration lente par le nez. L'expiration aide la hanche à se relâcher.",
+  "sortie": "Prenez le pied du dessus à deux mains et reposez-le doucement au sol. Allongez les jambes et bougez les genoux avant de changer de côté.",
+  "variante_facilitee": "Pied posé sur le mollet opposé plutôt que sur la cuisse, ou tailleur simple.",
+  "variante_avancee": "Padmasana, le lotus complet, si les deux demi-lotus sont confortables.",
+  "version": 2
+ },
+ "P017": {
+  "presentation": "Padmasana, le lotus, place chaque pied sur la cuisse opposée. Très stable pour la méditation, il demande une grande ouverture des hanches. Réservé aux pratiquants qui tiennent le demi-lotus des deux côtés sans aucune gêne au genou.",
+  "entree": [
+   "Asseyez-vous sur un coussin, jambes allongées.",
+   "Installez le pied droit sur le haut de la cuisse gauche en faisant tourner la cuisse depuis la hanche.",
+   "Pliez la jambe gauche et soulevez le pied gauche à deux mains.",
+   "Posez le pied gauche sur le haut de la cuisse droite, sans forcer.",
+   "Laissez les genoux descendre et grandissez-vous.",
+   "À la séance suivante, commencez par l'autre jambe."
+  ],
+  "alignement": [
+   "Pieds près des plis de l'aine, fléchis.",
+   "Genoux proches du sol, sans pression.",
+   "Bassin droit, colonne longue.",
+   "Épaules relâchées, nuque longue."
+  ],
+  "tenue": [
+   "Sortez immédiatement au moindre tiraillement dans le genou.",
+   "Gardez la respiration calme et la colonne longue.",
+   "Commencez par des tenues courtes."
+  ],
+  "erreurs": [
+   "Forcer le second pied : si la hanche ne tourne pas assez, restez en demi-lotus.",
+   "Pieds en faucille : fléchissez les chevilles.",
+   "Rester par habitude malgré des fourmillements : sortez et étirez les jambes."
+  ],
+  "respiration": "Respiration lente et silencieuse, souvent associée à une méditation ou à un pranayama.",
+  "sortie": "Dégagez d'abord le pied du dessus avec les mains, puis l'autre. Allongez les jambes et faites quelques mouvements de chevilles et de genoux.",
+  "variante_facilitee": "Ardha Padmasana, le demi-lotus, ou Siddhasana.",
+  "variante_avancee": "Tenir plusieurs minutes de méditation, en alternant la jambe du dessus d'une séance à l'autre.",
+  "version": 2
+ },
+ "P018": {
+  "presentation": "Vajrasana, le diamant, est l'assise sur les talons, genoux joints. Simple et stable, elle redresse naturellement la colonne. Elle sert aux respirations, aux transitions et au centrage.",
+  "entree": [
+   "Mettez-vous à genoux, genoux joints ou légèrement écartés.",
+   "Allongez les pieds vers l'arrière, dessus des pieds au sol, gros orteils proches.",
+   "Asseyez-vous doucement sur les talons.",
+   "Glissez un coussin entre les fesses et les talons si les genoux ou les chevilles tirent.",
+   "Posez les mains sur les cuisses et grandissez-vous."
+  ],
+  "alignement": [
+   "Genoux alignés avec les hanches.",
+   "Talons sous les fesses, chevilles droites.",
+   "Bassin droit, colonne longue.",
+   "Épaules relâchées, menton légèrement rentré."
+  ],
+  "tenue": [
+   "Laissez le poids descendre dans les talons ou le coussin.",
+   "Gardez le dos long sans raideur.",
+   "Sortez si des fourmillements apparaissent dans les pieds."
+  ],
+  "erreurs": [
+   "Douleur aux genoux : ajoutez un coussin entre fesses et talons ou une couverture sous les genoux.",
+   "Pieds qui tournent vers l'extérieur : ramenez-les dans l'axe.",
+   "Dos qui s'affaisse : grandissez-vous à chaque inspiration."
+  ],
+  "respiration": "Respiration naturelle ou complète, calme et régulière.",
+  "sortie": "Penchez-vous en avant, mains au sol, et soulevez les fesses. Passez à quatre pattes puis étirez les jambes l'une après l'autre.",
+  "variante_facilitee": "Bloc ou coussin épais entre les pieds pour s'asseoir plus haut.",
+  "variante_avancee": "Sans coussin, en tenant plusieurs minutes de respiration.",
+  "version": 2
+ },
+ "P019": {
+  "presentation": "Virasana, le héros, ressemble au diamant mais les fesses se posent au sol entre les pieds. Elle étire fortement les quadriceps et le dessus des pieds. Elle demande des genoux en bonne santé et se pratique souvent avec une brique.",
+  "entree": [
+   "Mettez-vous à genoux, genoux joints, pieds écartés un peu plus que la largeur du bassin.",
+   "Placez une brique entre les pieds.",
+   "Avec les pouces, déroulez les mollets vers l'extérieur.",
+   "Asseyez-vous sur la brique, entre les pieds.",
+   "Posez les mains sur les cuisses et grandissez-vous.",
+   "Si c'est confortable, baissez la hauteur de la brique au fil des séances."
+  ],
+  "alignement": [
+   "Genoux joints ou très proches.",
+   "Pieds dans l'axe des tibias, dessus des pieds au sol.",
+   "Bassin droit, poids réparti sur les deux ischions.",
+   "Colonne longue, épaules basses."
+  ],
+  "tenue": [
+   "Sentez l'étirement à l'avant des cuisses, jamais dans l'articulation du genou.",
+   "Relâchez les épaules et laissez la respiration calme.",
+   "Sortez au moindre pincement dans le genou."
+  ],
+  "erreurs": [
+   "S'asseoir trop bas trop vite : gardez la brique tant que les genoux le demandent.",
+   "Pieds tournés vers l'extérieur : alignez-les dans le prolongement des tibias.",
+   "Cambrer le bas du dos : basculez légèrement le bassin vers l'arrière."
+  ],
+  "respiration": "Respiration lente par le nez, l'expiration aidant les cuisses à se relâcher.",
+  "sortie": "Penchez-vous en avant, mains au sol, et soulevez les fesses. Passez à quatre pattes et étirez une jambe après l'autre vers l'arrière.",
+  "variante_facilitee": "Vajrasana, assis sur les talons, avec un coussin.",
+  "variante_avancee": "Sans brique, puis inclinaison du buste vers l'arrière sur les avant-bras (Supta Virasana).",
+  "version": 2
+ },
+ "P020": {
+  "presentation": "Dandasana, le bâton, est l'assise jambes allongées, dos droit. Elle semble simple mais demande des ischio-jambiers souples et une sangle abdominale active. C'est la posture de départ des flexions avant et des torsions assises.",
+  "entree": [
+   "Asseyez-vous jambes allongées devant vous, pieds joints ou écartés de la largeur du bassin.",
+   "Avec les mains, écartez les fessiers pour bien sentir les ischions.",
+   "Posez les mains au sol de chaque côté des hanches, doigts vers l'avant.",
+   "Fléchissez les pieds, orteils vers le ciel.",
+   "Appuyez légèrement les mains au sol et grandissez-vous."
+  ],
+  "alignement": [
+   "Talons qui poussent vers l'avant, cuisses actives.",
+   "Bassin droit, assis sur l'avant des ischions.",
+   "Colonne verticale, épaules au-dessus des hanches.",
+   "Épaules basses, poitrine ouverte, nuque longue."
+  ],
+  "tenue": [
+   "Gardez les cuisses actives, rotules vers le ciel.",
+   "Sentez le ventre qui soutient la colonne.",
+   "Relâchez les épaules à chaque expiration."
+  ],
+  "erreurs": [
+   "Dos arrondi : asseyez-vous sur une couverture pliée ou pliez légèrement les genoux.",
+   "Épaules qui montent : poussez les mains au sol et abaissez les épaules.",
+   "Pieds qui tombent sur le côté : fléchissez-les, orteils vers le haut."
+  ],
+  "respiration": "Inspirez pour grandir la colonne, expirez pour engager légèrement le ventre et relâcher les épaules.",
+  "sortie": "Relâchez les pieds et les mains, secouez doucement les jambes. Enchaînez avec une flexion avant ou une torsion assise.",
+  "variante_facilitee": "Assis sur une couverture pliée, genoux légèrement fléchis.",
+  "variante_avancee": "Soulevez légèrement les mains du sol en gardant la colonne droite.",
+  "version": 2
+ }
+}

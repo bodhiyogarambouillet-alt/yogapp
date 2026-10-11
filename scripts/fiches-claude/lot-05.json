@@ -1,0 +1,622 @@
+{
+ "P071": {
+  "presentation": "Prasarita Padottanasana, le grand écart facial debout, est une flexion avant jambes largement écartées. Elle étire l'arrière et l'intérieur des jambes et détend le dos. Pendant la grossesse, on pose la tête sur une brique et on reste peu de temps.",
+  "entree": [
+   "Écartez largement les pieds, bords extérieurs parallèles.",
+   "Posez les mains sur les hanches et inspirez en allongeant le dos.",
+   "Expirez en pliant depuis les hanches, dos long.",
+   "Posez les mains au sol sous les épaules, ou sur des briques.",
+   "Si c'est confortable, pliez les coudes vers l'arrière et approchez le sommet du crâne du sol ou d'une brique."
+  ],
+  "alignement": [
+   "Pieds parallèles, poids légèrement vers l'avant.",
+   "Flexion depuis les hanches.",
+   "Coudes au-dessus des poignets, pliés vers l'arrière.",
+   "Nuque relâchée, épaules loin des oreilles."
+  ],
+  "tenue": [
+   "Relâchez la tête et le dos à chaque expiration.",
+   "Gardez les cuisses actives pour protéger l'arrière des genoux.",
+   "En cas d'hypertension ou de grossesse, restez peu de temps tête en bas."
+  ],
+  "erreurs": [
+   "Poids sur les talons : avancez-le vers l'avant des pieds.",
+   "Dos rond : montez les mains sur des briques.",
+   "Pieds tournés vers l'extérieur : gardez-les parallèles."
+  ],
+  "respiration": "Inspirez pour allonger, expirez pour descendre. Respirez lentement pendant la tenue.",
+  "sortie": "Posez les mains sur les hanches, inspirez et remontez dos plat en poussant dans les pieds. Rapprochez les pieds en montagne.",
+  "variante_facilitee": "Mains sur des briques, dos à l'horizontale.",
+  "variante_avancee": "Mains liées dans le dos, bras vers le sol par-dessus la tête.",
+  "version": 2
+ },
+ "P072": {
+  "presentation": "Parsvottanasana, la pyramide, est une flexion avant sur la jambe avant tendue, pieds décalés. Elle étire intensément les ischio-jambiers et demande de l'équilibre. Des briques sous les mains la rendent accessible.",
+  "entree": [
+   "Depuis la montagne, reculez le pied gauche d'environ un mètre, pied à 45°.",
+   "Gardez les pieds écartés de la largeur du bassin et le bassin face à l'avant.",
+   "Mains sur les hanches, inspirez en allongeant le dos.",
+   "Expirez en pliant depuis les hanches au-dessus de la jambe droite.",
+   "Posez les mains sur des briques de chaque côté du pied avant."
+  ],
+  "alignement": [
+   "Jambes tendues, genou avant souple.",
+   "Hanches au même niveau, face à l'avant.",
+   "Dos long, flexion depuis les hanches.",
+   "Nuque relâchée."
+  ],
+  "tenue": [
+   "Reculez la hanche de la jambe avant.",
+   "Allongez le dos avant de descendre.",
+   "Respirez dans l'arrière de la cuisse."
+  ],
+  "erreurs": [
+   "Pieds sur une même ligne : écartez-les pour la stabilité.",
+   "Dos rond : relevez les briques.",
+   "Genou avant verrouillé : gardez une micro-flexion."
+  ],
+  "respiration": "Inspirez pour allonger, expirez pour avancer le buste.",
+  "sortie": "Inspirez en remontant dos plat, mains sur les hanches. Ramenez le pied arrière, changez de côté, puis faites la table inversée.",
+  "variante_facilitee": "Genou avant légèrement plié et mains sur des briques hautes.",
+  "variante_avancee": "Mains en prière inversée dans le dos, ou coudes tenus.",
+  "version": 2
+ },
+ "P073": {
+  "presentation": "Ardha Chandrasana, la demi-lune, est un équilibre sur une jambe, corps ouvert sur le côté, jambe levée à l'horizontale. Elle renforce la jambe d'appui, étire l'intérieur des cuisses et ouvre la poitrine. Une brique sous la main facilite beaucoup l'équilibre.",
+  "entree": [
+   "Partez du triangle à droite, une brique à côté du pied droit.",
+   "Pliez le genou droit et posez la main droite sur la brique, à environ 30 cm devant le pied.",
+   "Transférez le poids sur la jambe droite.",
+   "Soulevez la jambe gauche à hauteur de hanche en tendant la jambe droite.",
+   "Ouvrez le bassin et la poitrine vers la gauche, main gauche sur la hanche ou bras vers le ciel."
+  ],
+  "alignement": [
+   "Main d'appui sous l'épaule.",
+   "Jambe d'appui tendue, genou souple.",
+   "Jambe levée parallèle au sol, pied fléchi.",
+   "Bassin et épaules dans un même plan."
+  ],
+  "tenue": [
+   "Poussez dans le talon de la jambe levée.",
+   "Fixez le sol pour l'équilibre, puis éventuellement le côté.",
+   "Respirez calmement."
+  ],
+  "erreurs": [
+   "Main trop proche du pied : avancez-la sous l'épaule.",
+   "Jambe levée qui tombe : relevez-la au niveau de la hanche.",
+   "Poitrine qui tourne vers le sol : ouvrez-la avec une brique plus haute."
+  ],
+  "respiration": "Respiration lente et régulière. Expirez pour ouvrir le bassin.",
+  "sortie": "Pliez le genou d'appui, reposez le pied levé en arrière et revenez en triangle ou en fente. Changez de côté.",
+  "variante_facilitee": "Dos contre un mur et brique haute.",
+  "variante_avancee": "Saisir le pied levé avec la main du dessus (demi-lune en canne à sucre).",
+  "version": 2
+ },
+ "P074": {
+  "presentation": "Parivrtta Ardha Chandrasana, la demi-lune en torsion, est un équilibre sur une jambe avec rotation du buste. Posture exigeante, elle combine équilibre, étirement des ischio-jambiers et rotation. Une brique sous la main est presque toujours utile.",
+  "entree": [
+   "Partez de la pyramide, jambe droite en avant, une brique devant le pied.",
+   "Posez la main gauche sur la brique, sous l'épaule.",
+   "Transférez le poids sur la jambe droite et soulevez la jambe gauche à hauteur de hanche.",
+   "Gardez le bassin face au sol.",
+   "Tournez le buste vers la droite et levez le bras droit vers le ciel."
+  ],
+  "alignement": [
+   "Main d'appui sous l'épaule.",
+   "Hanches à la même hauteur, face au sol.",
+   "Jambe levée active, pied fléchi.",
+   "Rotation depuis le buste, épaules empilées."
+  ],
+  "tenue": [
+   "Poussez dans le talon arrière.",
+   "Fixez le sol pour l'équilibre.",
+   "Respirez lentement malgré la rotation."
+  ],
+  "erreurs": [
+   "Hanche de la jambe levée qui s'ouvre : gardez le bassin face au sol.",
+   "Main trop proche du pied : avancez-la.",
+   "Forcer la rotation : restez main sur la hanche."
+  ],
+  "respiration": "Inspirez pour allonger, expirez pour tourner.",
+  "sortie": "Reposez la main levée sur la hanche, puis le pied arrière au sol. Revenez en pyramide et changez de côté.",
+  "variante_facilitee": "Main d'appui sur une brique haute, autre main sur la hanche.",
+  "variante_avancee": "Main d'appui au sol, bras du dessus tendu vers le ciel.",
+  "version": 2
+ },
+ "P075": {
+  "presentation": "Vrksasana, l'arbre, est un équilibre sur une jambe, le pied de l'autre jambe posé contre la jambe d'appui. Elle développe la stabilité, la concentration et l'ouverture des hanches. Un mur ou une chaise rassure pendant l'apprentissage.",
+  "entree": [
+   "Partez de la montagne, poids sur la jambe gauche.",
+   "Pliez la jambe droite et ouvrez le genou vers l'extérieur.",
+   "Posez la plante du pied droit contre la cheville, le mollet ou l'intérieur de la cuisse gauche, jamais sur le genou.",
+   "Joignez les mains devant la poitrine.",
+   "Si l'équilibre est stable, levez les bras vers le ciel."
+  ],
+  "alignement": [
+   "Pied d'appui ancré, orteils détendus.",
+   "Bassin horizontal, face à l'avant.",
+   "Pied et jambe d'appui qui se poussent l'un contre l'autre.",
+   "Colonne longue, épaules basses."
+  ],
+  "tenue": [
+   "Fixez un point immobile à hauteur des yeux.",
+   "Acceptez les petits mouvements d'équilibre dans le pied.",
+   "Respirez calmement."
+  ],
+  "erreurs": [
+   "Pied posé sur le genou : placez-le au-dessus ou en dessous.",
+   "Hanche d'appui qui sort sur le côté : recentrez le bassin.",
+   "Retenir son souffle : respirez lentement."
+  ],
+  "respiration": "Respiration calme et régulière, qui aide à stabiliser l'équilibre.",
+  "sortie": "Abaissez les bras, reposez le pied au sol et revenez en montagne. Changez de côté.",
+  "variante_facilitee": "Orteils au sol, talon contre la cheville, une main sur un mur ou une chaise.",
+  "variante_avancee": "Pied en demi-lotus sur la cuisse, ou yeux fermés.",
+  "version": 2
+ },
+ "P076": {
+  "presentation": "Garudasana, l'aigle, enroule une jambe autour de l'autre et un bras autour de l'autre en équilibre. Elle ouvre le haut du dos et les épaules, renforce la jambe d'appui et demande de la concentration. Les genoux sensibles adaptent l'enroulement.",
+  "entree": [
+   "Pliez légèrement les genoux comme pour la chaise.",
+   "Croisez la cuisse droite par-dessus la cuisse gauche.",
+   "Si possible, crochetez le pied droit derrière le mollet gauche ; sinon, posez les orteils au sol.",
+   "Tendez les bras devant vous, croisez le bras gauche sous le droit et pliez les coudes.",
+   "Joignez les paumes ou le dos des mains, coudes à hauteur des épaules."
+  ],
+  "alignement": [
+   "Genou d'appui plié, dans l'axe du pied.",
+   "Bassin droit, poids au centre du pied.",
+   "Coudes à hauteur des épaules, avant-bras devant le visage.",
+   "Épaules basses, loin des oreilles."
+  ],
+  "tenue": [
+   "Descendez un peu plus dans la jambe d'appui à chaque expiration.",
+   "Écartez les coudes du visage pour ouvrir le haut du dos.",
+   "Fixez un point devant vous."
+  ],
+  "erreurs": [
+   "Forcer le crochet du pied : posez les orteils au sol.",
+   "Épaules qui montent : abaissez-les.",
+   "Jambe d'appui tendue : pliez-la pour stabiliser."
+  ],
+  "respiration": "Respiration lente, dans le haut du dos entre les omoplates.",
+  "sortie": "Défaites les bras puis les jambes et revenez en montagne. Changez de côté.",
+  "variante_facilitee": "Seulement les bras, debout ou assis, ou jambes croisées orteils au sol.",
+  "variante_avancee": "Inclinez le buste vers l'avant, coudes vers les genoux.",
+  "version": 2
+ },
+ "P077": {
+  "presentation": "Utthita Hasta Padangusthasana, main au gros orteil debout, tend une jambe vers l'avant tenue par la main. Elle combine équilibre et étirement des ischio-jambiers. Une sangle autour du pied la rend accessible.",
+  "entree": [
+   "Partez de la montagne, poids sur la jambe gauche.",
+   "Pliez le genou droit vers la poitrine.",
+   "Crochetez le gros orteil droit avec l'index et le majeur droits, ou passez une sangle sous le pied.",
+   "Tendez la jambe droite vers l'avant, à la hauteur qui reste confortable.",
+   "Main gauche sur la hanche, grandissez-vous."
+  ],
+  "alignement": [
+   "Jambe d'appui tendue et active.",
+   "Bassin horizontal, les deux hanches au même niveau.",
+   "Dos droit, épaules basses.",
+   "Pied de la jambe levée fléchi."
+  ],
+  "tenue": [
+   "Grandissez-vous plutôt que de tirer la jambe vers vous.",
+   "Fixez un point devant vous.",
+   "Respirez calmement."
+  ],
+  "erreurs": [
+   "Dos rond pour attraper le pied : utilisez une sangle.",
+   "Hanche de la jambe levée qui remonte : abaissez-la.",
+   "Genou d'appui verrouillé : gardez une micro-flexion."
+  ],
+  "respiration": "Respiration régulière par le nez, l'expiration aidant à tendre la jambe.",
+  "sortie": "Pliez le genou, lâchez le pied et reposez-le au sol. Changez de côté.",
+  "variante_facilitee": "Genou plié tenu à deux mains, ou dos contre un mur.",
+  "variante_avancee": "Ouvrez la jambe sur le côté, puis ramenez-la devant et lâchez le pied en gardant la jambe levée.",
+  "version": 2
+ },
+ "P078": {
+  "presentation": "Natarajasana, le danseur, est un équilibre sur une jambe où l'on tient le pied arrière pour ouvrir la poitrine et l'avant de la hanche. Elle associe équilibre, extension et ouverture des épaules. Une sangle aide à atteindre le pied.",
+  "entree": [
+   "Partez de la montagne, poids sur la jambe gauche.",
+   "Pliez la jambe droite et saisissez l'intérieur du pied droit avec la main droite.",
+   "Rapprochez les genoux et grandissez-vous.",
+   "Levez le bras gauche vers l'avant et le haut.",
+   "Expirez en poussant le pied dans la main et en inclinant le buste vers l'avant."
+  ],
+  "alignement": [
+   "Jambe d'appui active, genou souple.",
+   "Genou arrière dans l'axe de la hanche, sans s'ouvrir sur le côté.",
+   "Bassin face à l'avant.",
+   "Poitrine ouverte, épaules basses."
+  ],
+  "tenue": [
+   "Le pied pousse dans la main pour ouvrir la poitrine.",
+   "Fixez un point devant vous.",
+   "Respirez dans la poitrine."
+  ],
+  "erreurs": [
+   "Tirer le pied avec le bras : poussez le pied dans la main.",
+   "Genou qui part sur le côté : alignez-le derrière la hanche.",
+   "Creuser fortement le bas du dos : engagez le ventre."
+  ],
+  "respiration": "Inspirez pour vous grandir, expirez pour ouvrir.",
+  "sortie": "Revenez le buste droit, lâchez le pied et reposez-le. Changez de côté, puis faites la pince debout.",
+  "variante_facilitee": "Une main sur un mur ou une chaise, sangle autour du pied.",
+  "variante_avancee": "Saisir le pied à deux mains par-dessus la tête.",
+  "version": 2
+ },
+ "P079": {
+  "presentation": "Ardha Baddha Padmottanasana, la pince debout en demi-lotus, est une posture avancée de l'Ashtanga : un pied en demi-lotus sur la cuisse, une main lie le pied dans le dos, puis on plie en avant. Elle demande des genoux et des hanches très libres.",
+  "entree": [
+   "Partez de la montagne, poids sur la jambe gauche.",
+   "Placez le pied droit en demi-lotus sur le haut de la cuisse gauche, en faisant tourner la hanche.",
+   "Passez le bras droit dans le dos et saisissez le pied droit si possible.",
+   "Inspirez en vous grandissant.",
+   "Expirez en pliant depuis les hanches et en posant la main gauche au sol à côté du pied."
+  ],
+  "alignement": [
+   "Genou du demi-lotus vers le sol, sans tension.",
+   "Jambe d'appui tendue, genou souple.",
+   "Flexion depuis les hanches.",
+   "Épaules ouvertes, nuque relâchée."
+  ],
+  "tenue": [
+   "Sortez immédiatement à la moindre gêne au genou.",
+   "Gardez l'équilibre en fixant le sol.",
+   "Respirez lentement."
+  ],
+  "erreurs": [
+   "Forcer le demi-lotus : posez le pied plus bas sur la cuisse ou en arbre.",
+   "Attraper le pied en arrondissant les épaules : tenez une sangle ou laissez la main sur la hanche.",
+   "Descendre trop vite : pliez la jambe d'appui."
+  ],
+  "respiration": "Inspirez pour vous grandir, expirez pour descendre.",
+  "sortie": "Inspirez en remontant, lâchez le pied et défaites le demi-lotus à deux mains. Changez de côté.",
+  "variante_facilitee": "Arbre avec flexion avant légère, mains sur des briques.",
+  "variante_avancee": "Front vers le tibia, main d'appui à plat au sol.",
+  "version": 2
+ },
+ "P080": {
+  "presentation": "Le guerrier II sur chaise permet de travailler la force des jambes et l'ouverture des hanches avec l'appui d'une assise. Accessible aux seniors et aux dos fragiles, il garde l'esprit du guerrier sans risque de chute.",
+  "entree": [
+   "Asseyez-vous de côté sur la chaise, cuisse droite sur l'assise.",
+   "Gardez le genou droit au-dessus de la cheville, pied vers l'avant.",
+   "Tendez la jambe gauche en arrière, pied posé au sol légèrement tourné.",
+   "Grandissez-vous, buste vertical.",
+   "Ouvrez les bras à l'horizontale et regardez au-dessus de la main droite."
+  ],
+  "alignement": [
+   "Genou avant au-dessus de la cheville.",
+   "Jambe arrière tendue, pied bien posé.",
+   "Buste droit au-dessus du bassin.",
+   "Épaules basses, bras longs."
+  ],
+  "tenue": [
+   "Poussez dans le pied arrière.",
+   "Allongez les bras dans les deux directions.",
+   "Respirez calmement."
+  ],
+  "erreurs": [
+   "S'avachir sur la chaise : grandissez-vous.",
+   "Pied arrière qui glisse : posez-le sur un tapis antidérapant.",
+   "Épaules qui montent : relâchez-les."
+  ],
+  "respiration": "Respiration lente et régulière.",
+  "sortie": "Ramenez la jambe arrière, asseyez-vous face à l'avant et changez de côté.",
+  "variante_facilitee": "Mains sur les cuisses plutôt que bras tendus.",
+  "variante_avancee": "Inclinez le buste en guerrier inversé, bras avant vers le ciel.",
+  "version": 2
+ },
+ "P081": {
+  "presentation": "La fente avec appui sur chaise étire l'avant de la hanche et renforce les jambes en gardant une main sur une chaise. Elle convient au prénatal, au postnatal et aux seniors. L'appui permet de se concentrer sur l'alignement plutôt que sur l'équilibre.",
+  "entree": [
+   "Placez une chaise stable à côté de vous, dossier à portée de main.",
+   "Posez une main sur le dossier.",
+   "Reculez la jambe éloignée de la chaise d'un grand pas, talon décollé.",
+   "Pliez le genou avant au-dessus de la cheville.",
+   "Descendez le bassin doucement en gardant le buste droit."
+  ],
+  "alignement": [
+   "Genou avant au-dessus de la cheville.",
+   "Bassin face à l'avant.",
+   "Bas-ventre engagé, sans creuser.",
+   "Épaules relâchées."
+  ],
+  "tenue": [
+   "Sentez l'étirement à l'avant de la hanche arrière.",
+   "Gardez la main légère sur la chaise.",
+   "Respirez calmement."
+  ],
+  "erreurs": [
+   "S'appuyer lourdement sur la chaise : gardez le poids dans les jambes.",
+   "Creuser le dos : remontez le bas-ventre en expirant.",
+   "Genou avant qui dépasse : reculez le bassin."
+  ],
+  "respiration": "Expirez en remontant le périnée et en descendant le bassin, inspirez pour vous grandir.",
+  "sortie": "Ramenez le pied arrière à côté du pied avant, tournez-vous et changez de côté.",
+  "variante_facilitee": "Petit pas et faible flexion.",
+  "variante_avancee": "Levez le bras libre vers le ciel.",
+  "version": 2
+ },
+ "P082": {
+  "presentation": "L'archer est une posture du kundalini yoga : en fente, on tend un bras vers l'avant comme pour tenir un arc et on ramène l'autre poing près de l'épaule. Elle renforce les jambes et ouvre la poitrine, et se tient souvent plusieurs minutes.",
+  "entree": [
+   "Pieds écartés d'environ une jambe, pied droit vers l'avant, pied gauche à 45°.",
+   "Pliez le genou droit au-dessus de la cheville.",
+   "Tendez le bras droit vers l'avant à hauteur d'épaule, poing fermé, pouce vers le ciel.",
+   "Ramenez le poing gauche près de l'épaule gauche, coude en arrière, comme pour tirer la corde d'un arc.",
+   "Regardez au-delà du poing avant."
+  ],
+  "alignement": [
+   "Genou avant au-dessus de la cheville.",
+   "Buste droit, légèrement ouvert sur le côté.",
+   "Bras avant tendu, épaules basses.",
+   "Coude arrière à hauteur d'épaule."
+  ],
+  "tenue": [
+   "Gardez le regard fixe et la respiration longue.",
+   "Poussez dans le pied arrière.",
+   "Commencez par une à deux minutes par côté."
+  ],
+  "erreurs": [
+   "Genou avant qui rentre : alignez-le avec le pied.",
+   "Épaules qui montent : relâchez-les.",
+   "Buste qui penche vers l'avant : redressez-le."
+  ],
+  "respiration": "Respiration longue et profonde par le nez.",
+  "sortie": "Inspirez, tendez la jambe avant, relâchez les bras et changez de côté.",
+  "variante_facilitee": "Flexion légère et tenue courte.",
+  "variante_avancee": "Tenir trois minutes par côté, cuisse avant presque horizontale.",
+  "version": 2
+ },
+ "P083": {
+  "presentation": "La grenouille dynamique du kundalini yoga alterne une position accroupie sur la pointe des pieds et une flexion avant jambes tendues, au rythme du souffle. Très tonique, elle renforce les jambes et dynamise. À éviter avec des genoux fragiles et pendant la grossesse.",
+  "entree": [
+   "Accroupissez-vous sur la pointe des pieds, talons joints et décollés.",
+   "Posez le bout des doigts au sol entre les genoux, tête relevée.",
+   "Inspirez en tendant les jambes, tête vers les genoux, doigts au sol.",
+   "Expirez en revenant accroupi, tête relevée.",
+   "Enchaînez à un rythme régulier, 10 à 26 fois."
+  ],
+  "alignement": [
+   "Talons joints et décollés.",
+   "Doigts toujours au sol.",
+   "Genoux qui s'ouvrent dans l'axe des pieds.",
+   "Nuque longue dans la flexion."
+  ],
+  "tenue": [
+   "Gardez un rythme régulier.",
+   "Arrêtez au moindre inconfort aux genoux.",
+   "Respirez puissamment par le nez."
+  ],
+  "erreurs": [
+   "Talons qui touchent le sol : gardez-les décollés.",
+   "Aller trop vite : synchronisez avec la respiration.",
+   "Genoux qui rentrent : ouvrez-les vers l'extérieur."
+  ],
+  "respiration": "Inspiration en montant les fesses, expiration en revenant accroupi.",
+  "sortie": "Restez accroupi ou asseyez-vous, puis allongez-vous sur le dos pour récupérer.",
+  "variante_facilitee": "Talons au sol, petit nombre de répétitions.",
+  "variante_avancee": "Jusqu'à 54 ou 108 répétitions à rythme soutenu.",
+  "version": 2
+ },
+ "P084": {
+  "presentation": "Parsva Tadasana, le croissant debout, est une inclinaison latérale bras levés depuis la montagne. Elle étire tout le flanc et libère la respiration. Simple, elle convient en échauffement pour tous les publics.",
+  "entree": [
+   "Partez de la montagne, pieds joints ou écartés de la largeur du bassin.",
+   "Inspirez en levant les bras, mains jointes ou doigts croisés, index tendus.",
+   "Grandissez-vous vers le ciel.",
+   "Expirez en inclinant le buste vers la droite.",
+   "Restez quelques respirations, remontez et changez de côté."
+  ],
+  "alignement": [
+   "Pieds ancrés, bassin stable.",
+   "Le buste s'incline sur le côté, sans tourner.",
+   "Bras dans le prolongement des oreilles.",
+   "Épaules basses."
+  ],
+  "tenue": [
+   "Poussez la hanche gauche légèrement vers la gauche pendant que le buste s'incline à droite.",
+   "Respirez dans le flanc étiré.",
+   "Gardez la poitrine ouverte vers l'avant."
+  ],
+  "erreurs": [
+   "Pencher le buste vers l'avant : restez dans un même plan.",
+   "Épaules crispées : écartez les bras si besoin.",
+   "Plier la nuque : gardez la tête entre les bras."
+  ],
+  "respiration": "Inspirez pour vous grandir, expirez pour incliner.",
+  "sortie": "Inspirez en remontant au centre, puis expirez en abaissant les bras.",
+  "variante_facilitee": "Un seul bras levé, l'autre main sur la hanche.",
+  "variante_avancee": "Pieds joints et inclinaison plus profonde en gardant l'alignement.",
+  "version": 2
+ },
+ "P085": {
+  "presentation": "Phalakasana, la planche, aligne tout le corps sur les mains et les pointes de pieds. Elle renforce la sangle abdominale, les bras et les épaules. En post-partum, on attend la récupération du périnée et des grands droits avant de la pratiquer.",
+  "entree": [
+   "Partez à quatre pattes, mains sous les épaules, doigts écartés.",
+   "Reculez un pied puis l'autre, jambes tendues, appui sur les orteils.",
+   "Alignez la tête, les épaules, le bassin et les talons.",
+   "Engagez le ventre et poussez le sol loin de vous avec les mains."
+  ],
+  "alignement": [
+   "Épaules au-dessus des poignets.",
+   "Corps aligné : ni bassin trop haut ni bassin qui tombe.",
+   "Ventre engagé, coccyx vers les talons.",
+   "Nuque longue, regard vers le sol."
+  ],
+  "tenue": [
+   "Respirez régulièrement sans bloquer.",
+   "Poussez les talons vers l'arrière.",
+   "Posez les genoux dès que l'alignement se perd."
+  ],
+  "erreurs": [
+   "Bassin qui s'affaisse : engagez le ventre ou posez les genoux.",
+   "Épaules qui s'enfoncent entre les omoplates : poussez le sol.",
+   "Douleur aux poignets : posez les genoux ou passez sur les avant-bras."
+  ],
+  "respiration": "Respiration calme et régulière. Expirez en remontant le bas-ventre.",
+  "sortie": "Posez les genoux et passez en posture de l'enfant, sa contre-posture.",
+  "variante_facilitee": "Genoux au sol, corps aligné des genoux à la tête.",
+  "variante_avancee": "Soulevez une jambe en gardant le bassin stable.",
+  "version": 2
+ },
+ "P086": {
+  "presentation": "Chaturanga Dandasana est une planche basse, coudes pliés près du corps, juste au-dessus du sol. Elle renforce intensément les bras et le centre, et se tient très peu de temps. Mal exécutée, elle charge les épaules : la version genoux au sol est souvent préférable.",
+  "entree": [
+   "Partez de la planche, épaules au-dessus des poignets.",
+   "Avancez légèrement le corps sur les pointes de pieds.",
+   "Expirez en pliant les coudes vers l'arrière, le long des côtes.",
+   "Descendez jusqu'à ce que les épaules soient à la hauteur des coudes, pas plus bas.",
+   "Gardez le corps aligné comme une planche."
+  ],
+  "alignement": [
+   "Coudes au-dessus des poignets, serrés contre le corps.",
+   "Épaules jamais plus basses que les coudes.",
+   "Ventre engagé, bassin aligné.",
+   "Nuque longue."
+  ],
+  "tenue": [
+   "Tenez une respiration au plus, puis enchaînez.",
+   "Gardez la poitrine ouverte.",
+   "Posez les genoux dès que les épaules plongent."
+  ],
+  "erreurs": [
+   "Épaules qui plongent vers le sol : arrêtez-vous plus haut ou posez les genoux.",
+   "Coudes qui s'écartent : ramenez-les le long des côtes.",
+   "Bassin qui tombe : engagez le ventre."
+  ],
+  "respiration": "Expirez en descendant.",
+  "sortie": "Inspirez en passant en chien tête en haut ou en cobra, ou posez les genoux et passez en posture de l'enfant.",
+  "variante_facilitee": "Genoux au sol, ou descente jusqu'au sol puis poitrine posée.",
+  "variante_avancee": "Tenir trois respirations en chaturanga, corps parfaitement aligné.",
+  "version": 2
+ },
+ "P087": {
+  "presentation": "La planche sur avant-bras aligne le corps sur les avant-bras et les pointes de pieds. Elle renforce la sangle abdominale sans charger les poignets. C'est une bonne préparation au chaturanga.",
+  "entree": [
+   "Partez à quatre pattes, puis posez les avant-bras au sol, coudes sous les épaules.",
+   "Placez les avant-bras parallèles, ou joignez les mains.",
+   "Reculez les pieds un à un, jambes tendues.",
+   "Alignez la tête, les épaules, le bassin et les talons.",
+   "Engagez le ventre et poussez le sol avec les avant-bras."
+  ],
+  "alignement": [
+   "Coudes sous les épaules.",
+   "Corps aligné, bassin ni trop haut ni trop bas.",
+   "Omoplates écartées, poitrine qui ne s'effondre pas.",
+   "Nuque longue."
+  ],
+  "tenue": [
+   "Respirez régulièrement.",
+   "Poussez les talons vers l'arrière.",
+   "Posez les genoux si le bas du dos se creuse."
+  ],
+  "erreurs": [
+   "Bas du dos qui se creuse : engagez le ventre ou posez les genoux.",
+   "Bassin trop haut : abaissez-le jusqu'à l'alignement.",
+   "Épaules affaissées : poussez dans les avant-bras."
+  ],
+  "respiration": "Respiration régulière, expiration qui remonte le bas-ventre.",
+  "sortie": "Posez les genoux et passez en posture de l'enfant.",
+  "variante_facilitee": "Genoux au sol.",
+  "variante_avancee": "Balancez lentement le corps vers l'avant et l'arrière sur les pointes de pieds.",
+  "version": 2
+ },
+ "P088": {
+  "presentation": "Vasisthasana, la planche latérale, s'appuie sur une main et le bord d'un pied, corps ouvert sur le côté. Elle renforce les flancs, les bras et l'équilibre. Elle se prépare par la planche et la planche latérale genou au sol.",
+  "entree": [
+   "Partez de la planche.",
+   "Basculez sur le bord extérieur du pied droit et posez la main droite sous l'épaule.",
+   "Empilez le pied gauche sur le droit, ou posez-le devant.",
+   "Soulevez le bassin pour aligner le corps.",
+   "Levez le bras gauche vers le ciel."
+  ],
+  "alignement": [
+   "Main d'appui sous l'épaule, doigts écartés.",
+   "Corps aligné de la tête aux pieds.",
+   "Bassin soulevé, sans s'affaisser.",
+   "Épaules empilées."
+  ],
+  "tenue": [
+   "Poussez le sol avec la main d'appui.",
+   "Gardez le bassin haut.",
+   "Respirez calmement."
+  ],
+  "erreurs": [
+   "Bassin qui tombe : soulevez-le ou posez le genou du dessous.",
+   "Épaule qui s'enfonce : poussez le sol.",
+   "Poignet douloureux : passez sur l'avant-bras."
+  ],
+  "respiration": "Respiration régulière, expiration qui engage le flanc.",
+  "sortie": "Revenez en planche, posez les genoux et passez en posture de l'enfant. Changez de côté.",
+  "variante_facilitee": "Genou du dessous au sol, ou appui sur l'avant-bras.",
+  "variante_avancee": "Levez la jambe du dessus, ou attrapez le gros orteil.",
+  "version": 2
+ },
+ "P089": {
+  "presentation": "Ardha Vasisthasana, la planche latérale genou au sol, prend appui sur une main et un genou. Elle renforce les flancs et la sangle abdominale en douceur. Accessible, elle convient au postnatal et au yoga du dos.",
+  "entree": [
+   "Partez à quatre pattes.",
+   "Tendez la jambe gauche sur le côté, pied au sol.",
+   "Pivotez le buste vers la gauche en gardant la main droite sous l'épaule et le genou droit au sol.",
+   "Soulevez le bassin pour aligner le genou, la hanche et l'épaule.",
+   "Levez le bras gauche vers le ciel."
+  ],
+  "alignement": [
+   "Main d'appui sous l'épaule.",
+   "Genou d'appui sous la hanche.",
+   "Bassin soulevé, flanc actif.",
+   "Épaules empilées."
+  ],
+  "tenue": [
+   "Gardez le bassin haut.",
+   "Respirez calmement.",
+   "Allongez le bras vers le ciel."
+  ],
+  "erreurs": [
+   "Bassin qui s'affaisse : soulevez-le en engageant le flanc.",
+   "Épaule qui s'enfonce : poussez le sol.",
+   "Genou douloureux : ajoutez une couverture."
+  ],
+  "respiration": "Respiration régulière, expiration qui remonte le bas-ventre.",
+  "sortie": "Revenez à quatre pattes et changez de côté.",
+  "variante_facilitee": "Sur l'avant-bras et le genou.",
+  "variante_avancee": "Jambe du dessus levée parallèle au sol.",
+  "version": 2
+ },
+ "P090": {
+  "presentation": "Navasana, le bateau, est un équilibre sur les ischions, jambes et buste levés en V. Elle renforce intensément la sangle abdominale et les fléchisseurs de hanche. Avec des lombaires sensibles, on garde les genoux pliés ; elle est déconseillée pendant la grossesse et le post-partum.",
+  "entree": [
+   "Asseyez-vous genoux pliés, pieds au sol.",
+   "Tenez l'arrière des cuisses et grandissez-vous.",
+   "Inclinez légèrement le buste vers l'arrière, dos long.",
+   "Soulevez les pieds, tibias parallèles au sol.",
+   "Lâchez les cuisses et tendez les bras vers l'avant.",
+   "Si c'est possible, tendez les jambes."
+  ],
+  "alignement": [
+   "Équilibre sur les ischions, pas sur le sacrum.",
+   "Dos long, poitrine ouverte.",
+   "Bras parallèles au sol, épaules basses.",
+   "Nuque longue."
+  ],
+  "tenue": [
+   "Gardez le dos long plutôt que de tendre les jambes.",
+   "Respirez sans bloquer.",
+   "Tenez quelques respirations, puis reposez et recommencez."
+  ],
+  "erreurs": [
+   "Dos rond : pliez les genoux et tenez les cuisses.",
+   "Retenir son souffle : respirez régulièrement.",
+   "Épaules qui montent : relâchez-les."
+  ],
+  "respiration": "Respiration régulière, expiration qui remonte le bas-ventre.",
+  "sortie": "Reposez les pieds au sol, puis allongez-vous genoux vers la poitrine, ou faites le pont.",
+  "variante_facilitee": "Genoux pliés, mains derrière les cuisses, ou orteils au sol.",
+  "variante_avancee": "Descendre en demi-bateau (jambes et buste plus bas) puis remonter plusieurs fois.",
+  "version": 2
+ }
+}

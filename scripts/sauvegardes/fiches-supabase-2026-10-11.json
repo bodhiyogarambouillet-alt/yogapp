@@ -1,0 +1,1607 @@
+[
+ {
+  "posture_id": "P149",
+  "contenu": {
+   "entree": [
+    "Mettez-vous à genoux sur le tapis, écartez les genoux de la largeur du bassin.",
+    "Placez les mains sur le bas du dos, doigts orientés vers le bas ou vers le haut.",
+    "Redressez bien la colonne vertébrale et engagez légèrement le centre.",
+    "Roulez les épaules vers l'arrière et serrez les omoplates."
+   ],
+   "sortie": "Ramenez doucement le menton vers la poitrine, inspirez pour redresser le torse en vous aidant des mains dans le dos, et venez vous asseoir sur les talons.",
+   "alignement": [
+    "Gardez les cuisses perpendiculaires au sol et les hanches au-dessus des genoux.",
+    "Ouvrez la poitrine vers le ciel sans contracter excessivement les lombaires."
+   ],
+   "respiration": "Inspirez pour grandir la colonne, puis expirez profondément pour ouvrir le cœur et relâcher les tensions dans le dos.",
+   "variante_avancee": "Posez les mains sur les talons, ou utilisez des briques à côté des pieds pour approfondir l'ouverture thoracique.",
+   "variante_facilitee": "Gardez les mains fermement ancrées sur le bas du dos et ne cherchez pas à descendre trop bas."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": "tho.chevalier@gmail.com",
+  "cree_le": "2026-10-11T13:22:26.864319+00:00",
+  "maj_le": "2026-10-11T13:22:30.400189+00:00"
+ },
+ {
+  "posture_id": "P008",
+  "contenu": {
+   "entree": [
+    "Installez-vous confortablement en position assise, le dos bien droit.",
+    "Fermez doucement les yeux pour vous tourner vers votre intériorité.",
+    "Posez vos mains sur vos genoux, paumes vers le haut ou vers le bas.",
+    "Prenez une respiration naturelle pour arriver dans l'instant."
+   ],
+   "sortie": "Reprenez un rythme respiratoire spontané et observez les sensations dans le corps.",
+   "alignement": [
+    "Allongez la colonne vertébrale depuis le coccyx jusqu'au sommet du crâne.",
+    "Relâchez les épaules, la mâchoire et le visage."
+   ],
+   "respiration": "Inspirez sur 4 temps, retenez poumons pleins sur 4 temps, expirez sur 4 temps, puis retenez poumons vides sur 4 temps. Gardez un flux fluide et régulier.",
+   "variante_avancee": "Augmentez progressivement le compte à 6 ou 8 secondes par phase si le souffle est à l'aise.",
+   "variante_facilitee": "Réduisez le compte à 2 ou 3 secondes par phase si le rythme de 4 secondes est trop intense."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": "tho.chevalier@gmail.com",
+  "cree_le": "2026-10-11T13:46:22.699345+00:00",
+  "maj_le": "2026-10-11T13:46:24.816127+00:00"
+ },
+ {
+  "posture_id": "P028",
+  "contenu": {
+   "tenue": [
+    "Gardez une respiration calme et continue tout au long des mouvements.",
+    "Maintenez le haut du corps stable pour que seules la nuque et les épaules bougent.",
+    "Observez les zones de friction ou de détente sans chercher à forcer l'amplitude."
+   ],
+   "entree": [
+    "Installez-vous en position assise confortable, sur un support si besoin pour garder le dos droit.",
+    "Posez les mains souplement sur vos cuisses ou vos genoux.",
+    "Fermez les yeux ou gardez un regard doux posé au sol devant vous.",
+    "Allongez la colonne vertébrale en repoussant le sommet du crâne vers le ciel.",
+    "Abaissez les épaules et détendez les muscles du visage et de la mâchoire.",
+    "Expirez profondément pour vider l'air des poumons et préparer le mouvement.",
+    "Inclinez doucement la tête vers l'avant en amenant le menton vers la poitrine."
+   ],
+   "sortie": "Ramenez la tête au centre dans son axe neutre. Prenez un instant pour observer les sensations dans la nuque et les épaules avant de reprendre une activité habituelle ou de passer à la posture suivante.",
+   "erreurs": [
+    "Basculer la tête complètement en arrière : effectuez uniquement des demi-cercles par l'avant pour protéger les cervicales.",
+    "Crisper les épaules vers les oreilles : maintenez l'espace entre les épaules et le cou pendant les rotations.",
+    "Bouger trop rapidement : ralentissez le rythme pour suivre le flux naturel de votre respiration."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds et jambes ancrés dans le sol ou croisés de façon stable.",
+    "Bassin neutre, les deux ischions répartissant le poids de façon égale.",
+    "Colonne vertébrale longue et redressée sans forcer sur les courbures naturelles.",
+    "Épaules basses, éloignées des oreilles, souples dans leurs articulations.",
+    "Nuque étirée, le menton guidant le mouvement sans jamais écraser la gorge en arrière.",
+    "Regard intérieur ou fixé sur un point neutre."
+   ],
+   "respiration": "Respirez amplement par le nez, de manière fluide et continue. Synchronisez le mouvement avec le souffle, par exemple l'expiration pour relâcher la tête vers l'avant et l'inspiration pour l'ouvrir.",
+   "presentation": "Cette pratique mobilise en douceur la nuque et les épaules pour libérer les tensions accumulées dans le haut du corps. Elle s'intègre parfaitement au début de la séance pour préparer les articulations ou en fin de pratique pour relâcher le contrôle. Elle invite à un retour à l'écoute sensorielle.",
+   "variante_avancee": "Fermez les yeux pour intérioriser le mouvement et portez votre attention sur des cercles d'épaules de plus en plus amples tout en maintenant le buste immobile.",
+   "variante_facilitee": "Pratiquez assis sur une chaise, les pieds bien à plat au sol, pour un meilleur soutien du dos si la position assise au sol est inconfortable."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T13:20:52.640992+00:00",
+  "maj_le": "2026-10-11T18:45:34.683145+00:00"
+ },
+ {
+  "posture_id": "P024",
+  "contenu": {
+   "tenue": [
+    "Maintenez une pression constante des mains dans le sol pour ne pas affaisser les épaules.",
+    "Engagez légèrement le bas-ventre à l'expiration pour soutenir le mouvement du dos.",
+    "Restez à l'écoute des sensations de fluidité et de douceur dans chaque vertèbre."
+   ],
+   "entree": [
+    "Installez-vous à quatre pattes sur votre tapis.",
+    "Placez vos poignets juste sous vos épaules et vos genoux sous vos hanches.",
+    "Écartez vos doigts largement et pressez fermement le sol avec la paume des mains.",
+    "Gardez la largeur du bassin entre vos genoux.",
+    "Allongez la nuque et alignez votre regard vers le sol entre vos mains.",
+    "Prenez une inspiration pour préparer le corps.",
+    "Commencez l'enchaînement en suivant le rythme de votre respiration."
+   ],
+   "sortie": "À la fin de votre cycle respiratoire, revenez à un dos neutre et plat à quatre pattes. Relâchez ensuite le bassin sur vos talons dans la posture de l'enfant pour intégrer. Prenez quelques respirations complètes avant de vous redresser.",
+   "erreurs": [
+    "Plier les coudes : gardez les bras tendus avec les coudes micro-fléchis pour protéger les articulations.",
+    "Casser la nuque dans la Vache : gardez la nuque longue dans le prolongement de la colonne au lieu de rejeter la tête en arrière."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds et jambes : dessus des pieds posés à plat au sol, genoux écartés de la largeur du bassin.",
+    "Bassin : le coccyx bascule vers le haut à l'inspiration et vers le bas à l'expiration.",
+    "Colonne : s'arrondit vers le ciel dans le Chat, s'incline doucement vers le sol dans la Vache.",
+    "Épaules : éloignées des oreilles, omoplates qui se rapprochent puis s'écartent.",
+    "Tête et regard : regard vers le nombril dans le Chat, regard vers l'avant ou légèrement vers le haut dans la Vache."
+   ],
+   "respiration": "Inspirez profondément en ouvrant la poitrine vers l'avant pour la Vache. Expirez lentement en arrondissant le dos vers le plafond pour le Chat.",
+   "presentation": "Marjaryasana-Bitilasana, le Chat et la Vache, est un enchaînement fluide qui mobilise l'ensemble de la colonne vertébrale en flexion et en extension. On y recherche la souplesse du dos et la conscience du souffle. Cette posture s'utilise idéalement en début de séance pour échauffer le corps.",
+   "variante_avancee": "Pour aller plus loin, initiez le mouvement depuis le coccyx, vertèbre après vertèbre, et accentuez la bascule du bassin pour amplifier l'amplitude sans forcer.",
+   "variante_facilitee": "Si vos poignets sont sensibles, prenez appui sur vos poings fermés ou déposez vos avant-bras sur le sol. Si vous êtes enceinte, gardez le dos neutre en évitant de creuser les lombaires lors de la phase de la Vache."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T13:50:47.685402+00:00",
+  "maj_le": "2026-10-11T19:06:57.601409+00:00"
+ },
+ {
+  "posture_id": "P076",
+  "contenu": {
+   "tenue": [
+    "Engagez le centre du corps et maintenez le périnée tonique pour soutenir la posture.",
+    "Pressez les cuisses et les bras l'un contre l'autre pour créer de la cohésion et de la stabilité.",
+    "Portez l'attention sur l'espace entre les omoplates et ressentez l'étirement dans le haut du dos."
+   ],
+   "entree": [
+    "Placez-vous debout à l'avant de votre tapis, pieds joints en Tadasana.",
+    "Fléchissez légèrement les deux genoux comme pour vous asseoir sur une chaise invisible.",
+    "Transférez tout le poids de votre corps sur le pied gauche.",
+    "Croisez la cuisse droite par-dessus la cuisse gauche, le plus haut possible.",
+    "Croisez le pied droit derrière le mollet gauche si la souplesse le permet.",
+    "Étendez les bras devant vous et placez le coude gauche au-dessus du coude droit.",
+    "Fléchissez les coudes et enroulez les avants-bras pour presser les paumes de mains l'une contre l'autre.",
+    "Fixez un point fixe devant vous pour stabiliser votre regard et votre esprit."
+   ],
+   "sortie": "Sur une inspiration, dénouez lentement les bras et les jambes pour revenir en position debout, les pieds joints. Prenez un instant pour observer les sensations, puis recommencez de l'autre côté pour équilibrer le corps.",
+   "erreurs": [
+    "Arrondir le dos excessivement : grandissez la colonne vertébrale en aspirant le nombril.",
+    "Bloquer la respiration : maintenez un souffle long et fluide malgré l'effort d'équilibre.",
+    "Crisper les épaules vers les oreilles : abaissez les épaules et élargissez la cage thoracique."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pied d'appui bien ancré dans le sol, les quatre coins du pied pressés de manière égale.",
+    "Genoux fléchis et orientés dans la même direction que les orteils pour protéger les articulations.",
+    "Bassin de face, fléchi et abaissé vers le bas sans cambrer excessivement le bas du dos.",
+    "Colonne vertébrale étirée vers le haut, sommet du crâne suspendu vers le plafond.",
+    "Épaules éloignées des oreilles, omoplates écartées et glissées vers le bas.",
+    "Regard stable et fixe sur un point à l'horizontale, sans cligner des yeux."
+   ],
+   "respiration": "Respirez calmement par le nez en maintenant un souffle fluide et régulier. À l'expiration, cherchez à vous ancrer un peu plus profondément dans vos appuis et à relâcher les tensions superflues.",
+   "presentation": "Bienvenue dans Garudasana, la posture de l'aigle. Cette posture d'équilibre debout développe la concentration, renforce les chevilles et étire en profondeur le haut du dos et les épaules. Elle trouve sa place au cœur de la séance pour stimuler la focalisation et l'ancrage.",
+   "variante_avancee": "Pour intensifier la posture, descendez le bassin un peu plus bas vers le sol et cherchez à rapprocher les coudes du nombril en arrondissant légèrement le haut du dos sur l'expiration.",
+   "variante_facilitee": "Si l'équilibre est précaire ou si le croisement des jambes est difficile, déposez les orteils du pied croisé au sol comme une béquille, ou croisez uniquement les bras sans enrouler les poignets."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:11:15.714053+00:00",
+  "maj_le": "2026-10-11T20:11:15.714053+00:00"
+ },
+ {
+  "posture_id": "P146",
+  "contenu": {
+   "tenue": [
+    "Maintenez une respiration fluide et continue malgré l'effort dans la sangle abdominale et le dos.",
+    "Sentez l'énergie circuler du coccyx jusqu'au sommet du crâne et jusqu'au bout des orteils.",
+    "Veillez à répartir l'effort sur toute la longueur de la colonne vertébrale."
+   ],
+   "entree": [
+    "Allongez-vous à plat ventre sur le tapis, les jambes tendues et les pieds joints ou écartés de la largeur du bassin.",
+    "Placez vos bras le long du corps, paumes des mains tournées vers le haut ou à plat contre le sol.",
+    "Posez le menton ou le front au sol pour garder la nuque dans le prolongement de la colonne.",
+    "Pressez le bassin et le bas-ventre fermement contre le tapis.",
+    "Inspirez en engageant les fessiers et les cuisses.",
+    "Décollez la tête, la poitrine et les mains du sol en allongeant la colonne vers l'avant.",
+    "Soulevez simultanément les jambes tendues vers le ciel en contractant l'arrière des cuisses."
+   ],
+   "sortie": "Sur une expiration, redescendez lentement le buste et les jambes en contrôlant le mouvement. Relâchez tout le corps au sol et tournez la tête d'un côté pour vous détendre dans une posture de repos.",
+   "erreurs": [
+    "Erreur : Contracter excessivement les fessiers au point de pincer les lombaires. Correction : Allongez le coccyx vers les talons et priorisez la longueur plutôt que la hauteur.",
+    "Erreur : Casser la nuque en levant trop le menton. Correction : Gardez le regard fixé au sol pour aligner les cervicales avec le reste du dos."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds : gardez les jambes actives, gros orteils proches et rotation interne des cuisses.",
+    "Jambes : tendez les genoux sans bloquer les articulations, engagez les quadriceps.",
+    "Bassin : gardez le pubis ancré au sol pour protéger la zone lombaire.",
+    "Colonne : allongez l'espace entre chaque vertèbre en cherchant à grandir la taille.",
+    "Épaules : roulez les épaules vers l'arrière et éloignez-les des oreilles.",
+    "Regard : portez le regard vers le sol, légèrement devant vous, pour garder la nuque longue."
+   ],
+   "respiration": "Inspirez profondément pour préparer le mouvement et soulever le haut et le bas du corps. Expirez longuement pour maintenir l'engagement musculaire et stabiliser la posture.",
+   "presentation": "Salabhasana, la posture de la sauterelle, est une extension vertébrale symétrique qui renforce toute la chaîne postérieure du corps. Elle sollicite intensément les fessiers et les muscles érecteurs du rachis tout en ouvrant la cage thoracique. On la place généralement après des flexions avant pour équilibrer la colonne, en milieu de séance.",
+   "variante_avancee": "Entrelacez les doigts dans le dos, tendez les bras vers l'arrière pour ouvrir davantage les épaules, et cherchez à élever simultanément les cuisses et la poitrine le plus haut possible.",
+   "variante_facilitee": "Gardez les mains au sol sous les épaules ou le front posé sur une main, et ne soulevez que le haut du corps ou alternez en levant uniquement une jambe après l'autre."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:11:16.804602+00:00",
+  "maj_le": "2026-10-11T20:11:16.804602+00:00"
+ },
+ {
+  "posture_id": "P162",
+  "contenu": {
+   "tenue": [
+    "Maintenez un engagement léger du périmètre abdominal pour soutenir le bas du dos.",
+    "Pressez le coude contre la cuisse pour accentuer délicatement la rotation à chaque expiration.",
+    "Gardez la respiration fluide et nasale tout au long du maintien."
+   ],
+   "entree": [
+    "Asseyez-vous au sol, les jambes tendues devant vous dans la posture du bâton.",
+    "Pliez le genou droit et passez le pied droit par-dessus la cuisse gauche, en le posant à plat au sol.",
+    "Repliez ensuite le talon gauche vers la fesse droite, genou gauche fléchi au sol.",
+    "Ancrez bien vos deux ischions de manière égale dans le tapis.",
+    "Placez la main droite sur le sol juste derrière votre bassin pour servir de tuteur.",
+    "Levez le bras gauche vers le ciel à l'inspiration pour vous grandir.",
+    "À l'expiration, pivotez le buste vers la droite en amenant le coude gauche à l'extérieur du genou droit.",
+    "Fixez un point loin derrière vous avec le regard."
+   ],
+   "sortie": "À l'expiration, ramenez le buste et le regard vers l'avant. Décroisez les jambes pour revenir en posture assise neutre avant d'enchaîner de l'autre côté.",
+   "erreurs": [
+    "Erreur : La fesse opposée se soulève du sol. Correction : Réduisez l'amplitude de la torsion et reportez le poids sur les deux ischions.",
+    "Erreur : Le dos s'arrondit par manque de souplesse. Correction : Placez une brique sous les fesses pour surélever le bassin et redresser la colonne."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds et jambes : le pied droit est bien à plat, le genou gauche plié au sol.",
+    "Bassin : les deux fesses restent lourdes et ancrées au sol de façon symétrique.",
+    "Colonne vertébrale : gardez le dos long et droit, autograndissement à chaque inspiration.",
+    "Épaules : détendues et éloignées des oreilles, la poitrine est ouverte.",
+    "Regard : doux, tourné vers l'arrière par-dessus l'épaule droite."
+   ],
+   "respiration": "Inspirez profondément pour grandir et étirer la colonne vers le ciel. Expirez lentement pour initier et approfondir la torsion en partant du bas du ventre.",
+   "presentation": "Voici Ardha Matsyendrasana, la demi-torsion assise. Cette posture de rotation de la colonne vertébrale stimule l'énergie vitale et libère les tensions dorsales. Elle se pratique généralement en fin de séance pour apaiser le système nerveux.",
+   "variante_avancee": "Glissez le bras supérieur sous la cuisse avant pour enlacer le genou et attraper vos mains dans le dos.",
+   "variante_facilitee": "Gardez la jambe du dessous tendue devant vous au lieu de la replier si vos genoux ou vos hanches sont raides."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:11:17.147692+00:00",
+  "maj_le": "2026-10-11T20:11:17.147692+00:00"
+ },
+ {
+  "posture_id": "P117",
+  "contenu": {
+   "entree": [
+    "Asseyez-vous de profil contre le mur.",
+    "Basculez doucement le buste au sol.",
+    "Pivotez pour poser les jambes à la verticale contre le mur.",
+    "Placez un coussin plat sous le bassin si besoin."
+   ],
+   "sortie": "Pliez les genoux vers la poitrine, roulez sur le côté en position fœtale, puis poussez dans vos mains pour vous redresser.",
+   "alignement": [
+    "Laissez les bras s'ouvrir sur les côtés, paumes vers le ciel.",
+    "Relâchez complètement le poids du bassin et des jambes contre le mur."
+   ],
+   "respiration": "Respirez calmement par le nez, en privilégiant des expirations longues et relâchées pour favoriser la détente.",
+   "variante_avancee": "Rapprochez les plantes des pieds l'une contre l'autre en laissant tomber les genoux de chaque côté pour une posture de l'angle lié contre le mur.",
+   "variante_facilitee": "Éloignez un peu les fessiers du mur si l'étirement des ischio-jambiers est trop intense, ou pliez légèrement les genoux."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T16:19:48.10599+00:00",
+  "maj_le": "2026-10-11T16:19:48.10599+00:00"
+ },
+ {
+  "posture_id": "P112",
+  "contenu": {
+   "tenue": [
+    "Maintenez un engagement ferme des cuisses et des fessiers sans bloquer la respiration.",
+    "Contractez légèrement le périmètre pelvien pour stabiliser le centre du corps.",
+    "Sentez l'ouverture de la cage thoracique et l'appui solide de vos épaules dans le sol."
+   ],
+   "entree": [
+    "Allongez-vous sur le dos, les bras le long du corps, paumes de mains pressées contre le sol.",
+    "Pliez vos genoux et ramenez les cuisses vers votre ventre.",
+    "Pressez fermement les paumes dans le sol et donnez une légère impulsion avec le bassin.",
+    "Décollez le dos et envoyez les jambes au-dessus de votre tête.",
+    "Pliez vos coudes et placez vos mains à plat dans le haut de votre dos pour le soutenir.",
+    "Marchez avec vos coudes pour les rapprocher l'un de l'autre sous votre buste.",
+    "Montez un bassin puis l'autre vers le ciel en tendant progressivement les jambes."
+   ],
+   "sortie": "Sur une expiration, fléchissez doucement les genoux vers le front. Déroulez ensuite vertèbre par vertèbre le dos sur le tapis en contrôlant le mouvement avec vos mains et vos abdos. Enchaînez directement avec Matsyasana, la posture du poisson, pour contre-peser l'ouverture.",
+   "erreurs": [
+    "Aplatir la nuque contre le sol : placez des couvertures sous les épaules pour garder l'espace.",
+    "Laisser les coudes s'ouvrir sur les côtés : serrez les coudes sous le dos pour un meilleur soutien.",
+    "Tourner la tête de gauche à droite dans la posture : gardez le regard fixe vers le haut pour protéger les cervicales."
+   ],
+   "version": 2,
+   "alignement": [
+    "Vos appuis se trouvent sur l'arrière des épaules, les bras et les coudes, jamais sur la nuque.",
+    "Gardez l'espace entre le menton et la poitrine, la gorge reste libre.",
+    "Alignez vos chevilles, vos genoux et vos hanches à la verticale au-dessus de vos épaules.",
+    "Allongez tout votre corps vers le haut en pressant les talons vers le ciel.",
+    "Portez votre regard fixement vers vos orteils ou vers le haut."
+   ],
+   "respiration": "Respirez lentement et profondément par le nez en Ujjayi si vous connaissez. Gardez la gorge détendue et portez l'attention sur le mouvement de votre abdomen à l'inspiration et à l'expiration.",
+   "presentation": "Voici Salamba Sarvangasana, la posture de la chandelle sur les épaules. C'est une inversion majeure qui stimule l'ensemble du corps et apaise le système nerveux. On la place généralement vers la fin de la séance, avant les postures de repos.",
+   "variante_avancee": "Pour aller plus loin, tendez les jambes dans l'axe vertical, pointez les orteils vers le ciel et cherchez à alléger progressivement le poids des mains dans le dos en engageant davantage la sangle abdominale.",
+   "variante_facilitee": "Placez deux couvertures pliées sous vos épaules, la tête reposant directement sur le sol, afin de préserver l'incurvation naturelle de vos cervicales."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T18:46:43.814508+00:00",
+  "maj_le": "2026-10-11T18:46:43.814508+00:00"
+ },
+ {
+  "posture_id": "P026",
+  "contenu": {
+   "tenue": [
+    "Maintenez un engagement constant de la sangle abdominale et du périnée à l'expiration.",
+    "Portez l'attention sur la fluidité du mouvement entre chaque vertèbre.",
+    "Sentez l'espace se créer entre vos omoplates lorsque le dos s'arrondit."
+   ],
+   "entree": [
+    "Placez-vous à quatre pattes sur votre tapis.",
+    "Alignez vos poignets directement sous vos épaules et vos genoux sous vos hanches.",
+    "Écartez vos doigts largement pour créer une base stable et solide.",
+    "Gardez les genoux écartés de la largeur du bassin.",
+    "Allongez la nuque dans le prolongement de la colonne vertébrale en fixant le sol entre vos mains."
+   ],
+   "sortie": "Sur une inspiration, revenez dans un dos neutre et plat, aligné avec le sol. Repoussez ensuite fessiers sur les talons pour une posture de l'enfant de repos.",
+   "erreurs": [
+    "Plier les coudes en basculant : gardez les bras tendus avec un micro-fléchissement pour éviter l'hyperextension.",
+    "Forcer sur les cervicales : laissez la tête suivre le mouvement naturel de la colonne sans tirer sur la nuque."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds et chevilles : orteils décrochés à plat sur le sol ou engagés selon votre confort.",
+    "Jambes : écartées à l'aplomb des hanches, pression égale dans les tibias.",
+    "Bassin : le mouvement part du coccyx pour initier la bascule.",
+    "Colonne : vertèbres mobiles s'enroulent et se déroulent souplement sans à-coup.",
+    "Épaules : éloignées des oreilles, omoplates glissées vers le bas du dos.",
+    "Regard : dirigé vers le sol entre les mains, puis vers le nombril à l'expiration."
+   ],
+   "respiration": "Inspirez profondément pour laisser le dos s'incurver et le cœur s'ouvrir vers l'avant. Expirez longuement par la bouche ou le nez en contractant le périnée et en aspirant le nombril pour enrouler le dos.",
+   "presentation": "Voici la posture de la table avec bascule du bassin, ou Marjaryasana-Bitilasana adaptée en version douce. Cette mobilisation vertébrale réveille la colonne, libère les tensions lombaires et coordonne le mouvement avec la respiration. Elle s'intègre parfaitement en début de séance pour chauffer le corps.",
+   "variante_avancee": "Pour plus de défi, décollez légèrement les genoux de quelques centimètres du sol tout en maintenant la bascule du bassin.",
+   "variante_facilitee": "Placez une couverture pliée sous vos genoux pour plus de confort ou réalisez le mouvement assis sur une chaise."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T15:13:44.316312+00:00",
+  "maj_le": "2026-10-11T19:17:52.532266+00:00"
+ },
+ {
+  "posture_id": "P131",
+  "contenu": {
+   "tenue": [
+    "Maintenez le bassin lourd et ancré vers les talons sans forcer.",
+    "Gardez la nuque longue et totalement détendue.",
+    "Portez votre attention sur le flux de la respiration dans le dos."
+   ],
+   "entree": [
+    "Mettez-vous à genoux sur votre tapis.",
+    "Écartez vos genoux de la largeur du bassin ou du tapis selon votre confort.",
+    "Rapprochez vos gros orteils l'un de l'autre.",
+    "Expirez en reculant le bassin pour venir poser vos fesses sur vos talons.",
+    "Inclinez votre buste vers l'avant en glissant les mains sur le sol.",
+    "Déposez votre front sur le tapis ou sur un support.",
+    "Relâchez vos bras le long du corps, paumes de mains tournées vers le ciel, ou étirez-les devant vous."
+   ],
+   "sortie": "Sur une inspiration, prenez appui sur vos mains et redressez doucement le buste pour revenir en position assise sur les talons ou venez vous allongez en position de repos. Prenez un instant pour observer les sensations dans votre corps.",
+   "erreurs": [
+    "Fesses décollées des talons : reculez le bassin ou placez un coussin si les genoux tirent.",
+    "Épaules crispées vers les oreilles : roulez les épaules vers l'arrière et laissez les bras totalement mous."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds : gros orteils en contact, talons ouverts ou fermés selon l'écart des genoux.",
+    "Jambes : cuisses lourdes qui pressent doucement l'arrière des cuisses contre les mollets.",
+    "Bassin : ancré vers l'arrière et le bas, en direction des talons.",
+    "Colonne : allongée, depuis le coccyx jusqu'au sommet du crâne, sans courbure excessive.",
+    "Épaules : relâchées loin des oreilles, les omoplates s'écartent doucement.",
+    "Regard : fermé, ou tourné vers le sol si le front est surélevé."
+   ],
+   "respiration": "Respirez amplement par le nez, en portant votre attention sur l'arrière du corps. À l'inspiration, sentez votre dos s'élargir et se soulever légèrement, puis à l'expiration, relâchez tout le poids du corps vers le sol.",
+   "presentation": "Voici Balasana, la posture de l'enfant, une flexion avant assise et réparatrice. Elle permet de relâcher complètement le dos et d'apaiser le système nerveux. On l'utilise traditionnellement comme posture de repos entre deux enchaînements ou en fin de séance.",
+   "variante_avancee": "Avancez les mains le plus loin possible vers l'avant du tapis en décollant les coudes pour étirer activement les grands dorsaux et les épaules.",
+   "variante_facilitee": "Placez un coussin ou une brique entre vos fesses et vos talons pour soulager les genoux, ou glissez un coussin sous votre ventre et votre buste pour un soutien total."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T14:52:36.992972+00:00",
+  "maj_le": "2026-10-11T19:47:03.938521+00:00"
+ },
+ {
+  "posture_id": "P001",
+  "contenu": {
+   "tenue": [
+    "Gardez le visage, la mâchoire et le front totalement relâchés.",
+    "Exercez une pression très légère du pouce et de l'annulaire sur les narines.",
+    "Maintenez un flux d'air régulier, silencieux et sans effort."
+   ],
+   "entree": [
+    "Asseyez-vous dans une posture confortable, les jambes croisées ou sur une chaise, avec le dos bien droit.",
+    "Fermez doucement les yeux pour intérioriser votre attention.",
+    "Portez la main droite devant votre visage.",
+    "Repliez l'index et le majeur vers la paume de la main.",
+    "Gardez le pouce et l'annulaire libres pour manipuler les narines.",
+    "Inspirez profondément par les deux narines.",
+    "Expirez complètement par les deux narines.",
+    "Fermez la narine droite avec le pouce droit pour commencer."
+   ],
+   "sortie": "À la fin du dernier cycle, abaissez la main droite délicatement sur le genou. Reprenez une respiration naturelle et observez les sensations dans les deux narines. Enchaînez avec un moment de silence ou la relaxation finale.",
+   "erreurs": [
+    "Épaule droite crispée vers l'oreille : abaissez l'omoplate et rapprochez le coude du corps.",
+    "Pression excessive sur le nez : déposez les doigts plus délicatement pour ne pas pincer l'os nasal.",
+    "Dos qui s'arrondit : redressez la colonne en visualisant un fil qui tire le sommet du crâne vers le haut."
+   ],
+   "version": 2,
+   "alignement": [
+    "Ancrez solidement les os des fesses dans le sol ou sur le support.",
+    "Allongez toute la colonne vertébrale depuis le coccyx jusqu'au sommet du crâne.",
+    "Détendez les épaules et laissez les coudes s'abaisser vers le buste.",
+    "Gardez la nuque longue et le menton légèrement rentré.",
+    "Maintenez le regard intérieur doucement porté vers le point entre les sourcils."
+   ],
+   "respiration": "À l'expiration, l'air s'écoule par la narine ouverte de manière fluide et contrôlée. À l'inspiration, l'air entre subtilement en remplissant d'abord l'abdomen puis la cage thoracique.",
+   "presentation": "Nadi Shodhana ou Anuloma Viloma est une technique de respiration alternée qui harmonise les flux énergétiques du corps. Elle calme le système nerveux et prépare idéalement l'esprit à la méditation. On la pratique généralement en fin de séance, après les postures.",
+   "variante_avancee": "Introduisez une suspension de souffle poumons pleins après chaque inspiration, sans jamais forcer ni créer de tension dans la gorge.",
+   "variante_facilitee": "Posez l'index et le majeure de la main droite entre vos sourcils au lieu de replier les doigts dans la paume, si cela est plus confortable pour votre épaule."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T14:53:08.862283+00:00",
+  "maj_le": "2026-10-11T19:07:23.755245+00:00"
+ },
+ {
+  "posture_id": "P179",
+  "contenu": {
+   "tenue": [
+    "Abandonnez toute contraction musculaire dans les jambes pour laisser la gravité agir.",
+    "Observez les sensations d'étirement dans l'intérieur des cuisses et le bas du dos.",
+    "Maintenez une respiration fluide pour accompagner le relâchement des fascias."
+   ],
+   "entree": [
+    "Asseyez-vous au sol en fléchissant les genoux et joignez la plante de vos pieds.",
+    "Écartez vos talons de votre bassin pour former un grand losange avec vos jambes.",
+    "Placez un coussin sous vos fessiers si votre dos a tendance à s'arrondir vers l'arrière.",
+    "À l'inspiration, grandissez votre colonne vertébrale depuis la base.",
+    "À l'expiration, inclinez le bassin vers l'avant en gardant le dos souple.",
+    "Laissez votre colonne s'enrouler naturellement vers l'avant sans forcer.",
+    "Posez vos mains sur vos chevilles, vos pieds ou au sol devant vous.",
+    "Relâchez complètement le poids de la tête et des épaules vers le sol."
+   ],
+   "sortie": "À la fin de la tenue, inspirez pour redresser doucement le buste vertèbre par vertèbre. Utilisez vos mains pour ramener lentement les genoux l'un vers l'autre, puis allongez les jambes en posture de repos sur le dos ou en position assise.",
+   "erreurs": [
+    "Tirer activement sur les pieds pour rapprocher le bassin : relâchez les bras et éloignez les talons.",
+    "Vouloir plaquer les genoux au sol à tout prix : utilisez des coussins sous les cuisses si les tensions sont trop vives.",
+    "Crisper la nuque en levant la tête : laissez pendre la tête librement."
+   ],
+   "version": 2,
+   "alignement": [
+    "Ancrez solidement les ischions dans le sol ou sur votre support.",
+    "Laissez les genoux s'ouvrir naturellement sur les côtés sans chercher à les pousser.",
+    "Gardez les bords externes des pieds en contact l'un avec l'autre.",
+    "Laissez la colonne vertébrale s'incurver en douceur vers l'avant.",
+    "Relâchez les épaules loin des oreilles et détendez la nuque.",
+    "Portez votre regard vers l'intérieur ou fixez un point neutre entre vos pieds."
+   ],
+   "respiration": "Respirez calmement par le nez en laissant le souffle devenir lent et naturel. À chaque expiration, visualisez vos genoux et vos cuisses s'alourdir un peu plus vers le sol.",
+   "presentation": "Baddha Konasana, la posture du papillon en version Yin, est une ouverture de hanches assise qui cible les adducteurs et le bas du dos. On y recherche un relâchement profond des tissus conjonctifs par l'abandon du poids du corps. Elle se place idéalement au milieu ou en fin de séance pour apaiser le système nerveux.",
+   "variante_avancee": "Glissez vos pieds plus loin du bassin pour former un losange plus grand avec vos jambes, et enroulez profondément la colonne vertébrale en relâchant la tête vers les talons.",
+   "variante_facilitee": "Placez un coussin ou un bloc sous chaque genou pour soulager l'aine et les adducteurs si l'étirement est trop intense. Asseyez-vous sur le bord d'une couverture pliée pour basculer le bassin vers l'avant."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T19:08:23.214318+00:00",
+  "maj_le": "2026-10-11T19:08:23.214318+00:00"
+ },
+ {
+  "posture_id": "P011",
+  "contenu": {
+   "tenue": [
+    "Contractez le périnée de l'arrière vers l'avant, comme si vous reteniez un gaz et une envie d'uriner.",
+    "Laissez la contraction remonter naturellement à l'intérieur du bassin.",
+    "Gardez la cage thoracique souple et le visage détendu pendant l'effort."
+   ],
+   "entree": [
+    "Installez-vous confortablement en position assise ou allongée sur le dos.",
+    "Fermez les yeux et posez une main sur le bas-ventre.",
+    "Relâchez les épaules, la mâchoire et le visage.",
+    "Prenez trois respirations amples pour arriver dans l'instant présent.",
+    "Portez votre attention sur la zone du périnée et des ischions.",
+    "Préparez-vous à initier le mouvement à l'expiration suivante."
+   ],
+   "sortie": "Relâchez totalement l'engagement du périnée et de l'abdomen sur une inspiration libre. Reprenez une respiration naturelle et observez les sensations dans le bassin.",
+   "erreurs": [
+    "Erreur : Pousser le périnée vers le bas à l'expiration. Correction : Imaginez toujours une aspiration vers le haut et l'intérieur.",
+    "Erreur : Bloquer la respiration. Correction : Maintenez un flux d'air continu et fluide pendant l'expiration active.",
+    "Erreur : Contracter les fessiers ou les cuisses. Correction : Isolez le mouvement en gardant le bas du corps relâché."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds ou ischions bien ancrés dans le sol ou sur le support.",
+    "Jambes détendues, sans crispation dans les cuisses.",
+    "Bassin neutre, ni en antéversion ni en rétroversion excessive.",
+    "Colonne vertébrale étirée vers le ciel, sommet du crâne suspendu.",
+    "Épaules basses et ouvertes, nuque longue.",
+    "Regard intérieur tourné vers le centre du bassin."
+   ],
+   "respiration": "Inspirez amplement par le nez en laissant le ventre et la cage thoracique s'ouvrir sans forcer. Expirez par la bouche ou le nez en entamant la remontée du périnée dès le début du souffle, sans jamais pousser vers le bas.",
+   "presentation": "Cette pratique de respiration guide l'expiration active avec remontée du périnée. Elle s'intègre en début ou en fin de séance pour centrer l'esprit et tonifier la sangle abdominale en douceur. On y recherche la conscience profonde du centre et la maîtrise du souffle.",
+   "variante_avancee": "Pratiquez en posture assise en tailleur avec une brique sous le bassin pour maintenir la colonne étirée et intensifier l'engagement.",
+   "variante_facilitee": "Pratiquez en position allongée sur le dos, genoux fléchis, pour faciliter la perception et le relâchement du périnée."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T19:12:02.496677+00:00",
+  "maj_le": "2026-10-11T19:12:02.496677+00:00"
+ },
+ {
+  "posture_id": "P022",
+  "contenu": {
+   "tenue": [
+    "Gardez une respiration fluide et continue pendant toute la rotation.",
+    "Maintenez un léger tonus abdominal pour contrôler le mouvement sans rigidité.",
+    "Portez votre attention sur les sensations de massage et de relâchement au niveau du sacrum et des hanches."
+   ],
+   "entree": [
+    "Asseyez-vous au centre du ballon, les pieds à plat sur le sol écartés de la largeur du bassin.",
+    "Ajustez l'écartement de vos pieds pour trouver une stabilité immédiate et confortable.",
+    "Posez les mains à plat sur vos cuisses ou sur vos hanches.",
+    "Allongez la colonne vertébrale en imaginant le sommet du crâne suspendu vers le plafond.",
+    "Relâchez les épaules loin des oreilles et détendez la mâchoire.",
+    "Commencez à basculer doucement le bassin vers l'avant, puis sur le côté droit.",
+    "Poursuivez le mouvement en roulant vers l'arrière, puis vers le côté gauche pour fermer le cercle."
+   ],
+   "sortie": "Ralentissez progressivement le mouvement pour revenir au centre dans l'immobilité. Prenez une inspiration profonde, puis glissez les pieds vers l'avant pour vous redresser ou passez en posture de repos assise.",
+   "erreurs": [
+    "Bouger trop rapidement : ralentissez le rythme pour explorer chaque angle du cercle.",
+    "Bloquer la respiration : veillez à inspirer et expirer de manière continue sans retenir votre souffle.",
+    "Avachir le haut du corps : gardez la poitrine ouverte et le dos long tout au long du mouvement."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds ancrés à plat dans le sol, parallèles et écartés de la largeur des hanches.",
+    "Genoux alignés au-dessus des chevilles, formant un angle droit.",
+    "Bassin mobile qui roule librement sur la surface bombée du ballon.",
+    "Colonne vertébrale étirée, conservant les courbures naturelles du dos.",
+    "Épaules détendues et ouvertes au-dessus du bassin.",
+    "Regard porté droit devant, horizontal et apaisé."
+   ],
+   "respiration": "Respirez amplement et naturellement par le nez tout au long du mouvement. Coordonnez le cercle avec le souffle en inspirant sur la moitié du tour et en expirant sur l'autre moitié.",
+   "presentation": "Voici les cercles du bassin assis sur ballon, une posture de mobilisation douce idéale pour détendre le bas du dos et libérer les tensions dans les hanches. Elle trouve parfaitement sa place en début de séance pour échauffer la colonne ou en fin de journée pour relâcher le bassin. On y recherche la fluidité du mouvement et la conscience de la zone pelvienne.",
+   "variante_avancee": "Fermez les yeux pour amplifier la perception intérieure et dessinez des cercles plus larges en augmentant l'engagement du bassin.",
+   "variante_facilitee": "Réduisez l'amplitude des cercles pour minimiser l'effort et posez les mains sur les cuisses pour plus de stabilité."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T19:12:20.368466+00:00",
+  "maj_le": "2026-10-11T19:12:20.368466+00:00"
+ },
+ {
+  "posture_id": "P014",
+  "contenu": {
+   "tenue": [
+    "Maintenez une action douce et continue pour éloigner les épaules du bassin.",
+    "À chaque expiration, remontez le périnée et grandissez le sommet du crâne vers le plafond.",
+    "Observez l'espace qui s'ouvre entre chaque vertèbre."
+   ],
+   "entree": [
+    "Asseyez-vous au sol, fesses contre le mur.",
+    "Croisez les tibias au milieu du tapis en posture de tailleur.",
+    "Placez un coussin sous vos fessiers si vos genoux remontent haut.",
+    "Laissez tout le dos, du sacrum aux omoplates, toucher le mur.",
+    "Déposez vos mains sur vos cuisses, paumes vers le haut ou vers le bas.",
+    "Rentrez légèrement le menton pour allonger la nuque.",
+    "Fermez les yeux et prenez un instant pour vous stabiliser."
+   ],
+   "sortie": "À l'expiration, relâchez doucement la tonicité du dos et du périnée. Inspirez pour décroiser les jambes et étirez-les devant vous en posture de repos. Observez les sensations dans l'axe vertébral.",
+   "erreurs": [
+    "Arrondir le bas du dos : éloignez l'abdomen du mur et venez placer le sacrum à plat.",
+    "Monter les épaules vers les oreilles : roulez les épaules vers l'arrière et le bas.",
+    "Pousser le menton vers le haut : rentrez légèrement le menton pour aligner les cervicales."
+   ],
+   "version": 2,
+   "alignement": [
+    "Ancrez solidement les os des fesses et l'extérieur des cuisses contre le sol.",
+    "Gardez les genoux relâchés vers le bas et l'extérieur.",
+    "Pressez légèrement le dos et l'arrière des épaules contre le mur.",
+    "Allongez toute la colonne vertébrale depuis le coccyx jusqu'à la nuque.",
+    "Relâchez les épaules loin des oreilles et détendez la mâchoire.",
+    "Portez le regard à l'horizontale ou gardez les yeux fermés."
+   ],
+   "respiration": "Respirez calmement par le nez en synchronisant le mouvement avec le souffle. À l'expiration, activez le périnée et poussez le sommet du crâne vers le haut pour vous grandir.",
+   "presentation": "Installez-vous en position assise en tailleur, le dos soutenu par le mur, pour favoriser l'alignement de la colonne. Cette posture permet de travailler l'auto-grandissement et la conscience du périnée. Elle s'intègre parfaitement au début d'une séance pour recentrer l'esprit.",
+   "variante_avancee": "Fermez les yeux et portez votre attention sur la respiration thoracique haute pour accentuer la stabilité de l'axe.",
+   "variante_facilitee": "Placez un coussin ou une brique sous les fessiers pour surélever le bassin et détendre l'articulation des hanches."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T19:12:21.504715+00:00",
+  "maj_le": "2026-10-11T19:12:21.504715+00:00"
+ },
+ {
+  "posture_id": "P035",
+  "contenu": {
+   "tenue": [
+    "Maintenez une respiration régulière sans bloquer le diaphragme.",
+    "Portez votre attention sur l'espace qui se crée entre chaque vertèbre.",
+    "Gardez la mâchoire et le visage complètement détendus."
+   ],
+   "entree": [
+    "Placez-vous face à la barre ou à l'espalier.",
+    "Levez les bras et attrapez la barre avec une prise large, paumes vers l'avant ou vers vous selon votre confort.",
+    "Placez vos mains à la largeur des épaules ou légèrement plus larges.",
+    "Laissez vos pieds s'éloigner du mur si vous utilisez un espalier.",
+    "Engagez une légère tonicité dans les mains pour sécuriser la prise.",
+    "Laissez progressivement le poids de votre corps se suspendre.",
+    "Relâchez le bassin et les jambes vers le sol."
+   ],
+   "sortie": "Sur une expiration, fléchissez légèrement les genoux si vos pieds touchent le sol, ou ramenez doucement les pieds au sol. Relâchez la prise des mains avec précaution. Prenez un instant debout pour observer les sensations dans le haut du corps avant de poursuivre.",
+   "erreurs": [
+    "Erreur : Contracter les épaules et les remonter vers les oreilles. Correction : Éloignez les épaules des oreilles en glissant les omoplates vers le bas.",
+    "Erreur : Bloquer la respiration face à l'étirement. Correction : Maintenez une respiration lente et profonde pour oxygéner les tissus."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds et jambes lourds et détendus vers le bas, ou effleurant le sol.",
+    "Bassin lourd, relâché pour laisser la gravité tracter la colonne.",
+    "Colonne vertébrale longue, étirée entre le coccyx et le sommet de la tête.",
+    "Épaules éloignées des oreilles, omoplates glissées vers le bas du dos.",
+    "Regard porté droit devant ou légèrement vers le sol pour garder la nuque longue."
+   ],
+   "respiration": "Respirez calmement par le nez en maintenant un rythme fluide. À chaque expiration, visualisez vos vertèbres qui s'écartent et abandonnez un peu plus le poids du corps dans la suspension.",
+   "presentation": "Bienvenue dans l'étirement en suspension, une posture de mobilisation idéale pour décomprimer la colonne vertébrale. Elle permet de relâcher les tensions accumulées dans le dos et d'ouvrir doucement la zone des épaules. On l'utilise généralement en début ou en fin de séance pour créer de l'espace dans le corps.",
+   "variante_avancee": "Suspendez-vous entièrement en décollant complètement les pieds du sol, en cherchant à relâcher totalement le bassin et les jambes vers le bas.",
+   "variante_facilitee": "Gardez les orteils ou la pointe des pieds en contact léger avec le sol pour ne pas suspendre tout le poids du corps. Vous pouvez aussi plier les genoux pour moduler l'intensité."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T13:50:51.728164+00:00",
+  "maj_le": "2026-10-11T19:12:23.724483+00:00"
+ },
+ {
+  "posture_id": "P043",
+  "contenu": {
+   "tenue": [
+    "Rentrez légèrement le bas-ventre à chaque expiration pour maintenir le soutien lombaire.",
+    "Pressez fermement la main et le genou restés au sol pour éviter de vous affaisser.",
+    "Recherchez la légèreté et la longueur plutôt que la hauteur dans l'extension des membres."
+   ],
+   "entree": [
+    "Placez-vous à quatre pattes sur votre tapis.",
+    "Alignez les poignets directement sous les épaules et les genoux sous les hanches.",
+    "Écartez les doigts pour élargir la surface d'appui et repoussez le sol avec les paumes.",
+    "Allongez la nuque en fixant un point entre vos mains pour aligner la tête avec le reste de la colonne.",
+    "À l'inspiration, préparez votre ancrage en pressant les tibias et le sommet du crâne à l'opposé.",
+    "À l'expiration, glissez et étirez le bras droit vers l'avant et la jambe gauche vers l'arrière.",
+    "Montez le bras et la jambe à l'horizontale sans modifier la courbure naturelle du dos."
+   ],
+   "sortie": "À l'expiration, redéposez simultanément la main et le genou au sol dans la posture de départ à quatre pattes. Prenez un instant pour relâcher le bassin vers les talons en posture de l'enfant, ou enchaînez directement de l'autre côté.",
+   "erreurs": [
+    "Erreur : cambrer le dos en levant trop haut la jambe. Correction : gardez la jambe à hauteur de hanche et contractez le fessier.",
+    "Erreur : laisser le bassin pivoter sur le côté. Correction : imaginez poser un plateau sur le bas du dos et gardez les deux hanches à la même hauteur.",
+    "Erreur : s'affaisser dans l'épaule d'appui. Correction : repoussez activement le sol avec la paume pour éloigner l'épaule de l'oreille."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds et jambes : poussez le talon gauche vers l'arrière, orteils dirigés vers le sol.",
+    "Bassin : gardez les deux hanches parallèles et face au tapis, sans laisser la hanche gauche s'ouvrir.",
+    "Colonne : maintenez les courbures naturelles du dos, cherchez l'autograndissement de la base du crâne au coccyx.",
+    "Épaules : éloignez les épaules des oreilles et engagez les omoplates à plat contre le dos.",
+    "Regard : portez le regard vers le sol, légèrement en avant des mains pour garder la nuque longue."
+   ],
+   "respiration": "Inspirez profondément pour préparer le mouvement en vous grandissant. Expirez lentement par la bouche ou le nez en activant le périnée et le bas-ventre pour stabiliser le bassin pendant l'extension des membres.",
+   "presentation": "Le Chien-oiseau, ou Bird Dog, est une posture de gainage à 4 pattes qui renforce la sangle abdominale, le dos et les fessiers. On y recherche la stabilité du tronc et l'allongement axial en dissociant le mouvement des membres. Elle trouve idéalement sa place au cœur de la séance pour préparer le corps aux équilibres et stabiliser le bassin.",
+   "variante_avancee": "Pour intensifier le défi, touchez le coude et le genou opposés sous le ventre à l'expiration, puis réallongez à l'inspiration sans poser les membres au sol.",
+   "variante_facilitee": "Gardez les orteils ancrés dans le sol et glissez seulement le pied vers l'arrière sans lever la jambe, ou tendez uniquement un bras après l'autre."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T19:19:00.31993+00:00",
+  "maj_le": "2026-10-11T19:21:59.879976+00:00"
+ },
+ {
+  "posture_id": "P092",
+  "contenu": {
+   "tenue": [
+    "Engagez activement le périnée à chaque expiration comme si vous reteniez une envie d'uriner.",
+    "Aspirez le nombril vers l'intérieur et le haut à l'expiration pour plaquer le transverse.",
+    "Maintenez une respiration fluide dans la cage thoracique pendant le maintien."
+   ],
+   "entree": [
+    "Allongez-vous confortablement sur le dos sur votre tapis.",
+    "Pliez les genoux et posez les pieds à plat sur le sol, écartés à la largeur des hanches.",
+    "Alignez vos talons sous vos genoux pour stabiliser le bas du corps.",
+    "Allongez la nuque en rentrant légèrement le menton vers la poitrine, bras le long du corps.",
+    "Prenez un moment pour déposer tout le dos contre le sol, des lombaires jusqu'aux épaules.",
+    "Posez vos mains sur votre bas-ventre pour percevoir le mouvement de la respiration.",
+    "Fermez les yeux et portez votre attention sur votre centre."
+   ],
+   "sortie": "Sur une inspiration, relâchez complètement le ventre et les muscles du plancher pelvien. Ramenez ensuite les genoux vers la poitrine un par un pour masser le bas du dos, puis basculez sur le côté pour vous asseoir.",
+   "erreurs": [
+    "Pousser le ventre vers l'extérieur à l'inspiration : veillez à garder un mouvement souple et thoracique.",
+    "Bloquer la respiration : continuez à respirer amplement entre chaque expiration ciblée.",
+    "Aplatir de force les lombaires en contractant les grands droits : privilégiez l'action profonde du transverse."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds ancrés à plat, parallèles et écartés de la largeur du bassin.",
+    "Jambes détendues, sans crispation dans les cuisses.",
+    "Bassin neutre, le sacrum bien lourd et étalé sur le tapis.",
+    "Colonne vertébrale étirée dans sa longueur, courbure naturelle des lombaires légèrement adoucie.",
+    "Épaules basses, éloignées des oreilles, omoplates ancrées dans le sol.",
+    "Regard tourné vers le plafond ou yeux fermés pour intérioriser la posture."
+   ],
+   "respiration": "Inspirez amplement par le nez en laissant le ventre se soulever naturellement sans forcer. Expirez longuement et profondément par la bouche en rentrant le nombril vers la colonne et en remontant le périnée.",
+   "presentation": "Le gainage du transverse allongé est une posture fondamentale pour renforcer la sangle abdominale profonde et protéger le bas du dos. On y recherche la stabilité et l'engagement du centre sans tension excessive dans les cervicales. Elle s'intègre parfaitement au début de la séance pour éveiller la conscience corporelle.",
+   "variante_avancee": "Décollez les pieds du sol pour placer les tibias parallèles au sol, genoux au-dessus des hanches, tout en maintenant le bas du dos plaqué.",
+   "variante_facilitee": "Gardez les pieds posés à plat sur le sol, les genoux fléchis, pour réduire l'intensité sur la sangle abdominale."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T19:46:59.193599+00:00",
+  "maj_le": "2026-10-11T19:46:59.193599+00:00"
+ },
+ {
+  "posture_id": "P027",
+  "contenu": {
+   "tenue": [
+    "Gardez la sangle abdominale tonique mais sans bloquer la respiration.",
+    "Portez votre attention sur le massage subtil de la zone lombaire contre le tapis.",
+    "Maintenez une fluidité constante dans le mouvement, sans à-coups."
+   ],
+   "entree": [
+    "Allongez-vous sur le dos, au centre de votre tapis, les jambes repliées.",
+    "Écartez vos pieds de la largeur de vos hanches, bien à plat sur le sol.",
+    "Placez vos talons à une distance confortable de vos fessiers.",
+    "Laissez vos bras reposer le long du corps, paumes des mains tournées vers le sol.",
+    "Relâchez complètement les épaules, la nuque et les traits du visage.",
+    "Prenez une inspiration profonde pour préparer le corps au mouvement.",
+    "Expirez lentement pour initier la première bascule du bassin."
+   ],
+   "sortie": "À la fin de votre dernière expiration, ramenez le bassin en position neutre, au milieu du mouvement. Allongez les jambes l'une après l'autre sur le tapis et prenez un instant de pause en Savasana pour intégrer les sensations. Observez le contact de votre dos avec le sol.",
+   "erreurs": [
+    "Erreur : Pousser excessivement dans les pieds pour soulever les fessiers. Correction : Gardez le bassin en contact avec le sol, seule la bascule interne compte.",
+    "Erreur : Bloquer la respiration pendant l'effort. Correction : Coordonnez chaque mouvement avec votre souffle, l'expiration guidant la rétroversion.",
+    "Erreur : Contracter les fessiers de manière excessive. Correction : Laissez les fessiers souples et privilégiez l'action des abdominaux et du périnée."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds : ancrés uniformément dans le sol, des talons jusqu'aux orteils.",
+    "Jambes : parallèles, espacées de la largeur du bassin, genoux pointés vers le ciel.",
+    "Bassin : mobile, basculant alternativement vers l'avant et vers l'arrière.",
+    "Colonne : s'allonge au sol, chaque vertèbre lombaire venant s'y déposer tour à tour.",
+    "Épaules : lourdes, plaquées contre le tapis, loin des oreilles.",
+    "Regard : fixé vers le plafond pour maintenir la nuque longue et détendue."
+   ],
+   "respiration": "Respirez calmement par le nez, de manière fluide et naturelle. À l'expiration, engagez le périnée et laissez le bas du dos s'aplatir contre le sol ; à l'inspiration, relâchez l'engagement et creusez légèrement les lombaires.",
+   "presentation": "Bienvenue dans la posture de la bascule du bassin allongée, un mouvement doux et fondamental de mobilisation de la colonne vertébrale. Elle permet de masser le bas du dos, de relâcher les tensions lombaires et d'engager consciemment la sangle abdominale. Cette posture s'intègre parfaitement en début de séance pour échauffer le corps ou en fin de pratique pour apaiser le système nerveux.",
+   "variante_avancee": "Pour intensifier l'exercice, soulevez légèrement les pieds de quelques centimètres du sol, genoux au-dessus des hanches, pour maintenir un engagement abdominal plus profond pendant la bascule.",
+   "variante_facilitee": "Placez un petit coussin plat sous la tête si vos cervicales sont inconfortables, ou réduisez l'amplitude du mouvement pour ne pas forcer sur les lombaires."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T19:46:59.792145+00:00",
+  "maj_le": "2026-10-11T19:46:59.792145+00:00"
+ },
+ {
+  "posture_id": "P152",
+  "contenu": {
+   "tenue": [
+    "Maintenez une pression constante des pieds dans le sol pour soutenir la hauteur du bassin.",
+    "Gardez les fessiers actifs mais souples, sans contracter excessivement l'arrière des cuisses.",
+    "Portez votre attention sur l'ouverture de la poitrine et la fluidité de la respiration."
+   ],
+   "entree": [
+    "Allongez-vous sur le dos, genoux fléchis et pieds à plat sur le sol.",
+    "Écartez vos pieds de la largeur des hanches, parallèles entre eux.",
+    "Placez vos bras le long du corps, paumes de mains tournées vers le tapis.",
+    "Rentrez légèrement le menton vers la poitrine pour allonger la nuque.",
+    "Fixez un point droit vers le plafond et évitez de tourner la tête.",
+    "Inspirez profondément pour préparer le mouvement.",
+    "Expirez, engagez le périnée et commencez à basculer le bassin.",
+    "Poussez fermement dans vos pieds pour décoller vertèbre après vertèbre le bassin du sol."
+   ],
+   "sortie": "Sur une expiration, redescendez vertèbre par vertèbre en déposant le haut, le milieu puis le bas du dos sur le tapis. Ramenez ensuite les genoux vers la poitrine dans une posture de repos neutre.",
+   "erreurs": [
+    "Tourner la tête sur les côtés pendant la posture : gardez le regard fixe au plafond pour protéger les cervicales.",
+    "Laisser les genoux s'ouvrir vers l'extérieur : gardez les cuisses parallèles en imaginant presser un bloc entre elles.",
+    "Pousser le ventre vers le haut en finissant l'expiration : maintenez l'engagement du périnée et de l'expiration active."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds : ancrés solidement dans le sol, pressant uniformément sur les talons et les orteils.",
+    "Jambes : parallèles, les genoux restant alignés dans l'axe des chevilles sans s'ouvrir vers l'extérieur.",
+    "Bassin : élevé à la hauteur confortable pour vous, sans forcer sur les lombaires.",
+    "Colonne : en extension douce, soutenue par l'engagement des fessiers.",
+    "Épaules : larges et plaquées contre le tapis, ouvrant la cage thoracique.",
+    "Regard : orienté fixement vers le ciel pour préserver l'alignement des cervicales."
+   ],
+   "respiration": "Respirez calmement par le nez. Sur l'expiration, engagez le périnée et montez le bassin pour protéger le bas du dos.",
+   "presentation": "Setu Bandha Sarvangasana, le pont, est une extension douce qui renforce l'arrière du corps tout en ouvrant l'avant du buste. Elle sollicite les fessiers et la colonne pour stimuler l'énergie. On la place généralement au cœur de la séance ou en préparation des extensions plus intenses.",
+   "variante_avancee": "Entrelacez les doigts sous le bassin en tendant les bras et marchez sur les épaules pour monter la poitrine plus haut vers le menton.",
+   "variante_facilitee": "Gardez les pieds un peu plus écartés que la largeur des hanches et ne cherchez pas à monter le bassin trop haut."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T14:53:00.341237+00:00",
+  "maj_le": "2026-10-11T19:47:00.289857+00:00"
+ },
+ {
+  "posture_id": "P172",
+  "contenu": {
+   "tenue": [
+    "Maintenez une pression douce des mains sur les genoux à chaque expiration.",
+    "Gardez l'abdomen souple et détendu.",
+    "Portez votre attention sur le contact du dos avec le sol."
+   ],
+   "entree": [
+    "Allongez-vous sur le dos, les jambes allongées et les bras le long du corps.",
+    "Fléchissez une jambe puis l'autre en ramenant les cuisses vers le ventre.",
+    "Placez une main sur chaque genou.",
+    "Relâchez les épaules vers le sol et détendez la nuque.",
+    "Laissez le menton s'abaisser légèrement vers la gorge.",
+    "Fermez les yeux et déposez tout le poids du dos sur le tapis."
+   ],
+   "sortie": "À la prochaine expiration, déposez un pied puis l'autre à plat sur le sol. Allongez ensuite les jambes pour revenir en position allongée, ou basculez sur le côté pour vous redresser.",
+   "erreurs": [
+    "Les épaules montent vers les oreilles : abaissez les omoplates vers le sol.",
+    "Le menton pointe vers le plafond : rentrez légèrement le menton pour allonger la nuque."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds et chevilles détendus, les talons proches des fessiers.",
+    "Jambes serrées l'une contre l'autre.",
+    "Bassin totalement en contact avec le sol, sans cambrer.",
+    "Colonne vertébrale étirée dans sa longueur, des lombaires jusqu'aux cervicales.",
+    "Épaules éloignées des oreilles et plaques sur le tapis.",
+    "Regard tourné vers le plafond ou yeux fermés."
+   ],
+   "respiration": "À l'inspiration, sentez le ventre et la poitrine se soulever légèrement tandis que les genoux s'éloignent de quelques centimètres. À l'expiration, activez l'expiration pour presser doucement les cuisses vers le buste et creuser le ventre.",
+   "presentation": "Apanasana, ou posture des genoux à la poitrine, est une position allongée et symétrique qui mobilise en douceur le bas du dos. Elle est idéale pour relâcher les tensions lombaires et masser les organes abdominaux. On l'utilise souvent en début ou en fin de séance pour apaiser le système nerveux.",
+   "variante_avancee": "Soulevez la tête et les épaules à l'expiration pour amener le front en direction des genoux, en gardant la nuque longue et l'abdomen rentré.",
+   "variante_facilitee": "Gardez les pieds au sol avec les genoux fléchis si le bas du dos est très sensible ou si le contact des cuisses sur le ventre est inconfortable."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T19:47:00.576724+00:00",
+  "maj_le": "2026-10-11T19:47:00.576724+00:00"
+ },
+ {
+  "posture_id": "P020",
+  "contenu": {
+   "tenue": [
+    "Maintenez une pression constante des talons dans le sol pour garder les jambes actives.",
+    "Engagez légèrement le bas du ventre pour soutenir le bas du dos sans bloquer la respiration.",
+    "Portez votre attention sur la sensation de verticalité et la longueur créée dans tout le corps."
+   ],
+   "entree": [
+    "Asseyez-vous au sol en étendant vos deux jambes devant vous.",
+    "Retirez la chair des fesses vers l'arrière pour bien sentir les os du bassin, les ischions, ancrés dans le sol.",
+    "Flexez vos pieds en dirigeant les orteils vers le plafond et les talons vers l'avant.",
+    "Pressez l'arrière des cuisses et les mollets contre le tapis.",
+    "Placez la paume de vos mains ou le bout de vos doigts au sol de chaque côté de vos hanches.",
+    "Pressez les mains dans le sol pour soulever légèrement la cage thoracique.",
+    "Allongez toute la colonne vertébrale depuis le bas du dos jusqu'au sommet du crâne."
+   ],
+   "sortie": "À la fin de la dernière expiration, relâchez doucement la tonicité des jambes et secouez-les délicatement si nécessaire. Prenez un instant en posture assise neutre ou allongez-vous sur le dos en Savasana pour observer les sensations.",
+   "erreurs": [
+    "Erreur : Le bassin bascule vers l'arrière et le dos s'arrondit. Correction : Surélevez l'assise sur une couverture pliée et fléchissez les genoux.",
+    "Erreur : Les jambes sont totalement relâchées et les pieds tombent vers l'extérieur. Correction : Activez les cuisses et ramenez les orteils bien verticaux."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds actifs, largeur des hanches, orteils pointés vers le zénith.",
+    "Jambes engagées, rotules aspirées vers le haut, l'arrière des cuisses pressé vers le sol.",
+    "Bassin neutre, répartissant le poids équitablement sur les deux ischions.",
+    "Colonne vertébrale étirée vers le haut, préservant les courbures naturelles du dos.",
+    "Épaules détendues, éloignées des oreilles, omoplates glissées à plat dans le dos.",
+    "Regard fixé droit devant vous à l'horizontale, menton légèrement rentré."
+   ],
+   "respiration": "Respirez amplement par le nez en maintenant un rythme régulier et conscient. À chaque inspiration, grandissez le sommet du crâne vers le ciel, et à chaque expiration, encrez un peu plus les jambes et le bassin dans le sol.",
+   "presentation": "Dandasana ou la posture du bâton est une assise fondamentale qui renforce le dos et étire l'arrière des jambes. Elle sert de point de départ à de nombreuses postures assises et enseigne l'alignement vertical. On y recherche l'engagement du tronc et l'extension de la colonne vertébrale.",
+   "variante_avancee": "Pour intensifier l'engagement, tendez les bras vers le ciel dans le prolongement du buste en gardant les épaules basses, ou fermez les yeux pour affiner l'équilibre interne.",
+   "variante_facilitee": "Si le dos s'arrondit, placez une couverture pliée sous les fesses pour basculer le bassin vers l'avant, ou fléchissez légèrement les genoux en glissant un rouleau dessous."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T19:47:02.417156+00:00",
+  "maj_le": "2026-10-11T19:47:02.417156+00:00"
+ },
+ {
+  "posture_id": "P133",
+  "contenu": {
+   "tenue": [
+    "Maintenez un engagement léger du centre pour soutenir le bas du dos.",
+    "Gardez les cuisses actives mais détendues dans leur ouverture latérale.",
+    "Portez votre attention sur l'espace des aines et la détente de la respiration."
+   ],
+   "entree": [
+    "Asseyez-vous au sol en étirant vos jambes devant vous, le dos bien droit.",
+    "Pliez vos genoux et ramenez vos plantes de pieds l'une contre l'autre.",
+    "Rapprochez vos talons vers votre bassin, à une distance confortable pour vous.",
+    "Ouvrez vos genoux vers l'extérieur en direction du sol.",
+    "Saisissez vos chevilles ou vos orteils avec vos mains.",
+    "Pressez les mains sur les pieds pour grandir le buste à partir de la base de la colonne.",
+    "Roulez les épaules vers l'arrière et vers le bas pour ouvrir la poitrine."
+   ],
+   "sortie": "Sur une inspiration, redressez complètement le buste si vous étiez penché. Utilisez vos mains pour ramener doucement vos genoux l'un vers l'autre. Allongez vos jambes devant vous et prenez un moment pour observer les sensations dans l'assise et les cuisses.",
+   "erreurs": [
+    "Arrondir le dos vers l'arrière : redressez la taille en vous appuyant sur l'avant des ischions.",
+    "Tirer excessivement sur les genoux avec les mains : laissez la gravité agir naturellement sur les jambes."
+   ],
+   "version": 2,
+   "alignement": [
+    "Ancrez fermement vos ischions, les os des fesses, dans le sol.",
+    "Gardez les bords externes de vos pieds bien pressés l'un contre l'autre.",
+    "Relâchez vos genoux vers le sol sans forcer, en respectant votre souplesse.",
+    "Allongez toute la colonne vertébrale depuis le coccyx jusqu'au sommet du crâne.",
+    "Détendez vos épaules loin des oreilles et élargissez la cage thoracique.",
+    "Portez votre regard droit devant vous à l'horizontale, la nuque longue et détendue."
+   ],
+   "respiration": "Respirez calmement par le nez en maintenant une respiration fluide et naturelle. À l'inspiration, sentez votre colonne vertébrale s'allonger vers le ciel, et à l'expiration, détendez un peu plus vos genoux vers le sol.",
+   "presentation": "Bienvenue dans Baddha Konasana, la posture du papillon assis, dédiée à l'ouverture douce des hanches et à la détente des adducteurs. Cette posture assise favorise l'enracinement et l'étirement de la colonne vertébrale. Elle s'intègre parfaitement au début de la séance pour préparer le corps aux flexions avant et aux ouvertures plus profondes.",
+   "variante_avancee": "Avancez les pieds un peu plus loin du bassin pour former un losange plus grand, puis basculez le bassin vers l'avant à partir des hanches en gardant le dos long pour descendre le buste vers les pieds.",
+   "variante_facilitee": "Placez des coussins ou des blocs sous vos cuisses pour soutenir le poids des jambes et relâcher les tensions dans les aine. Vous pouvez également éloigner les talons du bassin pour réduire l'intensité."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T13:50:37.459745+00:00",
+  "maj_le": "2026-10-11T19:47:04.425445+00:00"
+ },
+ {
+  "posture_id": "P134",
+  "contenu": {
+   "tenue": [
+    "Maintenez une respiration fluide et abdominale pour masser les organes internes.",
+    "Relâchez totalement le contrôle dans les muscles des cuisses et des fessiers.",
+    "Portez votre attention sur la sensation d'espace dans le bas-ventre et la poitrine."
+   ],
+   "entree": [
+    "Asseyez-vous au centre de votre tapis, les genoux fléchis et les pieds à plat.",
+    "Placez un bolster ou des coussins pliés derrière vous si vous souhaitez surélever le buste.",
+    "Allongez délicatement le dos sur le support ou directement sur le dos.",
+    "Rapprochez la plante de vos pieds l'une contre l'autre.",
+    "Laissez vos genoux s'ouvrir naturellement vers l'extérieur.",
+    "Ajustez l'éloignement de vos talons par rapport au bassin selon votre confort.",
+    "Placez vos bras le long du corps, paumes des mains tournées vers le ciel.",
+    "Rentrez légèrement le menton vers la poitrine pour allonger la nuque."
+   ],
+   "sortie": "Sur une expiration, ramenez lentement vos mains à l'extérieur des cuisses pour guider vos genoux l'un vers l'autre. Roulez ensuite sur le côté droit en position fœtale pour quelques respirations, puis redressez-vous doucement en vous aidant des mains. Enchaînez avec une posture neutre comme l'allongement complet des jambes ou Apanasana.",
+   "erreurs": [
+    "Erreur : Creuser excessivement le bas du dos en cherchant à ouvrir la poitrine. Correction : Engagez légèrement le bas du ventre et allongez le coccyx vers les talons.",
+    "Erreur : Garder les genoux en suspension avec des tensions dans l'aine. Correction : Placez des blocs sous les cuisses pour offrir un soutien ferme.",
+    "Erreur : Rapprocher excessivement les talons du pubis en forçant sur les genoux. Correction : Éloignez les pieds du bassin pour former un losange plus grand et plus doux."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds : les tranchants externes des pieds pressent l'un contre l'autre.",
+    "Jambes : les cuisses se détendent en rotation externe, sans chercher à forcer la descente des genoux.",
+    "Bassin : le sacrum est bien ancré à plat sur le sol ou sur le bolster.",
+    "Colonne : tout le dos s'allonge et s'arque naturellement selon la courbe physiologique.",
+    "Épaules : les clavicules sont larges et les épaules fondent loin des oreilles.",
+    "Regard : les yeux se ferment doucement, le regard intérieur tourné vers la respiration."
+   ],
+   "respiration": "À l'inspiration, ressentez l'expansion de la cage thoracique et le ventre qui se soulève subtilement. À l'expiration, abandonnez un peu plus le poids des genoux vers le sol et détendez les muscles du visage.",
+   "presentation": "Supta Baddha Konasana, le papillon allongé, est une posture de décubitus dorsal qui favorise l'ouverture douce des hanches et la détente profonde. Elle permet de relâcher les tensions dans l'aine et l'abdomen tout en calmant le système nerveux. On la place généralement en fin de séance pour intégrer la pratique ou comme posture de centrage au début.",
+   "variante_avancee": "Pour intensifier l'ouverture des épaules, placez un bolster dans le sens de la longueur sous votre colonne vertébrale et amenez les bras tendus vers l'arrière au sol.",
+   "variante_facilitee": "Glissez des blocs ou des coussins sous l'extérieur de chaque cuisse pour soutenir le poids des jambes et éliminer toute tension dans les adducteurs."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T19:50:13.489091+00:00",
+  "maj_le": "2026-10-11T19:50:13.489091+00:00"
+ },
+ {
+  "posture_id": "P002",
+  "contenu": {
+   "tenue": [
+    "Gardez le visage, la mâchoire et la langue totalement détendus malgré l'action dans la gorge.",
+    "Maintenez un flux d'air continu et sans à-coups du début à la fin de chaque souffle.",
+    "Observez la chaleur interne qui s'installe progressivement et la stabilité mentale."
+   ],
+   "entree": [
+    "Installez-vous dans une posture assise confortable, sur un support si besoin, ou allongez-vous sur le dos.",
+    "Fermez les yeux et détendez les muscles du visage, de la mâchoire et du cou.",
+    "Portez votre attention sur le trajet de l'air qui entre et sort par les narines.",
+    "Portez ensuite votre conscience au niveau de la glotte, dans l'arrière-gorge.",
+    "À l'expiration, contractez très légèrement les muscles de la gorge, comme pour chuchoter sans émettre de son.",
+    "Trouvez ce frottement doux et régulier, semblable au bruit des vagues de l'océan.",
+    "Conservez ce même engagement subtil de la gorge lorsque vous inspirez."
+   ],
+   "sortie": "Revenez progressivement à une respiration nasale naturelle, sans bruit ni contrôle, en observant les sensations de calme dans le corps. Lâchez toute tension dans la gorge et reprenez votre respiration ordinaire.",
+   "erreurs": [
+    "Erreur : Contracter excessivement la gorge au risque de tousser. Correction : Allégez l'effort, le son doit rester doux et apaisant.",
+    "Erreur : Bloquer la respiration ou forcer les temps respiratoires. Correction : Respectez votre capacité pulmonaire et privilégiez la fluidité à la longueur.",
+    "Erreur : Contracter la mâchoire ou froncer les sourcils. Correction : Relâchez le visage, l'action se situe uniquement dans la gorge."
+   ],
+   "version": 2,
+   "alignement": [
+    "Jusqu'aux pieds, trouvez une assise stable et ancrée si vous êtes assis.",
+    "Relâchez les jambes et laissez le bassin lourd et détendu.",
+    "Allongez la colonne vertébrale du coccyx jusqu'au sommet du crâne.",
+    "Détendez les épaules et laissez-les s'éloigner des oreilles.",
+    "Gardez la nuque longue, le menton légèrement rentré.",
+    "Portez le regard vers l'intérieur, les yeux clos."
+   ],
+   "respiration": "Inspirez et expirez par le nez, de manière fluide et continue. À l'expiration, resserrez légèrement le fond de la gorge comme pour condenser de la buée sur un miroir.",
+   "presentation": "Ujjayi, la respiration victorieuse, est une respiration profonde et consciente qui produit un son subtil dans la gorge. Elle permet de réguler le flux d'air, d'apaiser le mental et de générer de la chaleur interne. On la pratique généralement au début de la séance pour centrer l'esprit ou tout au long de la pratique pour soutenir l'effort.",
+   "variante_avancee": "Maintenez le son Ujjayi de manière parfaitement égale et continue, tant sur l'inspiration que sur l'expiration, en allongeant les temps respiratoires sans jamais forcer.",
+   "variante_facilitee": "Pratiquez la respiration avec la bouche légèrement entrouverte sur l'expiration en faisant le son 'ha', puis fermez la bouche pour retrouver le même frottement."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:07:57.723885+00:00",
+  "maj_le": "2026-10-11T20:07:57.723885+00:00"
+ },
+ {
+  "posture_id": "P044",
+  "contenu": {
+   "tenue": [
+    "Maintenez une respiration fluide et continue à chaque transition de l'enchaînement.",
+    "Gardez la sangle abdominale active et tonique pour soutenir le centre du corps.",
+    "Répartissez le poids du corps uniformément entre les mains et les pieds."
+   ],
+   "entree": [
+    "Placez-vous debout à l'avant de votre tapis, les pieds joints ou écartés de la largeur du bassin.",
+    "En inspirant, levez les grands bras vers le ciel et joignez les paumes de mains au-dessus de la tête.",
+    "En expirant, fléchissez le buste à partir des hanches pour descendre en flexion avant, Uttanasana.",
+    "À l'inspiration, allongez le dos à l'horizontale, regard vers l'avant, Ardha Uttanasana.",
+    "En expirant, posez les mains à plat au sol et reculez les pieds pour arriver en position de planche.",
+    "Sur l'expiration, fléchissez les coudes en frôlant les côtes pour descendre vers le sol, en posant les genoux si besoin.",
+    "À l'inspiration, ouvrez la poitrine vers l'avant pour le chien tête en haut ou le cobra.",
+    "En expirant, repoussez le sol avec les mains, montez le bassin vers le ciel et trouvez le chien tête en bas, Adho Mukha Svanasana."
+   ],
+   "sortie": "À la fin de la dernière répétition, revenez en position debout à l'avant du tapis. Prenez un instant pour observer les sensations dans l'ensemble du corps, puis passez en posture de repos si nécessaire.",
+   "erreurs": [
+    "Arrondir le dos dans la flexion avant : fléchissez davantage les genoux pour garder le ventre contre les cuisses.",
+    "Laisser s'affaisser les lombaires en planche ou en chien tête en haut : engagez fermement le ventre et les fessiers.",
+    "Crisper les épaules vers les oreilles dans les postures d'appui : repoussez le sol et élargissez le haut du dos."
+   ],
+   "version": 2,
+   "alignement": [
+    "Ancrez fermement la totalité de la surface des pieds dans le sol pour la posture debout.",
+    "Engagez les cuisses en aspirant les rotules vers le haut pour stabiliser les jambes.",
+    "Neutralisez le bassin, le coccyx pointe légèrement vers les talons pour protéger les lombaires.",
+    "Allongez toute la colonne vertébrale, de la base du cou jusqu'au sommet du crâne.",
+    "Éloignez les épaules des oreilles et engagez les omoplates l'une vers l'autre.",
+    "Portez le regard vers le nombril ou entre les pieds en chien tête en bas."
+   ],
+   "respiration": "Inspirez profondément à chaque ouverture et extension du buste vers le ciel. Expirez sur chaque flexion avant, transition vers le sol et retour vers l'arrière.",
+   "presentation": "La Salutation au Soleil A, ou Surya Namaskar A, est un enchaînement dynamique et fluide qui relie la force, la souplesse et la respiration. Elle mobilise l'ensemble du corps, réchauffe les articulations et renforce la sangle abdominale ainsi que les membres supérieurs. On l'utilise généralement en début de séance pour éveiller l'énergie vitale et préparer aux postures plus profondes.",
+   "variante_avancee": "Depuis la planche, descendez directement en Chaturanga Dandasana sur une expiration sans poser les genoux. Poussez ensuite en Urdhva Hastasana (chien tête en haut) avec le dessus des pieds au sol.",
+   "variante_facilitee": "Gardez les genoux généreusement fléchis lors de la flexion avant pour protéger vos lombaires et déposez les genoux au sol lors de la descente en Chaturanga pour préserver vos poignets et vos épaules."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:11:14.495891+00:00",
+  "maj_le": "2026-10-11T20:11:14.495891+00:00"
+ },
+ {
+  "posture_id": "P107",
+  "contenu": {
+   "tenue": [
+    "Maintenez une pression constante dans toute la paume des mains pour protéger les poignets.",
+    "Engagez le centre du corps en aspirant légèrement le nombril vers la colonne à chaque expiration.",
+    "Sentez l'espace se créer entre chaque vertèbre et l'étirement profond le long des bras et des jambes."
+   ],
+   "entree": [
+    "Placez-vous à quatre pattes sur votre tapis, les mains légèrement en avant des épaules.",
+    "Écartez les doigts largement en pressant fermement chaque phalange et la base des index dans le sol.",
+    "Crochetez vos orteils et prenez appui sur l'avant-pied.",
+    "À l'expiration, décollez les genoux du sol et poussez le bassin vers le haut et vers l'arrière.",
+    "Gardez d'abord les genoux fléchis pour allonger le dos au maximum.",
+    "Allongez la colonne vertébrale en éloignant les épaules des oreilles.",
+    "Relâchez complètement la tête entre vos bras, le regard dirigé vers vos pieds ou vos genoux."
+   ],
+   "sortie": "Sur une expiration, posez délicatement les genoux au sol. Venez vous asseoir sur vos talons en posture de l'enfant, Balasana, pour relâcher les poignets et observer les sensations. Prenez quelques respirations profondes avant de redresser le buste.",
+   "erreurs": [
+    "Épaules tassées vers les oreilles : éloignez les omoplates et tournez l'intérieur des coudes vers l'avant.",
+    "Poids du corps rejeté uniquement dans les poignets : repoussez activez le sol avec les mains pour envoyer le poids vers le bassin.",
+    "Dos arrondi : fléchissez davantage les genoux pour prioriser l'étirement et la longueur de la colonne."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds écartés de la largeur des hanches, orteils pointés vers l'avant.",
+    "Jambes actives, cuisses engagées vers le haut et l'arrière (genoux fléchis ou tendus selon la souplesse).",
+    "Bassin haut et pointé vers le ciel, formant le sommet du triangle.",
+    "Colonne vertébrale longue et droite, sans courbure excessive dans le bas du dos.",
+    "Épaules larges, rotation externe des bras pour éloigner les épaules des oreilles.",
+    "Regard fixé doucement vers les pieds ou le nombril, nuque totalement détendue."
+   ],
+   "respiration": "Respirez amplement par le nez en privilégiant une respiration lente et régulière. À l'inspiration, allongez la colonne depuis les poignets jusqu'au bassin ; à l'expiration, ancrez les mains et dirigez les talons vers le sol.",
+   "presentation": "Adho Mukha Svanasana, ou le Chien tête en bas, est une posture d'inversion et de renforcement qui forme un V inversé. On y recherche l'étirement global de la chaîne postérieure et l'ouverture des épaules tout en développant la force des bras. Elle s'intègre parfaitement au cœur de la séance ou comme transition dans les enchaînements.",
+   "variante_avancee": "Tendez complètement les jambes en pressant fermement les cuisses vers l'arrière et cherchez à déposer les talons au sol. Pour aller plus loin dans l'ouverture des épaules, pressez la poitrine en direction des cuisses tout en maintenant l'engagement du dos.",
+   "variante_facilitee": "Gardez les genoux généreusement fléchis pour alléger le travail des ischio-jambiers et libérer le bas du dos. Vous pouvez également placer les mains sur des briques pour réduire la pression sur les poignets."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:11:14.703603+00:00",
+  "maj_le": "2026-10-11T20:11:14.703603+00:00"
+ },
+ {
+  "posture_id": "P059",
+  "contenu": {
+   "tenue": [
+    "Gardez les muscles des deux cuisses activement contractés.",
+    "Maintenez une respiration profonde et un visage détendu.",
+    "Sentez l'ancrage dans la terre et l'élévation dans le haut du corps."
+   ],
+   "entree": [
+    "Placez-vous à l'avant de votre tapis en position debout, les pieds joints ou parallèles.",
+    "Faites un grand pas en arrière avec le pied gauche.",
+    "Pivotez le talon gauche vers l'intérieur en posant le pied à un angle d'environ 45 degrés.",
+    "Fléchissez le genou droit au-dessus de la cheville droite pour former un angle droit.",
+    "Alignez vos deux hanches vers l'avant du tapis autant que possible.",
+    "Inspirez en levant les bras tendus vers le ciel, paumes face à face.",
+    "Éloignez les épaules des oreilles et engagez le centre."
+   ],
+   "sortie": "À l'expiration, poussez fermement sur le pied avant pour tendre la jambe et ramenez les bras le long du corps. Pivotez sur les pieds pour vous replacer au centre du tapis en Tadasana, puis préparez-vous à répéter de l'autre côté.",
+   "erreurs": [
+    "Le genou avant dépasse la cheville : reculez le pied arrière pour garder le genou au-dessus de la cheville.",
+    "Le talon arrière se soulève : pressez activement le bord externe du pied arrière dans le sol.",
+    "Le bas du dos se creuse excessivement : engagez les abdominaux et rentrez légèrement le coccyx vers le bas."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pied avant solidement ancré, quatre coins du pied dans le sol.",
+    "Tranchant externe du pied arrière fermement pressé contre le tapis.",
+    "Jambe arrière tendue, genou engagé sans être bloqué.",
+    "Genou avant aligné au-dessus de la cheville, sans dépasser les orteils.",
+    "Bassin fermement orienté vers l'avant du tapis.",
+    "Colonne vertébrale étirée vers le haut, regard porté droit devant ou vers les mains."
+   ],
+   "respiration": "Respirez amplement par le nez, en maintenant un souffle fluide et continu. À l'inspiration, grandissez le buste et levez les bras ; à l'expiration, enfoncez les pieds dans le sol et fléchissez davantage dans la cuisse avant.",
+   "presentation": "Bienvenue dans Virabhadrasana I, la posture du Guerrier I. Cette posture debout puissante développe la force des jambes, l'ouverture des hanches et la stabilité. Elle trouve sa place au cœur de la séance pour dynamiser le corps et ancrer l'esprit.",
+   "variante_avancee": "Augmentez l'écart des pieds, descendez la cuisse avant bien parallèle au sol et portez le regard vers le ciel entre vos mains jointes.",
+   "variante_facilitee": "Réduisez l'écart entre vos deux pieds et gardez le genou arrière légèrement fléchi pour soulager le psoas et faciliter la stabilité du bassin."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:11:14.80107+00:00",
+  "maj_le": "2026-10-11T20:11:14.80107+00:00"
+ },
+ {
+  "posture_id": "P060",
+  "contenu": {
+   "tenue": [
+    "Maintenez un engagement tonique dans les deux jambes et le centre du corps.",
+    "Sentez l'espace s'élargir entre vos clavicules et vos omoplates.",
+    "Portez l'attention sur la stabilité de vos appuis et la légèreté du haut du corps."
+   ],
+   "entree": [
+    "Placez-vous debout à l'avant de votre tapis en Tadasana.",
+    "À l'inspiration, écartez les pieds d'environ un mètre à un mètre vingt.",
+    "Levez les bras horizontalement à hauteur d'épaules, paumes tournées vers le sol.",
+    "Pivotez le pied droit vers l'extérieur à 90 degrés et rentrez légèrement le talon gauche.",
+    "Alignez le talon droit avec l'archet du pied gauche.",
+    "Fléchissez le genou droit jusqu'à ce qu'il se trouve directement au-dessus de la cheville droite.",
+    "Ouvrez les hanches et le bassin en direction du long bord du tapis."
+   ],
+   "sortie": "À l'inspiration, tendez la jambe avant en poussant fermement dans le pied. Ramenez les pieds parallèles, tournez-vous de l'autre côté pour répéter la posture, ou revenez en position de repos Tadasana.",
+   "erreurs": [
+    "Le genou avant dépasse la cheville : reculez légèrement le pied arrière ou réduisez la flexion.",
+    "Le genou avant tombe vers l'intérieur : engagez l'fessier pour ouvrir le genou dans l'axe du deuxième orteil.",
+    "Le buste penche vers l'avant : redressez le torse à la verticale au-dessus du bassin."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds : ancrez fermement le bord externe du pied arrière et le talon du pied avant dans le sol.",
+    "Jambes : la cuisse avant est parallèle au sol, la jambe arrière est tendue et active.",
+    "Bassin : gardez le bassin neutre, ouvrez les hanches sans projeter le bas du dos vers l'avant.",
+    "Colonne : étirez la colonne vertébrale vers le haut, buste bien de face.",
+    "Épaules : relâchez les épaules loin des oreilles, bras longs et toniques.",
+    "Regard : portez le regard au loin par-delà le majeur de la main avant."
+   ],
+   "respiration": "À l'inspiration, grandissez la colonne vertébrale et étirez les bras horizontalement. À l'expiration, enfoncez les pieds dans le sol et fléchissez un peu plus le genou avant en maintenant l'engagement.",
+   "presentation": "Virabhadrasana II, le Guerrier II, est une posture debout puissante qui développe la force des jambes et l'ouverture du bassin. Elle cultive la concentration, l'ancrage et la stabilité à travers un engagement global. On l'utilise généralement dans le cœur de la séance pour dynamiser le corps et chauffer les membres inférieurs.",
+   "variante_avancee": "Avancez un peu plus le bassin vers le sol en veillant à garder le genou aligné au-dessus de la cheville, et descendez le coccyx pour intensifier l'ouverture.",
+   "variante_facilitee": "Réduisez l'écart entre vos pieds et fléchissez moins profondément la jambe avant si l'équilibre ou les cuisses demandent moins d'intensité."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:11:15.274436+00:00",
+  "maj_le": "2026-10-11T20:11:15.274436+00:00"
+ },
+ {
+  "posture_id": "P069",
+  "contenu": {
+   "tenue": [
+    "Maintenez un engagement tonique dans la jambe arrière pour stabiliser la posture.",
+    "Continuez d'allonger le flanc supérieur en créant de l'espace entre la hanche et les aisselles.",
+    "Gardez la respiration calme et régulière malgré l'effort dans les cuisses."
+   ],
+   "entree": [
+    "Écartez les pieds d'environ un mètre sur votre tapis.",
+    "Tournez le pied droit vers l'avant du tapis à 90 degrés et rentrez légèrement le talon gauche.",
+    "Alignez le talon droit avec le milieu du pied gauche.",
+    "Fléchissez le genou droit au-dessus de la cheville pour former un angle droit avec la cuisse.",
+    "Ouvrez le bassin et la cage thoracique sur le côté gauche du tapis.",
+    "Étirez le bras droit vers le sol et posez le bout des doigts à l'extérieur du pied droit.",
+    "Pivotez le bras gauche pour l'amener dans le prolongement de l'oreille, paume tournée vers le sol."
+   ],
+   "sortie": "À l'expiration, pressez fermement le pied arrière dans le sol pour remonter le buste. Ramenez les pieds parallèles, puis changez de côté ou revenez en posture de repos debout. Prenez le temps d'observer les sensations dans les deux flancs.",
+   "erreurs": [
+    "Le genou avant dépasse la cheville : reculez le pied arrière pour que le tibia reste vertical.",
+    "Le buste s'affaisse vers le sol : pressez la main du bas pour soulever et ouvrir la cage thoracique vers le ciel."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds : ancrez fermement le bord externe du pied arrière et le talon du pied avant dans le sol.",
+    "Jambes : gardez la cuisse avant parallèle au sol et tendez la jambe arrière en engageant la rotule.",
+    "Bassin : ouvrez les hanches face au long bord du tapis sans laisser le genou avant rentrer vers l'intérieur.",
+    "Colonne : allongez la taille des deux côtés et ouvrez la poitrine vers le ciel.",
+    "Épaules : éloignez les épaules des oreilles et empilez l'épaule supérieure au-dessus de l'inférieure.",
+    "Regard : portez le regard vers le haut en passant sous le bras supérieur, ou vers l'avant si le cou est sensible."
+   ],
+   "respiration": "Respirez amplement par le nez en privilégiant une respiration fluide et continue. À l'expiration, cherchez à vous ancrer un peu plus profondément dans vos appuis et à allonger le flanc supérieur.",
+   "presentation": "Utthita Parsvakonasana, l'angle latéral étiré, est une posture debout puissante qui renforce les jambes et ouvre tout le flanc du corps. Elle développe l'endurance et la stabilité en ancrant solidement les pieds dans le sol. On l'utilise au cœur de la séance pour dynamiser le corps après les guerriers.",
+   "variante_avancee": "Descendez la main complète au sol à l'extérieur du pied avant et tendez le bras du haut par-dessus l'oreille, l'ongle du pouce tourné vers le sol.",
+   "variante_facilitee": "Posez l'avant-bras sur la cuisse avant au lieu de descendre la main au sol pour alléger la pression sur le bas du dos et les obliques."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:11:15.576043+00:00",
+  "maj_le": "2026-10-11T20:11:15.576043+00:00"
+ },
+ {
+  "posture_id": "P090",
+  "contenu": {
+   "tenue": [
+    "Contractez profondément le bas du ventre vers l'intérieur et le haut à chaque expiration.",
+    "Portez votre attention sur la chaleur qui se diffuse dans le centre abdominal.",
+    "Gardez la respiration fluide malgré l'effort intense de stabilisation."
+   ],
+   "entree": [
+    "Asseyez-vous sur les isions au milieu de votre tapis, genoux fléchis et plantes de pieds posées au sol.",
+    "Placez vos mains à l'arrière de vos cuisses, juste sous les genoux.",
+    "Redressez le dos en inspirant, ouvrez la poitrine et sortez la cage thoracique.",
+    "Basculez subtilement le poids du corps en arrière, sans jamais arrondir le bas du dos.",
+    "Décollez un pied puis l'autre du sol en amenant les tibias parallèles au sol.",
+    "Trouvez votre point d'équilibre juste en arrière des isions.",
+    "Fixez un point devant vous pour stabiliser votre regard et votre esprit."
+   ],
+   "sortie": "Sur une expiration, posez délicatement les pieds au sol et venez enlacer vos genoux pour relâcher le dos. Enchaînez ensuite avec une posture de repos comme Balasana pour détendre les lombaires.",
+   "erreurs": [
+    "Arrondir le bas du dos : redressez la poitrine et imaginez vouloir basculer le pubis vers l'avant.",
+    "Bloquer la respiration : reprenez des inspirations amples et conscientes par le nez."
+   ],
+   "version": 2,
+   "alignement": [
+    "Ancrez fermement les isions et l'arrière du bassin dans le sol.",
+    "Pressez les cuisses l'une contre l'autre pour engager la ligne médiane.",
+    "Allongez toute la colonne vertébrale du coccyx jusqu'au sommet du crâne.",
+    "Détendez les épaules et éloignez-les des oreilles en ouvrant l'avant des clavicules.",
+    "Maintenez le menton légèrement rentré pour garder la nuque longue."
+   ],
+   "respiration": "Respirez calmement par le nez en maintenant le souffle fluide. À l'expiration, engagez le périnée et absorbez le bas du ventre pour stabiliser la colonne et soutenir l'effort.",
+   "presentation": "Voici Navasana, la posture du bateau, un gainage assis stimulant qui renforce la sangle abdominale et les fléchisseurs des hanches tout en développant l'équilibre. Elle trouve sa place au cœur de la séance pour dynamiser le corps et chauffer le centre énergétique. Cette posture symétrique demande de l'ancrage et de la concentration.",
+   "variante_avancee": "Tendez complètement les jambes vers le ciel en maintenant les gros orteils dans le champ de vision, et levez les bras tendus le long des jambes.",
+   "variante_facilitee": "Gardez les mains posées à l'arrière des cuisses ou fléchissez les tibias parallèles au sol pour réduire l'intensité sur les abdominaux et préserver le bas du dos."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:11:16.16914+00:00",
+  "maj_le": "2026-10-11T20:11:16.16914+00:00"
+ },
+ {
+  "posture_id": "P147",
+  "contenu": {
+   "tenue": [
+    "Maintenez une action constante des jambes qui tirent les bras vers l'arrière.",
+    "Gardez le centre tonique et respirez amplement dans la poitrine ouverte.",
+    "Observez l'ouverture progressive de l'avant des épaules et des cuisses."
+   ],
+   "entree": [
+    "Allongez-vous à plat ventre sur le tapis, le front au sol.",
+    "Fléchissez les genoux pour ramener les talons vers les fessiers.",
+    "Tendez les bras vers l'arrière et attrapez vos cheville ou l'extérieur de vos pieds.",
+    "Écartez les genoux de la largeur du bassin, pas plus.",
+    "Pressez le bassin et le pubis fermement contre le sol pour protéger le bas du dos.",
+    "À l'inspiration, commencez à éloigner les talons des fessiers.",
+    "Simultanément, soulevez la poitrine et le haut du corps du tapis.",
+    "Portez le regard droit devant vous sans casser la nuque."
+   ],
+   "sortie": "Sur une expiration, relâchez lentement les prises des mains en contrôlant la descente du buste et des jambes au sol. Prenez un instant de repos complet sur le ventre, les mains sous le front, pour intégrer l'extension.",
+   "erreurs": [
+    "Genoux qui s'ouvrent excessivement vers l'extérieur : gardez-les dans l'axe des hanches.",
+    "Tension excessive dans les lombaires : pressez davantage le pubis au sol et allongez le coccyx vers les talons.",
+    "Blocage de la respiration : continuez à respirer amplement dans l'effort."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds et chevilles fermement saisis par les mains, largeur des hanches.",
+    "Jambes engagées, les cuisses repoussent activement les mains vers l'arrière.",
+    "Bassin ancré dans le sol, pubis lourd pour effacer la cambrure lombaire excessive.",
+    "Colonne vertébrale s'allongeant dans chaque vertèbre, extension homogène.",
+    "Épaules éloignées des oreilles, omoplates serrées pour ouvrir la cage thoracique.",
+    "Regard ni trop haut ni trop bas, nuque dans le prolongement naturel de la colonne."
+   ],
+   "respiration": "Inspirez pour préparer le mouvement et trouver l'espace dans la cage thoracique. Expirez profondément pour engager le centre et soulever simultanément la poitrine et les cuisses.",
+   "presentation": "Dhanurasana, la posture de l'arc, est une extension profonde du corps qui renforce toute la chaîne postérieure tout en ouvrant l'avant du corps. Elle stimule l'énergie et se place généralement au cœur de la séance, après des échauffements adaptés de la colonne.",
+   "variante_avancee": "Rapprochez les genoux l'un de l'autre et cherchez à monter les pieds vers le ciel en tendant vigoureusement les jambes dans les mains pour accentuer l'arc.",
+   "variante_facilitee": "Gardez les gros orteils au sol et attrapez une seule cheville à la fois pour un arc asymétrique, ou placez une couverture pliée sous le bassin pour protéger les lombaires."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:11:16.989666+00:00",
+  "maj_le": "2026-10-11T20:11:16.989666+00:00"
+ },
+ {
+  "posture_id": "P156",
+  "contenu": {
+   "tenue": [
+    "Maintenez un engagement constant dans les coudes pour alléger la pression sur la nuque.",
+    "Portez votre attention sur l'ouverture de la cage thoracique et l'espace entre chaque côte.",
+    "Lâchez prise dans les fessiers et les jambes."
+   ],
+   "entree": [
+    "Allongez-vous sur le dos, jambes serrées et tendues, bras le long du corps.",
+    "Glissez les mains paumes contre le sol sous vos fessiers, coudes bien serrés près de la taille.",
+    "Pressez fermement sur vos avant-bras et vos coudes pour soulever la tête et le haut du buste.",
+    "Archivez la colonne vertébrale en creusant le milieu du dos et en rapprochant les omoplates.",
+    "Basculez délicatement la tête en arrière pour déposer le sommet ou l'arrière du crâne sur le sol.",
+    "Transférez l'essentiel du poids sur les coudes et non sur la tête pour protéger les cervicales.",
+    "Ouvrez grand la poitrine à chaque inspiration."
+   ],
+   "sortie": "Sur une expiration, pressez les coudes dans le sol et glissez doucement l'arrière de la tête pour ramener le menton vers la poitrine. Allongez le dos à plat sur le tapis et détendez les bras le long du corps. Accueillez les sensations dans une posture de repos neutre.",
+   "erreurs": [
+    "Laisser tout le poids du corps reposer sur la tête : pressez davantage dans les coudes pour alléger la nuque.",
+    "Laisser les coudes s'écarter sur les côtés : resserrez-les activement sous votre buste.",
+    "Contracter excessivement les fessiers : relâchez le bassin pour laisser l'extension se diffuser dans le haut du dos."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds et jambes fermes, pointes de pieds allongées ou fléchies selon l'option.",
+    "Bassin lourd et détendu, posé sur le dos des mains.",
+    "Colonne vertébrale en arc de cercle harmonieux, principalement au niveau thoracique.",
+    "Épaules éloignées des oreilles et projetées vers l'arrière.",
+    "Regard tourné vers l'arrière ou vers le haut selon le placement du menton."
+   ],
+   "respiration": "Inspirez profondément pour gonfler la poitrine et soulever le sternum vers le ciel. Expirez longuement en ancrant les coudes et en maintenant l'espace créé dans le haut du dos.",
+   "presentation": "Matsyasana ou la posture du poisson est une magnifique extension arrière qui ouvre la cage thoracique et libère la respiration. Elle compense les postures de fermeture et se place idéalement en fin de séance, avant la relaxation. Elle redynamise tout le haut du corps tout en étirant l'avant du cou.",
+   "variante_avancee": "Levez simultanément les jambes tendues à 45 degrés du sol et tendez les bras vers le ciel, ou joignez les pieds en lotus.",
+   "variante_facilitee": "Gardez le sommet du crâne posé sur le sol et fléchissez les genoux en plantant les pieds à plat pour soulager les lombaires."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:11:17.229747+00:00",
+  "maj_le": "2026-10-11T20:11:17.229747+00:00"
+ },
+ {
+  "posture_id": "P137",
+  "contenu": {
+   "tenue": [
+    "Maintenez une respiration fluide et ample dans l'abdomen et la poitrine.",
+    "Gardez la cuisse droite engagée vers l'extérieur pour accentuer l'ouverture de la hanche.",
+    "Observez le relâchement progressif dans le fessier droit à chaque expiration."
+   ],
+   "entree": [
+    "Allongez-vous sur le dos, genoux fléchis et plantes des pieds à plat sur le sol.",
+    "Écartez les pieds de la largeur de vos hanches.",
+    "Soulevez le pied droit et venez poser la cheville droite sur la cuisse gauche, juste au-dessus du genou.",
+    "Ouvrez le genou droit vers l'extérieur, en direction du bord droit de votre tapis.",
+    "Flexez le pied droit pour protéger l'articulation du genou.",
+    "Soulevez le pied gauche du sol en ramenant le genou gauche vers votre poitrine.",
+    "Glissez vos mains autour de l'arrière de la cuisse gauche, ou passez la main droite entre vos jambes et la main gauche à l'extérieur.",
+    "Détendez vos épaules et déposez l'arrière de votre tête au sol."
+   ],
+   "sortie": "À l'expiration suivante, posez lentement le pied droit au sol, puis le pied gauche. Allongez les jambes pour un moment d'intégration, puis répétez de l'autre côté.",
+   "erreurs": [
+    "Tension dans le pied droit : gardez la cheville ferme et le pied flex pour protéger le genou.",
+    "Épaules crispées vers les oreilles : relâchez le haut du corps et utilisez une sangle si besoin.",
+    "Sacrum qui se décolle et bas du dos cambré : gardez le bas du dos neutre et rapprochez moins les jambes."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds : le pied droit est actif et flex, les orteils étalés.",
+    "Jambes : le tibia droit forme un angle droit avec la cuisse gauche.",
+    "Bassin : le sacrum reste bien à plat et ancré au sol, sans cambrer excessivement.",
+    "Colonne : toute la longueur de la colonne vertébrale est en contact avec le tapis.",
+    "Épaules : les épaules sont larges, basses et éloignées des oreilles.",
+    "Regard : le regard est tourné vers le plafond ou les yeux fermés."
+   ],
+   "respiration": "À l'inspiration, amplifiez l'espace dans la cage thoracique et détendez le visage. À l'expiration, approfondissez l'étirement en rapprochant délicatement les jambes de la poitrine sans forcer.",
+   "presentation": "Supta Kapotasana, le pigeon allongé, est une posture douce d'ouverture des hanches pratiquée sur le dos. Elle permet de relâcher les tensions profondes des fessiers et des rotateurs externes de la hanche en toute sécurité. Elle trouve naturellement sa place au milieu de la séance ou en fin de pratique pour préparer la détente.",
+   "variante_avancee": "Placez vos mains directement sur le tibia de la jambe pliée ou glissez les bras entre les jambes pour enlacer le genou opposé.",
+   "variante_facilitee": "Gardez le pied de la jambe au sol si le décollement est trop intense, ou éloignez les mains de l'arrière de la cuisse."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:11:17.792431+00:00",
+  "maj_le": "2026-10-11T20:11:17.792431+00:00"
+ },
+ {
+  "posture_id": "P034",
+  "contenu": {
+   "tenue": [
+    "Gardez une légère tonicité abdominale pour soutenir le bas du dos.",
+    "Portez votre attention sur l'espace qui se crée entre chaque côte du flanc étiré.",
+    "Sentez la respiration circuler dans tout le côté ouvert du corps."
+   ],
+   "entree": [
+    "Asseyez-vous au centre de votre tapis en tailleur ou dans une assise confortable.",
+    "Prenez un moment pour bien enraciner vos deux ischions dans le sol.",
+    "Allongez toute votre colonne vertébrale en imaginant un fil qui tire le sommet du crâne vers le plafond.",
+    "À l'inspiration, levez le bras droit bien haut vers le ciel en gardant l'épaule basse.",
+    "À l'expiration, commencez à incliner votre buste vers la gauche.",
+    "Posez la main gauche au sol à plat pour vous servir d'appui léger.",
+    "Laissez le coude droit s'ouvrir légèrement ou tendez le bras par-dessus l'oreille."
+   ],
+   "sortie": "À l'inspiration, redressez le buste lentement pour revenir au centre. Relâchez les bras le long du corps, puis répétez l'exercice de l'autre côté ou prenez une posture de repos assise.",
+   "erreurs": [
+    "Erreur : La fesse opposée se soulève du sol. Correction : Ancrez l'ischion opposé avant d'aller plus loin dans l'inclinaison.",
+    "Erreur : La poitrine se referme vers le sol. Correction : Pivotez le cœur et l'épaule du haut légèrement vers le ciel.",
+    "Erreur : L'épaule du bras levé monte vers l'oreille. Correction : Relâchez l'omoplate vers le bas et créez de l'espace dans le cou."
+   ],
+   "version": 2,
+   "alignement": [
+    "Ancrez fermement vos deux ischions de manière égale dans le sol.",
+    "Gardez les jambes relâchées et les genoux pesant lourdement vers le bas.",
+    "Maintenez le bassin stable et neutre sans le laisser basculer sur le côté.",
+    "Alignez la colonne vertébrale dans le prolongement du bassin, sans vous tordre vers l'avant.",
+    "Éloignez les épaules des oreilles et ouvrez la poitrine de face.",
+    "Portez votre regard vers l'avant ou légèrement vers le haut sous le bras levé."
+   ],
+   "respiration": "À l'inspiration, grandissez-vous en allongeant la colonne vertébrale vers le ciel. À l'expiration, penchez-vous sur le côté en creusant légèrement le ventre pour approfondir l'étirement latéral en sécurité.",
+   "presentation": "L'étirement latéral assis est une flexion latérale qui cible la souplesse des flancs et de la cage thoracique. Elle permet d'allonger toute la chaîne latérale du corps et s'intègre idéalement au début ou au milieu de la séance pour préparer le buste. On y recherche l'espace entre les côtes et la détente des épaules.",
+   "variante_avancee": "Descendez l'avant-bras opposé entièrement au sol tout en gardant l'ischion opposé bien ancré, et tournez légèrement le regard vers le ciel.",
+   "variante_facilitee": "Asseyez-vous sur un bloc ou une couverture pliée si votre bassin bascule en arrière ou si vos genoux remontent trop haut."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:12:43.011262+00:00",
+  "maj_le": "2026-10-11T20:12:43.011262+00:00"
+ },
+ {
+  "posture_id": "P118",
+  "contenu": {
+   "tenue": [
+    "Maintenez une micro-flexion dans les genoux si vous ressentez la moindre tension dans le bas du dos.",
+    "À chaque expiration, visualisez votre cage thoracique qui s'avance un peu plus vers vos cuisses.",
+    "Restez détendu dans le visage et la mâchoire tout en gardant l'engagement actif des jambes."
+   ],
+   "entree": [
+    "Asseyez-vous au sol en Dandasana, les jambes tendues devant vous et le dos bien droit.",
+    "Retirez la chair des fessiers vers l'arrière pour bien sentir les os des ischions ancrés dans le sol.",
+    "Fléchissez légèrement les genoux si vos lombaires sont sensibles ou si vos ischio-jambiers sont tendus.",
+    "Placez éventuellement une sangle autour de l'avant de vos pieds, en tenant les deux extrémités dans vos mains.",
+    "Inspirez profondément en levant les bras vers le ciel pour étirer les flancs et grandir la colonne.",
+    "Expirez en basculant le bassin vers l'avant, en menant le mouvement à partir des hanches et non du bas du dos.",
+    "Saisissez vos pieds, vos chevilles ou les extrémités de la sangle selon votre souplesse.",
+    "Allongez le regard vers l'avant pour garder la nuque dans le prolongement de la colonne."
+   ],
+   "sortie": "Sur une inspiration, redressez le dos bien droit en vous aidant de la sangle ou des mains. Relâchez ensuite la posture et venez vous allonger en Savasana ou asseyez-vous un instant pour observer les sensations.",
+   "erreurs": [
+    "Erreur : Arrondir le haut du dos pour essayer d'attraper les pieds. Correction : Gardez le sternum ouvert, fléchissez les genoux et privilégiez un dos long.",
+    "Erreur : Bloquer la respiration dans l'effort. Correction : Maintenez un souffle fluide et régulier, en utilisant chaque expiration pour relâcher les tensions."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds flexes, orteils dirigés vers le ciel, jambes engagées pour protéger les genoux.",
+    "Bassin basculé vers l'avant, poids réparti uniformément sur les deux ischions.",
+    "Colonne vertébrale longue et étirée, cherchant à s'éloigner du bassin plutôt qu'à s'arrondir.",
+    "Épaules détendues et éloignées des oreilles, omoplates glissées doucement vers le bas du dos.",
+    "Regard porté vers les orteils ou le sol devant vous pour maintenir la nuque longue."
+   ],
+   "respiration": "À l'inspiration, allongez la colonne vertébrale en autograndissement. À l'expiration, initiez la bascule du bassin et laissez la flexion s'approfondir sans forcer.",
+   "presentation": "Bienvenue dans Paschimottanasana, la pince assise, une flexion avant profonde et symétrique. Cette posture étire l'ensemble de la chaîne postérieure, des talons jusqu'à la nuque, tout en calmant le système nerveux. Elle trouve naturellement sa place au cœur ou en fin de séance pour favoriser l'intériorisation.",
+   "variante_avancee": "Si les ischio-jambiers le permettent, tendez complètement les jambes tout en gardant le contact du ventre sur les cuisse et saisissez vos gros orteils avec les doigts en crochet.",
+   "variante_facilitee": "Gardez les genoux généreusement fléchis et placez une sangle autour de vos plantes de pieds pour maintenir le dos droit."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:13:17.843731+00:00",
+  "maj_le": "2026-10-11T20:13:17.843731+00:00"
+ },
+ {
+  "posture_id": "P029",
+  "contenu": {
+   "tenue": [
+    "Gardez une respiration fluide et sans à-coups tout au long de la série.",
+    "Maintenez la conscience ancrée dans l'articulation en train de bouger.",
+    "Observez l'absence de douleur et respectez l'amplitude naturelle du jour."
+   ],
+   "entree": [
+    "Asseyez-vous sur le tapis en allongeant les jambes devant vous dans le bâton, Dandasana.",
+    "Placez les mains légèrement en arrière du bassin pour soutenir le dos sans tasser les épaules.",
+    "Fermez doucement les yeux pour porter l'attention vers l'intérieur et le corps en mouvement.",
+    "Commencez par les orteils en les fléchissant puis en les écartant.",
+    "Passez ensuite aux chevilles en effectuant des flexions et des extensions, puis des rotations.",
+    "Remontez vers les genoux et les poignets en répétant des mouvements circulaires lents.",
+    "Poursuivez avec les épaules et le cou selon le même principe de conscience articulaire."
+   ],
+   "sortie": "Allongez-vous un instant en Savasana pour observer les sensations globales dans le corps. Prenez le temps d'accueillir la libre circulation de l'énergie avant de passer à la suite de la pratique.",
+   "erreurs": [
+    "Erreur : Précipiter les mouvements. Correction : Ralentissez pour lier chaque geste à un cycle respiratoire complet.",
+    "Erreur : Arrondir le bas du dos dans les postures assises. Correction : Pliez légèrement les genoux ou utilisez un support sous le bassin pour grandir la colonne."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pieds et chevilles : gardez les talons ancrés et dessinez de grands cercles fluides.",
+    "Jambes : maintenez les cuisses engagées et la longueur dans toute la jambe.",
+    "Bassin : restez bien posé sur les ischions pour garder le buste redressé.",
+    "Colonne vertébrale : autograndissez-vous du coccyx jusqu'au sommet de la tête.",
+    "Épaules : éloignez les épaules des oreilles et ouvrez la poitrine.",
+    "Regard : portez le regard vers l'avant ou gardez les yeux clos pour plus d'intériorité."
+   ],
+   "respiration": "Respirez lentement et naturellement par le nez en coordonnant le mouvement avec le souffle. Inspirez dans l'ouverture ou l'extension, et expirez dans la fermeture ou la flexion pour accompagner le relâchement.",
+   "presentation": "Pawanmuktasana est une série de mouvements doux visant à libérer les tensions articulaires et énergétiques. Elle s'effectue au sol, en mobilisant chaque articulation de manière méthodique pour réchauffer le corps. Elle trouve idéalement sa place en début de séance pour préparer l'ensemble de la structure.",
+   "variante_avancee": "Amplifiez l'amplitude des cercles articulaires et maintenez une conscience accrue sur le souffle subtil et l'immobilité entre les mouvements.",
+   "variante_facilitee": "Effectuez les mouvements de rotation des chevilles et des poignets en position assise sur une chaise si le sol est inconfortable."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:47:35.541354+00:00",
+  "maj_le": "2026-10-11T20:47:35.541354+00:00"
+ },
+ {
+  "posture_id": "P064",
+  "contenu": {
+   "tenue": [
+    "Maintenez une pression ferme dans le talon arrière pour garder la jambe active.",
+    "Gardez le centre engagé pour soutenir le bas du dos.",
+    "Portez votre attention sur l'ouverture de l'aine droite et la force ancrée de la cuisse gauche."
+   ],
+   "entree": [
+    "Placez-vous debout à l'avant de votre tapis, pieds ancrés à la largeur du bassin.",
+    "Inspirez et faites un grand pas en arrière avec le pied droit.",
+    "Déposez l'avant-pied droit au sol, talon haut décollé, jambe arrière bien tendue.",
+    "Fléchissez le genou gauche à l'aplomb de votre cheville gauche, cuisse parallèle au sol.",
+    "Basculez le bassin de face, en ramenant la hanche droite vers l'avant et la gauche vers l'arrière.",
+    "Contractez le fessier de la jambe arrière pour stabiliser le bas du bassin.",
+    "Inspirez en levant les bras de chaque côté des oreilles, paumes face à face.",
+    "Détendez les épaules loin des oreilles tout en maintenant l'énergie dans le bout des doigts."
+   ],
+   "sortie": "À l'expiration prochaine, ramenez les mains de chaque côté du pied avant et poussez sur les jambes pour ramener le pied arrière à l'avant du tapis en position debout. Prenez un instant de pause en posture de repos debout avant de répéter l'enchaînement de l'autre côté.",
+   "erreurs": [
+    "Genou avant qui dépasse la cheville : avancez le pied arrière pour garder le tibia vertical.",
+    "Talon arrière qui s'effondre vers l'intérieur : poussez activement le talon vers l'arrière.",
+    "Bas du dos excessivement creusé : engagez le bas-ventre et activez le fessier arrière pour redresser le bassin."
+   ],
+   "version": 2,
+   "alignement": [
+    "Pied avant solidement ancré, tous les orteils étalés au sol.",
+    "Genou avant aligné précisément au-dessus de la cheville, sans dépasser.",
+    "Jambe arrière active, genou levé vers le ciel et talon fermement pressé vers l'arrière.",
+    "Bassin neutre et orienté vers l'avant du tapis, pubis légèrement remonté.",
+    "Colonne vertébrale étirée vers le haut, cage ouverte.",
+    "Regard fixé à l'horizon devant vous pour préserver l'équilibre."
+   ],
+   "respiration": "Respirez amplement par le nez, de manière fluide et continue. À l'inspiration, grandissez la colonne et étirez les bras vers le ciel, puis à l'expiration, ancréz les pieds dans le sol et descendez le bassin avec stabilité.",
+   "presentation": "Ashta Chandrasana, la fente haute, est une posture debout puissante qui renforce les jambes et ouvre l'avant du corps. Elle développe l'équilibre, la stabilité et engage profondément les fléchisseurs de hanche. On la place généralement au cœur de la séance pour dynamiser le flux énergétique.",
+   "variante_avancee": "Pour intensifier l'exercice, cherchez une légère extension de la colonne vertébrale en basculant le haut du buste vers l'arrière depuis le haut du dos, tout en maintenant le bassin bien stable.",
+   "variante_facilitee": "Posez délicatement le genou arrière au sol pour alléger le travail d'équilibre et diminuer l'intensité sur le psoas, tout en gardant l'engagement du haut du corps."
+  },
+  "statut": "validee",
+  "modele": "gemini-3.5-flash-lite",
+  "valide_par": null,
+  "cree_le": "2026-10-11T20:47:51.76018+00:00",
+  "maj_le": "2026-10-11T20:47:51.76018+00:00"
+ }
+]

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { STYLES, DUREES, PAR_ID } from '../bibliotheque.js';
+import { STYLES, DUREES, PAR_ID, nom } from '../bibliotheque.js';
 import { Logo, Livre, Cible } from './Icones.jsx';
 import ChoixCible from './ChoixCible.jsx';
 
@@ -106,7 +106,7 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
         {erreur && <p className="erreur" role="alert">{erreur}</p>}
         <button type="submit" className="composer" disabled={chargement}>
           <span>{chargement ? 'Composition…' : 'Composer'}</span>
-          <small>{COURT[style] || style} · {duree}′{cible ? ` · ${cible.fr}` : ''} →</small>
+          <small>{COURT[style] || style} · {duree}′{cible ? ` · ${nom(cible)}` : ''} →</small>
         </button>
       </footer>
     </form>

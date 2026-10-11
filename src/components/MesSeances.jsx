@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { listerSeances, supprimerSeance, donneesLocales, transfererDonneesLocales } from '../stockage.js';
 import { connexionParMotDePasse, deconnexion } from '../supabase.js';
 import { Retour, Poubelle } from './Icones.jsx';
-import { PAR_ID } from '../bibliotheque.js';
+import { PAR_ID, nom } from '../bibliotheque.js';
 
 function Connexion() {
   const [email, setEmail] = useState('');
@@ -109,7 +109,7 @@ export default function MesSeances({ compte, onRetour, onOuvrir }) {
             <button type="button" className="ligne-lien" onClick={() => onOuvrir(s)}>
               <span className="ligne-texte">
                 <span className="ligne-nom">{s.style} · {s.duree} min · {s.niveau}</span>
-                {s.cibleId && PAR_ID.get(s.cibleId) && <span className="ligne-infos">Objectif : {PAR_ID.get(s.cibleId).fr}</span>}
+                {s.cibleId && PAR_ID.get(s.cibleId) && <span className="ligne-infos">Objectif : {nom(PAR_ID.get(s.cibleId))}</span>}
                 <span className="ligne-infos">{s.titre || s.theme || ''}</span>
                 {s.enregistreeLe && <span className="ligne-infos">{new Date(s.enregistreeLe).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>}
               </span>

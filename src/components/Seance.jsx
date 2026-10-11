@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PAR_ID, bilanZones, alternatives, dureeParDefaut } from '../bibliotheque.js';
+import { PAR_ID, bilanZones, alternatives, dureeParDefaut, nom } from '../bibliotheque.js';
 import Picto from './Picto.jsx';
 import { Retour, Remplacer, Attention, Valide, Points, Imprimer, Etincelle, Fermer } from './Icones.jsx';
 
@@ -20,7 +20,7 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
   const pic = seance.phases.find((ph) => ph.phase === 'Pic');
   const vedette = cible || pic?.items.at(-1)?.posture || seance.phases.flatMap((ph) => ph.items).at(0)?.posture;
   // (pas d'article devant le nom : « le Roue » serait faux, d'où « Objectif » en surtitre)
-  const titre = cible ? cible.fr : seance.titre || seance.style;
+  const titre = cible ? nom(cible) : seance.titre || seance.style;
 
   const remplacer = (iPhase, iItem) => {
     const item = seance.phases[iPhase].items[iItem];
@@ -93,13 +93,13 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
                   <Picto famille={it.posture.famille} taille={38} />
                   <span className="ligne-texte">
                     {it.role && it.role !== 'cible' && <span className="role">{ROLES[it.role]}</span>}
-                    <span className="ligne-nom">{it.posture.fr}</span>
+                    <span className="ligne-nom">{nom(it.posture)}</span>
                     {it.note && <span className="ligne-note">{it.note}</span>}
                   </span>
                   <span className="duree-ligne">{court(it.duree)}</span>
                 </button>
                 {remplacement && it.role !== 'cible' && (
-                  <button type="button" className="rond nu" aria-label={`Remplacer ${it.posture.fr}`} onClick={() => remplacer(i, j)}><Remplacer /></button>
+                  <button type="button" className="rond nu" aria-label={`Remplacer ${nom(it.posture)}`} onClick={() => remplacer(i, j)}><Remplacer /></button>
                 )}
               </div>
             ))}

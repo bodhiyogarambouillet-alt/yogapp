@@ -1,9 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import Picto from './Picto.jsx';
+import { nom, nomSecondaire } from '../bibliotheque.js';
 import { Retour, Attention, Valide, Etincelle } from './Icones.jsx';
 import { obtenirFiche, regenererFiche, enregistrerFiche, revenirReference as revenirRef, aUneReference } from '../stockage.js';
 
+// Listes éditées une ligne par élément
+const CHAMPS_LISTE = [
+  ['entree', 'Entrée dans la posture', 'une étape par ligne', 6],
+  ['alignement', "Points d'alignement", 'un par ligne', 4],
+  ['tenue', 'Pendant la posture', 'une consigne par ligne', 3],
+  ['erreurs', 'Erreurs fréquentes', 'une par ligne', 3],
+];
+
 const CHAMPS_TEXTE = [
+  ['presentation', 'Présentation'],
   ['respiration', 'Respiration'],
   ['sortie', 'Sortie'],
   ['variante_facilitee', 'Variante facilitée'],
@@ -53,15 +63,14 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
   const commencerEdition = () => {
     const f = etat.fiche;
     setEdition({
-      entree: (f.entree || []).join('\n'),
-      alignement: (f.alignement || []).join('\n'),
+      ...Object.fromEntries(CHAMPS_LISTE.map(([k]) => [k, (f[k] || []).join('\n')])),
       ...Object.fromEntries(CHAMPS_TEXTE.map(([k]) => [k, f[k] || ''])),
     });
   };
 
   const enregistrerEdition = async () => {
     const lignes = (t) => t.split('\n').map((s) => s.trim()).filter(Boolean);
-    const fiche = { ...etat.fiche, ...edition, entree: lignes(edition.entree), alignement: lignes(edition.alignement), mode: 'gemini' };
+    const fiche = { ...etat.fiche, ...edition, ...Object.fromEntries(CHAMPS_LISTE.map(([k]) => [k, lignes(edition[k])])), mode: 'gemini' };
     await executer(() => enregistrerFiche(posture.id, fiche, true));
     setEdition(null);
   };
@@ -79,8 +88,8 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
 
       <section className="fiche-tete">
         <div className="arche grande"><Picto famille={posture.famille} taille={130} /></div>
-        <h1>{posture.fr}</h1>
-        <p className="sous">{[posture.sanskrit, posture.en, `niveau ${posture.niveau}`].filter(Boolean).join(' · ')}</p>
+        <h1>{nom(posture)}</h1>
+        <p className="sous">{[nomSecondaire(posture), posture.en, `niveau ${posture.niveau}`].filter(Boolean).join(' · ')}</p>
         {posture.zones?.length > 0 && (
           <div className="badges" aria-label="Zones sollicitées">
             {posture.zones.map((z) => <span key={z} className="badge">{z}</span>)}
@@ -110,6 +119,12 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
 
         {f && !edition && (
           <>
+            {f.presentation && (
+              <div className="carte">
+                <h2>La posture</h2>
+                <p>{f.presentation}</p>
+              </div>
+            )}
             <div className="carte">
               <h2>Entrée</h2>
               <ol>{(f.entree || []).map((t, i) => <li key={i}>{t}</li>)}</ol>
@@ -118,6 +133,18 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
               <div className="carte">
                 <h2>Repères</h2>
                 <ul>{f.alignement.map((t, i) => <li key={i}>{t}</li>)}</ul>
+              </div>
+            )}
+            {f.tenue?.length > 0 && (
+              <div className="carte">
+                <h2>Pendant la posture</h2>
+                <ul>{f.tenue.map((t, i) => <li key={i}>{t}</li>)}</ul>
+              </div>
+            )}
+            {f.erreurs?.length > 0 && (
+              <div className="carte">
+                <h2>Erreurs fréquentes</h2>
+                <ul>{f.erreurs.map((t, i) => <li key={i}>{t}</li>)}</ul>
               </div>
             )}
             {(f.respiration || f.sortie) && (
@@ -138,14 +165,13 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
 
         {edition && (
           <div className="carte edition">
-            <label>Entrée dans la posture <small>(une étape par ligne)</small>
-              <textarea rows="5" value={edition.entree} onChange={(e) => setEdition({ ...edition, entree: e.target.value })} />
-            </label>
-            <label>Points d'alignement <small>(un par ligne)</small>
-              <textarea rows="3" value={edition.alignement} onChange={(e) => setEdition({ ...edition, alignement: e.target.value })} />
-            </label>
-            {CHAMPS_TEXTE.map(([k, nom]) => (
-              <label key={k}>{nom}
+            {CHAMPS_LISTE.map(([k, nomChamp, aide, lignes]) => (
+              <label key={k}>{nomChamp} <small>({aide})</small>
+                <textarea rows={lignes} value={edition[k]} onChange={(e) => setEdition({ ...edition, [k]: e.target.value })} />
+              </label>
+            ))}
+            {CHAMPS_TEXTE.map(([k, nomChamp]) => (
+              <label key={k}>{nomChamp}
                 <textarea rows="2" value={edition[k]} onChange={(e) => setEdition({ ...edition, [k]: e.target.value })} />
               </label>
             ))}

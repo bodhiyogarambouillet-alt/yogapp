@@ -86,8 +86,13 @@ export async function supprimerSeance(uid) {
 // ---------- Fiches « Comment faire ? » ----------
 // Forme renvoyée aux écrans : { fiche, validee, source: 'base' | 'locale' | 'reference' }
 
-const CHAMPS = ['entree', 'alignement', 'respiration', 'sortie', 'variante_facilitee', 'variante_avancee'];
-const contenuDe = (fiche) => Object.fromEntries(CHAMPS.map((k) => [k, fiche[k] ?? (k === 'entree' || k === 'alignement' ? [] : '')]));
+const LISTES = ['entree', 'alignement', 'tenue', 'erreurs'];
+const CHAMPS = [...LISTES, 'presentation', 'respiration', 'sortie', 'variante_facilitee', 'variante_avancee'];
+const VERSION_FICHE = 2; // même valeur que lib/fiche.js
+const contenuDe = (fiche) => ({
+  ...Object.fromEntries(CHAMPS.map((k) => [k, fiche[k] ?? (LISTES.includes(k) ? [] : '')])),
+  ...(fiche.version ? { version: fiche.version } : {}),
+});
 
 async function appelApi(corps) {
   const r = await fetch('/api/fiche-posture', {
@@ -107,7 +112,8 @@ export async function obtenirFiche(id, contexte) {
     return { fiche: data, validee: data.statut === 'validee', source: 'base' };
   }
   const locale = lire(`${PREFIXE_FICHE}${id}`, null);
-  if (locale) return { ...locale, source: 'locale' };
+  // Fiche locale d'un ancien format, jamais modifiée à la main : on la régénère
+  if (locale && (locale.modifiee || (locale.fiche?.version || 1) >= VERSION_FICHE)) return { ...locale, source: 'locale' };
   if (FICHES_REFERENCE[id]) return { fiche: FICHES_REFERENCE[id], validee: true, source: 'reference' };
   const data = await appelApi({ id, style: contexte?.style, niveau: contexte?.niveau });
   if (data.mode === 'gemini') ecrire(`${PREFIXE_FICHE}${id}`, { fiche: data, validee: true });
@@ -134,7 +140,7 @@ export async function enregistrerFiche(id, fiche, validee) {
     if (!data?.length) throw new Error('Modification refusée : ce compte n’est pas administrateur.');
     return { fiche, validee, source: 'base' };
   }
-  ecrire(`${PREFIXE_FICHE}${id}`, { fiche, validee });
+  ecrire(`${PREFIXE_FICHE}${id}`, { fiche, validee, modifiee: true });
   return { fiche, validee, source: 'locale' };
 }
 

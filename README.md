@@ -76,7 +76,7 @@ Dans la séance, la cible, ses préparations et sa contre-posture sont étiquet�
 | Secours | `gemini-3.5-flash-lite` | `GEMINI_MODEL_SECOURS` |
 
 L'appli bascule sur le modèle de secours si le principal :
-- met trop de temps à répondre (20 s pour une séance, 12 s pour une fiche — réglables avec `GEMINI_DELAI_SEANCE_MS` et `GEMINI_DELAI_FICHE_MS`) ;
+- met trop de temps à répondre (20 s pour une séance comme pour une fiche — réglables avec `GEMINI_DELAI_SEANCE_MS` et `GEMINI_DELAI_FICHE_MS`) ;
 - est surchargé ou renvoie une erreur serveur (429, 500, 503…) ;
 - renvoie un JSON illisible.
 

@@ -21,6 +21,10 @@ export async function chargerBibliotheque() {
   lignes.forEach((p) => PAR_ID.set(p.id, p));
   return 'supabase';
 }
+// Nom affiché : sanskrit d'abord, nom français en second (repli sur le français sans sanskrit)
+export const nom = (p) => p.sanskrit || p.fr;
+export const nomSecondaire = (p) => (p.sanskrit ? p.fr : null);
+
 export const STYLES = Object.keys(structures.styles);
 export const NIVEAUX = [
   { nom: 'Débutant', aide: 'Postures de niveau 1' },
@@ -89,7 +93,7 @@ export function dureeParDefaut(p) {
 
 export function infos(item) {
   const p = item.posture;
-  return [p.sanskrit, item.duree, p.cotes ? 'droite + gauche' : null, p.accessoires ? p.accessoires.toLowerCase() : null]
+  return [nomSecondaire(p), item.duree, p.cotes ? 'droite + gauche' : null, p.accessoires ? p.accessoires.toLowerCase() : null]
     .filter(Boolean)
     .join(' · ');
 }

@@ -1,5 +1,5 @@
 import { useId, useState } from 'react';
-import { rechercherPostures, NIVEAU_MAX } from '../bibliotheque.js';
+import { rechercherPostures, NIVEAU_MAX, nom, nomSecondaire } from '../bibliotheque.js';
 import Picto from './Picto.jsx';
 
 // Champ « Posture cible » : recherche dans la bibliothèque, une seule posture sélectionnable.
@@ -23,10 +23,10 @@ export default function ChoixCible({ cible, onChange, style, niveau }) {
         <div className="cible-carte">
           <Picto famille={cible.famille} taille={44} />
           <span className="ligne-texte">
-            <span className="ligne-nom">{cible.fr}</span>
-            <span className="ligne-infos">{[cible.sanskrit, `niveau ${cible.niveau}`, cible.famille].filter(Boolean).join(' · ')}</span>
+            <span className="ligne-nom">{nom(cible)}</span>
+            <span className="ligne-infos">{[nomSecondaire(cible), `niveau ${cible.niveau}`, cible.famille].filter(Boolean).join(' · ')}</span>
           </span>
-          <button type="button" className="rond nu" aria-label={`Retirer la posture cible ${cible.fr}`} onClick={() => onChange(null)}>
+          <button type="button" className="rond nu" aria-label={`Retirer la posture cible ${nom(cible)}`} onClick={() => onChange(null)}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
           </button>
         </div>
@@ -57,8 +57,8 @@ export default function ChoixCible({ cible, onChange, style, niveau }) {
               <button type="button" onClick={() => choisir(p)}>
                 <Picto famille={p.famille} taille={36} />
                 <span className="ligne-texte">
-                  <span className="ligne-nom">{p.fr}</span>
-                  <span className="ligne-infos">{[p.sanskrit, `niveau ${p.niveau}`, p.styles.includes(style) ? null : 'hors style'].filter(Boolean).join(' · ')}</span>
+                  <span className="ligne-nom">{nom(p)}</span>
+                  <span className="ligne-infos">{[nomSecondaire(p), `niveau ${p.niveau}`, p.styles.includes(style) ? null : 'hors style'].filter(Boolean).join(' · ')}</span>
                 </span>
               </button>
             </li>

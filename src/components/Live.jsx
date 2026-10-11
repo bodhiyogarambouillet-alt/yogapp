@@ -18,27 +18,32 @@ function useFiches(seance) {
   return { fiches, charger };
 }
 
-// Mini résumé de la posture : repères clés, respiration, précautions ; l'entrée en dépliant
+// Mini résumé de la posture, plié par défaut : repères clés, respiration, précautions, entrée dans la posture
 function Resume({ posture, fiche }) {
-  const [entree, setEntree] = useState(false);
-  useEffect(() => setEntree(false), [posture.id]);
-  if (fiche === undefined) return <div className="live-resume chargement-resume" aria-live="polite">Chargement des repères…</div>;
+  const [ouvert, setOuvert] = useState(false);
+  useEffect(() => setOuvert(false), [posture.id]);
   const reperes = fiche?.alignement || [];
-  if (!fiche && !posture.precautions) return null;
+  if (fiche !== undefined && !fiche && !posture.precautions) return null;
   return (
-    <div className="live-resume" key={posture.id}>
-      {reperes.length > 0 && (
-        <ul className="live-reperes">{reperes.slice(0, 3).map((r, i) => <li key={i}>{r}</li>)}</ul>
-      )}
-      {fiche?.respiration && <p className="live-souffle"><strong>Souffle :</strong> {fiche.respiration}</p>}
-      {posture.precautions && <p className="live-precaution"><Attention /> {posture.precautions}</p>}
-      {fiche?.entree?.length > 0 && (
-        <>
-          <button type="button" className="lien" aria-expanded={entree} onClick={() => setEntree(!entree)}>
-            {entree ? 'Masquer l’entrée dans la posture' : 'Comment s’installer'}
-          </button>
-          {entree && <ol className="live-entree">{fiche.entree.map((t, i) => <li key={i}>{t}</li>)}</ol>}
-        </>
+    <div className={`live-resume ${ouvert ? 'ouvert' : ''}`} key={posture.id}>
+      <button type="button" className="live-resume-tete" aria-expanded={ouvert} onClick={() => setOuvert(!ouvert)}>
+        <span>Résumé de la posture</span>
+        {posture.precautions && <span className="live-resume-alerte" aria-label="Précautions"><Attention /></span>}
+        <span className="live-resume-fleche" aria-hidden="true">▾</span>
+      </button>
+      {ouvert && (
+        <div className="live-resume-corps">
+          {fiche === undefined && <p className="aide chargement-resume">Chargement des repères…</p>}
+          {reperes.length > 0 && <ul className="live-reperes">{reperes.slice(0, 3).map((r, i) => <li key={i}>{r}</li>)}</ul>}
+          {fiche?.respiration && <p className="live-souffle"><strong>Souffle :</strong> {fiche.respiration}</p>}
+          {posture.precautions && <p className="live-precaution"><Attention /> {posture.precautions}</p>}
+          {fiche?.entree?.length > 0 && (
+            <>
+              <p className="live-sous-titre">Comment s’installer</p>
+              <ol className="live-entree">{fiche.entree.map((t, i) => <li key={i}>{t}</li>)}</ol>
+            </>
+          )}
+        </div>
       )}
     </div>
   );

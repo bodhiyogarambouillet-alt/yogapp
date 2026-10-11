@@ -419,3 +419,6 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .repli-options.ouvert > .options > :nth-child(6) { transition-delay: 0.2s; }
 .repli-options.ouvert > .options > :nth-child(n+7) { transition-delay: 0.24s; }
 .repli-options > .options { padding-top: 4px; }
+
+/* Statut de la fiche, sous les boutons Modifier / Régénérer */
+.pied.deux .statut-fiche { grid-column: 1 / -1; min-height: 32px; padding: 4px 12px; font-size: 13px; }

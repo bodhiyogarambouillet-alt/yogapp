@@ -82,6 +82,13 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
   useRetour(Boolean(edition), () => setEdition(null), 1);
 
   const f = etat?.fiche;
+  // Statut affiché sous les boutons Modifier / Régénérer (ou en bas de page sans ces boutons)
+  const statut = f && f.mode === 'gemini' && !chargement && (
+    <div className="statut ok statut-fiche">
+      <Valide />
+      <span>{etat.source === 'reference' ? 'Fiche de référence de votre bibliothèque' : 'Fiche enregistrée'}</span>
+    </div>
+  );
   const tenue = posture.minutes ? `${posture.minutes} min` : posture.respirations ? `${posture.respirations} respirations` : '';
 
   return (
@@ -110,14 +117,6 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
         </p>
       )}
 
-      {f && f.mode === 'gemini' && (
-        <section className="bloc serre">
-          <div className="statut ok">
-            <Valide />
-            <span>{etat.source === 'reference' ? 'Fiche de référence de votre bibliothèque' : 'Fiche enregistrée'}</span>
-          </div>
-        </section>
-      )}
 
       <section className="cartes">
         {chargement && <div className="carte chargement" aria-live="polite">Rédaction de la fiche…</div>}
@@ -202,6 +201,8 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
 
       <div className="ressort" />
 
+      {!peutModifier && statut && <section className="bloc serre">{statut}</section>}
+
       {f && f.mode === 'gemini' && !peutModifier && compte?.actif && !compte.email && (
         <p className="fiche-liens">Connectez-vous en tant qu'administrateur (écran « Mes séances ») pour modifier ou régénérer les fiches.</p>
       )}
@@ -219,6 +220,7 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
               <button type="button" className="principal" onClick={regenerer}><Etincelle /> Régénérer</button>
             </>
           )}
+          {!edition && statut}
         </footer>
       )}
     </div>

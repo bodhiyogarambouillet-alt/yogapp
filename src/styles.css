@@ -390,3 +390,13 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 /* Commandes toujours visibles en bas de l'écran pendant le direct */
 .live-commandes { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; z-index: 5; padding-bottom: calc(24px + var(--bas)); }
 .live { padding-bottom: 140px; }
+
+/* Export de la séance */
+.voile { position: fixed; inset: 0; z-index: 20; background: rgba(46, 38, 34, 0.35); display: flex; align-items: flex-end; justify-content: center; animation: apparition 0.2s ease both; }
+.feuille { width: 100%; max-width: 480px; padding: 22px 16px calc(20px + var(--bas)); border-radius: 26px 26px 0 0; background: var(--fond); display: flex; flex-direction: column; gap: 10px; animation: glisse-haut 0.3s ease both; }
+.feuille h2 { margin: 0 8px 4px; font-size: 22px; }
+.choix-export { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 14px 18px; border: none; border-radius: 18px; background: var(--surface); text-align: left; }
+.choix-export strong { font-size: 16px; }
+.choix-export span { font-size: 13px; color: var(--texte-doux); }
+.feuille .lien { align-self: center; }
+@keyframes glisse-haut { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }

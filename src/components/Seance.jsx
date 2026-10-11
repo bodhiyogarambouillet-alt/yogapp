@@ -5,7 +5,8 @@ import Picto from './Picto.jsx';
 import { dateDe } from '../dates.js';
 import Live from './Live.jsx';
 import { useRetour } from '../natif.js';
-import { Retour, Remplacer, Attention, Valide, Points, Imprimer, Etincelle, Fermer, Lecture } from './Icones.jsx';
+import { Retour, Remplacer, Attention, Valide, Points, Exporter, Etincelle, Fermer, Lecture } from './Icones.jsx';
+import { exporterSeance } from '../export.js';
 
 // Durées plus compactes dans la liste (le détail reste dans la fiche)
 const court = (d) => (d || '').replace(/respirations?/i, 'resp.').replace(/droite \+ gauche/i, 'D + G');
@@ -47,6 +48,8 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
   const [live, setLive] = useState(false); // déroulé en direct, avec minuteur
   const [edition, setEdition] = useState(false); // modifier la séance : ordre, durées, notes, ajouts, suppressions
   const [ajoutPhase, setAjoutPhase] = useState(null); // index de la phase où l'on ajoute une posture
+  const [exportOuvert, setExportOuvert] = useState(false); // choix du format d'export
+  const [exportEnCours, setExportEnCours] = useState(null); // format en cours de préparation
 
   const nbPostures = seance.phases.reduce((s, ph) => s + ph.items.length, 0);
   const total = seance.phases.reduce((s, ph) => s + ph.minutes, 0);
@@ -73,8 +76,9 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
   const action = (fn) => () => { setMenu(false); fn(); };
 
   // Retour d'Android : ferme d'abord le menu, l'ajout de posture, puis les modes édition / remplacement
-  useRetour(!live && (menu || edition || remplacement), () => {
-    if (menu) setMenu(false);
+  useRetour(!live && (menu || edition || remplacement || exportOuvert), () => {
+    if (exportOuvert) setExportOuvert(false);
+    else if (menu) setMenu(false);
     else if (ajoutPhase !== null) setAjoutPhase(null);
     else { setEdition(false); setRemplacement(false); }
   }, 1);
@@ -121,8 +125,34 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
         <div className="menu" role="menu">
           <button type="button" role="menuitem" onClick={action(() => { setEdition(!edition); setRemplacement(false); setAjoutPhase(null); })}><Points /> {edition ? 'Terminer les modifications' : 'Modifier la séance'}</button>
           <button type="button" role="menuitem" onClick={action(() => { setRemplacement(!remplacement); setEdition(false); })}><Remplacer /> {remplacement ? 'Terminer les remplacements' : 'Remplacer des postures'}</button>
-          <button type="button" role="menuitem" onClick={action(() => window.print())}><Imprimer /> Imprimer</button>
+          <button type="button" role="menuitem" onClick={action(() => setExportOuvert(true))}><Exporter /> Exporter</button>
           <button type="button" role="menuitem" onClick={action(onRegenerer)} disabled={chargement}><Etincelle /> Autre version</button>
+        </div>
+      )}
+
+      {exportOuvert && (
+        <div className="voile" onClick={() => !exportEnCours && setExportOuvert(false)}>
+          <div className="feuille" role="dialog" aria-label="Exporter la séance" onClick={(e) => e.stopPropagation()}>
+            <h2>Exporter la séance</h2>
+            {[['texte', 'Texte', 'À coller dans un message ou une note'], ['pdf', 'PDF', 'À imprimer ou à envoyer'], ['image', 'Image', 'Une image à partager']].map(([f, titre, aide]) => (
+              <button type="button" key={f} className="choix-export" disabled={Boolean(exportEnCours)}
+                onClick={async () => {
+                  setExportEnCours(f);
+                  try {
+                    await exporterSeance(seance, f);
+                    setExportOuvert(false);
+                  } catch (e) {
+                    window.alert(`Export impossible : ${e.message}`);
+                  } finally {
+                    setExportEnCours(null);
+                  }
+                }}>
+                <strong>{exportEnCours === f ? 'Préparation…' : titre}</strong>
+                <span>{aide}</span>
+              </button>
+            ))}
+            <button type="button" className="lien" onClick={() => setExportOuvert(false)} disabled={Boolean(exportEnCours)}>Annuler</button>
+          </div>
         </div>
       )}
 

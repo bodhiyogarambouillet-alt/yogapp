@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Formulaire from './components/Formulaire.jsx';
 import Seance from './components/Seance.jsx';
 import Fiche from './components/Fiche.jsx';
 import MesSeances from './components/MesSeances.jsx';
-import { PAR_ID } from './bibliotheque.js';
-import { enregistrerSeance, listerSeances } from './stockage.js';
+import { PAR_ID, chargerBibliotheque } from './bibliotheque.js';
+import { enregistrerSeance } from './stockage.js';
+import { supabase, enteteAuth } from './supabase.js';
 
 // Recolle les données de la bibliothèque sur chaque posture (utile pour les séances enregistrées)
 function hydrater(seance) {
@@ -18,6 +19,7 @@ function hydrater(seance) {
 }
 
 export default function App() {
+  const [pret, setPret] = useState(false);
   const [vue, setVue] = useState('formulaire'); // formulaire | seance | fiche | mes-seances
   const [params, setParams] = useState(null);
   const [seance, setSeance] = useState(null);
@@ -25,6 +27,30 @@ export default function App() {
   const [chargement, setChargement] = useState(false);
   const [erreur, setErreur] = useState(null);
   const [enregistree, setEnregistree] = useState(false);
+  // Compte : { actif: Supabase configuré, email, admin }
+  const [compte, setCompte] = useState({ actif: Boolean(supabase), email: null, admin: false });
+
+  // Bibliothèque (Supabase ou copie locale) avant le premier affichage
+  useEffect(() => {
+    chargerBibliotheque().finally(() => setPret(true));
+  }, []);
+
+  // Session Supabase : connexion par lien email, statut admin vérifié côté serveur
+  useEffect(() => {
+    if (!supabase) return undefined;
+    const majCompte = async (session) => {
+      if (!session) { setCompte({ actif: true, email: null, admin: false }); return; }
+      let admin = false;
+      try {
+        const r = await fetch('/api/moi', { headers: await enteteAuth() });
+        admin = Boolean((await r.json()).user?.admin);
+      } catch { /* hors ligne : pas de droits admin */ }
+      setCompte({ actif: true, email: session.user.email, admin });
+    };
+    supabase.auth.getSession().then(({ data }) => majCompte(data.session));
+    const { data } = supabase.auth.onAuthStateChange((_evt, session) => { majCompte(session); });
+    return () => data.subscription.unsubscribe();
+  }, []);
 
   const aller = (v) => { setVue(v); window.scrollTo(0, 0); };
 
@@ -53,11 +79,18 @@ export default function App() {
 
   const modifierSeance = (s) => { setSeance(s); setEnregistree(false); };
 
-  const enregistrer = () => {
-    const allegee = { ...seance, phases: seance.phases.map((ph) => ({ ...ph, items: ph.items.map(({ posture: _p, ...it }) => it) })) };
-    if (enregistrerSeance(allegee)) setEnregistree(true);
+  const enregistrer = async () => {
+    try {
+      await enregistrerSeance(seance);
+      setEnregistree(true);
+    } catch (e) {
+      window.alert(`Enregistrement impossible : ${e.message}`);
+    }
   };
 
+  if (!pret) {
+    return <div className="ecran chargement-ecran" aria-live="polite"><p className="chargement">Chargement de la bibliothèque…</p></div>;
+  }
   if (vue === 'seance' && seance) {
     return (
       <Seance seance={seance} chargement={chargement} enregistree={enregistree}
@@ -69,16 +102,16 @@ export default function App() {
     );
   }
   if (vue === 'fiche' && posture) {
-    return <Fiche posture={posture} contexte={seance} onRetour={() => aller(seance ? 'seance' : 'formulaire')} />;
+    return <Fiche posture={posture} contexte={seance} compte={compte} onRetour={() => aller(seance ? 'seance' : 'formulaire')} />;
   }
   if (vue === 'mes-seances') {
     return (
-      <MesSeances onRetour={() => aller('formulaire')}
+      <MesSeances compte={compte} onRetour={() => aller('formulaire')}
         onOuvrir={(s) => {
           const s2 = hydrater(s);
           setSeance(s2);
           setParams({ style: s2.style, duree: s2.duree, niveau: s2.niveau, theme: s2.theme || '', cibleId: s2.cibleId || null });
-          setEnregistree(listerSeances().some((x) => x.uid === s2.uid));
+          setEnregistree(true);
           aller('seance');
         }} />
     );

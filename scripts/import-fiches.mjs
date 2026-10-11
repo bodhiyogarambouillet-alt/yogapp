@@ -1,9 +1,11 @@
-// Intègre un export de fiches validées dans la bibliothèque de l'appli (src/data/fiches.json).
-// Ces fiches deviennent la référence sur tous les appareils après le prochain déploiement.
+// Intègre un export de fiches validées :
+// - avec Supabase (.env.local) : directement dans la table `fiches`, statut « validée » ;
+// - sinon : dans src/data/fiches.json, la référence livrée avec l'appli au prochain déploiement.
 // Usage : npm run import-fiches chemin/vers/fiches-validees-AAAA-MM-JJ.json
 // Une fiche déjà présente avec le même identifiant est remplacée.
 
 import { readFileSync, writeFileSync } from 'node:fs';
+import { supabaseConfigure, upsert } from './supabase-admin.mjs';
 
 const fichier = process.argv[2];
 if (!fichier) {
@@ -35,6 +37,19 @@ for (const [id, f] of Object.entries(brutes)) {
   };
   if (existantes[id]) remplacees++; else ajoutees++;
   existantes[id] = fiche;
+}
+
+if (supabaseConfigure) {
+  const lignes = Object.entries(existantes)
+    .filter(([id]) => Object.prototype.hasOwnProperty.call(brutes, id))
+    .map(([id, f]) => {
+      const { id: _i, mode: _m, ...contenu } = f;
+      return { posture_id: id, contenu, statut: 'validee', valide_par: 'import' };
+    });
+  await upsert('fiches', lignes, 'posture_id');
+  console.log(`✓ ${lignes.length} fiche(s) validée(s) envoyée(s) dans Supabase.`);
+  if (ignorees.length) console.warn(`Ignorées : ${ignorees.join(', ')}`);
+  process.exit(0);
 }
 
 // Tri par identifiant pour des différences lisibles dans git

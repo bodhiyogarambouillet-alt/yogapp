@@ -84,7 +84,7 @@ Une clé refusée (401/403) ne déclenche pas de bascule : l'erreur s'affiche di
 
 `vercel.json` laisse jusqu’à 90 s aux fonctions : délai du modèle principal, appel de secours éventuel et, pour une posture cible, une relance si des zones ne sont pas préparées.
 
-## Fiches « Comment faire ? » : validation, export, référence
+## Fiches « Comment faire ? » en mode local (sans Supabase)
 
 Ordre de priorité à l'ouverture d'une fiche :
 1. **Version locale** (générée, modifiée ou validée sur cet appareil) ;
@@ -105,9 +105,13 @@ npm run import-fiches ~/Downloads/fiches-validees-AAAA-MM-JJ.json
 
 Le script les intègre à `src/data/fiches.json` (une fiche existante est remplacée) ; au prochain déploiement, tout appareil les affiche comme « Fiche de référence de votre bibliothèque », sans appel à Gemini.
 
-## Stockage (v1)
+## Stockage : Supabase
 
-Séances enregistrées et fiches validées sont stockées dans le navigateur (localStorage) : propres à un appareil. Prochaine étape : Supabase pour synchroniser.
-# yogapp
-# yogapp
-# yogapp
+Avec Supabase configuré, la bibliothèque, les fiches et les séances sont en base (comptes, règles d'accès RLS, cache partagé des fiches). Installation pas à pas : **`supabase/INSTALLATION.md`** ; schéma : `supabase/schema.sql`.
+
+| Commande | Effet |
+|---|---|
+| `npm run sync-bibliotheque` | tableau Excel → `src/data/postures.json` + table `postures` |
+| `npm run import-fiches fichier.json` | fiches exportées → table `fiches` (validées) |
+
+Sans Supabase (variables absentes), l'appli fonctionne comme avant : bibliothèque JSON, séances et fiches dans le navigateur.

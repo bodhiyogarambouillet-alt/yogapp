@@ -1,17 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Picto from './Picto.jsx';
 import { Retour, Attention, Valide, Etincelle } from './Icones.jsx';
-import { lireFiche, ecrireFiche, supprimerFiche } from '../stockage.js';
-import FICHES_REFERENCE from '../data/fiches.json';
-
-// Ordre de priorité : version locale (relue ou modifiée sur cet appareil) > fiche de référence
-// livrée avec l'appli (src/data/fiches.json) > génération par Gemini.
-function ficheInitiale(id) {
-  const locale = lireFiche(id);
-  if (locale) return { ...locale, source: 'locale' };
-  if (FICHES_REFERENCE[id]) return { fiche: FICHES_REFERENCE[id], validee: true, source: 'reference' };
-  return null;
-}
+import { obtenirFiche, regenererFiche, enregistrerFiche, revenirReference as revenirRef, aUneReference } from '../stockage.js';
 
 const CHAMPS_TEXTE = [
   ['respiration', 'Respiration'],
@@ -20,29 +10,23 @@ const CHAMPS_TEXTE = [
   ['variante_avancee', 'Variante avancée'],
 ];
 
-export default function Fiche({ posture, contexte, onRetour }) {
-  const [etat, setEtat] = useState(() => ficheInitiale(posture.id)); // { fiche, validee, source }
+export default function Fiche({ posture, contexte, compte, onRetour }) {
+  const [etat, setEtat] = useState(null); // { fiche, validee, source }
   const [chargement, setChargement] = useState(false);
   const [erreur, setErreur] = useState(null);
   const [edition, setEdition] = useState(null);
-  const enCours = useRef(false); // évite deux appels Gemini simultanés pour la même fiche
+  const enCours = useRef(false); // évite deux appels simultanés pour la même fiche
 
-  const generer = async () => {
+  // Avec Supabase, seuls les admins connectés valident, modifient ou régénèrent
+  const peutModifier = !compte?.actif || compte.admin;
+
+  const executer = async (action) => {
     if (enCours.current) return;
     enCours.current = true;
     setChargement(true);
     setErreur(null);
     try {
-      const r = await fetch('/api/fiche-posture', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: posture.id, style: contexte?.style, niveau: contexte?.niveau }),
-      });
-      const data = await r.json();
-      if (!r.ok) throw new Error(data.erreur || 'Erreur de génération');
-      const nouvel = { fiche: data, validee: false, source: 'locale' };
-      setEtat(nouvel);
-      if (data.mode === 'gemini') ecrireFiche(posture.id, { fiche: data, validee: false });
+      setEtat(await action());
     } catch (e) {
       setErreur(e.message);
     } finally {
@@ -53,28 +37,19 @@ export default function Fiche({ posture, contexte, onRetour }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (!etat) generer();
+    setEtat(null);
+    executer(() => obtenirFiche(posture.id, contexte));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [posture.id]);
 
-  const basculerValidation = () => {
-    const nouvel = { fiche: etat.fiche, validee: !etat.validee, source: 'locale' };
-    setEtat(nouvel);
-    ecrireFiche(posture.id, { fiche: nouvel.fiche, validee: nouvel.validee });
-  };
+  const basculerValidation = () => executer(() => enregistrerFiche(posture.id, etat.fiche, !etat.validee));
 
   // Régénérer : seulement pour une fiche non validée (la validation sert de verrou)
   const regenerer = () => {
-    if (etat?.validee) return;
-    supprimerFiche(posture.id);
-    generer();
+    if (!etat?.validee) executer(() => regenererFiche(posture.id, contexte));
   };
 
-  // Revenir à la fiche de référence de la bibliothèque (efface la version locale)
-  const revenirReference = () => {
-    supprimerFiche(posture.id);
-    setEtat({ fiche: FICHES_REFERENCE[posture.id], validee: true, source: 'reference' });
-  };
+  const revenirReference = () => executer(() => revenirRef(posture.id));
 
   const commencerEdition = () => {
     const f = etat.fiche;
@@ -85,11 +60,10 @@ export default function Fiche({ posture, contexte, onRetour }) {
     });
   };
 
-  const enregistrerEdition = () => {
+  const enregistrerEdition = async () => {
     const lignes = (t) => t.split('\n').map((s) => s.trim()).filter(Boolean);
     const fiche = { ...etat.fiche, ...edition, entree: lignes(edition.entree), alignement: lignes(edition.alignement), mode: 'gemini' };
-    setEtat({ fiche, validee: true, source: 'locale' });
-    ecrireFiche(posture.id, { fiche, validee: true });
+    await executer(() => enregistrerFiche(posture.id, fiche, true));
     setEdition(null);
   };
 
@@ -128,7 +102,7 @@ export default function Fiche({ posture, contexte, onRetour }) {
             {etat.validee ? <Valide /> : <Etincelle />}
             <span>
               {etat.source === 'reference' ? 'Fiche de référence de votre bibliothèque'
-                : etat.validee ? 'Fiche validée, verrouillée'
+                : etat.validee ? (etat.source === 'base' ? 'Fiche validée, partagée sur tous vos appareils' : 'Fiche validée, verrouillée')
                   : 'Rédigée par Gemini, à relire'}
             </span>
           </div>
@@ -190,7 +164,7 @@ export default function Fiche({ posture, contexte, onRetour }) {
           </div>
         )}
 
-        {f && f.mode === 'gemini' && !edition && !chargement && (
+        {f && f.mode === 'gemini' && !edition && !chargement && peutModifier && (
           <div className="actions-fiche">
             {!etat.validee && (
               <button type="button" className="lien" onClick={regenerer}><Etincelle /> Régénérer la fiche</button>
@@ -198,7 +172,7 @@ export default function Fiche({ posture, contexte, onRetour }) {
             {etat.validee && etat.source !== 'reference' && (
               <p className="aide">Fiche validée : elle ne sera plus régénérée. Retirez la validation pour pouvoir la régénérer.</p>
             )}
-            {etat.source === 'locale' && FICHES_REFERENCE[posture.id] && (
+            {etat.source === 'locale' && aUneReference(posture.id) && (
               <button type="button" className="lien" onClick={revenirReference}>Revenir à la fiche de la bibliothèque</button>
             )}
           </div>
@@ -207,7 +181,11 @@ export default function Fiche({ posture, contexte, onRetour }) {
 
       <div className="ressort" />
 
-      {f && f.mode === 'gemini' && (
+      {f && f.mode === 'gemini' && !peutModifier && compte?.actif && !compte.email && (
+        <p className="fiche-liens">Connectez-vous (écran « Mes séances et fiches ») pour valider ou modifier les fiches.</p>
+      )}
+
+      {f && f.mode === 'gemini' && peutModifier && (
         <footer className="pied deux">
           {edition ? (
             <>

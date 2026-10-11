@@ -1,0 +1,41 @@
+// Accès Supabase pour les scripts lancés sur votre ordinateur (clé secrète lue dans .env.local).
+// La clé secrète ne quitte jamais votre machine : elle n'est ni dans le code ni sur GitHub.
+
+try {
+  process.loadEnvFile('.env.local');
+} catch {
+  /* pas de .env.local : Supabase non configuré */
+}
+
+const url = (process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || '').replace(/\/$/, '');
+const cle = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+
+export const supabaseConfigure = Boolean(url && cle);
+
+// Deux formats de clé secrète :
+// - nouvelle clé `sb_secret_…` : uniquement dans l'en-tête `apikey` (refusée en Authorization) ;
+// - ancienne clé `service_role` (JWT `eyJ…`) : dans `apikey` ET `Authorization: Bearer`,
+//   sinon la requête est traitée comme anonyme et bloquée par la RLS.
+const entetesCle = () => (cle.startsWith('eyJ') ? { apikey: cle, Authorization: `Bearer ${cle}` } : { apikey: cle });
+
+
+export async function rest(chemin, { method = 'GET', body, prefer } = {}) {
+  const res = await fetch(`${url}/rest/v1/${chemin}`, {
+    method,
+    headers: { ...entetesCle(), 'Content-Type': 'application/json', ...(prefer ? { Prefer: prefer } : {}) },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  if (!res.ok) throw new Error(`Supabase ${res.status} : ${(await res.text()).slice(0, 400)}`);
+  return res.status === 204 || res.status === 201 ? null : res.json();
+}
+
+// Insère ou met à jour par paquets de 100
+export async function upsert(table, lignes, conflit) {
+  for (let i = 0; i < lignes.length; i += 100) {
+    await rest(`${table}?on_conflict=${conflit}`, {
+      method: 'POST',
+      prefer: 'resolution=merge-duplicates,return=minimal',
+      body: lignes.slice(i, i + 100),
+    });
+  }
+}

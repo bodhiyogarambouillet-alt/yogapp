@@ -1,8 +1,26 @@
-import postures from './data/postures.json';
+import posturesLocales from './data/postures.json';
 import structures from './data/structures.json';
+import { supabase } from './supabase.js';
 
-export const POSTURES = postures;
-export const PAR_ID = new Map(postures.map((p) => [p.id, p]));
+// Bibliothèque en mémoire. Au démarrage : copie locale (JSON), puis remplacée par
+// la version Supabase si elle est configurée et joignable (mise à jour sur place).
+export const POSTURES = [...posturesLocales];
+export const PAR_ID = new Map(POSTURES.map((p) => [p.id, p]));
+const postures = POSTURES;
+
+export async function chargerBibliotheque() {
+  if (!supabase) return 'locale';
+  const { data, error } = await supabase.from('postures').select('*').order('id');
+  if (error || !data?.length) {
+    if (error) console.warn('[bibliothèque] Supabase indisponible, copie locale utilisée :', error.message);
+    return 'locale';
+  }
+  const lignes = data.map((p) => ({ ...p, minutes: p.minutes === null ? null : Number(p.minutes) }));
+  POSTURES.splice(0, POSTURES.length, ...lignes);
+  PAR_ID.clear();
+  lignes.forEach((p) => PAR_ID.set(p.id, p));
+  return 'supabase';
+}
 export const STYLES = Object.keys(structures.styles);
 export const NIVEAUX = [
   { nom: 'Débutant', aide: 'Postures de niveau 1' },

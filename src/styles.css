@@ -205,3 +205,13 @@ input[type="search"] { height: 52px; padding: 0 18px; }
   .phase.pic { background: #fff; color: var(--texte); border: 2px solid var(--accent); }
   .phase.pic .ligne-infos, .phase.pic .duree-ligne, .phase.pic .minutes { color: var(--texte); }
 }
+
+/* Connexion et compte */
+.chargement-ecran { align-items: center; justify-content: center; }
+.connexion { display: flex; flex-direction: column; gap: 8px; }
+.connexion h2 { margin-bottom: 4px; }
+.connexion .etiquette { margin: 8px 0 0; }
+.connexion input[type="email"] { width: 100%; height: 52px; border: none; border-radius: 18px; background: var(--fond); padding: 0 18px; font-size: 16px; }
+.connexion .principal { margin-top: 8px; }
+.compte { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 20px; }
+.compte p { font-size: 15px; }

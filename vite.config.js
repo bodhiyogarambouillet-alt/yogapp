@@ -32,7 +32,9 @@ function apiLocale() {
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
-  for (const k of ['GEMINI_API_KEY', 'GEMINI_MODEL', 'GEMINI_MODEL_SECOURS', 'GEMINI_DELAI_SEANCE_MS', 'GEMINI_DELAI_FICHE_MS']) {
+  // Variables lues par les fonctions /api en local (les VITE_* sont en plus exposées au navigateur)
+  for (const k of ['GEMINI_API_KEY', 'GEMINI_MODEL', 'GEMINI_MODEL_SECOURS', 'GEMINI_DELAI_SEANCE_MS', 'GEMINI_DELAI_FICHE_MS',
+    'SUPABASE_URL', 'VITE_SUPABASE_URL', 'SUPABASE_SECRET_KEY', 'SUPABASE_SERVICE_ROLE_KEY']) {
     if (env[k]) process.env[k] = env[k];
   }
   return { plugins: [react(), apiLocale()] };

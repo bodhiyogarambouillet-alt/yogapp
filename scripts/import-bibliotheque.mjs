@@ -1,9 +1,11 @@
-// Régénère src/data/postures.json à partir du tableau Excel.
+// Régénère src/data/postures.json à partir du tableau Excel,
+// puis, si Supabase est configuré dans .env.local, synchronise la table `postures`.
 // Usage : npm run import-bibliotheque [chemin/vers/fichier.xlsx]
 // Par défaut : scripts/bibliotheque-postures-yoga.xlsx (onglet « Postures »).
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import XLSX from 'xlsx';
+import { supabaseConfigure, rest, upsert } from './supabase-admin.mjs';
 
 const fichier = process.argv[2] || 'scripts/bibliotheque-postures-yoga.xlsx';
 const wb = XLSX.read(readFileSync(fichier));
@@ -58,4 +60,20 @@ console.log(`${postures.length} postures importées dans src/data/postures.json`
 if (inconnues.length) {
   console.warn(`\n⚠ ${inconnues.length} référence(s) introuvable(s) (vérifiez l'orthographe exacte du nom français) :`);
   inconnues.forEach((m) => console.warn(`  - ${m}`));
+}
+
+// ---------- Synchronisation Supabase ----------
+if (process.argv.includes('--sans-supabase')) process.exit(0);
+if (!supabaseConfigure) {
+  console.log('\nSupabase non configuré dans .env.local : seule la copie locale (JSON) est à jour.');
+} else {
+  await upsert('postures', postures, 'id');
+  console.log(`✓ ${postures.length} postures synchronisées dans Supabase.`);
+  // Les postures supprimées du tableau ne sont pas effacées de la base (des séances peuvent y faire référence)
+  const enBase = await rest('postures?select=id,fr');
+  const ids = new Set(postures.map((p) => p.id));
+  const orphelines = enBase.filter((p) => !ids.has(p.id));
+  if (orphelines.length) {
+    console.warn(`⚠ ${orphelines.length} posture(s) en base absente(s) du tableau (non supprimées) : ${orphelines.map((p) => `${p.id} ${p.fr}`).join(', ')}`);
+  }
 }

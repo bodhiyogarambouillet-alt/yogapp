@@ -8,9 +8,11 @@
     "build": "vite build",
     "preview": "vite preview",
     "import-bibliotheque": "node scripts/import-bibliotheque.mjs",
-    "import-fiches": "node scripts/import-fiches.mjs"
+    "import-fiches": "node scripts/import-fiches.mjs",
+    "sync-bibliotheque": "node scripts/import-bibliotheque.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "2.117.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -20,6 +22,6 @@
     "xlsx": "^0.18.5"
   },
   "engines": {
-    "node": ">=20.10"
+    "node": ">=20.12"
   }
 }

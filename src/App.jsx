@@ -8,6 +8,7 @@ import { enregistrerSeance, listerSeances } from './stockage.js';
 import { stylesDe } from './styles-seance.js';
 import { aujourdhui } from './dates.js';
 import { urlApi } from './api.js';
+import { useRetour } from './natif.js';
 import { supabase, enteteAuth } from './supabase.js';
 
 // Recolle les données de la bibliothèque sur chaque posture (utile pour les séances enregistrées)
@@ -56,6 +57,9 @@ export default function App() {
   }, []);
 
   const aller = (v) => { setVue(v); window.scrollTo(0, 0); };
+
+  // Bouton retour d'Android : fiche → séance, autres écrans → formulaire (sur le formulaire : l'appli passe en arrière-plan)
+  useRetour(pret && vue !== 'formulaire', () => aller(vue === 'fiche' && seance ? 'seance' : 'formulaire'));
 
   const generer = async (p) => {
     setParams(p);

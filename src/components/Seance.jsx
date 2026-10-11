@@ -4,6 +4,7 @@ import { stylesDe } from '../styles-seance.js';
 import Picto from './Picto.jsx';
 import { dateDe } from '../dates.js';
 import Live from './Live.jsx';
+import { useRetour } from '../natif.js';
 import { Retour, Remplacer, Attention, Valide, Points, Imprimer, Etincelle, Fermer, Lecture } from './Icones.jsx';
 
 // Durées plus compactes dans la liste (le détail reste dans la fiche)
@@ -70,6 +71,13 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
   };
 
   const action = (fn) => () => { setMenu(false); fn(); };
+
+  // Retour d'Android : ferme d'abord le menu, l'ajout de posture, puis les modes édition / remplacement
+  useRetour(!live && (menu || edition || remplacement), () => {
+    if (menu) setMenu(false);
+    else if (ajoutPhase !== null) setAjoutPhase(null);
+    else { setEdition(false); setRemplacement(false); }
+  }, 1);
 
   // ---------- Édition ----------
   const majPhase = (iPhase, fn) => onChange({ ...seance, phases: seance.phases.map((ph, i) => (i === iPhase ? fn(ph) : ph)) });

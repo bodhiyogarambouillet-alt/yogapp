@@ -3,6 +3,7 @@ import Picto from './Picto.jsx';
 import { nom, nomSecondaire } from '../bibliotheque.js';
 import { Fermer, Lecture, Pause, Suivant, Precedent, Attention } from './Icones.jsx';
 import { obtenirFiche } from '../stockage.js';
+import { useRetour, vibrer } from '../natif.js';
 
 // Fiches « Comment faire ? » de la séance : chargées à la demande (posture en cours + suivante), gardées en mémoire
 function useFiches(seance) {
@@ -90,7 +91,6 @@ function useSignal() {
   }, []);
   const sonner = useCallback((frequence = 660, fois = 1) => {
     try {
-      navigator.vibrate?.(fois > 1 ? [120, 80, 120] : 150);
       const c = ctx.current;
       if (!c) return;
       for (let i = 0; i < fois; i++) {
@@ -154,6 +154,7 @@ export default function Live({ seance, onQuitter }) {
       setTerminee(true);
       fin.current = null;
       sonner(520, 3);
+      vibrer(600);
       return;
     }
     const j = Math.max(0, i);
@@ -170,6 +171,7 @@ export default function Live({ seance, onQuitter }) {
       const r = (fin.current - Date.now()) / 1000;
       if (r <= 0) {
         sonner(index + 1 < etapes.length && etapes[index + 1].phase !== etape.phase ? 880 : 660, 2);
+        if (index + 1 < etapes.length) vibrer(200); // courte vibration à chaque changement de posture
         allerA(index + 1, true);
         return;
       }
@@ -177,6 +179,7 @@ export default function Live({ seance, onQuitter }) {
       if (etape.posture.cotes && !coteSignale.current && r <= etape.secondes / 2) {
         coteSignale.current = true;
         sonner(740, 1);
+        vibrer(120);
       }
       setRestant(r);
     }, 250);
@@ -212,6 +215,7 @@ export default function Live({ seance, onQuitter }) {
     if (enCours && !window.confirm('Arrêter la séance en cours ?')) return;
     onQuitter();
   };
+  useRetour(true, () => quitter(), 2);
 
   if (!etapes.length) {
     return (

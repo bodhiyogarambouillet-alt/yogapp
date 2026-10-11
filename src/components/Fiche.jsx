@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Picto from './Picto.jsx';
 import { nom, nomSecondaire } from '../bibliotheque.js';
 import { Retour, Attention, Valide, Etincelle } from './Icones.jsx';
+import { useRetour } from '../natif.js';
 import { obtenirFiche, regenererFiche, enregistrerFiche, revenirReference as revenirRef, aUneReference } from '../stockage.js';
 
 // Listes éditées une ligne par élément
@@ -74,6 +75,9 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
     await executer(() => enregistrerFiche(posture.id, fiche, true));
     setEdition(null);
   };
+
+  // Retour d'Android pendant une modification : annule la modification au lieu de quitter la fiche
+  useRetour(Boolean(edition), () => setEdition(null), 1);
 
   const f = etat?.fiche;
   const tenue = posture.minutes ? `${posture.minutes} min` : posture.respirations ? `${posture.respirations} respirations` : '';

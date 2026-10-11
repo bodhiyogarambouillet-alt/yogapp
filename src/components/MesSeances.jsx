@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
 import { listerSeances, supprimerSeance, enregistrerSeance, donneesLocales, transfererDonneesLocales } from '../stockage.js';
 import { dateDe, dateLisible } from '../dates.js';
-import { connexionParMotDePasse, deconnexion } from '../supabase.js';
-import { Retour, Poubelle } from './Icones.jsx';
+import { connexionParMotDePasse, connexionGoogle, deconnexion } from '../supabase.js';
+import { Retour, Poubelle, Oeil, OeilBarre, Google } from './Icones.jsx';
 import { PAR_ID, nom } from '../bibliotheque.js';
 
 function Connexion() {
   const [email, setEmail] = useState('');
   const [motDePasse, setMotDePasse] = useState('');
+  const [voir, setVoir] = useState(false); // afficher le mot de passe en clair
   const [etat, setEtat] = useState(null); // null | 'envoi' | message d'erreur
   const envoyer = async (e) => {
     e.preventDefault();
@@ -19,14 +20,30 @@ function Connexion() {
       setEtat(err.message);
     }
   };
+  const google = async () => {
+    setEtat('envoi');
+    try {
+      await connexionGoogle(); // la session met l'écran à jour au retour de Google
+      setEtat(null);
+    } catch (err) {
+      setEtat(`Connexion Google impossible : ${err.message}`);
+    }
+  };
   return (
     <form className="carte connexion" onSubmit={envoyer}>
       <h2>Connexion administrateur</h2>
-      <p className="aide" style={{ marginTop: 0 }}>Réservée aux administrateurs : eux seuls peuvent modifier et régénérer les fiches.</p>
+      <p className="aide" style={{ marginTop: 0 }}>Réservée aux administrateurs : eux seuls peuvent modifier et régénérer les fiches. Avec Google, utilisez l'adresse enregistrée comme administrateur.</p>
+      <button type="button" className="bouton-google" onClick={google} disabled={etat === 'envoi'}><Google /> Continuer avec Google</button>
+      <p className="separateur"><span>ou</span></p>
       <label htmlFor="email" className="etiquette">Email</label>
       <input id="email" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="vous@exemple.fr" />
       <label htmlFor="mdp" className="etiquette" style={{ marginTop: 12 }}>Mot de passe</label>
-      <input id="mdp" type="password" required autoComplete="current-password" value={motDePasse} onChange={(e) => setMotDePasse(e.target.value)} />
+      <div className="champ-mdp">
+        <input id="mdp" type={voir ? 'text' : 'password'} required autoComplete="current-password" value={motDePasse} onChange={(e) => setMotDePasse(e.target.value)} />
+        <button type="button" className="voir-mdp" aria-label={voir ? 'Masquer le mot de passe' : 'Afficher le mot de passe'} aria-pressed={voir} onClick={() => setVoir(!voir)}>
+          {voir ? <OeilBarre /> : <Oeil />}
+        </button>
+      </div>
       {etat && etat !== 'envoi' && <p className="erreur" role="alert">{etat}</p>}
       <button type="submit" className="principal" disabled={etat === 'envoi'}>{etat === 'envoi' ? 'Connexion…' : 'Se connecter'}</button>
     </form>

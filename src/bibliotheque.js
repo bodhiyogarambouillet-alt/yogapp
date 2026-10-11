@@ -1,5 +1,6 @@
 import posturesLocales from './data/postures.json';
 import structures from './data/structures.json';
+import { stylesDe, convientAuxStyles } from './styles-seance.js';
 import { supabase } from './supabase.js';
 
 // Bibliothèque en mémoire. Au démarrage : copie locale (JSON), puis remplacée par
@@ -41,7 +42,8 @@ export const TEINTES = ['#B9AECB', '#A597BC', '#9180AE', '#7D6A9F', '#6A5690', '
 export function alternatives(posture, seance) {
   const max = structures.niveaux[seance.niveau]?.max ?? 1;
   const dejaLa = new Set(seance.phases.flatMap((ph) => ph.items.map((it) => it.id)));
-  const ok = (p) => p.styles.includes(seance.style) && p.niveau <= max && !dejaLa.has(p.id);
+  const stylesSeance = stylesDe(seance);
+  const ok = (p) => convientAuxStyles(p, stylesSeance) && p.niveau <= max && !dejaLa.has(p.id);
   // Score : zones communes (pour garder l'effet de la posture remplacée), puis même famille, puis même phase
   const zones = new Set(posture.zones || []);
   return postures
@@ -53,14 +55,14 @@ export function alternatives(posture, seance) {
 
 // Recherche d'une posture par nom français, sanskrit ou anglais (sans tenir compte des accents)
 const sansAccents = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-export function rechercherPostures(texte, style, limite = 8) {
+export function rechercherPostures(texte, styles, limite = 8) {
   const q = sansAccents(texte.trim());
   if (q.length < 2) return [];
   const trouvees = postures.filter((p) =>
     p.famille !== 'Respiration' && p.famille !== 'Relaxation' &&
     [p.fr, p.sanskrit, p.en].some((n) => sansAccents(n).includes(q)));
   // Celles du style choisi d'abord, puis par niveau
-  trouvees.sort((a, b) => (b.styles.includes(style) - a.styles.includes(style)) || a.niveau - b.niveau);
+  trouvees.sort((a, b) => (convientAuxStyles(b, styles) - convientAuxStyles(a, styles)) || a.niveau - b.niveau);
   return trouvees.slice(0, limite);
 }
 

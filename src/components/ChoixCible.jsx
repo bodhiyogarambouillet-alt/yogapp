@@ -1,13 +1,14 @@
 import { useId, useState } from 'react';
 import { rechercherPostures, NIVEAU_MAX, nom, nomSecondaire } from '../bibliotheque.js';
 import Picto from './Picto.jsx';
+import { convientAuxStyles } from '../styles-seance.js';
 
 // Champ « Posture cible » : recherche dans la bibliothèque, une seule posture sélectionnable.
-export default function ChoixCible({ cible, onChange, style, niveau }) {
+export default function ChoixCible({ cible, onChange, styles, niveau }) {
   const [texte, setTexte] = useState('');
   const [ouvert, setOuvert] = useState(false);
   const idListe = useId();
-  const resultats = rechercherPostures(texte, style);
+  const resultats = rechercherPostures(texte, styles);
 
   const choisir = (p) => {
     onChange(p);
@@ -17,7 +18,7 @@ export default function ChoixCible({ cible, onChange, style, niveau }) {
 
   if (cible) {
     const auDessus = cible.niveau > (NIVEAU_MAX[niveau] ?? 1);
-    const horsStyle = !cible.styles.includes(style);
+    const horsStyle = !convientAuxStyles(cible, styles);
     return (
       <div className="cible-choisie">
         <div className="cible-carte">
@@ -35,7 +36,7 @@ export default function ChoixCible({ cible, onChange, style, niveau }) {
         {cible.preparations?.length > 0 && <p className="aide"><strong>Préparations :</strong> {cible.preparations.join(' → ')}</p>}
         {!cible.preparations?.length && <p className="aide alerte-texte">Aucune préparation renseignée dans votre bibliothèque : la progression s'appuiera seulement sur les zones.</p>}
         {auDessus && <p className="aide alerte-texte">Niveau {cible.niveau}, au-dessus du niveau {niveau} : une variante facilitée sera proposée.</p>}
-        {!auDessus && horsStyle && <p className="aide alerte-texte">Posture non cochée pour le style {style} dans votre bibliothèque.</p>}
+        {!auDessus && horsStyle && <p className="aide alerte-texte">Posture non cochée pour {styles.length > 1 ? 'les styles choisis' : `le style ${styles[0]}`} dans votre bibliothèque.</p>}
       </div>
     );
   }
@@ -58,7 +59,7 @@ export default function ChoixCible({ cible, onChange, style, niveau }) {
                 <Picto famille={p.famille} taille={36} />
                 <span className="ligne-texte">
                   <span className="ligne-nom">{nom(p)}</span>
-                  <span className="ligne-infos">{[nomSecondaire(p), `niveau ${p.niveau}`, p.styles.includes(style) ? null : 'hors style'].filter(Boolean).join(' · ')}</span>
+                  <span className="ligne-infos">{[nomSecondaire(p), `niveau ${p.niveau}`, convientAuxStyles(p, styles) ? null : 'hors style'].filter(Boolean).join(' · ')}</span>
                 </span>
               </button>
             </li>

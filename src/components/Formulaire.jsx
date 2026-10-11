@@ -9,12 +9,13 @@ const COURT = { 'Doux / seniors': 'Doux', 'Yoga du dos': 'Dos' };
 const NIVEAUX = [['Débutant', 'Débutant'], ['Intermédiaire', 'Inter.'], ['Avancé', 'Avancé']];
 
 export default function Formulaire({ initial, chargement, erreur, onGenerer, onMesSeances }) {
-  const [style, setStyle] = useState(initial?.style || 'Hatha');
+  // Styles choisis : aucun = séance libre (toutes les postures), plusieurs = mélange
+  const [styles, setStyles] = useState(initial?.styles || (initial?.style ? [initial.style] : ['Hatha']));
   const [duree, setDuree] = useState(initial?.duree || 45);
   const [niveau, setNiveau] = useState(initial?.niveau || 'Intermédiaire');
   const [theme, setTheme] = useState(initial?.theme || '');
   const [cible, setCible] = useState(initial?.cibleId ? PAR_ID.get(initial.cibleId) || null : null);
-  const [tousStyles, setTousStyles] = useState(!PRINCIPAUX.includes(initial?.style || 'Hatha'));
+  const [tousStyles, setTousStyles] = useState(styles.some((s) => !PRINCIPAUX.includes(s)));
   const [eviter, setEviter] = useState(initial?.eviterRepetition || 0); // 0 = désactivé, sinon nombre de séances précédentes
   const [options, setOptions] = useState(Boolean(initial?.cibleId || initial?.theme || initial?.eviterRepetition));
 
@@ -23,7 +24,7 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
 
   const soumettre = (e) => {
     e.preventDefault();
-    if (!chargement) onGenerer({ style, duree, niveau, theme: theme.trim(), cibleId: cible?.id || null, eviterRepetition: eviter });
+    if (!chargement) onGenerer({ styles, duree, niveau, theme: theme.trim(), cibleId: cible?.id || null, eviterRepetition: eviter });
   };
 
   return (
@@ -41,12 +42,12 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
       </section>
 
       <fieldset className="bloc">
-        <legend className="etiquette">Style</legend>
+        <legend className="etiquette">Style <span className="facultatif">(un ou plusieurs, facultatif)</span></legend>
         <div className="tuiles">
           {visibles.map((s) => (
-            <button type="button" key={s} aria-pressed={s === style}
-              className={`tuile ${PRINCIPAUX.includes(s) ? '' : 'petite'} ${s === style ? 'actif' : ''}`}
-              onClick={() => setStyle(s)}>
+            <button type="button" key={s} aria-pressed={styles.includes(s)}
+              className={`tuile ${PRINCIPAUX.includes(s) ? '' : 'petite'} ${styles.includes(s) ? 'actif' : ''}`}
+              onClick={() => setStyles(styles.includes(s) ? styles.filter((x) => x !== s) : [...styles, s])}>
               {COURT[s] || s}
             </button>
           ))}
@@ -54,6 +55,10 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
         <button type="button" className="lien" aria-expanded={tousStyles} onClick={() => setTousStyles(!tousStyles)}>
           {tousStyles ? 'Moins de styles' : `+ ${autres.length} autres styles`}
         </button>
+        <p className="aide">
+          {styles.length === 0 ? 'Aucun style : la séance puise dans toutes les postures.'
+            : styles.length === 1 ? 'Un seul style.' : `Mélange de ${styles.length} styles.`}
+        </p>
       </fieldset>
 
       <fieldset className="bloc" style={{ paddingTop: 12 }}>
@@ -84,7 +89,7 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
         {options && (
           <div className="options">
             <label htmlFor="cible" className="etiquette">Posture cible</label>
-            <ChoixCible cible={cible} onChange={setCible} style={style} niveau={niveau} />
+            <ChoixCible cible={cible} onChange={setCible} styles={styles} niveau={niveau} />
             <label htmlFor="theme" className="etiquette">Thème ou contraintes</label>
             <textarea id="theme" rows="2" maxLength={500} value={theme} onChange={(e) => setTheme(e.target.value)}
               placeholder="Ex. : ancrage, deux élèves aux lombaires fragiles" />
@@ -106,7 +111,7 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
         {erreur && <p className="erreur" role="alert">{erreur}</p>}
         <button type="submit" className="composer" disabled={chargement}>
           <span>{chargement ? 'Composition…' : 'Composer'}</span>
-          <small>{COURT[style] || style} · {duree}′{cible ? ` · ${nom(cible)}` : ''} →</small>
+          <small>{styles.length === 0 ? 'Tous styles' : styles.map((x) => COURT[x] || x).join(' + ')} · {duree}′{cible ? ` · ${nom(cible)}` : ''} →</small>
         </button>
       </footer>
     </form>

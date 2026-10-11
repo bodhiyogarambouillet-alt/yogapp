@@ -1,0 +1,23 @@
+# Garde le projet Supabase actif : appelle /api/keepalive toutes les 2 heures.
+# (Le plan gratuit de Vercel limite ses propres crons à un par jour : voir vercel.json.)
+# Si CRON_SECRET est défini dans Vercel, ajoutez le même secret dans GitHub :
+# Settings → Secrets and variables → Actions → New repository secret « CRON_SECRET ».
+name: Keepalive Supabase
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch: # lancement manuel possible depuis l'onglet Actions
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Appel de /api/keepalive
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          if [ -n "$CRON_SECRET" ]; then AUTH=(-H "Authorization: Bearer $CRON_SECRET"); else AUTH=(); fi
+          curl --fail --silent --show-error --max-time 60 --retry 3 --retry-delay 20 "${AUTH[@]}" \
+            https://yogapp-alpha.vercel.app/api/keepalive

@@ -42,11 +42,9 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [posture.id]);
 
-  const basculerValidation = () => executer(() => enregistrerFiche(posture.id, etat.fiche, !etat.validee));
-
   // Régénérer : recharge la fiche via Gemini et remplace celle enregistrée
   const regenerer = () => {
-    if (etat?.validee && !window.confirm('Cette fiche est validée. La régénérer remplacera le texte validé. Continuer ?')) return;
+    if (!window.confirm('Régénérer la fiche avec Gemini ? Le texte actuel sera remplacé.')) return;
     executer(() => regenererFiche(posture.id, contexte));
   };
 
@@ -99,13 +97,9 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
 
       {f && f.mode === 'gemini' && (
         <section className="bloc serre">
-          <div className={`statut ${etat.validee ? 'ok' : 'attente'}`}>
-            {etat.validee ? <Valide /> : <Etincelle />}
-            <span>
-              {etat.source === 'reference' ? 'Fiche de référence de votre bibliothèque'
-                : etat.validee ? (etat.source === 'base' ? 'Fiche validée, partagée sur tous vos appareils' : 'Fiche validée')
-                  : etat.source === 'base' ? 'Rédigée par Gemini, enregistrée automatiquement' : 'Rédigée par Gemini'}
-            </span>
+          <div className="statut ok">
+            <Valide />
+            <span>{etat.source === 'reference' ? 'Fiche de référence de votre bibliothèque' : 'Fiche enregistrée'}</span>
           </div>
         </section>
       )}
@@ -167,7 +161,6 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
 
         {f && f.mode === 'gemini' && !edition && !chargement && peutModifier && (
           <div className="actions-fiche">
-            <button type="button" className="lien" onClick={regenerer}><Etincelle /> Régénérer la fiche</button>
             {etat.source === 'locale' && aUneReference(posture.id) && (
               <button type="button" className="lien" onClick={revenirReference}>Revenir à la fiche de la bibliothèque</button>
             )}
@@ -178,7 +171,7 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
       <div className="ressort" />
 
       {f && f.mode === 'gemini' && !peutModifier && compte?.actif && !compte.email && (
-        <p className="fiche-liens">Connectez-vous (écran « Mes séances et fiches ») pour valider ou modifier les fiches.</p>
+        <p className="fiche-liens">Connectez-vous en tant qu'administrateur (écran « Mes séances ») pour modifier ou régénérer les fiches.</p>
       )}
 
       {f && f.mode === 'gemini' && peutModifier && (
@@ -186,15 +179,12 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
           {edition ? (
             <>
               <button type="button" className="secondaire" onClick={() => setEdition(null)}>Annuler</button>
-              <button type="button" className="principal" onClick={enregistrerEdition}>Enregistrer et valider</button>
+              <button type="button" className="principal" onClick={enregistrerEdition}>Enregistrer</button>
             </>
           ) : (
             <>
               <button type="button" className="secondaire" onClick={commencerEdition}>Modifier</button>
-              <button type="button" className="principal" onClick={basculerValidation}
-                aria-label={etat.validee ? 'Retirer la validation' : 'Valider la fiche'}>
-                {etat.validee ? 'Validée ✓' : 'Valider'}
-              </button>
+              <button type="button" className="principal" onClick={regenerer}><Etincelle /> Régénérer</button>
             </>
           )}
         </footer>

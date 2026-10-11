@@ -21,15 +21,7 @@ export async function enteteAuth() {
   return jeton ? { Authorization: `Bearer ${jeton}` } : {};
 }
 
-export async function connexionParEmail(email) {
-  const { error } = await supabase.auth.signInWithOtp({
-    email: email.trim().toLowerCase(),
-    options: { emailRedirectTo: window.location.origin },
-  });
-  if (error) throw error;
-}
-
-// Les administrateurs se connectent avec un mot de passe (pas de lien par email)
+// Seuls les administrateurs se connectent (email + mot de passe) : eux seuls peuvent enregistrer les fiches
 export async function connexionParMotDePasse(email, motDePasse) {
   const { error } = await supabase.auth.signInWithPassword({ email: email.trim().toLowerCase(), password: motDePasse });
   if (error) throw new Error(error.message === 'Invalid login credentials' ? 'Email ou mot de passe incorrect.' : error.message);

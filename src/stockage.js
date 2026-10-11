@@ -110,15 +110,15 @@ export async function obtenirFiche(id, contexte) {
   if (locale) return { ...locale, source: 'locale' };
   if (FICHES_REFERENCE[id]) return { fiche: FICHES_REFERENCE[id], validee: true, source: 'reference' };
   const data = await appelApi({ id, style: contexte?.style, niveau: contexte?.niveau });
-  if (data.mode === 'gemini') ecrire(`${PREFIXE_FICHE}${id}`, { fiche: data, validee: false });
-  return { fiche: data, validee: false, source: 'locale' };
+  if (data.mode === 'gemini') ecrire(`${PREFIXE_FICHE}${id}`, { fiche: data, validee: true });
+  return { fiche: data, validee: true, source: 'locale' };
 }
 
 export async function regenererFiche(id, contexte) {
   if (!supabase) effacer(`${PREFIXE_FICHE}${id}`);
   const data = await appelApi({ id, style: contexte?.style, niveau: contexte?.niveau, regenerer: true });
-  if (!supabase && data.mode === 'gemini') ecrire(`${PREFIXE_FICHE}${id}`, { fiche: data, validee: false });
-  return { fiche: data, validee: false, source: supabase ? 'base' : 'locale' };
+  if (!supabase && data.mode === 'gemini') ecrire(`${PREFIXE_FICHE}${id}`, { fiche: data, validee: true });
+  return { fiche: data, validee: true, source: supabase ? 'base' : 'locale' };
 }
 
 // Valider / retirer la validation ; avec `fiche`, enregistre aussi un texte modifié
@@ -144,66 +144,19 @@ export async function revenirReference(id) {
 }
 export const aUneReference = (id) => !supabase && Boolean(FICHES_REFERENCE[id]);
 
-// Fiches validées : { [id]: contenu } — base si Supabase, sinon navigateur
-export async function fichesValidees() {
-  if (supabase) {
-    const { data, error } = await supabase.from('fiches').select('posture_id, contenu').eq('statut', 'validee');
-    if (error) throw error;
-    return Object.fromEntries(data.map((l) => [l.posture_id, l.contenu]));
-  }
-  return fichesValideesLocales();
-}
-
-function fichesValideesLocales() {
-  const resultat = {};
-  try {
-    for (let i = 0; i < localStorage.length; i++) {
-      const cle = localStorage.key(i);
-      if (!cle?.startsWith(PREFIXE_FICHE)) continue;
-      const v = lire(cle, null);
-      if (v?.validee && v.fiche) resultat[cle.slice(PREFIXE_FICHE.length)] = v.fiche;
-    }
-  } catch {
-    /* stockage indisponible */
-  }
-  return resultat;
-}
-
-// Import d'un fichier exporté (ou transfert depuis le navigateur) : fiches marquées validées
-export async function importerFiches(fiches) {
-  const valides = Object.entries(fiches || {}).filter(([, f]) => f && Array.isArray(f.entree) && f.entree.length);
-  if (supabase) {
-    const session = await sessionActive();
-    if (!session) throw new Error('Connectez-vous pour importer des fiches.');
-    if (!valides.length) return 0;
-    const { data, error } = await supabase.from('fiches').upsert(valides.map(([id, f]) => ({
-      posture_id: id, contenu: contenuDe(f), statut: 'validee', valide_par: session.user.email,
-    }))).select('posture_id');
-    if (error) throw error;
-    if (!data?.length) throw new Error('Import refusé : ce compte n’est pas administrateur.');
-    return data.length;
-  }
-  let n = 0;
-  for (const [id, f] of valides) if (ecrire(`${PREFIXE_FICHE}${id}`, { fiche: { ...f, mode: 'gemini' }, validee: true })) n++;
-  return n;
-}
-
 // ---------- Transfert des données du navigateur vers Supabase (une fois) ----------
 
 export function donneesLocales() {
-  return { seances: lire(CLE_SEANCES, []), fiches: fichesValideesLocales() };
+  return { seances: lire(CLE_SEANCES, []) };
 }
 
-export async function transfererDonneesLocales({ admin }) {
-  const { seances, fiches } = donneesLocales();
+export async function transfererDonneesLocales() {
+  const { seances } = donneesLocales();
   let nSeances = 0;
   for (const s of seances) {
-    await enregistrerSeance({ ...s, phases: s.phases.map((ph) => ({ ...ph, items: ph.items })) });
+    await enregistrerSeance(s);
     nSeances++;
   }
-  const nFiches = admin && Object.keys(fiches).length ? await importerFiches(fiches) : 0;
-  // Nettoyage du navigateur une fois transféré
   if (nSeances) effacer(CLE_SEANCES);
-  if (nFiches) Object.keys(fiches).forEach((id) => effacer(`${PREFIXE_FICHE}${id}`));
-  return { nSeances, nFiches };
+  return { nSeances };
 }

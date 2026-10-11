@@ -44,9 +44,10 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
 
   const basculerValidation = () => executer(() => enregistrerFiche(posture.id, etat.fiche, !etat.validee));
 
-  // Régénérer : seulement pour une fiche non validée (la validation sert de verrou)
+  // Régénérer : recharge la fiche via Gemini et remplace celle enregistrée
   const regenerer = () => {
-    if (!etat?.validee) executer(() => regenererFiche(posture.id, contexte));
+    if (etat?.validee && !window.confirm('Cette fiche est validée. La régénérer remplacera le texte validé. Continuer ?')) return;
+    executer(() => regenererFiche(posture.id, contexte));
   };
 
   const revenirReference = () => executer(() => revenirRef(posture.id));
@@ -102,8 +103,8 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
             {etat.validee ? <Valide /> : <Etincelle />}
             <span>
               {etat.source === 'reference' ? 'Fiche de référence de votre bibliothèque'
-                : etat.validee ? (etat.source === 'base' ? 'Fiche validée, partagée sur tous vos appareils' : 'Fiche validée, verrouillée')
-                  : 'Rédigée par Gemini, à relire'}
+                : etat.validee ? (etat.source === 'base' ? 'Fiche validée, partagée sur tous vos appareils' : 'Fiche validée')
+                  : etat.source === 'base' ? 'Rédigée par Gemini, enregistrée automatiquement' : 'Rédigée par Gemini'}
             </span>
           </div>
         </section>
@@ -111,7 +112,7 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
 
       <section className="cartes">
         {chargement && <div className="carte chargement" aria-live="polite">Rédaction de la fiche…</div>}
-        {erreur && <div className="carte"><p className="erreur" role="alert">{erreur}</p><button type="button" className="secondaire" onClick={generer}>Réessayer</button></div>}
+        {erreur && <div className="carte"><p className="erreur" role="alert">{erreur}</p><button type="button" className="secondaire" onClick={() => executer(() => obtenirFiche(posture.id, contexte))}>Réessayer</button></div>}
 
         {f && !edition && (
           <>
@@ -166,12 +167,7 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
 
         {f && f.mode === 'gemini' && !edition && !chargement && peutModifier && (
           <div className="actions-fiche">
-            {!etat.validee && (
-              <button type="button" className="lien" onClick={regenerer}><Etincelle /> Régénérer la fiche</button>
-            )}
-            {etat.validee && etat.source !== 'reference' && (
-              <p className="aide">Fiche validée : elle ne sera plus régénérée. Retirez la validation pour pouvoir la régénérer.</p>
-            )}
+            <button type="button" className="lien" onClick={regenerer}><Etincelle /> Régénérer la fiche</button>
             {etat.source === 'locale' && aUneReference(posture.id) && (
               <button type="button" className="lien" onClick={revenirReference}>Revenir à la fiche de la bibliothèque</button>
             )}

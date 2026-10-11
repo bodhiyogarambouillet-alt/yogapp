@@ -7,6 +7,7 @@
 import { supabase, enteteAuth } from './supabase.js';
 import FICHES_REFERENCE from './data/fiches.json';
 import { dateDe } from './dates.js';
+import { urlApi } from './api.js';
 
 const PREFIXE_FICHE = 'yoga:fiche:';
 const CLE_SEANCES = 'yoga:seances';
@@ -99,7 +100,7 @@ const contenuDe = (fiche) => ({
 });
 
 async function appelApi(corps) {
-  const r = await fetch('/api/fiche-posture', {
+  const r = await fetch(urlApi('/api/fiche-posture'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...(await enteteAuth()) },
     body: JSON.stringify(corps),

@@ -7,6 +7,7 @@ import { PAR_ID, chargerBibliotheque } from './bibliotheque.js';
 import { enregistrerSeance, listerSeances } from './stockage.js';
 import { stylesDe } from './styles-seance.js';
 import { aujourdhui } from './dates.js';
+import { urlApi } from './api.js';
 import { supabase, enteteAuth } from './supabase.js';
 
 // Recolle les données de la bibliothèque sur chaque posture (utile pour les séances enregistrées)
@@ -44,7 +45,7 @@ export default function App() {
       if (!session) { setCompte({ actif: true, email: null, admin: false }); return; }
       let admin = false;
       try {
-        const r = await fetch('/api/moi', { headers: await enteteAuth() });
+        const r = await fetch(urlApi('/api/moi'), { headers: await enteteAuth() });
         admin = Boolean((await r.json()).user?.admin);
       } catch { /* hors ligne : pas de droits admin */ }
       setCompte({ actif: true, email: session.user.email, admin });
@@ -70,7 +71,7 @@ export default function App() {
         } catch { /* séances illisibles : on compose sans */ }
       }
       const { eviterRepetition: _n, ...corps } = p;
-      const r = await fetch('/api/generer-seance', {
+      const r = await fetch(urlApi('/api/generer-seance'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...corps, evites }),

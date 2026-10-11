@@ -1,0 +1,14 @@
+{
+  "appId": "fr.bodhiyoga.seances",
+  "appName": "Mes séances Yoga",
+  "webDir": "dist",
+  "android": {
+    "backgroundColor": "#F3ECE1"
+  },
+  "plugins": {
+    "SystemBars": {
+      "style": "LIGHT",
+      "insetsHandling": "css"
+    }
+  }
+}

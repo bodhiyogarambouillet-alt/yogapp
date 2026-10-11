@@ -1,7 +1,8 @@
+import { avecCors } from '../lib/cors.js';
 import { genererSeance } from '../lib/seance.js';
 import { ACCESSOIRES } from '../src/accessoires.js';
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ erreur: 'Méthode non autorisée' });
   try {
     const { style, styles, accessoires, duree, niveau, theme, cibleId, evites } = req.body || {};
@@ -17,3 +18,5 @@ export default async function handler(req, res) {
     return res.status(500).json({ erreur: e.message });
   }
 }
+
+export default avecCors(handler);

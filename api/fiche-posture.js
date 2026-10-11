@@ -1,3 +1,4 @@
+import { avecCors } from '../lib/cors.js';
 import { genererFiche, ficheStockee } from '../lib/fiche.js';
 import { supabaseConfigure, utilisateurDepuisRequete } from '../lib/supabase.js';
 
@@ -5,7 +6,7 @@ import { supabaseConfigure, utilisateurDepuisRequete } from '../lib/supabase.js'
 // - renvoie la fiche en base si elle existe (aucun appel à Gemini) ;
 // - sinon la génère et l'enregistre automatiquement (sans validation) ;
 // - regenerer : réservé aux admins connectés, remplace la fiche existante.
-export default async function handler(req, res) {
+async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ erreur: 'Méthode non autorisée' });
   try {
     const { id, style, niveau, regenerer } = req.body || {};
@@ -26,3 +27,5 @@ export default async function handler(req, res) {
     return res.status(500).json({ erreur: e.message });
   }
 }
+
+export default avecCors(handler);

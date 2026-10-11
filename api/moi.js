@@ -1,7 +1,8 @@
+import { avecCors } from '../lib/cors.js';
 import { supabaseConfigure, utilisateurDepuisRequete } from '../lib/supabase.js';
 
 // GET : qui est connecté, et est-ce un admin ? (utilisé pour afficher les boutons de validation)
-export default async function handler(req, res) {
+async function handler(req, res) {
   try {
     if (!supabaseConfigure()) return res.status(200).json({ supabase: false, user: null });
     const user = await utilisateurDepuisRequete(req);
@@ -11,3 +12,5 @@ export default async function handler(req, res) {
     return res.status(500).json({ erreur: e.message });
   }
 }
+
+export default avecCors(handler);

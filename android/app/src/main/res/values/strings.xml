@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Mes séances Yoga</string>
+    <string name="title_activity_main">Mes séances Yoga</string>
+    <string name="package_name">fr.bodhiyoga.seances</string>
+    <string name="custom_url_scheme">fr.bodhiyoga.seances</string>
+</resources>

@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.yogapp_alpha.twa",
+        "sha256_cert_fingerprints": ["C7:CA:FF:1F:0C:E9:D8:17:8C:68:82:60:91:97:21:FD:BB:83:16:88:E8:4D:3C:57:F6:47:72:62:C1:68:72:C4"]
+      }
+    }]

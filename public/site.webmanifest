@@ -1,6 +1,6 @@
 {
-  "name": "Séances de yoga",
-  "short_name": "Séances",
+  "name": "Mes séances Yoga",
+  "short_name": "Mes séances Yoga",
   "lang": "fr",
   "start_url": "/",
   "display": "standalone",

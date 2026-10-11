@@ -32,7 +32,7 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
       <div className="decor-soleil" aria-hidden="true" />
 
       <header className="entete">
-        <div className="marque"><span className="accent"><Logo /></span><span>Séances</span></div>
+        <div className="marque"><span className="accent"><Logo /></span><span>Mes séances Yoga</span></div>
         <button type="button" className="rond" aria-label="Mes séances" onClick={onMesSeances}><Livre /></button>
       </header>
 

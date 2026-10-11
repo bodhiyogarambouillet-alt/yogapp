@@ -264,7 +264,7 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 @keyframes respiration { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
 @keyframes pulsation { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
 
-.ecran { animation: apparition 0.45s ease both; }
+.ecran { animation: apparition 0.45s ease backwards; }
 .cartes > .carte, .cartes > .precautions { animation: apparition 0.5s ease both; }
 .cartes > :nth-child(2) { animation-delay: 0.06s; }
 .cartes > :nth-child(3) { animation-delay: 0.12s; }
@@ -360,3 +360,19 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .phase.pic .lien.ajouter { color: #fff; }
 .ajout-posture { padding: 8px 6px 4px 0; }
 .ajout-posture .suggestions { color: var(--texte); }
+
+/* Mini résumé de la posture pendant le direct */
+.live-resume-bloc { padding: 16px 16px 0; }
+.live-resume { padding: 14px 18px; border-radius: 20px; background: var(--surface); text-align: left; animation: apparition 0.4s ease both; }
+.live-resume.chargement-resume { font-size: 14px; color: var(--texte-doux); animation: pulsation 1.4s ease-in-out infinite; }
+.live-reperes { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.45; }
+.live-reperes li::marker { color: var(--accent); }
+.live-souffle { margin: 10px 0 0; font-size: 14px; line-height: 1.45; color: var(--texte-doux); }
+.live-souffle strong { color: var(--sauge-texte); }
+.live-precaution { margin: 10px 0 0; padding: 8px 12px; border-radius: 14px; background: var(--alerte-fond); color: var(--alerte-texte); font-size: 13px; line-height: 1.4; display: flex; gap: 8px; align-items: flex-start; }
+.live-precaution svg { flex-shrink: 0; margin-top: 1px; }
+.live-resume .lien { min-height: 40px; margin-top: 4px; font-size: 14px; }
+.live-entree { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.45; }
+/* Commandes toujours visibles en bas de l'écran pendant le direct */
+.live-commandes { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; z-index: 5; padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
+.live { padding-bottom: 140px; }

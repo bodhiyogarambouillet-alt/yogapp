@@ -1,7 +1,48 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Picto from './Picto.jsx';
 import { nom, nomSecondaire } from '../bibliotheque.js';
-import { Fermer, Lecture, Pause, Suivant, Precedent } from './Icones.jsx';
+import { Fermer, Lecture, Pause, Suivant, Precedent, Attention } from './Icones.jsx';
+import { obtenirFiche } from '../stockage.js';
+
+// Fiches « Comment faire ? » de la séance : chargées à la demande (posture en cours + suivante), gardées en mémoire
+function useFiches(seance) {
+  const [fiches, setFiches] = useState({});
+  const demandees = useRef(new Set());
+  const charger = useCallback((id) => {
+    if (!id || demandees.current.has(id)) return;
+    demandees.current.add(id);
+    obtenirFiche(id, seance)
+      .then(({ fiche }) => setFiches((f) => ({ ...f, [id]: fiche?.mode === 'gemini' ? fiche : null })))
+      .catch(() => setFiches((f) => ({ ...f, [id]: null })));
+  }, [seance]);
+  return { fiches, charger };
+}
+
+// Mini résumé de la posture : repères clés, respiration, précautions ; l'entrée en dépliant
+function Resume({ posture, fiche }) {
+  const [entree, setEntree] = useState(false);
+  useEffect(() => setEntree(false), [posture.id]);
+  if (fiche === undefined) return <div className="live-resume chargement-resume" aria-live="polite">Chargement des repères…</div>;
+  const reperes = fiche?.alignement || [];
+  if (!fiche && !posture.precautions) return null;
+  return (
+    <div className="live-resume" key={posture.id}>
+      {reperes.length > 0 && (
+        <ul className="live-reperes">{reperes.slice(0, 3).map((r, i) => <li key={i}>{r}</li>)}</ul>
+      )}
+      {fiche?.respiration && <p className="live-souffle"><strong>Souffle :</strong> {fiche.respiration}</p>}
+      {posture.precautions && <p className="live-precaution"><Attention /> {posture.precautions}</p>}
+      {fiche?.entree?.length > 0 && (
+        <>
+          <button type="button" className="lien" aria-expanded={entree} onClick={() => setEntree(!entree)}>
+            {entree ? 'Masquer l’entrée dans la posture' : 'Comment s’installer'}
+          </button>
+          {entree && <ol className="live-entree">{fiche.entree.map((t, i) => <li key={i}>{t}</li>)}</ol>}
+        </>
+      )}
+    </div>
+  );
+}
 
 // Durée « brute » d'une posture d'après sa consigne (« 5 respirations », « 3 min », « × 3 tours »)
 function poids(it) {
@@ -90,10 +131,17 @@ export default function Live({ seance, onQuitter }) {
   const fin = useRef(null); // horodatage de fin de l'étape en cours (si en marche)
   const coteSignale = useRef(false);
   const { activer, sonner } = useSignal();
+  const { fiches, charger } = useFiches(seance);
   useEcranAllume(enCours);
 
   const etape = etapes[index];
   const suivante = etapes[index + 1];
+
+  // Résumé de la posture en cours, et préchargement de la suivante
+  useEffect(() => {
+    charger(etape?.id);
+    charger(suivante?.id);
+  }, [etape?.id, suivante?.id, charger]);
 
   const allerA = useCallback((i, demarrer) => {
     if (i >= etapes.length) {
@@ -220,6 +268,10 @@ export default function Live({ seance, onQuitter }) {
             <h1 className="live-nom" key={etape.id + index}>{nom(etape.posture)}</h1>
             <p className="sous">{[nomSecondaire(etape.posture), etape.duree].filter(Boolean).join(' · ')}</p>
             {etape.note && <p className="live-note">{etape.note}</p>}
+          </section>
+
+          <section className="live-resume-bloc">
+            <Resume posture={etape.posture} fiche={fiches[etape.id]} />
           </section>
 
           <section className="live-ensuite">

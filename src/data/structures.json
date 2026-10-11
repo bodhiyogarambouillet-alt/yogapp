@@ -1,0 +1,386 @@
+{
+ "styles": {
+  "Hatha": [
+   {
+    "phase": "Centrage",
+    "part": 0.1
+   },
+   {
+    "phase": "Échauffement",
+    "part": 0.1
+   },
+   {
+    "phase": "Salutations",
+    "part": 0.1
+   },
+   {
+    "phase": "Debout",
+    "part": 0.25
+   },
+   {
+    "phase": "Sol",
+    "part": 0.15
+   },
+   {
+    "phase": "Pic",
+    "part": 0.1
+   },
+   {
+    "phase": "Retour au calme",
+    "part": 0.1
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.1
+   }
+  ],
+  "Vinyasa": [
+   {
+    "phase": "Centrage",
+    "part": 0.05
+   },
+   {
+    "phase": "Échauffement",
+    "part": 0.1
+   },
+   {
+    "phase": "Salutations",
+    "part": 0.2
+   },
+   {
+    "phase": "Debout",
+    "part": 0.25
+   },
+   {
+    "phase": "Sol",
+    "part": 0.1
+   },
+   {
+    "phase": "Pic",
+    "part": 0.1
+   },
+   {
+    "phase": "Retour au calme",
+    "part": 0.1
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.1
+   }
+  ],
+  "Ashtanga": [
+   {
+    "phase": "Centrage",
+    "part": 0.03
+   },
+   {
+    "phase": "Salutations",
+    "part": 0.15
+   },
+   {
+    "phase": "Debout",
+    "part": 0.25
+   },
+   {
+    "phase": "Sol",
+    "part": 0.35
+   },
+   {
+    "phase": "Pic",
+    "part": 0.12
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.1
+   }
+  ],
+  "Iyengar": [
+   {
+    "phase": "Centrage",
+    "part": 0.05
+   },
+   {
+    "phase": "Échauffement",
+    "part": 0.1
+   },
+   {
+    "phase": "Debout",
+    "part": 0.35
+   },
+   {
+    "phase": "Sol",
+    "part": 0.15
+   },
+   {
+    "phase": "Pic",
+    "part": 0.15
+   },
+   {
+    "phase": "Retour au calme",
+    "part": 0.1
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.1
+   }
+  ],
+  "Sivananda": [
+   {
+    "phase": "Centrage",
+    "part": 0.1
+   },
+   {
+    "phase": "Salutations",
+    "part": 0.1
+   },
+   {
+    "phase": "Pic",
+    "part": 0.15
+   },
+   {
+    "phase": "Sol",
+    "part": 0.35
+   },
+   {
+    "phase": "Debout",
+    "part": 0.1
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.2
+   }
+  ],
+  "Yin": [
+   {
+    "phase": "Centrage",
+    "part": 0.1
+   },
+   {
+    "phase": "Échauffement",
+    "part": 0.05
+   },
+   {
+    "phase": "Sol",
+    "part": 0.65
+   },
+   {
+    "phase": "Retour au calme",
+    "part": 0.1
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.1
+   }
+  ],
+  "Restauratif": [
+   {
+    "phase": "Centrage",
+    "part": 0.1
+   },
+   {
+    "phase": "Sol",
+    "part": 0.6
+   },
+   {
+    "phase": "Retour au calme",
+    "part": 0.15
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.15
+   }
+  ],
+  "Kundalini": [
+   {
+    "phase": "Centrage",
+    "part": 0.1
+   },
+   {
+    "phase": "Échauffement",
+    "part": 0.15
+   },
+   {
+    "phase": "Sol",
+    "part": 0.45
+   },
+   {
+    "phase": "Retour au calme",
+    "part": 0.1
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.2
+   }
+  ],
+  "De Gasquet": [
+   {
+    "phase": "Centrage",
+    "part": 0.15
+   },
+   {
+    "phase": "Échauffement",
+    "part": 0.25
+   },
+   {
+    "phase": "Sol",
+    "part": 0.35
+   },
+   {
+    "phase": "Retour au calme",
+    "part": 0.1
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.15
+   }
+  ],
+  "Prénatal": [
+   {
+    "phase": "Centrage",
+    "part": 0.15
+   },
+   {
+    "phase": "Échauffement",
+    "part": 0.2
+   },
+   {
+    "phase": "Debout",
+    "part": 0.2
+   },
+   {
+    "phase": "Sol",
+    "part": 0.2
+   },
+   {
+    "phase": "Retour au calme",
+    "part": 0.1
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.15
+   }
+  ],
+  "Postnatal": [
+   {
+    "phase": "Centrage",
+    "part": 0.15
+   },
+   {
+    "phase": "Échauffement",
+    "part": 0.25
+   },
+   {
+    "phase": "Sol",
+    "part": 0.35
+   },
+   {
+    "phase": "Retour au calme",
+    "part": 0.1
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.15
+   }
+  ],
+  "Doux / seniors": [
+   {
+    "phase": "Centrage",
+    "part": 0.1
+   },
+   {
+    "phase": "Échauffement",
+    "part": 0.25
+   },
+   {
+    "phase": "Debout",
+    "part": 0.2
+   },
+   {
+    "phase": "Sol",
+    "part": 0.2
+   },
+   {
+    "phase": "Retour au calme",
+    "part": 0.1
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.15
+   }
+  ],
+  "Yoga du dos": [
+   {
+    "phase": "Centrage",
+    "part": 0.1
+   },
+   {
+    "phase": "Échauffement",
+    "part": 0.25
+   },
+   {
+    "phase": "Debout",
+    "part": 0.15
+   },
+   {
+    "phase": "Sol",
+    "part": 0.3
+   },
+   {
+    "phase": "Retour au calme",
+    "part": 0.1
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.1
+   }
+  ],
+  "Power yoga": [
+   {
+    "phase": "Centrage",
+    "part": 0.05
+   },
+   {
+    "phase": "Échauffement",
+    "part": 0.05
+   },
+   {
+    "phase": "Salutations",
+    "part": 0.2
+   },
+   {
+    "phase": "Debout",
+    "part": 0.3
+   },
+   {
+    "phase": "Sol",
+    "part": 0.1
+   },
+   {
+    "phase": "Pic",
+    "part": 0.15
+   },
+   {
+    "phase": "Retour au calme",
+    "part": 0.05
+   },
+   {
+    "phase": "Relaxation",
+    "part": 0.1
+   }
+  ]
+ },
+ "niveaux": {
+  "Débutant": {
+   "max": 1,
+   "pic": 1
+  },
+  "Intermédiaire": {
+   "max": 2,
+   "pic": 2
+  },
+  "Avancé": {
+   "max": 3,
+   "pic": 3
+  }
+ }
+}

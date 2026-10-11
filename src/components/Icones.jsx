@@ -1,0 +1,15 @@
+const base = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true };
+
+export const Retour = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M15 5l-7 7 7 7" /></svg>;
+export const Imprimer = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M7 9V3h10v6" /><path d="M7 17H4V9h16v8h-3" /><path d="M7 14h10v7H7z" /></svg>;
+export const Remplacer = () => <svg width="18" height="18" viewBox="0 0 24 24" {...base} strokeWidth="1.8"><path d="M4 8h13l-3-3" /><path d="M20 16H7l3 3" /></svg>;
+export const Etincelle = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.5L12 15l-1.8-4.5L5.5 9l4.7-1.4z" /><path d="M18 15l.8 2 2 .8-2 .7-.8 2-.7-2-2-.7 2-.8z" /></svg>;
+export const Attention = ({ label }) => <svg width="16" height="16" viewBox="0 0 24 24" {...base} strokeWidth="2" role={label ? 'img' : undefined} aria-label={label} aria-hidden={label ? undefined : true}><path d="M12 3l9 16H3z" /><path d="M12 10v4" /><path d="M12 17h.01" /></svg>;
+export const Valide = () => <svg width="18" height="18" viewBox="0 0 24 24" {...base} strokeWidth="2"><path d="M5 12l5 5 9-10" /></svg>;
+export const Livre = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z" /><path d="M5 17a3 3 0 0 1 3-3h11" /></svg>;
+export const Poubelle = () => <svg width="18" height="18" viewBox="0 0 24 24" {...base}><path d="M4 7h16" /><path d="M9 7V4h6v3" /><path d="M6 7l1 13h10l1-13" /></svg>;
+export const Cible = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base} strokeWidth="1.8"><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="3" /></svg>;
+export const Points = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="19" cy="12" r="1.8" /></svg>;
+export const Fermer = () => <svg width="18" height="18" viewBox="0 0 24 24" {...base} strokeWidth="1.8"><path d="M6 6l12 12M18 6L6 18" /></svg>;
+// Soleil levant au-dessus de l'horizon
+export const Logo = () => <svg width="28" height="28" viewBox="0 0 28 28" {...base}><path d="M4 20a10 10 0 0 1 20 0" /><path d="M2 24h24" /><path d="M14 5v3" /><path d="M6.5 8.5l2 2" /><path d="M21.5 8.5l-2 2" /></svg>;

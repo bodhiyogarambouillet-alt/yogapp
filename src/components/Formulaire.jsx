@@ -17,10 +17,10 @@ export default function Formulaire({ initial, chargement, erreur, onGenerer, onM
   const [theme, setTheme] = useState(initial?.theme || '');
   const [cible, setCible] = useState(initial?.cibleId ? PAR_ID.get(initial.cibleId) || null : null);
   const [tousStyles, setTousStyles] = useState(styles.some((s) => !PRINCIPAUX.includes(s)));
-  // Accessoires disponibles : tous cochés = aucun filtre
-  const [dispo, setDispo] = useState(initial?.accessoires || ACCESSOIRES);
+  // Accessoires disponibles : aucun par défaut (pratique sans matériel) ; tous cochés = aucun filtre
+  const [dispo, setDispo] = useState(initial ? initial.accessoires ?? ACCESSOIRES : []);
   const [eviter, setEviter] = useState(initial?.eviterRepetition || 0); // 0 = désactivé, sinon nombre de séances précédentes
-  const [options, setOptions] = useState(Boolean(initial?.cibleId || initial?.theme || initial?.eviterRepetition || initial?.accessoires));
+  const [options, setOptions] = useState(Boolean(initial?.cibleId || initial?.theme || initial?.eviterRepetition));
 
   const autres = STYLES.filter((s) => !PRINCIPAUX.includes(s));
   const visibles = tousStyles ? [...PRINCIPAUX, ...autres] : PRINCIPAUX;

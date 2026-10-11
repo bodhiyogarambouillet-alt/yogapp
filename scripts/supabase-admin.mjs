@@ -37,7 +37,9 @@ export async function rest(chemin, { method = 'GET', body, prefer } = {}) {
     body: body ? JSON.stringify(body) : undefined,
   });
   if (!res.ok) throw new Error(`Supabase ${res.status} : ${(await res.text()).slice(0, 400)}`);
-  return res.status === 204 || res.status === 201 ? null : res.json();
+  // Réponse vide possible (Prefer: return=minimal), quel que soit le code de succès
+  const texte = await res.text();
+  return texte ? JSON.parse(texte) : null;
 }
 
 // Insère ou met à jour par paquets de 100

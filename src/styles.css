@@ -197,7 +197,7 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .cible-carte .ligne-texte { flex-grow: 1; }
 
 /* Mes séances */
-.ligne-seance { display: flex; align-items: center; padding: 6px 4px 6px 16px; }
+
 
 /* Effets supplémentaires */
 @keyframes pop { 0% { transform: scale(0.85); } 60% { transform: scale(1.06); } 100% { transform: scale(1); } }
@@ -362,8 +362,14 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 /* Date de la séance */
 .date-seance { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 16px 24px 0; padding: 8px 8px 8px 18px; border-radius: 22px; background: var(--surface); font-size: 14px; font-weight: 700; color: var(--texte-doux); }
 .date-seance input { width: auto; height: 40px; padding: 0 12px; border: none; border-radius: 14px; background: var(--fond); font-size: 15px; color: var(--texte); }
-.ligne-seance { flex-wrap: wrap; }
-.date-ligne { position: relative; order: 3; flex-basis: 100%; display: flex; align-items: center; min-height: 36px; margin: 0 0 8px 16px; }
+/* Carte séance : titre et infos en haut (suppression à droite), date en bas, toujours à la même place */
+.ligne-seance { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "texte suppr" "date date"; align-items: start; gap: 0 4px; padding: 16px 8px 14px 18px; }
+.ligne-seance > .ligne-lien { grid-area: texte; min-height: 0; padding: 0; align-self: start; }
+.ligne-seance .ligne-texte { gap: 4px; }
+.ligne-seance .ligne-nom { font-size: 17px; line-height: 1.3; }
+.ligne-seance .seance-objectif { color: var(--accent); font-weight: 700; }
+.ligne-seance > .rond { grid-area: suppr; margin: -8px 0 0; color: var(--texte-doux); }
+.date-ligne { grid-area: date; position: relative; display: flex; align-items: center; justify-self: start; min-height: 36px; margin: 14px 0 0; }
 .date-texte { padding: 6px 12px; border-radius: 14px; background: var(--fond); font-size: 13px; font-weight: 700; color: var(--accent); }
 .date-texte::first-letter { text-transform: uppercase; }
 .date-texte::after { content: ' ✎'; font-weight: 400; }
@@ -831,7 +837,8 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
   .etapes .etape-pied { position: static; padding-top: 36px; padding-bottom: 48px; }
 
   /* Mes séances : trois colonnes */
-  .liste-seances { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .liste-seances { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
+  .liste-seances .ligne-seance { grid-template-rows: 1fr auto; }
 
   /* Bibliothèque : filtres sur plusieurs lignes, familles en deux colonnes */
   .biblio-outils { padding: 20px 0 0; }

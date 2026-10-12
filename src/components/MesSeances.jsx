@@ -57,9 +57,9 @@ export default function MesSeances({ compte, onRetour, onOuvrir }) {
           <div className="carte ligne-seance" key={s.uid}>
             <button type="button" className="ligne-lien" onClick={() => onOuvrir(s)}>
               <span className="ligne-texte">
-                <span className="ligne-nom">{s.style} · {s.duree} min · {s.niveau}</span>
-                {s.cibleId && PAR_ID.get(s.cibleId) && <span className="ligne-infos">Objectif : {nom(PAR_ID.get(s.cibleId))}</span>}
-                <span className="ligne-infos">{s.titre || s.theme || ''}</span>
+                <span className="ligne-nom">{s.titre || s.theme || `Séance ${s.style}`}</span>
+                <span className="ligne-infos">{[s.style, `${s.duree} min`, s.niveau].filter(Boolean).join(' · ')}</span>
+                {s.cibleId && PAR_ID.get(s.cibleId) && <span className="ligne-infos seance-objectif">Objectif : {nom(PAR_ID.get(s.cibleId))}</span>}
               </span>
             </button>
             <label className="date-ligne">

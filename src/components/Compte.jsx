@@ -66,17 +66,17 @@ function Spotify() {
     }
   };
   return (
-    <div className="carte spotify">
+    <div className="carte carte-compte">
       <h2>Musique · Spotify</h2>
       {etat.connecte ? (
         <>
-          <p>Connecté : <strong>{etat.profil?.nom || 'compte Spotify'}</strong></p>
-          <p className="aide">Les playlists de vos séances seront créées dans ce compte.</p>
+          <p className="compte-ligne"><span className="compte-nom">{etat.profil?.nom || 'Compte Spotify'}</span><span className="badge badge-spotify">Connecté</span></p>
+          <p className="aide">Les playlists de vos séances sont créées dans ce compte.</p>
           <button type="button" className="lien" onClick={deconnecterSpotify}>Déconnecter Spotify</button>
         </>
       ) : (
         <>
-          <p className="aide" style={{ marginTop: 0 }}>Connectez votre compte Spotify pour créer une playlist adaptée à chaque séance. Réservé aux comptes autorisés par l'administrateur.</p>
+          <p className="aide">Connectez votre compte Spotify pour créer une playlist adaptée à chaque séance. Réservé aux comptes autorisés par l'administrateur.</p>
           {etat.erreur && <p className="erreur" role="alert">{etat.erreur}</p>}
           <button type="button" className="bouton-spotify" onClick={connecter} disabled={envoi}>{envoi ? 'Ouverture de Spotify…' : 'Connecter Spotify'}</button>
         </>
@@ -117,16 +117,19 @@ export default function Compte({ compte, onRetour }) {
       <section className="cartes">
         {!compte?.actif && <div className="carte"><p>La connexion n'est pas disponible sur cette version.</p></div>}
         {compte?.actif && (connecte ? (
-          <div className="carte compte">
-            <p>Connecté : <strong>{compte.email}</strong>{compte.admin && <span className="badge" style={{ marginLeft: 8 }}>Admin</span>}</p>
+          <div className="carte carte-compte">
+            <h2>Votre compte</h2>
+            <p className="compte-ligne"><span className="compte-nom">{compte.email}</span>{compte.admin && <span className="badge badge-admin">Admin</span>}</p>
+            <p className="aide">{compte.admin ? 'Vous pouvez modifier et régénérer les fiches des postures.' : 'Vos séances sont synchronisées sur vos appareils.'}</p>
             <button type="button" className="lien" onClick={() => deconnexion()}>Se déconnecter</button>
           </div>
         ) : <Connexion />)}
         <Spotify />
         {aTransferer && (
-          <div className="carte">
+          <div className="carte carte-compte">
+            <h2>Séances de cet appareil</h2>
             <p>Cet appareil contient {locales.seances.length} séance(s) enregistrée(s) avant la connexion.</p>
-            <button type="button" className="principal" style={{ marginTop: 12, width: '100%' }} onClick={transferer}>Les transférer sur mon compte</button>
+            <button type="button" className="principal" style={{ alignSelf: 'stretch', marginTop: 4 }} onClick={transferer}>Les transférer sur mon compte</button>
           </div>
         )}
       </section>

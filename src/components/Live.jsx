@@ -244,7 +244,7 @@ export default function Live({ seance, onQuitter }) {
   const indexPhase = phases.findIndex((ph) => ph.phase === etape.phase);
 
   return (
-    <div className={`ecran live ${enCours ? 'en-cours' : ''} ${musique.actif ? 'avec-musique' : ''}`}>
+    <div className={`ecran live ${enCours ? 'en-cours' : ''}`}>
       <header className="entete compact">
         <button type="button" className="rond" aria-label="Quitter la séance" onClick={quitter}><Fermer /></button>
         <span className="sous">{terminee ? 'Séance terminée' : `${etape.phase} · ${index + 1}/${etapes.length}`}</span>
@@ -308,10 +308,11 @@ export default function Live({ seance, onQuitter }) {
             ) : <span className="etiquette">Dernière posture</span>}
           </section>
 
+          <CarteMorceau musique={musique} playlist={seance.playlist} />
+
           <div className="ressort" />
 
           <footer className="live-commandes">
-            <CarteMorceau musique={musique} playlist={seance.playlist} />
             <button type="button" className="rond" aria-label="Posture précédente" onClick={precedent}><Precedent /></button>
             <button type="button" className="live-lecture" aria-label={enCours ? 'Pause' : 'Lancer'} onClick={basculer}>
               {enCours ? <Pause /> : <Lecture />}

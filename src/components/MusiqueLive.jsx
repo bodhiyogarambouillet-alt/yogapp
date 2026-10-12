@@ -98,7 +98,9 @@ export function CarteMorceau({ musique, playlist }) {
   if (!musique.actif) return null;
   const { morceau, erreur, suivant } = musique;
   return (
-    <div className="morceau-live" role="status" aria-live="polite">
+    <section className="live-musique" aria-label="Musique">
+      <span className="etiquette">Musique</span>
+      <div className="morceau-live" role="status" aria-live="polite">
       {morceau?.image ? <img src={morceau.image} alt="" width="40" height="40" /> : <span className="morceau-pochette" aria-hidden="true">♪</span>}
       <span className="morceau-texte">
         {erreur ? (
@@ -123,6 +125,7 @@ export function CarteMorceau({ musique, playlist }) {
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 6l8 6-8 6z" /><path d="M18 6v12" /></svg>
         </button>
       )}
-    </div>
+      </div>
+    </section>
   );
 }

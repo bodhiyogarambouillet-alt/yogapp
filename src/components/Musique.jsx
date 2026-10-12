@@ -6,6 +6,21 @@ import { estNatif } from '../natif.js';
 
 // Carte « Musique de la séance » : choix du style, création de la playlist Spotify, aperçu par phase.
 // Repliée par défaut ; la playlist créée est gardée avec la séance.
+const ETAPES = ['Choix des morceaux…', 'Recherche sur Spotify…', 'Création de la playlist…'];
+
+// Pendant la création : égaliseur animé et étapes qui se cochent
+function Chargement({ etape }) {
+  const k = Math.max(0, ETAPES.indexOf(etape));
+  return (
+    <div className="musique-chargement" role="status" aria-live="polite">
+      <div className="egaliseur" aria-hidden="true">{[0, 1, 2, 3, 4].map((i) => <span key={i} style={{ animationDelay: `${i * 0.15}s` }} />)}</div>
+      <ol>
+        {ETAPES.map((e, i) => <li key={e} className={i < k ? 'faite' : i === k ? 'en-cours' : ''}>{i < k ? '✓ ' : ''}{e.replace('…', '')}</li>)}
+      </ol>
+    </div>
+  );
+}
+
 const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
 
 export default function Musique({ seance, onChange }) {
@@ -76,9 +91,11 @@ export default function Musique({ seance, onChange }) {
                 <input type="checkbox" role="switch" checked={sansParoles} disabled={Boolean(enCours)} onChange={(e) => setSansParoles(e.target.checked)} />
               </label>
               {erreur && <p className="erreur" role="alert">{erreur}</p>}
-              <button type="button" className={playlist ? 'secondaire' : 'principal'} disabled={Boolean(enCours)} onClick={() => creer()}>
-                {enCours || (playlist ? 'Nouvelle playlist avec ce style' : 'Créer la playlist')}
-              </button>
+              {enCours ? <Chargement etape={enCours} /> : (
+                <button type="button" className={playlist ? 'secondaire' : 'principal'} onClick={() => creer()}>
+                  {playlist ? 'Nouvelle playlist avec ce style' : 'Créer la playlist'}
+                </button>
+              )}
             </>
           )}
 

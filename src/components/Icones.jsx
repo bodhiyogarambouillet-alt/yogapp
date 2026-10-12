@@ -12,7 +12,7 @@ export const Cible = () => <svg width="20" height="20" viewBox="0 0 24 24" {...b
 export const Points = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="19" cy="12" r="1.8" /></svg>;
 export const Fermer = () => <svg width="18" height="18" viewBox="0 0 24 24" {...base} strokeWidth="1.8"><path d="M6 6l12 12M18 6L6 18" /></svg>;
 // Soleil levant au-dessus de l'horizon
-export const Logo = () => <svg width="28" height="28" viewBox="0 0 28 28" {...base}><path d="M4 20a10 10 0 0 1 20 0" /><path d="M2 24h24" /><path d="M14 5v3" /><path d="M6.8 8.8l1.8 1.8" /><path d="M21.2 8.8l-1.8 1.8" /><path d="M3.1 14.9l-1.8-.8" /><path d="M24.9 14.9l1.8-.8" /></svg>;
+export const Logo = () => <svg width="28" height="28" viewBox="0 0 28 28" {...base}><path d="M4 20a10 10 0 0 1 20 0" /><path d="M2 24h24" /><path d="M14 5v3" /><path d="M6.4 8.4l1.3 1.3" /><path d="M21.6 8.4l-1.3 1.3" /><path d="M3.1 14.9l-1.8-.8" /><path d="M24.9 14.9l1.8-.8" /></svg>;
 export const Lecture = () => <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" /></svg>;
 export const Pause = () => <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1.2" /><rect x="13.5" y="5" width="4" height="14" rx="1.2" /></svg>;
 export const Suivant = () => <svg width="22" height="22" viewBox="0 0 24 24" {...base} strokeWidth="1.8"><path d="M6 6l8 6-8 6z" /><path d="M18 6v12" /></svg>;
@@ -29,3 +29,4 @@ export const Google = () => (
   </svg>
 );
 export const Exporter = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M12 3v12" /><path d="M7 8l5-5 5 5" /><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" /></svg>;
+export const Utilisateur = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><circle cx="12" cy="8.5" r="3.8" /><path d="M4.5 20a7.5 7.5 0 0 1 15 0" /></svg>;

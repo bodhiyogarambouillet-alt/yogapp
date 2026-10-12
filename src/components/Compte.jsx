@@ -1,0 +1,102 @@
+import { useState } from 'react';
+import { donneesLocales, transfererDonneesLocales } from '../stockage.js';
+import { connexionParMotDePasse, connexionGoogle, deconnexion } from '../supabase.js';
+import { Retour, Oeil, OeilBarre, Google } from './Icones.jsx';
+
+// Écran « Compte » : connexion administrateur, déconnexion et transfert des séances de l'appareil
+
+function Connexion() {
+  const [email, setEmail] = useState('');
+  const [motDePasse, setMotDePasse] = useState('');
+  const [voir, setVoir] = useState(false); // afficher le mot de passe en clair
+  const [etat, setEtat] = useState(null); // null | 'envoi' | message d'erreur
+  const envoyer = async (e) => {
+    e.preventDefault();
+    setEtat('envoi');
+    try {
+      await connexionParMotDePasse(email, motDePasse); // la session met l'écran à jour
+      setEtat(null);
+    } catch (err) {
+      setEtat(err.message);
+    }
+  };
+  const google = async () => {
+    setEtat('envoi');
+    try {
+      await connexionGoogle(); // la session met l'écran à jour au retour de Google
+      setEtat(null);
+    } catch (err) {
+      setEtat(`Connexion Google impossible : ${err.message}`);
+    }
+  };
+  return (
+    <form className="carte connexion" onSubmit={envoyer}>
+      <h2>Connexion administrateur</h2>
+      <p className="aide" style={{ marginTop: 0 }}>Réservée aux administrateurs : eux seuls peuvent modifier et régénérer les fiches. Avec Google, utilisez l'adresse enregistrée comme administrateur.</p>
+      <button type="button" className="bouton-google" onClick={google} disabled={etat === 'envoi'}><Google /> Continuer avec Google</button>
+      <p className="separateur"><span>ou</span></p>
+      <label htmlFor="email" className="etiquette">Email</label>
+      <input id="email" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="vous@exemple.fr" />
+      <label htmlFor="mdp" className="etiquette" style={{ marginTop: 12 }}>Mot de passe</label>
+      <div className="champ-mdp">
+        <input id="mdp" type={voir ? 'text' : 'password'} required autoComplete="current-password" value={motDePasse} onChange={(e) => setMotDePasse(e.target.value)} />
+        <button type="button" className="voir-mdp" aria-label={voir ? 'Masquer le mot de passe' : 'Afficher le mot de passe'} aria-pressed={voir} onClick={() => setVoir(!voir)}>
+          {voir ? <OeilBarre /> : <Oeil />}
+        </button>
+      </div>
+      {etat && etat !== 'envoi' && <p className="erreur" role="alert">{etat}</p>}
+      <button type="submit" className="principal" disabled={etat === 'envoi'}>{etat === 'envoi' ? 'Connexion…' : 'Se connecter'}</button>
+    </form>
+  );
+}
+
+export default function Compte({ compte, onRetour }) {
+  const [message, setMessage] = useState(null);
+  const [locales, setLocales] = useState(donneesLocales);
+  const connecte = compte?.actif && compte.email;
+  const aTransferer = connecte && locales.seances.length > 0;
+
+  const transferer = async () => {
+    try {
+      const { nSeances } = await transfererDonneesLocales();
+      setMessage(`${nSeances} séance(s) transférée(s) sur votre compte.`);
+      setLocales(donneesLocales());
+    } catch (e) {
+      setMessage(`Transfert impossible : ${e.message}`);
+    }
+  };
+
+  return (
+    <div className="ecran">
+      <header className="entete compact">
+        <button type="button" className="rond" aria-label="Retour" onClick={onRetour}><Retour /></button>
+        <span className="sous">Compte</span>
+        <span className="cale" />
+      </header>
+
+      <section className="bloc">
+        <h1 className="titre-section">Compte</h1>
+        <p className="sous">{connecte ? 'Vos séances sont enregistrées sur tous vos appareils.' : 'Sans connexion, vos séances restent sur cet appareil.'}</p>
+      </section>
+
+      <section className="cartes">
+        {!compte?.actif && <div className="carte"><p>La connexion n'est pas disponible sur cette version.</p></div>}
+        {compte?.actif && (connecte ? (
+          <div className="carte compte">
+            <p>Connecté : <strong>{compte.email}</strong>{compte.admin && <span className="badge" style={{ marginLeft: 8 }}>Admin</span>}</p>
+            <button type="button" className="lien" onClick={() => deconnexion()}>Se déconnecter</button>
+          </div>
+        ) : <Connexion />)}
+        {aTransferer && (
+          <div className="carte">
+            <p>Cet appareil contient {locales.seances.length} séance(s) enregistrée(s) avant la connexion.</p>
+            <button type="button" className="principal" style={{ marginTop: 12, width: '100%' }} onClick={transferer}>Les transférer sur mon compte</button>
+          </div>
+        )}
+      </section>
+
+      {message && <p className="aide" role="status" style={{ margin: '16px 24px' }}>{message}</p>}
+      <div style={{ height: 32 }} />
+    </div>
+  );
+}

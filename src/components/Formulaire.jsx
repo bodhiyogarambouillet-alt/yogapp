@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { STYLES, DUREES, PAR_ID, nom } from '../bibliotheque.js';
-import { Logo, Retour } from './Icones.jsx';
+import { Logo, Retour, Utilisateur } from './Icones.jsx';
 import ChoixCible from './ChoixCible.jsx';
 import { ACCESSOIRES } from '../accessoires.js';
 import { useRetour } from '../natif.js';
@@ -38,7 +38,7 @@ function Option({ titre, valeur, ouvert, onBasculer, children }) {
   );
 }
 
-export default function Formulaire({ initial, erreur, onGenerer, onMesSeances }) {
+export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSeances, onCompte }) {
   // Styles choisis : aucun = séance libre (toutes les postures), plusieurs = mélange
   const [styles, setStyles] = useState(initial?.styles || (initial?.style ? [initial.style] : ['Hatha']));
   const [duree, setDuree] = useState(initial?.duree || 45);
@@ -50,6 +50,7 @@ export default function Formulaire({ initial, erreur, onGenerer, onMesSeances })
   const [dispo, setDispo] = useState(Array.isArray(initial?.accessoires) ? initial.accessoires : []);
   const [eviter, setEviter] = useState(initial?.eviterRepetition || 0); // 0 = désactivé, sinon nombre de séances précédentes
   const [optionOuverte, setOptionOuverte] = useState(null);
+  const [autreDuree, setAutreDuree] = useState(!DUREES.includes(initial?.duree || 45)); // durée personnalisée
 
   // Étape affichée et sens de la transition (avance / recul)
   const [etape, setEtape] = useState(erreur ? 5 : 0);
@@ -82,7 +83,12 @@ export default function Formulaire({ initial, erreur, onGenerer, onMesSeances })
   if (etape === 0) {
     contenu = (
       <>
-        <div className="marque accueil-marque"><span className="accent"><Logo /></span><span>Mes séances Yoga</span></div>
+        <div className="accueil-haut">
+          <div className="marque"><span className="accent"><Logo /></span><span>Mes séances Yoga</span></div>
+          {compte?.actif && (
+            <button type="button" className="rond" aria-label={compte.email ? 'Compte' : 'Se connecter'} onClick={onCompte}><Utilisateur /></button>
+          )}
+        </div>
         <h1 className="etape-titre accueil-titre">Prépare<br />ton prochain cours</h1>
         <p className="etape-aide">Une séance sur mesure en quelques questions.</p>
         {initial && (
@@ -125,9 +131,21 @@ export default function Formulaire({ initial, erreur, onGenerer, onMesSeances })
         <p className="etape-aide">Durée de la séance, en minutes.</p>
         <div className="durees etape-durees" role="group" aria-label="Durée">
           {DUREES.map((d) => (
-            <button type="button" key={d} className={`duree ${d === duree ? 'actif' : ''}`}
-              aria-pressed={d === duree} aria-label={`${d} minutes`} onClick={() => setDuree(d)}>{d}</button>
+            <button type="button" key={d} className={`duree ${!autreDuree && d === duree ? 'actif' : ''}`}
+              aria-pressed={!autreDuree && d === duree} aria-label={`${d} minutes`} onClick={() => { setDuree(d); setAutreDuree(false); }}>{d}</button>
           ))}
+        </div>
+        <div className={`duree-perso ${autreDuree ? 'actif' : ''}`}>
+          <button type="button" className={`badge choix ${autreDuree ? 'actif' : ''}`} aria-pressed={autreDuree}
+            onClick={() => setAutreDuree(!autreDuree)}>Autre durée</button>
+          {autreDuree && (
+            <label className="duree-perso-champ">
+              <input type="number" inputMode="numeric" min="10" max="180" step="5" value={duree} aria-label="Durée en minutes"
+                onChange={(e) => setDuree(Number(e.target.value) || 0)}
+                onBlur={() => setDuree(Math.min(180, Math.max(10, Math.round(duree / 5) * 5 || 45)))} />
+              <span>min</span>
+            </label>
+          )}
         </div>
       </>
     );
@@ -173,12 +191,15 @@ export default function Formulaire({ initial, erreur, onGenerer, onMesSeances })
               placeholder="Ancrage, deux élèves aux lombaires fragiles…" aria-label="Thème ou contraintes" />
           </Option>
           <Option titre="Éviter les répétitions" valeur={EVITER.find(([n]) => n === eviter)?.[1]} ouvert={optionOuverte === 'eviter'} onBasculer={() => basculerOption('eviter')}>
-            <div className="niveaux deux-colonnes" role="group" aria-label="Éviter les postures des séances précédentes">
+            <div className="badges" role="group" aria-label="Éviter les postures des séances précédentes">
               {EVITER.map(([n, libelle]) => (
-                <button type="button" key={n} className={`niveau ${n === eviter ? 'actif' : ''}`} aria-pressed={n === eviter}
+                <button type="button" key={n} className={`badge choix ${n === eviter ? 'actif' : ''}`} aria-pressed={n === eviter}
                   onClick={() => setEviter(n)}>{libelle}</button>
               ))}
             </div>
+            <p className="aide">
+              {eviter ? 'Les postures de vos séances enregistrées les plus récentes sont évitées autant que possible.' : 'Aucune séance précédente n\'est prise en compte.'}
+            </p>
           </Option>
         </div>
       </>

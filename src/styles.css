@@ -466,7 +466,7 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 
   /* Création en étapes : colonne étroite et centrée, la barre remplace la marque de l'accueil */
   .etapes { max-width: 600px; }
-  .accueil-marque { display: none; }
+  .accueil-haut { display: none; }
   .accueil-titre { margin-top: 56px; }
 
   /* Séance : un bandeau d'en-tête (titre à gauche, lancement et date à droite), puis les phases */
@@ -510,7 +510,7 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .etape-corps { display: flex; flex-direction: column; padding: 32px var(--marge) 0; }
 .etape-titre { margin: 0; font-size: 32px; line-height: 1.15; text-wrap: balance; }
 .accueil-titre { margin-top: 40px; font-size: 38px; }
-.accueil-marque { margin-top: 4px; }
+.accueil-haut { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 4px; }
 .etape-aide { margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: var(--texte-doux); }
 .etape-corps > .tuiles, .etape-corps > .durees, .etape-corps > .choix-liste { margin-top: 28px; }
 .etape-corps > .lien { align-self: flex-start; margin-top: 6px; }
@@ -530,7 +530,8 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .option-valeur { display: flex; align-items: center; gap: 8px; min-width: 0; font-size: 14px; font-weight: 700; color: var(--accent); text-align: right; }
 .option-fleche { font-size: 20px; line-height: 1; transition: transform 0.3s ease; }
 .option-ligne.ouvert .option-fleche { transform: rotate(90deg); }
-.option-ligne .repli-options > .options { padding: 2px 20px 18px; margin: 0; transition: padding 0.4s ease; }
+/* 6 px en haut : place pour le contour de sélection des champs (posture cible, thème) */
+.option-ligne .repli-options > .options { padding: 6px 20px 18px; margin: 0; transition: padding 0.4s ease; }
 .option-ligne .repli-options:not(.ouvert) > .options { padding-top: 0; padding-bottom: 0; }
 .niveaux.deux-colonnes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .recap-cible { margin-top: 14px; }
@@ -553,11 +554,15 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 
 /* ---------- Composition en cours ---------- */
 .chargement-seance { position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 24px; background: var(--fond); text-align: center; animation: apparition 0.35s ease both; }
-.chargement-soleil { width: 132px; height: 132px; margin-bottom: 18px; overflow: visible; }
-.chargement-astre { fill: var(--accent); transform-origin: 16px 24px; animation: chargement-respire 3.2s ease-in-out infinite; }
-.chargement-horizon { fill: var(--accent); }
-.chargement-rayons line { stroke: var(--soleil); stroke-width: 2.4; stroke-linecap: round; animation: chargement-rayon 1.6s ease-in-out infinite; }
+.chargement-soleil { width: 120px; height: 120px; margin-bottom: 18px; overflow: visible; fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.chargement-astre { transform-origin: 14px 22px; animation: chargement-respire 3.2s ease-in-out infinite; }
+.chargement-rayon { animation: chargement-rayon 1.6s ease-in-out infinite; }
 .chargement-titre { margin: 0; font-family: var(--titre); font-size: 26px; color: var(--texte); }
 .chargement-message { margin: 0; min-height: 22px; font-size: 15px; color: var(--texte-doux); animation: apparition 0.5s ease both; }
 @keyframes chargement-respire { 0%, 100% { transform: scale(0.92); } 50% { transform: scale(1.06); } }
 @keyframes chargement-rayon { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+
+/* Durée personnalisée */
+.duree-perso { display: flex; align-items: center; gap: 12px; margin-top: 20px; min-height: 44px; }
+.duree-perso-champ { display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--texte-doux); animation: apparition 0.3s ease both; }
+.duree-perso-champ input { width: 96px; height: 44px; padding: 0 14px; border: 1.5px solid var(--trait); border-radius: 14px; background: var(--surface); font-family: var(--titre); font-size: 22px; color: var(--accent); text-align: center; }

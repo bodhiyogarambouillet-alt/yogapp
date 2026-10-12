@@ -4,6 +4,7 @@ import Seance from './components/Seance.jsx';
 import Fiche from './components/Fiche.jsx';
 import MesSeances from './components/MesSeances.jsx';
 import ChargementSeance from './components/ChargementSeance.jsx';
+import Compte from './components/Compte.jsx';
 import { PAR_ID, chargerBibliotheque } from './bibliotheque.js';
 import { enregistrerSeance, listerSeances } from './stockage.js';
 import { stylesDe } from './styles-seance.js';
@@ -154,10 +155,12 @@ export default function App() {
           aller('seance');
         }} />
     );
+  } else if (vue === 'compte') {
+    ecran = <Compte compte={compte} onRetour={() => aller('formulaire')} />;
   } else {
     ecran = (
-      <Formulaire initial={params} erreur={erreur}
-        onGenerer={generer} onMesSeances={() => aller('mes-seances')} />
+      <Formulaire initial={params} erreur={erreur} compte={compte}
+        onGenerer={generer} onMesSeances={() => aller('mes-seances')} onCompte={() => aller('compte')} />
     );
   }
 
@@ -166,7 +169,7 @@ export default function App() {
 
   // Grand écran : barre de navigation en haut, comme sur un site
   if (!grandEcran) return ecran;
-  const onglets = [['formulaire', 'Composer'], ...(seance ? [['seance', 'Séance en cours']] : []), ['mes-seances', 'Mes séances']];
+  const onglets = [['formulaire', 'Composer'], ...(seance ? [['seance', 'Séance en cours']] : []), ['mes-seances', 'Mes séances'], ['compte', compte.email ? 'Compte' : 'Se connecter']];
   return (
     <>
       <nav className="barre-app" aria-label="Navigation">

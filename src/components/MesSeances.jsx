@@ -41,7 +41,7 @@ export default function MesSeances({ compte, onRetour, onOuvrir }) {
 
   return (
     <div className="ecran">
-      <header className="entete compact">
+      <header className="entete compact entete-onglet">
         <button type="button" className="rond" aria-label="Retour" onClick={onRetour}><Retour /></button>
         <span className="sous">Mes séances</span>
         <span className="cale" />

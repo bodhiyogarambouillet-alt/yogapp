@@ -37,7 +37,7 @@ export default function Bibliotheque({ onRetour, onOuvrirPosture }) {
 
   return (
     <div className="ecran bibliotheque">
-      <header className="entete compact">
+      <header className="entete compact entete-onglet">
         <button type="button" className="rond" aria-label="Retour" onClick={() => { memoire.defilement = 0; onRetour(); }}><Retour /></button>
         <span className="sous">Bibliothèque</span>
         <span className="cale" />

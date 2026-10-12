@@ -384,8 +384,16 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 
 .fond-cercle { fill: none; stroke: var(--surface-2); stroke-width: 8; }
 .avance-cercle { fill: none; stroke: var(--accent); stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 0.3s linear; }
-.live-picto { position: absolute; inset: 22px; border: none; border-radius: 50%; background: var(--arche); display: flex; align-items: center; justify-content: center; padding: 0; }
+/* Derrière le picto : les ronds concentriques du logo ; en séance, ils ondulent et des ondes s'en échappent */
+.live-picto { position: absolute; inset: 22px; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 0;
+  background: radial-gradient(circle closest-side, #DDBE98 0 62%, #E5D0B4 62% 76%, #EBDCC7 76% 89%, #F0E5D6 89% 100%); }
+.live-picto .picto { position: relative; z-index: 1; }
+.live-picto::before, .live-picto::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 1px solid #CFA47A; opacity: 0; pointer-events: none; }
 .live.en-cours .live-picto { animation: respiration 6s ease-in-out infinite; }
+.live.en-cours .live-picto::before { animation: live-onde 4s ease-out infinite; }
+.live.en-cours .live-picto::after { animation: live-onde 4s ease-out 2s infinite; }
+@keyframes live-onde { 0% { transform: scale(0.55); opacity: 0; } 15% { opacity: 0.55; } 100% { transform: scale(1.25); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .live.en-cours .live-picto::before, .live.en-cours .live-picto::after { animation: none; } }
 .live-chrono { margin-top: 14px; font-family: var(--titre); font-size: 56px; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
 .live-cote { margin: 10px 0 0; padding: 4px 14px; border-radius: 14px; background: var(--sauge-fond); color: var(--sauge-texte); font-size: 14px; font-weight: 700; animation: pop 0.4s ease; }
 .live-nom { margin: 12px 0 0; font-size: 28px; animation: apparition 0.45s ease both; }
@@ -794,3 +802,58 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .chargement-seance.depuis-decor { animation: chargement-fond 0.7s ease both; }
 body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25s ease; }
 @keyframes chargement-fond { from { background-color: rgba(243, 236, 225, 0); } to { background-color: var(--fond); } }
+
+/* ---------- Grand écran : harmonisation (placé en fin de feuille pour l'emporter sur les règles des composants) ---------- */
+/* Une seule largeur de contenu, alignée sur la barre de navigation (1040 px, marges de 32 px) */
+@media (min-width: 1024px) {
+  .ecran:not(.etapes):not(.live):not(.panneau) { max-width: 1040px; padding-left: 32px; padding-right: 32px; }
+  .panneau-fiche .ecran { padding-left: 0; padding-right: 0; }
+  /* Fiche ouverte : le panneau glisse sous la barre et la séance se décale pour rester entière */
+  .panneau-fiche { top: 69px; box-shadow: -12px 0 32px rgba(46, 38, 34, 0.1); border-left: 1px solid var(--trait); }
+  body:has(.panneau-fiche) .ecran:not(.panneau) { margin-left: max(24px, calc((100vw - 460px - 1040px) / 2)); margin-right: 460px; }
+  /* Écrans des onglets : la barre de navigation remplace l'en-tête (retour + rappel du titre) */
+  .entete-onglet { display: none; }
+  .ecran:not(.panneau) > .entete { padding-left: 0; padding-right: 0; }
+  .ecran:not(.panneau) > .bloc { padding: 40px 0 0; }
+  .ecran:not(.panneau) > .bloc .titre-section { font-size: 34px; }
+  .ecran:not(.panneau) > .cartes { padding: 20px 0 0; }
+
+  /* Accueil et étapes : le décor occupe la gauche, la colonne de contenu s'aligne à droite de la barre */
+  .fond-ondes { --rayon: min(42vw, 600px); --cy: 50%; }
+  .fond-ondes:not(.accueil) { --cy: 58%; --echelle: calc(0.62 + var(--etape) * 0.06); }
+  .etapes { max-width: 520px; margin-left: auto; margin-right: max(32px, calc((100vw - 1040px) / 2 + 32px)); padding-left: 0; padding-right: 0; --marge: 0px; }
+  .accueil-haut { display: none; }
+  .accueil-titre { margin-top: 18vh; font-size: 46px; }
+  .etapes .etape-haut { padding-top: 10vh; }
+  .etapes > .ressort { display: none; }
+  .etapes .etape-pied { position: static; padding-top: 36px; padding-bottom: 48px; }
+
+  /* Mes séances : trois colonnes */
+  .liste-seances { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+
+  /* Bibliothèque : filtres sur plusieurs lignes, familles en deux colonnes */
+  .biblio-outils { padding: 20px 0 0; }
+  .biblio-outils input[type="search"] { max-width: 520px; }
+  .biblio-filtres { flex-wrap: wrap; overflow: visible; margin: 0; padding: 0; }
+  .biblio-liste { display: block; column-count: 2; column-gap: 16px; }
+  .biblio-groupe { break-inside: avoid; margin-bottom: 16px; }
+
+  /* Compte : cartes côte à côte, même largeur */
+  .ecran > .cartes:has(.carte-compte) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+  .connexion { max-width: none; }
+
+  /* Séance : en-tête en deux colonnes (titre et intention | lancer, date, musique), phases en deux colonnes */
+  .seance-gauche { grid-template-columns: minmax(0, 1fr) 360px; grid-template-areas: "heros lancer" "intention date" "intention musique" "bilan bilan"; column-gap: 40px; row-gap: 12px; align-items: start; padding-top: 32px; }
+  .seance-gauche > .heros { grid-area: heros; padding: 0; }
+  .seance-gauche > .seance-intention { grid-area: intention; margin: 0; padding: 0; }
+  .seance-gauche > .composer.lancer { grid-area: lancer; align-self: center; margin: 0; }
+  .seance-gauche > .date-seance { grid-area: date; margin: 0; }
+  .seance-gauche > .musique { grid-area: musique; margin: 0; }
+  .seance-gauche > .bilan, .seance-gauche > .avertissement { grid-area: bilan; margin: 4px 0 0; }
+  .seance-droite .phases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; padding: 32px 0 0; }
+  .seance-droite .phases .phase { margin: 0; }
+  .seance-droite .mode-remplacement { margin: 24px 0 0; }
+  .seance-droite .pied.deux { padding-left: 0; padding-right: 0; }
+  /* Séance en direct : picto agrandi dans le grand cercle */
+  .live-picto .picto { transform: scale(1.3); }
+}

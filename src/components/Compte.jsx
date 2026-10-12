@@ -104,7 +104,7 @@ export default function Compte({ compte, onRetour }) {
 
   return (
     <div className="ecran">
-      <header className="entete compact">
+      <header className="entete compact entete-onglet">
         <button type="button" className="rond" aria-label="Retour" onClick={onRetour}><Retour /></button>
         <span className="sous">Compte</span>
         <span className="cale" />

@@ -553,16 +553,53 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 @keyframes etape-entree-gauche { from { opacity: 0; transform: translateX(-32px); } to { opacity: 1; transform: none; } }
 
 /* ---------- Composition en cours ---------- */
-.chargement-seance { position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 24px; background: var(--fond); text-align: center; animation: apparition 0.35s ease both; }
-.chargement-soleil { width: 120px; height: 120px; margin-bottom: 18px; overflow: visible; fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.chargement-astre { transform-origin: 14px 22px; animation: chargement-respire 3.2s ease-in-out infinite; }
-.chargement-rayon { animation: chargement-rayon 1.6s ease-in-out infinite; }
-.chargement-titre { margin: 0; font-family: var(--titre); font-size: 26px; color: var(--texte); }
-.chargement-message { margin: 0; min-height: 22px; font-size: 15px; color: var(--texte-doux); animation: apparition 0.5s ease both; }
-@keyframes chargement-respire { 0%, 100% { transform: scale(0.92); } 50% { transform: scale(1.06); } }
-@keyframes chargement-rayon { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+.chargement-seance { position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; padding: 24px; background: var(--fond); text-align: center; animation: apparition 0.35s ease both; }
+
+/* Le soleil : lever, tracé des rayons, halos en onde, lueur qui respire */
+.chargement-scene { position: relative; width: 170px; height: 150px; display: flex; align-items: center; justify-content: center; }
+.chargement-scene::before { content: ''; position: absolute; left: 50%; top: 58%; width: 220px; height: 220px; margin: -110px 0 0 -110px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(227, 201, 168, 0.75) 0%, rgba(227, 201, 168, 0) 65%); animation: chargement-lueur 3.6s ease-in-out 0.8s infinite both; }
+.chargement-soleil { position: relative; width: 150px; height: 150px; overflow: visible; fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.chargement-lever { animation: chargement-lever 1.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.chargement-astre { stroke-dasharray: 1; stroke-dashoffset: 1; animation: chargement-trace 1.1s 0.2s ease-out forwards; }
+.chargement-rayon { stroke-dasharray: 1; stroke-dashoffset: 1; animation: chargement-trace 0.45s ease-out forwards, chargement-scintille 1.8s ease-in-out infinite; }
+.chargement-horizon { stroke-dasharray: 1; stroke-dashoffset: 1; animation: chargement-trace 0.8s ease-out forwards; }
+.chargement-halo { stroke: var(--soleil); stroke-width: 0.7; transform-origin: 14px 20px; opacity: 0; animation: chargement-onde 3.3s ease-out infinite backwards; }
+
+.chargement-titre { margin: 18px 0 0; font-family: var(--titre); font-size: 23px; white-space: nowrap; color: var(--texte); animation: apparition 0.6s 0.5s ease both; }
+
+/* Barre de progression avec reflet */
+.chargement-barre { position: relative; width: 240px; height: 5px; margin-top: 20px; border-radius: 3px; background: var(--trait); overflow: hidden; animation: apparition 0.6s 0.7s ease both; }
+.chargement-barre span { position: absolute; inset: 0 auto 0 0; border-radius: 3px; background: var(--accent); transition: width 0.5s ease; overflow: hidden; }
+.chargement-barre span::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent); transform: translateX(-100%); animation: chargement-reflet 1.6s ease-in-out infinite; }
+
+/* Étapes qui se cochent */
+.chargement-etapes { list-style: none; margin: 24px 0 0; padding: 0; width: 250px; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+.chargement-etapes li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--texte-pale); transition: color 0.4s ease; animation: apparition 0.5s ease both; }
+.chargement-etapes li:nth-child(1) { animation-delay: 0.8s; } .chargement-etapes li:nth-child(2) { animation-delay: 0.9s; }
+.chargement-etapes li:nth-child(3) { animation-delay: 1s; } .chargement-etapes li:nth-child(4) { animation-delay: 1.1s; }
+.chargement-etapes li:nth-child(5) { animation-delay: 1.2s; }
+.chargement-etapes li.en-cours { color: var(--texte); font-weight: 700; }
+.chargement-etapes li.faite { color: var(--texte-doux); }
+.chargement-puce { position: relative; flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--trait); display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease, border-color 0.3s ease; }
+.en-cours .chargement-puce { border-color: var(--trait); border-top-color: var(--accent); border-right-color: var(--accent); animation: chargement-tourne 0.9s linear infinite; }
+.faite .chargement-puce { border-color: var(--accent); background: var(--accent); animation: pop 0.4s ease; }
+.chargement-puce svg { width: 14px; height: 14px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 14; stroke-dashoffset: 14; animation: chargement-coche 0.35s 0.1s ease-out forwards; }
+
+@keyframes chargement-lever { from { transform: translateY(9px); } to { transform: none; } }
+@keyframes chargement-trace { to { stroke-dashoffset: 0; } }
+@keyframes chargement-scintille { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+@keyframes chargement-onde { 0% { opacity: 0.8; transform: scale(1); } 100% { opacity: 0; transform: scale(1.75); } }
+@keyframes chargement-lueur { 0%, 100% { transform: scale(0.85); opacity: 0.7; } 50% { transform: scale(1.1); opacity: 1; } }
+@keyframes chargement-reflet { to { transform: translateX(100%); } }
+@keyframes chargement-tourne { to { transform: rotate(360deg); } }
+@keyframes chargement-coche { to { stroke-dashoffset: 0; } }
 
 /* Durée personnalisée */
 .duree-perso { display: flex; align-items: center; gap: 12px; margin-top: 20px; min-height: 44px; }
 .duree-perso-champ { display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--texte-doux); animation: apparition 0.3s ease both; }
 .duree-perso-champ input { width: 96px; height: 44px; padding: 0 14px; border: 1.5px solid var(--trait); border-radius: 14px; background: var(--surface); font-family: var(--titre); font-size: 22px; color: var(--accent); text-align: center; }
+/* Sans animation : les tracés du soleil s'affichent directement */
+@media (prefers-reduced-motion: reduce) {
+  .chargement-astre, .chargement-rayon, .chargement-horizon, .chargement-puce svg { stroke-dashoffset: 0; }
+}

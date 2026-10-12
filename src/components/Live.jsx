@@ -137,6 +137,7 @@ export default function Live({ seance, onQuitter }) {
   const [terminee, setTerminee] = useState(false);
   const fin = useRef(null); // horodatage de fin de l'étape en cours (si en marche)
   const coteSignale = useRef(false);
+  const [coteGauche, setCoteGauche] = useState(false); // passé au côté gauche (ne revient pas en arrière avec « +30 s »)
   const { activer, sonner } = useSignal();
   const { fiches, charger } = useFiches(seance);
   useEcranAllume(enCours);
@@ -163,6 +164,7 @@ export default function Live({ seance, onQuitter }) {
     setIndex(j);
     setRestant(etapes[j].secondes);
     coteSignale.current = false;
+    setCoteGauche(false);
     fin.current = demarrer ? Date.now() + etapes[j].secondes * 1000 : null;
   }, [etapes, sonner]);
 
@@ -180,6 +182,7 @@ export default function Live({ seance, onQuitter }) {
       // Posture des deux côtés : signal à mi-parcours
       if (etape.posture.cotes && !coteSignale.current && r <= etape.secondes / 2) {
         coteSignale.current = true;
+        setCoteGauche(true);
         sonner(740, 1);
         vibrer(120);
       }
@@ -233,7 +236,7 @@ export default function Live({ seance, onQuitter }) {
   const fraction = terminee ? 1 : 1 - restant / etape.secondes;
   const rayon = 92;
   const circonference = 2 * Math.PI * rayon;
-  const cote = etape.posture.cotes ? (restant > etape.secondes / 2 ? 'Côté droit' : 'Côté gauche') : null;
+  const cote = etape.posture.cotes ? (coteGauche ? 'Côté gauche' : 'Côté droit · puis gauche') : null;
   // Segments de la barre : une couleur par phase
   const phases = seance.phases.filter((ph) => ph.items.length);
   const indexPhase = phases.findIndex((ph) => ph.phase === etape.phase);

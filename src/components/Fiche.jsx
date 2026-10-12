@@ -4,6 +4,7 @@ import { nom, nomSecondaire } from '../bibliotheque.js';
 import { Retour, Attention, Valide, Etincelle, Fermer } from './Icones.jsx';
 import { useRetour } from '../natif.js';
 import { obtenirFiche, regenererFiche, enregistrerFiche, revenirReference as revenirRef, aUneReference } from '../stockage.js';
+import { confirmer } from './Dialogue.jsx';
 
 // Listes éditées une ligne par élément
 const CHAMPS_LISTE = [
@@ -57,8 +58,8 @@ export default function Fiche({ posture, contexte, compte, onRetour, panneau = f
   }, [posture.id]);
 
   // Régénérer : recharge la fiche via Gemini et remplace celle enregistrée
-  const regenerer = () => {
-    if (!window.confirm('Régénérer la fiche avec Gemini ? Le texte actuel sera remplacé.')) return;
+  const regenerer = async () => {
+    if (!(await confirmer({ titre: 'Régénérer la fiche ?', message: 'Gemini rédige une nouvelle version : le texte actuel sera remplacé.', ok: 'Régénérer' }))) return;
     executer(() => regenererFiche(posture.id, contexte));
   };
 
@@ -95,7 +96,7 @@ export default function Fiche({ posture, contexte, compte, onRetour, panneau = f
   return (
     <div className={`ecran fiche ${panneau ? 'panneau' : ''}`}>
       <header className="entete compact">
-        <button type="button" className="rond" aria-label={panneau ? 'Fermer la fiche' : 'Retour à la séance'} onClick={onRetour}>{panneau ? <Fermer /> : <Retour />}</button>
+        <button type="button" className="rond" aria-label={panneau ? 'Fermer la fiche' : 'Retour'} onClick={onRetour}>{panneau ? <Fermer /> : <Retour />}</button>
         <span className="sous">{tenue || posture.famille}</span>
         <span className="cale" />
       </header>

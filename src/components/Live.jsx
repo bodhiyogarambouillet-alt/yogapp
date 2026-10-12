@@ -5,6 +5,7 @@ import { Fermer, Lecture, Pause, Suivant, Precedent, Attention } from './Icones.
 import { obtenirFiche } from '../stockage.js';
 import { useRetour, vibrer } from '../natif.js';
 import { useMusiqueLive, CarteMorceau } from './MusiqueLive.jsx';
+import { confirmer } from './Dialogue.jsx';
 
 // Fiches « Comment faire ? » de la séance : chargées à la demande (posture en cours + suivante), gardées en mémoire
 function useFiches(seance) {
@@ -218,8 +219,11 @@ export default function Live({ seance, onQuitter }) {
     if (fin.current) fin.current += s * 1000;
   };
 
-  const quitter = () => {
-    if (enCours && !window.confirm('Arrêter la séance en cours ?')) return;
+  const quitter = async () => {
+    if (enCours && !(await confirmer({
+      titre: 'Arrêter la séance en cours ?', message: 'Le minuteur s’arrête et vous revenez au déroulé de la séance.',
+      ok: 'Arrêter', annuler: 'Continuer', danger: true,
+    }))) return;
     onQuitter();
   };
   useRetour(true, () => quitter(), 2);

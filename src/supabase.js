@@ -6,6 +6,7 @@ import { createClient } from '@supabase/supabase-js';
 import { App } from '@capacitor/app';
 import { Browser } from '@capacitor/browser';
 import { estNatif } from './natif.js';
+import { alerter } from './components/Dialogue.jsx';
 
 const url = import.meta.env.VITE_SUPABASE_URL;
 const cle = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -53,7 +54,7 @@ if (estNatif && supabase) {
     if (!lien.startsWith(RETOUR_APPLI)) return;
     Browser.close().catch(() => {});
     const code = new URL(lien).searchParams.get('code');
-    if (code) await supabase.auth.exchangeCodeForSession(code).catch((e) => window.alert(`Connexion Google impossible : ${e.message}`));
+    if (code) await supabase.auth.exchangeCodeForSession(code).catch((e) => alerter({ titre: 'Connexion Google impossible', message: e.message }));
   });
 }
 

@@ -489,6 +489,18 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .choix-export strong { font-size: 16px; }
 .choix-export span { font-size: 13px; color: var(--texte-doux); }
 .feuille .lien { align-self: center; }
+
+/* Boîtes de dialogue (confirmation, erreur) */
+.voile-dialogue { z-index: 60; align-items: center; padding: 24px; }
+.dialogue { width: 100%; max-width: 360px; padding: 26px 22px 20px; border-radius: 28px; background: var(--fond); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; box-shadow: 0 18px 48px rgba(46, 38, 34, 0.22); animation: dialogue-entree 0.28s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.dialogue-soleil { width: 44px; height: 44px; fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; }
+.dialogue h2 { margin: 2px 0 0; font-size: 22px; line-height: 1.25; }
+.dialogue p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--texte-doux); overflow-wrap: anywhere; }
+.dialogue-boutons { width: 100%; display: grid; gap: 8px; margin-top: 10px; }
+.dialogue-boutons.deux { grid-template-columns: 1fr 1fr; }
+.dialogue-boutons .principal, .dialogue-boutons .secondaire { height: 50px; }
+.principal.danger { background: #8E3A22; }
+@keyframes dialogue-entree { from { opacity: 0; transform: translateY(12px) scale(0.96); } to { opacity: 1; transform: none; } }
 @keyframes glisse-haut { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
 
 /* Ouverture animée du panneau d'options */
@@ -633,6 +645,19 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 
 .etape-pied { position: sticky; bottom: 0; display: flex; flex-direction: column; gap: 10px; padding: 24px var(--marge) calc(28px + var(--bas)); background: linear-gradient(rgba(243, 236, 225, 0), var(--fond) 30%); }
 .etape-pied .composer, .etape-pied .secondaire { width: 100%; }
+.accueil-liens { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+
+/* Bibliothèque des postures */
+.biblio-outils { display: flex; flex-direction: column; gap: 10px; padding: 4px 16px 0; }
+.biblio-outils input[type="search"] { height: 50px; padding: 0 18px; border: none; border-radius: 25px; background: var(--surface); font-size: 16px; color: var(--texte); }
+.biblio-filtres { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px; }
+.biblio-filtres::-webkit-scrollbar { display: none; }
+.biblio-filtres .badge { flex-shrink: 0; min-height: 36px; padding: 4px 12px; font-size: 13px; }
+.biblio-liste { gap: 12px; }
+.biblio-groupe .phase-tete .minutes { font-family: var(--corps); font-size: 14px; font-weight: 700; color: var(--texte-doux); }
+.biblio-niveau { width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; background: var(--surface-2); color: var(--texte-doux); }
+.biblio-niveau.n2 { background: var(--soleil); color: #5A3A22; }
+.biblio-niveau.n3 { background: var(--accent); color: #fff; }
 .etape-passer { align-self: center; }
 
 /* Transitions entre étapes : glissement doux dans le sens du parcours */

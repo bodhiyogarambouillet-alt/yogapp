@@ -8,6 +8,7 @@ import Musique from './Musique.jsx';
 import { useRetour } from '../natif.js';
 import { Retour, Remplacer, Attention, Valide, Points, Exporter, Etincelle, Fermer, Lecture } from './Icones.jsx';
 import { exporterSeance } from '../export.js';
+import { alerter } from './Dialogue.jsx';
 
 // Durées plus compactes dans la liste (le détail reste dans la fiche)
 const court = (d) => (d || '').replace(/respirations?/i, 'resp.').replace(/droite \+ gauche/i, 'D + G');
@@ -183,7 +184,7 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
                     await exporterSeance(seance, f);
                     setExportOuvert(false);
                   } catch (e) {
-                    window.alert(`Export impossible : ${e.message}`);
+                    alerter({ titre: 'Export impossible', message: e.message });
                   } finally {
                     setExportEnCours(null);
                   }

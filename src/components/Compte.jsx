@@ -3,6 +3,7 @@ import { donneesLocales, transfererDonneesLocales } from '../stockage.js';
 import { connexionParMotDePasse, connexionGoogle, deconnexion } from '../supabase.js';
 import { Retour, Oeil, OeilBarre, Google } from './Icones.jsx';
 import { etatSpotify, surSpotify, connecterSpotify, deconnecterSpotify } from '../spotify.js';
+import { alerter } from './Dialogue.jsx';
 
 // Écran « Compte » : connexion administrateur, déconnexion et transfert des séances de l'appareil
 
@@ -62,7 +63,7 @@ function Spotify() {
       await connecterSpotify();
     } catch (e) {
       setEnvoi(false);
-      window.alert(`Connexion Spotify impossible : ${e.message}`);
+      alerter({ titre: 'Connexion Spotify impossible', message: e.message });
     }
   };
   return (

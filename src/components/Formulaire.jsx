@@ -66,7 +66,7 @@ function Option({ titre, valeur, ouvert, onBasculer, children }) {
   );
 }
 
-export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSeances, onCompte }) {
+export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSeances, onBibliotheque, onCompte }) {
   // Styles choisis : aucun = séance libre (toutes les postures), plusieurs = mélange
   const [styles, setStyles] = useState(initial?.styles || (initial?.style ? [initial.style] : ['Hatha']));
   const [duree, setDuree] = useState(initial?.duree || 45);
@@ -148,7 +148,10 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
     pied = (
       <>
         <button type="button" className="composer" onClick={() => aller(1)}><span>Nouvelle séance</span><small>→</small></button>
-        <button type="button" className="secondaire" onClick={onMesSeances}>Mes séances</button>
+        <div className="accueil-liens">
+          <button type="button" className="secondaire" onClick={onMesSeances}>Mes séances</button>
+          <button type="button" className="secondaire" onClick={onBibliotheque}>Postures</button>
+        </div>
       </>
     );
   } else if (etape === 1) {

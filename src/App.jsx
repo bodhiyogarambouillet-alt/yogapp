@@ -27,6 +27,8 @@ function useGrandEcran() {
 }
 import { supabase, enteteAuth } from './supabase.js';
 import { retourSpotifyWeb } from './spotify.js';
+import { alerter } from './components/Dialogue.jsx';
+import Bibliotheque from './components/Bibliotheque.jsx';
 
 // Recolle les données de la bibliothèque sur chaque posture (utile pour les séances enregistrées)
 function hydrater(seance) {
@@ -45,6 +47,7 @@ export default function App() {
   const [params, setParams] = useState(null);
   const [seance, setSeance] = useState(null);
   const [posture, setPosture] = useState(null);
+  const [retourFiche, setRetourFiche] = useState(null); // écran où revenir en quittant une fiche (ex. bibliothèque)
   const [chargement, setChargement] = useState(false);
   const [panneau, setPanneau] = useState(null); // posture affichée dans le panneau latéral (grand écran)
   const grandEcran = useGrandEcran();
@@ -78,7 +81,7 @@ export default function App() {
   const aller = (v) => { setVue(v); setPanneau(null); window.scrollTo(0, 0); };
 
   // Bouton retour d'Android : fiche → séance, autres écrans → formulaire (sur le formulaire : l'appli passe en arrière-plan)
-  useRetour(pret && vue !== 'formulaire', () => aller(vue === 'fiche' && seance ? 'seance' : 'formulaire'));
+  useRetour(pret && vue !== 'formulaire', () => aller(vue === 'fiche' ? retourFiche || (seance ? 'seance' : 'formulaire') : 'formulaire'));
 
   const generer = async (p) => {
     setParams(p);
@@ -120,7 +123,7 @@ export default function App() {
       await enregistrerSeance(seance);
       setEnregistree(true);
     } catch (e) {
-      window.alert(`Enregistrement impossible : ${e.message}`);
+      alerter({ titre: 'Enregistrement impossible', message: e.message });
     }
   };
 
@@ -136,7 +139,7 @@ export default function App() {
           onRetour={() => aller('formulaire')}
           onRegenerer={() => generer(params || { styles: stylesDe(seance), accessoires: seance.accessoires ?? null, duree: seance.duree, niveau: seance.niveau, theme: seance.theme || '', cibleId: seance.cibleId || null, eviterRepetition: params?.eviterRepetition || 0, seancesEvitees: params?.seancesEvitees || [] })}
           onEnregistrer={enregistrer}
-          onOuvrirPosture={(p) => { if (grandEcran) setPanneau(p); else { setPosture(p); aller('fiche'); } }} />
+          onOuvrirPosture={(p) => { if (grandEcran) setPanneau(p); else { setPosture(p); setRetourFiche(null); aller('fiche'); } }} />
         {grandEcran && panneau && (
           <aside className="panneau-fiche" aria-label={`Fiche : ${panneau.fr}`}>
             <Fiche key={panneau.id} posture={panneau} contexte={seance} compte={compte} panneau onRetour={() => setPanneau(null)} />
@@ -145,7 +148,7 @@ export default function App() {
       </>
     );
   } else if (vue === 'fiche' && posture) {
-    ecran = <Fiche posture={posture} contexte={seance} compte={compte} onRetour={() => aller(seance ? 'seance' : 'formulaire')} />;
+    ecran = <Fiche posture={posture} contexte={retourFiche ? null : seance} compte={compte} onRetour={() => aller(retourFiche || (seance ? 'seance' : 'formulaire'))} />;
   } else if (vue === 'mes-seances') {
     ecran = (
       <MesSeances compte={compte} onRetour={() => aller('formulaire')}
@@ -157,12 +160,14 @@ export default function App() {
           aller('seance');
         }} />
     );
+  } else if (vue === 'bibliotheque') {
+    ecran = <Bibliotheque onRetour={() => aller('formulaire')} onOuvrirPosture={(p) => { setPosture(p); setRetourFiche('bibliotheque'); aller('fiche'); }} />;
   } else if (vue === 'compte') {
     ecran = <Compte compte={compte} onRetour={() => aller('formulaire')} />;
   } else {
     ecran = (
       <Formulaire initial={params} erreur={erreur} compte={compte}
-        onGenerer={generer} onMesSeances={() => aller('mes-seances')} onCompte={() => aller('compte')} />
+        onGenerer={generer} onMesSeances={() => aller('mes-seances')} onBibliotheque={() => aller('bibliotheque')} onCompte={() => aller('compte')} />
     );
   }
 
@@ -171,7 +176,7 @@ export default function App() {
 
   // Grand écran : barre de navigation en haut, comme sur un site
   if (!grandEcran) return ecran;
-  const onglets = [['formulaire', 'Composer'], ...(seance ? [['seance', 'Séance en cours']] : []), ['mes-seances', 'Mes séances'], ['compte', compte.email ? 'Compte' : 'Se connecter']];
+  const onglets = [['formulaire', 'Composer'], ...(seance ? [['seance', 'Séance en cours']] : []), ['mes-seances', 'Mes séances'], ['bibliotheque', 'Postures'], ['compte', compte.email ? 'Compte' : 'Se connecter']];
   return (
     <>
       <nav className="barre-app" aria-label="Navigation">

@@ -266,6 +266,38 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .spotify .lien { align-self: flex-start; padding-left: 0; }
 .bouton-spotify { height: 52px; border: none; border-radius: 26px; background: #1DB954; color: #0B2E17; font-weight: 700; font-size: 15px; }
 .bouton-spotify:disabled { opacity: 0.6; }
+/* Musique de la séance (playlist Spotify), sous la date */
+.musique { margin: 12px 24px 0; border-radius: 22px; background: var(--surface); overflow: hidden; }
+.musique-tete { width: 100%; min-height: 60px; display: flex; align-items: center; gap: 12px; padding: 8px 18px 8px 10px; border: none; background: transparent; text-align: left; color: var(--texte); }
+.musique-icone { width: 40px; height: 40px; flex-shrink: 0; border-radius: 50%; background: var(--surface-2); color: var(--accent); display: flex; align-items: center; justify-content: center; }
+.musique-titres { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.musique-titre { font-size: 15px; font-weight: 700; }
+.musique-resume { font-size: 13px; color: var(--texte-doux); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.musique-fleche { color: var(--accent); transition: transform 0.25s ease; }
+.musique.ouvert .musique-fleche { transform: rotate(180deg); }
+.musique-corps { display: flex; flex-direction: column; gap: 12px; padding: 4px 18px 18px; animation: apparition 0.3s ease both; }
+.musique-corps .aide { margin: 0; }
+.musique-styles { gap: 6px; }
+.musique-styles .badge.choix { min-height: 36px; padding: 4px 12px; font-size: 13px; }
+.musique-autre { height: 44px; padding: 0 14px; border: none; border-radius: 14px; background: var(--fond); font-size: 15px; color: var(--texte); }
+.musique-option { display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 700; color: var(--texte-doux); }
+.musique-option input { width: 22px; height: 22px; accent-color: var(--accent); }
+.musique-corps .principal, .musique-corps .secondaire { height: 48px; }
+.musique-playlist { display: flex; flex-direction: column; gap: 10px; padding-top: 12px; border-top: 1px solid var(--trait); }
+.musique-playlist-tete { display: flex; flex-direction: column; gap: 2px; }
+.musique-playlist-tete strong { font-size: 15px; }
+.musique-playlist-tete span { font-size: 13px; color: var(--texte-doux); }
+.musique-morceaux, .musique-morceaux ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.musique-morceaux { gap: 10px; }
+.musique-phase { display: block; margin-bottom: 4px; font-size: 12px; font-weight: 700; color: var(--accent); }
+.musique-morceau { display: flex; align-items: center; gap: 10px; }
+.musique-morceau img, .musique-pochette { width: 36px; height: 36px; flex-shrink: 0; border-radius: 6px; background: var(--surface-2); object-fit: cover; }
+.musique-morceau-titre { font-size: 14px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.musique-morceau .ligne-texte { min-width: 0; }
+.musique-morceau .ligne-infos { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.musique-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.musique-actions .secondaire, .musique-actions .principal { font-size: 14px; padding: 0 10px; text-decoration: none; }
+.ouvrir-spotify { background: #1DB954; color: #0B2E17; }
 .bouton-google { height: 52px; border: 1.5px solid var(--trait); border-radius: 26px; background: #fff; color: #1F1F1F; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 10px; }
 .separateur { display: flex; align-items: center; gap: 12px; margin: 6px 0 0; font-size: 13px; color: var(--texte-pale); }
 .separateur::before, .separateur::after { content: ''; flex: 1; height: 1px; background: var(--trait); }
@@ -471,7 +503,7 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .heros { padding: 20px 16px 0; }
 .seance-intention { margin: 14px 16px 0; }
 .composer.lancer { margin: 18px 16px 0; }
-.date-seance { margin: 12px 16px 0; }
+.date-seance, .musique { margin: 12px 16px 0; }
 .bilan { margin: 14px 16px 0; padding: 0 4px; }
 .avertissement { margin: 12px 16px 0; border-radius: 18px; }
 .mode-remplacement { margin: 12px 16px 0; border-radius: 18px; }

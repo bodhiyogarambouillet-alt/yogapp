@@ -4,6 +4,7 @@ import { stylesDe } from '../styles-seance.js';
 import Picto from './Picto.jsx';
 import { dateDe } from '../dates.js';
 import Live from './Live.jsx';
+import Musique from './Musique.jsx';
 import { useRetour } from '../natif.js';
 import { Retour, Remplacer, Attention, Valide, Points, Exporter, Etincelle, Fermer, Lecture } from './Icones.jsx';
 import { exporterSeance } from '../export.js';
@@ -228,6 +229,8 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
           <span>Date de la séance</span>
           <input type="date" value={dateDe(seance) || ''} onChange={(e) => onChange({ ...seance, dateSeance: e.target.value || null })} />
         </label>
+
+        <Musique seance={seance} onChange={onChange} />
 
         {bilan && bilan.manquantes.length === 0 && (
           <p className="bilan"><Valide /> {bilan.couvertes.join(', ')} : préparé{bilan.couvertes.length > 1 ? 's' : ''}</p>

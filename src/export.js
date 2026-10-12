@@ -4,7 +4,7 @@
 
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
-import { nom, nomSecondaire, PAR_ID } from './bibliotheque.js';
+import { nom, nomSecondaire, PAR_ID, variantesDe } from './bibliotheque.js';
 import { dateDe, dateLisible } from './dates.js';
 import { estNatif } from './natif.js';
 
@@ -24,7 +24,7 @@ function contenu(seance) {
       postures: ph.items.map((it) => ({
         nom: [nom(it.posture), nomSecondaire(it.posture) ? `(${nomSecondaire(it.posture)})` : null].filter(Boolean).join(' '),
         duree: [it.duree, it.posture.cotes ? 'droite + gauche' : null].filter(Boolean).join(', '),
-        note: it.note || '',
+        note: [it.note, variantesDe(it).length ? `Variantes : ${variantesDe(it).map(nom).join(', ')}` : null].filter(Boolean).join(' — '),
       })),
     })),
   };

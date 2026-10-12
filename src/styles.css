@@ -367,6 +367,25 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .phase.pic .edition-ligne input, .phase.pic .edition-minutes input { background: #fff; }
 .phase.pic .edition-boutons .rond { color: #fff; }
 .lien.ajouter { margin-top: 2px; }
+
+/* Variantes d'une posture : puces sous la ligne, feuille de choix */
+.ligne:has(.ligne-variantes) { flex-wrap: wrap; }
+.ligne-variantes { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 0 6px 10px 50px; }
+.ligne-variantes-titre { font-size: 12px; font-weight: 700; color: var(--texte-doux); }
+.variante-puce { display: inline-flex; align-items: center; gap: 4px; min-height: 30px; padding: 4px 10px; border: 1.5px solid var(--trait); border-radius: 14px; background: transparent; font-size: 13px; font-weight: 600; color: var(--texte); }
+.variante-puce svg { width: 12px; height: 12px; color: var(--texte-doux); }
+.phase.pic .ligne-variantes-titre, .phase.pic .variante-puce, .phase.pic .variante-puce svg { color: #fff; border-color: rgba(255, 255, 255, 0.4); }
+.feuille-variantes { max-height: 86vh; }
+.feuille-variantes .principal { flex-shrink: 0; }
+.variantes-liste { min-height: 0; }
+.feuille-variantes > .aide { margin: 0 8px; }
+.variantes-liste { overflow-y: auto; display: flex; flex-direction: column; gap: 6px; margin: 4px 0; }
+.variante { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 18px; background: var(--surface); }
+.variante .ligne-nom { font-size: 15px; }
+.variante-actions { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
+.variante-actions .badge.choix { min-height: 34px; padding: 4px 12px; font-size: 13px; }
+.live-variantes { margin: 8px 0 0; max-width: 340px; font-size: 14px; line-height: 1.45; color: var(--texte-doux); }
+.live-variantes strong { color: var(--sauge-texte); }
 .phase.pic .lien.ajouter { color: #fff; }
 .ajout-posture { padding: 8px 6px 4px 0; }
 .ajout-posture .suggestions { color: var(--texte); }
@@ -394,7 +413,7 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 /* Coucher de soleil : pas de barre, un dégradé sable chaud qui monte derrière les commandes */
 .live-commandes {
   left: 0; right: 0; transform: none; max-width: none; padding-top: 56px;
-  background: linear-gradient(rgba(243, 236, 225, 0), rgba(226, 199, 164, 0.94) 62%, #DDBF98);
+  background: linear-gradient(rgba(243, 236, 225, 0), rgba(229, 196, 155, 0.95) 60%, #DCB487);
   pointer-events: none;
 }
 .live-commandes > * { pointer-events: auto; }

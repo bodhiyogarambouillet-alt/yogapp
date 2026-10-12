@@ -38,21 +38,24 @@ export const DUREES = [30, 45, 60, 75, 90];
 // Teintes des phases (barre de répartition et pastilles)
 export const TEINTES = ['#B9AECB', '#A597BC', '#9180AE', '#7D6A9F', '#6A5690', '#5B4A7A', '#8E83A3', '#C9C1D6'];
 
-// Alternatives pour « remplacer » : même style, niveau autorisé, même famille ou même phase,
-// pas déjà présentes dans la séance.
-export function alternatives(posture, seance) {
-  const max = structures.niveaux[seance.niveau]?.max ?? 1;
+// Variantes d'une posture (à proposer à sa place ou en complément) : même famille, ou même phase avec des zones
+// communes ; tous niveaux, adaptées au style et aux accessoires, pas déjà dans la séance. Les plus proches d'abord.
+export function variantes(posture, seance) {
   const dejaLa = new Set(seance.phases.flatMap((ph) => ph.items.map((it) => it.id)));
   const stylesSeance = stylesDe(seance);
-  const ok = (p) => convientAuxStyles(p, stylesSeance) && faisableAvec(p, seance.accessoires) && p.niveau <= max && !dejaLa.has(p.id);
-  // Score : zones communes (pour garder l'effet de la posture remplacée), puis même famille, puis même phase
   const zones = new Set(posture.zones || []);
+  const communes = (p) => (p.zones || []).filter((z) => zones.has(z)).length;
   return postures
-    .filter((p) => ok(p) && (p.famille === posture.famille || p.phase === posture.phase))
-    .map((p) => ({ p, s: (p.zones || []).filter((z) => zones.has(z)).length * 2 + (p.famille === posture.famille ? 1 : 0) }))
-    .sort((a, b) => b.s - a.s)
+    .filter((p) => !dejaLa.has(p.id) && convientAuxStyles(p, stylesSeance) && faisableAvec(p, seance.accessoires)
+      && (p.famille === posture.famille || (p.phase === posture.phase && communes(p) > 0)))
+    .map((p) => ({ p, s: communes(p) * 2 + (p.famille === posture.famille ? 2 : 0) - Math.abs(p.niveau - posture.niveau) }))
+    .sort((a, b) => b.s - a.s || a.p.niveau - b.p.niveau)
+    .slice(0, 12)
     .map((x) => x.p);
 }
+
+// Postures proposées en variante d'une ligne de séance
+export const variantesDe = (item) => (item.variantes || []).map((id) => PAR_ID.get(id)).filter(Boolean);
 
 // Recherche d'une posture par nom français, sanskrit ou anglais (sans tenir compte des accents)
 const sansAccents = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();

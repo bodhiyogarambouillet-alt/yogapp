@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Picto from './Picto.jsx';
-import { nom, nomSecondaire } from '../bibliotheque.js';
+import { nom, nomSecondaire, variantesDe } from '../bibliotheque.js';
 import { Fermer, Lecture, Pause, Suivant, Precedent, Attention } from './Icones.jsx';
 import { obtenirFiche } from '../stockage.js';
 import { useRetour, vibrer } from '../natif.js';
@@ -282,6 +282,9 @@ export default function Live({ seance, onQuitter }) {
             <h1 className="live-nom" key={etape.id + index}>{nom(etape.posture)}</h1>
             <p className="sous">{[nomSecondaire(etape.posture), etape.duree].filter(Boolean).join(' · ')}</p>
             {etape.note && <p className="live-note">{etape.note}</p>}
+            {variantesDe(etape).length > 0 && (
+              <p className="live-variantes"><strong>Variantes :</strong> {variantesDe(etape).map(nom).join(' · ')}</p>
+            )}
           </section>
 
           <section className="live-resume-bloc">

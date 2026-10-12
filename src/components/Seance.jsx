@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PAR_ID, bilanZones, alternatives, dureeParDefaut, nom, nomSecondaire, rechercherPostures } from '../bibliotheque.js';
+import { PAR_ID, bilanZones, variantes, variantesDe, dureeParDefaut, nom, nomSecondaire, rechercherPostures } from '../bibliotheque.js';
 import { stylesDe } from '../styles-seance.js';
 import Picto from './Picto.jsx';
 import { dateDe } from '../dates.js';
@@ -42,6 +42,42 @@ function AjoutPosture({ seance, onAjouter, onFermer }) {
   );
 }
 
+// Variantes d'une posture : la remplacer par l'une d'elles, ou les proposer en complément (cours multi-niveaux)
+function FeuilleVariantes({ item, seance, onRemplacer, onBasculer, onFermer }) {
+  const liste = variantes(item.posture, seance);
+  const choisies = item.variantes || [];
+  return (
+    <div className="voile" onClick={onFermer}>
+      <div className="feuille feuille-variantes" role="dialog" aria-label={`Variantes de ${nom(item.posture)}`} onClick={(e) => e.stopPropagation()}>
+        <h2>Variantes de {nom(item.posture)}</h2>
+        <p className="aide">Remplacez la posture, ou ajoutez des variantes à proposer pendant le cours.</p>
+        <div className="variantes-liste">
+          {liste.length === 0 && <p className="aide">Aucune variante adaptée à cette séance.</p>}
+          {liste.map((p) => {
+            const ajoutee = choisies.includes(p.id);
+            return (
+              <div key={p.id} className="variante">
+                <Picto famille={p.famille} taille={36} />
+                <span className="ligne-texte">
+                  <span className="ligne-nom">{nom(p)}</span>
+                  <span className="ligne-infos">{[nomSecondaire(p), `niveau ${p.niveau}`, p.accessoires?.toLowerCase()].filter(Boolean).join(' · ')}</span>
+                </span>
+                <div className="variante-actions">
+                  <button type="button" className={`badge choix ${ajoutee ? 'actif' : ''}`} aria-pressed={ajoutee} onClick={() => onBasculer(p)}>
+                    {ajoutee ? '✓ Variante' : '+ Variante'}
+                  </button>
+                  {item.role !== 'cible' && <button type="button" className="badge choix" onClick={() => onRemplacer(p)}>Remplacer</button>}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <button type="button" className="principal" onClick={onFermer}>Terminer</button>
+      </div>
+    </div>
+  );
+}
+
 export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnregistrer, onOuvrirPosture, enregistree, chargement }) {
   const [menu, setMenu] = useState(false);
   const [remplacement, setRemplacement] = useState(false);
@@ -50,6 +86,7 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
   const [ajoutPhase, setAjoutPhase] = useState(null); // index de la phase où l'on ajoute une posture
   const [exportOuvert, setExportOuvert] = useState(false); // choix du format d'export
   const [exportEnCours, setExportEnCours] = useState(null); // format en cours de préparation
+  const [variantesOuvertes, setVariantesOuvertes] = useState(null); // [phase, posture] dont on choisit les variantes
 
   const nbPostures = seance.phases.reduce((s, ph) => s + ph.items.length, 0);
   const total = seance.phases.reduce((s, ph) => s + ph.minutes, 0);
@@ -61,23 +98,26 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
   // (pas d'article devant le nom : « le Roue » serait faux, d'où « Objectif » en surtitre)
   const titre = cible ? nom(cible) : seance.titre || seance.style;
 
-  const remplacer = (iPhase, iItem) => {
-    const item = seance.phases[iPhase].items[iItem];
-    const alts = alternatives(item.posture, seance);
-    if (alts.length === 0) return;
-    const suivante = alts[Math.floor(Math.random() * Math.min(alts.length, 6))];
-    const phases = seance.phases.map((ph, i) => i !== iPhase ? ph : {
-      ...ph,
-      items: ph.items.map((it, j) => j !== iItem ? it : { id: suivante.id, posture: suivante, duree: dureeParDefaut(suivante), role: it.role === 'cible' ? undefined : it.role }),
+  // Remplacer par une variante : les autres variantes choisies sont gardées
+  const remplacer = (iPhase, iItem, p) => {
+    majItem(iPhase, iItem, {
+      id: p.id, posture: p, duree: dureeParDefaut(p), note: undefined,
+      variantes: (seance.phases[iPhase].items[iItem].variantes || []).filter((v) => v !== p.id),
     });
-    onChange({ ...seance, phases });
+    setVariantesOuvertes(null);
+  };
+  const basculerVariante = (iPhase, iItem, p) => {
+    const actuelles = seance.phases[iPhase].items[iItem].variantes || [];
+    const suivantes = actuelles.includes(p.id) ? actuelles.filter((v) => v !== p.id) : [...actuelles, p.id];
+    majItem(iPhase, iItem, { variantes: suivantes.length ? suivantes : undefined });
   };
 
   const action = (fn) => () => { setMenu(false); fn(); };
 
   // Retour d'Android : ferme d'abord le menu, l'ajout de posture, puis les modes édition / remplacement
-  useRetour(!live && (menu || edition || remplacement || exportOuvert), () => {
-    if (exportOuvert) setExportOuvert(false);
+  useRetour(!live && (menu || edition || remplacement || exportOuvert || variantesOuvertes), () => {
+    if (variantesOuvertes) setVariantesOuvertes(null);
+    else if (exportOuvert) setExportOuvert(false);
     else if (menu) setMenu(false);
     else if (ajoutPhase !== null) setAjoutPhase(null);
     else { setEdition(false); setRemplacement(false); }
@@ -124,7 +164,7 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
       {menu && (
         <div className="menu" role="menu">
           <button type="button" role="menuitem" onClick={action(() => { setEdition(!edition); setRemplacement(false); setAjoutPhase(null); })}><Points /> {edition ? 'Terminer les modifications' : 'Modifier la séance'}</button>
-          <button type="button" role="menuitem" onClick={action(() => { setRemplacement(!remplacement); setEdition(false); })}><Remplacer /> {remplacement ? 'Terminer les remplacements' : 'Remplacer des postures'}</button>
+          <button type="button" role="menuitem" onClick={action(() => { setRemplacement(!remplacement); setEdition(false); })}><Remplacer /> {remplacement ? 'Terminer les variantes' : 'Variantes et remplacements'}</button>
           <button type="button" role="menuitem" onClick={action(() => setExportOuvert(true))}><Exporter /> Exporter</button>
           <button type="button" role="menuitem" onClick={action(onRegenerer)} disabled={chargement}><Etincelle /> Autre version</button>
         </div>
@@ -154,6 +194,13 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
             <button type="button" className="lien" onClick={() => setExportOuvert(false)} disabled={Boolean(exportEnCours)}>Annuler</button>
           </div>
         </div>
+      )}
+
+      {variantesOuvertes && seance.phases[variantesOuvertes[0]]?.items[variantesOuvertes[1]] && (
+        <FeuilleVariantes item={seance.phases[variantesOuvertes[0]].items[variantesOuvertes[1]]} seance={seance}
+          onRemplacer={(p) => remplacer(variantesOuvertes[0], variantesOuvertes[1], p)}
+          onBasculer={(p) => basculerVariante(variantesOuvertes[0], variantesOuvertes[1], p)}
+          onFermer={() => setVariantesOuvertes(null)} />
       )}
 
       {/* Grand écran : informations de la séance à gauche, phases à droite */}
@@ -204,8 +251,8 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
 
         {remplacement && (
           <div className="mode-remplacement">
-            <span>Touchez ⇄ pour remplacer une posture.</span>
-            <button type="button" className="rond nu" aria-label="Terminer les remplacements" onClick={() => setRemplacement(false)}><Fermer /></button>
+            <span>Touchez ⇄ pour remplacer une posture ou lui ajouter des variantes.</span>
+            <button type="button" className="rond nu" aria-label="Terminer les variantes" onClick={() => setRemplacement(false)}><Fermer /></button>
           </div>
         )}
 
@@ -233,8 +280,20 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
                     </span>
                     <span className="duree-ligne">{court(it.duree)}</span>
                   </button>
-                  {remplacement && it.role !== 'cible' && (
-                    <button type="button" className="rond nu" aria-label={`Remplacer ${nom(it.posture)}`} onClick={() => remplacer(i, j)}><Remplacer /></button>
+                  {remplacement && (
+                    <button type="button" className="rond nu" aria-label={`Variantes de ${nom(it.posture)}`} onClick={() => setVariantesOuvertes([i, j])}><Remplacer /></button>
+                  )}
+                  {variantesDe(it).length > 0 && (
+                    <div className="ligne-variantes">
+                      <span className="ligne-variantes-titre">Variantes</span>
+                      {variantesDe(it).map((v) => (edition || remplacement ? (
+                        <button type="button" key={v.id} className="variante-puce" aria-label={`Retirer la variante ${nom(v)}`} onClick={() => basculerVariante(i, j, v)}>
+                          {nom(v)} <Fermer />
+                        </button>
+                      ) : (
+                        <button type="button" key={v.id} className="variante-puce" onClick={() => onOuvrirPosture(v)}>{nom(v)}</button>
+                      )))}
+                    </div>
                   )}
                   {edition && (
                     <div className="edition-ligne">
@@ -243,6 +302,7 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
                       <input type="text" className="edition-note" value={it.note || ''} aria-label={`Consigne pour ${nom(it.posture)}`}
                         placeholder="Consigne (facultatif)" onChange={(e) => majItem(i, j, { note: e.target.value || undefined })} />
                       <div className="edition-boutons">
+                        <button type="button" className="rond nu" aria-label={`Variantes de ${nom(it.posture)}`} onClick={() => setVariantesOuvertes([i, j])}><Remplacer /></button>
                         <button type="button" className="rond nu" aria-label="Monter" disabled={i === 0 && j === 0} onClick={() => deplacer(i, j, -1)}>↑</button>
                         <button type="button" className="rond nu" aria-label="Descendre" disabled={i === seance.phases.length - 1 && j === ph.items.length - 1} onClick={() => deplacer(i, j, 1)}>↓</button>
                         <button type="button" className="rond nu" aria-label={`Retirer ${nom(it.posture)}`} onClick={() => supprimerItem(i, j)}><Fermer /></button>

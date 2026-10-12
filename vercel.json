@@ -1,8 +1,19 @@
 {
   "functions": {
-    "api/*.js": { "maxDuration": 90 }
+    "api/*.js": {
+      "maxDuration": 90
+    }
   },
   "crons": [
-    { "path": "/api/keepalive", "schedule": "0 6 * * *" }
+    {
+      "path": "/api/keepalive",
+      "schedule": "0 6 * * *"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/spotify-callback",
+      "destination": "/index.html"
+    }
   ]
 }

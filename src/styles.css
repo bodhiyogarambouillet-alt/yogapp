@@ -260,6 +260,12 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .champ-mdp { position: relative; }
 .connexion .champ-mdp input { padding-right: 56px; }
 .voir-mdp { position: absolute; top: 4px; right: 4px; width: 44px; height: 44px; border: none; border-radius: 14px; background: transparent; color: var(--texte-doux); display: flex; align-items: center; justify-content: center; }
+.spotify { display: flex; flex-direction: column; gap: 8px; }
+.spotify h2 { margin-bottom: 2px; }
+.spotify p { margin: 0; }
+.spotify .lien { align-self: flex-start; padding-left: 0; }
+.bouton-spotify { height: 52px; border: none; border-radius: 26px; background: #1DB954; color: #0B2E17; font-weight: 700; font-size: 15px; }
+.bouton-spotify:disabled { opacity: 0.6; }
 .bouton-google { height: 52px; border: 1.5px solid var(--trait); border-radius: 26px; background: #fff; color: #1F1F1F; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 10px; }
 .separateur { display: flex; align-items: center; gap: 12px; margin: 6px 0 0; font-size: 13px; color: var(--texte-pale); }
 .separateur::before, .separateur::after { content: ''; flex: 1; height: 1px; background: var(--trait); }

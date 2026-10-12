@@ -26,6 +26,7 @@ function useGrandEcran() {
   return grand;
 }
 import { supabase, enteteAuth } from './supabase.js';
+import { retourSpotifyWeb } from './spotify.js';
 
 // Recolle les données de la bibliothèque sur chaque posture (utile pour les séances enregistrées)
 function hydrater(seance) {
@@ -40,7 +41,7 @@ function hydrater(seance) {
 
 export default function App() {
   const [pret, setPret] = useState(false);
-  const [vue, setVue] = useState('formulaire'); // formulaire | seance | fiche | mes-seances
+  const [vue, setVue] = useState(retourSpotifyWeb ? 'compte' : 'formulaire'); // formulaire | seance | fiche | mes-seances
   const [params, setParams] = useState(null);
   const [seance, setSeance] = useState(null);
   const [posture, setPosture] = useState(null);

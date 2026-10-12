@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { donneesLocales, transfererDonneesLocales } from '../stockage.js';
 import { connexionParMotDePasse, connexionGoogle, deconnexion } from '../supabase.js';
 import { Retour, Oeil, OeilBarre, Google } from './Icones.jsx';
+import { etatSpotify, surSpotify, connecterSpotify, deconnecterSpotify } from '../spotify.js';
 
 // Écran « Compte » : connexion administrateur, déconnexion et transfert des séances de l'appareil
 
@@ -50,6 +51,40 @@ function Connexion() {
   );
 }
 
+// Compte Spotify : sert à créer des playlists pour les séances (indépendant du compte de l'appli)
+function Spotify() {
+  const [etat, setEtat] = useState(etatSpotify);
+  const [envoi, setEnvoi] = useState(false);
+  useEffect(() => surSpotify((e) => { setEtat(e); setEnvoi(false); }), []);
+  const connecter = async () => {
+    setEnvoi(true);
+    try {
+      await connecterSpotify();
+    } catch (e) {
+      setEnvoi(false);
+      window.alert(`Connexion Spotify impossible : ${e.message}`);
+    }
+  };
+  return (
+    <div className="carte spotify">
+      <h2>Musique · Spotify</h2>
+      {etat.connecte ? (
+        <>
+          <p>Connecté : <strong>{etat.profil?.nom || 'compte Spotify'}</strong></p>
+          <p className="aide">Les playlists de vos séances seront créées dans ce compte.</p>
+          <button type="button" className="lien" onClick={deconnecterSpotify}>Déconnecter Spotify</button>
+        </>
+      ) : (
+        <>
+          <p className="aide" style={{ marginTop: 0 }}>Connectez votre compte Spotify pour créer une playlist adaptée à chaque séance. Réservé aux comptes autorisés par l'administrateur.</p>
+          {etat.erreur && <p className="erreur" role="alert">{etat.erreur}</p>}
+          <button type="button" className="bouton-spotify" onClick={connecter} disabled={envoi}>{envoi ? 'Ouverture de Spotify…' : 'Connecter Spotify'}</button>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function Compte({ compte, onRetour }) {
   const [message, setMessage] = useState(null);
   const [locales, setLocales] = useState(donneesLocales);
@@ -87,6 +122,7 @@ export default function Compte({ compte, onRetour }) {
             <button type="button" className="lien" onClick={() => deconnexion()}>Se déconnecter</button>
           </div>
         ) : <Connexion />)}
+        <Spotify />
         {aTransferer && (
           <div className="carte">
             <p>Cet appareil contient {locales.seances.length} séance(s) enregistrée(s) avant la connexion.</p>

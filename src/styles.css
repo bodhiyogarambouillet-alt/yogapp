@@ -566,8 +566,9 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 
 @media (min-width: 1024px) {
   /* Barre de navigation */
-  .barre-app { display: flex; align-items: center; justify-content: space-between; gap: 24px; position: sticky; top: 0; z-index: 10;
-    max-width: 1040px; margin: 0 auto; padding: 14px 32px; background: var(--fond); border-bottom: 1px solid var(--trait); }
+  /* pleine largeur (le contenu ne passe plus sur les côtés au défilement), contenu aligné sur la colonne de 1040 px */
+  .barre-app { display: flex; align-items: center; justify-content: space-between; gap: 24px; position: sticky; top: 0; z-index: 30;
+    padding: 14px max(32px, calc((100% - 1040px) / 2 + 32px)); background: var(--fond); border-bottom: 1px solid var(--trait); }
   .barre-marque { display: flex; align-items: center; gap: 10px; border: none; background: none; padding: 0; font-family: var(--titre); font-size: 20px; color: var(--texte); }
   .barre-onglets { display: flex; gap: 6px; }
   .barre-onglet { height: 40px; padding: 0 16px; border: none; border-radius: 20px; background: transparent; font-weight: 700; font-size: 14px; color: var(--texte-doux); }

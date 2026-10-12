@@ -4,6 +4,7 @@ import { nom, nomSecondaire, variantesDe } from '../bibliotheque.js';
 import { Fermer, Lecture, Pause, Suivant, Precedent, Attention } from './Icones.jsx';
 import { obtenirFiche } from '../stockage.js';
 import { useRetour, vibrer } from '../natif.js';
+import { useMusiqueLive, CarteMorceau } from './MusiqueLive.jsx';
 
 // Fiches « Comment faire ? » de la séance : chargées à la demande (posture en cours + suivante), gardées en mémoire
 function useFiches(seance) {
@@ -141,6 +142,7 @@ export default function Live({ seance, onQuitter }) {
   const { activer, sonner } = useSignal();
   const { fiches, charger } = useFiches(seance);
   useEcranAllume(enCours);
+  const musique = useMusiqueLive(seance.playlist, enCours, terminee);
 
   const etape = etapes[index];
   const suivante = etapes[index + 1];
@@ -242,7 +244,7 @@ export default function Live({ seance, onQuitter }) {
   const indexPhase = phases.findIndex((ph) => ph.phase === etape.phase);
 
   return (
-    <div className={`ecran live ${enCours ? 'en-cours' : ''}`}>
+    <div className={`ecran live ${enCours ? 'en-cours' : ''} ${musique.actif ? 'avec-musique' : ''}`}>
       <header className="entete compact">
         <button type="button" className="rond" aria-label="Quitter la séance" onClick={quitter}><Fermer /></button>
         <span className="sous">{terminee ? 'Séance terminée' : `${etape.phase} · ${index + 1}/${etapes.length}`}</span>
@@ -309,6 +311,7 @@ export default function Live({ seance, onQuitter }) {
           <div className="ressort" />
 
           <footer className="live-commandes">
+            <CarteMorceau musique={musique} playlist={seance.playlist} />
             <button type="button" className="rond" aria-label="Posture précédente" onClick={precedent}><Precedent /></button>
             <button type="button" className="live-lecture" aria-label={enCours ? 'Pause' : 'Lancer'} onClick={basculer}>
               {enCours ? <Pause /> : <Lecture />}

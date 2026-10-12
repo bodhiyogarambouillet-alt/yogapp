@@ -109,10 +109,15 @@ export async function appelSpotify(chemin, { method = 'GET', body } = {}) {
     headers: { Authorization: `Bearer ${await jeton()}`, ...(body ? { 'Content-Type': 'application/json' } : {}) },
     body: body ? JSON.stringify(body) : undefined,
   });
-  if (r.status === 204) return null;
+  if (r.status === 204 || r.status === 202) return null;
   const d = await r.json().catch(() => null);
   if (r.status === 403 && !lire(CLE)?.profil) throw new Error("Ce compte Spotify n'est pas autorisé pour l'appli (5 comptes au plus, ajoutés par l'administrateur).");
-  if (!r.ok) throw new Error(d?.error?.message || `Spotify a répondu ${r.status}`);
+  if (!r.ok) {
+    const e = new Error(d?.error?.message || `Spotify a répondu ${r.status}`);
+    e.statut = r.status;
+    e.raison = d?.error?.reason || null; // ex. NO_ACTIVE_DEVICE, PREMIUM_REQUIRED
+    throw e;
+  }
   return d;
 }
 

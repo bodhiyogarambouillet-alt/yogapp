@@ -457,6 +457,16 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .live-commandes > * { pointer-events: auto; }
 .live-commandes .rond, .live-plus { background: transparent; border: 1.5px solid rgba(122, 58, 34, 0.28); color: #7A3A22; }
 .live { padding-bottom: 170px; }
+.live.avec-musique { padding-bottom: 240px; }
+/* Morceau en cours (playlist Spotify de la séance), au-dessus des commandes */
+.live-commandes { flex-wrap: wrap; row-gap: 14px; }
+.morceau-live { flex-basis: 100%; min-width: 0; max-width: 420px; display: flex; align-items: center; gap: 10px; padding: 6px 8px 6px 6px; border-radius: 16px; background: #FBF7F1; box-shadow: 0 4px 14px rgba(58, 48, 42, 0.08); animation: apparition 0.4s ease both; }
+.morceau-live img, .morceau-pochette { width: 40px; height: 40px; flex-shrink: 0; border-radius: 8px; background: var(--surface-2); object-fit: cover; display: flex; align-items: center; justify-content: center; color: var(--accent); }
+.morceau-texte { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.morceau-titre { font-size: 14px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.morceau-artiste { font-size: 12px; color: var(--texte-doux); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.morceau-ouvrir { font-size: 12px; font-weight: 700; color: #1A7F3C; text-decoration: none; }
+.morceau-suivant { width: 40px; height: 40px; flex-shrink: 0; border: none; border-radius: 50%; background: transparent; color: #7A3A22; display: flex; align-items: center; justify-content: center; }
 
 /* Export de la séance */
 .voile { position: fixed; inset: 0; z-index: 20; background: rgba(46, 38, 34, 0.35); display: flex; align-items: flex-end; justify-content: center; animation: apparition 0.2s ease both; }

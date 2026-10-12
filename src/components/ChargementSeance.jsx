@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 // Écran d'attente pendant la composition :
 // le soleil du logo se lève derrière l'horizon, ses rayons se dessinent, des halos s'élargissent en onde,
@@ -14,8 +14,42 @@ const DUREE_ETAPE = 2800; // ms par étape affichée (la dernière reste active 
 // Même tracé que le logo de l'en-tête (Icones.jsx, viewBox 28)
 const RAYONS = ['M14 7.8V5.8', 'M20.82 9.89L21.94 8.23', 'M7.18 9.89L6.06 8.23', 'M25.31 15.43L27.17 14.68', 'M2.69 15.43L.83 14.68'];
 
+// Le soleil du décor (parcours de création) vient se placer sur celui de l'écran de chargement :
+// on mesure les deux cercles et on anime le passage de l'un à l'autre (position et taille).
+function departDuDecor() {
+  const astre = document.querySelector('.fond-astre');
+  if (!astre) return null;
+  const r = astre.getBoundingClientRect();
+  if (!r.width) return null;
+  // cercle du décor : rayon 58 dans un repère 200 × 200, centré
+  return { x: r.left + r.width / 2, y: r.top + r.height / 2, diametre: (r.width * 116) / 200 };
+}
+
 export default function ChargementSeance() {
   const [ecoule, setEcoule] = useState(0);
+  const soleil = useRef(null);
+
+  const depart = useRef(departDuDecor()); // mesuré au premier rendu, avant que le décor ne s'efface
+  useLayoutEffect(() => {
+    const el = soleil.current;
+    if (!depart.current || !el?.animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    el.getAnimations().forEach((a) => a.cancel()); // mesure sur la position finale, sans animation en cours
+    const r = el.getBoundingClientRect();
+    // cercle de l'écran de chargement : centre (14, 20) et rayon 10 dans un repère 28 × 28
+    const arrivee = { x: r.left + (r.width * 14) / 28, y: r.top + (r.height * 20) / 28, diametre: (r.width * 20) / 28 };
+    const dx = depart.current.x - arrivee.x;
+    const dy = depart.current.y - arrivee.y;
+    const echelle = depart.current.diametre / arrivee.diametre;
+    const animation = el.animate(
+      [
+        // départ : couleur sable du décor ; arrivée : terracotta de l'écran de chargement
+        { transform: `translate(${dx}px, ${dy}px) scale(${echelle})`, stroke: getComputedStyle(document.documentElement).getPropertyValue('--soleil').trim() || '#E3C9A8' },
+        { transform: 'none', stroke: getComputedStyle(el).stroke },
+      ],
+      { duration: 1000, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' },
+    );
+    return () => animation.cancel();
+  }, []);
   useEffect(() => {
     const debut = Date.now();
     const t = setInterval(() => setEcoule(Date.now() - debut), 120);
@@ -27,9 +61,9 @@ export default function ChargementSeance() {
   const progression = Math.min(94, 100 * (1 - Math.exp(-ecoule / 9000)));
 
   return (
-    <div className="chargement-seance" role="status" aria-live="polite" aria-label="Composition de votre séance">
+    <div className={`chargement-seance ${depart.current ? 'depuis-decor' : ''}`} role="status" aria-live="polite" aria-label="Composition de votre séance">
       <div className="chargement-scene">
-        <svg className="chargement-soleil" viewBox="0 0 28 28" aria-hidden="true">
+        <svg ref={soleil} className="chargement-soleil" viewBox="0 0 28 28" aria-hidden="true">
           <defs>
             <clipPath id="au-dessus-horizon"><rect x="-10" y="-10" width="48" height="34" /></clipPath>
           </defs>

@@ -667,3 +667,13 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 @media (min-width: 1024px) {
   .fond-soleil { top: 69px; }
 }
+
+/* Passage du soleil du décor à l'écran de chargement */
+.chargement-soleil { transform-origin: 50% 71.43%; } /* centre du cercle (14, 20) du repère 28 × 28 */
+.chargement-seance.depuis-decor { animation: chargement-fond 0.7s ease both; }
+.depuis-decor .chargement-lever { animation: none; }
+.depuis-decor .chargement-astre, .depuis-decor .chargement-horizon { animation: none; stroke-dashoffset: 0; }
+.depuis-decor .chargement-rayon { stroke-dashoffset: 0; animation: chargement-scintille 1.8s ease-in-out infinite; }
+.depuis-decor .chargement-scene::before { animation-delay: 0.9s; }
+body:has(.chargement-seance) .fond-astre { opacity: 0; transition: opacity 0.25s ease; }
+@keyframes chargement-fond { from { background-color: rgba(243, 236, 225, 0); } to { background-color: var(--fond); } }

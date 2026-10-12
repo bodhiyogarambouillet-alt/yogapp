@@ -22,10 +22,17 @@ const NB_ETAPES = 5; // étapes après l'accueil (pour la barre de progression)
 
 const libelleStyles = (styles) => (styles.length === 0 ? 'Tous styles' : styles.map((x) => COURT[x] || x).join(' + '));
 
-// Décor du parcours : un demi-soleil à l'horizon (même tracé de rayons que le logo).
+// Décor du parcours : un soleil qui se lève à l'horizon, entouré de faisceaux de lumière en perspective.
 // Un seul décor pour l'accueil et les étapes : il glisse en douceur d'une position à l'autre,
-// et le soleil monte un peu à chaque étape (il est pleinement levé au récapitulatif).
-const RAYONS_FOND = [0, 34, -34, 68, -68];
+// le soleil monte à chaque étape et ses faisceaux s'allongent. Les faisceaux font tout le tour du soleil :
+// ceux qui pointent vers le bas apparaissent dès que le soleil passe au-dessus de l'horizon.
+const ANGLES_FAISCEAUX = Array.from({ length: 18 }, (_, i) => -160 + i * 20); // tous les 20°, dont la verticale
+const faisceau = (a) => {
+  const r1 = 68, r2 = 330, l1 = 3, l2 = 42; // départ près du disque, arrivée large et lointaine
+  const t = (a * Math.PI) / 180, ux = Math.sin(t), uy = -Math.cos(t), px = -uy, py = ux;
+  const p = (r, l, s) => `${(100 + ux * r + s * px * l).toFixed(1)},${(100 + uy * r + s * py * l).toFixed(1)}`;
+  return `${p(r1, l1, 1)} ${p(r2, l2, 1)} ${p(r2, l2, -1)} ${p(r1, l1, -1)}`;
+};
 function FondSoleil({ etape }) {
   return (
     <div className={`fond-soleil ${etape === 0 ? 'accueil' : ''}`} style={{ '--etape': etape }} aria-hidden="true">
@@ -35,10 +42,12 @@ function FondSoleil({ etape }) {
             <svg viewBox="0 0 200 200">
               <circle className="fond-onde" cx="100" cy="100" r="58" />
               <circle className="fond-onde" cx="100" cy="100" r="58" style={{ animationDelay: '2s' }} />
+              <g className="fond-faisceaux">
+                {ANGLES_FAISCEAUX.map((a, i) => (
+                  <polygon key={a} className="fond-faisceau" points={faisceau(a)} style={{ animationDelay: `${(i % 6) * 0.5}s` }} />
+                ))}
+              </g>
               <circle className="fond-disque" cx="100" cy="100" r="58" />
-              {RAYONS_FOND.map((a, i) => (
-                <line key={a} className="fond-rayon" x1="100" y1="30" x2="100" y2="14" transform={`rotate(${a} 100 100)`} style={{ animationDelay: `${i * 0.3}s` }} />
-              ))}
             </svg>
           </div>
         </div>

@@ -167,6 +167,8 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
         </div>
       </section>
 
+      {seance.intention && <p className="intention seance-intention">{seance.intention}</p>}
+
       <button type="button" className="composer lancer" onClick={() => { setLive(true); window.scrollTo(0, 0); }}>
         <span>Lancer la séance</span>
         <Lecture />
@@ -184,7 +186,6 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
         <p className="bilan manque"><Attention /> Pas encore préparé : {bilan.manquantes.join(', ')}. Remplacez une posture ou demandez une autre version.</p>
       )}
       {seance.avertissement && <p className="avertissement"><Attention />{seance.avertissement}</p>}
-      {seance.intention && <p className="intention" style={{ margin: '12px 24px 0' }}>{seance.intention}</p>}
 
       {edition && (
         <div className="mode-remplacement mode-edition">

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useRetour } from '../natif.js';
+import { Logo } from './Icones.jsx';
 
 // Boîtes de dialogue aux couleurs de l'appli, à la place de window.confirm / window.alert.
 // confirmer({ titre, message, ok, annuler, danger }) → Promise<boolean> ; alerter({ titre, message }) → Promise<void>.
@@ -46,10 +47,7 @@ export function Dialogues() {
     <div className="voile voile-dialogue" onClick={() => fermer(false)}>
       <div className="dialogue" role="alertdialog" aria-modal="true" aria-labelledby="dialogue-titre" aria-describedby="dialogue-message"
         onClick={(e) => e.stopPropagation()}>
-        <svg className="dialogue-soleil" viewBox="0 0 28 28" aria-hidden="true">
-          <path d="M4 20a10 10 0 0 1 20 0" /><path d="M2 24h24" /><path d="M14 7.8V5.8" /><path d="M20.82 9.89L21.94 8.23" />
-          <path d="M7.18 9.89L6.06 8.23" /><path d="M25.31 15.43L27.17 14.68" /><path d="M2.69 15.43L.83 14.68" />
-        </svg>
+        <span className="dialogue-logo"><Logo /></span>
         <h2 id="dialogue-titre">{d.titre}</h2>
         {d.message && <p id="dialogue-message">{d.message}</p>}
         <div className={`dialogue-boutons ${d.annuler ? 'deux' : ''}`}>

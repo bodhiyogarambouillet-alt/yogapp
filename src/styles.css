@@ -493,7 +493,7 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 /* Boîtes de dialogue (confirmation, erreur) */
 .voile-dialogue { z-index: 60; align-items: center; padding: 24px; }
 .dialogue { width: 100%; max-width: 360px; padding: 26px 22px 20px; border-radius: 28px; background: var(--fond); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; box-shadow: 0 18px 48px rgba(46, 38, 34, 0.22); animation: dialogue-entree 0.28s cubic-bezier(0.22, 1, 0.36, 1) both; }
-.dialogue-soleil { width: 44px; height: 44px; fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; }
+.dialogue-logo svg { width: 44px; height: 44px; display: block; }
 .dialogue h2 { margin: 2px 0 0; font-size: 22px; line-height: 1.25; }
 .dialogue p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--texte-doux); overflow-wrap: anywhere; }
 .dialogue-boutons { width: 100%; display: grid; gap: 8px; margin-top: 10px; }
@@ -671,16 +671,19 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .chargement-seance { position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; padding: 24px; background: var(--fond); text-align: center; animation: apparition 0.35s ease both; }
 
 /* Le soleil : lever, tracé des rayons, halos en onde, lueur qui respire */
-.chargement-scene { position: relative; width: 170px; height: 150px; display: flex; align-items: center; justify-content: center; }
-.chargement-scene::before { content: ''; position: absolute; left: 50%; top: 58%; width: 220px; height: 220px; margin: -110px 0 0 -110px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(227, 201, 168, 0.75) 0%, rgba(227, 201, 168, 0) 65%); animation: chargement-lueur 3.6s ease-in-out 0.8s infinite both; }
-.chargement-soleil { position: relative; width: 150px; height: 150px; overflow: visible; fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.chargement-lever { animation: chargement-lever 1.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
-.chargement-astre { stroke-dasharray: 1; stroke-dashoffset: 1; animation: chargement-trace 1.1s 0.2s ease-out forwards; }
-.chargement-rayon { stroke-dasharray: 1; stroke-dashoffset: 1; animation: chargement-trace 0.45s ease-out forwards, chargement-scintille 1.8s ease-in-out infinite; }
-.chargement-horizon { stroke-dasharray: 1; stroke-dashoffset: 1; animation: chargement-trace 0.8s ease-out forwards; }
-.chargement-halo { stroke: var(--soleil); stroke-width: 0.7; transform-origin: 14px 20px; opacity: 0; animation: chargement-onde 3.3s ease-out infinite backwards; }
-
+.chargement-scene { position: relative; width: 190px; height: 190px; display: flex; align-items: center; justify-content: center; }
+/* Ronds du logo : du sable au cœur terracotta, qui ondulent du centre vers l'extérieur */
+.chargement-ronds { position: relative; width: 150px; height: 150px; }
+.chargement-rond { position: absolute; left: 50%; top: 50%; width: calc(var(--r) * 100%); height: calc(var(--r) * 100%); border-radius: 50%;
+  transform: translate(-50%, -50%); animation: chargement-houle 3s ease-in-out infinite; }
+.chargement-rond.n1 { background: #EBDCC7; } .chargement-rond.n2 { background: #E5D0B4; }
+.chargement-rond.n3 { background: #DDBE98; } .chargement-rond.n4 { background: var(--accent); }
+.chargement-onde, .chargement-goutte { position: absolute; inset: 0; border-radius: 50%; box-sizing: border-box; border: 1.5px solid #CFA47A; opacity: 0; }
+.chargement-onde { animation: chargement-onde 2.4s ease-out infinite; }
+.chargement-goutte { border-width: 2px; border-color: var(--accent); animation: chargement-goutte 1.4s ease-out both; }
+@keyframes chargement-houle { 0%, 100% { transform: translate(-50%, -50%) scale(1); } 30% { transform: translate(-50%, -50%) scale(1.06); } 60% { transform: translate(-50%, -50%) scale(0.98); } }
+@keyframes chargement-onde { 0% { transform: scale(0.25); opacity: 0; } 15% { opacity: 0.6; } 100% { transform: scale(1.3); opacity: 0; } }
+@keyframes chargement-goutte { 0% { transform: scale(0.2); opacity: 0; } 12% { opacity: 0.7; } 100% { transform: scale(1.35); opacity: 0; } }
 .chargement-titre { margin: 18px 0 0; font-family: var(--titre); font-size: 23px; white-space: nowrap; color: var(--texte); animation: apparition 0.6s 0.5s ease both; }
 
 /* Barre de progression avec reflet */
@@ -701,11 +704,8 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .faite .chargement-puce { border-color: var(--accent); background: var(--accent); animation: pop 0.4s ease; }
 .chargement-puce svg { width: 14px; height: 14px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 14; stroke-dashoffset: 14; animation: chargement-coche 0.35s 0.1s ease-out forwards; }
 
-@keyframes chargement-lever { from { transform: translateY(9px); } to { transform: none; } }
 @keyframes chargement-trace { to { stroke-dashoffset: 0; } }
 @keyframes chargement-scintille { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
-@keyframes chargement-onde { 0% { opacity: 0.8; transform: scale(1); } 100% { opacity: 0; transform: scale(1.75); } }
-@keyframes chargement-lueur { 0%, 100% { transform: scale(0.85); opacity: 0.7; } 50% { transform: scale(1.1); opacity: 1; } }
 @keyframes chargement-reflet { to { transform: translateX(100%); } }
 @keyframes chargement-tourne { to { transform: rotate(360deg); } }
 @keyframes chargement-coche { to { stroke-dashoffset: 0; } }
@@ -714,9 +714,10 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .duree-perso { display: flex; align-items: center; gap: 12px; margin-top: 20px; min-height: 44px; }
 .duree-perso-champ { display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--texte-doux); animation: apparition 0.3s ease both; }
 .duree-perso-champ input { width: 96px; height: 44px; padding: 0 14px; border: 1.5px solid var(--trait); border-radius: 14px; background: var(--surface); font-family: var(--titre); font-size: 22px; color: var(--accent); text-align: center; }
-/* Sans animation : les tracés du soleil s'affichent directement */
+/* Sans animation : coches affichées directement, ronds immobiles */
 @media (prefers-reduced-motion: reduce) {
-  .chargement-astre, .chargement-rayon, .chargement-horizon, .chargement-puce svg { stroke-dashoffset: 0; }
+  .chargement-puce svg { stroke-dashoffset: 0; }
+  .chargement-rond, .chargement-onde, .chargement-goutte { animation: none; }
 }
 
 /* Choix de séances à exclure de la génération */
@@ -788,12 +789,8 @@ input[type="search"] { height: 52px; padding: 0 18px; }
   .fond-ondes { top: 69px; }
 }
 
-/* Passage du soleil du décor à l'écran de chargement */
-.chargement-soleil { transform-origin: 50% 71.43%; } /* centre du cercle (14, 20) du repère 28 × 28 */
+/* Passage du décor à l'écran de chargement : les ronds du décor viennent se poser au centre */
+.chargement-ronds { transform-origin: 50% 50%; }
 .chargement-seance.depuis-decor { animation: chargement-fond 0.7s ease both; }
-.depuis-decor .chargement-lever { animation: none; }
-.depuis-decor .chargement-astre, .depuis-decor .chargement-horizon { animation: none; stroke-dashoffset: 0; }
-.depuis-decor .chargement-rayon { stroke-dashoffset: 0; animation: chargement-scintille 1.8s ease-in-out infinite; }
-.depuis-decor .chargement-scene::before { animation-delay: 0.9s; }
-body:has(.chargement-seance) .fond-coeur { opacity: 0; transition: opacity 0.25s ease; }
+body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25s ease; }
 @keyframes chargement-fond { from { background-color: rgba(243, 236, 225, 0); } to { background-color: var(--fond); } }

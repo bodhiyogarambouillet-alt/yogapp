@@ -753,32 +753,39 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .selecteur-recentes .etiquette { margin: 0 0 8px; }
 .selecteur-recentes .badges { margin-top: 0; }
 
-/* ---------- Décor du parcours : demi-soleil à l'horizon ---------- */
-/* --etape : 0 = accueil (grand soleil à moitié levé), 1 à 5 = étapes (le soleil monte avec la progression) */
-.fond-soleil { --sol: 24vh; --taille: min(68vw, 300px); --descente: calc(72% - var(--etape) * 9%);
+/* ---------- Décor du parcours : demi-cercles concentriques depuis le bord gauche, ondes dans l'eau ---------- */
+/* --etape : 0 = accueil (grands cercles à mi-hauteur), 1 à 5 = étapes (plus petits, plus bas, ils grandissent avec la progression) */
+.fond-ondes { --rayon: min(87vw, 360px); --cy: 56%; --echelle: 1;
+  --c1: #F0E5D6; --c2: #EBDCC7; --c3: #E5D0B4; --c4: #DDBE98; --c5: #CFA47A; --onde: #D9B48C;
   position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-.fond-soleil.accueil { --sol: 30vh; --taille: min(92vw, 400px); --descente: 50%; }
+.fond-ondes:not(.accueil) { --cy: 74%; --echelle: calc(0.5 + var(--etape) * 0.07); }
+.fond-groupe { position: absolute; left: 0; top: var(--cy); width: 0; height: 0; transform: scale(var(--echelle)); transform-origin: 0 0;
+  transition: top 1.1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.1s cubic-bezier(0.22, 1, 0.36, 1); }
+.fond-demi { position: absolute; left: 0; top: calc(var(--rayon) * var(--r) * -1); width: calc(var(--rayon) * var(--r)); height: calc(var(--rayon) * var(--r) * 2);
+  border-radius: 0 9999px 9999px 0; transform-origin: 0 50%; animation: fond-houle 6s ease-in-out infinite; }
+.fond-demi.n1 { background: var(--c1); } .fond-demi.n2 { background: var(--c2); } .fond-demi.n3 { background: var(--c3); }
+.fond-demi.n4 { background: var(--c4); } .fond-demi.n5 { background: var(--c5); }
+.fond-onde, .fond-goutte { position: absolute; left: 0; top: calc(var(--rayon) * -1.06); width: calc(var(--rayon) * 1.06); height: calc(var(--rayon) * 2.12);
+  box-sizing: border-box; border: 1px solid var(--onde); border-left: none; border-radius: 0 9999px 9999px 0; transform-origin: 0 50%; opacity: 0; }
+.fond-onde { animation: fond-onde 7.5s cubic-bezier(0.22, 0.61, 0.36, 1) infinite; }
+/* la « goutte » : une onde plus marquée à chaque changement d'écran du parcours */
+.fond-goutte { border-width: 2px; border-color: var(--c5); animation: fond-goutte 1.6s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+@keyframes fond-houle { 0%, 100% { transform: scale(1); } 30% { transform: scale(1.045); } 60% { transform: scale(0.99); } }
+@keyframes fond-onde { 0% { transform: scale(0.12); opacity: 0; } 12% { opacity: 0.45; } 100% { transform: scale(1.25); opacity: 0; } }
+@keyframes fond-goutte { 0% { transform: scale(0.1); opacity: 0; } 10% { opacity: 0.8; } 100% { transform: scale(1.4); opacity: 0; } }
 /* contenu au-dessus du décor ; le sélecteur de séances garde son affichage plein écran */
-.etapes > :not(.fond-soleil):not(.selecteur) { position: relative; z-index: 1; }
-.fond-ciel { position: absolute; left: 0; right: 0; top: 0; bottom: var(--sol); overflow: hidden; transition: bottom 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
-.fond-astre { position: absolute; left: 50%; bottom: 0; width: var(--taille); height: var(--taille); margin-left: calc(var(--taille) / -2);
-  transform: translateY(var(--descente)); transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), width 1.2s cubic-bezier(0.22, 1, 0.36, 1), height 1.2s cubic-bezier(0.22, 1, 0.36, 1), margin-left 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
-.fond-astre-souffle { width: 100%; height: 100%; animation: fond-leve 9s ease-in-out infinite; }
-.fond-astre svg { width: 100%; height: 100%; overflow: visible; }
-.fond-arc { fill: none; stroke: var(--soleil); stroke-width: 9; }
-.fond-rayons { transform-origin: 100px 100px; transform: scale(calc(0.86 + (var(--etape) - 1) * 0.07)); transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
-.fond-soleil.accueil .fond-rayons { transform: scale(1); }
-.fond-rayon { stroke: var(--soleil); stroke-width: 9; stroke-linecap: round; animation: chargement-scintille 2.8s ease-in-out infinite; }
-.fond-sol { position: absolute; left: 0; right: 0; bottom: 0; height: var(--sol); background: var(--surface-2); border-top: 2px solid var(--trait);
-  transition: height 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
-@keyframes fond-leve { 0%, 100% { transform: translateY(6px); } 50% { transform: translateY(-6px); } }
-/* le pied du parcours laisse voir le sol */
+.etapes > :not(.fond-ondes):not(.selecteur) { position: relative; z-index: 1; }
+/* le pied du parcours laisse voir le décor */
 .etapes .etape-pied { background: none; }
+/* « Nouvelle séance » : l'accueil s'efface vers le haut avant l'arrivée de la première étape */
+.etape-corps.sortie, .etape-pied.sortie { animation: etape-sortie 0.32s cubic-bezier(0.55, 0, 0.75, 0.2) forwards; pointer-events: none; }
+@keyframes etape-sortie { to { opacity: 0; transform: translateY(-18px); } }
 @media (prefers-reduced-motion: reduce) {
-  .fond-ciel, .fond-astre, .fond-sol, .fond-rayons { transition: none; }
+  .fond-groupe { transition: none; }
+  .fond-demi, .fond-onde, .fond-goutte { animation: none; }
 }
 @media (min-width: 1024px) {
-  .fond-soleil { top: 69px; }
+  .fond-ondes { top: 69px; }
 }
 
 /* Passage du soleil du décor à l'écran de chargement */
@@ -788,5 +795,5 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .depuis-decor .chargement-astre, .depuis-decor .chargement-horizon { animation: none; stroke-dashoffset: 0; }
 .depuis-decor .chargement-rayon { stroke-dashoffset: 0; animation: chargement-scintille 1.8s ease-in-out infinite; }
 .depuis-decor .chargement-scene::before { animation-delay: 0.9s; }
-body:has(.chargement-seance) .fond-astre { opacity: 0; transition: opacity 0.25s ease; }
+body:has(.chargement-seance) .fond-coeur { opacity: 0; transition: opacity 0.25s ease; }
 @keyframes chargement-fond { from { background-color: rgba(243, 236, 225, 0); } to { background-color: var(--fond); } }

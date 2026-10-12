@@ -14,15 +14,15 @@ const DUREE_ETAPE = 2800; // ms par étape affichée (la dernière reste active 
 // Même tracé que le logo de l'en-tête (Icones.jsx, viewBox 28)
 const RAYONS = ['M14 7.8V5.8', 'M20.82 9.89L21.94 8.23', 'M7.18 9.89L6.06 8.23', 'M25.31 15.43L27.17 14.68', 'M2.69 15.43L.83 14.68'];
 
-// Le soleil du décor (parcours de création) vient se placer sur celui de l'écran de chargement :
+// Le cœur du décor (parcours de création) vient se placer sur le soleil de l'écran de chargement :
 // on mesure les deux cercles et on anime le passage de l'un à l'autre (position et taille).
 function departDuDecor() {
-  const astre = document.querySelector('.fond-astre');
-  if (!astre) return null;
-  const r = astre.getBoundingClientRect();
+  const coeur = document.querySelector('.fond-coeur');
+  if (!coeur) return null;
+  const r = coeur.getBoundingClientRect();
   if (!r.width) return null;
-  // cercle du décor : rayon 58 dans un repère 200 × 200, centré
-  return { x: r.left + r.width / 2, y: r.top + r.height / 2, diametre: (r.width * 116) / 200 };
+  // demi-disque centré sur le bord gauche : centre au milieu de son bord gauche, diamètre = sa hauteur
+  return { x: r.left, y: r.top + r.height / 2, diametre: r.height };
 }
 
 export default function ChargementSeance() {

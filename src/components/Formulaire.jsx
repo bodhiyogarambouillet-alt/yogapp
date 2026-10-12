@@ -22,29 +22,22 @@ const NB_ETAPES = 5; // étapes après l'accueil (pour la barre de progression)
 
 const libelleStyles = (styles) => (styles.length === 0 ? 'Tous styles' : styles.map((x) => COURT[x] || x).join(' + '));
 
-// Décor du parcours : le soleil du logo (arc au trait et rayons arrondis) qui se lève à l'horizon.
-// Un seul décor pour l'accueil et les étapes : il glisse en douceur d'une position à l'autre et monte à chaque étape.
-// Les rayons font tout le tour, tous les 34° comme dans le logo : on en voit 5 quand le soleil est bas,
-// ceux du bas apparaissent quand il passe au-dessus de l'horizon.
-const ANGLES_RAYONS = [0, 34, -34, 68, -68, 102, -102, 136, -136, 170, -170];
-function FondSoleil({ etape }) {
+// Décor du parcours : demi-cercles concentriques posés sur le bord gauche, comme des ronds dans l'eau.
+// Les arcs ondulent du centre vers l'extérieur et de fines ondes s'en échappent en continu.
+// Un seul décor pour l'accueil et les étapes : il glisse d'une position à l'autre ; à chaque changement
+// d'étape, une onde plus marquée part du centre (la « goutte »).
+const ARCS = [1, 0.8, 0.6, 0.4, 0.2]; // rayons relatifs, de l'extérieur vers le cœur
+function FondOndes({ etape, impulsion }) {
   return (
-    <div className={`fond-soleil ${etape === 0 ? 'accueil' : ''}`} style={{ '--etape': etape }} aria-hidden="true">
-      <div className="fond-ciel">
-        <div className="fond-astre">
-          <div className="fond-astre-souffle">
-            <svg viewBox="0 0 200 200">
-              <circle className="fond-arc" cx="100" cy="100" r="58" />
-              <g className="fond-rayons">
-                {ANGLES_RAYONS.map((a, i) => (
-                  <line key={a} className="fond-rayon" x1="100" y1="27" x2="100" y2="7" transform={`rotate(${a} 100 100)`} style={{ animationDelay: `${(i % 5) * 0.35}s` }} />
-                ))}
-              </g>
-            </svg>
-          </div>
-        </div>
+    <div className={`fond-ondes ${etape === 0 ? 'accueil' : ''}`} style={{ '--etape': etape }} aria-hidden="true">
+      <div className="fond-groupe">
+        {ARCS.map((r, i) => (
+          <div key={r} className={`fond-demi n${i + 1} ${i === ARCS.length - 1 ? 'fond-coeur' : ''}`}
+            style={{ '--r': r, animationDelay: `${(ARCS.length - 1 - i) * 0.4}s` }} />
+        ))}
+        {[0, 2.5, 5].map((d) => <div key={d} className="fond-onde" style={{ animationDelay: `${d}s` }} />)}
+        <div key={impulsion} className="fond-goutte" />
       </div>
-      <div className="fond-sol" />
     </div>
   );
 }
@@ -86,11 +79,22 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
   // Étape affichée et sens de la transition (avance / recul)
   const [etape, setEtape] = useState(erreur ? 5 : 0);
   const [sens, setSens] = useState('avance');
+  const [impulsion, setImpulsion] = useState(0); // relance l'onde « goutte » du décor
+  const [sortie, setSortie] = useState(false); // l'accueil s'efface avant la première étape
   const aller = (n) => {
     setSens(n >= etape ? 'avance' : 'recul');
     setEtape(n);
+    setImpulsion((k) => k + 1);
     setOptionOuverte(null);
     window.scrollTo(0, 0);
+  };
+  // « Nouvelle séance » : l'accueil s'efface vers le haut pendant que la goutte tombe, puis la 1re étape arrive
+  const commencer = () => {
+    if (sortie) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { aller(1); return; }
+    setSortie(true);
+    setImpulsion((k) => k + 1);
+    setTimeout(() => { setSortie(false); aller(1); }, 320);
   };
   useEffect(() => { if (erreur) setEtape(5); }, [erreur]);
   // Bouton retour d'Android : étape précédente
@@ -147,7 +151,7 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
     );
     pied = (
       <>
-        <button type="button" className="composer" onClick={() => aller(1)}><span>Nouvelle séance</span><small>→</small></button>
+        <button type="button" className="composer" onClick={commencer}><span>Nouvelle séance</span><small>→</small></button>
         <div className="accueil-liens">
           <button type="button" className="secondaire" onClick={onMesSeances}>Mes séances</button>
           <button type="button" className="secondaire" onClick={onBibliotheque}>Postures</button>
@@ -301,7 +305,7 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
 
   return (
     <div className="ecran etapes">
-      <FondSoleil etape={etape} />
+      <FondOndes etape={etape} impulsion={impulsion} />
       {etape > 0 && (
         <header className="etape-haut">
           <button type="button" className="rond" aria-label="Étape précédente" onClick={() => aller(etape - 1)}><Retour /></button>
@@ -311,9 +315,9 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
           </div>
         </header>
       )}
-      <section key={etape} className={`etape-corps ${sens}`}>{contenu}</section>
+      <section key={etape} className={`etape-corps ${sens} ${sortie ? 'sortie' : ''}`}>{contenu}</section>
       <div className="ressort" />
-      <footer className="etape-pied">{pied}</footer>
+      <footer className={`etape-pied ${sortie ? 'sortie' : ''}`}>{pied}</footer>
       {selecteur && mesSeances && (
         <SelecteurSeances seances={mesSeances} choisies={seancesEvitees} onFermer={() => setSelecteur(false)}
           onValider={(liste) => { setSeancesEvitees(liste); setSelecteur(false); }} />

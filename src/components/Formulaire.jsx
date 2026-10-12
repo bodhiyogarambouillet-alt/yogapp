@@ -4,6 +4,8 @@ import { Logo, Retour, Utilisateur } from './Icones.jsx';
 import ChoixCible from './ChoixCible.jsx';
 import { ACCESSOIRES } from '../accessoires.js';
 import { useRetour } from '../natif.js';
+import { listerSeances } from '../stockage.js';
+import { dateDe, dateLisible } from '../dates.js';
 
 // Création d'une séance étape par étape : une question par écran.
 // 0 accueil · 1 style · 2 durée · 3 niveau · 4 options (facultatif) · 5 récapitulatif
@@ -49,6 +51,8 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
   // Accessoires disponibles : aucun par défaut (pratique sans matériel), sauf choix explicite reçu ; tous cochés = aucun filtre
   const [dispo, setDispo] = useState(Array.isArray(initial?.accessoires) ? initial.accessoires : []);
   const [eviter, setEviter] = useState(initial?.eviterRepetition || 0); // 0 = désactivé, sinon nombre de séances précédentes
+  const [seancesEvitees, setSeancesEvitees] = useState(initial?.seancesEvitees || []); // séances choisies une à une
+  const [mesSeances, setMesSeances] = useState(null); // chargées à l'ouverture de l'option
   const [optionOuverte, setOptionOuverte] = useState(null);
   const [autreDuree, setAutreDuree] = useState(!DUREES.includes(initial?.duree || 45)); // durée personnalisée
 
@@ -69,13 +73,22 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
   const visibles = tousStyles ? [...PRINCIPAUX, ...autres] : PRINCIPAUX;
   const basculerOption = (o) => setOptionOuverte(optionOuverte === o ? null : o);
 
+  // Séances enregistrées, pour en exclure certaines de la génération
+  useEffect(() => {
+    if (optionOuverte !== 'eviter' || mesSeances) return;
+    listerSeances().then(setMesSeances).catch(() => setMesSeances([]));
+  }, [optionOuverte, mesSeances]);
+  const basculerSeance = (uid) => setSeancesEvitees(seancesEvitees.includes(uid) ? seancesEvitees.filter((x) => x !== uid) : [...seancesEvitees, uid]);
+  const resumeEviter = [eviter ? EVITER.find(([n]) => n === eviter)?.[1] : null, seancesEvitees.length ? `${seancesEvitees.length} choisie${seancesEvitees.length > 1 ? 's' : ''}` : null]
+    .filter(Boolean).join(' + ') || 'Non';
+
   const composer = () => onGenerer({
-    styles, duree, niveau, theme: theme.trim(), cibleId: cible?.id || null, eviterRepetition: eviter,
+    styles, duree, niveau, theme: theme.trim(), cibleId: cible?.id || null, eviterRepetition: eviter, seancesEvitees,
     accessoires: dispo.length === ACCESSOIRES.length ? null : dispo,
   });
 
   const resumeAccessoires = dispo.length === 0 ? 'Aucun' : dispo.length === ACCESSOIRES.length ? 'Tous' : `${dispo.length}`;
-  const nbOptions = [cible, theme.trim(), dispo.length, eviter].filter(Boolean).length;
+  const nbOptions = [cible, theme.trim(), dispo.length, eviter || seancesEvitees.length].filter(Boolean).length;
 
   // ---------- Contenu de chaque étape ----------
   let contenu;
@@ -190,7 +203,7 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
             <textarea id="theme" rows="3" maxLength={500} value={theme} onChange={(e) => setTheme(e.target.value)}
               placeholder="Ancrage, deux élèves aux lombaires fragiles…" aria-label="Thème ou contraintes" />
           </Option>
-          <Option titre="Éviter les répétitions" valeur={EVITER.find(([n]) => n === eviter)?.[1]} ouvert={optionOuverte === 'eviter'} onBasculer={() => basculerOption('eviter')}>
+          <Option titre="Éviter les répétitions" valeur={resumeEviter} ouvert={optionOuverte === 'eviter'} onBasculer={() => basculerOption('eviter')}>
             <div className="badges" role="group" aria-label="Éviter les postures des séances précédentes">
               {EVITER.map(([n, libelle]) => (
                 <button type="button" key={n} className={`badge choix ${n === eviter ? 'actif' : ''}`} aria-pressed={n === eviter}
@@ -198,8 +211,27 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
               ))}
             </div>
             <p className="aide">
-              {eviter ? 'Les postures de vos séances enregistrées les plus récentes sont évitées autant que possible.' : 'Aucune séance précédente n\'est prise en compte.'}
+              {eviter ? 'Les postures de vos séances enregistrées les plus récentes sont évitées autant que possible.' : 'Aucune séance récente n\'est prise en compte.'}
             </p>
+            <span className="etiquette sous-titre-option">Ou choisissez des séances précises</span>
+            {mesSeances === null && <p className="aide">Chargement de vos séances…</p>}
+            {mesSeances?.length === 0 && <p className="aide">Aucune séance enregistrée pour l'instant.</p>}
+            {mesSeances?.length > 0 && (
+              <div className="liste-exclusion" role="group" aria-label="Séances dont les postures sont à éviter">
+                {mesSeances.slice(0, 30).map((s) => {
+                  const coche = seancesEvitees.includes(s.uid);
+                  return (
+                    <button type="button" key={s.uid} className={`exclusion ${coche ? 'actif' : ''}`} aria-pressed={coche} onClick={() => basculerSeance(s.uid)}>
+                      <span className="exclusion-case" aria-hidden="true">{coche ? '✓' : ''}</span>
+                      <span className="exclusion-texte">
+                        <span className="exclusion-titre">{s.titre || `${s.style} · ${s.duree} min`}</span>
+                        <span className="exclusion-infos">{[`${s.style} · ${s.duree} min`, dateLisible(dateDe(s))].filter(Boolean).join(' · ')}</span>
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </Option>
         </div>
       </>

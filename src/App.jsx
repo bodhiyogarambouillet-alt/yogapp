@@ -84,15 +84,16 @@ export default function App() {
     setChargement(true);
     setErreur(null);
     try {
-      // « Éviter les répétitions » : postures des n dernières séances enregistrées
+      // « Éviter les répétitions » : postures des n dernières séances et des séances choisies une à une
       let evites = [];
-      if (p.eviterRepetition > 0) {
+      if (p.eviterRepetition > 0 || p.seancesEvitees?.length) {
         try {
-          const dernieres = (await listerSeances()).slice(0, p.eviterRepetition);
-          evites = [...new Set(dernieres.flatMap((s) => s.phases.flatMap((ph) => ph.items.map((it) => it.id))))];
+          const toutes = await listerSeances();
+          const choisies = [...toutes.slice(0, p.eviterRepetition || 0), ...toutes.filter((s) => p.seancesEvitees?.includes(s.uid))];
+          evites = [...new Set(choisies.flatMap((s) => s.phases.flatMap((ph) => ph.items.map((it) => it.id))))];
         } catch { /* séances illisibles : on compose sans */ }
       }
-      const { eviterRepetition: _n, ...corps } = p;
+      const { eviterRepetition: _n, seancesEvitees: _s, ...corps } = p;
       const r = await fetch(urlApi('/api/generer-seance'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -132,7 +133,7 @@ export default function App() {
         <Seance seance={seance} chargement={chargement} enregistree={enregistree}
           onChange={modifierSeance}
           onRetour={() => aller('formulaire')}
-          onRegenerer={() => generer(params || { styles: stylesDe(seance), accessoires: seance.accessoires ?? null, duree: seance.duree, niveau: seance.niveau, theme: seance.theme || '', cibleId: seance.cibleId || null, eviterRepetition: params?.eviterRepetition || 0 })}
+          onRegenerer={() => generer(params || { styles: stylesDe(seance), accessoires: seance.accessoires ?? null, duree: seance.duree, niveau: seance.niveau, theme: seance.theme || '', cibleId: seance.cibleId || null, eviterRepetition: params?.eviterRepetition || 0, seancesEvitees: params?.seancesEvitees || [] })}
           onEnregistrer={enregistrer}
           onOuvrirPosture={(p) => { if (grandEcran) setPanneau(p); else { setPosture(p); aller('fiche'); } }} />
         {grandEcran && panneau && (

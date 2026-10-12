@@ -12,7 +12,7 @@ export const Cible = () => <svg width="20" height="20" viewBox="0 0 24 24" {...b
 export const Points = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="19" cy="12" r="1.8" /></svg>;
 export const Fermer = () => <svg width="18" height="18" viewBox="0 0 24 24" {...base} strokeWidth="1.8"><path d="M6 6l12 12M18 6L6 18" /></svg>;
 // Soleil levant au-dessus de l'horizon
-export const Logo = () => <svg width="28" height="28" viewBox="0 0 28 28" {...base}><path d="M4 20a10 10 0 0 1 20 0" /><path d="M2 24h24" /><path d="M14 7.8V5.6" /><path d="M22.63 11.37l1.55-1.55" /><path d="M5.37 11.37L3.82 9.82" /><path d="M25.06 14.84l1.99-.93" /><path d="M2.94 14.84l-1.99-.93" /></svg>;
+export const Logo = () => <svg width="28" height="28" viewBox="0 0 28 28" {...base}><path d="M4 20a10 10 0 0 1 20 0" /><path d="M2 24h24" /><path d="M14 7.8V5.8" /><path d="M20.82 9.89L21.94 8.23" /><path d="M7.18 9.89L6.06 8.23" /><path d="M25.31 15.43L27.17 14.68" /><path d="M2.69 15.43L.83 14.68" /></svg>;
 export const Lecture = () => <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" /></svg>;
 export const Pause = () => <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1.2" /><rect x="13.5" y="5" width="4" height="14" rx="1.2" /></svg>;
 export const Suivant = () => <svg width="22" height="22" viewBox="0 0 24 24" {...base} strokeWidth="1.8"><path d="M6 6l8 6-8 6z" /><path d="M18 6v12" /></svg>;

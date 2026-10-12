@@ -14,19 +14,20 @@ const TOLERANCE = 45; // secondes : on s'arrête dès que la phase est couverte 
 // Cherche un morceau précis ; ne garde le résultat que si l'artiste correspond
 async function trouver({ titre, artiste }) {
   const q = `track:${titre.replace(/["']/g, ' ')} artist:${artiste.replace(/["']/g, ' ')}`;
-  const r = await appelSpotify(`/search?${new URLSearchParams({ q, type: 'track', limit: '5', market: 'from_token' })}`);
+  const r = await appelSpotify(`/search?${new URLSearchParams({ q, type: 'track', limit: '5' })}`);
   const a = simple(artiste);
   return (r?.tracks?.items || []).find((t) => t.is_playable !== false && t.artists.some((x) => simple(x.name).includes(a) || a.includes(simple(x.name)))) || null;
 }
 
-// Plusieurs recherches à la fois, sans dépasser `n` en parallèle
+// Plusieurs recherches à la fois, sans dépasser `n` en parallèle (les erreurs sont gardées pour le diagnostic)
+const erreurs = [];
 async function parLots(liste, n, fn) {
   const resultats = new Array(liste.length);
   let i = 0;
   await Promise.all(Array.from({ length: Math.min(n, liste.length) }, async () => {
     while (i < liste.length) {
       const k = i++;
-      resultats[k] = await fn(liste[k]).catch(() => null);
+      resultats[k] = await fn(liste[k]).catch((e) => { erreurs.push(e.message); return null; });
     }
   }));
   return resultats;
@@ -60,6 +61,7 @@ export async function creerPlaylist(seance, { style = 'Relaxation', sansParoles 
   if (!r.ok) throw new Error(propositions.erreur || `Erreur ${r.status}`);
 
   progression('Recherche sur Spotify…');
+  erreurs.length = 0;
   const dejaPris = new Set();
   const morceaux = [];
   for (const ph of propositions.phases) {
@@ -75,7 +77,8 @@ export async function creerPlaylist(seance, { style = 'Relaxation', sansParoles 
     }
     // Pas assez de morceaux trouvés : on complète par mots-clés (genre + ambiance)
     for (let page = 0; duree < cible - TOLERANCE && page < 3; page++) {
-      const res = await appelSpotify(`/search?${new URLSearchParams({ q: ph.motsCles, type: 'track', limit: '10', offset: String(page * 10), market: 'from_token' })}`).catch(() => null);
+      const res = await appelSpotify(`/search?${new URLSearchParams({ q: ph.motsCles, type: 'track', limit: '10', offset: String(page * 10) })}`)
+        .catch((e) => { erreurs.push(e.message); return null; });
       const items = res?.tracks?.items || [];
       if (!items.length) break;
       for (const t of items) {
@@ -87,7 +90,9 @@ export async function creerPlaylist(seance, { style = 'Relaxation', sansParoles 
       }
     }
   }
-  if (!morceaux.length) throw new Error('Aucun morceau trouvé sur Spotify, essayez un autre style.');
+  if (!morceaux.length) {
+    throw new Error(erreurs.length ? `La recherche Spotify a échoué : ${erreurs[0]}` : 'Aucun morceau trouvé sur Spotify, essayez un autre style.');
+  }
 
   progression('Création de la playlist…');
   const playlist = await appelSpotify('/me/playlists', {

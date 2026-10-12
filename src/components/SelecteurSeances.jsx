@@ -5,6 +5,7 @@ import { useRetour } from '../natif.js';
 
 // Choix des séances dont les postures sont à éviter : plein écran, recherche, filtre par style, groupes par mois.
 const sansAccents = (t) => (t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const RECENTES = [[1, 'La dernière'], [3, 'Les 3 dernières'], [5, 'Les 5 dernières']];
 const mois = (iso) => (iso ? new Date(`${iso}T12:00:00`).toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' }) : 'Sans date');
 
 export default function SelecteurSeances({ seances, choisies, onValider, onFermer }) {
@@ -37,6 +38,20 @@ export default function SelecteurSeances({ seances, choisies, onValider, onFerme
         <span className="cale" />
       </header>
       <p className="etape-aide selecteur-aide">Les postures des séances choisies seront évitées autant que possible.</p>
+
+      <div className="selecteur-recentes" role="group" aria-label="Les plus récentes">
+        <span className="etiquette">Les plus récentes</span>
+        <div className="badges">
+          {RECENTES.map(([n, libelle]) => {
+            const uids = seances.slice(0, n).map((x) => x.uid);
+            const actif = uids.length > 0 && selection.length === uids.length && uids.every((u) => selection.includes(u));
+            return (
+              <button type="button" key={n} className={`badge choix ${actif ? 'actif' : ''}`} aria-pressed={actif}
+                disabled={seances.length === 0} onClick={() => setSelection(actif ? [] : uids)}>{libelle}</button>
+            );
+          })}
+        </div>
+      </div>
 
       <div className="selecteur-outils">
         <input type="search" value={recherche} onChange={(e) => setRecherche(e.target.value)}

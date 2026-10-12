@@ -18,10 +18,35 @@ const NIVEAUX = [
   ['Intermédiaire', 'Postures de niveau 1 et 2'],
   ['Avancé', 'Tous niveaux, pic exigeant'],
 ];
-const EVITER = [[0, 'Non'], [1, 'Dernière'], [3, '3 dernières'], [5, '5 dernières']];
 const NB_ETAPES = 5; // étapes après l'accueil (pour la barre de progression)
 
 const libelleStyles = (styles) => (styles.length === 0 ? 'Tous styles' : styles.map((x) => COURT[x] || x).join(' + '));
+
+// Décor du parcours : un demi-soleil à l'horizon (même tracé de rayons que le logo).
+// Un seul décor pour l'accueil et les étapes : il glisse en douceur d'une position à l'autre,
+// et le soleil monte un peu à chaque étape (il est pleinement levé au récapitulatif).
+const RAYONS_FOND = [0, 34, -34, 68, -68];
+function FondSoleil({ etape }) {
+  return (
+    <div className={`fond-soleil ${etape === 0 ? 'accueil' : ''}`} style={{ '--etape': etape }} aria-hidden="true">
+      <div className="fond-ciel">
+        <div className="fond-astre">
+          <div className="fond-astre-souffle">
+            <svg viewBox="0 0 200 200">
+              <circle className="fond-onde" cx="100" cy="100" r="58" />
+              <circle className="fond-onde" cx="100" cy="100" r="58" style={{ animationDelay: '2s' }} />
+              <circle className="fond-disque" cx="100" cy="100" r="58" />
+              {RAYONS_FOND.map((a, i) => (
+                <line key={a} className="fond-rayon" x1="100" y1="30" x2="100" y2="14" transform={`rotate(${a} 100 100)`} style={{ animationDelay: `${i * 0.3}s` }} />
+              ))}
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div className="fond-sol" />
+    </div>
+  );
+}
 
 // Une option facultative repliable (étape 4)
 function Option({ titre, valeur, ouvert, onBasculer, children }) {
@@ -70,18 +95,24 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
   // Bouton retour d'Android : étape précédente
   useRetour(etape > 0, () => aller(etape - 1), 1);
 
-  const autres = STYLES.filter((s) => !PRINCIPAUX.includes(s));
+  // Postnatal en tête des autres styles, donc juste après Prénatal (dernier style principal)
+  const autres = STYLES.filter((s) => !PRINCIPAUX.includes(s)).sort((a, b) => (b === 'Postnatal') - (a === 'Postnatal'));
   const visibles = tousStyles ? [...PRINCIPAUX, ...autres] : PRINCIPAUX;
   const basculerOption = (o) => setOptionOuverte(optionOuverte === o ? null : o);
 
   // Séances enregistrées, pour en exclure certaines de la génération
   useEffect(() => {
-    if (optionOuverte !== 'eviter' || mesSeances) return;
+    if ((optionOuverte !== 'eviter' && !(etape === 4 && eviter)) || mesSeances) return;
     listerSeances().then(setMesSeances).catch(() => setMesSeances([]));
-  }, [optionOuverte, mesSeances]);
+  }, [optionOuverte, mesSeances, etape, eviter]);
   const basculerSeance = (uid) => setSeancesEvitees((sel) => (sel.includes(uid) ? sel.filter((x) => x !== uid) : [...sel, uid]));
-  const resumeEviter = [eviter ? EVITER.find(([n]) => n === eviter)?.[1] : null, seancesEvitees.length ? `${seancesEvitees.length} choisie${seancesEvitees.length > 1 ? 's' : ''}` : null]
-    .filter(Boolean).join(' + ') || 'Non';
+  const resumeEviter = seancesEvitees.length ? `${seancesEvitees.length} séance${seancesEvitees.length > 1 ? 's' : ''}` : 'Non';
+  // Ancien réglage « n dernières séances » : converti en sélection explicite une fois les séances chargées
+  useEffect(() => {
+    if (!mesSeances || !eviter) return;
+    setSeancesEvitees((sel) => [...new Set([...sel, ...mesSeances.slice(0, eviter).map((x) => x.uid)])]);
+    setEviter(0);
+  }, [mesSeances, eviter]);
 
   const composer = () => onGenerer({
     styles, duree, niveau, theme: theme.trim(), cibleId: cible?.id || null, eviterRepetition: eviter, seancesEvitees,
@@ -205,16 +236,7 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
               placeholder="Ancrage, deux élèves aux lombaires fragiles…" aria-label="Thème ou contraintes" />
           </Option>
           <Option titre="Éviter les répétitions" valeur={resumeEviter} ouvert={optionOuverte === 'eviter'} onBasculer={() => basculerOption('eviter')}>
-            <div className="badges" role="group" aria-label="Éviter les postures des séances précédentes">
-              {EVITER.map(([n, libelle]) => (
-                <button type="button" key={n} className={`badge choix ${n === eviter ? 'actif' : ''}`} aria-pressed={n === eviter}
-                  onClick={() => setEviter(n)}>{libelle}</button>
-              ))}
-            </div>
-            <p className="aide">
-              {eviter ? 'Les postures de vos séances enregistrées les plus récentes sont évitées autant que possible.' : 'Aucune séance récente n\'est prise en compte.'}
-            </p>
-            <span className="etiquette sous-titre-option">Ou des séances précises</span>
+            <p className="aide option-aide">Les postures des séances choisies sont évitées autant que possible.</p>
             {seancesEvitees.length > 0 && (
               <div className="badges pastilles-exclues">
                 {seancesEvitees.map((uid) => {
@@ -275,7 +297,7 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
 
   return (
     <div className="ecran etapes">
-      {etape === 0 && <><div className="decor-arche" aria-hidden="true" /><div className="decor-soleil" aria-hidden="true" /></>}
+      <FondSoleil etape={etape} />
       {etape > 0 && (
         <header className="etape-haut">
           <button type="button" className="rond" aria-label="Étape précédente" onClick={() => aller(etape - 1)}><Retour /></button>
@@ -287,7 +309,7 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
       )}
       <section key={etape} className={`etape-corps ${sens}`}>{contenu}</section>
       <div className="ressort" />
-      <footer key={`pied-${etape}`} className={`etape-pied ${sens}`}>{pied}</footer>
+      <footer className="etape-pied">{pied}</footer>
       {selecteur && mesSeances && (
         <SelecteurSeances seances={mesSeances} choisies={seancesEvitees} onFermer={() => setSelecteur(false)}
           onValider={(liste) => { setSeancesEvitees(liste); setSelecteur(false); }} />

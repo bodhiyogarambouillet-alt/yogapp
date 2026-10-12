@@ -635,3 +635,33 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .selecteur-groupe h3::first-letter { text-transform: uppercase; }
 .selecteur-vide { text-align: center; margin-top: 24px; }
 .selecteur-pied { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 10px; padding: 12px 20px calc(20px + var(--bas)); border-top: 1px solid var(--trait); background: var(--fond); }
+.option-aide { margin: 0 0 10px; }
+.selecteur-recentes { padding: 16px 20px 0; }
+.selecteur-recentes .etiquette { margin: 0 0 8px; }
+.selecteur-recentes .badges { margin-top: 0; }
+
+/* ---------- Décor du parcours : demi-soleil à l'horizon ---------- */
+/* --etape : 0 = accueil (grand soleil à moitié levé), 1 à 5 = étapes (le soleil monte avec la progression) */
+.fond-soleil { --sol: 24vh; --taille: min(68vw, 300px); --descente: calc(72% - var(--etape) * 9%);
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.fond-soleil.accueil { --sol: 30vh; --taille: min(92vw, 400px); --descente: 50%; }
+.etapes > :not(.fond-soleil) { position: relative; z-index: 1; }
+.fond-ciel { position: absolute; left: 0; right: 0; top: 0; bottom: var(--sol); overflow: hidden; transition: bottom 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+.fond-astre { position: absolute; left: 50%; bottom: 0; width: var(--taille); height: var(--taille); margin-left: calc(var(--taille) / -2);
+  transform: translateY(var(--descente)); transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), width 1.2s cubic-bezier(0.22, 1, 0.36, 1), height 1.2s cubic-bezier(0.22, 1, 0.36, 1), margin-left 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+.fond-astre-souffle { width: 100%; height: 100%; animation: fond-leve 9s ease-in-out infinite; }
+.fond-astre svg { width: 100%; height: 100%; overflow: visible; }
+.fond-disque { fill: var(--soleil); opacity: 0.7; }
+.fond-onde { fill: none; stroke: var(--soleil); stroke-width: 1.4; transform-origin: 100px 100px; opacity: 0; animation: chargement-onde 4s ease-out infinite; }
+.fond-rayon { stroke: var(--soleil); stroke-width: 7; stroke-linecap: round; animation: chargement-scintille 2.6s ease-in-out infinite; }
+.fond-sol { position: absolute; left: 0; right: 0; bottom: 0; height: var(--sol); background: var(--surface-2); border-top: 2px solid var(--trait);
+  transition: height 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+@keyframes fond-leve { 0%, 100% { transform: translateY(6px); } 50% { transform: translateY(-6px); } }
+/* le pied du parcours laisse voir le sol */
+.etapes .etape-pied { background: none; }
+@media (prefers-reduced-motion: reduce) {
+  .fond-ciel, .fond-astre, .fond-sol { transition: none; }
+}
+@media (min-width: 1024px) {
+  .fond-soleil { top: 69px; }
+}

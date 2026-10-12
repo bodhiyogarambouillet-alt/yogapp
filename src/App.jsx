@@ -29,6 +29,7 @@ import { supabase, enteteAuth } from './supabase.js';
 import { retourSpotifyWeb } from './spotify.js';
 import { alerter } from './components/Dialogue.jsx';
 import Bibliotheque from './components/Bibliotheque.jsx';
+import TelechargerApk from './components/TelechargerApk.jsx';
 
 // Recolle les données de la bibliothèque sur chaque posture (utile pour les séances enregistrées)
 function hydrater(seance) {
@@ -199,6 +200,7 @@ export default function App() {
             <button type="button" key={v} className={`barre-onglet ${vue === v ? 'actif' : ''}`} aria-current={vue === v ? 'page' : undefined}
               onClick={() => aller(v)}>{nomOnglet}</button>
           ))}
+          <TelechargerApk />
         </div>
       </nav>
       {ecran}

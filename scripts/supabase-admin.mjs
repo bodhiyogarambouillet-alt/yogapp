@@ -52,3 +52,17 @@ export async function upsert(table, lignes, conflit) {
     });
   }
 }
+
+// Stockage de fichiers (buckets) : création de bucket, envoi d'un fichier
+export async function stockage(chemin, { method = 'GET', body, entetes = {} } = {}) {
+  const res = await fetch(`${url}/storage/v1/${chemin}`, { method, headers: { ...entetesCle(), ...entetes }, body });
+  const texte = await res.text();
+  if (!res.ok) {
+    const e = new Error(`Supabase stockage ${res.status} : ${texte.slice(0, 400)}`);
+    e.statut = res.status;
+    e.texte = texte;
+    throw e;
+  }
+  return texte ? JSON.parse(texte) : null;
+}
+export const urlPublique = (bucket, nom) => `${url}/storage/v1/object/public/${bucket}/${nom}`;

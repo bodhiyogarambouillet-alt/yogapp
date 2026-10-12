@@ -853,12 +853,16 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
   .connexion { max-width: none; }
 
   /* Séance : en-tête en deux colonnes (titre et intention | lancer, date, musique), phases en deux colonnes */
-  .seance-gauche { grid-template-columns: minmax(0, 1fr) 360px; grid-template-areas: "heros lancer" "intention date" "intention musique" "bilan bilan"; column-gap: 40px; row-gap: 12px; align-items: start; padding-top: 32px; }
+  .seance-gauche { grid-template-columns: minmax(0, 1fr) 360px; grid-template-areas: "heros lancer" "intention date" "musique musique" "bilan bilan"; column-gap: 40px; row-gap: 12px; align-items: start; padding-top: 32px; }
   .seance-gauche > .heros { grid-area: heros; padding: 0; }
   .seance-gauche > .seance-intention { grid-area: intention; margin: 0; padding: 0; }
   .seance-gauche > .composer.lancer { grid-area: lancer; align-self: center; margin: 0; }
   .seance-gauche > .date-seance { grid-area: date; margin: 0; }
-  .seance-gauche > .musique { grid-area: musique; margin: 0; }
+  .seance-gauche > .musique { grid-area: musique; margin: 8px 0 0; }
+  /* Bandeau musique sur toute la largeur : réglages et playlist côte à côte une fois ouvert */
+  .musique-corps:has(.musique-playlist) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); column-gap: 32px; align-items: start; }
+  .musique-corps:has(.musique-playlist) > :not(.musique-playlist) { grid-column: 1; }
+  .musique-corps:has(.musique-playlist) > .musique-playlist { grid-column: 2; grid-row: 1 / span 6; padding-top: 0; border-top: none; border-left: 1px solid var(--trait); padding-left: 32px; }
   .seance-gauche > .bilan, .seance-gauche > .avertissement { grid-area: bilan; margin: 4px 0 0; }
   /* Phases : une seule colonne en frise numérotée, pour lire le déroulé de haut en bas */
   .seance-droite .phases { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 36px 0 0 56px; counter-reset: phase; }
@@ -873,3 +877,12 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
   /* Séance en direct : picto agrandi dans le grand cercle */
   .live-picto .picto { transform: scale(1.3); }
 }
+
+/* Appli Android proposée sur ordinateur (accueil) */
+.apk { display: flex; align-items: center; gap: 18px; margin-top: 18px; padding: 16px 18px; border-radius: 22px; background: var(--surface); animation: apparition 0.5s 0.2s ease both; }
+.apk-qr { flex-shrink: 0; width: 92px; height: 92px; padding: 8px; border-radius: 14px; background: #FBF7F1; box-sizing: border-box; }
+.apk-qr svg { display: block; width: 100%; height: 100%; }
+.apk-texte { display: flex; flex-direction: column; gap: 3px; min-width: 0; font-size: 14px; color: var(--texte-doux); }
+.apk-texte strong { font-size: 16px; color: var(--texte); }
+.apk-details { font-size: 13px; }
+.apk-texte .lien { align-self: flex-start; min-height: 32px; text-decoration: none; }

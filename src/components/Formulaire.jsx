@@ -7,6 +7,7 @@ import { ACCESSOIRES } from '../accessoires.js';
 import { useRetour } from '../natif.js';
 import { listerSeances } from '../stockage.js';
 import SelecteurSeances from './SelecteurSeances.jsx';
+import TelechargerApk from './TelechargerApk.jsx';
 
 // Création d'une séance étape par étape : une question par écran.
 // 0 accueil · 1 style · 2 durée · 3 niveau · 4 options (facultatif) · 5 récapitulatif
@@ -160,6 +161,7 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
           <button type="button" className="secondaire" onClick={onMesSeances}>Mes séances</button>
           <button type="button" className="secondaire" onClick={onBibliotheque}>Postures</button>
         </div>
+        <TelechargerApk />
       </>
     );
   } else if (etape === 1) {

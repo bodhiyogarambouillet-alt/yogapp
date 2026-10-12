@@ -13,7 +13,8 @@
     "sync-bibliotheque": "node scripts/import-bibliotheque.mjs",
     "android": "vite build --mode capacitor && cap sync android",
     "android:apk": "npm run android && cd android && JAVA_HOME=/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home ./gradlew assembleDebug",
-    "pregenerer-fiches": "node scripts/pregenerer-fiches.mjs"
+    "pregenerer-fiches": "node scripts/pregenerer-fiches.mjs",
+    "apk:publier": "node scripts/publier-apk.mjs"
   },
   "dependencies": {
     "@capacitor/android": "8.5.2",
@@ -25,6 +26,7 @@
     "@capacitor/share": "8.0.2",
     "@supabase/supabase-js": "2.117.1",
     "jspdf": "4.2.1",
+    "qrcode-generator": "2.0.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

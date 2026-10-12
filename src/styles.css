@@ -464,17 +464,10 @@ input[type="search"] { height: 52px; padding: 0 18px; }
   .ecran.live { min-height: 100vh; }
   .decor-arche, .decor-soleil { display: none; }
 
-  /* Formulaire : l'en-tête est remplacé par la barre ; styles sur une ligne, durée et niveau côte à côte */
-  form.ecran > .entete { display: none; }
-  form.ecran > .bloc:first-of-type { padding-top: 40px; }
-  form.ecran h1 { font-size: 40px; }
-  .form-gauche { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 32px; }
-  .form-gauche > fieldset:first-child { grid-column: 1 / -1; }
-  .form-gauche > fieldset { padding-top: 26px !important; }
-  .tuiles { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .tuiles .tuile { min-height: 56px; }
-  form.ecran .pied.colonne { flex-direction: row; justify-content: flex-end; align-items: center; padding-top: 28px; }
-  form.ecran .composer { width: 420px; }
+  /* Création en étapes : colonne étroite et centrée, la barre remplace la marque de l'accueil */
+  .etapes { max-width: 600px; }
+  .accueil-marque { display: none; }
+  .accueil-titre { margin-top: 56px; }
 
   /* Séance : un bandeau d'en-tête (titre à gauche, lancement et date à droite), puis les phases */
   .seance-gauche { display: grid; grid-template-columns: minmax(0, 1fr) 330px; column-gap: 32px; align-items: end; padding-top: 8px; }
@@ -506,3 +499,65 @@ input[type="search"] { height: 52px; padding: 0 18px; }
   .connexion { max-width: 520px; }
 }
 @keyframes glisse-gauche { from { transform: translateX(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* ---------- Création de séance en étapes ---------- */
+/* Une seule grille : marges latérales de 24 px, titres en Marcellus 32 px, aides en 15 px */
+.etapes { --marge: 24px; }
+.etape-haut { display: flex; align-items: center; gap: 14px; padding: 24px var(--marge) 0; }
+.etape-progression { flex: 1; display: flex; gap: 6px; }
+.etape-progression span { flex: 1; height: 6px; border-radius: 3px; background: var(--trait); transition: background-color 0.4s ease; }
+.etape-progression span.fait { background: var(--accent); }
+.etape-corps { display: flex; flex-direction: column; padding: 32px var(--marge) 0; }
+.etape-titre { margin: 0; font-size: 32px; line-height: 1.15; text-wrap: balance; }
+.accueil-titre { margin-top: 40px; font-size: 38px; }
+.accueil-marque { margin-top: 4px; }
+.etape-aide { margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: var(--texte-doux); }
+.etape-corps > .tuiles, .etape-corps > .durees, .etape-corps > .choix-liste { margin-top: 28px; }
+.etape-corps > .lien { align-self: flex-start; margin-top: 6px; }
+.etape-tuiles .tuile { min-height: 60px; }
+.etape-durees { justify-content: space-between; }
+
+.choix-liste { display: flex; flex-direction: column; gap: 10px; }
+.choix-ligne { display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border: none; border-radius: 20px; background: var(--surface); text-align: left; color: var(--texte); }
+.choix-ligne-titre { font-size: 17px; font-weight: 700; }
+.choix-ligne-aide { font-size: 14px; color: var(--texte-doux); }
+.choix-ligne.actif { background: var(--accent); color: #fff; }
+.choix-ligne.actif .choix-ligne-aide { color: rgba(255, 255, 255, 0.85); }
+
+.option-ligne { border-radius: 20px; background: var(--surface); }
+.option-tete { width: 100%; min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 20px; border: none; border-radius: 20px; background: transparent; font-size: 16px; font-weight: 700; color: var(--texte); text-align: left; }
+.recap-ligne { background: var(--surface); }
+.option-valeur { display: flex; align-items: center; gap: 8px; min-width: 0; font-size: 14px; font-weight: 700; color: var(--accent); text-align: right; }
+.option-fleche { font-size: 20px; line-height: 1; transition: transform 0.3s ease; }
+.option-ligne.ouvert .option-fleche { transform: rotate(90deg); }
+.option-ligne .repli-options > .options { padding: 2px 20px 18px; margin: 0; transition: padding 0.4s ease; }
+.option-ligne .repli-options:not(.ouvert) > .options { padding-top: 0; padding-bottom: 0; }
+.niveaux.deux-colonnes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.recap-cible { margin-top: 14px; }
+.etapes .erreur { margin-top: 16px; }
+
+.carte-reprise { margin-top: 32px; display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border: none; border-radius: 20px; background: var(--surface); text-align: left; color: var(--texte); }
+.carte-reprise-titre { font-size: 16px; font-weight: 700; }
+.carte-reprise-detail { font-size: 14px; color: var(--texte-doux); }
+
+.etape-pied { position: sticky; bottom: 0; display: flex; flex-direction: column; gap: 10px; padding: 24px var(--marge) calc(28px + var(--bas)); background: linear-gradient(rgba(243, 236, 225, 0), var(--fond) 30%); }
+.etape-pied .composer, .etape-pied .secondaire { width: 100%; }
+.etape-passer { align-self: center; }
+
+/* Transitions entre étapes : glissement doux dans le sens du parcours */
+.etape-corps.avance { animation: etape-entree-droite 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.etape-corps.recul { animation: etape-entree-gauche 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.etape-pied { animation: apparition 0.4s 0.08s ease both; }
+@keyframes etape-entree-droite { from { opacity: 0; transform: translateX(32px); } to { opacity: 1; transform: none; } }
+@keyframes etape-entree-gauche { from { opacity: 0; transform: translateX(-32px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Composition en cours ---------- */
+.chargement-seance { position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 24px; background: var(--fond); text-align: center; animation: apparition 0.35s ease both; }
+.chargement-soleil { width: 132px; height: 132px; margin-bottom: 18px; overflow: visible; }
+.chargement-astre { fill: var(--accent); transform-origin: 16px 24px; animation: chargement-respire 3.2s ease-in-out infinite; }
+.chargement-horizon { fill: var(--accent); }
+.chargement-rayons line { stroke: var(--soleil); stroke-width: 2.4; stroke-linecap: round; animation: chargement-rayon 1.6s ease-in-out infinite; }
+.chargement-titre { margin: 0; font-family: var(--titre); font-size: 26px; color: var(--texte); }
+.chargement-message { margin: 0; min-height: 22px; font-size: 15px; color: var(--texte-doux); animation: apparition 0.5s ease both; }
+@keyframes chargement-respire { 0%, 100% { transform: scale(0.92); } 50% { transform: scale(1.06); } }
+@keyframes chargement-rayon { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }

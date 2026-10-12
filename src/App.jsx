@@ -3,6 +3,7 @@ import Formulaire from './components/Formulaire.jsx';
 import Seance from './components/Seance.jsx';
 import Fiche from './components/Fiche.jsx';
 import MesSeances from './components/MesSeances.jsx';
+import ChargementSeance from './components/ChargementSeance.jsx';
 import { PAR_ID, chargerBibliotheque } from './bibliotheque.js';
 import { enregistrerSeance, listerSeances } from './stockage.js';
 import { stylesDe } from './styles-seance.js';
@@ -155,10 +156,13 @@ export default function App() {
     );
   } else {
     ecran = (
-      <Formulaire initial={params} chargement={chargement} erreur={erreur}
+      <Formulaire initial={params} erreur={erreur}
         onGenerer={generer} onMesSeances={() => aller('mes-seances')} />
     );
   }
+
+  // Pendant la composition : écran d'attente animé par-dessus l'écran courant
+  if (chargement) ecran = <>{ecran}<ChargementSeance /></>;
 
   // Grand écran : barre de navigation en haut, comme sur un site
   if (!grandEcran) return ecran;

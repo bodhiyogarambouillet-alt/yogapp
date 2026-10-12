@@ -135,7 +135,7 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .phase-tete .minutes { font-family: var(--titre); font-size: 18px; color: var(--accent); }
 .phase.pic { background: var(--accent); color: #fff; }
 .phase.pic .minutes { color: #fff; }
-.phase.pic .picto { background: var(--surface); }
+.phase.pic .picto-disque { fill: var(--surface); }
 .phase.pic .ligne-infos, .phase.pic .duree-ligne { color: #fff; }
 .vide { margin: 4px 0 8px; font-size: 14px; color: var(--texte-doux); }
 .ligne { display: flex; align-items: center; }
@@ -152,8 +152,9 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .ligne-cible .ligne-nom { font-size: 18px; }
 
 /* Pictogramme */
-.picto { background: var(--surface-2); color: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.arche .picto { background: transparent; }
+.picto { color: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border-radius: 50%; }
+.picto-disque { fill: var(--arche); }
+.arche .picto-disque { fill: transparent; }
 
 /* Fiche */
 .fiche-tete { padding: 18px 24px 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
@@ -328,7 +329,7 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .live-centre { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 20px 24px 0; }
 .live-cercle { position: relative; width: 210px; height: 210px; }
 .live-cercle > svg { position: absolute; inset: 0; transform: rotate(-90deg); }
-.live-picto .picto { background: transparent; }
+.live-picto .picto-disque { fill: transparent; }
 .fond-cercle { fill: none; stroke: var(--surface-2); stroke-width: 8; }
 .avance-cercle { fill: none; stroke: var(--accent); stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 0.3s linear; }
 .live-picto { position: absolute; inset: 22px; border: none; border-radius: 50%; background: var(--arche); display: flex; align-items: center; justify-content: center; padding: 0; }

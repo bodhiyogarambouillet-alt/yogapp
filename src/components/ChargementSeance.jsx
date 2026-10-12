@@ -12,7 +12,7 @@ const ETAPES = [
 ];
 const DUREE_ETAPE = 2800; // ms par étape affichée (la dernière reste active jusqu'à la fin)
 // Même tracé que le logo de l'en-tête (Icones.jsx, viewBox 28)
-const RAYONS = ['M14 5v3', 'M6.4 8.4l1.3 1.3', 'M21.6 8.4l-1.3 1.3', 'M3.1 14.9l-1.8-.8', 'M24.9 14.9l1.8-.8'];
+const RAYONS = ['M14 7.8V5.6', 'M22.63 11.37l1.55-1.55', 'M5.37 11.37L3.82 9.82', 'M25.06 14.84l1.99-.93', 'M2.94 14.84l-1.99-.93'];
 
 export default function ChargementSeance() {
   const [ecoule, setEcoule] = useState(0);

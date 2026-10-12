@@ -5,7 +5,7 @@ import ChoixCible from './ChoixCible.jsx';
 import { ACCESSOIRES } from '../accessoires.js';
 import { useRetour } from '../natif.js';
 import { listerSeances } from '../stockage.js';
-import { dateDe, dateLisible } from '../dates.js';
+import SelecteurSeances from './SelecteurSeances.jsx';
 
 // Création d'une séance étape par étape : une question par écran.
 // 0 accueil · 1 style · 2 durée · 3 niveau · 4 options (facultatif) · 5 récapitulatif
@@ -53,6 +53,7 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
   const [eviter, setEviter] = useState(initial?.eviterRepetition || 0); // 0 = désactivé, sinon nombre de séances précédentes
   const [seancesEvitees, setSeancesEvitees] = useState(initial?.seancesEvitees || []); // séances choisies une à une
   const [mesSeances, setMesSeances] = useState(null); // chargées à l'ouverture de l'option
+  const [selecteur, setSelecteur] = useState(false); // sélecteur plein écran des séances à éviter
   const [optionOuverte, setOptionOuverte] = useState(null);
   const [autreDuree, setAutreDuree] = useState(!DUREES.includes(initial?.duree || 45)); // durée personnalisée
 
@@ -78,7 +79,7 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
     if (optionOuverte !== 'eviter' || mesSeances) return;
     listerSeances().then(setMesSeances).catch(() => setMesSeances([]));
   }, [optionOuverte, mesSeances]);
-  const basculerSeance = (uid) => setSeancesEvitees(seancesEvitees.includes(uid) ? seancesEvitees.filter((x) => x !== uid) : [...seancesEvitees, uid]);
+  const basculerSeance = (uid) => setSeancesEvitees((sel) => (sel.includes(uid) ? sel.filter((x) => x !== uid) : [...sel, uid]));
   const resumeEviter = [eviter ? EVITER.find(([n]) => n === eviter)?.[1] : null, seancesEvitees.length ? `${seancesEvitees.length} choisie${seancesEvitees.length > 1 ? 's' : ''}` : null]
     .filter(Boolean).join(' + ') || 'Non';
 
@@ -213,25 +214,23 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
             <p className="aide">
               {eviter ? 'Les postures de vos séances enregistrées les plus récentes sont évitées autant que possible.' : 'Aucune séance récente n\'est prise en compte.'}
             </p>
-            <span className="etiquette sous-titre-option">Ou choisissez des séances précises</span>
-            {mesSeances === null && <p className="aide">Chargement de vos séances…</p>}
-            {mesSeances?.length === 0 && <p className="aide">Aucune séance enregistrée pour l'instant.</p>}
-            {mesSeances?.length > 0 && (
-              <div className="liste-exclusion" role="group" aria-label="Séances dont les postures sont à éviter">
-                {mesSeances.slice(0, 30).map((s) => {
-                  const coche = seancesEvitees.includes(s.uid);
+            <span className="etiquette sous-titre-option">Ou des séances précises</span>
+            {seancesEvitees.length > 0 && (
+              <div className="badges pastilles-exclues">
+                {seancesEvitees.map((uid) => {
+                  const se = mesSeances?.find((x) => x.uid === uid);
                   return (
-                    <button type="button" key={s.uid} className={`exclusion ${coche ? 'actif' : ''}`} aria-pressed={coche} onClick={() => basculerSeance(s.uid)}>
-                      <span className="exclusion-case" aria-hidden="true">{coche ? '✓' : ''}</span>
-                      <span className="exclusion-texte">
-                        <span className="exclusion-titre">{s.titre || `${s.style} · ${s.duree} min`}</span>
-                        <span className="exclusion-infos">{[`${s.style} · ${s.duree} min`, dateLisible(dateDe(s))].filter(Boolean).join(' · ')}</span>
-                      </span>
+                    <button type="button" key={uid} className="badge choix actif pastille-exclue" aria-label={`Retirer ${se?.titre || 'la séance'}`}
+                      onClick={() => basculerSeance(uid)}>
+                      <span>{se ? (se.titre || `${se.style} · ${se.duree} min`) : 'Séance'}</span><span aria-hidden="true">×</span>
                     </button>
                   );
                 })}
               </div>
             )}
+            <button type="button" className="secondaire bouton-choisir-seances" onClick={() => setSelecteur(true)} disabled={!mesSeances?.length}>
+              {mesSeances === null ? 'Chargement de vos séances…' : mesSeances.length ? (seancesEvitees.length ? 'Modifier la sélection' : 'Choisir des séances') : 'Aucune séance enregistrée'}
+            </button>
           </Option>
         </div>
       </>
@@ -289,6 +288,10 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
       <section key={etape} className={`etape-corps ${sens}`}>{contenu}</section>
       <div className="ressort" />
       <footer key={`pied-${etape}`} className={`etape-pied ${sens}`}>{pied}</footer>
+      {selecteur && mesSeances && (
+        <SelecteurSeances seances={mesSeances} choisies={seancesEvitees} onFermer={() => setSelecteur(false)}
+          onValider={(liste) => { setSeancesEvitees(liste); setSelecteur(false); }} />
+      )}
     </div>
   );
 }

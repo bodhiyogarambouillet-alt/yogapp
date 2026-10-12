@@ -9,6 +9,20 @@ import { stylesDe } from './styles-seance.js';
 import { aujourdhui } from './dates.js';
 import { urlApi } from './api.js';
 import { useRetour } from './natif.js';
+import { Logo } from './components/Icones.jsx';
+
+// Grand écran (ordinateur) : la fiche s'ouvre dans un panneau à côté de la séance
+function useGrandEcran() {
+  const requete = '(min-width: 1024px)';
+  const [grand, setGrand] = useState(() => window.matchMedia(requete).matches);
+  useEffect(() => {
+    const mq = window.matchMedia(requete);
+    const maj = () => setGrand(mq.matches);
+    mq.addEventListener('change', maj);
+    return () => mq.removeEventListener('change', maj);
+  }, []);
+  return grand;
+}
 import { supabase, enteteAuth } from './supabase.js';
 
 // Recolle les données de la bibliothèque sur chaque posture (utile pour les séances enregistrées)
@@ -29,6 +43,8 @@ export default function App() {
   const [seance, setSeance] = useState(null);
   const [posture, setPosture] = useState(null);
   const [chargement, setChargement] = useState(false);
+  const [panneau, setPanneau] = useState(null); // posture affichée dans le panneau latéral (grand écran)
+  const grandEcran = useGrandEcran();
   const [erreur, setErreur] = useState(null);
   const [enregistree, setEnregistree] = useState(false);
   // Compte : { actif: Supabase configuré, email, admin }
@@ -56,7 +72,7 @@ export default function App() {
     return () => data.subscription.unsubscribe();
   }, []);
 
-  const aller = (v) => { setVue(v); window.scrollTo(0, 0); };
+  const aller = (v) => { setVue(v); setPanneau(null); window.scrollTo(0, 0); };
 
   // Bouton retour d'Android : fiche → séance, autres écrans → formulaire (sur le formulaire : l'appli passe en arrière-plan)
   useRetour(pret && vue !== 'formulaire', () => aller(vue === 'fiche' && seance ? 'seance' : 'formulaire'));
@@ -107,21 +123,27 @@ export default function App() {
   if (!pret) {
     return <div className="ecran chargement-ecran" aria-live="polite"><p className="chargement">Chargement de la bibliothèque…</p></div>;
   }
+  let ecran;
   if (vue === 'seance' && seance) {
-    return (
-      <Seance seance={seance} chargement={chargement} enregistree={enregistree}
-        onChange={modifierSeance}
-        onRetour={() => aller('formulaire')}
-        onRegenerer={() => generer(params || { styles: stylesDe(seance), accessoires: seance.accessoires ?? null, duree: seance.duree, niveau: seance.niveau, theme: seance.theme || '', cibleId: seance.cibleId || null, eviterRepetition: params?.eviterRepetition || 0 })}
-        onEnregistrer={enregistrer}
-        onOuvrirPosture={(p) => { setPosture(p); aller('fiche'); }} />
+    ecran = (
+      <>
+        <Seance seance={seance} chargement={chargement} enregistree={enregistree}
+          onChange={modifierSeance}
+          onRetour={() => aller('formulaire')}
+          onRegenerer={() => generer(params || { styles: stylesDe(seance), accessoires: seance.accessoires ?? null, duree: seance.duree, niveau: seance.niveau, theme: seance.theme || '', cibleId: seance.cibleId || null, eviterRepetition: params?.eviterRepetition || 0 })}
+          onEnregistrer={enregistrer}
+          onOuvrirPosture={(p) => { if (grandEcran) setPanneau(p); else { setPosture(p); aller('fiche'); } }} />
+        {grandEcran && panneau && (
+          <aside className="panneau-fiche" aria-label={`Fiche : ${panneau.fr}`}>
+            <Fiche key={panneau.id} posture={panneau} contexte={seance} compte={compte} panneau onRetour={() => setPanneau(null)} />
+          </aside>
+        )}
+      </>
     );
-  }
-  if (vue === 'fiche' && posture) {
-    return <Fiche posture={posture} contexte={seance} compte={compte} onRetour={() => aller(seance ? 'seance' : 'formulaire')} />;
-  }
-  if (vue === 'mes-seances') {
-    return (
+  } else if (vue === 'fiche' && posture) {
+    ecran = <Fiche posture={posture} contexte={seance} compte={compte} onRetour={() => aller(seance ? 'seance' : 'formulaire')} />;
+  } else if (vue === 'mes-seances') {
+    ecran = (
       <MesSeances compte={compte} onRetour={() => aller('formulaire')}
         onOuvrir={(s) => {
           const s2 = hydrater(s);
@@ -131,9 +153,31 @@ export default function App() {
           aller('seance');
         }} />
     );
+  } else {
+    ecran = (
+      <Formulaire initial={params} chargement={chargement} erreur={erreur}
+        onGenerer={generer} onMesSeances={() => aller('mes-seances')} />
+    );
   }
+
+  // Grand écran : barre de navigation en haut, comme sur un site
+  if (!grandEcran) return ecran;
+  const onglets = [['formulaire', 'Composer'], ...(seance ? [['seance', 'Séance en cours']] : []), ['mes-seances', 'Mes séances']];
   return (
-    <Formulaire initial={params} chargement={chargement} erreur={erreur}
-      onGenerer={generer} onMesSeances={() => aller('mes-seances')} />
+    <>
+      <nav className="barre-app" aria-label="Navigation">
+        <button type="button" className="barre-marque" onClick={() => aller('formulaire')}>
+          <span className="accent"><Logo /></span><span>Mes séances Yoga</span>
+        </button>
+        <div className="barre-onglets">
+          {onglets.map(([v, nomOnglet]) => (
+            <button type="button" key={v} className={`barre-onglet ${vue === v ? 'actif' : ''}`} aria-current={vue === v ? 'page' : undefined}
+              onClick={() => aller(v)}>{nomOnglet}</button>
+          ))}
+        </div>
+      </nav>
+      {ecran}
+    </>
   );
 }
+

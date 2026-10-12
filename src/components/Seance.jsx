@@ -156,111 +156,118 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
         </div>
       )}
 
-      <section className="heros">
-        {vedette && (
-          <div className="arche moyenne"><Picto famille={vedette.famille} taille={80} /></div>
-        )}
-        <div>
-          <div className="chiffre"><strong>{total}′</strong><span>{nbPostures} postures</span></div>
-          {cible && <p className="surtitre">Objectif</p>}
-          <h1>{titre}</h1>
-        </div>
-      </section>
+      {/* Grand écran : informations de la séance à gauche, phases à droite */}
+      <div className="seance-colonnes">
+        <div className="seance-gauche">
+        <section className="heros">
+          {vedette && (
+            <div className="arche moyenne"><Picto famille={vedette.famille} taille={80} /></div>
+          )}
+          <div>
+            <div className="chiffre"><strong>{total}′</strong><span>{nbPostures} postures</span></div>
+            {cible && <p className="surtitre">Objectif</p>}
+            <h1>{titre}</h1>
+          </div>
+        </section>
 
-      {seance.intention && <p className="intention seance-intention">{seance.intention}</p>}
+        {seance.intention && <p className="intention seance-intention">{seance.intention}</p>}
 
-      <button type="button" className="composer lancer" onClick={() => { setLive(true); window.scrollTo(0, 0); }}>
-        <span>Lancer la séance</span>
-        <Lecture />
-      </button>
-
-      <label className="date-seance">
-        <span>Date de la séance</span>
-        <input type="date" value={dateDe(seance) || ''} onChange={(e) => onChange({ ...seance, dateSeance: e.target.value || null })} />
-      </label>
-
-      {bilan && bilan.manquantes.length === 0 && (
-        <p className="bilan"><Valide /> {bilan.couvertes.join(', ')} : préparé{bilan.couvertes.length > 1 ? 's' : ''}</p>
-      )}
-      {bilan && bilan.manquantes.length > 0 && (
-        <p className="bilan manque"><Attention /> Pas encore préparé : {bilan.manquantes.join(', ')}. Remplacez une posture ou demandez une autre version.</p>
-      )}
-      {seance.avertissement && <p className="avertissement"><Attention />{seance.avertissement}</p>}
-
-      {edition && (
-        <div className="mode-remplacement mode-edition">
-          <label className="edition-titre">
-            <span>Titre</span>
-            <input type="text" value={seance.titre || ''} onChange={(e) => onChange({ ...seance, titre: e.target.value })} />
-          </label>
-          <button type="button" className="principal" onClick={() => { setEdition(false); setAjoutPhase(null); }}>Terminer</button>
-        </div>
-      )}
-
-      {remplacement && (
-        <div className="mode-remplacement">
-          <span>Touchez ⇄ pour remplacer une posture.</span>
-          <button type="button" className="rond nu" aria-label="Terminer les remplacements" onClick={() => setRemplacement(false)}><Fermer /></button>
-        </div>
-      )}
-
-      <section className="phases">
-        {seance.phases.map((ph, i) => (
-          <article key={ph.phase} className={`phase ${ph.phase === 'Pic' && ph.items.length ? 'pic' : ''}`}>
-            <div className="phase-tete">
-              <h2>{ph.phase}</h2>
-              {edition ? (
-                <label className="minutes edition-minutes">
-                  <input type="number" inputMode="numeric" min="0" max="180" value={ph.minutes} aria-label={`Minutes de la phase ${ph.phase}`}
-                    onChange={(e) => changerMinutes(i, e.target.value)} />′
-                </label>
-              ) : <span className="minutes">{ph.minutes}′</span>}
-            </div>
-            {ph.items.length === 0 && <p className="vide">Aucune posture proposée pour cette phase.</p>}
-            {ph.items.map((it, j) => (
-              <div className={`ligne ${it.role === 'cible' ? 'ligne-cible' : ''}`} key={`${it.id}-${j}`}>
-                <button type="button" className="ligne-lien" onClick={() => !edition && onOuvrirPosture(it.posture)}>
-                  <Picto famille={it.posture.famille} taille={38} />
-                  <span className="ligne-texte">
-                    {it.role && it.role !== 'cible' && <span className="role">{ROLES[it.role]}</span>}
-                    <span className="ligne-nom">{nom(it.posture)}</span>
-                    {it.note && <span className="ligne-note">{it.note}</span>}
-                  </span>
-                  <span className="duree-ligne">{court(it.duree)}</span>
-                </button>
-                {remplacement && it.role !== 'cible' && (
-                  <button type="button" className="rond nu" aria-label={`Remplacer ${nom(it.posture)}`} onClick={() => remplacer(i, j)}><Remplacer /></button>
-                )}
-                {edition && (
-                  <div className="edition-ligne">
-                    <input type="text" className="edition-duree" value={it.duree || ''} aria-label={`Durée de ${nom(it.posture)}`}
-                      placeholder="Durée" onChange={(e) => majItem(i, j, { duree: e.target.value })} />
-                    <input type="text" className="edition-note" value={it.note || ''} aria-label={`Consigne pour ${nom(it.posture)}`}
-                      placeholder="Consigne (facultatif)" onChange={(e) => majItem(i, j, { note: e.target.value || undefined })} />
-                    <div className="edition-boutons">
-                      <button type="button" className="rond nu" aria-label="Monter" disabled={i === 0 && j === 0} onClick={() => deplacer(i, j, -1)}>↑</button>
-                      <button type="button" className="rond nu" aria-label="Descendre" disabled={i === seance.phases.length - 1 && j === ph.items.length - 1} onClick={() => deplacer(i, j, 1)}>↓</button>
-                      <button type="button" className="rond nu" aria-label={`Retirer ${nom(it.posture)}`} onClick={() => supprimerItem(i, j)}><Fermer /></button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-            {edition && (ajoutPhase === i
-              ? <AjoutPosture seance={seance} onAjouter={(p) => ajouter(i, p)} onFermer={() => setAjoutPhase(null)} />
-              : <button type="button" className="lien ajouter" onClick={() => setAjoutPhase(i)}>+ Ajouter une posture</button>)}
-          </article>
-        ))}
-      </section>
-
-      <div className="ressort" />
-
-      <footer className="pied deux">
-        <button type="button" className="secondaire" style={{ borderColor: 'var(--trait)' }} onClick={onRegenerer} disabled={chargement}>
-          {chargement ? 'Composition…' : 'Autre version'}
+        <button type="button" className="composer lancer" onClick={() => { setLive(true); window.scrollTo(0, 0); }}>
+          <span>Lancer la séance</span>
+          <Lecture />
         </button>
-        <button type="button" className={enregistree ? 'secondaire' : 'principal'} onClick={onEnregistrer}>{enregistree ? 'Enregistrée ✓' : 'Enregistrer'}</button>
-      </footer>
+
+        <label className="date-seance">
+          <span>Date de la séance</span>
+          <input type="date" value={dateDe(seance) || ''} onChange={(e) => onChange({ ...seance, dateSeance: e.target.value || null })} />
+        </label>
+
+        {bilan && bilan.manquantes.length === 0 && (
+          <p className="bilan"><Valide /> {bilan.couvertes.join(', ')} : préparé{bilan.couvertes.length > 1 ? 's' : ''}</p>
+        )}
+        {bilan && bilan.manquantes.length > 0 && (
+          <p className="bilan manque"><Attention /> Pas encore préparé : {bilan.manquantes.join(', ')}. Remplacez une posture ou demandez une autre version.</p>
+        )}
+        {seance.avertissement && <p className="avertissement"><Attention />{seance.avertissement}</p>}
+
+        </div>
+        <div className="seance-droite">
+        {edition && (
+          <div className="mode-remplacement mode-edition">
+            <label className="edition-titre">
+              <span>Titre</span>
+              <input type="text" value={seance.titre || ''} onChange={(e) => onChange({ ...seance, titre: e.target.value })} />
+            </label>
+            <button type="button" className="principal" onClick={() => { setEdition(false); setAjoutPhase(null); }}>Terminer</button>
+          </div>
+        )}
+
+        {remplacement && (
+          <div className="mode-remplacement">
+            <span>Touchez ⇄ pour remplacer une posture.</span>
+            <button type="button" className="rond nu" aria-label="Terminer les remplacements" onClick={() => setRemplacement(false)}><Fermer /></button>
+          </div>
+        )}
+
+        <section className="phases">
+          {seance.phases.map((ph, i) => (
+            <article key={ph.phase} className={`phase ${ph.phase === 'Pic' && ph.items.length ? 'pic' : ''}`}>
+              <div className="phase-tete">
+                <h2>{ph.phase}</h2>
+                {edition ? (
+                  <label className="minutes edition-minutes">
+                    <input type="number" inputMode="numeric" min="0" max="180" value={ph.minutes} aria-label={`Minutes de la phase ${ph.phase}`}
+                      onChange={(e) => changerMinutes(i, e.target.value)} />′
+                  </label>
+                ) : <span className="minutes">{ph.minutes}′</span>}
+              </div>
+              {ph.items.length === 0 && <p className="vide">Aucune posture proposée pour cette phase.</p>}
+              {ph.items.map((it, j) => (
+                <div className={`ligne ${it.role === 'cible' ? 'ligne-cible' : ''}`} key={`${it.id}-${j}`}>
+                  <button type="button" className="ligne-lien" onClick={() => !edition && onOuvrirPosture(it.posture)}>
+                    <Picto famille={it.posture.famille} taille={38} />
+                    <span className="ligne-texte">
+                      {it.role && it.role !== 'cible' && <span className="role">{ROLES[it.role]}</span>}
+                      <span className="ligne-nom">{nom(it.posture)}</span>
+                      {it.note && <span className="ligne-note">{it.note}</span>}
+                    </span>
+                    <span className="duree-ligne">{court(it.duree)}</span>
+                  </button>
+                  {remplacement && it.role !== 'cible' && (
+                    <button type="button" className="rond nu" aria-label={`Remplacer ${nom(it.posture)}`} onClick={() => remplacer(i, j)}><Remplacer /></button>
+                  )}
+                  {edition && (
+                    <div className="edition-ligne">
+                      <input type="text" className="edition-duree" value={it.duree || ''} aria-label={`Durée de ${nom(it.posture)}`}
+                        placeholder="Durée" onChange={(e) => majItem(i, j, { duree: e.target.value })} />
+                      <input type="text" className="edition-note" value={it.note || ''} aria-label={`Consigne pour ${nom(it.posture)}`}
+                        placeholder="Consigne (facultatif)" onChange={(e) => majItem(i, j, { note: e.target.value || undefined })} />
+                      <div className="edition-boutons">
+                        <button type="button" className="rond nu" aria-label="Monter" disabled={i === 0 && j === 0} onClick={() => deplacer(i, j, -1)}>↑</button>
+                        <button type="button" className="rond nu" aria-label="Descendre" disabled={i === seance.phases.length - 1 && j === ph.items.length - 1} onClick={() => deplacer(i, j, 1)}>↓</button>
+                        <button type="button" className="rond nu" aria-label={`Retirer ${nom(it.posture)}`} onClick={() => supprimerItem(i, j)}><Fermer /></button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+              {edition && (ajoutPhase === i
+                ? <AjoutPosture seance={seance} onAjouter={(p) => ajouter(i, p)} onFermer={() => setAjoutPhase(null)} />
+                : <button type="button" className="lien ajouter" onClick={() => setAjoutPhase(i)}>+ Ajouter une posture</button>)}
+            </article>
+          ))}
+        </section>
+
+        <div className="ressort" />
+
+        <footer className="pied deux">
+          <button type="button" className="secondaire" style={{ borderColor: 'var(--trait)' }} onClick={onRegenerer} disabled={chargement}>
+            {chargement ? 'Composition…' : 'Autre version'}
+          </button>
+          <button type="button" className={enregistree ? 'secondaire' : 'principal'} onClick={onEnregistrer}>{enregistree ? 'Enregistrée ✓' : 'Enregistrer'}</button>
+        </footer>
+        </div>
+      </div>
     </div>
   );
 }

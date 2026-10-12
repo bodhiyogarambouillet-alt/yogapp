@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Picto from './Picto.jsx';
 import { nom, nomSecondaire } from '../bibliotheque.js';
-import { Retour, Attention, Valide, Etincelle } from './Icones.jsx';
+import { Retour, Attention, Valide, Etincelle, Fermer } from './Icones.jsx';
 import { useRetour } from '../natif.js';
 import { obtenirFiche, regenererFiche, enregistrerFiche, revenirReference as revenirRef, aUneReference } from '../stockage.js';
 
@@ -23,7 +23,8 @@ const CHAMPS_TEXTE = [
   ['variante_avancee', 'Variante avancée'],
 ];
 
-export default function Fiche({ posture, contexte, compte, onRetour }) {
+// panneau : fiche ouverte à côté de la séance sur grand écran
+export default function Fiche({ posture, contexte, compte, onRetour, panneau = false }) {
   const [etat, setEtat] = useState(null); // { fiche, validee, source }
   const [chargement, setChargement] = useState(false);
   const [erreur, setErreur] = useState(null);
@@ -49,7 +50,7 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!panneau) window.scrollTo(0, 0);
     setEtat(null);
     executer(() => obtenirFiche(posture.id, contexte));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -92,9 +93,9 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
   const tenue = posture.minutes ? `${posture.minutes} min` : posture.respirations ? `${posture.respirations} respirations` : '';
 
   return (
-    <div className="ecran">
+    <div className={`ecran fiche ${panneau ? 'panneau' : ''}`}>
       <header className="entete compact">
-        <button type="button" className="rond" aria-label="Retour à la séance" onClick={onRetour}><Retour /></button>
+        <button type="button" className="rond" aria-label={panneau ? 'Fermer la fiche' : 'Retour à la séance'} onClick={onRetour}>{panneau ? <Fermer /> : <Retour />}</button>
         <span className="sous">{tenue || posture.famille}</span>
         <span className="cale" />
       </header>
@@ -118,7 +119,7 @@ export default function Fiche({ posture, contexte, compte, onRetour }) {
       )}
 
 
-      <section className="cartes">
+      <section className="cartes cartes-fiche">
         {chargement && <div className="carte chargement" aria-live="polite">Rédaction de la fiche…</div>}
         {erreur && <div className="carte"><p className="erreur" role="alert">{erreur}</p><button type="button" className="secondaire" onClick={() => executer(() => obtenirFiche(posture.id, contexte))}>Réessayer</button></div>}
 

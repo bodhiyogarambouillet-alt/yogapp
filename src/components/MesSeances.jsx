@@ -130,7 +130,7 @@ export default function MesSeances({ compte, onRetour, onOuvrir }) {
         <h1 className="titre-section">Mes séances</h1>
         <p className="sous">{connecte ? 'Sur tous vos appareils.' : 'Enregistrées sur cet appareil.'}</p>
       </section>
-      <section className="cartes">
+      <section className="cartes liste-seances">
         {liste.length === 0 && <div className="carte"><p>Aucune séance enregistrée pour l'instant.</p></div>}
         {liste.map((s) => (
           <div className="carte ligne-seance" key={s.uid}>

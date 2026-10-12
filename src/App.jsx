@@ -161,7 +161,18 @@ export default function App() {
         }} />
     );
   } else if (vue === 'bibliotheque') {
-    ecran = <Bibliotheque onRetour={() => aller('formulaire')} onOuvrirPosture={(p) => { setPosture(p); setRetourFiche('bibliotheque'); aller('fiche'); }} />;
+    // Grand écran : la fiche s'ouvre dans le volet de droite, comme depuis une séance
+    ecran = (
+      <>
+        <Bibliotheque onRetour={() => aller('formulaire')} selection={grandEcran ? panneau?.id : null}
+          onOuvrirPosture={(p) => { if (grandEcran) setPanneau(p); else { setPosture(p); setRetourFiche('bibliotheque'); aller('fiche'); } }} />
+        {grandEcran && panneau && (
+          <aside className="panneau-fiche" aria-label={`Fiche : ${panneau.fr}`}>
+            <Fiche key={panneau.id} posture={panneau} contexte={null} compte={compte} panneau onRetour={() => setPanneau(null)} />
+          </aside>
+        )}
+      </>
+    );
   } else if (vue === 'compte') {
     ecran = <Compte compte={compte} onRetour={() => aller('formulaire')} />;
   } else {

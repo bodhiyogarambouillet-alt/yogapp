@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { STYLES, DUREES, PAR_ID, nom } from '../bibliotheque.js';
 import { Logo, Retour, Utilisateur } from './Icones.jsx';
 import ChoixCible from './ChoixCible.jsx';
@@ -27,8 +28,10 @@ const libelleStyles = (styles) => (styles.length === 0 ? 'Tous styles' : styles.
 // Un seul décor pour l'accueil et les étapes : il glisse d'une position à l'autre ; à chaque changement
 // d'étape, une onde plus marquée part du centre (la « goutte »).
 const ARCS = [1, 0.8, 0.6, 0.4, 0.2]; // rayons relatifs, de l'extérieur vers le cœur
+// Rendu directement dans <body> : l'écran qui apparaît (animation avec transform) piégerait sinon ce décor fixe
+// dans sa propre boîte le temps de l'animation (cercles visibles dans la colonne avant de se replacer).
 function FondOndes({ etape, impulsion }) {
-  return (
+  return createPortal(
     <div className={`fond-ondes ${etape === 0 ? 'accueil' : ''}`} style={{ '--etape': etape }} aria-hidden="true">
       <div className="fond-groupe">
         {ARCS.map((r, i) => (
@@ -38,7 +41,8 @@ function FondOndes({ etape, impulsion }) {
         {[0, 2.5, 5].map((d) => <div key={d} className="fond-onde" style={{ animationDelay: `${d}s` }} />)}
         <div key={impulsion} className="fond-goutte" />
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 

@@ -9,7 +9,7 @@ const sansAccents = (t) => (t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').to
 const NIVEAUX = [[1, 'Niveau 1'], [2, 'Niveau 2'], [3, 'Niveau 3']];
 let memoire = { recherche: '', famille: null, niveau: null, defilement: 0 };
 
-export default function Bibliotheque({ onRetour, onOuvrirPosture }) {
+export default function Bibliotheque({ onRetour, onOuvrirPosture, selection = null }) {
   const [recherche, setRecherche] = useState(memoire.recherche);
   const [famille, setFamille] = useState(memoire.famille);
   const [niveau, setNiveau] = useState(memoire.niveau);
@@ -80,8 +80,8 @@ export default function Bibliotheque({ onRetour, onOuvrirPosture }) {
               <span className="minutes">{liste.length}</span>
             </div>
             {liste.map((p) => (
-              <div className="ligne" key={p.id}>
-                <button type="button" className="ligne-lien" onClick={() => ouvrir(p)}>
+              <div className={`ligne ${selection === p.id ? 'actif' : ''}`} key={p.id}>
+                <button type="button" className="ligne-lien" aria-current={selection === p.id ? 'true' : undefined} onClick={() => ouvrir(p)}>
                   <Picto famille={p.famille} taille={38} />
                   <span className="ligne-texte">
                     <span className="ligne-nom">{nom(p)}</span>

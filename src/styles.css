@@ -783,6 +783,8 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 @keyframes fond-onde { 0% { transform: scale(0.12); opacity: 0; } 12% { opacity: 0.45; } 100% { transform: scale(1.25); opacity: 0; } }
 @keyframes fond-goutte { 0% { transform: scale(0.1); opacity: 0; } 10% { opacity: 0.8; } 100% { transform: scale(1.4); opacity: 0; } }
 /* contenu au-dessus du décor ; le sélecteur de séances garde son affichage plein écran */
+/* le décor est rendu dans <body>, derrière tout le parcours */
+.ecran.etapes { z-index: 1; }
 .etapes > :not(.fond-ondes):not(.selecteur) { position: relative; z-index: 1; }
 /* le pied du parcours laisse voir le décor */
 .etapes .etape-pied { background: none; }
@@ -837,6 +839,7 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
   .biblio-filtres { flex-wrap: wrap; overflow: visible; margin: 0; padding: 0; }
   .biblio-liste { display: block; column-count: 2; column-gap: 16px; }
   .biblio-groupe { break-inside: avoid; margin-bottom: 16px; }
+  .biblio-groupe .ligne.actif .ligne-lien { margin: 0 -10px; padding-left: 10px; padding-right: 10px; border-radius: 14px; background: var(--surface-2); }
 
   /* Compte : cartes côte à côte, même largeur */
   .ecran > .cartes:has(.carte-compte) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
@@ -850,8 +853,14 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
   .seance-gauche > .date-seance { grid-area: date; margin: 0; }
   .seance-gauche > .musique { grid-area: musique; margin: 0; }
   .seance-gauche > .bilan, .seance-gauche > .avertissement { grid-area: bilan; margin: 4px 0 0; }
-  .seance-droite .phases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; padding: 32px 0 0; }
-  .seance-droite .phases .phase { margin: 0; }
+  /* Phases : une seule colonne en frise numérotée, pour lire le déroulé de haut en bas */
+  .seance-droite .phases { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 36px 0 0 56px; counter-reset: phase; }
+  .seance-droite .phases::before { content: ''; position: absolute; left: 17px; top: 56px; bottom: 24px; width: 2px; border-radius: 1px; background: var(--trait); }
+  .seance-droite .phases .phase { position: relative; margin: 0; counter-increment: phase; }
+  .seance-droite .phases .phase::before { content: counter(phase); position: absolute; left: -56px; top: 14px; width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; background: var(--fond); border: 2px solid var(--trait); font-weight: 700; font-size: 15px; color: var(--texte-doux); }
+  .seance-droite .phases .phase.pic::before { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .seance-droite .phase { padding: 18px 24px 10px 24px; }
   .seance-droite .mode-remplacement { margin: 24px 0 0; }
   .seance-droite .pied.deux { padding-left: 0; padding-right: 0; }
   /* Séance en direct : picto agrandi dans le grand cercle */

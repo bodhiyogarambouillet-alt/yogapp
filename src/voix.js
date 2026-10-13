@@ -67,17 +67,32 @@ async function assurerSons(textes) {
   }
 }
 
+// Contexte Web Audio partagé (voix et signaux de la séance). Contrairement au lecteur <audio>, il ne prend pas
+// la priorité audio d'Android : la musique Spotify continue de jouer pendant les annonces.
+let contexte = null;
+export function contexteAudio() {
+  try {
+    contexte = contexte || new (window.AudioContext || window.webkitAudioContext)();
+    if (contexte.state === 'suspended') contexte.resume().catch(() => {});
+  } catch { /* audio indisponible */ }
+  return contexte;
+}
+
 // Joue un fichier audio : la copie locale s'il y en a une (hors connexion), sinon depuis le stockage
 async function jouer(url) {
+  const c = contexteAudio();
+  if (!c) throw new Error('audio indisponible');
   const local = await copieLocale(url);
-  const source = local ? URL.createObjectURL(await local.blob()) : url;
-  return new Promise((resoudre, rejeter) => {
-    lecteur = new Audio(source);
-    const fin = () => { if (local) URL.revokeObjectURL(source); };
-    lecteur.onended = () => { fin(); resoudre(); };
-    lecteur.onpause = () => { fin(); resoudre(); }; // interrompue par taire()
-    lecteur.onerror = () => { fin(); rejeter(new Error('audio indisponible')); };
-    lecteur.play().catch(rejeter);
+  const r = local || await fetch(url);
+  if (!r.ok) throw new Error('audio indisponible');
+  const tampon = await c.decodeAudioData(await r.arrayBuffer());
+  return new Promise((resoudre) => {
+    const source = c.createBufferSource();
+    source.buffer = tampon;
+    source.connect(c.destination);
+    source.onended = () => { if (lecteur === source) lecteur = null; resoudre(); }; // aussi à l'arrêt par taire()
+    lecteur = source;
+    source.start();
   });
 }
 
@@ -181,7 +196,7 @@ export async function parler(segments) {
 
 export function taire() {
   jeton++;
-  if (lecteur) { lecteur.pause(); lecteur = null; }
+  if (lecteur) { try { lecteur.stop(); } catch { /* déjà terminé */ } lecteur = null; }
   try {
     if (estNatif) TextToSpeech.stop().catch(() => {});
     else window.speechSynthesis?.cancel();

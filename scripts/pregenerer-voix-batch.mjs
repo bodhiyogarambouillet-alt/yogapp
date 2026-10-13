@@ -6,7 +6,7 @@
 import structures from '../src/data/structures.json' with { type: 'json' };
 import posturesLocales from '../src/data/postures.json' with { type: 'json' };
 import { rest, supabaseConfigure } from './supabase-admin.mjs'; // charge aussi .env.local
-import { MODELE, VOIX, BUCKET, TON, versMp3, cheminVoix, voixExiste } from '../lib/voix.js';
+import { MODELE, VOIX, BUCKET, TON, versMp3, cheminVoix, voixExiste, dureeMax } from '../lib/voix.js';
 import { envoyerFichier, assurerBucket } from '../lib/supabase.js';
 import { ROLES_VOIX, PHRASES_FIXES, phrase, segmentNom, segmentDuree, DUREES_COURANTES } from '../src/voix-texte.js';
 
@@ -76,7 +76,9 @@ async function enregistrer(resultat, textes) {
     if (!t || !audio) { echecs++; continue; }
     const taux = Number(/rate=(\d+)/.exec(audio.mimeType || '')?.[1]) || 24000;
     const pcm = Buffer.from(audio.data, 'base64');
-    const mp3 = versMp3({ echantillons: new Int16Array(pcm.buffer, pcm.byteOffset, Math.floor(pcm.length / 2)), taux });
+    const echantillons = new Int16Array(pcm.buffer, pcm.byteOffset, Math.floor(pcm.length / 2));
+    if (echantillons.length / taux > dureeMax(t)) { echecs++; continue; } // audio dérapé : à refaire
+    const mp3 = versMp3({ echantillons, taux });
     await envoyerFichier(BUCKET, cheminVoix(t, voix), mp3, 'audio/mpeg');
     ok++;
   }

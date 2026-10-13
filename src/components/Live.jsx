@@ -6,6 +6,7 @@ import { obtenirFiche } from '../stockage.js';
 import { useRetour, vibrer } from '../natif.js';
 import { useMusiqueLive, CarteMorceau } from './MusiqueLive.jsx';
 import { confirmer } from './Dialogue.jsx';
+import { NIVEAUX_VOIX, niveauVoix, enregistrerNiveauVoix, parler, taire, annoncePosture } from '../voix.js';
 
 // Fiches « Comment faire ? » de la séance : chargées à la demande (posture en cours + suivante), gardées en mémoire
 function useFiches(seance) {
@@ -144,6 +145,12 @@ export default function Live({ seance, onQuitter }) {
   const { fiches, charger } = useFiches(seance);
   useEcranAllume(enCours);
   const musique = useMusiqueLive(seance.playlist, enCours, terminee);
+  // Voix guide : niveau mémorisé sur l'appareil (coupée, postures, postures et consignes)
+  const [voix, setVoix] = useState(niveauVoix);
+  const voixRef = useRef(voix);
+  voixRef.current = voix;
+  const [bulleVoix, setBulleVoix] = useState(null); // rappel du niveau choisi, affiché brièvement
+  const annoncee = useRef(-1);
 
   const etape = etapes[index];
   const suivante = etapes[index + 1];
@@ -161,6 +168,7 @@ export default function Live({ seance, onQuitter }) {
       fin.current = null;
       sonner(520, 3);
       vibrer(600);
+      if (voixRef.current !== 'non') parler('Séance terminée. Namasté.');
       return;
     }
     const j = Math.max(0, i);
@@ -188,11 +196,33 @@ export default function Live({ seance, onQuitter }) {
         setCoteGauche(true);
         sonner(740, 1);
         vibrer(120);
+        if (voixRef.current !== 'non') parler('Changez de côté. Côté gauche.');
       }
       setRestant(r);
     }, 250);
     return () => clearInterval(tic);
   }, [enCours, index, etape, etapes, allerA, sonner]);
+
+  // Annonce de chaque nouvelle posture pendant que la séance tourne ; pause ou sortie : la voix se tait
+  useEffect(() => {
+    if (!enCours) { taire(); return; }
+    if (voix === 'non' || annoncee.current === index || !etape) return;
+    annoncee.current = index;
+    const precedente = etapes[index - 1];
+    parler(annoncePosture({ etape, fiche: fiches[etape.id], nouvellePhase: !precedente || precedente.phase !== etape.phase, niveau: voix }));
+  }, [enCours, index, etape, etapes, fiches, voix]);
+  useEffect(() => () => taire(), []);
+
+  const changerVoix = () => {
+    const i = NIVEAUX_VOIX.findIndex(([n]) => n === voix);
+    const [suivant, libelle] = NIVEAUX_VOIX[(i + 1) % NIVEAUX_VOIX.length];
+    setVoix(suivant);
+    enregistrerNiveauVoix(suivant);
+    setBulleVoix(libelle);
+    setTimeout(() => setBulleVoix((b) => (b === libelle ? null : b)), 1800);
+    if (suivant === 'non') taire();
+    else if (enCours) { annoncee.current = -1; } // réannonce la posture en cours avec le nouveau niveau
+  };
 
   const basculer = () => {
     activer();
@@ -251,8 +281,15 @@ export default function Live({ seance, onQuitter }) {
     <div className={`ecran live ${enCours ? 'en-cours' : ''}`}>
       <header className="entete compact">
         <button type="button" className="rond" aria-label="Quitter la séance" onClick={quitter}><Fermer /></button>
-        <span className="sous">{terminee ? 'Séance terminée' : `${etape.phase} · ${index + 1}/${etapes.length}`}</span>
-        <span className="cale" />
+        <span className="sous">{bulleVoix || (terminee ? 'Séance terminée' : `${etape.phase} · ${index + 1}/${etapes.length}`)}</span>
+        <button type="button" className={`rond voix-bouton ${voix !== 'non' ? 'actif' : ''}`} onClick={changerVoix}
+          aria-label={`${NIVEAUX_VOIX.find(([n]) => n === voix)?.[1]} (toucher pour changer)`}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" />
+            {voix === 'non' ? <path d="M16 9.5l5 5M21 9.5l-5 5" /> : <path d="M15.5 9a4 4 0 0 1 0 6" />}
+            {voix === 'consignes' && <path d="M18.3 6.5a7.5 7.5 0 0 1 0 11" />}
+          </svg>
+        </button>
       </header>
 
       <div className="live-progression" aria-label={`Séance : ${mmss(ecoule)} sur ${mmss(total)}`}>

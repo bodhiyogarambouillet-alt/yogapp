@@ -899,3 +899,7 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
 .apk-texte strong { font-size: 16px; color: var(--texte); }
 .apk-details { font-size: 13px; }
 .apk-texte .lien { align-self: flex-start; min-height: 32px; text-decoration: none; }
+
+/* Voix guide (lecteur en direct) */
+.voix-bouton { color: var(--texte-doux); }
+.voix-bouton.actif { color: var(--accent); }

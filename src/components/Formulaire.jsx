@@ -4,7 +4,7 @@ import { STYLES, DUREES, PAR_ID, nom } from '../bibliotheque.js';
 import { Logo, Retour, Utilisateur } from './Icones.jsx';
 import ChoixCible from './ChoixCible.jsx';
 import { ACCESSOIRES } from '../accessoires.js';
-import { useRetour } from '../natif.js';
+import { useRetour, vibrer } from '../natif.js';
 import { listerSeances } from '../stockage.js';
 import SelecteurSeances from './SelecteurSeances.jsx';
 
@@ -30,16 +30,44 @@ const libelleStyles = (styles) => (styles.length === 0 ? 'Tous styles' : styles.
 const ARCS = [1, 0.8, 0.6, 0.4, 0.2]; // rayons relatifs, de l'extérieur vers le cœur
 // Rendu directement dans <body> : l'écran qui apparaît (animation avec transform) piégerait sinon ce décor fixe
 // dans sa propre boîte le temps de l'animation (cercles visibles dans la colonne avant de se replacer).
+// Toucher le cœur des ronds : des ondes rapides partent du centre, comme un doigt posé sur l'eau.
+// Le décor ne reçoit pas les clics (il est derrière le contenu) : on écoute la page et on vérifie
+// que le toucher tombe près du cœur, hors bouton, lien ou champ.
+function useToucherEau(coeur) {
+  const [touches, setTouches] = useState([]);
+  useEffect(() => {
+    const toucher = (e) => {
+      const el = coeur.current;
+      if (!el || e.target.closest?.('button, a, input, textarea, select, label, .selecteur')) return;
+      const r = el.getBoundingClientRect();
+      const rayon = r.height / 2;
+      const d = Math.hypot(e.clientX - r.left, e.clientY - (r.top + rayon));
+      if (d > Math.max(rayon * 1.6, 44)) return;
+      const id = Date.now();
+      setTouches((t) => [...t.slice(-2), id]);
+      vibrer(12);
+      setTimeout(() => setTouches((t) => t.filter((x) => x !== id)), 1800);
+    };
+    document.addEventListener('pointerdown', toucher);
+    return () => document.removeEventListener('pointerdown', toucher);
+  }, [coeur]);
+  return touches;
+}
+
 function FondOndes({ etape, impulsion }) {
+  const coeur = useRef(null);
+  const touches = useToucherEau(coeur);
   return createPortal(
     <div className={`fond-ondes ${etape === 0 ? 'accueil' : ''}`} style={{ '--etape': etape }} aria-hidden="true">
       <div className="fond-groupe">
         {ARCS.map((r, i) => (
-          <div key={r} className={`fond-demi n${i + 1} ${i === ARCS.length - 1 ? 'fond-coeur' : ''}`}
-            style={{ '--r': r, animationDelay: `${(ARCS.length - 1 - i) * 0.4}s` }} />
+          <div key={r} ref={i === ARCS.length - 1 ? coeur : undefined}
+            className={`fond-demi n${i + 1} ${i === ARCS.length - 1 ? 'fond-coeur' : ''} ${touches.length ? 'touche' : ''}`}
+            style={{ '--r': r, animationDelay: `${(ARCS.length - 1 - i) * 0.4}s`, '--retard': `${(ARCS.length - 1 - i) * 0.07}s` }} />
         ))}
         {[0, 2.5, 5].map((d) => <div key={d} className="fond-onde" style={{ animationDelay: `${d}s` }} />)}
         <div key={impulsion} className="fond-goutte" />
+        {touches.map((t) => [0, 0.16, 0.32].map((d) => <div key={`${t}-${d}`} className="fond-touche" style={{ animationDelay: `${d}s` }} />))}
       </div>
     </div>,
     document.body,

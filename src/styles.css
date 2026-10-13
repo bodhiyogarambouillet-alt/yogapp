@@ -788,6 +788,13 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .fond-goutte { border-width: 2px; border-color: var(--c5); animation: fond-goutte 1.6s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
 @keyframes fond-houle { 0%, 100% { transform: scale(1); } 30% { transform: scale(1.045); } 60% { transform: scale(0.99); } }
 @keyframes fond-onde { 0% { transform: scale(0.12); opacity: 0; } 12% { opacity: 0.45; } 100% { transform: scale(1.25); opacity: 0; } }
+/* Toucher l'eau : trois ondes rapides depuis le cœur, et les ronds qui frémissent du centre vers l'extérieur */
+.fond-touche { position: absolute; left: 0; top: calc(var(--rayon) * -0.5); width: calc(var(--rayon) * 0.5); height: var(--rayon);
+  box-sizing: border-box; border: 2px solid var(--accent); border-left: none; border-radius: 0 9999px 9999px 0; transform-origin: 0 50%; opacity: 0;
+  animation: fond-touche 1.2s cubic-bezier(0.2, 0.7, 0.3, 1) both; }
+.fond-demi.touche { animation: fond-frisson 0.9s cubic-bezier(0.3, 0.7, 0.4, 1) var(--retard) both; }
+@keyframes fond-touche { 0% { transform: scale(0.15); opacity: 0.75; } 100% { transform: scale(2.4); opacity: 0; } }
+@keyframes fond-frisson { 0% { transform: scale(1); } 25% { transform: scale(0.94); } 55% { transform: scale(1.05); } 80% { transform: scale(0.99); } 100% { transform: scale(1); } }
 @keyframes fond-goutte { 0% { transform: scale(0.1); opacity: 0; } 10% { opacity: 0.8; } 100% { transform: scale(1.4); opacity: 0; } }
 /* contenu au-dessus du décor ; le sélecteur de séances garde son affichage plein écran */
 /* le décor est rendu dans <body>, derrière tout le parcours */
@@ -800,7 +807,7 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 @keyframes etape-sortie { to { opacity: 0; transform: translateY(-18px); } }
 @media (prefers-reduced-motion: reduce) {
   .fond-groupe { transition: none; }
-  .fond-demi, .fond-onde, .fond-goutte { animation: none; }
+  .fond-demi, .fond-onde, .fond-goutte, .fond-touche, .fond-demi.touche { animation: none; }
 }
 @media (min-width: 1024px) {
   .fond-ondes { top: 69px; }

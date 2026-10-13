@@ -14,9 +14,11 @@
     "android": "vite build --mode capacitor && cap sync android",
     "android:apk": "npm run android && cd android && JAVA_HOME=/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home ./gradlew assembleDebug",
     "pregenerer-fiches": "node scripts/pregenerer-fiches.mjs",
-    "apk:publier": "node scripts/publier-apk.mjs"
+    "apk:publier": "node scripts/publier-apk.mjs",
+    "pregenerer-voix": "node scripts/pregenerer-voix.mjs"
   },
   "dependencies": {
+    "@breezystack/lamejs": "1.2.7",
     "@capacitor-community/text-to-speech": "8.0.2",
     "@capacitor/android": "8.5.2",
     "@capacitor/app": "8.1.1",

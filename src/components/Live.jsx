@@ -6,7 +6,7 @@ import { obtenirFiche } from '../stockage.js';
 import { useRetour, vibrer } from '../natif.js';
 import { useMusiqueLive, CarteMorceau } from './MusiqueLive.jsx';
 import { confirmer } from './Dialogue.jsx';
-import { NIVEAUX_VOIX, niveauVoix, enregistrerNiveauVoix, parler, taire, annoncePosture } from '../voix.js';
+import { NIVEAUX_VOIX, niveauVoix, enregistrerNiveauVoix, parler, taire, segmentsAnnonce, preparerVoix, PHRASES_FIXES } from '../voix.js';
 
 // Fiches « Comment faire ? » de la séance : chargées à la demande (posture en cours + suivante), gardées en mémoire
 function useFiches(seance) {
@@ -151,6 +151,7 @@ export default function Live({ seance, onQuitter }) {
   voixRef.current = voix;
   const [bulleVoix, setBulleVoix] = useState(null); // rappel du niveau choisi, affiché brièvement
   const annoncee = useRef(-1);
+  const [preparation, setPreparation] = useState(null); // { fait, total } pendant la préparation de la voix naturelle
 
   const etape = etapes[index];
   const suivante = etapes[index + 1];
@@ -168,7 +169,7 @@ export default function Live({ seance, onQuitter }) {
       fin.current = null;
       sonner(520, 3);
       vibrer(600);
-      if (voixRef.current !== 'non') parler('Séance terminée. Namasté.');
+      if (voixRef.current !== 'non') parler(PHRASES_FIXES.fin);
       return;
     }
     const j = Math.max(0, i);
@@ -196,7 +197,7 @@ export default function Live({ seance, onQuitter }) {
         setCoteGauche(true);
         sonner(740, 1);
         vibrer(120);
-        if (voixRef.current !== 'non') parler('Changez de côté. Côté gauche.');
+        if (voixRef.current !== 'non') parler(PHRASES_FIXES.changer);
       }
       setRestant(r);
     }, 250);
@@ -209,9 +210,27 @@ export default function Live({ seance, onQuitter }) {
     if (voix === 'non' || annoncee.current === index || !etape) return;
     annoncee.current = index;
     const precedente = etapes[index - 1];
-    parler(annoncePosture({ etape, fiche: fiches[etape.id], nouvellePhase: !precedente || precedente.phase !== etape.phase, niveau: voix }));
+    parler(segmentsAnnonce({ etape, fiche: fiches[etape.id], nouvellePhase: !precedente || precedente.phase !== etape.phase, niveau: voix }));
   }, [enCours, index, etape, etapes, fiches, voix]);
   useEffect(() => () => taire(), []);
+
+  // Voix naturelle : on charge les fiches de toute la séance, puis on prépare toutes les annonces à l'avance
+  const textesVoix = useMemo(() => (voix === 'non' ? [] : [
+    ...etapes.flatMap((e, i) => segmentsAnnonce({ etape: e, fiche: fiches[e.id], nouvellePhase: i === 0 || etapes[i - 1].phase !== e.phase, niveau: voix })),
+    PHRASES_FIXES.changer, PHRASES_FIXES.fin,
+  ]), [etapes, fiches, voix]);
+  const [fichesPretes, setFichesPretes] = useState(false);
+  useEffect(() => {
+    if (voix === 'non') return undefined;
+    etapes.forEach((e) => charger(e.id));
+    const t = setTimeout(() => setFichesPretes(true), 6000); // au pire, on prépare avec les fiches déjà là
+    return () => clearTimeout(t);
+  }, [voix, etapes, charger]);
+  const toutesChargees = etapes.every((e) => fiches[e.id] !== undefined);
+  useEffect(() => {
+    if (voix === 'non' || !(toutesChargees || fichesPretes)) return;
+    preparerVoix(textesVoix, setPreparation).finally(() => setTimeout(() => setPreparation(null), 1200));
+  }, [voix, toutesChargees, fichesPretes, textesVoix]);
 
   const changerVoix = () => {
     const i = NIVEAUX_VOIX.findIndex(([n]) => n === voix);
@@ -281,7 +300,9 @@ export default function Live({ seance, onQuitter }) {
     <div className={`ecran live ${enCours ? 'en-cours' : ''}`}>
       <header className="entete compact">
         <button type="button" className="rond" aria-label="Quitter la séance" onClick={quitter}><Fermer /></button>
-        <span className="sous">{bulleVoix || (terminee ? 'Séance terminée' : `${etape.phase} · ${index + 1}/${etapes.length}`)}</span>
+        <span className="sous">{bulleVoix
+          || (preparation && preparation.fait < preparation.total ? `Préparation de la voix… ${preparation.fait}/${preparation.total}` : null)
+          || (terminee ? 'Séance terminée' : `${etape.phase} · ${index + 1}/${etapes.length}`)}</span>
         <button type="button" className={`rond voix-bouton ${voix !== 'non' ? 'actif' : ''}`} onClick={changerVoix}
           aria-label={`${NIVEAUX_VOIX.find(([n]) => n === voix)?.[1]} (toucher pour changer)`}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

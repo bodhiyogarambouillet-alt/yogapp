@@ -48,10 +48,12 @@ export const NIVEAUX_VOIX = [
   ['nom', 'Voix : postures'],
   ['consignes', 'Voix : postures et consignes'],
 ];
-const CLE = 'yoga:voix';
-// Coupée par défaut : la voix (et la génération des annonces par Gemini) ne démarre qu'une fois activée
-export const niveauVoix = () => { try { return localStorage.getItem(CLE) || 'non'; } catch { return 'non'; } };
-export const enregistrerNiveauVoix = (n) => { try { localStorage.setItem(CLE, n); } catch { /* stockage indisponible */ } };
+// Coupée à chaque ouverture du lecteur : la voix (et la génération des annonces par Gemini) ne démarre
+// que si on l'active pendant la séance. Le dernier niveau choisi est seulement retenu pour la réactivation.
+const CLE = 'yoga:voix-niveau';
+export const niveauVoix = () => 'non';
+export const dernierNiveauVoix = () => { try { return localStorage.getItem(CLE) || 'consignes'; } catch { return 'consignes'; } };
+export const enregistrerNiveauVoix = (n) => { try { if (n !== 'non') localStorage.setItem(CLE, n); localStorage.removeItem('yoga:voix'); } catch { /* stockage indisponible */ } };
 
 let voixWeb = null;
 function choisirVoixWeb() {

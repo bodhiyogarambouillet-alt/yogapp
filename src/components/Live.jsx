@@ -6,7 +6,7 @@ import { obtenirFiche } from '../stockage.js';
 import { useRetour, vibrer } from '../natif.js';
 import { useMusiqueLive, CarteMorceau } from './MusiqueLive.jsx';
 import { confirmer } from './Dialogue.jsx';
-import { NIVEAUX_VOIX, niveauVoix, enregistrerNiveauVoix, parler, taire, segmentsAnnonce, preparerVoix, PHRASES_FIXES } from '../voix.js';
+import { NIVEAUX_VOIX, niveauVoix, dernierNiveauVoix, enregistrerNiveauVoix, parler, taire, segmentsAnnonce, preparerVoix, PHRASES_FIXES } from '../voix.js';
 
 // Fiches « Comment faire ? » de la séance : chargées à la demande (posture en cours + suivante), gardées en mémoire
 function useFiches(seance) {
@@ -233,8 +233,11 @@ export default function Live({ seance, onQuitter }) {
   }, [voix, toutesChargees, fichesPretes, textesVoix]);
 
   const changerVoix = () => {
+    // Depuis « coupée », on revient au dernier niveau utilisé ; sinon on passe au niveau suivant
     const i = NIVEAUX_VOIX.findIndex(([n]) => n === voix);
-    const [suivant, libelle] = NIVEAUX_VOIX[(i + 1) % NIVEAUX_VOIX.length];
+    const [suivant, libelle] = voix === 'non'
+      ? NIVEAUX_VOIX.find(([n]) => n === dernierNiveauVoix()) || NIVEAUX_VOIX[1]
+      : NIVEAUX_VOIX[(i + 1) % NIVEAUX_VOIX.length];
     setVoix(suivant);
     enregistrerNiveauVoix(suivant);
     setBulleVoix(libelle);

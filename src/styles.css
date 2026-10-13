@@ -673,6 +673,22 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .biblio-niveau { width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; background: var(--surface-2); color: var(--texte-doux); }
 .biblio-niveau.n2 { background: var(--soleil); color: #5A3A22; }
 .biblio-niveau.n3 { background: var(--accent); color: #fff; }
+/* Par famille d'abord : tuiles des familles sur mobile, barre latérale sur ordinateur */
+.biblio-familles { display: none; }
+.bibliotheque.accueil .biblio-liste { display: none; }
+.biblio-tuiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 16px 16px 0; }
+.biblio-tuile { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px 10px 14px; border: none; border-radius: 22px; background: var(--surface); color: var(--texte); text-align: center; animation: apparition 0.4s ease both; }
+.biblio-tuile:active { transform: scale(0.97); }
+.biblio-tuile-nom { font-size: 15px; font-weight: 700; line-height: 1.2; }
+.biblio-tuile-nombre { font-size: 12px; color: var(--texte-doux); }
+.biblio-retour { margin: 6px 16px 0; min-height: 36px; }
+/* Variantes regroupées sous leur posture mère */
+.biblio-bloc + .biblio-bloc { border-top: 1px solid var(--trait); }
+.biblio-bloc { break-inside: avoid; }
+.biblio-variantes { display: block; margin: -6px 0 8px 50px; padding: 3px 10px; border: none; border-radius: 10px; background: var(--surface-2); font-size: 12px; font-weight: 700; color: var(--accent); }
+.biblio-variante { margin-left: 34px; border-left: 2px solid var(--trait); padding-left: 10px; }
+.biblio-variante .ligne-nom { font-size: 15px; }
+.biblio-variante .ligne-lien { min-height: 46px; }
 .etape-passer { align-self: center; }
 
 /* Transitions entre étapes : glissement doux dans le sens du parcours */
@@ -849,7 +865,17 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
   .liste-seances .ligne-seance { grid-template-rows: 1fr auto; }
 
   /* Bibliothèque : filtres sur plusieurs lignes, familles en deux colonnes */
-  .biblio-outils { padding: 20px 0 0; }
+  .biblio-corps { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; align-items: start; padding-top: 24px; }
+  .biblio-familles { display: flex; flex-direction: column; gap: 2px; position: sticky; top: 92px; }
+  .biblio-famille { display: flex; justify-content: space-between; gap: 8px; padding: 9px 14px; border: none; border-radius: 14px; background: transparent; font-size: 14px; font-weight: 700; color: var(--texte-doux); text-align: left; }
+  .biblio-famille:hover { background: var(--surface); color: var(--texte); }
+  .biblio-famille.actif { background: var(--texte); color: var(--fond); }
+  .biblio-tuiles, .biblio-retour { display: none; }
+  .bibliotheque.accueil .biblio-liste { display: block; }
+  .bibliotheque.en-famille .biblio-liste { column-count: 1; }
+  .bibliotheque.en-famille .biblio-items { column-count: 2; column-gap: 28px; }
+  .bibliotheque.en-famille .biblio-items .ligne { break-inside: avoid; }
+  .biblio-outils { padding: 0; }
   .biblio-outils input[type="search"] { max-width: 520px; }
   .biblio-filtres { flex-wrap: wrap; overflow: visible; margin: 0; padding: 0; }
   .biblio-liste { display: block; column-count: 2; column-gap: 16px; }

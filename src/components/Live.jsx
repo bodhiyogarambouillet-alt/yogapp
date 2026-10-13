@@ -152,6 +152,7 @@ export default function Live({ seance, onQuitter }) {
   const [bulleVoix, setBulleVoix] = useState(null); // rappel du niveau choisi, affiché brièvement
   const annoncee = useRef(-1);
   const [preparation, setPreparation] = useState(null); // { fait, total } pendant la préparation de la voix naturelle
+  const voixEnPreparation = Boolean(preparation && preparation.fait < preparation.total);
 
   const etape = etapes[index];
   const suivante = etapes[index + 1];
@@ -306,12 +307,14 @@ export default function Live({ seance, onQuitter }) {
         <span className="sous">{bulleVoix
           || (preparation && preparation.fait < preparation.total ? `Préparation de la voix… ${preparation.fait}/${preparation.total}` : null)
           || (terminee ? 'Séance terminée' : `${etape.phase} · ${index + 1}/${etapes.length}`)}</span>
-        <button type="button" className={`rond voix-bouton ${voix !== 'non' ? 'actif' : ''}`} onClick={changerVoix}
-          aria-label={`${NIVEAUX_VOIX.find(([n]) => n === voix)?.[1]} (toucher pour changer)`}>
+        {/* Pendant la préparation de la voix : ondes qui s'allument tour à tour et anneau qui se remplit */}
+        <button type="button" className={`rond voix-bouton ${voix !== 'non' ? 'actif' : ''} ${voixEnPreparation ? 'prepare' : ''}`} onClick={changerVoix}
+          style={voixEnPreparation ? { '--avance': `${Math.round((preparation.fait / preparation.total) * 100)}%` } : undefined}
+          aria-label={`${NIVEAUX_VOIX.find(([n]) => n === voix)?.[1]}${voixEnPreparation ? ', préparation en cours' : ''} (toucher pour changer)`}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" />
-            {voix === 'non' ? <path d="M16 9.5l5 5M21 9.5l-5 5" /> : <path d="M15.5 9a4 4 0 0 1 0 6" />}
-            {voix === 'consignes' && <path d="M18.3 6.5a7.5 7.5 0 0 1 0 11" />}
+            {voix === 'non' ? <path d="M16 9.5l5 5M21 9.5l-5 5" /> : <path className="voix-onde o1" d="M15.5 9a4 4 0 0 1 0 6" />}
+            {(voix === 'consignes' || voixEnPreparation) && voix !== 'non' && <path className="voix-onde o2" d="M18.3 6.5a7.5 7.5 0 0 1 0 11" />}
           </svg>
         </button>
       </header>

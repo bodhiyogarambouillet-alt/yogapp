@@ -903,3 +903,12 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
 /* Voix guide (lecteur en direct) */
 .voix-bouton { color: var(--texte-doux); }
 .voix-bouton.actif { color: var(--accent); }
+/* Préparation de la voix : les ondes du haut-parleur s'allument tour à tour, un anneau terracotta se remplit */
+.voix-bouton { position: relative; }
+.voix-bouton.prepare .voix-onde { animation: voix-onde 1.2s ease-in-out infinite; }
+.voix-bouton.prepare .voix-onde.o2 { animation-delay: 0.3s; }
+.voix-bouton.prepare::after { content: ''; position: absolute; inset: -3px; border-radius: 50%; pointer-events: none;
+  background: conic-gradient(var(--accent) var(--avance, 0%), var(--trait) 0);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2.5px)); mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2.5px)); }
+@keyframes voix-onde { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .voix-bouton.prepare .voix-onde { animation: none; } }

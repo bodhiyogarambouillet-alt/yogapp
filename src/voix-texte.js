@@ -23,11 +23,11 @@ const lisible = (t) => (t || '').replace(/\s*\/\s*/g, ', ').replace(/\b(IV|III|I
 export const segmentNom = (p) => phrase(p.sanskrit ? `${lisible(p.sanskrit)}, ${lisible(p.fr)}` : lisible(p.fr));
 
 // Durée lue à voix haute : « 10 resp. » → « 10 respirations », « 3 min » → « 3 minutes », « 1 min » → « 1 minute »,
-// « × 3 tours » → « 3 tours », « × 3 » → « 3 fois »
+// « 30 sec » → « 30 secondes », « × 3 tours » → « 3 tours », « × 3 » → « 3 fois »
 export const dureeLue = (d) => (d || '')
-  .replace(/\bmin\b\.?/g, 'minutes').replace(/\bresp\b\.?/g, 'respirations')
+  .replace(/\bmin\b\.?/g, 'minutes').replace(/\bresp\b\.?/g, 'respirations').replace(/\b(sec|s)\b\.?/g, 'secondes')
   .replace(/×\s*(\d+)\s*(?=\p{L})/u, '$1 ').replace(/×\s*(\d+)/, '$1 fois')
-  .replace(/\b1 (minute|respiration|tour)s\b/g, '1 $1')
+  .replace(/\b1 (minute|respiration|tour|seconde)s\b/g, '1 $1')
   .replace(/\s+/g, ' ').trim();
 
 // Durées courantes, générées à l'avance (scripts/pregenerer-voix*.mjs) pour ne pas solliciter Gemini en séance
@@ -37,7 +37,8 @@ export const DUREES_COURANTES = [
   ...Array.from({ length: 6 }, (_, i) => `× ${i + 1} tours`),
 ];
 
-export const segmentDuree = (duree, cotes) => (duree ? phrase(`${dureeLue(duree)}${cotes ? ' de chaque côté' : ''}`) : '');
+// Une durée sans chiffre (« variable », « libre »…) n'apprend rien : elle n'est pas lue
+export const segmentDuree = (duree, cotes) => (/\d/.test(duree || '') ? phrase(`${dureeLue(duree)}${cotes ? ' de chaque côté' : ''}`) : '');
 
 // Annonce d'une posture : phase (si elle change), rôle, nom, durée et côté.
 // La phrase écrite sous la posture et les consignes de la fiche ne sont pas lues.

@@ -49,7 +49,8 @@ export const NIVEAUX_VOIX = [
   ['consignes', 'Voix : postures et consignes'],
 ];
 const CLE = 'yoga:voix';
-export const niveauVoix = () => { try { return localStorage.getItem(CLE) || 'consignes'; } catch { return 'consignes'; } };
+// Coupée par défaut : la voix (et la génération des annonces par Gemini) ne démarre qu'une fois activée
+export const niveauVoix = () => { try { return localStorage.getItem(CLE) || 'non'; } catch { return 'non'; } };
 export const enregistrerNiveauVoix = (n) => { try { localStorage.setItem(CLE, n); } catch { /* stockage indisponible */ } };
 
 let voixWeb = null;

@@ -1,5 +1,5 @@
 // Export d'une séance en texte, PDF ou image.
-// Site : téléchargement (ou partage si le navigateur le propose). Appli Android : fichier partagé
+// Site : téléchargement sur ordinateur, partage sur téléphone si le navigateur le propose. Appli Android : fichier partagé
 // via le menu de partage du téléphone (enregistrer, envoyer, imprimer…), car window.print n'y fonctionne pas.
 
 import { Filesystem, Directory } from '@capacitor/filesystem';
@@ -378,8 +378,11 @@ async function partagerFichier(blob, nomF, titre) {
     await Share.share({ title: titre, files: [uri], dialogTitle: 'Exporter la séance' });
     return;
   }
+  // Partage seulement sur téléphone ou tablette : sur ordinateur, la feuille de partage du système
+  // (AirDrop, Messages…) ne propose pas d'enregistrer le fichier, on le télécharge donc directement
+  const tactile = window.matchMedia?.('(pointer: coarse)').matches;
   const fichier = new File([blob], nomF, { type: blob.type });
-  if (navigator.canShare?.({ files: [fichier] })) {
+  if (tactile && navigator.canShare?.({ files: [fichier] })) {
     try {
       await navigator.share({ title: titre, files: [fichier] });
       return;

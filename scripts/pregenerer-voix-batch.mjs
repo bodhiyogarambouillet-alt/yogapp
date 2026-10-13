@@ -3,12 +3,13 @@
 //   npm run pregenerer-voix-batch            → envoie tous les segments manquants, attend, puis enregistre
 //   npm run pregenerer-voix-batch -- --test 2 → essai sur 2 segments
 //   npm run pregenerer-voix-batch -- --reprendre batches/xxx → récupère un lot déjà envoyé
+//   npm run pregenerer-voix-batch -- --corrections → refait aussi les segments touchés par une correction de prononciation
 import structures from '../src/data/structures.json' with { type: 'json' };
 import posturesLocales from '../src/data/postures.json' with { type: 'json' };
 import { rest, supabaseConfigure } from './supabase-admin.mjs'; // charge aussi .env.local
 import { MODELE, VOIX, BUCKET, TON, versMp3, cheminVoix, voixExiste, dureeMax } from '../lib/voix.js';
 import { envoyerFichier, assurerBucket } from '../lib/supabase.js';
-import { ROLES_VOIX, PHRASES_FIXES, phrase, segmentNom, segmentDuree, DUREES_COURANTES, textesSavasana, textePrononce } from '../src/voix-texte.js';
+import { ROLES_VOIX, PHRASES_FIXES, phrase, segmentNom, segmentDuree, DUREES_COURANTES, textesSavasana, textePrononce, estCorrige } from '../src/voix-texte.js';
 
 if (!supabaseConfigure) throw new Error('Supabase non configuré (.env.local)');
 const API = 'https://generativelanguage.googleapis.com/v1beta';
@@ -30,7 +31,7 @@ async function segmentsManquants(limite) {
   for (let i = 0; i < tous.length; i += 20) {
     const lot = tous.slice(i, i + 20);
     const existe = await Promise.all(lot.map((t) => voixExiste(t, voix)));
-    lot.forEach((t, k) => { if (!existe[k]) manquants.push(t); });
+    lot.forEach((t, k) => { if (!existe[k] || (process.argv.includes('--corrections') && estCorrige(t))) manquants.push(t); });
   }
   console.log(`${tous.length} segments, ${manquants.length} manquants`);
   return limite ? manquants.slice(0, limite) : manquants;

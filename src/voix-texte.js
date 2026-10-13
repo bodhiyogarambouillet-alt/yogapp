@@ -79,11 +79,20 @@ function enLettres(n) {
   const u = n % 10;
   return u === 0 ? DIZAINES[d] : u === 1 ? `${DIZAINES[d]} et un` : `${DIZAINES[d]}-${UNITES[u]}`;
 }
+// Corrections de prononciation (texte lu seulement, l'affichage ne change pas) :
+// « Chat-vache » était lu « chatte-vache » à cause du trait d'union
+const PRONONCIATIONS = [[/\b(c)hat-vache\b/gi, '$1hat, vache']];
+export const corrigerPrononciation = (t) => PRONONCIATIONS.reduce((s, [motif, remplacement]) => s.replace(motif, remplacement), t);
+export const estCorrige = (t) => PRONONCIATIONS.some(([motif]) => new RegExp(motif.source, motif.flags.replace('g', '')).test(t));
+
 // (« 1 minute » → « une minute », mot féminin)
-export const textePrononce = (t) => t.replace(/\b\d{1,2}\b/g, (n, i) => {
-  const mot = enLettres(Number(n));
-  return /un$/.test(mot) && /^\s*(minute|respiration|seconde)/.test(t.slice(i + n.length)) ? `${mot}e` : mot;
-});
+export const textePrononce = (texte) => {
+  const t = corrigerPrononciation(texte);
+  return t.replace(/\b\d{1,2}\b/g, (n, i) => {
+    const mot = enLettres(Number(n));
+    return /un$/.test(mot) && /^\s*(minute|respiration|seconde)/.test(t.slice(i + n.length)) ? `${mot}e` : mot;
+  });
+};
 
 export const segmentDuree = (duree, cotes) => (/\d/.test(duree || '') ? phrase(`${dureeLue(duree)}${cotes ? ' de chaque côté' : ''}`) : '');
 

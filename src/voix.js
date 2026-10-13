@@ -5,7 +5,7 @@
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
 import { estNatif } from './natif.js';
 import { urlApi } from './api.js';
-import { MODELE_VOIX, VOIX_DEFAUT, TON_VOIX } from './voix-texte.js';
+import { MODELE_VOIX, VOIX_DEFAUT, TON_VOIX, corrigerPrononciation } from './voix-texte.js';
 
 // ---------- Fichiers audio : adresse recalculée sur l'appareil, copie locale pour le hors connexion ----------
 const BASE_STOCKAGE = (import.meta.env.VITE_SUPABASE_URL || '').replace(/\/$/, '');
@@ -157,12 +157,12 @@ if (!estNatif && window.speechSynthesis) window.speechSynthesis.onvoiceschanged 
 async function direSysteme(t) {
   try {
     if (estNatif) {
-      await TextToSpeech.speak({ text: t, lang: 'fr-FR', rate: 0.92, pitch: 1, volume: 1, category: 'playback' });
+      await TextToSpeech.speak({ text: corrigerPrononciation(t), lang: 'fr-FR', rate: 0.92, pitch: 1, volume: 1, category: 'playback' });
       return;
     }
     if (!window.speechSynthesis) return;
     await new Promise((fin) => {
-      const u = new SpeechSynthesisUtterance(t);
+      const u = new SpeechSynthesisUtterance(corrigerPrononciation(t));
       u.lang = 'fr-FR';
       u.rate = 0.92;
       const v = choisirVoixWeb();

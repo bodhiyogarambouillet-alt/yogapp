@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { appelSpotify, etatSpotify } from '../spotify.js';
+import { estNatif } from '../natif.js';
 
 // Musique pendant la séance en direct : la sélection de la séance démarre avec le minuteur,
 // se met en pause et reprend avec lui, et le morceau en cours s'affiche au-dessus des commandes.
@@ -10,6 +11,13 @@ async function appareil() {
   const d = await appelSpotify('/me/player/devices');
   const liste = (d?.devices || []).filter((x) => !x.is_restricted);
   return liste.find((x) => x.is_active) || liste.find((x) => x.type === 'Smartphone') || liste[0] || null;
+}
+
+// Dans l'appli Android, la musique part sur le téléphone, même si un autre appareil (ordinateur, enceinte) était actif.
+// Spotify ne dit pas lequel de ses appareils est ce téléphone : on prend le premier smartphone où Spotify est ouvert.
+async function telephone() {
+  const d = await appelSpotify('/me/player/devices');
+  return (d?.devices || []).find((x) => !x.is_restricted && x.type === 'Smartphone') || null;
 }
 
 // Ce qu'on demande à Spotify de jouer : la playlist si elle est enregistrée, sinon les morceaux dans l'ordre
@@ -46,6 +54,14 @@ export function useMusiqueLive(playlist, enCours, terminee) {
       try {
         if (enCours) {
           const corps = demarree.current ? undefined : contenu(playlist);
+          if (estNatif && !demarree.current) {
+            const t = await telephone();
+            if (!t) { setErreur('Ouvrez Spotify sur ce téléphone pour y jouer la musique, puis relancez.'); return; }
+            await appelSpotify(`/me/player/play?device_id=${encodeURIComponent(t.id)}`, { method: 'PUT', body: corps });
+            demarree.current = true;
+            setErreur(null);
+            return;
+          }
           try {
             await appelSpotify('/me/player/play', { method: 'PUT', body: corps });
           } catch (e) {

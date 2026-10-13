@@ -10,6 +10,12 @@ export const phrase = (t) => {
   return !s || /[.!?…]$/.test(s) ? s : `${s}.`;
 };
 
+// Nom lu à voix haute : sanskrit puis français (« Virabhadrasana deux, Guerrier deux. »),
+// chiffres romains en toutes lettres, « / » remplacé par une virgule
+const ROMAINS = { I: 'un', II: 'deux', III: 'trois', IV: 'quatre' };
+const lisible = (t) => (t || '').replace(/\s*\/\s*/g, ', ').replace(/\b(IV|III|II|I)\b/g, (r) => ROMAINS[r]);
+export const segmentNom = (p) => phrase(p.sanskrit ? `${lisible(p.sanskrit)}, ${lisible(p.fr)}` : lisible(p.fr));
+
 // Durée lue à voix haute : « 5 respirations », « 3 min » → « 3 minutes », « × 3 tours » → « 3 fois »
 export const dureeLue = (d) => (d || '').replace(/\bmin\b/g, 'minutes').replace(/\bresp\.?\b/g, 'respirations').replace(/×\s*(\d+)/, '$1 fois');
 
@@ -28,7 +34,7 @@ export function segmentsAnnonce({ etape, fiche, nouvellePhase, niveau }) {
   return [
     nouvellePhase ? phrase(etape.phase) : '',
     ROLES_VOIX[etape.role] || '',
-    phrase(p.fr),
+    segmentNom(p),
     segmentDuree(etape.duree, p.cotes),
     phrase(etape.note),
     p.cotes ? PHRASES_FIXES.cote : '',

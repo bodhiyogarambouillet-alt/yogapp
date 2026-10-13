@@ -56,6 +56,39 @@ function Resume({ posture, fiche }) {
   );
 }
 
+// Sur ordinateur : explications complètes de la posture en cours, dans une colonne à droite du lecteur
+function Explications({ posture, fiche }) {
+  const sections = fiche ? [
+    ['Installation', fiche.entree, 'ol'],
+    ['Repères', fiche.alignement, 'ul'],
+    ['Dans la posture', fiche.tenue, 'ul'],
+    ['Souffle', fiche.respiration, 'p'],
+    ['Erreurs fréquentes', fiche.erreurs, 'ul'],
+    ['Sortie', fiche.sortie, 'p'],
+    ['Plus accessible', fiche.variante_facilitee, 'p'],
+    ['Pour aller plus loin', fiche.variante_avancee, 'p'],
+  ].filter(([, v]) => (Array.isArray(v) ? v.length : v)) : [];
+  return (
+    <aside className="live-explications" key={posture.id} aria-label={`Explications : ${nom(posture)}`}>
+      <p className="etiquette">Explications</p>
+      <h2>{nom(posture)}</h2>
+      {nomSecondaire(posture) && <p className="sous">{nomSecondaire(posture)}</p>}
+      {fiche === undefined && <p className="aide">Chargement des explications…</p>}
+      {fiche === null && !posture.precautions && <p className="aide">Pas d'explications disponibles pour cette posture.</p>}
+      {fiche?.presentation && <p className="live-explications-intro">{fiche.presentation}</p>}
+      {posture.precautions && <p className="live-precaution"><Attention /> {posture.precautions}</p>}
+      {sections.map(([titre, v, balise]) => (
+        <section key={titre}>
+          <h3>{titre}</h3>
+          {balise === 'p' ? <p>{v}</p> : balise === 'ol'
+            ? <ol>{v.map((t, i) => <li key={i}>{t}</li>)}</ol>
+            : <ul>{v.map((t, i) => <li key={i}>{t}</li>)}</ul>}
+        </section>
+      ))}
+    </aside>
+  );
+}
+
 // Mode cours en salle : consignes de la fiche en défilement vertical continu (comme un prompteur),
 // en pause avec la séance ; pas de défilement si tout tient dans le cadre
 function ConsignesDefilantes({ posture, fiche, enCours }) {
@@ -500,6 +533,8 @@ export default function Live({ seance, onQuitter }) {
           </section>
 
           <CarteMorceau musique={musique} playlist={seance.playlist} />
+
+          {!salle && <Explications posture={etape.posture} fiche={fiches[etape.id]} />}
 
           <div className="ressort" />
 

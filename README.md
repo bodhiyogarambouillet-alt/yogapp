@@ -1,117 +1,131 @@
-# yoga-app — générateur de séances de yoga
+# Mes séances Yoga
 
-Application React/Vite qui compose une séance (style, durée, niveau, thème) à partir de votre bibliothèque de postures, avec Gemini Flash pour l'enchaînement et les fiches « Comment faire ? ».
+Application pour préparer et animer des cours de yoga : elle compose une séance sur mesure à partir de votre bibliothèque de postures, l'accompagne d'une musique Spotify et la déroule en direct avec un minuteur.
 
-## Lancer en local
+- **Site** : [yogapp-alpha.vercel.app](https://yogapp-alpha.vercel.app) (téléphone et ordinateur, installable sur l'écran d'accueil)
+- **Appli Android** : APK construit avec Capacitor, téléchargeable depuis le site sur ordinateur (bouton Android de la barre du haut, avec QR code)
 
-```bash
-cd ~/Documents/Developpement/yoga-app
-npm install
-cp .env.example .env.local      # puis collez votre clé GEMINI_API_KEY dedans
-npm run dev                     # http://localhost:5173
-```
+## Fonctionnalités
 
-Sans clé, l'appli fonctionne en **mode hors-ligne** : un générateur simple compose la séance sans IA, et les fiches « Comment faire ? » sont indisponibles.
+**Composer une séance** — parcours en étapes : style (un ou plusieurs, ou aucun pour puiser dans toutes les postures), durée (30 à 90 min ou durée libre), niveau, puis options facultatives :
+- **posture cible** : la séance devient une progression vers cette posture (préparations, montée en intensité, contre-posture) ;
+- **thème ou contraintes** du groupe (ex. « lombaires fragiles », « commencer et finir par Tadasana ») — une posture peut être répétée si le thème le demande ;
+- **accessoires disponibles** (aucun par défaut) ;
+- **séances à éviter** : les postures des séances choisies sont évitées autant que possible.
 
-## Déployer sur Vercel
+**La séance** — phases minutées, postures avec pictogrammes, rôle (préparation, cible, contre-posture), bilan des zones préparées. On peut la modifier (ordre, durées, consignes, ajout, suppression), **remplacer une posture ou lui ajouter des variantes** (cours multi-niveaux), changer la date, l'enregistrer, l'exporter (texte, PDF, image) ou demander une autre version.
 
-Le projet Vercel doit avoir la variable d'environnement `GEMINI_API_KEY` (et éventuellement `GEMINI_MODEL`).
+**Les fiches « Comment faire ? »** — pour chaque posture : présentation, entrée, repères, erreurs fréquentes, respiration, sortie, variantes, résumé pour le direct. Rédigées par Gemini, enregistrées en base et partagées ; les administrateurs peuvent les modifier ou les régénérer. Les précautions viennent toujours de la bibliothèque, jamais de Gemini.
 
-- **Avec GitHub** : poussez ce dossier sur un dépôt relié au projet Vercel, chaque push déploie.
-- **Sans GitHub** : `npx vercel link` (choisir le projet existant), puis `npx vercel --prod`.
+**La bibliothèque** (onglet « Postures ») — les 200+ postures, recherche (nom français, sanskrit, anglais, zone du corps), filtres par famille et niveau ; chaque posture ouvre sa fiche (volet de droite sur ordinateur).
 
-Vercel détecte Vite automatiquement ; les fichiers de `api/` deviennent des fonctions serveur.
+**La séance en direct** — minuteur par posture, côté droit puis gauche annoncé (bip et vibration à mi-parcours), résumé de la posture, variantes, posture suivante, écran maintenu allumé, signal à chaque changement.
 
-## Mettre à jour la bibliothèque
+**La musique (Spotify)** — pour chaque séance, une sélection de morceaux par phase dans le style choisi (Relaxation par défaut, Folk, Piano, Ambient, Bols chantants, Mantras, Nature, Lo-fi ou style libre, avec ou sans paroles). Elle démarre, se met en pause et reprend avec le minuteur, et le morceau en cours s'affiche dans le lecteur. Rien n'est créé dans Spotify, sauf si l'on choisit d'enregistrer la sélection en playlist.
 
-1. Modifiez le tableau (onglet « Postures ») et enregistrez-le en `.xlsx`.
-2. Remplacez `scripts/bibliotheque-postures-yoga.xlsx` (ou passez le chemin en argument).
-3. `npm run import-bibliotheque` régénère `src/data/postures.json`.
+**Comptes** — sans connexion, les séances restent sur l'appareil ; connecté, elles sont synchronisées. Seuls les administrateurs modifient les fiches (email + mot de passe, ou Google).
 
-La structure des cours (part du temps par phase et par style) est dans `src/data/structures.json`.
+## Architecture
 
-## Organisation
-
-| Dossier | Rôle |
-|---|---|
-| `src/` | Interface (formulaire, séance, fiche posture, mes séances) |
-| `src/data/` | Bibliothèque de postures et structures de cours (JSON) |
-| `api/` | Fonctions serveur Vercel : `generer-seance`, `fiche-posture` |
-| `lib/` | Logique serveur : présélection, appel Gemini, vérification |
-| `scripts/` | Import du tableau Excel |
-
-## Fonctionnement de la génération
-
-1. **Code** : filtre les postures du style et du niveau, calcule le temps de chaque phase.
-2. **Gemini** : choisit et ordonne les postures (identifiants de la bibliothèque uniquement), sortie JSON imposée par un schéma.
-3. **Code** : rejette tout identifiant inconnu, relance une fois si la réponse est mauvaise.
-
-Les précautions affichées viennent toujours de la bibliothèque, jamais de Gemini.
-
-## Séance autour d'une posture cible
-
-Dans le formulaire, « Posture cible » permet de chercher une posture de la bibliothèque (nom français, sanskrit ou anglais). La séance devient alors une progression vers cette posture :
-
-- le code ajoute une phase « Pic » si le style n'en a pas (Yin, De Gasquet…), en prenant 10 % du temps sur la phase la plus longue ;
-- la cible, sa chaîne de préparation (colonne « Préparation », remontée sur plusieurs niveaux) et sa contre-posture sont toujours disponibles, même hors du style ou au-dessus du niveau choisi (un avertissement s'affiche alors) ;
-- Gemini construit la montée en intensité ;
-- le code garantit que la cible est la **dernière posture du pic**, présente une seule fois, et que sa contre-posture ouvre le retour au calme.
-
-Dans la séance, la cible, ses préparations et sa contre-posture sont étiquetées.
-
-### Ce qui guide la progression (colonnes du tableau)
-
-- **Zones sollicitées** : ce que chaque posture ouvre ou renforce (21 zones, liste dans l'onglet « Listes »). Gemini doit préparer toutes les zones de la cible avant elle ; le code vérifie et **relance une fois** Gemini en lui indiquant les zones oubliées. L'écran Séance affiche le bilan (✓ / ✗), recalculé à chaque remplacement.
-- **Préparations** (plusieurs, séparées par « ; ») : la chaîne de préparation reprend aussi les préparations des préparations quand elles travaillent les mêmes zones, puis l'ordonne du plus général au plus proche de la cible.
-- **Contre-postures** (plusieurs, séparées par « ; ») : la première trouvée ouvre le retour au calme.
-- Le remplacement ⇄ propose en priorité des postures qui travaillent les mêmes zones.
-
-`npm run import-bibliotheque` signale toute préparation ou contre-posture dont le nom ne correspond à aucune posture du tableau.
-
-## Modèles Gemini et bascule automatique
-
-| Rôle | Modèle par défaut | Variable |
+| Partie | Technologie | Rôle |
 |---|---|---|
-| Principal | `gemini-3.8-flash` | `GEMINI_MODEL` |
-| Secours | `gemini-3.5-flash-lite` | `GEMINI_MODEL_SECOURS` |
+| Interface | React 18 + Vite | `src/` — tout le parcours, en français |
+| Fonctions serveur | Vercel (`api/`, logique dans `lib/`) | génération de séance, fiches, propositions musicales, keepalive |
+| IA | Gemini (REST) | choix et ordre des postures, fiches, morceaux |
+| Base et comptes | Supabase (Postgres + RLS, Auth, Storage) | postures, fiches, séances, administrateurs, APK hébergé |
+| Musique | API Web Spotify (OAuth PKCE côté appli) | recherche des morceaux, lecture, playlist facultative |
+| Appli Android | Capacitor 8 | l'interface est embarquée dans l'APK ; les fonctions restent sur Vercel |
 
-L'appli bascule sur le modèle de secours si le principal :
-- met trop de temps à répondre (20 s pour une séance comme pour une fiche — réglables avec `GEMINI_DELAI_SEANCE_MS` et `GEMINI_DELAI_FICHE_MS`) ;
-- est surchargé ou renvoie une erreur serveur (429, 500, 503…) ;
-- renvoie un JSON illisible.
-
-Une clé refusée (401/403) ne déclenche pas de bascule : l'erreur s'affiche directement. Le modèle qui a répondu est indiqué dans la réponse (`modele`) et dans les logs Vercel (`[gemini] … → bascule sur …`).
-
-`vercel.json` laisse jusqu’à 90 s aux fonctions : délai du modèle principal, appel de secours éventuel et, pour une posture cible, une relance si des zones ne sont pas préparées.
-
-## Fiches « Comment faire ? » en mode local (sans Supabase)
-
-Ordre de priorité à l'ouverture d'une fiche :
-1. **Version locale** (générée, modifiée ou validée sur cet appareil) ;
-2. **Fiche de référence** livrée avec l'appli (`src/data/fiches.json`) ;
-3. **Génération par Gemini** (puis mise en cache locale).
-
-- **Non validée** : bouton « Régénérer la fiche ».
-- **Validée** : verrouillée, plus de régénération. Retirer la validation (re-cliquer sur « Validée ✓ ») la déverrouille.
-- **Modifier** → « Enregistrer et valider » : votre texte devient la version validée.
-
-**Exporter / importer** (écran *Mes séances et fiches*) : « Exporter » télécharge `fiches-validees-AAAA-MM-JJ.json`. « Importer » charge ce fichier sur un autre appareil.
-
-**Faire de vos fiches la référence partout** :
+## Démarrer en local
 
 ```bash
-npm run import-fiches ~/Downloads/fiches-validees-AAAA-MM-JJ.json
+npm install
+cp .env.example .env.local   # puis renseignez les clés
+npm run dev                  # http://127.0.0.1:5173 (sert aussi les fonctions de api/)
 ```
 
-Le script les intègre à `src/data/fiches.json` (une fiche existante est remplacée) ; au prochain déploiement, tout appareil les affiche comme « Fiche de référence de votre bibliothèque », sans appel à Gemini.
+Variables de `.env.local` (jamais commitées) :
 
-## Stockage : Supabase
+| Variable | Rôle |
+|---|---|
+| `GEMINI_API_KEY` | clé Google AI Studio (sans elle : générateur de secours, pas de fiches ni de musique) |
+| `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY` | Supabase côté appli (clé publiable, protégée par la RLS) |
+| `SUPABASE_SECRET_KEY` | clé secrète, uniquement pour les scripts lancés sur votre ordinateur |
+| `GEMINI_MODEL`, `GEMINI_MODEL_SECOURS` | modèles (par défaut `gemini-3.8-flash`, secours `gemini-3.5-flash-lite`) |
+| `GEMINI_DELAI_SEANCE_MS`, `GEMINI_DELAI_FICHE_MS` | délai avant bascule sur le modèle de secours (20 s par défaut) |
 
-Avec Supabase configuré, la bibliothèque, les fiches et les séances sont en base (comptes, règles d'accès RLS, cache partagé des fiches). Installation pas à pas : **`supabase/INSTALLATION.md`** ; schéma : `supabase/schema.sql`.
+Sans Supabase, l'appli fonctionne en mode local : bibliothèque JSON, séances et fiches dans le navigateur.
+
+## Déployer
+
+Chaque push sur `main` déploie le site sur Vercel. Variables à définir dans le projet Vercel : `GEMINI_API_KEY`, les variables Supabase (`VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`, et `SUPABASE_SECRET_KEY` pour les fonctions), éventuellement `CRON_SECRET`.
+
+`vercel.json` laisse jusqu'à 90 s aux fonctions, redirige `/spotify-callback` vers l'appli et appelle chaque jour `/api/keepalive` pour éviter la mise en pause du projet Supabase gratuit.
+
+## Appli Android
+
+```bash
+npm run android:apk    # build Vite (mode capacitor) + synchronisation + APK debug (JDK 21)
+npm run apk:publier    # envoie l'APK dans le stockage Supabase (bucket public « applis »)
+```
+
+- L'APK se trouve dans `android/app/build/outputs/apk/debug/app-debug.apk` (les APK ne sont pas versionnés).
+- `.env.capacitor` indique l'adresse des fonctions (`VITE_API_BASE`) : l'interface est embarquée, les appels partent vers Vercel. Un changement d'interface demande donc un nouvel APK ; un changement de `api/` ou `lib/` non.
+- `apk:publier` met à jour le fichier proposé sur le site (QR code et lien de la barre du haut, sur ordinateur) avec sa date et sa taille.
+- Retours de connexion dans l'appli : `fr.bodhiyoga.seances://login-callback` (Google) et `fr.bodhiyoga.seances://spotify-callback` (Spotify), déclarés dans `AndroidManifest.xml`.
+
+## Spotify
+
+Application Spotify en mode développement (Client ID public dans `src/spotify.js`, aucun secret) :
+- le propriétaire de l'appli Spotify doit avoir un abonnement **Premium** ;
+- **5 comptes au plus**, à ajouter dans *User Management* du tableau de bord Spotify ;
+- adresses de retour déclarées : `fr.bodhiyoga.seances://spotify-callback`, `https://yogapp-alpha.vercel.app/spotify-callback`, `http://127.0.0.1:5173/spotify-callback` ;
+- la lecture pilotée par l'appli (démarrage, pause, morceau suivant) demande Premium et l'appli Spotify ouverte récemment sur un appareil.
+
+Fonctionnement : Gemini propose des morceaux réels par phase (`/api/proposer-musique`), l'appli vérifie chacun dans le catalogue Spotify, ajuste la durée de chaque phase et complète par mots-clés si besoin. La sélection est gardée avec la séance.
+
+## Génération d'une séance
+
+1. **Code** : filtre les postures du style, du niveau et des accessoires, calcule le temps de chaque phase (`src/data/structures.json`).
+2. **Gemini** : choisit et ordonne les postures (identifiants de la bibliothèque uniquement, sortie JSON imposée par un schéma), en tenant compte du thème et des séances à éviter.
+3. **Code** : rejette tout identifiant inconnu et relance une fois si la réponse est mauvaise ou si des zones de la posture cible ne sont pas préparées.
+
+Avec une **posture cible** : la cible, sa chaîne de préparation et sa contre-posture sont toujours disponibles (même hors style ou au-dessus du niveau, avec un avertissement) ; le code garantit que la cible est la dernière posture du pic, une seule fois, suivie de sa contre-posture.
+
+Si le modèle principal est lent, surchargé ou renvoie un JSON illisible, l'appel bascule automatiquement sur le modèle de secours (une clé refusée ne bascule pas).
+
+## Supabase
+
+Installation pas à pas : `supabase/INSTALLATION.md` ; schéma et règles d'accès : `supabase/schema.sql`.
 
 | Commande | Effet |
 |---|---|
 | `npm run sync-bibliotheque` | tableau Excel → `src/data/postures.json` + table `postures` |
-| `npm run import-fiches fichier.json` | fiches exportées → table `fiches` (validées) |
+| `npm run pregenerer-fiches` | rédige les fiches manquantes dans `scripts/fiches-pregenerees.json` (`-- --import` pour les envoyer en base) |
+| `npm run import-fiches fichier.json` | importe des fiches en base |
+| `npm run creer-admin -- email@exemple.fr` | crée ou met à jour un compte administrateur (mot de passe saisi dans le terminal) |
+| `npm run apk:publier` | publie l'APK dans le stockage |
 
-Sans Supabase (variables absentes), l'appli fonctionne comme avant : bibliothèque JSON, séances et fiches dans le navigateur.
+## Mettre à jour la bibliothèque
+
+1. Modifiez le tableau (onglet « Postures ») : familles, niveaux, styles, zones sollicitées, préparations et contre-postures (plusieurs, séparées par « ; »), précautions.
+2. Remplacez `scripts/bibliotheque-postures-yoga.xlsx`.
+3. `npm run sync-bibliotheque` — le script signale toute préparation ou contre-posture qui ne correspond à aucune posture.
+
+## Organisation du code
+
+| Dossier | Contenu |
+|---|---|
+| `src/components/` | écrans et composants : `Formulaire` (parcours en étapes et décor), `Seance`, `Live`, `Fiche`, `Bibliotheque`, `MesSeances`, `Compte`, `Musique`, `MusiqueLive`, `ChargementSeance`, `Dialogue`, `TelechargerApk`… |
+| `src/` | logique côté appli : bibliothèque, stockage, Spotify, musique, export, dates, fonctions natives |
+| `src/data/` | postures, structures de cours, fiches de référence |
+| `src/assets/pictos/` | pictogrammes des 16 familles de postures (WebP) |
+| `api/`, `lib/` | fonctions Vercel et leur logique (séance, fiche, musique, Gemini, Supabase) |
+| `scripts/` | import de la bibliothèque, fiches, comptes admin, publication de l'APK |
+| `supabase/` | schéma et guide d'installation |
+| `android/` | projet Capacitor Android (icônes et écran de démarrage dans `app/src/main/res`) |
+| `public/` | favicon, icônes du site installable, manifeste |
+
+## Identité visuelle
+
+Fond crème (`#F3ECE1`), terracotta (`#A9472A`), sable ; titres en Marcellus, texte en Karla. Le logo et le décor reprennent des **ronds concentriques**, comme une goutte dans l'eau : demi-cercles depuis le bord gauche sur l'accueil et le parcours (avec des ondes légères), ronds qui ondulent sur l'écran de chargement et derrière le pictogramme du lecteur. Les animations respectent le réglage « réduire les animations » du système.

@@ -46,6 +46,7 @@ const postures = lignes
     preparations: liste(col(l, 'Préparations', 'Préparation')),
     contres: liste(col(l, 'Contre-postures', 'Contre-posture')),
     precautions: txt(l['Précautions / variantes']),
+    variante_de: txt(l['Variante de']), // ID de la posture dont celle-ci est une variante
   }));
 
 // Contrôle : chaque préparation / contre-posture doit exister dans le tableau
@@ -67,7 +68,14 @@ if (process.argv.includes('--sans-supabase')) process.exit(0);
 if (!supabaseConfigure) {
   console.log('\nSupabase non configuré dans .env.local : seule la copie locale (JSON) est à jour.');
 } else {
-  await upsert('postures', postures, 'id');
+  try {
+    await upsert('postures', postures, 'id');
+  } catch (e) {
+    // Base pas encore migrée (colonne variante_de absente) : on synchronise sans ce champ
+    if (!/variante_de/.test(e.message)) throw e;
+    console.warn('⚠ Colonne « variante_de » absente de la table postures : lancez supabase/schema.sql (ou l\'ALTER indiqué dedans). Synchronisation sans le lien de variante.');
+    await upsert('postures', postures.map(({ variante_de: _v, ...p }) => p), 'id');
+  }
   console.log(`✓ ${postures.length} postures synchronisées dans Supabase.`);
   // Les postures supprimées du tableau ne sont pas effacées de la base (des séances peuvent y faire référence)
   const enBase = await rest('postures?select=id,fr');

@@ -28,7 +28,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Sans rétention en cas d'hypertension ou de grossesse"
+  "precautions": "Sans rétention en cas d'hypertension ou de grossesse",
+  "variante_de": null
  },
  {
   "id": "P002",
@@ -56,7 +57,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P003",
@@ -80,7 +82,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Contre-indiqué : grossesse, post-partum récent, règles, hypertension, épilepsie"
+  "precautions": "Contre-indiqué : grossesse, post-partum récent, règles, hypertension, épilepsie",
+  "variante_de": null
  },
  {
   "id": "P004",
@@ -104,7 +107,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Mêmes précautions que Kapalabhati"
+  "precautions": "Mêmes précautions que Kapalabhati",
+  "variante_de": null
  },
  {
   "id": "P005",
@@ -133,7 +137,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P006",
@@ -157,7 +162,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P007",
@@ -180,7 +186,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P008",
@@ -205,7 +212,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Sans rétention si grossesse ou hypertension"
+  "precautions": "Sans rétention si grossesse ou hypertension",
+  "variante_de": null
  },
  {
   "id": "P009",
@@ -235,7 +243,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P010",
@@ -261,7 +270,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P011",
@@ -288,7 +298,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Expirer en remontant le périnée, ne jamais pousser vers le bas"
+  "precautions": "Expirer en remontant le périnée, ne jamais pousser vers le bas",
+  "variante_de": null
  },
  {
   "id": "P012",
@@ -310,7 +321,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Contre-indiqué : grossesse, règles, hypertension"
+  "precautions": "Contre-indiqué : grossesse, règles, hypertension",
+  "variante_de": null
  },
  {
   "id": "P013",
@@ -343,7 +355,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Genoux sensibles : réhausser le bassin"
+  "precautions": "Genoux sensibles : réhausser le bassin",
+  "variante_de": null
  },
  {
   "id": "P014",
@@ -368,7 +381,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Pousser le sommet du crâne vers le haut à l'expiration"
+  "precautions": "Pousser le sommet du crâne vers le haut à l'expiration",
+  "variante_de": null
  },
  {
   "id": "P015",
@@ -395,7 +409,8 @@
    "Posture facile (tailleur)"
   ],
   "contres": [],
-  "precautions": "Genoux, chevilles"
+  "precautions": "Genoux, chevilles",
+  "variante_de": null
  },
  {
   "id": "P016",
@@ -424,7 +439,8 @@
    "Bûche (double pigeon)"
   ],
   "contres": [],
-  "precautions": "Genoux : ne jamais forcer"
+  "precautions": "Genoux : ne jamais forcer",
+  "variante_de": null
  },
  {
   "id": "P017",
@@ -454,7 +470,8 @@
    "Demi-lotus"
   ],
   "contres": [],
-  "precautions": "Genoux : la rotation vient de la hanche, ne jamais forcer"
+  "precautions": "Genoux : la rotation vient de la hanche, ne jamais forcer",
+  "variante_de": null
  },
  {
   "id": "P018",
@@ -484,7 +501,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Genoux : coussin entre fesses et talons"
+  "precautions": "Genoux : coussin entre fesses et talons",
+  "variante_de": null
  },
  {
   "id": "P019",
@@ -511,7 +529,8 @@
    "Fente basse"
   ],
   "contres": [],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P020",
@@ -539,7 +558,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P021",
@@ -563,7 +583,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P022",
@@ -589,7 +610,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P023",
@@ -615,7 +637,8 @@
    "Rotations du cou et des épaules"
   ],
   "contres": [],
-  "precautions": "Avec respiration de feu : mêmes précautions"
+  "precautions": "Avec respiration de feu : mêmes précautions",
+  "variante_de": null
  },
  {
   "id": "P024",
@@ -647,7 +670,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Poignets : sur les poings ou avant-bras ; grossesse : sans creuser les lombaires"
+  "precautions": "Poignets : sur les poings ou avant-bras ; grossesse : sans creuser les lombaires",
+  "variante_de": null
  },
  {
   "id": "P025",
@@ -671,7 +695,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P026",
@@ -698,7 +723,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P027",
@@ -725,7 +751,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Grossesse avancée : préférer la version à 4 pattes"
+  "precautions": "Grossesse avancée : préférer la version à 4 pattes",
+  "variante_de": null
  },
  {
   "id": "P028",
@@ -755,7 +782,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Cervicales : demi-cercles uniquement"
+  "precautions": "Cervicales : demi-cercles uniquement",
+  "variante_de": null
  },
  {
   "id": "P029",
@@ -782,7 +810,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P030",
@@ -805,7 +834,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P031",
@@ -829,7 +859,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P032",
@@ -854,7 +885,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P033",
@@ -879,7 +911,8 @@
    "Diamant (assis sur les talons)"
   ],
   "contres": [],
-  "precautions": "Contre-indiqué : grossesse ; tenir peu de temps au début"
+  "precautions": "Contre-indiqué : grossesse ; tenir peu de temps au début",
+  "variante_de": null
  },
  {
   "id": "P034",
@@ -907,7 +940,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P035",
@@ -932,7 +966,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Relâcher le poids, allonger la colonne"
+  "precautions": "Relâcher le poids, allonger la colonne",
+  "variante_de": null
  },
  {
   "id": "P036",
@@ -959,7 +994,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P037",
@@ -987,7 +1023,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P038",
@@ -1021,7 +1058,8 @@
   "contres": [
    "Chien tête en bas"
   ],
-  "precautions": "Genou arrière : couverture pliée"
+  "precautions": "Genou arrière : couverture pliée",
+  "variante_de": null
  },
  {
   "id": "P039",
@@ -1050,7 +1088,8 @@
    "Étirement de la jambe allongé"
   ],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P040",
@@ -1081,7 +1120,8 @@
   "contres": [
    "Chien tête en bas"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P041",
@@ -1116,7 +1156,8 @@
   "contres": [
    "Pince debout"
   ],
-  "precautions": "Genoux : brique sous les talons ou les fesses"
+  "precautions": "Genoux : brique sous les talons ou les fesses",
+  "variante_de": null
  },
  {
   "id": "P042",
@@ -1141,7 +1182,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Pas en cas de placenta bas ou de bébé en siège après 34 sem. (avis médical)"
+  "precautions": "Pas en cas de placenta bas ou de bébé en siège après 34 sem. (avis médical)",
+  "variante_de": null
  },
  {
   "id": "P043",
@@ -1170,7 +1212,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P044",
@@ -1202,7 +1245,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Lombaires : genoux fléchis ; poignets : genoux au sol"
+  "precautions": "Lombaires : genoux fléchis ; poignets : genoux au sol",
+  "variante_de": null
  },
  {
   "id": "P045",
@@ -1234,7 +1278,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P046",
@@ -1259,7 +1304,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P047",
@@ -1286,7 +1332,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Grossesse : version sans planche ni cobra"
+  "precautions": "Grossesse : version sans planche ni cobra",
+  "variante_de": null
  },
  {
   "id": "P048",
@@ -1309,7 +1356,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P049",
@@ -1340,7 +1388,8 @@
    "Chien tête en bas"
   ],
   "contres": [],
-  "precautions": "Épaules, poignets : version genoux au sol"
+  "precautions": "Épaules, poignets : version genoux au sol",
+  "variante_de": null
  },
  {
   "id": "P050",
@@ -1371,7 +1420,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P051",
@@ -1400,7 +1450,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P052",
@@ -1428,7 +1479,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Lombaires, sciatique : genoux fléchis ; hypertension : tête pas sous le cœur longtemps"
+  "precautions": "Lombaires, sciatique : genoux fléchis ; hypertension : tête pas sous le cœur longtemps",
+  "variante_de": null
  },
  {
   "id": "P053",
@@ -1456,7 +1508,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P054",
@@ -1484,7 +1537,8 @@
   "contres": [
    "Table inversée"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P055",
@@ -1514,7 +1568,8 @@
   "contres": [
    "Table inversée"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P056",
@@ -1544,7 +1599,8 @@
   "contres": [
    "Pince debout"
   ],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P057",
@@ -1573,7 +1629,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Grossesse : non (torsion fermée)"
+  "precautions": "Grossesse : non (torsion fermée)",
+  "variante_de": null
  },
  {
   "id": "P058",
@@ -1600,7 +1657,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Genoux dans l'axe des pieds"
+  "precautions": "Genoux dans l'axe des pieds",
+  "variante_de": null
  },
  {
   "id": "P059",
@@ -1634,7 +1692,8 @@
   "contres": [
    "Pince debout"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P060",
@@ -1665,7 +1724,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P061",
@@ -1691,7 +1751,8 @@
    "Guerrier II"
   ],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P062",
@@ -1720,7 +1781,8 @@
   "contres": [
    "Pince debout"
   ],
-  "precautions": "Hypertension ; grossesse : non"
+  "precautions": "Hypertension ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P063",
@@ -1754,7 +1816,8 @@
   "contres": [
    "Pince debout"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P064",
@@ -1783,7 +1846,8 @@
    "Fente basse"
   ],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P065",
@@ -1813,7 +1877,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Grossesse : non"
+  "precautions": "Grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P066",
@@ -1843,7 +1908,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P067",
@@ -1877,7 +1943,8 @@
    "Étirement latéral assis"
   ],
   "contres": [],
-  "precautions": "Cervicales : regard vers le sol"
+  "precautions": "Cervicales : regard vers le sol",
+  "variante_de": null
  },
  {
   "id": "P068",
@@ -1911,7 +1978,8 @@
   "contres": [
    "Pince debout"
   ],
-  "precautions": "Lombaires, sacro-iliaques ; grossesse : non"
+  "precautions": "Lombaires, sacro-iliaques ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P069",
@@ -1942,7 +2010,8 @@
    "Guerrier II"
   ],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P070",
@@ -1974,7 +2043,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Grossesse : non"
+  "precautions": "Grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P071",
@@ -2002,7 +2072,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Grossesse : tête sur brique, pas longtemps"
+  "precautions": "Grossesse : tête sur brique, pas longtemps",
+  "variante_de": null
  },
  {
   "id": "P072",
@@ -2034,7 +2105,8 @@
   "contres": [
    "Table inversée"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P073",
@@ -2065,7 +2137,8 @@
    "Arbre"
   ],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P074",
@@ -2094,7 +2167,8 @@
    "Demi-lune"
   ],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P075",
@@ -2128,7 +2202,8 @@
    "Papillon (assis droit)"
   ],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P076",
@@ -2158,7 +2233,8 @@
    "Tête de vache"
   ],
   "contres": [],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P077",
@@ -2187,7 +2263,8 @@
    "Arbre"
   ],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P078",
@@ -2222,7 +2299,8 @@
   "contres": [
    "Pince debout"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P079",
@@ -2250,7 +2328,8 @@
    "Pince debout"
   ],
   "contres": [],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P080",
@@ -2274,7 +2353,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P081",
@@ -2299,7 +2379,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P082",
@@ -2324,7 +2405,8 @@
    "Guerrier II"
   ],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P083",
@@ -2350,7 +2432,8 @@
    "Chaise"
   ],
   "contres": [],
-  "precautions": "Genoux ; grossesse : non"
+  "precautions": "Genoux ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P084",
@@ -2376,7 +2459,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P085",
@@ -2406,7 +2490,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Poignets : genoux au sol ; post-partum : attendre la récupération du périnée et des grands droits"
+  "precautions": "Poignets : genoux au sol ; post-partum : attendre la récupération du périnée et des grands droits",
+  "variante_de": null
  },
  {
   "id": "P086",
@@ -2438,7 +2523,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Épaules : genoux au sol"
+  "precautions": "Épaules : genoux au sol",
+  "variante_de": null
  },
  {
   "id": "P087",
@@ -2463,7 +2549,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P088",
@@ -2497,7 +2584,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P089",
@@ -2524,7 +2612,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P090",
@@ -2558,7 +2647,8 @@
    "Genoux poitrine",
    "Pont"
   ],
-  "precautions": "Lombaires : genoux fléchis ; grossesse et post-partum : non"
+  "precautions": "Lombaires : genoux fléchis ; grossesse et post-partum : non",
+  "variante_de": null
  },
  {
   "id": "P091",
@@ -2585,7 +2675,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Grossesse et post-partum : non"
+  "precautions": "Grossesse et post-partum : non",
+  "variante_de": null
  },
  {
   "id": "P092",
@@ -2612,7 +2703,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Expirer en rentrant le nombril et en remontant le périnée"
+  "precautions": "Expirer en rentrant le nombril et en remontant le périnée",
+  "variante_de": null
  },
  {
   "id": "P093",
@@ -2644,7 +2736,8 @@
   "contres": [
    "Pince assise"
   ],
-  "precautions": "Poignets, épaules"
+  "precautions": "Poignets, épaules",
+  "variante_de": null
  },
  {
   "id": "P094",
@@ -2672,7 +2765,8 @@
   "contres": [
    "Pince assise"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P095",
@@ -2697,7 +2791,8 @@
    "Demi-bateau"
   ],
   "contres": [],
-  "precautions": "Lombaires ; grossesse : non"
+  "precautions": "Lombaires ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P096",
@@ -2734,7 +2829,8 @@
    "Posture de l'enfant",
    "Pince debout"
   ],
-  "precautions": "Poignets ; grossesse : non"
+  "precautions": "Poignets ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P097",
@@ -2766,7 +2862,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P098",
@@ -2798,7 +2895,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P099",
@@ -2831,7 +2929,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P100",
@@ -2863,7 +2962,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P101",
@@ -2895,7 +2995,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P102",
@@ -2926,7 +3027,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P103",
@@ -2956,7 +3058,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P104",
@@ -2987,7 +3090,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Hypertension, grossesse, troubles digestifs"
+  "precautions": "Hypertension, grossesse, troubles digestifs",
+  "variante_de": null
  },
  {
   "id": "P105",
@@ -3016,7 +3120,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P106",
@@ -3043,7 +3148,8 @@
    "Bateau"
   ],
   "contres": [],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P107",
@@ -3080,7 +3186,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Poignets ; hypertension non contrôlée ; grossesse : courte durée"
+  "precautions": "Poignets ; hypertension non contrôlée ; grossesse : courte durée",
+  "variante_de": null
  },
  {
   "id": "P108",
@@ -3112,7 +3219,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Épaules, hypertension"
+  "precautions": "Épaules, hypertension",
+  "variante_de": null
  },
  {
   "id": "P109",
@@ -3145,7 +3253,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Cervicales, hypertension, glaucome, règles (selon école) ; grossesse : non"
+  "precautions": "Cervicales, hypertension, glaucome, règles (selon école) ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P110",
@@ -3178,7 +3287,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P111",
@@ -3213,7 +3323,8 @@
    "Pince debout",
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P112",
@@ -3245,7 +3356,8 @@
   "contres": [
    "Poisson"
   ],
-  "precautions": "Cervicales, hypertension, glaucome ; grossesse : non"
+  "precautions": "Cervicales, hypertension, glaucome ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P113",
@@ -3277,7 +3389,8 @@
   "contres": [
    "Poisson"
   ],
-  "precautions": "Cervicales, hypertension ; grossesse : non"
+  "precautions": "Cervicales, hypertension ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P114",
@@ -3306,7 +3419,8 @@
   "contres": [
    "Poisson"
   ],
-  "precautions": "Cervicales"
+  "precautions": "Cervicales",
+  "variante_de": null
  },
  {
   "id": "P115",
@@ -3335,7 +3449,8 @@
   "contres": [
    "Poisson"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P116",
@@ -3362,7 +3477,8 @@
   "contres": [
    "Poisson"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P117",
@@ -3393,7 +3509,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Glaucome ; grossesse avancée : pas dos au sol prolongé"
+  "precautions": "Glaucome ; grossesse avancée : pas dos au sol prolongé",
+  "variante_de": null
  },
  {
   "id": "P118",
@@ -3426,7 +3543,8 @@
    "Table inversée",
    "Planche inversée"
   ],
-  "precautions": "Lombaires, sciatique : genoux fléchis"
+  "precautions": "Lombaires, sciatique : genoux fléchis",
+  "variante_de": null
  },
  {
   "id": "P119",
@@ -3456,7 +3574,8 @@
    "Papillon (assis droit)"
   ],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P120",
@@ -3484,7 +3603,8 @@
    "Tête au genou"
   ],
   "contres": [],
-  "precautions": "Grossesse : non"
+  "precautions": "Grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P121",
@@ -3512,7 +3632,8 @@
   "contres": [
    "Table inversée"
   ],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P122",
@@ -3541,7 +3662,8 @@
   "contres": [
    "Table inversée"
   ],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P123",
@@ -3569,7 +3691,8 @@
   "contres": [
    "Table inversée"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P124",
@@ -3599,7 +3722,8 @@
    "Grand écart facial debout (jambes écartées)"
   ],
   "contres": [],
-  "precautions": "Grossesse : buste droit ou mains sur coussin"
+  "precautions": "Grossesse : buste droit ou mains sur coussin",
+  "variante_de": null
  },
  {
   "id": "P125",
@@ -3630,7 +3754,8 @@
   "contres": [
    "Table inversée"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P126",
@@ -3658,7 +3783,8 @@
   "contres": [
    "Table inversée"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P127",
@@ -3687,7 +3813,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P128",
@@ -3714,7 +3841,8 @@
    "Pince assise"
   ],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P129",
@@ -3742,7 +3870,8 @@
   "contres": [
    "Table inversée"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P130",
@@ -3771,7 +3900,8 @@
   "contres": [
    "Table inversée"
   ],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P131",
@@ -3807,7 +3937,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Genoux ; grossesse : genoux écartés"
+  "precautions": "Genoux ; grossesse : genoux écartés",
+  "variante_de": null
  },
  {
   "id": "P132",
@@ -3836,7 +3967,8 @@
    "Chat-vache"
   ],
   "contres": [],
-  "precautions": "Épaules"
+  "precautions": "Épaules",
+  "variante_de": null
  },
  {
   "id": "P133",
@@ -3865,7 +3997,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P134",
@@ -3894,7 +4027,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Grossesse : buste surélevé sur bolster"
+  "precautions": "Grossesse : buste surélevé sur bolster",
+  "variante_de": null
  },
  {
   "id": "P135",
@@ -3925,7 +4059,8 @@
   "contres": [
    "Chien tête en bas"
   ],
-  "precautions": "Genoux : préférer le pigeon allongé"
+  "precautions": "Genoux : préférer le pigeon allongé",
+  "variante_de": null
  },
  {
   "id": "P136",
@@ -3961,7 +4096,8 @@
    "Posture de l'enfant",
    "Chien tête en bas"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P137",
@@ -3989,7 +4125,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P138",
@@ -4020,7 +4157,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P139",
@@ -4053,7 +4191,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Genoux, épaules"
+  "precautions": "Genoux, épaules",
+  "variante_de": null
  },
  {
   "id": "P140",
@@ -4080,7 +4219,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Grossesse avancée : non (dos au sol)"
+  "precautions": "Grossesse avancée : non (dos au sol)",
+  "variante_de": null
  },
  {
   "id": "P141",
@@ -4110,7 +4250,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P142",
@@ -4135,7 +4276,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P143",
@@ -4166,7 +4308,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Lombaires ; grossesse : non"
+  "precautions": "Lombaires ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P144",
@@ -4199,7 +4342,8 @@
   "contres": [
    "Chien tête en bas"
   ],
-  "precautions": "Lombaires, poignets ; grossesse : non"
+  "precautions": "Lombaires, poignets ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P145",
@@ -4224,7 +4368,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Grossesse : non"
+  "precautions": "Grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P146",
@@ -4258,7 +4403,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Lombaires ; grossesse : non"
+  "precautions": "Lombaires ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P147",
@@ -4295,7 +4441,8 @@
    "Posture de l'enfant",
    "Torsion allongée"
   ],
-  "precautions": "Lombaires, genoux ; grossesse : non"
+  "precautions": "Lombaires, genoux ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P148",
@@ -4323,7 +4470,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P149",
@@ -4359,7 +4507,8 @@
    "Posture de l'enfant",
    "Pince assise"
   ],
-  "precautions": "Cervicales, lombaires ; grossesse : non"
+  "precautions": "Cervicales, lombaires ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P150",
@@ -4389,7 +4538,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P151",
@@ -4420,7 +4570,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Lombaires, cervicales"
+  "precautions": "Lombaires, cervicales",
+  "variante_de": null
  },
  {
   "id": "P152",
@@ -4459,7 +4610,8 @@
    "Genoux poitrine",
    "Torsion allongée"
   ],
-  "precautions": "Cervicales : ne pas tourner la tête ; De Gasquet : monter en expirant, périnée engagé"
+  "precautions": "Cervicales : ne pas tourner la tête ; De Gasquet : monter en expirant, périnée engagé",
+  "variante_de": null
  },
  {
   "id": "P153",
@@ -4487,7 +4639,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P154",
@@ -4527,7 +4680,8 @@
    "Torsion allongée",
    "Pince assise"
   ],
-  "precautions": "Poignets, épaules, lombaires ; grossesse : non"
+  "precautions": "Poignets, épaules, lombaires ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P155",
@@ -4557,7 +4711,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P156",
@@ -4589,7 +4744,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Cervicales"
+  "precautions": "Cervicales",
+  "variante_de": null
  },
  {
   "id": "P157",
@@ -4615,7 +4771,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P158",
@@ -4645,7 +4802,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Genoux, lombaires"
+  "precautions": "Genoux, lombaires",
+  "variante_de": null
  },
  {
   "id": "P159",
@@ -4673,7 +4831,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P160",
@@ -4702,7 +4861,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Cervicales"
+  "precautions": "Cervicales",
+  "variante_de": null
  },
  {
   "id": "P161",
@@ -4727,7 +4887,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Grossesse : non (sur le ventre)"
+  "precautions": "Grossesse : non (sur le ventre)",
+  "variante_de": null
  },
  {
   "id": "P162",
@@ -4757,7 +4918,8 @@
    "Rotations du buste assis"
   ],
   "contres": [],
-  "precautions": "Grossesse : torsion ouverte uniquement"
+  "precautions": "Grossesse : torsion ouverte uniquement",
+  "variante_de": null
  },
  {
   "id": "P163",
@@ -4782,7 +4944,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Grossesse : version ouverte"
+  "precautions": "Grossesse : version ouverte",
+  "variante_de": null
  },
  {
   "id": "P164",
@@ -4811,7 +4974,8 @@
   "contres": [
    "Pince assise"
   ],
-  "precautions": "Grossesse : non"
+  "precautions": "Grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P165",
@@ -4839,7 +5003,8 @@
   "contres": [
    "Pince assise"
   ],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P166",
@@ -4868,7 +5033,8 @@
   "contres": [
    "Pince debout"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P167",
@@ -4899,7 +5065,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P168",
@@ -4928,7 +5095,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Lombaires ; grossesse : non"
+  "precautions": "Lombaires ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P169",
@@ -4952,7 +5120,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Grossesse : torsion douce, côté ouvert"
+  "precautions": "Grossesse : torsion douce, côté ouvert",
+  "variante_de": null
  },
  {
   "id": "P170",
@@ -4975,7 +5144,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P171",
@@ -5002,7 +5172,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P172",
@@ -5031,7 +5202,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P173",
@@ -5055,7 +5227,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P174",
@@ -5078,7 +5251,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P175",
@@ -5102,7 +5276,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Hypertension : pas tête en bas longtemps"
+  "precautions": "Hypertension : pas tête en bas longtemps",
+  "variante_de": null
  },
  {
   "id": "P176",
@@ -5137,7 +5312,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Lombaires : coussin sous les genoux ; grossesse avancée : sur le côté"
+  "precautions": "Lombaires : coussin sous les genoux ; grossesse avancée : sur le côté",
+  "variante_de": null
  },
  {
   "id": "P177",
@@ -5163,7 +5339,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P178",
@@ -5186,7 +5363,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Grossesse : non"
+  "precautions": "Grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P179",
@@ -5210,7 +5388,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Lombaires, sciatique : dos soutenu"
+  "precautions": "Lombaires, sciatique : dos soutenu",
+  "variante_de": null
  },
  {
   "id": "P180",
@@ -5233,7 +5412,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P181",
@@ -5256,7 +5436,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Sciatique, lombaires"
+  "precautions": "Sciatique, lombaires",
+  "variante_de": null
  },
  {
   "id": "P182",
@@ -5281,7 +5462,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P183",
@@ -5309,7 +5491,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P184",
@@ -5336,7 +5519,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Genoux, aines"
+  "precautions": "Genoux, aines",
+  "variante_de": null
  },
  {
   "id": "P185",
@@ -5365,7 +5549,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Genoux, lombaires : une jambe à la fois"
+  "precautions": "Genoux, lombaires : une jambe à la fois",
+  "variante_de": null
  },
  {
   "id": "P186",
@@ -5389,7 +5574,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Grossesse : non"
+  "precautions": "Grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P187",
@@ -5415,7 +5601,8 @@
   "contres": [
    "Posture de l'enfant"
   ],
-  "precautions": "Lombaires"
+  "precautions": "Lombaires",
+  "variante_de": null
  },
  {
   "id": "P188",
@@ -5442,7 +5629,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P189",
@@ -5469,7 +5657,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P190",
@@ -5493,7 +5682,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P191",
@@ -5518,7 +5708,8 @@
    "Cygne (yin)"
   ],
   "contres": [],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P192",
@@ -5547,7 +5738,8 @@
    "Sphinx (yin)",
    "Torsion couchée (yin)"
   ],
-  "precautions": "Cervicales, hypertension ; grossesse : non"
+  "precautions": "Cervicales, hypertension ; grossesse : non",
+  "variante_de": null
  },
  {
   "id": "P193",
@@ -5570,7 +5762,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Hypertension ; se relever lentement"
+  "precautions": "Hypertension ; se relever lentement",
+  "variante_de": null
  },
  {
   "id": "P194",
@@ -5592,7 +5785,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P195",
@@ -5615,7 +5809,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P196",
@@ -5637,7 +5832,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P197",
@@ -5660,7 +5856,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P198",
@@ -5682,7 +5879,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P199",
@@ -5705,7 +5903,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P200",
@@ -5728,7 +5927,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P201",
@@ -5757,7 +5957,8 @@
   "contres": [
    "Genoux poitrine"
   ],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
  },
  {
   "id": "P202",
@@ -5780,7 +5981,8 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": "Genoux"
+  "precautions": "Genoux",
+  "variante_de": null
  },
  {
   "id": "P203",
@@ -5803,6 +6005,4524 @@
   ],
   "preparations": [],
   "contres": [],
-  "precautions": null
+  "precautions": null,
+  "variante_de": null
+ },
+ {
+  "id": "P204",
+  "sanskrit": "Tadasana Namaskar",
+  "fr": "Montagne, mains en prière",
+  "en": "Mountain Pose with Hands in Prayer",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Centrage",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Équilibre",
+   "Chevilles / pieds",
+   "Détente"
+  ],
+  "preparations": [],
+  "contres": [],
+  "precautions": "Écarter légèrement les pieds à la largeur du bassin en cas de vertiges.",
+  "variante_de": "P050"
+ },
+ {
+  "id": "P205",
+  "sanskrit": "Natarajasana",
+  "fr": "Danseur, talon au fessier",
+  "en": "Lord of the Dance Pose",
+  "famille": "Équilibre",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Quadriceps",
+   "Psoas / fléchisseurs de hanche",
+   "Équilibre",
+   "Épaules (ouverture)"
+  ],
+  "preparations": [
+   "Montagne",
+   "Fente basse"
+  ],
+  "contres": [
+   "Montagne",
+   "Pince debout"
+  ],
+  "precautions": "Conserver les hanches de face et utiliser un mur pour sécuriser l'équilibre si nécessaire.",
+  "variante_de": "P078"
+ },
+ {
+  "id": "P206",
+  "sanskrit": "Vrikshasana Namaskar",
+  "fr": "Arbre, mains en prière",
+  "en": "Tree Pose with Hands in Prayer",
+  "famille": "Équilibre",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Équilibre",
+   "Hanches (rotation externe)",
+   "Force des jambes",
+   "Chevilles / pieds"
+  ],
+  "preparations": [
+   "Montagne"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Éviter tout appui direct de la plante de pied sur le côté du genou.",
+  "variante_de": "P075"
+ },
+ {
+  "id": "P207",
+  "sanskrit": "Ardha Chandrasana Prep.",
+  "fr": "Demi-lune avec brique",
+  "en": "Half Moon Pose Prep.",
+  "famille": "Équilibre",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Équilibre",
+   "Force des jambes",
+   "Hanches (rotation externe)",
+   "Ischio-jambiers"
+  ],
+  "preparations": [
+   "Triangle",
+   "Guerrier II"
+  ],
+  "contres": [
+   "Montagne",
+   "Pince debout"
+  ],
+  "precautions": "Placer la brique sous l'épaule et regarder vers le sol en cas de fragilité cervicale.",
+  "variante_de": "P073"
+ },
+ {
+  "id": "P208",
+  "sanskrit": "Uttanasana",
+  "fr": "Poupée de chiffon, balancement",
+  "en": "Intense Stretch Pose",
+  "famille": "Flexion avant",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Échauffement",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Ischio-jambiers",
+   "Dos (mobilité)",
+   "Détente"
+  ],
+  "preparations": [
+   "Montagne"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Fléchir généreusement les genoux pour soulager la pression sur les vertèbres lombaires.",
+  "variante_de": "P052"
+ },
+ {
+  "id": "P209",
+  "sanskrit": "Baddha Hasta Uttanasana",
+  "fr": "Pince debout genoux pliés, coudes tenus",
+  "en": "Hands Bound Forward Bend Modification",
+  "famille": "Flexion avant",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Ischio-jambiers",
+   "Dos (mobilité)",
+   "Détente"
+  ],
+  "preparations": [
+   "Montagne"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Garder le buste collé aux cuisses et relâcher la tête sans contracter les trapèzes.",
+  "variante_de": "P052"
+ },
+ {
+  "id": "P210",
+  "sanskrit": "Parivritta Kalyasana",
+  "fr": "Déesse en torsion, mains sur les genoux",
+  "en": "Revolved Pose Dedicated to Goddess Kali",
+  "famille": "Torsion",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Adducteurs",
+   "Colonne (rotation)",
+   "Force des jambes",
+   "Épaules (ouverture)"
+  ],
+  "preparations": [
+   "Déesse"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Aligner les genoux avec les pointes de pieds et ne pas forcer l'amplitude en torsion.",
+  "variante_de": "P058"
+ },
+ {
+  "id": "P211",
+  "sanskrit": "Adho Mukha Shvanasana",
+  "fr": "Chien tête en bas, genoux fléchis talons levés",
+  "en": "Downward Facing Dog Pose",
+  "famille": "Inversion",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Échauffement",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Dos (mobilité)",
+   "Épaules (ouverture)",
+   "Force des bras"
+  ],
+  "preparations": [
+   "Chat-vache"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Privilégier l'élongation de la colonne vertébrale plutôt que de tendre les jambes.",
+  "variante_de": "P107"
+ },
+ {
+  "id": "P212",
+  "sanskrit": "Parshvottanasana Prep.",
+  "fr": "Pyramide, mains aux coudes opposés dans le dos",
+  "en": "Intense Side Stretch Pose Prep.",
+  "famille": "Flexion avant",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Ischio-jambiers",
+   "Épaules (ouverture)",
+   "Équilibre",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Montagne",
+   "Triangle"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Maintenir le bassin de face et micro-fléchir le genou avant pour éviter l'hyperextension.",
+  "variante_de": "P072"
+ },
+ {
+  "id": "P213",
+  "sanskrit": "Parshvottanasana Prep.",
+  "fr": "Pyramide, mains sur le tibia avant",
+  "en": "Intense Side Stretch Pose Prep.",
+  "famille": "Flexion avant",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Ischio-jambiers",
+   "Colonne (extension)",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Montagne",
+   "Demi-pince (dos plat)"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Ne pas faire peser trop de poids sur le tibia et garder le dos plat.",
+  "variante_de": "P072"
+ },
+ {
+  "id": "P214",
+  "sanskrit": "Ashva Sanchalanasana",
+  "fr": "Posture du cavalier",
+  "en": "Equestrian Riding Horse Lunge Pose",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Sivananda"
+  ],
+  "phase": "Salutations",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Psoas / fléchisseurs de hanche",
+   "Quadriceps",
+   "Colonne (extension)"
+  ],
+  "preparations": [
+   "Chien tête en bas",
+   "Montagne"
+  ],
+  "contres": [
+   "Demi-grand écart",
+   "Chien tête en bas"
+  ],
+  "precautions": "Garder le genou avant à l'aplomb de la cheville et caler le genou arrière si sensible.",
+  "variante_de": "P038"
+ },
+ {
+  "id": "P215",
+  "sanskrit": "Ashva Sanchalanasana Prep.",
+  "fr": "Fente basse, mains sur le genou",
+  "en": "Equestrian Riding Horse Lunge Pose Prep.",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Psoas / fléchisseurs de hanche",
+   "Quadriceps",
+   "Équilibre"
+  ],
+  "preparations": [
+   "Fente basse"
+  ],
+  "contres": [
+   "Demi-grand écart",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Protéger l'articulation du genou arrière et maintenir le bassin neutre sans cambrer.",
+  "variante_de": "P038"
+ },
+ {
+  "id": "P216",
+  "sanskrit": "Parivritta Anjaneyasana",
+  "fr": "Fente basse en torsion, main au sol",
+  "en": "Revolved Son of Anjani (Lord Hanuman) Lunge Pose",
+  "famille": "Torsion",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Psoas / fléchisseurs de hanche",
+   "Colonne (rotation)",
+   "Poignets"
+  ],
+  "preparations": [
+   "Fente basse",
+   "Chat-vache"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Demi-grand écart"
+  ],
+  "precautions": "Placer une brique sous la main d'appui pour éviter d'effondrer la cage thoracique.",
+  "variante_de": "P065"
+ },
+ {
+  "id": "P217",
+  "sanskrit": "Parivritta Anjaneyasana",
+  "fr": "Fente en torsion simple",
+  "en": "Revolved Son of Anjani (Lord Hanuman) Lunge Pose",
+  "famille": "Torsion",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Psoas / fléchisseurs de hanche",
+   "Colonne (rotation)",
+   "Force des jambes",
+   "Équilibre"
+  ],
+  "preparations": [
+   "Fente haute",
+   "Fente basse"
+  ],
+  "contres": [
+   "Chien tête en bas",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Activer fermement la jambe arrière tendue et initier la rotation depuis le nombril.",
+  "variante_de": "P065"
+ },
+ {
+  "id": "P218",
+  "sanskrit": "Sukhasana",
+  "fr": "Posture facile sur brique",
+  "en": "Easy Pose",
+  "famille": "Assise",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Restauratif",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Centrage",
+  "respirations": 10,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Dos (mobilité)",
+   "Détente"
+  ],
+  "preparations": [
+   "Rotations du cou et des épaules"
+  ],
+  "contres": [
+   "Bâton"
+  ],
+  "precautions": "Surélever suffisamment les hanches au-dessus des genoux pour éviter tout tassement lombaire.",
+  "variante_de": "P013"
+ },
+ {
+  "id": "P219",
+  "sanskrit": "Parivritta Sukhasana",
+  "fr": "Posture facile en torsion",
+  "en": "Revolved Easy Pose",
+  "famille": "Torsion",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Échauffement",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Colonne (rotation)",
+   "Hanches (rotation externe)",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Posture facile (tailleur)"
+  ],
+  "contres": [
+   "Posture facile (tailleur)"
+  ],
+  "precautions": "Chercher l'auto-grandissement avant de tourner afin de ne pas comprimer les disques vertébraux.",
+  "variante_de": "P013"
+ },
+ {
+  "id": "P220",
+  "sanskrit": "Paschimottanasana",
+  "fr": "Pince assise, mains aux gros orteils",
+  "en": "Western Intense Stretch Pose",
+  "famille": "Flexion avant",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Ashtanga",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Sangle",
+  "zones": [
+   "Ischio-jambiers",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Bâton",
+   "Demi-pince (dos plat)"
+  ],
+  "contres": [
+   "Table inversée",
+   "Planche inversée"
+  ],
+  "precautions": "Fléchir légèrement les genoux ou utiliser une sangle en cas de raideur de la chaîne postérieure.",
+  "variante_de": "P118"
+ },
+ {
+  "id": "P221",
+  "sanskrit": "Paschimottanasana",
+  "fr": "Pince assise, mains aux pieds",
+  "en": "Western Intense Stretch Pose",
+  "famille": "Flexion avant",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Ashtanga",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Sangle",
+  "zones": [
+   "Ischio-jambiers",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Bâton",
+   "Pince assise"
+  ],
+  "contres": [
+   "Table inversée",
+   "Planche inversée"
+  ],
+  "precautions": "Plier à partir du pli de l'aine et ne pas tirer brutalement sur les pieds avec les bras.",
+  "variante_de": "P118"
+ },
+ {
+  "id": "P222",
+  "sanskrit": "Ardha Vayu Muktyasana",
+  "fr": "Demi-libération des vents",
+  "en": "Half Wind Relieving Pose",
+  "famille": "Allongée",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Restauratif",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Retour au calme",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Fessiers",
+   "Dos (mobilité)",
+   "Détente"
+  ],
+  "preparations": [
+   "Genoux poitrine"
+  ],
+  "contres": [
+   "Relaxation finale"
+  ],
+  "precautions": "Garder la nuque longue et desserrer l'étreinte en cas de conflit ou pincement de hanche.",
+  "variante_de": "P172"
+ },
+ {
+  "id": "P223",
+  "sanskrit": "Parivritta Ardha Vayu Muktyasana",
+  "fr": "Torsion allongée un genou fléchi",
+  "en": "Revolved Half Wind Relieving Pose",
+  "famille": "Torsion",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Restauratif",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Retour au calme",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Colonne (rotation)",
+   "Fessiers",
+   "Détente"
+  ],
+  "preparations": [
+   "Genoux poitrine"
+  ],
+  "contres": [
+   "Genoux poitrine"
+  ],
+  "precautions": "Soutenir le genou sur une brique si l'épaule opposée se soulève du tapis.",
+  "variante_de": "P167"
+ },
+ {
+  "id": "P224",
+  "sanskrit": "Balasana",
+  "fr": "Posture de l'enfant étirée vers l'avant",
+  "en": "Child’s Pose",
+  "famille": "Flexion avant",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Restauratif",
+   "Yoga du dos"
+  ],
+  "phase": "Retour au calme",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Épaules (ouverture)",
+   "Dos (mobilité)",
+   "Détente"
+  ],
+  "preparations": [
+   "Chat-vache"
+  ],
+  "contres": [
+   "Chat-vache"
+  ],
+  "precautions": "Écarter les genoux ou caler le front sur une brique en cas de compression des hanches.",
+  "variante_de": "P131"
+ },
+ {
+  "id": "P225",
+  "sanskrit": "Parshva Hasta Balasana",
+  "fr": "Posture de l'enfant, étirement latéral",
+  "en": "Hands to the Side Child’s Pose",
+  "famille": "Flexion latérale",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Retour au calme",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Flancs",
+   "Épaules (ouverture)",
+   "Détente"
+  ],
+  "preparations": [
+   "Posture de l'enfant"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Ancrer fermement les deux fessiers sur les talons pendant le déplacement des bras.",
+  "variante_de": "P131"
+ },
+ {
+  "id": "P226",
+  "sanskrit": "Bitilasana",
+  "fr": "Posture de la vache",
+  "en": "Cow Pose",
+  "famille": "Mobilisation",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Échauffement",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Colonne (extension)",
+   "Dos (mobilité)",
+   "Épaules (ouverture)"
+  ],
+  "preparations": [
+   "Chat-vache"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Éviter de comprimer les cervicales en arrière et répartir l'ouverture sur tout le dos.",
+  "variante_de": "P024"
+ },
+ {
+  "id": "P227",
+  "sanskrit": "Utthita Chaturanga Dandasana",
+  "fr": "Planche sur les genoux",
+  "en": "Extended Four Limbs Staff Pose",
+  "famille": "Gainage",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Échauffement",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Force des bras",
+   "Poignets"
+  ],
+  "preparations": [
+   "Chat-vache"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Soutenir le bas du dos par l'engagement du transverse sans laisser le bassin s'affaisser.",
+  "variante_de": "P085"
+ },
+ {
+  "id": "P228",
+  "sanskrit": "Chaturanga Dandasana",
+  "fr": "Chaturanga sur les genoux",
+  "en": "Four Limbed Staff Pose",
+  "famille": "Gainage",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Salutations",
+  "respirations": 3,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Force des bras",
+   "Sangle abdominale",
+   "Poignets"
+  ],
+  "preparations": [
+   "Planche"
+  ],
+  "contres": [
+   "Cobra",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Garder les coudes au contact des côtes et ne pas plonger les épaules sous le niveau des coudes.",
+  "variante_de": "P086"
+ },
+ {
+  "id": "P229",
+  "sanskrit": "Vasishtasana",
+  "fr": "Planche latérale sur avant-bras, genoux au sol",
+  "en": "Pose Dedicated to Sage Vasistha",
+  "famille": "Gainage",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Postnatal",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Flancs",
+   "Force des bras"
+  ],
+  "preparations": [
+   "Planche latérale genou au sol",
+   "Chat-vache"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Bascule du bassin allongée"
+  ],
+  "precautions": "Placer un coussin sous les genoux ou l'avant-bras en cas d'inconfort articulaire.",
+  "variante_de": "P089"
+ },
+ {
+  "id": "P230",
+  "sanskrit": "Ushtrasana Prep.",
+  "fr": "Chameau, mains aux lombaires",
+  "en": "Camel Pose Prep.",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Colonne (extension)",
+   "Psoas / fléchisseurs de hanche",
+   "Épaules (ouverture)"
+  ],
+  "preparations": [
+   "Sphinx",
+   "Chat-vache"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Chien tête en bas"
+  ],
+  "precautions": "Soutenir fermement le bas du dos avec les paumes et éviter de pincer les lombaires.",
+  "variante_de": "P149"
+ },
+ {
+  "id": "P231",
+  "sanskrit": "Ardha Ushtrasana",
+  "fr": "Demi-chameau, un bras levé",
+  "en": "Half Camel Pose",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Colonne (extension)",
+   "Psoas / fléchisseurs de hanche",
+   "Flancs"
+  ],
+  "preparations": [
+   "Chat-vache",
+   "Fente basse"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Genoux poitrine"
+  ],
+  "precautions": "Placer une brique sous la main arrière si le talon est inaccessible pour préserver les lombaires.",
+  "variante_de": "P149"
+ },
+ {
+  "id": "P232",
+  "sanskrit": "Bhujangasana 1",
+  "fr": "Bébé cobra, mains décollées",
+  "en": "Cobra Pose 1",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Colonne (extension)",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Chat-vache",
+   "Sphinx"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Genoux poitrine"
+  ],
+  "precautions": "Engager les fessiers et garder la nuque longue sans lever excessivement le menton.",
+  "variante_de": "P143"
+ },
+ {
+  "id": "P233",
+  "sanskrit": "Baddha Hasta Shalabhasana",
+  "fr": "Sauterelle, mains entrelacées",
+  "en": "Hands Bound Locust Pose",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Power yoga"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Sangle",
+  "zones": [
+   "Colonne (extension)",
+   "Épaules (ouverture)",
+   "Fessiers"
+  ],
+  "preparations": [
+   "Sphinx",
+   "Cobra"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Genoux poitrine"
+  ],
+  "precautions": "Utiliser une sangle entre les mains en cas de raideur scapulaire et éviter d'hyper-étendre la nuque.",
+  "variante_de": "P146"
+ },
+ {
+  "id": "P234",
+  "sanskrit": "Shalabhasana",
+  "fr": "Sauterelle, bras tendus vers l'avant",
+  "en": "Locust Pose",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Ashtanga",
+   "Power yoga"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Colonne (extension)",
+   "Fessiers",
+   "Force des bras"
+  ],
+  "preparations": [
+   "Sphinx",
+   "Sauterelle"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Bascule du bassin allongée"
+  ],
+  "precautions": "Garder le regard vers le sol pour ne pas comprimer les cervicales.",
+  "variante_de": "P146"
+ },
+ {
+  "id": "P235",
+  "sanskrit": "Baddha Hasta Setu Bandha Sarvangasana",
+  "fr": "Pont, mains entrelacées au sol",
+  "en": "Hands Bound Bridge Whole Body Pose",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Colonne (extension)",
+   "Épaules (ouverture)",
+   "Fessiers",
+   "Quadriceps"
+  ],
+  "preparations": [
+   "Bascule du bassin allongée",
+   "Sphinx"
+  ],
+  "contres": [
+   "Genoux poitrine",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Garder les genoux parallèles dans l'axe des hanches sans tourner la tête pendant la posture.",
+  "variante_de": "P152"
+ },
+ {
+  "id": "P236",
+  "sanskrit": "Eka Pada Pavana Muktasana",
+  "fr": "Un genou à la poitrine",
+  "en": "One-Legged Wind Relieving Pose",
+  "famille": "Allongée",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Postnatal",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Retour au calme",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Psoas / fléchisseurs de hanche",
+   "Fessiers",
+   "Détente"
+  ],
+  "preparations": [
+   "Bascule du bassin allongée"
+  ],
+  "contres": [
+   "Pont",
+   "Papillon allongé"
+  ],
+  "precautions": "Fléchir le genou opposé si le bas du dos est sensible.",
+  "variante_de": "P172"
+ },
+ {
+  "id": "P237",
+  "sanskrit": "Sukha Balasana",
+  "fr": "Bébé heureux aux gros orteils",
+  "en": "Happy Baby Pose",
+  "famille": "Allongée",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Yin",
+   "Postnatal",
+   "Doux / seniors"
+  ],
+  "phase": "Retour au calme",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Sangle",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Adducteurs",
+   "Détente"
+  ],
+  "preparations": [
+   "Papillon allongé",
+   "Genoux poitrine"
+  ],
+  "contres": [
+   "Pont",
+   "Papillon (assis droit)"
+  ],
+  "precautions": "Attraper les chevilles ou l'arrière des cuisses si le sacrum se décolle du sol.",
+  "variante_de": "P140"
+ },
+ {
+  "id": "P238",
+  "sanskrit": "Virabhadrasana 3",
+  "fr": "Guerrier III, bras vers l'arrière",
+  "en": "Warrior 3",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Power yoga"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Équilibre",
+   "Force des jambes",
+   "Fessiers",
+   "Sangle abdominale"
+  ],
+  "preparations": [
+   "Montagne",
+   "Guerrier I"
+  ],
+  "contres": [
+   "Pince debout",
+   "Montagne"
+  ],
+  "precautions": "Garder le bassin de face et micro-fléchir le genou d'appui en cas d'instabilité.",
+  "variante_de": "P063"
+ },
+ {
+  "id": "P239",
+  "sanskrit": "Eka Pada Utkatasana 1",
+  "fr": "Chaise en chiffre 4, mains en prière",
+  "en": "One-Legged Fierce Pose 1",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Chaise",
+  "zones": [
+   "Équilibre",
+   "Hanches (rotation externe)",
+   "Fessiers",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Chaise",
+   "Arbre"
+  ],
+  "contres": [
+   "Pince debout",
+   "Montagne"
+  ],
+  "precautions": "Garder le pied de la jambe pliée bien flex pour protéger l'articulation du genou.",
+  "variante_de": "P056"
+ },
+ {
+  "id": "P240",
+  "sanskrit": "Eka Pada Adho Mukha Shvanasana",
+  "fr": "Chien à trois pattes",
+  "en": "One-Legged Downward Facing Dog Pose",
+  "famille": "Inversion",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Ashtanga",
+   "Power yoga"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Ischio-jambiers",
+   "Force des bras",
+   "Épaules (ouverture)",
+   "Fessiers"
+  ],
+  "preparations": [
+   "Chien tête en bas",
+   "Chat-vache"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Genoux poitrine"
+  ],
+  "precautions": "Maintenir le bassin de face sans vriller les hanches et répartir le poids sur les mains.",
+  "variante_de": "P107"
+ },
+ {
+  "id": "P241",
+  "sanskrit": "Parivritta Parshva Konasana Prep.",
+  "fr": "Angle latéral en torsion, mains en prière",
+  "en": "Revolved Side Angle Pose Prep.",
+  "famille": "Torsion",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Ashtanga",
+   "Iyengar"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Colonne (rotation)",
+   "Force des jambes",
+   "Psoas / fléchisseurs de hanche"
+  ],
+  "preparations": [
+   "Fente haute",
+   "Fente basse"
+  ],
+  "contres": [
+   "Pince debout",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Poser le genou arrière au sol en cas de manque de stabilité ou de tension au bas du dos.",
+  "variante_de": "P070"
+ },
+ {
+  "id": "P242",
+  "sanskrit": "Eka Pada Raja Kapotasana 1",
+  "fr": "Pigeon endormi, front au sol",
+  "en": "One-Legged King Pigeon Pose 1",
+  "famille": "Flexion avant",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Yin",
+   "Doux / seniors"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Fessiers",
+   "Psoas / fléchisseurs de hanche",
+   "Détente"
+  ],
+  "preparations": [
+   "Chien tête en bas",
+   "Fente basse"
+  ],
+  "contres": [
+   "Chien tête en bas",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Placer une brique sous la fesse avant si la hanche ne touche pas le tapis pour préserver le genou.",
+  "variante_de": "P135"
+ },
+ {
+  "id": "P243",
+  "sanskrit": "Vasishtasana",
+  "fr": "Planche latérale sur avant-bras",
+  "en": "Pose Dedicated to Sage Vasistha",
+  "famille": "Gainage",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Power yoga"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Flancs",
+   "Force des bras",
+   "Équilibre"
+  ],
+  "preparations": [
+   "Planche sur avant-bras",
+   "Planche latérale genou au sol"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Bascule du bassin allongée"
+  ],
+  "precautions": "Poser le genou inférieur au sol en cas de fatigue pour préserver l'épaule d'appui.",
+  "variante_de": "P088"
+ },
+ {
+  "id": "P244",
+  "sanskrit": "Baddha Hasta Tadasana",
+  "fr": "Montagne, coudes opposés tenus",
+  "en": "Hands Bound Mountain Pose",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Centrage",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Épaules (ouverture)",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Rotations du cou et des épaules"
+  ],
+  "contres": [
+   "Pince debout",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Garder les côtes flottantes rentrées et ne pas cambrer les lombaires en tenant les coudes.",
+  "variante_de": "P050"
+ },
+ {
+  "id": "P245",
+  "sanskrit": "Tadasana Urdhva Baddha Hastasana",
+  "fr": "Montagne, bras levés mains liées",
+  "en": "Mountain Pose—Raised Bound Hands",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Échauffement",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Sangle",
+  "zones": [
+   "Épaules (ouverture)",
+   "Dos (mobilité)",
+   "Flancs"
+  ],
+  "preparations": [
+   "Montagne",
+   "Rotations du cou et des épaules"
+  ],
+  "contres": [
+   "Pince debout",
+   "Montagne"
+  ],
+  "precautions": "Relâcher les trapèzes vers le bas et utiliser une sangle si les épaules manquent de mobilité.",
+  "variante_de": "P051"
+ },
+ {
+  "id": "P246",
+  "sanskrit": "Indudalasana",
+  "fr": "Croissant debout, poignet tenu",
+  "en": "Standing Crescent Pose",
+  "famille": "Flexion latérale",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Échauffement",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Flancs",
+   "Dos (mobilité)",
+   "Épaules (ouverture)"
+  ],
+  "preparations": [
+   "Montagne",
+   "Bras levés"
+  ],
+  "contres": [
+   "Pince debout",
+   "Montagne"
+  ],
+  "precautions": "Ancrer solidement les deux pieds au sol pour éviter de basculer le bassin sur le côté.",
+  "variante_de": "P084"
+ },
+ {
+  "id": "P247",
+  "sanskrit": "Parshva Tadasana Urdhva Baddha Hastasana",
+  "fr": "Croissant debout, mains liées",
+  "en": "Sideways Mountain Pose—Raised Bound Hands",
+  "famille": "Flexion latérale",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Échauffement",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Flancs",
+   "Dos (mobilité)",
+   "Épaules (ouverture)"
+  ],
+  "preparations": [
+   "Montagne",
+   "Bras levés"
+  ],
+  "contres": [
+   "Pince debout",
+   "Montagne"
+  ],
+  "precautions": "Garder la poitrine ouverte sans tourner le buste vers le bas lors de la flexion latérale.",
+  "variante_de": "P084"
+ },
+ {
+  "id": "P248",
+  "sanskrit": "Surya Namaskarasana",
+  "fr": "Extension arrière debout, Kali Mudra",
+  "en": "Sun Salutation Pose",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Ashtanga",
+   "Sivananda"
+  ],
+  "phase": "Échauffement",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Colonne (extension)",
+   "Épaules (ouverture)",
+   "Psoas / fléchisseurs de hanche"
+  ],
+  "preparations": [
+   "Montagne",
+   "Bras levés"
+  ],
+  "contres": [
+   "Pince debout",
+   "Demi-pince (dos plat)"
+  ],
+  "precautions": "Engager les fessiers et le plancher pelvien pour protéger la région lombaire de l'hyperextension.",
+  "variante_de": "P051"
+ },
+ {
+  "id": "P249",
+  "sanskrit": "Utthita Hasta Padangushtasana 2 Prep.",
+  "fr": "Main au genou sur le côté",
+  "en": "Extended Hand to Big Toe Pose 2 Prep.",
+  "famille": "Équilibre",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Chaise",
+  "zones": [
+   "Équilibre",
+   "Hanches (rotation externe)",
+   "Adducteurs",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Montagne",
+   "Arbre"
+  ],
+  "contres": [
+   "Pince debout",
+   "Montagne"
+  ],
+  "precautions": "Prendre appui sur un mur ou une chaise en cas de perte d'équilibre.",
+  "variante_de": "P077"
+ },
+ {
+  "id": "P250",
+  "sanskrit": "Sukha Vrikshasana",
+  "fr": "Arbre, mains sur les hanches",
+  "en": "Easy Tree Pose Modification",
+  "famille": "Équilibre",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Chaise",
+  "zones": [
+   "Équilibre",
+   "Hanches (rotation externe)",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Montagne"
+  ],
+  "contres": [
+   "Pince debout",
+   "Montagne"
+  ],
+  "precautions": "Ne jamais poser le pied directement contre l'articulation du genou de terre.",
+  "variante_de": "P075"
+ },
+ {
+  "id": "P251",
+  "sanskrit": "Utthita Hasta Ardha Uttanasana",
+  "fr": "Demi-pince, bras tendus devant",
+  "en": "Arms Extended Half Intense Stretch Pose",
+  "famille": "Flexion avant",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Power yoga"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Ischio-jambiers",
+   "Dos (mobilité)",
+   "Sangle abdominale",
+   "Force des bras"
+  ],
+  "preparations": [
+   "Montagne",
+   "Demi-pince (dos plat)"
+  ],
+  "contres": [
+   "Pince debout",
+   "Montagne"
+  ],
+  "precautions": "Plier légèrement les genoux si le bas du dos s'arrondit excessivement.",
+  "variante_de": "P053"
+ },
+ {
+  "id": "P252",
+  "sanskrit": "Kalyasana",
+  "fr": "Déesse, paumes vers le ciel",
+  "en": "Pose Dedicated to Goddess Kali",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Adducteurs",
+   "Quadriceps",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Montagne",
+   "Déesse"
+  ],
+  "contres": [
+   "Pince debout",
+   "Montagne"
+  ],
+  "precautions": "Aligner les genoux avec le deuxième orteil pour éviter tout affaissement vers l'intérieur.",
+  "variante_de": "P058"
+ },
+ {
+  "id": "P253",
+  "sanskrit": "Ardha Prasarita Padottanasana",
+  "fr": "Demi-flexion jambes écartées, mains sur les tibias",
+  "en": "Half Feet Spread Out Intense Stretch Pose",
+  "famille": "Flexion avant",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Ischio-jambiers",
+   "Adducteurs",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Montagne",
+   "Demi-pince (dos plat)"
+  ],
+  "contres": [
+   "Montagne",
+   "Pince debout"
+  ],
+  "precautions": "Placer les mains sur des briques ou fléchir légèrement les genoux si les ischio-jambiers sont raides.",
+  "variante_de": "P071"
+ },
+ {
+  "id": "P254",
+  "sanskrit": "Ardha Prasarita Padottanasana",
+  "fr": "Demi-flexion jambes écartées, mains au sol",
+  "en": "Half Feet Spread Out Intense Stretch Pose",
+  "famille": "Flexion avant",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Yoga du dos"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Ischio-jambiers",
+   "Adducteurs",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Montagne",
+   "Demi-pince (dos plat)"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Fléchir légèrement les genoux en cas de raideur des ischio-jambiers.",
+  "variante_de": "P071"
+ },
+ {
+  "id": "P255",
+  "sanskrit": "Urdhva Baddha Hastasana in Vira Parampara",
+  "fr": "Fente haute, mains entrelacées vers le ciel",
+  "en": "Upward Bound Hands Pose in Hero Succession Series",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Psoas / fléchisseurs de hanche",
+   "Quadriceps",
+   "Force des jambes",
+   "Équilibre"
+  ],
+  "preparations": [
+   "Montagne",
+   "Fente haute"
+  ],
+  "contres": [
+   "Montagne",
+   "Pince debout"
+  ],
+  "precautions": "Garder le genou avant aligné au-dessus de la cheville et ne pas cambrer excessivement.",
+  "variante_de": "P064"
+ },
+ {
+  "id": "P256",
+  "sanskrit": "Baddha Hastasana in Vira Parampara",
+  "fr": "Fente haute, mains aux coudes opposés dans le dos",
+  "en": "Hands Bound Pose in Hero Succession Series",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Psoas / fléchisseurs de hanche",
+   "Épaules (ouverture)",
+   "Colonne (extension)",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Montagne",
+   "Fente haute"
+  ],
+  "contres": [
+   "Montagne",
+   "Pince debout"
+  ],
+  "precautions": "Éviter de projeter les côtes flottantes vers l'avant pour protéger les lombaires.",
+  "variante_de": "P064"
+ },
+ {
+  "id": "P257",
+  "sanskrit": "Utthita Parshva Trikonasana",
+  "fr": "Triangle, bras tendu au-dessus de la tête",
+  "en": "Extended Side Triangle Pose",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Ischio-jambiers",
+   "Flancs",
+   "Adducteurs",
+   "Colonne (rotation)"
+  ],
+  "preparations": [
+   "Triangle",
+   "Angle latéral étiré"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Ne pas forcer sur la nuque et placer la main basse sur une brique si nécessaire.",
+  "variante_de": "P067"
+ },
+ {
+  "id": "P258",
+  "sanskrit": "Utthita Parshva Konasana Prep.",
+  "fr": "Angle latéral, genou au sol",
+  "en": "Extended Side Angle Pose Prep.",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Psoas / fléchisseurs de hanche",
+   "Flancs",
+   "Hanches (rotation externe)"
+  ],
+  "preparations": [
+   "Fente basse",
+   "Chat-vache"
+  ],
+  "contres": [
+   "Chien tête en bas",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Placer un coussin sous le genou arrière en cas de sensibilité articulaire.",
+  "variante_de": "P069"
+ },
+ {
+  "id": "P259",
+  "sanskrit": "Dwi Hasta Utthita Viparita Virabhadrasana Prep.",
+  "fr": "Guerrier inversé genou au sol, bras tendus",
+  "en": "Both Arms Extended Reverse Warrior Pose Prep.",
+  "famille": "Flexion latérale",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Flancs",
+   "Psoas / fléchisseurs de hanche",
+   "Colonne (extension)"
+  ],
+  "preparations": [
+   "Fente basse",
+   "Chat-vache"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Chien tête en bas"
+  ],
+  "precautions": "Protéger le genou arrière avec un support doux et ne pas pincer le bas du dos.",
+  "variante_de": "P061"
+ },
+ {
+  "id": "P260",
+  "sanskrit": "Virabhadrasana 1 Prep.",
+  "fr": "Guerrier I jambes tendues, mains en prière",
+  "en": "Warrior 1 Prep.",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Ischio-jambiers",
+   "Chevilles / pieds",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Montagne",
+   "Pyramide"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Garder les deux hanches orientées vers l'avant sans forcer sur le genou arrière.",
+  "variante_de": "P059"
+ },
+ {
+  "id": "P261",
+  "sanskrit": "Parighasana",
+  "fr": "Porte, main au pied",
+  "en": "Gate Pose",
+  "famille": "Flexion latérale",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Flancs",
+   "Ischio-jambiers",
+   "Adducteurs"
+  ],
+  "preparations": [
+   "Porte",
+   "Étirement latéral assis"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Diamant (assis sur les talons)"
+  ],
+  "precautions": "Ne pas comprimer le flanc inférieur et protéger le genou au sol.",
+  "variante_de": "P171"
+ },
+ {
+  "id": "P262",
+  "sanskrit": "Utthita Parshva Pada Upaveshasana",
+  "fr": "Fente latérale haute, mains jointes",
+  "en": "Extended Leg to the Side Squat Pose",
+  "famille": "Ouverture de hanches",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Adducteurs",
+   "Quadriceps",
+   "Force des jambes",
+   "Hanches (rotation externe)"
+  ],
+  "preparations": [
+   "Déesse",
+   "Fente latérale"
+  ],
+  "contres": [
+   "Montagne",
+   "Pince debout"
+  ],
+  "precautions": "Garder le talon de la jambe pliée au sol ou caler une brique en dessous si raideur.",
+  "variante_de": "P066"
+ },
+ {
+  "id": "P263",
+  "sanskrit": "Utkatasana",
+  "fr": "Chaise haute, mains jointes",
+  "en": "Fierce Pose",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Quadriceps",
+   "Fessiers",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Montagne",
+   "Bras levés"
+  ],
+  "contres": [
+   "Montagne",
+   "Pince debout"
+  ],
+  "precautions": "Ne pas laisser les genoux dépasser la pointe des pieds ni trop cambrer.",
+  "variante_de": "P056"
+ },
+ {
+  "id": "P264",
+  "sanskrit": "Hasta Garudasana in Ardha Uttanasana",
+  "fr": "Demi-pince genoux fléchis, bras d'aigle",
+  "en": "Pose",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Yoga du dos"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Épaules (ouverture)",
+   "Dos (mobilité)",
+   "Ischio-jambiers"
+  ],
+  "preparations": [
+   "Montagne",
+   "Aigle"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Relâcher la nuque et plier généreusement les genoux pour ménager les lombaires.",
+  "variante_de": "P053"
+ },
+ {
+  "id": "P265",
+  "sanskrit": "Parivritta Utkatasana",
+  "fr": "Chaise en torsion, pieds écartés",
+  "en": "Revolved Fierce Pose",
+  "famille": "Torsion",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Colonne (rotation)",
+   "Quadriceps",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Chaise",
+   "Demi-torsion assise"
+  ],
+  "contres": [
+   "Montagne",
+   "Pince debout"
+  ],
+  "precautions": "Veiller à garder les deux genoux alignés sur le même plan horizontal.",
+  "variante_de": "P057"
+ },
+ {
+  "id": "P266",
+  "sanskrit": "Malasana",
+  "fr": "Guirlande, avant-bras au sol",
+  "en": "Garland Pose",
+  "famille": "Ouverture de hanches",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Yin"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Adducteurs",
+   "Chevilles / pieds",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Guirlande (accroupi)",
+   "Papillon (assis droit)"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Chien tête en bas"
+  ],
+  "precautions": "Placer une cale sous les talons si la flexion de cheville est restreinte.",
+  "variante_de": "P041"
+ },
+ {
+  "id": "P267",
+  "sanskrit": "Malasana",
+  "fr": "Guirlande sur la pointe des pieds",
+  "en": "Garland Pose",
+  "famille": "Ouverture de hanches",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Chevilles / pieds",
+   "Équilibre",
+   "Hanches (rotation externe)"
+  ],
+  "preparations": [
+   "Guirlande (accroupi)",
+   "Montagne"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Chien tête en bas"
+  ],
+  "precautions": "Fixer un point au sol pour stabiliser l'équilibre et éviter les à-coups aux chevilles.",
+  "variante_de": "P041"
+ },
+ {
+  "id": "P268",
+  "sanskrit": "Ardha Matsyendrasana 1",
+  "fr": "Préparation demi-torsion assise",
+  "en": "Half Lord of the Fishes Pose 1 Prep.",
+  "famille": "Torsion",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Colonne (rotation)",
+   "Fessiers",
+   "Hanches (rotation externe)"
+  ],
+  "preparations": [
+   "Bâton",
+   "Rotations du buste assis"
+  ],
+  "contres": [
+   "Bâton",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Allonger la colonne vertébrale à l'inspir avant d'initier la rotation à l'expir.",
+  "variante_de": "P162"
+ },
+ {
+  "id": "P269",
+  "sanskrit": "Baddha Konasana Namaskar",
+  "fr": "Papillon, mains en prière",
+  "en": "Bound Angle Pose with Hands in Prayer",
+  "famille": "Ouverture de hanches",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Prénatal",
+   "Doux / seniors"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Adducteurs",
+   "Périnée"
+  ],
+  "preparations": [
+   "Bâton",
+   "Rotations du buste assis"
+  ],
+  "contres": [
+   "Bâton"
+  ],
+  "precautions": "S'asseoir sur une brique si le bassin bascule vers l'arrière.",
+  "variante_de": "P133"
+ },
+ {
+  "id": "P270",
+  "sanskrit": "Baddha Konasana",
+  "fr": "Papillon en demi-flexion avant",
+  "en": "Bound Angle Pose",
+  "famille": "Ouverture de hanches",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Adducteurs",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Papillon (assis droit)",
+   "Chat-vache"
+  ],
+  "contres": [
+   "Bâton",
+   "Table inversée"
+  ],
+  "precautions": "Maintenir un auto-grandissement du buste sans forcer l'arrondi du dos.",
+  "variante_de": "P133"
+ },
+ {
+  "id": "P271",
+  "sanskrit": "Upavishta Konasana",
+  "fr": "Angle assis, mains en prière",
+  "en": "Seated Angle Pose",
+  "famille": "Assise",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Adducteurs",
+   "Ischio-jambiers",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Bâton",
+   "Papillon (assis droit)"
+  ],
+  "contres": [
+   "Bâton",
+   "Papillon (assis droit)"
+  ],
+  "precautions": "Garder les orteils pointés vers le haut pour protéger les genoux.",
+  "variante_de": "P124"
+ },
+ {
+  "id": "P272",
+  "sanskrit": "Dandasana",
+  "fr": "Bâton, mains en arrière",
+  "en": "Staff Pose",
+  "famille": "Assise",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Épaules (ouverture)",
+   "Colonne (extension)",
+   "Ischio-jambiers"
+  ],
+  "preparations": [
+   "Bâton",
+   "Chat-vache"
+  ],
+  "contres": [
+   "Pince assise"
+  ],
+  "precautions": "Éviter d'hyper-étendre les coudes et modérer la pression sur les poignets.",
+  "variante_de": "P020"
+ },
+ {
+  "id": "P273",
+  "sanskrit": "Parivritta Dandasana",
+  "fr": "Bâton en torsion",
+  "en": "Revolved Staff Pose",
+  "famille": "Torsion",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Colonne (rotation)",
+   "Ischio-jambiers",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Bâton",
+   "Rotations du buste assis"
+  ],
+  "contres": [
+   "Bâton"
+  ],
+  "precautions": "Maintenir les talons ancrés et le bassin fixe pendant la rotation.",
+  "variante_de": "P020"
+ },
+ {
+  "id": "P274",
+  "sanskrit": "Sukha Matsyendrasana Prep.",
+  "fr": "Demi-torsion facile, préparation",
+  "en": "Easy Lord of the Fishes Pose Prep.",
+  "famille": "Torsion",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Colonne (rotation)",
+   "Fessiers",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Bâton",
+   "Chat-vache"
+  ],
+  "contres": [
+   "Bâton",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Garder le pied au sol bien à plat et ne pas forcer la rotation cervicale.",
+  "variante_de": "P162"
+ },
+ {
+  "id": "P275",
+  "sanskrit": "Janu Shirshasana Prep.",
+  "fr": "Tête au genou, préparation",
+  "en": "Head to Knee Pose Prep.",
+  "famille": "Assise",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Ischio-jambiers",
+   "Hanches (rotation externe)",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Bâton",
+   "Papillon (assis droit)"
+  ],
+  "contres": [
+   "Bâton"
+  ],
+  "precautions": "S'asseoir sur un support si le bassin bascule vers l'arrière.",
+  "variante_de": "P119"
+ },
+ {
+  "id": "P276",
+  "sanskrit": "Dwi Hasta Kulpa Janu Shirshasana",
+  "fr": "Tête au genou, mains à la cheville",
+  "en": "Both Hands to Ankle Head to Knee Pose",
+  "famille": "Flexion avant",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Ischio-jambiers",
+   "Hanches (rotation externe)",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Bâton",
+   "Tête au genou"
+  ],
+  "contres": [
+   "Table inversée",
+   "Bâton"
+  ],
+  "precautions": "Initier la flexion depuis les hanches en gardant le dos allongé.",
+  "variante_de": "P119"
+ },
+ {
+  "id": "P277",
+  "sanskrit": "Parivritta Janu Shirshasana Prep.",
+  "fr": "Tête au genou en torsion, préparation",
+  "en": "Revolved Head to Knee Pose Prep.",
+  "famille": "Flexion latérale",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Flancs",
+   "Colonne (rotation)",
+   "Ischio-jambiers"
+  ],
+  "preparations": [
+   "Tête au genou",
+   "Étirement latéral assis"
+  ],
+  "contres": [
+   "Bâton"
+  ],
+  "precautions": "Conserver les deux ischions bien ancrés au sol pendant la rotation.",
+  "variante_de": "P120"
+ },
+ {
+  "id": "P278",
+  "sanskrit": "Dwi Hasta Shirsha Parshva Janu Shirshasana",
+  "fr": "Tête au genou latérale, mains à la tête",
+  "en": "Both Hands to the Head Sideways Head to Knee Pose",
+  "famille": "Flexion latérale",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Flancs",
+   "Épaules (ouverture)",
+   "Ischio-jambiers"
+  ],
+  "preparations": [
+   "Tête au genou",
+   "Étirement latéral assis"
+  ],
+  "contres": [
+   "Bâton"
+  ],
+  "precautions": "Ouvrir la poitrine vers le plafond sans tirer sur la nuque avec les mains.",
+  "variante_de": "P120"
+ },
+ {
+  "id": "P279",
+  "sanskrit": "Prapada Virasana",
+  "fr": "Héros sur les pointes de pieds",
+  "en": "Tip Toe Hero Pose",
+  "famille": "Assise",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Yin",
+   "Doux / seniors"
+  ],
+  "phase": "Échauffement",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Chevilles / pieds",
+   "Quadriceps"
+  ],
+  "preparations": [
+   "Orteils (yin)"
+  ],
+  "contres": [
+   "Diamant (assis sur les talons)"
+  ],
+  "precautions": "Placer une couverture sous les genoux ou s'asseoir sur une brique en cas de gêne.",
+  "variante_de": "P019"
+ },
+ {
+  "id": "P280",
+  "sanskrit": "Virasana",
+  "fr": "Héros, chevilles adaptées",
+  "en": "Hero Pose",
+  "famille": "Assise",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Quadriceps",
+   "Chevilles / pieds"
+  ],
+  "preparations": [
+   "Diamant (assis sur les talons)"
+  ],
+  "contres": [
+   "Bâton"
+  ],
+  "precautions": "Placer une brique sous les fessiers ou un rouleau sous les chevilles en cas de douleur aux genoux.",
+  "variante_de": "P019"
+ },
+ {
+  "id": "P281",
+  "sanskrit": "Pada Gomukhasana",
+  "fr": "Tête de vache, jambes seules",
+  "en": "Leg Position of Cow Face Pose",
+  "famille": "Ouverture de hanches",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Yin"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Fessiers"
+  ],
+  "preparations": [
+   "Papillon (assis droit)"
+  ],
+  "contres": [
+   "Bâton"
+  ],
+  "precautions": "S'asseoir sur une brique si les deux ischions ne touchent pas le sol.",
+  "variante_de": "P139"
+ },
+ {
+  "id": "P282",
+  "sanskrit": "Sukha Navasana",
+  "fr": "Bateau facile, genoux fléchis et bras autour des tibias",
+  "en": "Easy Boat Pose",
+  "famille": "Gainage",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Bâton"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Maintenir le dos droit et éviter d'arrondir excessivement les lombaires.",
+  "variante_de": "P090"
+ },
+ {
+  "id": "P283",
+  "sanskrit": "Sukha Navasana",
+  "fr": "Bateau facile, orteils au sol",
+  "en": "Easy Boat Pose",
+  "famille": "Gainage",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Psoas / fléchisseurs de hanche"
+  ],
+  "preparations": [
+   "Bâton"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Garder la poitrine ouverte sans tasser le bas du dos.",
+  "variante_de": "P090"
+ },
+ {
+  "id": "P284",
+  "sanskrit": "Uttana Manibandha Bitilasana",
+  "fr": "Vache avec étirement intense des poignets",
+  "en": "Intense Wrist Stretch Cow Pose",
+  "famille": "Mobilisation",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Yoga du dos"
+  ],
+  "phase": "Échauffement",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Poignets",
+   "Colonne (extension)"
+  ],
+  "preparations": [
+   "Chat-vache"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Réduire la pression sur les mains en cas de syndrome du canal carpien.",
+  "variante_de": "P024"
+ },
+ {
+  "id": "P285",
+  "sanskrit": "Vyaghrasana",
+  "fr": "Tigre dos neutre",
+  "en": "Tiger Pose",
+  "famille": "Gainage",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Yoga du dos"
+  ],
+  "phase": "Échauffement",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Fessiers",
+   "Force des bras"
+  ],
+  "preparations": [
+   "Chien-oiseau (à 4 pattes, bras et jambe opposés)"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Garder le bassin aligné et ne pas cambrer excessivement le bas du dos.",
+  "variante_de": "P043"
+ },
+ {
+  "id": "P286",
+  "sanskrit": "Vasishtasana",
+  "fr": "Planche latérale sur l'avant-bras, pied d'appui avant",
+  "en": "Pose Dedicated to Sage Vasishta",
+  "famille": "Gainage",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Flancs",
+   "Force des bras"
+  ],
+  "preparations": [
+   "Planche sur avant-bras"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Aligner le coude sous l'épaule pour protéger l'articulation.",
+  "variante_de": "P088"
+ },
+ {
+  "id": "P287",
+  "sanskrit": "Adho Mukha Makarasana",
+  "fr": "Planche dauphin",
+  "en": "Downward Facing Pose Dedicated to Makara",
+  "famille": "Gainage",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Épaules (ouverture)",
+   "Force des bras"
+  ],
+  "preparations": [
+   "Dauphin"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Éviter de creuser les lombaires en maintenant le nombril aspiré vers la colonne.",
+  "variante_de": "P087"
+ },
+ {
+  "id": "P288",
+  "sanskrit": "Makarasana",
+  "fr": "Crocodile, bras tendus devant",
+  "en": "Pose Dedicated to Makara—Prone Modification",
+  "famille": "Relaxation",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Retour au calme",
+  "respirations": 6,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Détente",
+   "Respiration"
+  ],
+  "preparations": [
+   "Sphinx"
+  ],
+  "contres": [],
+  "precautions": "Relâcher totalement les tensions lombaires et cervicales.",
+  "variante_de": "P161"
+ },
+ {
+  "id": "P289",
+  "sanskrit": "Makarasana",
+  "fr": "Crocodile avec appui tête",
+  "en": "Pose Dedicated to Makara",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Sivananda",
+   "Doux / seniors"
+  ],
+  "phase": "Retour au calme",
+  "respirations": 6,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Colonne (extension)",
+   "Détente"
+  ],
+  "preparations": [
+   "Sphinx"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Ne pas forcer sur la nuque si des douleurs cervicales apparaissent.",
+  "variante_de": "P161"
+ },
+ {
+  "id": "P290",
+  "sanskrit": "Urdhva Mukha Shvanasana",
+  "fr": "Chien tête en haut genoux au sol",
+  "en": "Upward Facing Dog Pose",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Colonne (extension)",
+   "Épaules (ouverture)",
+   "Psoas / fléchisseurs de hanche"
+  ],
+  "preparations": [
+   "Cobra"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Presser fermement dans les mains et dégager la tête des épaules.",
+  "variante_de": "P144"
+ },
+ {
+  "id": "P291",
+  "sanskrit": "Uttana Shvanakasana",
+  "fr": "Chiot pouces au haut du dos",
+  "en": "Intense Extended Puppy Dog Pose",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Yin"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Épaules (ouverture)",
+   "Colonne (extension)"
+  ],
+  "preparations": [
+   "Chiot (cœur fondant)"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Éviter si douleur aiguë aux épaules ou aux triceps.",
+  "variante_de": "P132"
+ },
+ {
+  "id": "P292",
+  "sanskrit": "Ardha Purvottanasana",
+  "fr": "Table inversée, doigts vers l'arrière",
+  "en": "Half Eastern Intense Stretch Pose",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Épaules (ouverture)",
+   "Force des bras",
+   "Fessiers"
+  ],
+  "preparations": [
+   "Table inversée"
+  ],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Adapter l'orientation des mains si les poignets sont sensibles.",
+  "variante_de": "P094"
+ },
+ {
+  "id": "P293",
+  "sanskrit": "Sukha Matsyasana",
+  "fr": "Poisson sur les avant-bras, tête libre",
+  "en": "Easy Fish Pose",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors"
+  ],
+  "phase": "Retour au calme",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Épaules (ouverture)",
+   "Colonne (extension)",
+   "Respiration"
+  ],
+  "preparations": [
+   "Pont"
+  ],
+  "contres": [
+   "Genoux poitrine"
+  ],
+  "precautions": "Garder le menton légèrement rentré pour ne pas comprimer les cervicales.",
+  "variante_de": "P156"
+ },
+ {
+  "id": "P294",
+  "sanskrit": "Adho Mukha Parshva Eka Padasana",
+  "fr": "Posture à plat ventre, une jambe sur le côté",
+  "en": "Downward Facing One Leg to the Side Pose",
+  "famille": "Allongée",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Yin",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 6,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Hanches (rotation externe)",
+   "Adducteurs",
+   "Détente"
+  ],
+  "preparations": [
+   "Sphinx",
+   "Crocodile"
+  ],
+  "contres": [
+   "Crocodile",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Placer un coussin sous le genou fléchi en cas de sensibilité articulaire.",
+  "variante_de": null
+ },
+ {
+  "id": "P295",
+  "sanskrit": "Anantasana",
+  "fr": "Allongé sur le côté, tête soutenue",
+  "en": "Infinity Pose",
+  "famille": "Allongée",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Flancs",
+   "Équilibre",
+   "Sangle abdominale"
+  ],
+  "preparations": [
+   "Montagne",
+   "Bâton"
+  ],
+  "contres": [
+   "Relaxation finale",
+   "Bascule du bassin allongée"
+  ],
+  "precautions": "Garder le bassin perpendiculaire au sol sans basculer vers l'arrière.",
+  "variante_de": null
+ },
+ {
+  "id": "P296",
+  "sanskrit": "Utthita Hasta Padangushtasana in Anantasana",
+  "fr": "Posture de Vishnou (Anantasana)",
+  "en": "Extended Hand to Big Toe Pose in Infinity Pose",
+  "famille": "Allongée",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Ischio-jambiers",
+   "Adducteurs",
+   "Équilibre",
+   "Flancs"
+  ],
+  "preparations": [
+   "Étirement de la jambe allongé",
+   "Allongé sur le côté, tête soutenue"
+  ],
+  "contres": [
+   "Bébé heureux",
+   "Relaxation finale"
+  ],
+  "precautions": "Utiliser une sangle autour du pied si les ischio-jambiers manquent de souplesse.",
+  "variante_de": null
+ },
+ {
+  "id": "P297",
+  "sanskrit": "Supta Eka Hasta Padasana",
+  "fr": "Étirement du quadriceps allongé",
+  "en": "Reclined One Hand to Foot Pose",
+  "famille": "Allongée",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Yin",
+   "Doux / seniors"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Quadriceps",
+   "Psoas / fléchisseurs de hanche"
+  ],
+  "preparations": [
+   "Crocodile",
+   "Sphinx"
+  ],
+  "contres": [
+   "Genoux poitrine",
+   "Bébé heureux"
+  ],
+  "precautions": "Éviter de cambrer le bas du dos en plaquant le pubis vers le sol.",
+  "variante_de": null
+ },
+ {
+  "id": "P298",
+  "sanskrit": "Stiti Utthita Vayu Muktyasana",
+  "fr": "Genou à la poitrine debout",
+  "en": "Standing Rising Wind Relieving Pose",
+  "famille": "Équilibre",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Équilibre",
+   "Force des jambes",
+   "Psoas / fléchisseurs de hanche"
+  ],
+  "preparations": [
+   "Montagne"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Fixer un point immobile et s'aider d'un mur si l'équilibre est précaire.",
+  "variante_de": null
+ },
+ {
+  "id": "P299",
+  "sanskrit": "Stiti Eka Pada Virasana",
+  "fr": "Étirement du quadriceps debout",
+  "en": "Standing One-Legged Hero Pose",
+  "famille": "Équilibre",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Quadriceps",
+   "Psoas / fléchisseurs de hanche",
+   "Équilibre"
+  ],
+  "preparations": [
+   "Montagne"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Garder le bassin neutre sans cambrer et fléchir légèrement le genou d'appui.",
+  "variante_de": null
+ },
+ {
+  "id": "P300",
+  "sanskrit": "Urdhva Prasarita Ekapadasana",
+  "fr": "Grand écart debout, une main à la cheville",
+  "en": "One Leg Stretched Upward Pose",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Ashtanga"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Ischio-jambiers",
+   "Équilibre",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Pince debout",
+   "Guerrier III"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Garder la jambe d'appui souple pour protéger l'articulation du genou.",
+  "variante_de": null
+ },
+ {
+  "id": "P301",
+  "sanskrit": "Ardha Urdhva Prasarita Ekapadasana",
+  "fr": "Demi-grand écart debout, bouts des doigts au sol",
+  "en": "Half One Leg Stretched Upward Pose",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Ischio-jambiers",
+   "Équilibre",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Demi-pince (dos plat)"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Utiliser des briques sous les mains pour maintenir la colonne étirée.",
+  "variante_de": null
+ },
+ {
+  "id": "P302",
+  "sanskrit": "Prapadasana",
+  "fr": "Équilibre sur la pointe des pieds",
+  "en": "Tip Toe Pose",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Équilibre",
+   "Chevilles / pieds",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Guirlande (accroupi)"
+  ],
+  "contres": [
+   "Pince debout"
+  ],
+  "precautions": "Déconseillé en cas de douleur aiguë aux genoux ou aux orteils.",
+  "variante_de": null
+ },
+ {
+  "id": "P303",
+  "sanskrit": "Eka Hasta Pada Utthita Stiti Eka Pada Bhekasana",
+  "fr": "Grenouille debout sur une jambe",
+  "en": "One Hand to Foot Rising Standing One-Legged Frog Pose",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Quadriceps",
+   "Équilibre",
+   "Épaules (ouverture)",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Montagne",
+   "Arbre"
+  ],
+  "contres": [
+   "Pince debout",
+   "Montagne"
+  ],
+  "precautions": "Éviter en cas de douleur au genou ou d'instabilité de la cheville d'appui.",
+  "variante_de": null
+ },
+ {
+  "id": "P304",
+  "sanskrit": "Urdhva Prasarita Ekapadasana Prep.",
+  "fr": "Grand écart debout fléchi (préparation)",
+  "en": "One Leg Stretched Upward Pose Prep.",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Ischio-jambiers",
+   "Fessiers",
+   "Force des jambes",
+   "Équilibre"
+  ],
+  "preparations": [
+   "Demi-pince (dos plat)",
+   "Pince debout"
+  ],
+  "contres": [
+   "Montagne",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Poser les mains sur des briques si le sol est difficile à atteindre sans arrondir le dos.",
+  "variante_de": null
+ },
+ {
+  "id": "P305",
+  "sanskrit": "Parivritta Namaskar Stiti Utthita Vayu Muktyasana",
+  "fr": "Torsion debout genou levé, prière",
+  "en": "Revolved Prayer Standing Rising Wind Relieving Pose",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Équilibre",
+   "Colonne (rotation)",
+   "Fessiers",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Montagne",
+   "Arbre"
+  ],
+  "contres": [
+   "Montagne",
+   "Pince debout"
+  ],
+  "precautions": "Fixer un point au sol pour stabiliser l'équilibre et maintenir le bassin de face.",
+  "variante_de": null
+ },
+ {
+  "id": "P306",
+  "sanskrit": "Utthita Ekapadasana",
+  "fr": "Jambe levée devant, mains aux hanches",
+  "en": "Extended One Foot Pose",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Ashtanga"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Quadriceps",
+   "Psoas / fléchisseurs de hanche",
+   "Équilibre"
+  ],
+  "preparations": [
+   "Montagne",
+   "Arbre"
+  ],
+  "contres": [
+   "Montagne",
+   "Pince debout"
+  ],
+  "precautions": "Garder la colonne longue sans pencher le buste en arrière.",
+  "variante_de": null
+ },
+ {
+  "id": "P307",
+  "sanskrit": "Prapadasana",
+  "fr": "Équilibre sur les orteils, bouts des doigts au sol",
+  "en": "Tip Toe Pose",
+  "famille": "Équilibre",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Chevilles / pieds",
+   "Équilibre",
+   "Force des jambes"
+  ],
+  "preparations": [
+   "Montagne",
+   "Guirlande (accroupi)"
+  ],
+  "contres": [
+   "Montagne",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Attention en cas de fragilité des orteils ou des genoux, poser les mains sur des briques.",
+  "variante_de": null
+ },
+ {
+  "id": "P308",
+  "sanskrit": "Prapadasana Namaskar",
+  "fr": "Équilibre sur les orteils, mains en prière buste penché",
+  "en": "Tip Toe Pose with Hands in Prayer",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Chevilles / pieds",
+   "Équilibre",
+   "Force des jambes",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Guirlande (accroupi)",
+   "Chaise"
+  ],
+  "contres": [
+   "Montagne",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Éviter en cas de blessure aiguë au tendon d'Achille ou aux genoux.",
+  "variante_de": null
+ },
+ {
+  "id": "P309",
+  "sanskrit": "Prapadasana",
+  "fr": "Équilibre sur les orteils, bras tendus devant",
+  "en": "Tip Toe Pose",
+  "famille": "Équilibre",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Chevilles / pieds",
+   "Équilibre",
+   "Force des jambes",
+   "Sangle abdominale"
+  ],
+  "preparations": [
+   "Chaise",
+   "Montagne"
+  ],
+  "contres": [
+   "Montagne",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Maintenir un point fixe du regard pour stabiliser le centre de gravité.",
+  "variante_de": null
+ },
+ {
+  "id": "P310",
+  "sanskrit": "Upavishta Prapadasana",
+  "fr": "Squat sur la pointe des pieds, coudes sur les genoux",
+  "en": "Seated Tip Toe Pose",
+  "famille": "Équilibre",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Chevilles / pieds",
+   "Hanches (rotation externe)",
+   "Équilibre"
+  ],
+  "preparations": [
+   "Guirlande (accroupi)",
+   "Papillon (assis droit)"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Bâton"
+  ],
+  "precautions": "Prudence en cas de ménisque fragile ou d'arthrose sévère du genou.",
+  "variante_de": null
+ },
+ {
+  "id": "P311",
+  "sanskrit": "Salamba Upavishta Prapadasana",
+  "fr": "Squat sur les orteils soutenu, doigts au sol",
+  "en": "Supported Seated Tip Toe Pose",
+  "famille": "Équilibre",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Chevilles / pieds",
+   "Force des jambes",
+   "Équilibre"
+  ],
+  "preparations": [
+   "Montagne",
+   "Guirlande (accroupi)"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Montagne"
+  ],
+  "precautions": "Prendre appui sur des briques pour soulager la pression dans les genoux.",
+  "variante_de": null
+ },
+ {
+  "id": "P312",
+  "sanskrit": "Hasta Padasana Prep.",
+  "fr": "Préparation au pistolet squat, bras tendus devant",
+  "en": "Hand to Foot Pose Squatting Prep.",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Debout",
+  "respirations": 4,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Chaise",
+  "zones": [
+   "Force des jambes",
+   "Quadriceps",
+   "Équilibre",
+   "Sangle abdominale"
+  ],
+  "preparations": [
+   "Chaise",
+   "Bateau"
+  ],
+  "contres": [
+   "Montagne",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Déconseillé en cas de douleur fémoro-patellaire ; s'aider d'une chaise pour amortir la flexion.",
+  "variante_de": null
+ },
+ {
+  "id": "P313",
+  "sanskrit": "Salamba Prapadasana",
+  "fr": "Équilibre sur les orteils soutenu",
+  "en": "Supported Tip Toe Pose",
+  "famille": "Équilibre",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Doux / seniors"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Chevilles / pieds",
+   "Hanches (rotation externe)",
+   "Équilibre"
+  ],
+  "preparations": [
+   "Guirlande (accroupi)",
+   "Montagne"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Bâton"
+  ],
+  "precautions": "Garder le poids réparti équitablement sur la racine des orteils.",
+  "variante_de": null
+ },
+ {
+  "id": "P314",
+  "sanskrit": "Prapadasana",
+  "fr": "Équilibre sur la pointe des pieds, coudes joints",
+  "en": "Tip Toe Pose",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Chevilles / pieds",
+   "Hanches (rotation externe)",
+   "Équilibre",
+   "Épaules (ouverture)"
+  ],
+  "preparations": [
+   "Guirlande (accroupi)",
+   "Chaise"
+  ],
+  "contres": [
+   "Montagne",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Conserver le buste érigé et engager le plancher pelvien pour tenir la posture.",
+  "variante_de": null
+ },
+ {
+  "id": "P315",
+  "sanskrit": "Urdhva Hasta Prapadasana",
+  "fr": "Équilibre sur la pointe des pieds, bras levés",
+  "en": "Upward Hands Tip Toe Pose",
+  "famille": "Équilibre",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Chevilles / pieds",
+   "Hanches (rotation externe)",
+   "Équilibre",
+   "Colonne (extension)"
+  ],
+  "preparations": [
+   "Bras levés",
+   "Guirlande (accroupi)"
+  ],
+  "contres": [
+   "Montagne",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Ne pas cambrer exagérément les lombaires en ouvrant la poitrine vers le haut.",
+  "variante_de": null
+ },
+ {
+  "id": "P316",
+  "sanskrit": "Eka Pada Urdhva Prasarita Padasana",
+  "fr": "Une jambe levée sur le dos",
+  "en": "One-Legged Upward Extended Legs Pose",
+  "famille": "Gainage",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Sivananda",
+   "Doux / seniors"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Ischio-jambiers"
+  ],
+  "preparations": [
+   "Étirement de la jambe allongé"
+  ],
+  "contres": [
+   "Genoux poitrine"
+  ],
+  "precautions": "Plaquer le bas du dos au sol lors du mouvement.",
+  "variante_de": null
+ },
+ {
+  "id": "P317",
+  "sanskrit": "Jatharasana",
+  "fr": "Relevé de jambes au sol",
+  "en": "Abdominal Lift Pose",
+  "famille": "Gainage",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Sivananda",
+   "Power yoga"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Psoas / fléchisseurs de hanche"
+  ],
+  "preparations": [
+   "Gainage du transverse allongé (expiration)"
+  ],
+  "contres": [
+   "Genoux poitrine"
+  ],
+  "precautions": "Placer les mains sous les fessiers pour éviter de cambrer les lombaires.",
+  "variante_de": null
+ },
+ {
+  "id": "P318",
+  "sanskrit": "Urdhva Prasarita Padasana",
+  "fr": "Jambes tendues à la verticale au sol",
+  "en": "Upward Extended Legs Pose",
+  "famille": "Gainage",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Sangle",
+  "zones": [
+   "Sangle abdominale",
+   "Ischio-jambiers"
+  ],
+  "preparations": [
+   "Étirement de la jambe allongé"
+  ],
+  "contres": [
+   "Genoux poitrine"
+  ],
+  "precautions": "Fléchir légèrement les genoux si les ischio-jambiers tirent excessivement.",
+  "variante_de": null
+ },
+ {
+  "id": "P319",
+  "sanskrit": "Supta Jathara Garudasana",
+  "fr": "Crunch coudes aux genoux en aigle",
+  "en": "Reclining Abdominal Lift Pose Dedicated to Garuda",
+  "famille": "Gainage",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Hanches (rotation externe)"
+  ],
+  "preparations": [
+   "Aigle"
+  ],
+  "contres": [
+   "Genoux poitrine"
+  ],
+  "precautions": "Éviter de tirer sur la nuque avec les mains pendant la flexion.",
+  "variante_de": null
+ },
+ {
+  "id": "P320",
+  "sanskrit": "Anantasana",
+  "fr": "Élévation latérale de la jambe couchée",
+  "en": "Infinity Pose",
+  "famille": "Gainage",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Doux / seniors"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Flancs",
+   "Fessiers",
+   "Équilibre"
+  ],
+  "preparations": [
+   "Planche latérale genou au sol"
+  ],
+  "contres": [
+   "Genoux poitrine"
+  ],
+  "precautions": "Garder le corps sur une seule ligne sans rouler vers l'arrière.",
+  "variante_de": null
+ },
+ {
+  "id": "P321",
+  "sanskrit": "Bala Shalabhasana",
+  "fr": "Bébé sauterelle",
+  "en": "Baby Grasshopper Pose",
+  "famille": "Équilibre sur les bras",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Pic",
+  "respirations": 4,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Force des bras",
+   "Poignets",
+   "Hanches (rotation externe)",
+   "Colonne (rotation)"
+  ],
+  "preparations": [
+   "Lézard",
+   "Fente en torsion"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Bâton"
+  ],
+  "precautions": "Éviter en cas de traumatisme au poignet ou à l'articulation de la hanche.",
+  "variante_de": null
+ },
+ {
+  "id": "P322",
+  "sanskrit": "Dwi Pada Jathara Urdhva Prasarita Padasana",
+  "fr": "Relevé de jambes avec brique",
+  "en": "Two-Legged Abdominal Lift Upward Extended Legs Pose",
+  "famille": "Gainage",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 6,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Sangle abdominale",
+   "Adducteurs",
+   "Psoas / fléchisseurs de hanche"
+  ],
+  "preparations": [
+   "Bascule du bassin allongée",
+   "Bâton"
+  ],
+  "contres": [
+   "Genoux poitrine",
+   "Papillon allongé"
+  ],
+  "precautions": "Plaquer le bas du dos au sol et fléchir légèrement les genoux si les lombaires décollent.",
+  "variante_de": null
+ },
+ {
+  "id": "P323",
+  "sanskrit": "Supta Jathara Garudasana",
+  "fr": "Relevé de bassin jambes d'aigle au sol",
+  "en": "Reclining Abdominal Lift Pose Dedicated to Garuda",
+  "famille": "Gainage",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Power yoga"
+  ],
+  "phase": "Sol",
+  "respirations": 6,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Sangle abdominale",
+   "Fessiers",
+   "Adducteurs"
+  ],
+  "preparations": [
+   "Bascule du bassin allongée",
+   "Aigle"
+  ],
+  "contres": [
+   "Genoux poitrine",
+   "Relaxation finale"
+  ],
+  "precautions": "Ne pas tirer sur la nuque avec les mains et engager les abdominaux profonds sur l'expiration.",
+  "variante_de": null
+ },
+ {
+  "id": "P324",
+  "sanskrit": "Eka Hasta Bhujasana",
+  "fr": "Trompe d'éléphant",
+  "en": "One Leg Over Shoulder Pose",
+  "famille": "Équilibre sur les bras",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Ashtanga",
+   "Power yoga"
+  ],
+  "phase": "Pic",
+  "respirations": 4,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Force des bras",
+   "Poignets",
+   "Sangle abdominale",
+   "Hanches (rotation externe)"
+  ],
+  "preparations": [
+   "Bâton",
+   "Lézard"
+  ],
+  "contres": [
+   "Posture de l'enfant",
+   "Bâton"
+  ],
+  "precautions": "Ne pas pratiquer en cas de lésion aux poignets ou de déchirure aux ischio-jambiers.",
+  "variante_de": null
+ },
+ {
+  "id": "P325",
+  "sanskrit": "Anantasana",
+  "fr": "Gainage latéral au sol, jambes décollées",
+  "en": "Infinity Pose",
+  "famille": "Gainage",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Iyengar",
+   "Power yoga"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Flancs",
+   "Sangle abdominale",
+   "Adducteurs",
+   "Équilibre"
+  ],
+  "preparations": [
+   "Allongé sur le côté, tête soutenue",
+   "Planche latérale"
+  ],
+  "contres": [
+   "Relaxation finale",
+   "Posture de l'enfant"
+  ],
+  "precautions": "Maintenir l'alignement tête-bassin-pieds sans rouler vers l'avant ou l'arrière.",
+  "variante_de": null
+ },
+ {
+  "id": "P326",
+  "sanskrit": "Ashva Sanchalanasana",
+  "fr": "Fente du cavalier",
+  "en": "Equestrian Riding Horse Pose",
+  "famille": "Debout",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa"
+  ],
+  "phase": "Debout",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Psoas / fléchisseurs de hanche",
+   "Force des jambes",
+   "Hanches (rotation externe)"
+  ],
+  "preparations": [
+   "Chien tête en bas"
+  ],
+  "contres": [
+   "Montagne"
+  ],
+  "precautions": "Éviter si douleur aiguë aux genoux ou aux ischio-jambiers.",
+  "variante_de": null
+ },
+ {
+  "id": "P327",
+  "sanskrit": "Chalanasana",
+  "fr": "Barattage (rotation du buste en tailleur)",
+  "en": "Churning Pose",
+  "famille": "Mobilisation",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Kundalini"
+  ],
+  "phase": "Centrage",
+  "respirations": 10,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Respiration",
+   "Détente"
+  ],
+  "preparations": [],
+  "contres": [],
+  "precautions": "Utiliser un support sous les fessiers si le bas du dos s'arrondit.",
+  "variante_de": null
+ },
+ {
+  "id": "P328",
+  "sanskrit": "Hindolasana",
+  "fr": "Berceau, jambe tendue",
+  "en": "Baby Cradle Pose",
+  "famille": "Ouverture de hanches",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Yin",
+   "Restauratif"
+  ],
+  "phase": "Sol",
+  "respirations": 8,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Hanches (rotation externe)",
+   "Détente"
+  ],
+  "preparations": [
+   "Genoux poitrine"
+  ],
+  "contres": [
+   "Genoux poitrine"
+  ],
+  "precautions": "Garder le sacrum et les épaules bien à plat sur le sol.",
+  "variante_de": null
+ },
+ {
+  "id": "P329",
+  "sanskrit": "Hindolasana",
+  "fr": "Berceau (jambe bercée)",
+  "en": "Baby Cradle Pose",
+  "famille": "Ouverture de hanches",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Yin"
+  ],
+  "phase": "Sol",
+  "respirations": 8,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Sangle",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Détente"
+  ],
+  "preparations": [
+   "Genoux poitrine"
+  ],
+  "contres": [
+   "Genoux poitrine"
+  ],
+  "precautions": "Ne pas forcer sur l'ouverture des genoux.",
+  "variante_de": null
+ },
+ {
+  "id": "P330",
+  "sanskrit": "Akarna Dhanurasana Prep.",
+  "fr": "Tir à l'arc assis, préparation",
+  "en": "Archer’s Pose Prep.",
+  "famille": "Ouverture de hanches",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Ischio-jambiers",
+   "Épaules (ouverture)",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Bâton",
+   "Papillon (assis droit)"
+  ],
+  "contres": [
+   "Bâton",
+   "Pince assise"
+  ],
+  "precautions": "Garder la colonne vertébrale droite sans s'affaisser vers l'arrière.",
+  "variante_de": null
+ },
+ {
+  "id": "P331",
+  "sanskrit": "Akarna Dhanurasana",
+  "fr": "Posture du tir à l'arc assis",
+  "en": "Archer’s Pose",
+  "famille": "Ouverture de hanches",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Ashtanga",
+   "Iyengar"
+  ],
+  "phase": "Pic",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Ischio-jambiers",
+   "Épaules (ouverture)",
+   "Force des bras"
+  ],
+  "preparations": [
+   "Tir à l'arc assis, préparation",
+   "Pince assise"
+  ],
+  "contres": [
+   "Bâton",
+   "Pince assise"
+  ],
+  "precautions": "Ne pas forcer sur le genou si la hanche manque d'ouverture.",
+  "variante_de": null
+ },
+ {
+  "id": "P332",
+  "sanskrit": "Hindolasana Prep.",
+  "fr": "Berceau de jambe, mains à l'arrière",
+  "en": "Baby Cradle Pose Prep.",
+  "famille": "Ouverture de hanches",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 6,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Hanches (rotation externe)",
+   "Fessiers",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Papillon (assis droit)",
+   "Bâton"
+  ],
+  "contres": [
+   "Bâton",
+   "Papillon allongé"
+  ],
+  "precautions": "Conserver le pied levé flexe pour protéger les ligaments du genou.",
+  "variante_de": null
+ },
+ {
+  "id": "P333",
+  "sanskrit": "Hindolasana Prep.",
+  "fr": "Berceau de jambe, doigts croisés sous le pied",
+  "en": "Baby Cradle Pose Prep.",
+  "famille": "Ouverture de hanches",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Fessiers",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Papillon (assis droit)",
+   "Bébé heureux"
+  ],
+  "contres": [
+   "Bâton",
+   "Pince assise"
+  ],
+  "precautions": "Garder le pied fléchi pour stabiliser le genou et veiller à maintenir la colonne droite.",
+  "variante_de": null
+ },
+ {
+  "id": "P334",
+  "sanskrit": "Surya Yantrasana 2 Prep.",
+  "fr": "Boussole, préparation",
+  "en": "Sundial Pose 2 Prep.",
+  "famille": "Ouverture de hanches",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Ischio-jambiers",
+   "Épaules (ouverture)",
+   "Colonne (rotation)"
+  ],
+  "preparations": [
+   "Papillon (assis droit)",
+   "Tête au genou"
+  ],
+  "contres": [
+   "Demi-torsion assise",
+   "Bâton"
+  ],
+  "precautions": "Éviter de forcer sur l'épaule ou le genou en cas de raideur importante des ischio-jambiers.",
+  "variante_de": null
+ },
+ {
+  "id": "P335",
+  "sanskrit": "Anantasana",
+  "fr": "Anantasana, genou à l'épaule",
+  "en": "Infinity Pose",
+  "famille": "Ouverture de hanches",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Équilibre",
+   "Sangle abdominale"
+  ],
+  "preparations": [
+   "Bébé heureux",
+   "Étirement de la jambe allongé"
+  ],
+  "contres": [
+   "Sauterelle",
+   "Sphinx"
+  ],
+  "precautions": "Maintenir le bassin empilé sur la tranche sans basculer en arrière et ne pas casser la nuque.",
+  "variante_de": null
+ },
+ {
+  "id": "P336",
+  "sanskrit": "Anantasana",
+  "fr": "Posture sur le coude, jambe croisée devant",
+  "en": "Infinity Pose",
+  "famille": "Ouverture de hanches",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Doux / seniors",
+   "Yoga du dos"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": null,
+  "zones": [
+   "Hanches (rotation externe)",
+   "Fessiers",
+   "Flancs"
+  ],
+  "preparations": [
+   "Étirement latéral assis",
+   "Livre ouvert (rotation thoracique couchée)"
+  ],
+  "contres": [
+   "Crocodile",
+   "Sphinx"
+  ],
+  "precautions": "Repousser activement le sol avec le coude de soutien pour ne pas tasser l'épaule et le cou.",
+  "variante_de": null
+ },
+ {
+  "id": "P337",
+  "sanskrit": "Supta Hindolasana",
+  "fr": "Berceau allongé",
+  "en": "Reclined Baby Cradle Pose",
+  "famille": "Ouverture de hanches",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Restauratif"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Hanches (rotation externe)",
+   "Fessiers",
+   "Détente"
+  ],
+  "preparations": [
+   "Bébé heureux",
+   "Pigeon allongé (chiffre 4)"
+  ],
+  "contres": [
+   "Pont",
+   "Genoux poitrine"
+  ],
+  "precautions": "Conserver le pied fléchi pour protéger l'articulation du genou et garder les épaules au sol.",
+  "variante_de": null
+ },
+ {
+  "id": "P338",
+  "sanskrit": "Ashtangasana",
+  "fr": "Huit points (genoux, poitrine, menton)",
+  "en": "Eight Limbs Pose",
+  "famille": "Extension",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Ashtanga"
+  ],
+  "phase": "Échauffement",
+  "respirations": 6,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Colonne (extension)",
+   "Dos (mobilité)"
+  ],
+  "preparations": [],
+  "contres": [
+   "Posture de l'enfant"
+  ],
+  "precautions": "Éviter en cas de hernie discale aiguë ou de sensibilité cervicale excessive.",
+  "variante_de": null
+ },
+ {
+  "id": "P339",
+  "sanskrit": "Sasangasana",
+  "fr": "Lapin",
+  "en": "Rabbit Pose",
+  "famille": "Flexion avant",
+  "niveau": 1,
+  "styles": [
+   "Hatha",
+   "Yin",
+   "Restauratif"
+  ],
+  "phase": "Retour au calme",
+  "respirations": 10,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": "Brique",
+  "zones": [
+   "Détente",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Chat-vache"
+  ],
+  "contres": [
+   "Chien tête en haut"
+  ],
+  "precautions": "Éviter en cas de problèmes graves aux genoux ou d'hypertension.",
+  "variante_de": null
+ },
+ {
+  "id": "P340",
+  "sanskrit": "Ardha Gomukha Paschimottanasana Prep.",
+  "fr": "Demi-tête de vache en pince, préparation",
+  "en": "Half Cow Face Western Intense Stretch Pose Prep.",
+  "famille": "Flexion avant",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Brique",
+  "zones": [
+   "Ischio-jambiers",
+   "Fessiers",
+   "Hanches (rotation externe)",
+   "Dos (mobilité)"
+  ],
+  "preparations": [
+   "Bâton",
+   "Tête de vache"
+  ],
+  "contres": [
+   "Table inversée",
+   "Planche inversée"
+  ],
+  "precautions": "Surélever le bassin sur un support en cas de tension dans le bas du dos ou le genou fléchi.",
+  "variante_de": null
+ },
+ {
+  "id": "P341",
+  "sanskrit": "Ardha Gomukha Paschimottanasana",
+  "fr": "Demi-tête de vache en pince",
+  "en": "Half Cow Face Western Intense Stretch Pose",
+  "famille": "Flexion avant",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Ashtanga",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": true,
+  "accessoires": "Sangle",
+  "zones": [
+   "Ischio-jambiers",
+   "Fessiers",
+   "Dos (mobilité)",
+   "Hanches (rotation externe)"
+  ],
+  "preparations": [
+   "Bâton",
+   "Tête au genou"
+  ],
+  "contres": [
+   "Table inversée",
+   "Planche inversée"
+  ],
+  "precautions": "Privilégier l'allongement de la colonne plutôt que la descente de la tête vers le genou.",
+  "variante_de": null
+ },
+ {
+  "id": "P342",
+  "sanskrit": "Baddha Hasta Sasangasana",
+  "fr": "Lièvre, mains liées",
+  "en": "Rabbit Pose",
+  "famille": "Flexion avant",
+  "niveau": 2,
+  "styles": [
+   "Hatha",
+   "Vinyasa",
+   "Iyengar"
+  ],
+  "phase": "Sol",
+  "respirations": 5,
+  "minutes": null,
+  "cotes": false,
+  "accessoires": null,
+  "zones": [
+   "Dos (mobilité)",
+   "Nuque",
+   "Épaules (ouverture)",
+   "Sangle abdominale"
+  ],
+  "preparations": [
+   "Posture de l'enfant",
+   "Chat-vache"
+  ],
+  "contres": [
+   "Poisson",
+   "Chameau"
+  ],
+  "precautions": "Ne pas écraser les cervicales : le poids du corps doit rester soutenu par les genoux et les tibias.",
+  "variante_de": null
  }
 ]

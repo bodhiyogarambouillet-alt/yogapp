@@ -53,8 +53,10 @@ create table if not exists public.postures (
   preparations  text[] not null default '{}',
   contres       text[] not null default '{}',
   precautions   text,
+  variante_de   text,                            -- ID de la posture dont celle-ci est une variante
   maj_le        timestamptz not null default now()
 );
+alter table public.postures add column if not exists variante_de text;
 alter table public.postures enable row level security;
 
 drop policy if exists "postures : lecture publique" on public.postures;

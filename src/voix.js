@@ -135,6 +135,10 @@ export const NIVEAUX_VOIX = [
 const CLE_AUTO = 'yoga:voix-auto';
 export const voixAuto = () => { try { return localStorage.getItem(CLE_AUTO) === 'oui'; } catch { return false; } };
 export const enregistrerVoixAuto = (oui) => { try { localStorage.setItem(CLE_AUTO, oui ? 'oui' : 'non'); } catch { /* stockage indisponible */ } };
+// Savasana accompagné pendant la relaxation finale (avec la voix guide) : activé sauf si on le coupe
+const CLE_SAVASANA = 'yoga:savasana';
+export const savasanaGuide = () => { try { return localStorage.getItem(CLE_SAVASANA) !== 'non'; } catch { return true; } };
+export const enregistrerSavasana = (oui) => { try { localStorage.setItem(CLE_SAVASANA, oui ? 'oui' : 'non'); } catch { /* stockage indisponible */ } };
 export const niveauVoix = () => (voixAuto() ? 'nom' : 'non');
 export const dernierNiveauVoix = () => 'nom';
 export const enregistrerNiveauVoix = () => { try { localStorage.removeItem('yoga:voix'); } catch { /* stockage indisponible */ } };
@@ -204,4 +208,4 @@ export function taire() {
 }
 
 // Annonce d'une posture, en segments (voir voix-texte.js)
-export { segmentsAnnonce, PHRASES_FIXES } from './voix-texte.js';
+export { segmentsAnnonce, PHRASES_FIXES, textesSavasana, planSavasana, estRelaxationFinale } from './voix-texte.js';

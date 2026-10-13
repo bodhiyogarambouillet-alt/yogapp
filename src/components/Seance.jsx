@@ -9,7 +9,7 @@ import { useRetour } from '../natif.js';
 import { Retour, Remplacer, Attention, Valide, Points, Exporter, Etincelle, Fermer, Lecture } from './Icones.jsx';
 import { exporterSeance } from '../export.js';
 import { alerter } from './Dialogue.jsx';
-import { horsLigne, telechargerVoix, segmentsAnnonce, PHRASES_FIXES } from '../voix.js';
+import { horsLigne, telechargerVoix, segmentsAnnonce, PHRASES_FIXES, savasanaGuide, textesSavasana } from '../voix.js';
 import { obtenirFiche } from '../stockage.js';
 
 // Durées plus compactes dans la liste (le détail reste dans la fiche)
@@ -103,6 +103,7 @@ function HorsLigne({ seance }) {
       precedente = ph.phase;
     }));
     textes.push(PHRASES_FIXES.changer, PHRASES_FIXES.fin);
+    if (savasanaGuide() && seance.phases.some((ph) => ph.phase === 'Relaxation' && ph.items.length)) textes.push(...textesSavasana());
     setProgres({ texte: 'Voix', fait: 0, total: textes.length });
     const { manquants } = await telechargerVoix(seance.uid, textes, (p) => setProgres({ texte: 'Voix', ...p }));
     setEtat(horsLigne(seance.uid));
@@ -217,7 +218,7 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
         <div className="voile" onClick={() => !exportEnCours && setExportOuvert(false)}>
           <div className="feuille" role="dialog" aria-label="Exporter la séance" onClick={(e) => e.stopPropagation()}>
             <h2>Exporter la séance</h2>
-            {[['texte', 'Texte', 'À coller dans un message ou une note'], ['pdf', 'PDF', 'À imprimer ou à envoyer'], ['image', 'Image', 'Une image à partager']].map(([f, titre, aide]) => (
+            {[['fiche', 'Fiche à imprimer', 'Une page A4 avec pictos, à poser au bord du tapis'], ['texte', 'Texte', 'À coller dans un message ou une note'], ['pdf', 'PDF', 'À imprimer ou à envoyer'], ['image', 'Image', 'Une image à partager']].map(([f, titre, aide]) => (
               <button type="button" key={f} className="choix-export" disabled={Boolean(exportEnCours)}
                 onClick={async () => {
                   setExportEnCours(f);

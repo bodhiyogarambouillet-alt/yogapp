@@ -7,6 +7,7 @@ import { Share } from '@capacitor/share';
 import { nom, nomSecondaire, PAR_ID, variantesDe } from './bibliotheque.js';
 import { dateDe, dateLisible } from './dates.js';
 import { estNatif } from './natif.js';
+import { IMAGES } from './components/Picto.jsx';
 
 // ---------- Contenu commun ----------
 
@@ -87,6 +88,185 @@ export async function pdfSeance(seance) {
       if (p.note) ecrire(p.note, { taille: 10, couleur: [107, 94, 85], retrait: 6 });
     }
   }
+  return doc.output('blob');
+}
+
+// ---------- Fiche à imprimer (A4, pictos, deux colonnes) ----------
+
+const charger = (src) => new Promise((ok) => {
+  const img = new Image();
+  img.onload = () => ok(img);
+  img.onerror = () => ok(null);
+  img.src = src;
+});
+
+// Dessine la fiche sur une page A4 (150 ppp) ; le texte rétrécit si la séance est longue, pour tenir sur une page
+async function canvasFiche(seance) {
+  await document.fonts?.ready;
+  const c = contenu(seance);
+  const W = 1240;
+  const H = 1754;
+  const M = 80;
+  const GOUTTIERE = 48;
+  const COUL = { fond: '#FFFFFF', bande: '#F3ECE1', texte: '#2E2622', doux: '#6B5E55', accent: '#A9472A', trait: '#DDCFBC' };
+  const TITRE = "'Marcellus', Georgia, serif";
+  const CORPS = "'Karla', system-ui, sans-serif";
+  const familles = [...new Set(seance.phases.flatMap((ph) => ph.items.map((it) => it.posture.famille)))];
+  const images = Object.fromEntries(await Promise.all(familles.map(async (f) => [f, await charger(IMAGES[f] || IMAGES.Debout)])));
+  const mesure = document.createElement('canvas').getContext('2d');
+  const couper = (texte, police, max) => {
+    mesure.font = police;
+    const lignes = [];
+    let ligne = '';
+    for (const mot of (texte || '').split(/\s+/).filter(Boolean)) {
+      const essai = ligne ? `${ligne} ${mot}` : mot;
+      if (mesure.measureText(essai).width > max && ligne) { lignes.push(ligne); ligne = mot; } else ligne = essai;
+    }
+    if (ligne) lignes.push(ligne);
+    return lignes;
+  };
+
+  // En-tête (hauteur fixe d'après son contenu)
+  const lignesTitre = couper(c.titre, `52px ${TITRE}`, W - M * 2);
+  const lignesIntention = couper(c.intention, `italic 24px ${CORPS}`, W - M * 2);
+  const hautEntete = lignesTitre.length * 62 + 40 + (c.intention ? lignesIntention.length * 34 + 16 : 0) + 36;
+  const largeurCol = (W - M * 2 - GOUTTIERE) / 2;
+
+  // Blocs de chaque colonne à une échelle donnée : en-tête de phase et lignes de postures
+  const blocsA = (k) => {
+    const pic = Math.round(64 * k);
+    const blocs = [];
+    for (const [i, ph] of seance.phases.filter((x) => x.items.length).entries()) {
+      blocs.push({ type: 'phase', titre: ph.phase, minutes: ph.minutes, h: Math.round(56 * k) + (i ? Math.round(18 * k) : 0), haut: i ? Math.round(18 * k) : 0 });
+      for (const it of ph.items) {
+        const max = largeurCol - pic - Math.round(110 * k);
+        const nomL = couper(nom(it.posture), `700 ${Math.round(24 * k)}px ${CORPS}`, max);
+        const sec = nomSecondaire(it.posture);
+        const details = [sec, it.note, variantesDe(it).length ? `Variantes : ${variantesDe(it).map(nom).join(', ')}` : ''].filter(Boolean).join(' · ');
+        const detL = couper(details, `${Math.round(19 * k)}px ${CORPS}`, max);
+        const hTexte = nomL.length * Math.round(30 * k) + detL.length * Math.round(25 * k);
+        blocs.push({ type: 'posture', it, nomL, detL, pic, h: Math.max(pic, hTexte) + Math.round(16 * k) });
+      }
+    }
+    return blocs;
+  };
+  // Répartit les blocs en colonnes (une en-tête de phase n'est jamais laissée seule en bas de colonne)
+  const repartir = (blocs, hauteurDispo) => {
+    const cols = [[]];
+    let y = 0;
+    let phase = null;
+    blocs.forEach((b, i) => {
+      if (b.type === 'phase') phase = b;
+      const suivant = b.type === 'phase' ? (blocs[i + 1]?.h || 0) : 0;
+      if (y + b.h + suivant > hauteurDispo && cols.at(-1).length) {
+        cols.push([]);
+        y = 0;
+        // Phase coupée entre deux colonnes : son titre est rappelé en haut de la suivante
+        if (b.type === 'posture') {
+          const rappel = { ...phase, titre: `${phase.titre} (suite)`, h: phase.h - phase.haut, haut: 0 };
+          cols.at(-1).push(rappel);
+          y += rappel.h;
+        }
+      }
+      cols.at(-1).push(b);
+      y += b.h;
+    });
+    return cols;
+  };
+  const hauteurDispo = H - M - hautEntete - M + 20;
+  let k = 1;
+  let cols = repartir(blocsA(k), hauteurDispo);
+  while (cols.length > 2 && k > 0.62) { k -= 0.04; cols = repartir(blocsA(k), hauteurDispo); }
+
+  const pages = [];
+  for (let p = 0; p < Math.max(1, Math.ceil(cols.length / 2)); p++) {
+    const canvas = document.createElement('canvas');
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = COUL.fond;
+    ctx.fillRect(0, 0, W, H);
+    let y0 = M;
+    if (p === 0) {
+      let y = M + 44;
+      ctx.fillStyle = COUL.accent;
+      ctx.font = `52px ${TITRE}`;
+      for (const l of lignesTitre) { ctx.fillText(l, M, y); y += 62; }
+      ctx.fillStyle = COUL.doux;
+      ctx.font = `600 22px ${CORPS}`;
+      ctx.fillText([c.infos, c.date].filter(Boolean).join('  ·  '), M, y - 18);
+      y += 14;
+      if (c.intention) {
+        ctx.fillStyle = COUL.texte;
+        ctx.font = `italic 24px ${CORPS}`;
+        for (const l of lignesIntention) { ctx.fillText(l, M, y); y += 34; }
+      }
+      y0 = M + hautEntete;
+      ctx.strokeStyle = COUL.trait;
+      ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(M, y0 - 24); ctx.lineTo(W - M, y0 - 24); ctx.stroke();
+    }
+    cols.slice(p * 2, p * 2 + 2).forEach((col, ci) => {
+      const x = M + ci * (largeurCol + GOUTTIERE);
+      let y = y0;
+      for (const b of col) {
+        if (b.type === 'phase') {
+          const h = b.h - b.haut;
+          const yb = y + b.haut;
+          ctx.fillStyle = COUL.bande;
+          ctx.beginPath(); ctx.roundRect(x, yb, largeurCol, h - Math.round(10 * k), 12); ctx.fill();
+          ctx.fillStyle = COUL.accent;
+          ctx.font = `${Math.round(26 * k)}px ${TITRE}`;
+          const base = yb + (h - Math.round(10 * k)) / 2 + Math.round(9 * k);
+          ctx.fillText(b.titre, x + 18, base);
+          ctx.fillStyle = COUL.doux;
+          ctx.font = `600 ${Math.round(20 * k)}px ${CORPS}`;
+          ctx.textAlign = 'right';
+          ctx.fillText(`${b.minutes} min`, x + largeurCol - 18, base);
+          ctx.textAlign = 'left';
+        } else {
+          const { it, pic } = b;
+          const img = images[it.posture.famille];
+          if (img) ctx.drawImage(img, x + 4, y, pic, pic);
+          const xt = x + pic + Math.round(18 * k);
+          let yt = y + Math.round(24 * k);
+          ctx.fillStyle = it.role === 'cible' ? COUL.accent : COUL.texte;
+          ctx.font = `700 ${Math.round(24 * k)}px ${CORPS}`;
+          for (const l of b.nomL) { ctx.fillText(l, xt, yt); yt += Math.round(30 * k); }
+          ctx.fillStyle = COUL.doux;
+          ctx.font = `${Math.round(19 * k)}px ${CORPS}`;
+          for (const l of b.detL) { ctx.fillText(l, xt, yt - Math.round(4 * k)); yt += Math.round(25 * k); }
+          // Durée (et côtés) alignée à droite
+          ctx.textAlign = 'right';
+          ctx.fillStyle = COUL.texte;
+          ctx.font = `700 ${Math.round(21 * k)}px ${CORPS}`;
+          ctx.fillText(it.duree || '', x + largeurCol - 4, y + Math.round(24 * k));
+          if (it.posture.cotes) {
+            ctx.fillStyle = COUL.accent;
+            ctx.font = `600 ${Math.round(17 * k)}px ${CORPS}`;
+            ctx.fillText('D + G', x + largeurCol - 4, y + Math.round(48 * k));
+          }
+          ctx.textAlign = 'left';
+          ctx.strokeStyle = COUL.trait;
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(xt, y + b.h - Math.round(8 * k)); ctx.lineTo(x + largeurCol, y + b.h - Math.round(8 * k)); ctx.stroke();
+        }
+        y += b.h;
+      }
+    });
+    pages.push(canvas);
+  }
+  return pages;
+}
+
+export async function ficheSeance(seance) {
+  const { jsPDF } = await import('jspdf');
+  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+  const pages = await canvasFiche(seance);
+  pages.forEach((canvas, i) => {
+    if (i) doc.addPage();
+    doc.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', 0, 0, 210, 297);
+  });
   return doc.output('blob');
 }
 
@@ -210,7 +390,7 @@ async function partagerFichier(blob, nomF, titre) {
   telecharger(blob, nomF);
 }
 
-// format : 'texte' | 'pdf' | 'image'
+// format : 'fiche' | 'texte' | 'pdf' | 'image'
 export async function exporterSeance(seance, format) {
   const titre = contenu(seance).titre;
   if (format === 'texte') {
@@ -218,6 +398,7 @@ export async function exporterSeance(seance, format) {
     if (estNatif) { await Share.share({ title: titre, text: texte, dialogTitle: 'Exporter la séance' }); return; }
     return partagerFichier(new Blob([texte], { type: 'text/plain;charset=utf-8' }), nomFichier(seance, 'txt'), titre);
   }
+  if (format === 'fiche') return partagerFichier(await ficheSeance(seance), nomFichier(seance, 'pdf').replace(/\.pdf$/, '-fiche.pdf'), titre);
   if (format === 'pdf') return partagerFichier(await pdfSeance(seance), nomFichier(seance, 'pdf'), titre);
   return partagerFichier(await imageSeance(seance), nomFichier(seance, 'png'), titre);
 }

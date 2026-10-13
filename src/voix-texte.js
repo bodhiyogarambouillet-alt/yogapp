@@ -9,6 +9,35 @@ export const VOIX_DEFAUT = 'Aoede';
 export const TON_VOIX = "Lis ce texte en français, d'une voix calme, douce et posée de professeure de yoga, avec de courtes pauses entre les phrases. Prononce les noms sanskrits des postures correctement, à l'indienne :";
 
 export const ROLES_VOIX = { preparation: 'Préparation.', cible: 'Posture cible.', contre: 'Contre-posture.' };
+// Savasana accompagné : détente guidée pendant la relaxation finale (balayage du corps, puis retour)
+export const SAVASANA = {
+  detente: [
+    "Installez-vous confortablement sur le dos. Laissez les bras s'éloigner un peu du corps, paumes tournées vers le ciel. Fermez doucement les yeux.",
+    "Laissez le souffle redevenir naturel. Il n'y a plus rien à faire, simplement observer.",
+    'Portez votre attention sur vos pieds. Laissez-les s\'ouvrir et devenir lourds. Relâchez les chevilles, les mollets, les genoux.',
+    "Sentez l'arrière des cuisses se poser dans le sol. Le bassin s'abandonne, le bas du dos s'étale.",
+    'Relâchez le ventre. À chaque expiration, il devient plus doux, plus calme.',
+    "Laissez la poitrine s'ouvrir. Les épaules glissent loin des oreilles. Les bras sont lourds, jusqu'au bout des doigts.",
+    "Relâchez la nuque, la mâchoire, la langue. Détendez les yeux, le front, l'espace entre les sourcils.",
+    'Tout le corps est lourd et détendu. Restez ici, dans le silence, simplement présent.',
+  ],
+  retour: [
+    'Doucement, approfondissez votre respiration. Bougez les doigts et les orteils.',
+    "Étirez-vous comme vous en avez besoin, puis roulez sur le côté droit. Prenez votre temps avant de revenir en position assise.",
+  ],
+};
+export const textesSavasana = () => [...SAVASANA.detente, ...SAVASANA.retour];
+// Moments où dire chaque texte (en secondes depuis le début de la posture), selon sa durée
+export function planSavasana(secondes) {
+  if (secondes < 90) return [];
+  const debut = 20;
+  const finDetente = secondes - 70;
+  const ecart = Math.max(25, (finDetente - debut) / (SAVASANA.detente.length - 1));
+  const plan = SAVASANA.detente.map((texte, k) => ({ t: debut + k * ecart, texte })).filter((x) => x.t <= finDetente);
+  return [...plan, { t: secondes - 50, texte: SAVASANA.retour[0] }, { t: secondes - 28, texte: SAVASANA.retour[1] }];
+}
+export const estRelaxationFinale = (etape) => etape?.phase === 'Relaxation';
+
 export const PHRASES_FIXES = { cote: 'Côté droit.', changer: 'Changez de côté. Côté gauche.', fin: 'Séance terminée. Namasté.' };
 
 export const phrase = (t) => {

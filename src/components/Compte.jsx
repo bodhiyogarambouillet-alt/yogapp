@@ -4,7 +4,7 @@ import { connexionParMotDePasse, connexionGoogle, deconnexion } from '../supabas
 import { Retour, Oeil, OeilBarre, Google } from './Icones.jsx';
 import { etatSpotify, surSpotify, connecterSpotify, deconnecterSpotify } from '../spotify.js';
 import { alerter } from './Dialogue.jsx';
-import { voixAuto, enregistrerVoixAuto } from '../voix.js';
+import { voixAuto, enregistrerVoixAuto, savasanaGuide, enregistrerSavasana } from '../voix.js';
 
 // Écran « Compte » : connexion administrateur, déconnexion et transfert des séances de l'appareil
 
@@ -91,6 +91,8 @@ function Spotify() {
 function GuideAudio() {
   const [auto, setAuto] = useState(voixAuto);
   const changer = (oui) => { enregistrerVoixAuto(oui); setAuto(oui); };
+  const [savasana, setSavasana] = useState(savasanaGuide);
+  const changerSavasana = (oui) => { enregistrerSavasana(oui); setSavasana(oui); };
   return (
     <div className="carte carte-compte">
       <h2>Guide audio</h2>
@@ -98,7 +100,12 @@ function GuideAudio() {
         <span>Lancer le guide audio au début de la séance</span>
         <input type="checkbox" role="switch" className="interrupteur" checked={auto} onChange={(e) => changer(e.target.checked)} />
       </label>
-      <p className="aide">{auto ? 'La voix démarre dès l\'ouverture de la séance (elle se coupe toujours depuis le lecteur).' : 'La voix reste coupée au départ : on l\'active depuis le lecteur de la séance.'} Réglage propre à cet appareil.</p>
+      <p className="aide">{auto ? 'La voix démarre dès l\'ouverture de la séance (elle se coupe toujours depuis le lecteur).' : 'La voix reste coupée au départ : on l\'active depuis le lecteur de la séance.'} </p>
+      <label className="reglage">
+        <span>Accompagner la relaxation finale (Savasana)</span>
+        <input type="checkbox" role="switch" className="interrupteur" checked={savasana} onChange={(e) => changerSavasana(e.target.checked)} />
+      </label>
+      <p className="aide">{savasana ? 'Avec la voix activée, une détente guidée accompagne la relaxation de fin de séance, puis le retour.' : 'La relaxation finale se fait en silence.'} Réglages propres à cet appareil.</p>
     </div>
   );
 }

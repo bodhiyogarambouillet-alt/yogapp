@@ -31,4 +31,6 @@ export const Google = () => (
 );
 export const Exporter = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M12 3v12" /><path d="M7 8l5-5 5 5" /><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" /></svg>;
 export const Utilisateur = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><circle cx="12" cy="8.5" r="3.8" /><path d="M4.5 20a7.5 7.5 0 0 1 15 0" /></svg>;
+export const Agrandir = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M4 9V4h5" /><path d="M20 9V4h-5" /><path d="M4 15v5h5" /><path d="M20 15v5h-5" /></svg>;
+export const Reduire = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M9 4v5H4" /><path d="M15 4v5h5" /><path d="M9 20v-5H4" /><path d="M15 20v-5h5" /></svg>;
 export const Note = () => <svg width="18" height="18" viewBox="0 0 24 24" {...base} strokeWidth="1.8"><path d="M9 18V5l11-2v13" /><circle cx="6.5" cy="18" r="2.5" /><circle cx="17.5" cy="16" r="2.5" /></svg>;

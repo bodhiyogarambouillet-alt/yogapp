@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Picto from './Picto.jsx';
 import { nom, nomSecondaire, variantesDe } from '../bibliotheque.js';
-import { Fermer, Lecture, Pause, Suivant, Precedent, Attention } from './Icones.jsx';
+import { Fermer, Lecture, Pause, Suivant, Precedent, Attention, Agrandir, Reduire } from './Icones.jsx';
+import { DisqueSouffle, ChoixRythme, rythmeMemorise, memoriserRythme } from './Souffle.jsx';
 import { obtenirFiche } from '../stockage.js';
 import { useRetour, vibrer } from '../natif.js';
 import { useMusiqueLive, CarteMorceau } from './MusiqueLive.jsx';
 import { confirmer } from './Dialogue.jsx';
-import { NIVEAUX_VOIX, niveauVoix, dernierNiveauVoix, enregistrerNiveauVoix, parler, taire, segmentsAnnonce, preparerVoix, PHRASES_FIXES, contexteAudio } from '../voix.js';
+import { NIVEAUX_VOIX, niveauVoix, dernierNiveauVoix, enregistrerNiveauVoix, parler, taire, segmentsAnnonce, preparerVoix, PHRASES_FIXES, contexteAudio, savasanaGuide, textesSavasana, planSavasana, estRelaxationFinale } from '../voix.js';
 
 // Fiches « Comment faire ? » de la séance : chargées à la demande (posture en cours + suivante), gardées en mémoire
 function useFiches(seance) {
@@ -152,6 +153,35 @@ export default function Live({ seance, onQuitter }) {
   const etape = etapes[index];
   const suivante = etapes[index + 1];
 
+  // Respiration guidée : ouverte d'office sur les postures de respiration, à la demande sur les autres
+  const [souffle, setSouffle] = useState(null); // rythme en cours, ou null
+  useEffect(() => { setSouffle(etape?.posture.famille === 'Respiration' ? rythmeMemorise() : null); }, [etape?.id, index]); // eslint-disable-line react-hooks/exhaustive-deps
+  const choisirRythme = (id) => { memoriserRythme(id); setSouffle(id); };
+
+  // Mode cours en salle : grand affichage plein écran, lisible de loin (tablette, vidéoprojecteur)
+  const [salle, setSalle] = useState(false);
+  const basculerSalle = () => {
+    const suivant = !salle;
+    setSalle(suivant);
+    try {
+      if (suivant) document.documentElement.requestFullscreen?.().catch(() => {});
+      else if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+    } catch { /* plein écran indisponible : le grand affichage suffit */ }
+  };
+  useEffect(() => {
+    const sortie = () => { if (!document.fullscreenElement) setSalle(false); };
+    document.addEventListener('fullscreenchange', sortie);
+    return () => {
+      document.removeEventListener('fullscreenchange', sortie);
+      if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+    };
+  }, []);
+
+  // Savasana accompagné : pendant la relaxation finale, la voix guide la détente puis le retour
+  const savasana = useMemo(() => (estRelaxationFinale(etape) && savasanaGuide() ? planSavasana(etape.secondes) : []), [etape]);
+  const savasanaDit = useRef(0); // nombre de textes déjà dits pour la posture en cours
+  useEffect(() => { savasanaDit.current = 0; }, [index]);
+
   // Résumé de la posture en cours, et préchargement de la suivante
   useEffect(() => {
     charger(etape?.id);
@@ -187,6 +217,12 @@ export default function Live({ seance, onQuitter }) {
         allerA(index + 1, true);
         return;
       }
+      // Savasana accompagné : chaque texte à son moment (une pause décale tout, puisque le temps écoulé s'arrête)
+      const ecouleEtape = etape.secondes - r;
+      while (savasana[savasanaDit.current] && ecouleEtape >= savasana[savasanaDit.current].t) {
+        const { texte } = savasana[savasanaDit.current++];
+        if (voixRef.current !== 'non') parler(texte);
+      }
       // Posture des deux côtés : signal à mi-parcours
       if (etape.posture.cotes && !coteSignale.current && r <= etape.secondes / 2) {
         coteSignale.current = true;
@@ -198,7 +234,7 @@ export default function Live({ seance, onQuitter }) {
       setRestant(r);
     }, 250);
     return () => clearInterval(tic);
-  }, [enCours, index, etape, etapes, allerA, sonner]);
+  }, [enCours, index, etape, etapes, allerA, sonner, savasana]);
 
   // Annonce de chaque nouvelle posture pendant que la séance tourne ; pause ou sortie : la voix se tait
   useEffect(() => {
@@ -214,6 +250,7 @@ export default function Live({ seance, onQuitter }) {
   const textesVoix = useMemo(() => (voix === 'non' ? [] : [
     ...etapes.flatMap((e, i) => segmentsAnnonce({ etape: e, nouvellePhase: i === 0 || etapes[i - 1].phase !== e.phase })),
     PHRASES_FIXES.changer, PHRASES_FIXES.fin,
+    ...(savasanaGuide() && etapes.some(estRelaxationFinale) ? textesSavasana() : []),
   ]), [etapes, voix]);
   useEffect(() => {
     if (voix === 'non') return;
@@ -288,12 +325,15 @@ export default function Live({ seance, onQuitter }) {
   const indexPhase = phases.findIndex((ph) => ph.phase === etape.phase);
 
   return (
-    <div className={`ecran live ${enCours ? 'en-cours' : ''}`}>
+    <div className={`ecran live ${enCours ? 'en-cours' : ''} ${salle ? 'salle' : ''}`}>
       <header className="entete compact">
         <button type="button" className="rond" aria-label="Quitter la séance" onClick={quitter}><Fermer /></button>
         <span className="sous">{bulleVoix
           || (preparation && preparation.fait < preparation.total ? `Préparation de la voix… ${preparation.fait}/${preparation.total}` : null)
           || (terminee ? 'Séance terminée' : `${etape.phase} · ${index + 1}/${etapes.length}`)}</span>
+        <span className="live-actions">
+        <button type="button" className="rond salle-bouton" onClick={basculerSalle} aria-pressed={salle}
+          aria-label={salle ? 'Quitter le mode cours en salle' : 'Mode cours en salle (grand écran)'}>{salle ? <Reduire /> : <Agrandir />}</button>
         {/* Pendant la préparation de la voix : ondes qui s'allument tour à tour et anneau qui se remplit */}
         <button type="button" className={`rond voix-bouton ${voix !== 'non' ? 'actif' : ''} ${voixEnPreparation ? 'prepare' : ''}`} onClick={changerVoix}
           style={voixEnPreparation ? { '--avance': `${Math.round((preparation.fait / preparation.total) * 100)}%` } : undefined}
@@ -304,6 +344,7 @@ export default function Live({ seance, onQuitter }) {
             {voix !== 'non' && <path className="voix-onde o2" d="M18.3 6.5a7.5 7.5 0 0 1 0 11" />}
           </svg>
         </button>
+        </span>
       </header>
 
       <div className="live-progression" aria-label={`Séance : ${mmss(ecoule)} sur ${mmss(total)}`}>
@@ -332,7 +373,9 @@ export default function Live({ seance, onQuitter }) {
                 <circle cx="100" cy="100" r={rayon} className="avance-cercle"
                   strokeDasharray={circonference} strokeDashoffset={circonference * (1 - fraction)} />
               </svg>
-              <div className="live-picto"><Picto famille={etape.posture.famille} taille={92} /></div>
+              {souffle
+                ? <DisqueSouffle rythme={souffle} enCours={enCours} />
+                : <div className="live-picto"><Picto famille={etape.posture.famille} taille={92} /></div>}
             </div>
             <div className="live-chrono" role="timer" aria-live="off">{mmss(restant)}</div>
             {cote && <p className="live-cote" key={cote}>{cote}</p>}
@@ -342,6 +385,9 @@ export default function Live({ seance, onQuitter }) {
             {variantesDe(etape).length > 0 && (
               <p className="live-variantes"><strong>Variantes :</strong> {variantesDe(etape).map(nom).join(' · ')}</p>
             )}
+            {souffle
+              ? <ChoixRythme rythme={souffle} onChoisir={choisirRythme} onFermer={() => setSouffle(null)} />
+              : <button type="button" className="souffle-lancer" onClick={() => setSouffle(rythmeMemorise())}>Respiration guidée</button>}
           </section>
 
           <section className="live-resume-bloc">

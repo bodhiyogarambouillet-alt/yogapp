@@ -16,7 +16,7 @@ import allongee from '../assets/pictos/allongee.webp';
 import enchainement from '../assets/pictos/enchainement.webp';
 import relaxation from '../assets/pictos/relaxation.webp';
 
-const IMAGES = {
+export const IMAGES = {
   'Respiration': respiration,
   'Mobilisation': mobilisation,
   'Assise': assise,

@@ -958,3 +958,47 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
 .hors-ligne-barre { position: absolute; left: 0; bottom: 0; height: 3px; width: var(--avance); background: var(--accent); transition: width 0.3s ease; }
 .hors-ligne:disabled { opacity: 1; }
 @media (min-width: 1024px) { .seance-gauche > .hors-ligne { width: 100%; } }
+
+/* Séance en direct : boutons de l'en-tête (mode cours en salle, voix) */
+.live-actions { display: flex; gap: 8px; }
+.salle-bouton { color: var(--texte-doux); }
+.salle-bouton[aria-pressed="true"] { color: var(--accent); }
+
+/* Respiration guidée : disque qui s'ouvre et se referme au centre du cercle */
+.souffle { position: absolute; inset: 22px; display: flex; align-items: center; justify-content: center; }
+.souffle-disque { position: absolute; inset: 0; border-radius: 50%; transform: scale(0.5);
+  background: radial-gradient(circle, #E3C9A8 0%, #EADFCF 62%, rgba(234, 223, 207, 0.45) 100%);
+  box-shadow: 0 0 0 1px rgba(207, 164, 122, 0.35); transition-property: transform; transition-timing-function: ease-in-out; }
+.souffle-texte { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; color: var(--accent); }
+.souffle-texte strong { font-size: 16px; }
+.souffle-texte span { font-family: var(--titre); font-size: 30px; line-height: 1; font-variant-numeric: tabular-nums; }
+.souffle.pause .souffle-texte { color: var(--texte-doux); }
+.souffle-choix { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 12px; }
+.souffle-lancer { margin-top: 12px; min-height: 36px; padding: 0 16px; border: 1.5px solid var(--trait); border-radius: 18px; background: transparent;
+  font-size: 14px; font-weight: 700; color: var(--texte-doux); }
+@media (prefers-reduced-motion: reduce) { .souffle-disque { transition-duration: 0.01s !important; } }
+
+/* Mode cours en salle : grand affichage, lisible de loin ; les détails (résumé, musique) sont masqués */
+.ecran.live.salle { max-width: none; }
+.live.salle .live-resume-bloc, .live.salle .live-musique { display: none; }
+.live.salle .live-cercle { width: min(72vw, 46vh); height: min(72vw, 46vh); }
+.live.salle .live-picto .picto, .live.salle .souffle-texte { transform: scale(1.9); }
+.live.salle .live-chrono { font-size: clamp(64px, 11vh, 150px); }
+.live.salle .live-nom { font-size: clamp(32px, 5.5vh, 72px); }
+.live.salle .live-centre .sous { font-size: clamp(16px, 2.4vh, 28px); }
+.live.salle .live-cote { font-size: clamp(15px, 2.2vh, 26px); padding: 6px 20px; border-radius: 22px; }
+.live.salle .live-note, .live.salle .live-variantes { max-width: 60ch; font-size: clamp(15px, 2.2vh, 26px); }
+.live.salle .live-ensuite { width: 100%; max-width: 760px; margin: 0 auto; }
+.live.salle .live-suivante .ligne-nom { font-size: clamp(16px, 2.4vh, 26px); }
+@media (orientation: landscape) and (min-width: 700px) {
+  /* Paysage : le cercle à gauche, la posture à droite */
+  .live.salle .live-centre { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 6vw; align-items: center; justify-items: start;
+    text-align: left; max-width: 1400px; margin: 0 auto; padding: 3vh 6vw 0; }
+  .live.salle .live-centre > .live-cercle { grid-row: 1 / span 9; width: min(42vw, 58vh); height: min(42vw, 58vh); }
+  .live.salle .live-centre > *:not(.live-cercle) { grid-column: 2; }
+  .live.salle .live-picto .picto, .live.salle .souffle-texte { transform: scale(2.3); }
+  .live.salle .live-chrono { margin-top: 0; }
+  .live.salle .souffle-choix { justify-content: flex-start; }
+  .live.salle .live-ensuite { max-width: 1400px; padding: 3vh 6vw 0; }
+}
+.souffle-choix .badge { padding: 6px 11px; font-size: 13px; }

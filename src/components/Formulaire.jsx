@@ -4,7 +4,7 @@ import { STYLES, DUREES, PAR_ID, nom } from '../bibliotheque.js';
 import { Logo, Retour, Utilisateur } from './Icones.jsx';
 import ChoixCible from './ChoixCible.jsx';
 import { ACCESSOIRES } from '../accessoires.js';
-import { useRetour, vibrer } from '../natif.js';
+import { useRetour } from '../natif.js';
 import { listerSeances } from '../stockage.js';
 import SelecteurSeances from './SelecteurSeances.jsx';
 
@@ -30,7 +30,7 @@ const libelleStyles = (styles) => (styles.length === 0 ? 'Tous styles' : styles.
 const ARCS = [1, 0.8, 0.6, 0.4, 0.2]; // rayons relatifs, de l'extérieur vers le cœur
 // Rendu directement dans <body> : l'écran qui apparaît (animation avec transform) piégerait sinon ce décor fixe
 // dans sa propre boîte le temps de l'animation (cercles visibles dans la colonne avant de se replacer).
-// Toucher le cœur des ronds : des ondes rapides partent du centre, comme un doigt posé sur l'eau.
+// Toucher le cœur des ronds : deux ondes légères partent du centre, comme un doigt posé sur l'eau.
 // Le décor ne reçoit pas les clics (il est derrière le contenu) : on écoute la page et on vérifie
 // que le toucher tombe près du cœur, hors bouton, lien ou champ.
 function useToucherEau(coeur) {
@@ -44,9 +44,8 @@ function useToucherEau(coeur) {
       const d = Math.hypot(e.clientX - r.left, e.clientY - (r.top + rayon));
       if (d > Math.max(rayon * 1.6, 44)) return;
       const id = Date.now();
-      setTouches((t) => [...t.slice(-2), id]);
-      vibrer(12);
-      setTimeout(() => setTouches((t) => t.filter((x) => x !== id)), 1800);
+      setTouches((t) => [...t.slice(-1), id]);
+      setTimeout(() => setTouches((t) => t.filter((x) => x !== id)), 3200);
     };
     document.addEventListener('pointerdown', toucher);
     return () => document.removeEventListener('pointerdown', toucher);
@@ -67,7 +66,7 @@ function FondOndes({ etape, impulsion }) {
         ))}
         {[0, 2.5, 5].map((d) => <div key={d} className="fond-onde" style={{ animationDelay: `${d}s` }} />)}
         <div key={impulsion} className="fond-goutte" />
-        {touches.map((t) => [0, 0.16, 0.32].map((d) => <div key={`${t}-${d}`} className="fond-touche" style={{ animationDelay: `${d}s` }} />))}
+        {touches.map((t) => [0, 0.5].map((d) => <div key={`${t}-${d}`} className="fond-touche" style={{ animationDelay: `${d}s` }} />))}
       </div>
     </div>,
     document.body,

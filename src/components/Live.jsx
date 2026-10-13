@@ -145,7 +145,7 @@ export default function Live({ seance, onQuitter }) {
   const { fiches, charger } = useFiches(seance);
   useEcranAllume(enCours);
   const musique = useMusiqueLive(seance.playlist, enCours, terminee);
-  // Voix guide : niveau mémorisé sur l'appareil (coupée, postures, postures et consignes)
+  // Voix guide : coupée à l'ouverture, activée d'un toucher
   const [voix, setVoix] = useState(niveauVoix);
   const voixRef = useRef(voix);
   voixRef.current = voix;
@@ -211,30 +211,22 @@ export default function Live({ seance, onQuitter }) {
     if (voix === 'non' || annoncee.current === index || !etape) return;
     annoncee.current = index;
     const precedente = etapes[index - 1];
-    parler(segmentsAnnonce({ etape, fiche: fiches[etape.id], nouvellePhase: !precedente || precedente.phase !== etape.phase, niveau: voix }));
-  }, [enCours, index, etape, etapes, fiches, voix]);
+    parler(segmentsAnnonce({ etape, nouvellePhase: !precedente || precedente.phase !== etape.phase }));
+  }, [enCours, index, etape, etapes, voix]);
   useEffect(() => () => taire(), []);
 
-  // Voix naturelle : on charge les fiches de toute la séance, puis on prépare toutes les annonces à l'avance
+  // Voix naturelle : à l'activation, on prépare toutes les annonces de la séance (déjà générées pour la plupart)
   const textesVoix = useMemo(() => (voix === 'non' ? [] : [
-    ...etapes.flatMap((e, i) => segmentsAnnonce({ etape: e, fiche: fiches[e.id], nouvellePhase: i === 0 || etapes[i - 1].phase !== e.phase, niveau: voix })),
+    ...etapes.flatMap((e, i) => segmentsAnnonce({ etape: e, nouvellePhase: i === 0 || etapes[i - 1].phase !== e.phase })),
     PHRASES_FIXES.changer, PHRASES_FIXES.fin,
-  ]), [etapes, fiches, voix]);
-  const [fichesPretes, setFichesPretes] = useState(false);
+  ]), [etapes, voix]);
   useEffect(() => {
-    if (voix === 'non') return undefined;
-    etapes.forEach((e) => charger(e.id));
-    const t = setTimeout(() => setFichesPretes(true), 6000); // au pire, on prépare avec les fiches déjà là
-    return () => clearTimeout(t);
-  }, [voix, etapes, charger]);
-  const toutesChargees = etapes.every((e) => fiches[e.id] !== undefined);
-  useEffect(() => {
-    if (voix === 'non' || !(toutesChargees || fichesPretes)) return;
+    if (voix === 'non') return;
     preparerVoix(textesVoix, setPreparation).finally(() => setTimeout(() => setPreparation(null), 1200));
-  }, [voix, toutesChargees, fichesPretes, textesVoix]);
+  }, [voix, textesVoix]);
 
   const changerVoix = () => {
-    // Depuis « coupée », on revient au dernier niveau utilisé ; sinon on passe au niveau suivant
+    // Coupée ↔ activée
     const i = NIVEAUX_VOIX.findIndex(([n]) => n === voix);
     const [suivant, libelle] = voix === 'non'
       ? NIVEAUX_VOIX.find(([n]) => n === dernierNiveauVoix()) || NIVEAUX_VOIX[1]
@@ -244,7 +236,7 @@ export default function Live({ seance, onQuitter }) {
     setBulleVoix(libelle);
     setTimeout(() => setBulleVoix((b) => (b === libelle ? null : b)), 1800);
     if (suivant === 'non') taire();
-    else if (enCours) { annoncee.current = -1; } // réannonce la posture en cours avec le nouveau niveau
+    else if (enCours) { annoncee.current = -1; } // annonce tout de suite la posture en cours
   };
 
   const basculer = () => {
@@ -314,7 +306,7 @@ export default function Live({ seance, onQuitter }) {
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" />
             {voix === 'non' ? <path d="M16 9.5l5 5M21 9.5l-5 5" /> : <path className="voix-onde o1" d="M15.5 9a4 4 0 0 1 0 6" />}
-            {(voix === 'consignes' || voixEnPreparation) && voix !== 'non' && <path className="voix-onde o2" d="M18.3 6.5a7.5 7.5 0 0 1 0 11" />}
+            {voix !== 'non' && <path className="voix-onde o2" d="M18.3 6.5a7.5 7.5 0 0 1 0 11" />}
           </svg>
         </button>
       </header>

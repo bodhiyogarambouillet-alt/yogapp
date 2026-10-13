@@ -110,17 +110,13 @@ export async function telechargerVoix(uid, textes, progression = () => {}) {
   return { manquants };
 }
 
-// Niveaux de guidage : aucun, nom de la posture seulement, ou nom + consignes
+// Voix guide : coupée ou activée
 export const NIVEAUX_VOIX = [
   ['non', 'Voix coupée'],
-  ['nom', 'Voix : postures'],
-  ['consignes', 'Voix : postures et consignes'],
+  ['nom', 'Voix activée'],
 ];
-// Coupée à chaque ouverture du lecteur : la voix (et la génération des annonces par Gemini) ne démarre
-// que si on l'active pendant la séance. Le dernier niveau choisi est seulement retenu pour la réactivation.
-const CLE = 'yoga:voix-niveau';
 export const niveauVoix = () => 'non';
-export const dernierNiveauVoix = () => { try { return localStorage.getItem(CLE) || 'consignes'; } catch { return 'consignes'; } };
+export const dernierNiveauVoix = () => 'nom';
 export const enregistrerNiveauVoix = (n) => { try { if (n !== 'non') localStorage.setItem(CLE, n); localStorage.removeItem('yoga:voix'); } catch { /* stockage indisponible */ } };
 
 let voixWeb = null;

@@ -8,7 +8,7 @@ import posturesLocales from '../src/data/postures.json' with { type: 'json' };
 import { rest, supabaseConfigure } from './supabase-admin.mjs'; // charge aussi .env.local
 import { MODELE, VOIX, BUCKET, TON, versMp3, cheminVoix, voixExiste } from '../lib/voix.js';
 import { envoyerFichier, assurerBucket } from '../lib/supabase.js';
-import { ROLES_VOIX, PHRASES_FIXES, phrase, segmentNom, segmentDuree, segmentConsignes } from '../src/voix-texte.js';
+import { ROLES_VOIX, PHRASES_FIXES, phrase, segmentNom, segmentDuree } from '../src/voix-texte.js';
 
 if (!supabaseConfigure) throw new Error('Supabase non configuré (.env.local)');
 const API = 'https://generativelanguage.googleapis.com/v1beta';
@@ -18,14 +18,12 @@ const arg = (nom) => { const i = process.argv.indexOf(nom); return i > 0 ? proce
 
 async function segmentsManquants(limite) {
   const postures = await rest('postures?select=*&order=id').catch(() => posturesLocales);
-  const fiches = new Map((await rest('fiches?select=posture_id,contenu')).map((f) => [f.posture_id, f.contenu]));
   const dureeDefaut = (p) => (p.minutes ? `${p.minutes} min` : p.respirations ? `${p.respirations} respirations` : '');
   const phases = [...new Set(Object.values(structures.styles).flat().map((x) => x.phase)), 'Pic'];
   const tous = [...new Set([
     ...Object.values(PHRASES_FIXES), ...Object.values(ROLES_VOIX), ...phases.map(phrase),
     ...postures.map((p) => segmentDuree(dureeDefaut(p), p.cotes)),
     ...postures.map(segmentNom),
-    ...postures.map((p) => segmentConsignes(fiches.get(p.id))),
   ].filter(Boolean))];
   const manquants = [];
   for (let i = 0; i < tous.length; i += 20) {

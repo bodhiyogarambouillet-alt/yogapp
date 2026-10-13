@@ -27,23 +27,15 @@ export const dureeLue = (d) => (d || '').replace(/\bmin\b/g, 'minutes').replace(
 
 export const segmentDuree = (duree, cotes) => (duree ? phrase(`${dureeLue(duree)}${cotes ? ' de chaque côté' : ''}`) : '');
 
-// Consignes d'une fiche : résumé (ou premiers repères) puis souffle en bref, en un seul segment
-export function segmentConsignes(fiche) {
-  const consignes = fiche?.resume?.length ? fiche.resume : (fiche?.alignement || []).slice(0, 3);
-  return [...consignes, fiche?.souffle_court].filter(Boolean).map(phrase).join(' ');
-}
-
-// Annonce d'une posture : phase (si elle change), rôle, nom, durée, la phrase écrite sous la posture,
-// le côté, puis les consignes de la fiche (niveau « consignes »)
-export function segmentsAnnonce({ etape, fiche, nouvellePhase, niveau }) {
+// Annonce d'une posture : phase (si elle change), rôle, nom, durée et côté.
+// La phrase écrite sous la posture et les consignes de la fiche ne sont pas lues.
+export function segmentsAnnonce({ etape, nouvellePhase }) {
   const p = etape.posture;
   return [
     nouvellePhase ? phrase(etape.phase) : '',
     ROLES_VOIX[etape.role] || '',
     segmentNom(p),
     segmentDuree(etape.duree, p.cotes),
-    phrase(etape.note),
     p.cotes ? PHRASES_FIXES.cote : '',
-    niveau === 'consignes' ? segmentConsignes(fiche) : '',
   ].filter(Boolean);
 }

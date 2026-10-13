@@ -89,17 +89,17 @@ function HorsLigne({ seance }) {
   const [progres, setProgres] = useState(null); // { texte, fait, total }
   const telecharger = async () => {
     if (!navigator.onLine) { alerter({ titre: 'Pas de connexion', message: 'Connectez-vous à internet pour préparer la séance hors connexion.' }); return; }
+    // Fiches des postures, pour les relire sans connexion
     const ids = [...new Set(seance.phases.flatMap((ph) => ph.items.map((it) => it.id)))];
-    const fiches = {};
     for (const [k, id] of ids.entries()) {
       setProgres({ texte: 'Fiches', fait: k, total: ids.length });
-      try { fiches[id] = (await obtenirFiche(id, seance)).fiche; } catch { /* fiche indisponible : la voix dira le reste */ }
+      try { await obtenirFiche(id, seance); } catch { /* fiche indisponible */ }
     }
-    // Toutes les annonces au niveau le plus complet (il contient aussi celles du niveau « postures »)
+    // Toutes les annonces de la voix guide
     const textes = [];
     let precedente = null;
     seance.phases.forEach((ph) => ph.items.forEach((it) => {
-      textes.push(...segmentsAnnonce({ etape: { ...it, phase: ph.phase }, fiche: fiches[it.id], nouvellePhase: precedente !== ph.phase, niveau: 'consignes' }));
+      textes.push(...segmentsAnnonce({ etape: { ...it, phase: ph.phase }, nouvellePhase: precedente !== ph.phase }));
       precedente = ph.phase;
     }));
     textes.push(PHRASES_FIXES.changer, PHRASES_FIXES.fin);

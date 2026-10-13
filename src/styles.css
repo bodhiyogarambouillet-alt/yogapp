@@ -685,7 +685,7 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 /* Variantes regroupées sous leur posture mère */
 .biblio-bloc + .biblio-bloc { border-top: 1px solid var(--trait); }
 .biblio-bloc { break-inside: avoid; }
-.biblio-variantes { display: block; margin: -6px 0 8px 50px; padding: 3px 10px; border: none; border-radius: 10px; background: var(--surface-2); font-size: 12px; font-weight: 700; color: var(--accent); }
+.biblio-variantes { display: block; margin: 0 0 10px 50px; padding: 3px 10px; border: none; border-radius: 10px; background: var(--surface-2); font-size: 12px; font-weight: 700; color: var(--accent); }
 .biblio-variante { margin-left: 34px; border-left: 2px solid var(--trait); padding-left: 10px; }
 .biblio-variante .ligne-nom { font-size: 15px; }
 .biblio-variante .ligne-lien { min-height: 46px; }
@@ -880,7 +880,9 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
   .biblio-filtres { flex-wrap: wrap; overflow: visible; margin: 0; padding: 0; }
   .biblio-liste { display: block; column-count: 2; column-gap: 16px; }
   .biblio-groupe { break-inside: avoid; margin-bottom: 16px; }
-  .biblio-groupe .ligne.actif .ligne-lien { margin: 0 -10px; padding-left: 10px; padding-right: 10px; border-radius: 14px; background: var(--surface-2); }
+  /* Posture affichée dans le volet : surlignage contenu dans la colonne (sans déborder sur la pastille des variantes) */
+  .biblio-groupe .ligne.actif .ligne-lien { padding-left: 8px; padding-right: 8px; border-radius: 14px; background: var(--surface-2); }
+  .biblio-groupe .ligne.actif .biblio-niveau { background: var(--fond); }
 
   /* Compte : cartes côte à côte, même largeur */
   .ecran > .cartes:has(.carte-compte) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }

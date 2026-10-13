@@ -52,7 +52,8 @@ function FeuilleVariantes({ item, seance, onRemplacer, onBasculer, onFermer }) {
     <div className="voile" onClick={onFermer}>
       <div className="feuille feuille-variantes" role="dialog" aria-label={`Variantes de ${nom(item.posture)}`} onClick={(e) => e.stopPropagation()}>
         <h2>Variantes de {nom(item.posture)}</h2>
-        <p className="aide">Remplacez la posture, ou ajoutez des variantes à proposer pendant le cours.</p>
+        <p className="aide"><strong>Proposer en option</strong> : la posture reste, la variante est suggérée aux élèves (cours multi-niveaux).
+          {item.role !== 'cible' && <> <strong>Remplacer la posture</strong> : la variante prend sa place.</>}</p>
         <div className="variantes-liste">
           {liste.length === 0 && <p className="aide">Aucune variante adaptée à cette séance.</p>}
           {liste.map((p) => {
@@ -66,9 +67,9 @@ function FeuilleVariantes({ item, seance, onRemplacer, onBasculer, onFermer }) {
                 </span>
                 <div className="variante-actions">
                   <button type="button" className={`badge choix ${ajoutee ? 'actif' : ''}`} aria-pressed={ajoutee} onClick={() => onBasculer(p)}>
-                    {ajoutee ? '✓ Variante' : '+ Variante'}
+                    {ajoutee ? '✓ Proposée en option' : 'Proposer en option'}
                   </button>
-                  {item.role !== 'cible' && <button type="button" className="badge choix" onClick={() => onRemplacer(p)}>Remplacer</button>}
+                  {item.role !== 'cible' && <button type="button" className="badge choix" onClick={() => onRemplacer(p)}>Remplacer la posture</button>}
                 </div>
               </div>
             );

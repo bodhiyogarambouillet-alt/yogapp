@@ -111,10 +111,20 @@ async function appelApi(corps) {
 }
 
 // Ouvre une fiche : base Supabase (ou génération côté serveur) ; en mode local : navigateur > référence > génération
+// Copie des fiches consultées, pour les relire hors connexion
+const PREFIXE_COPIE = 'yoga:fiche-copie:';
+
 export async function obtenirFiche(id, contexte) {
   if (supabase) {
-    const data = await appelApi({ id, style: contexte?.style, niveau: contexte?.niveau });
-    return { fiche: data, validee: data.statut === 'validee', source: 'base' };
+    try {
+      const data = await appelApi({ id, style: contexte?.style, niveau: contexte?.niveau });
+      if (data?.mode === 'gemini') ecrire(`${PREFIXE_COPIE}${id}`, data);
+      return { fiche: data, validee: data.statut === 'validee', source: 'base' };
+    } catch (e) {
+      const copie = lire(`${PREFIXE_COPIE}${id}`, null);
+      if (copie) return { fiche: copie, validee: true, source: 'base' }; // hors connexion : dernière version lue
+      throw e;
+    }
   }
   const locale = lire(`${PREFIXE_FICHE}${id}`, null);
   // Fiche locale d'un ancien format, jamais modifiée à la main : on la régénère

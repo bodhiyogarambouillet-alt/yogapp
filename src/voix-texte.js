@@ -2,6 +2,12 @@
 // les phases, les durées) sont identiques d'une séance à l'autre et peuvent être générés une fois pour toutes
 // (scripts/pregenerer-voix.mjs). Fichier partagé par l'appli et les scripts : aucune dépendance au navigateur.
 
+// Réglages de la voix naturelle, partagés par le serveur (lib/voix.js) et l'appli : le nom de chaque fichier audio
+// est une empreinte de ces réglages et du texte, que l'appli sait recalculer seule (lecture hors connexion).
+export const MODELE_VOIX = 'gemini-3.1-flash-tts-preview';
+export const VOIX_DEFAUT = 'Aoede';
+export const TON_VOIX = "Lis ce texte en français, d'une voix calme, douce et posée de professeure de yoga, avec de courtes pauses entre les phrases. Prononce les noms sanskrits des postures correctement, à l'indienne :";
+
 export const ROLES_VOIX = { preparation: 'Préparation.', cible: 'Posture cible.', contre: 'Contre-posture.' };
 export const PHRASES_FIXES = { cote: 'Côté droit.', changer: 'Changez de côté. Côté gauche.', fin: 'Séance terminée. Namasté.' };
 

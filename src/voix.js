@@ -5,6 +5,20 @@
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
 import { estNatif } from './natif.js';
 import { urlApi } from './api.js';
+import { MODELE_VOIX, VOIX_DEFAUT, TON_VOIX } from './voix-texte.js';
+
+// ---------- Fichiers audio : adresse recalculée sur l'appareil, copie locale pour le hors connexion ----------
+const BASE_STOCKAGE = (import.meta.env.VITE_SUPABASE_URL || '').replace(/\/$/, '');
+const CACHE_VOIX = 'yoga-voix';
+// Même empreinte que le serveur (lib/voix.js) : sha256 de « modèle|voix|ton|texte », 32 premiers caractères
+async function urlCalculee(texte) {
+  const octets = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${MODELE_VOIX}|${VOIX_DEFAUT}|${TON_VOIX}|${texte}`));
+  const hex = [...new Uint8Array(octets)].map((b) => b.toString(16).padStart(2, '0')).join('').slice(0, 32);
+  return `${BASE_STOCKAGE}/storage/v1/object/public/voix/${VOIX_DEFAUT}/${hex}.mp3`;
+}
+async function copieLocale(url) {
+  try { return await (await caches.open(CACHE_VOIX)).match(url); } catch { return null; }
+}
 
 // ---------- Voix naturelle : préparation et lecture ----------
 const sons = new Map(); // texte → adresse du MP3
@@ -36,7 +50,9 @@ export async function preparerVoix(textes, progression = () => {}) {
 // Récupère tout de suite les voix manquantes d'une annonce (déjà générées pour la plupart : réponse immédiate),
 // sans attendre plus de quelques secondes ; ce qui n'arrive pas à temps sera dit par la voix du téléphone
 async function assurerSons(textes) {
-  const manquants = [...new Set(textes.filter((t) => !sons.has(t)))];
+  if (!navigator.onLine) return;
+  const manquants = [];
+  for (const t of new Set(textes)) if (!sons.has(t) && !(await copieLocale(await urlCalculee(t)))) manquants.push(t);
   for (let i = 0; i < manquants.length; i += 6) {
     const lot = manquants.slice(i, i + 6);
     const arret = new AbortController();
@@ -51,13 +67,47 @@ async function assurerSons(textes) {
   }
 }
 
-function jouer(url) {
+// Joue un fichier audio : la copie locale s'il y en a une (hors connexion), sinon depuis le stockage
+async function jouer(url) {
+  const local = await copieLocale(url);
+  const source = local ? URL.createObjectURL(await local.blob()) : url;
   return new Promise((resoudre, rejeter) => {
-    lecteur = new Audio(url);
-    lecteur.onended = resoudre;
-    lecteur.onpause = resoudre; // interrompue par taire()
+    lecteur = new Audio(source);
+    const fin = () => { if (local) URL.revokeObjectURL(source); };
+    lecteur.onended = () => { fin(); resoudre(); };
+    lecteur.onpause = () => { fin(); resoudre(); }; // interrompue par taire()
+    lecteur.onerror = () => { fin(); rejeter(new Error('audio indisponible')); };
     lecteur.play().catch(rejeter);
   });
+}
+
+// ---------- Séance disponible hors connexion ----------
+const CLE_HORS_LIGNE = 'yoga:hors-ligne';
+export const horsLigne = (uid) => { try { return JSON.parse(localStorage.getItem(CLE_HORS_LIGNE) || '{}')[uid] || null; } catch { return null; } };
+
+// Télécharge les voix d'une liste de segments dans la mémoire de l'appli (les génère d'abord si besoin)
+export async function telechargerVoix(uid, textes, progression = () => {}) {
+  const liste = [...new Set(textes.filter(Boolean))];
+  await preparerVoix(liste, () => {}); // s'assure que chaque voix existe (génère les phrases propres à la séance)
+  const cache = await caches.open(CACHE_VOIX);
+  let fait = 0;
+  let manquants = 0;
+  for (const t of liste) {
+    const url = sons.get(t) || await urlCalculee(t);
+    if (!(await cache.match(url))) {
+      try {
+        const r = await fetch(url);
+        if (r.ok) await cache.put(url, r); else manquants++;
+      } catch { manquants++; }
+    }
+    progression({ fait: ++fait, total: liste.length });
+  }
+  try {
+    const tout = JSON.parse(localStorage.getItem(CLE_HORS_LIGNE) || '{}');
+    tout[uid] = { le: new Date().toISOString(), voix: liste.length - manquants, manquants };
+    localStorage.setItem(CLE_HORS_LIGNE, JSON.stringify(tout));
+  } catch { /* stockage indisponible */ }
+  return { manquants };
 }
 
 // Niveaux de guidage : aucun, nom de la posture seulement, ou nom + consignes
@@ -117,10 +167,11 @@ export async function parler(segments) {
   await assurerSons(liste);
   for (const t of liste) {
     if (moi !== jeton) return;
-    const son = sons.get(t);
+    // Adresse confirmée par le serveur, sinon recalculée sur l'appareil (copie locale ou fichier déjà généré)
+    const son = sons.get(t) || await urlCalculee(t);
     let dit = false;
-    if (son) {
-      try { await jouer(son); dit = true; } catch { /* lecture refusée : repli sur la voix du téléphone */ }
+    if (moi === jeton && (sons.has(t) || navigator.onLine || await copieLocale(son))) {
+      try { await jouer(son); dit = true; } catch { /* fichier absent ou lecture refusée : repli sur la voix du téléphone */ }
     }
     if (!dit && moi === jeton) await direSysteme(t);
     if (moi === jeton) await pause(220); // courte respiration entre deux segments

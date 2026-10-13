@@ -9,6 +9,8 @@ import { useRetour } from '../natif.js';
 import { Retour, Remplacer, Attention, Valide, Points, Exporter, Etincelle, Fermer, Lecture } from './Icones.jsx';
 import { exporterSeance } from '../export.js';
 import { alerter } from './Dialogue.jsx';
+import { horsLigne, telechargerVoix, segmentsAnnonce, PHRASES_FIXES } from '../voix.js';
+import { obtenirFiche } from '../stockage.js';
 
 // Durées plus compactes dans la liste (le détail reste dans la fiche)
 const court = (d) => (d || '').replace(/respirations?/i, 'resp.').replace(/droite \+ gauche/i, 'D + G');
@@ -78,6 +80,44 @@ function FeuilleVariantes({ item, seance, onRemplacer, onBasculer, onFermer }) {
         <button type="button" className="principal" onClick={onFermer}>Terminer</button>
       </div>
     </div>
+  );
+}
+
+// Rendre la séance disponible hors connexion : fiches de ses postures et voix du guide gardées sur l'appareil
+function HorsLigne({ seance }) {
+  const [etat, setEtat] = useState(() => horsLigne(seance.uid));
+  const [progres, setProgres] = useState(null); // { texte, fait, total }
+  const telecharger = async () => {
+    if (!navigator.onLine) { alerter({ titre: 'Pas de connexion', message: 'Connectez-vous à internet pour préparer la séance hors connexion.' }); return; }
+    const ids = [...new Set(seance.phases.flatMap((ph) => ph.items.map((it) => it.id)))];
+    const fiches = {};
+    for (const [k, id] of ids.entries()) {
+      setProgres({ texte: 'Fiches', fait: k, total: ids.length });
+      try { fiches[id] = (await obtenirFiche(id, seance)).fiche; } catch { /* fiche indisponible : la voix dira le reste */ }
+    }
+    // Toutes les annonces au niveau le plus complet (il contient aussi celles du niveau « postures »)
+    const textes = [];
+    let precedente = null;
+    seance.phases.forEach((ph) => ph.items.forEach((it) => {
+      textes.push(...segmentsAnnonce({ etape: { ...it, phase: ph.phase }, fiche: fiches[it.id], nouvellePhase: precedente !== ph.phase, niveau: 'consignes' }));
+      precedente = ph.phase;
+    }));
+    textes.push(PHRASES_FIXES.changer, PHRASES_FIXES.fin);
+    setProgres({ texte: 'Voix', fait: 0, total: textes.length });
+    const { manquants } = await telechargerVoix(seance.uid, textes, (p) => setProgres({ texte: 'Voix', ...p }));
+    setEtat(horsLigne(seance.uid));
+    setProgres(null);
+    if (manquants) alerter({ titre: 'Presque prêt', message: `${manquants} annonce${manquants > 1 ? 's' : ''} n'ont pas pu être téléchargées : la voix du téléphone les dira. Réessayez avec une meilleure connexion.` });
+  };
+  return (
+    <button type="button" className={`hors-ligne ${etat ? 'pret' : ''}`} onClick={telecharger} disabled={Boolean(progres)}>
+      <span className="hors-ligne-icone" aria-hidden="true">{etat ? '✓' : '⤓'}</span>
+      <span className="hors-ligne-texte">
+        <strong>{progres ? `${progres.texte}… ${progres.fait}/${progres.total}` : etat ? 'Disponible hors connexion' : 'Rendre disponible hors connexion'}</strong>
+        <span>{progres ? 'Téléchargement des fiches et des voix' : etat ? `Fiches et voix sur cet appareil · toucher pour mettre à jour` : 'Fiches et voix du guide gardées sur cet appareil'}</span>
+      </span>
+      {progres && <span className="hors-ligne-barre" style={{ '--avance': `${Math.round((progres.fait / Math.max(1, progres.total)) * 100)}%` }} />}
+    </button>
   );
 }
 
@@ -231,6 +271,8 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
           <span>Date de la séance</span>
           <input type="date" value={dateDe(seance) || ''} onChange={(e) => onChange({ ...seance, dateSeance: e.target.value || null })} />
         </label>
+
+        <HorsLigne key={seance.uid} seance={seance} />
 
         <Musique seance={seance} onChange={onChange} />
 

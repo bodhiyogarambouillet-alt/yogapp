@@ -139,7 +139,9 @@ export default function Compte({ compte, onRetour }) {
         <p className="sous">{connecte ? 'Vos séances sont enregistrées sur tous vos appareils.' : 'Sans connexion, vos séances restent sur cet appareil.'}</p>
       </section>
 
-      <section className="cartes">
+      {/* Ordinateur : le compte à gauche, les réglages (guide audio, musique) à droite */}
+      <section className="cartes compte-cartes">
+        <div className="compte-colonne">
         {!compte?.actif && <div className="carte"><p>La connexion n'est pas disponible sur cette version.</p></div>}
         {compte?.actif && (connecte ? (
           <div className="carte carte-compte">
@@ -149,15 +151,18 @@ export default function Compte({ compte, onRetour }) {
             <button type="button" className="lien" onClick={() => deconnexion()}>Se déconnecter</button>
           </div>
         ) : <Connexion />)}
-        {connecte && compte.admin && <GuideAudio />}
-        <Spotify />
         {aTransferer && (
           <div className="carte carte-compte">
             <h2>Séances de cet appareil</h2>
-            <p>Cet appareil contient {locales.seances.length} séance(s) enregistrée(s) avant la connexion.</p>
-            <button type="button" className="principal" style={{ alignSelf: 'stretch', marginTop: 4 }} onClick={transferer}>Les transférer sur mon compte</button>
+            <p>Cet appareil contient {locales.seances.length} séance{locales.seances.length > 1 ? 's enregistrées' : ' enregistrée'} avant la connexion.</p>
+            <button type="button" className="principal bouton-compte" onClick={transferer}>Les transférer sur mon compte</button>
           </div>
         )}
+        </div>
+        <div className="compte-colonne">
+        {connecte && compte.admin && <GuideAudio />}
+        <Spotify />
+        </div>
       </section>
 
       {message && <p className="aide" role="status" style={{ margin: '16px 24px' }}>{message}</p>}

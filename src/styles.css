@@ -311,7 +311,10 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .carte-compte h2 { margin: 0 0 2px; }
 .carte-compte p { margin: 0; }
 .carte-compte .lien { min-height: 36px; }
-.carte-compte .bouton-spotify { align-self: stretch; margin-top: 4px; }
+.carte-compte .bouton-spotify, .carte-compte .bouton-compte { align-self: stretch; margin-top: 4px; }
+.compte-colonne { display: contents; }
+.compte-colonne > .carte { animation: apparition 0.5s ease both; }
+.compte-colonne + .compte-colonne > .carte { animation-delay: 0.08s; }
 /* Réglage : libellé à gauche, interrupteur aligné à droite */
 .reglage { align-self: stretch; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 15px; font-weight: 700; line-height: 1.35; color: var(--texte); cursor: pointer; }
 .interrupteur { appearance: none; -webkit-appearance: none; flex: none; position: relative; width: 46px; height: 28px; margin: 0; border-radius: 14px; background: var(--trait); cursor: pointer; transition: background .2s ease; }
@@ -893,7 +896,11 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
   .biblio-groupe .ligne.actif .biblio-niveau { background: var(--fond); }
 
   /* Compte : cartes côte à côte, même largeur */
-  .ecran > .cartes:has(.carte-compte) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+  .ecran > .cartes.compte-cartes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+  .compte-colonne { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .compte-colonne > .carte { margin: 0; }
+  /* Boutons à leur taille, pas sur toute la largeur de la carte */
+  .carte-compte .bouton-spotify, .carte-compte .bouton-compte { align-self: flex-start; min-width: 260px; padding: 0 28px; margin-top: 8px; }
   .connexion { max-width: none; }
 
   /* Séance : en-tête en deux colonnes (titre et intention | lancer, date, musique), phases en deux colonnes */

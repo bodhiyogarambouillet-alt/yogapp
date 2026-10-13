@@ -103,11 +103,11 @@ export default function Musique({ seance, onChange }) {
               )}
               <label className="musique-option">
                 <span>Sans paroles</span>
-                <input type="checkbox" role="switch" checked={sansParoles} disabled={Boolean(enCours)} onChange={(e) => setSansParoles(e.target.checked)} />
+                <input type="checkbox" role="switch" className="interrupteur" checked={sansParoles} disabled={Boolean(enCours)} onChange={(e) => setSansParoles(e.target.checked)} />
               </label>
               <label className="musique-option">
                 <span>Enregistrer aussi en playlist dans Spotify</span>
-                <input type="checkbox" role="switch" checked={enregistrer} disabled={Boolean(enCours)} onChange={(e) => setEnregistrer(e.target.checked)} />
+                <input type="checkbox" role="switch" className="interrupteur" checked={enregistrer} disabled={Boolean(enCours)} onChange={(e) => setEnregistrer(e.target.checked)} />
               </label>
               {erreur && <p className="erreur" role="alert">{erreur}</p>}
               {enCours ? <Chargement etape={enCours} enregistrer={enregistrer} /> : (

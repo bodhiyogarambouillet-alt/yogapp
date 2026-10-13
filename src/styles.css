@@ -277,8 +277,7 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .musique-styles { gap: 6px; }
 .musique-styles .badge.choix { min-height: 36px; padding: 4px 12px; font-size: 13px; }
 .musique-autre { height: 44px; padding: 0 14px; border: none; border-radius: 14px; background: var(--fond); font-size: 15px; color: var(--texte); }
-.musique-option { display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 700; color: var(--texte-doux); }
-.musique-option input { width: 22px; height: 22px; accent-color: var(--accent); }
+.musique-option { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 14px; font-weight: 700; color: var(--texte-doux); cursor: pointer; }
 .musique-corps .principal, .musique-corps .secondaire { height: 48px; }
 .musique-playlist { display: flex; flex-direction: column; gap: 10px; padding-top: 12px; border-top: 1px solid var(--trait); }
 .musique-playlist-tete { display: flex; flex-direction: column; gap: 2px; }
@@ -313,6 +312,13 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .carte-compte p { margin: 0; }
 .carte-compte .lien { min-height: 36px; }
 .carte-compte .bouton-spotify { align-self: stretch; margin-top: 4px; }
+/* Réglage : libellé à gauche, interrupteur aligné à droite */
+.reglage { align-self: stretch; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 15px; font-weight: 700; line-height: 1.35; color: var(--texte); cursor: pointer; }
+.interrupteur { appearance: none; -webkit-appearance: none; flex: none; position: relative; width: 46px; height: 28px; margin: 0; border-radius: 14px; background: var(--trait); cursor: pointer; transition: background .2s ease; }
+.interrupteur::before { content: ''; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: var(--surface); box-shadow: 0 1px 3px rgba(46, 38, 34, 0.25); transition: transform .2s ease; }
+.interrupteur:checked { background: var(--accent); }
+.interrupteur:disabled { opacity: .5; cursor: default; }
+.interrupteur:checked::before { transform: translateX(18px); }
 .compte-ligne { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 15px; }
 .compte-nom { min-width: 0; font-weight: 700; overflow-wrap: anywhere; }
 .badge-admin, .badge-spotify { flex-shrink: 0; white-space: nowrap; padding: 4px 10px; font-size: 12px; }

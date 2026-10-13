@@ -94,9 +94,9 @@ function GuideAudio() {
   return (
     <div className="carte carte-compte">
       <h2>Guide audio</h2>
-      <label className="musique-option">
+      <label className="reglage">
         <span>Lancer le guide audio au début de la séance</span>
-        <input type="checkbox" role="switch" checked={auto} onChange={(e) => changer(e.target.checked)} />
+        <input type="checkbox" role="switch" className="interrupteur" checked={auto} onChange={(e) => changer(e.target.checked)} />
       </label>
       <p className="aide">{auto ? 'La voix démarre dès l\'ouverture de la séance (elle se coupe toujours depuis le lecteur).' : 'La voix reste coupée au départ : on l\'active depuis le lecteur de la séance.'} Réglage propre à cet appareil.</p>
     </div>

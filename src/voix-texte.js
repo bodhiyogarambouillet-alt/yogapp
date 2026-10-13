@@ -67,6 +67,24 @@ export const DUREES_COURANTES = [
 ];
 
 // Une durée sans chiffre (« variable », « libre »…) n'apprend rien : elle n'est pas lue
+// Texte envoyé à la synthèse vocale : nombres en toutes lettres (« 2 tours » → « deux tours »). Le filtre de Gemini
+// bloque à tort certains textes courts écrits en chiffres. Le nom du fichier audio reste calculé sur le texte d'origine.
+const UNITES = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize'];
+const DIZAINES = { 2: 'vingt', 3: 'trente', 4: 'quarante', 5: 'cinquante', 6: 'soixante' };
+function enLettres(n) {
+  if (n < 17) return UNITES[n];
+  if (n < 20) return `dix-${UNITES[n - 10]}`;
+  if (n >= 70) return String(n);
+  const d = Math.floor(n / 10);
+  const u = n % 10;
+  return u === 0 ? DIZAINES[d] : u === 1 ? `${DIZAINES[d]} et un` : `${DIZAINES[d]}-${UNITES[u]}`;
+}
+// (« 1 minute » → « une minute », mot féminin)
+export const textePrononce = (t) => t.replace(/\b\d{1,2}\b/g, (n, i) => {
+  const mot = enLettres(Number(n));
+  return /un$/.test(mot) && /^\s*(minute|respiration|seconde)/.test(t.slice(i + n.length)) ? `${mot}e` : mot;
+});
+
 export const segmentDuree = (duree, cotes) => (/\d/.test(duree || '') ? phrase(`${dureeLue(duree)}${cotes ? ' de chaque côté' : ''}`) : '');
 
 // Annonce d'une posture : phase (si elle change), rôle, nom, durée et côté.

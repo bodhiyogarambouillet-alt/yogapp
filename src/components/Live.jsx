@@ -56,6 +56,52 @@ function Resume({ posture, fiche }) {
   );
 }
 
+// Mode cours en salle : consignes de la fiche en défilement vertical continu (comme un prompteur),
+// en pause avec la séance ; pas de défilement si tout tient dans le cadre
+function ConsignesDefilantes({ posture, fiche, enCours }) {
+  const cadre = useRef(null);
+  const bloc = useRef(null);
+  const [defile, setDefile] = useState(false);
+  const sections = fiche ? [
+    ['Installation', fiche.entree, 'ol'],
+    ['Repères', fiche.alignement?.length ? fiche.alignement : fiche.resume, 'ul'],
+    ['Dans la posture', fiche.tenue, 'ul'],
+    ['Souffle', fiche.respiration || fiche.souffle_court, 'p'],
+  ].filter(([, v]) => (Array.isArray(v) ? v.length : v)) : [];
+  if (posture.precautions) sections.push(['Précautions', posture.precautions, 'p']);
+  const nbLignes = sections.reduce((n, [, v]) => n + (Array.isArray(v) ? v.length : 2), 0);
+  useEffect(() => {
+    const mesurer = () => setDefile(Boolean(bloc.current && cadre.current && bloc.current.offsetHeight > cadre.current.clientHeight));
+    mesurer();
+    const obs = new ResizeObserver(mesurer);
+    if (cadre.current) obs.observe(cadre.current);
+    return () => obs.disconnect();
+  }, [fiche, posture.id]);
+  if (fiche === undefined) return <div className="consignes-defilantes"><p className="aide">Chargement des consignes…</p></div>;
+  if (!sections.length) return null;
+  const contenu = (cache) => (
+    <div className="consignes-bloc" ref={cache ? undefined : bloc} aria-hidden={cache || undefined}>
+      {sections.map(([titre, v, balise]) => (
+        <section key={titre}>
+          <h3>{titre}</h3>
+          {balise === 'p' ? <p>{v}</p> : balise === 'ol'
+            ? <ol>{v.map((t, i) => <li key={i}>{t}</li>)}</ol>
+            : <ul>{v.map((t, i) => <li key={i}>{t}</li>)}</ul>}
+        </section>
+      ))}
+    </div>
+  );
+  // Le contenu est doublé pour boucler sans à-coup ; la vitesse dépend de la longueur (environ 5 s par ligne)
+  return (
+    <div className={`consignes-defilantes ${defile ? 'defile' : ''}`} ref={cadre} key={posture.id}>
+      <div className="consignes-piste" style={{ animationDuration: `${Math.max(30, nbLignes * 5)}s`, animationPlayState: enCours ? 'running' : 'paused' }}>
+        {contenu(false)}
+        {defile && contenu(true)}
+      </div>
+    </div>
+  );
+}
+
 // Durée « brute » d'une posture d'après sa consigne (« 5 respirations », « 3 min », « × 3 tours »)
 function poids(it) {
   const d = (it.duree || '').toLowerCase();
@@ -377,6 +423,7 @@ export default function Live({ seance, onQuitter }) {
                 ? <DisqueSouffle rythme={souffle} enCours={enCours} />
                 : <div className="live-picto"><Picto famille={etape.posture.famille} taille={92} /></div>}
             </div>
+            <div className="live-infos">
             <div className="live-chrono" role="timer" aria-live="off">{mmss(restant)}</div>
             {cote && <p className="live-cote" key={cote}>{cote}</p>}
             <h1 className="live-nom" key={etape.id + index}>{nom(etape.posture)}</h1>
@@ -385,9 +432,16 @@ export default function Live({ seance, onQuitter }) {
             {variantesDe(etape).length > 0 && (
               <p className="live-variantes"><strong>Variantes :</strong> {variantesDe(etape).map(nom).join(' · ')}</p>
             )}
+            {salle && <ConsignesDefilantes posture={etape.posture} fiche={fiches[etape.id]} enCours={enCours} />}
             {souffle
               ? <ChoixRythme rythme={souffle} onChoisir={choisirRythme} onFermer={() => setSouffle(null)} />
               : <button type="button" className="souffle-lancer" onClick={() => setSouffle(rythmeMemorise())}>Respiration guidée</button>}
+            {salle && (
+              <p className="salle-ensuite">{suivante
+                ? <><span>Ensuite</span> {nom(suivante.posture)} · {suivante.duree || mmss(suivante.secondes)}</>
+                : <span>Dernière posture</span>}</p>
+            )}
+            </div>
           </section>
 
           <section className="live-resume-bloc">

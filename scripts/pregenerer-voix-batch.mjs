@@ -8,7 +8,7 @@ import posturesLocales from '../src/data/postures.json' with { type: 'json' };
 import { rest, supabaseConfigure } from './supabase-admin.mjs'; // charge aussi .env.local
 import { MODELE, VOIX, BUCKET, TON, versMp3, cheminVoix, voixExiste, dureeMax } from '../lib/voix.js';
 import { envoyerFichier, assurerBucket } from '../lib/supabase.js';
-import { ROLES_VOIX, PHRASES_FIXES, phrase, segmentNom, segmentDuree, DUREES_COURANTES, textesSavasana } from '../src/voix-texte.js';
+import { ROLES_VOIX, PHRASES_FIXES, phrase, segmentNom, segmentDuree, DUREES_COURANTES, textesSavasana, textePrononce } from '../src/voix-texte.js';
 
 if (!supabaseConfigure) throw new Error('Supabase non configuré (.env.local)');
 const API = 'https://generativelanguage.googleapis.com/v1beta';
@@ -41,7 +41,7 @@ async function envoyer(textes) {
     method: 'POST', headers: entetes,
     body: JSON.stringify({ batch: { display_name: `voix-yoga-${Date.now()}`, input_config: { requests: { requests: textes.map((t, i) => ({
       request: {
-        contents: [{ parts: [{ text: `${TON}\n\n${t}` }] }],
+        contents: [{ parts: [{ text: `${TON}\n\n${textePrononce(t)}` }] }],
         generationConfig: { responseModalities: ['AUDIO'], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voix } } } },
       },
       metadata: { key: String(i) },

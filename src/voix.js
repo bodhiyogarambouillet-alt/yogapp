@@ -115,9 +115,14 @@ export const NIVEAUX_VOIX = [
   ['non', 'Voix coupée'],
   ['nom', 'Voix activée'],
 ];
-export const niveauVoix = () => 'non';
+// Lancement automatique au démarrage d'une séance : réglé par l'administrateur, mémorisé sur l'appareil.
+// Coupée par défaut, pour ne pas solliciter Gemini sans raison.
+const CLE_AUTO = 'yoga:voix-auto';
+export const voixAuto = () => { try { return localStorage.getItem(CLE_AUTO) === 'oui'; } catch { return false; } };
+export const enregistrerVoixAuto = (oui) => { try { localStorage.setItem(CLE_AUTO, oui ? 'oui' : 'non'); } catch { /* stockage indisponible */ } };
+export const niveauVoix = () => (voixAuto() ? 'nom' : 'non');
 export const dernierNiveauVoix = () => 'nom';
-export const enregistrerNiveauVoix = (n) => { try { if (n !== 'non') localStorage.setItem(CLE, n); localStorage.removeItem('yoga:voix'); } catch { /* stockage indisponible */ } };
+export const enregistrerNiveauVoix = () => { try { localStorage.removeItem('yoga:voix'); } catch { /* stockage indisponible */ } };
 
 let voixWeb = null;
 function choisirVoixWeb() {

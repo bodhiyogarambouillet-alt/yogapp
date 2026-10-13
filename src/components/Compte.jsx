@@ -4,6 +4,7 @@ import { connexionParMotDePasse, connexionGoogle, deconnexion } from '../supabas
 import { Retour, Oeil, OeilBarre, Google } from './Icones.jsx';
 import { etatSpotify, surSpotify, connecterSpotify, deconnecterSpotify } from '../spotify.js';
 import { alerter } from './Dialogue.jsx';
+import { voixAuto, enregistrerVoixAuto } from '../voix.js';
 
 // Écran « Compte » : connexion administrateur, déconnexion et transfert des séances de l'appareil
 
@@ -86,6 +87,22 @@ function Spotify() {
   );
 }
 
+// Réglage administrateur : guide audio lancé ou non dès le début de la séance
+function GuideAudio() {
+  const [auto, setAuto] = useState(voixAuto);
+  const changer = (oui) => { enregistrerVoixAuto(oui); setAuto(oui); };
+  return (
+    <div className="carte carte-compte">
+      <h2>Guide audio</h2>
+      <label className="musique-option">
+        <span>Lancer le guide audio au début de la séance</span>
+        <input type="checkbox" role="switch" checked={auto} onChange={(e) => changer(e.target.checked)} />
+      </label>
+      <p className="aide">{auto ? 'La voix démarre dès l\'ouverture de la séance (elle se coupe toujours depuis le lecteur).' : 'La voix reste coupée au départ : on l\'active depuis le lecteur de la séance.'} Réglage propre à cet appareil.</p>
+    </div>
+  );
+}
+
 export default function Compte({ compte, onRetour }) {
   const [message, setMessage] = useState(null);
   const [locales, setLocales] = useState(donneesLocales);
@@ -125,6 +142,7 @@ export default function Compte({ compte, onRetour }) {
             <button type="button" className="lien" onClick={() => deconnexion()}>Se déconnecter</button>
           </div>
         ) : <Connexion />)}
+        {connecte && compte.admin && <GuideAudio />}
         <Spotify />
         {aTransferer && (
           <div className="carte carte-compte">

@@ -22,8 +22,20 @@ const ROMAINS = { I: 'un', II: 'deux', III: 'trois', IV: 'quatre' };
 const lisible = (t) => (t || '').replace(/\s*\/\s*/g, ', ').replace(/\b(IV|III|II|I)\b/g, (r) => ROMAINS[r]);
 export const segmentNom = (p) => phrase(p.sanskrit ? `${lisible(p.sanskrit)}, ${lisible(p.fr)}` : lisible(p.fr));
 
-// Durée lue à voix haute : « 5 respirations », « 3 min » → « 3 minutes », « × 3 tours » → « 3 fois »
-export const dureeLue = (d) => (d || '').replace(/\bmin\b/g, 'minutes').replace(/\bresp\.?\b/g, 'respirations').replace(/×\s*(\d+)/, '$1 fois');
+// Durée lue à voix haute : « 10 resp. » → « 10 respirations », « 3 min » → « 3 minutes », « 1 min » → « 1 minute »,
+// « × 3 tours » → « 3 tours », « × 3 » → « 3 fois »
+export const dureeLue = (d) => (d || '')
+  .replace(/\bmin\b\.?/g, 'minutes').replace(/\bresp\b\.?/g, 'respirations')
+  .replace(/×\s*(\d+)\s*(?=\p{L})/u, '$1 ').replace(/×\s*(\d+)/, '$1 fois')
+  .replace(/\b1 (minute|respiration|tour)s\b/g, '1 $1')
+  .replace(/\s+/g, ' ').trim();
+
+// Durées courantes, générées à l'avance (scripts/pregenerer-voix*.mjs) pour ne pas solliciter Gemini en séance
+export const DUREES_COURANTES = [
+  ...Array.from({ length: 15 }, (_, i) => `${i + 1} min`),
+  ...Array.from({ length: 15 }, (_, i) => `${i + 1} resp.`),
+  ...Array.from({ length: 6 }, (_, i) => `× ${i + 1} tours`),
+];
 
 export const segmentDuree = (duree, cotes) => (duree ? phrase(`${dureeLue(duree)}${cotes ? ' de chaque côté' : ''}`) : '');
 

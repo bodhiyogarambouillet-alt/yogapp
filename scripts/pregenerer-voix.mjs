@@ -6,7 +6,7 @@ import structures from '../src/data/structures.json' with { type: 'json' };
 import posturesLocales from '../src/data/postures.json' with { type: 'json' };
 import { rest, supabaseConfigure } from './supabase-admin.mjs'; // charge aussi .env.local
 import { voixPour, voixExiste } from '../lib/voix.js';
-import { ROLES_VOIX, PHRASES_FIXES, phrase, segmentNom, segmentDuree } from '../src/voix-texte.js';
+import { ROLES_VOIX, PHRASES_FIXES, phrase, segmentNom, segmentDuree, DUREES_COURANTES } from '../src/voix-texte.js';
 
 if (!supabaseConfigure) throw new Error('Supabase non configuré (.env.local)');
 // Offre gratuite : 3 requêtes par minute au plus ; avec la facturation activée : VOIX_ESPACEMENT_MS=500 npm run pregenerer-voix
@@ -20,6 +20,7 @@ const phases = [...new Set(Object.values(structures.styles).flat().map((x) => x.
 const segments = [
   ...Object.values(PHRASES_FIXES), ...Object.values(ROLES_VOIX), ...phases.map(phrase),
   ...postures.map((p) => segmentDuree(dureeDefaut(p), p.cotes)),
+  ...DUREES_COURANTES.flatMap((d) => [segmentDuree(d, false), segmentDuree(d, true)]),
   ...postures.map(segmentNom),
 ].filter(Boolean);
 const aFaire = [...new Set(segments)];

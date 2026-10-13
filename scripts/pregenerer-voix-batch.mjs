@@ -8,7 +8,7 @@ import posturesLocales from '../src/data/postures.json' with { type: 'json' };
 import { rest, supabaseConfigure } from './supabase-admin.mjs'; // charge aussi .env.local
 import { MODELE, VOIX, BUCKET, TON, versMp3, cheminVoix, voixExiste } from '../lib/voix.js';
 import { envoyerFichier, assurerBucket } from '../lib/supabase.js';
-import { ROLES_VOIX, PHRASES_FIXES, phrase, segmentNom, segmentDuree } from '../src/voix-texte.js';
+import { ROLES_VOIX, PHRASES_FIXES, phrase, segmentNom, segmentDuree, DUREES_COURANTES } from '../src/voix-texte.js';
 
 if (!supabaseConfigure) throw new Error('Supabase non configuré (.env.local)');
 const API = 'https://generativelanguage.googleapis.com/v1beta';
@@ -23,6 +23,7 @@ async function segmentsManquants(limite) {
   const tous = [...new Set([
     ...Object.values(PHRASES_FIXES), ...Object.values(ROLES_VOIX), ...phases.map(phrase),
     ...postures.map((p) => segmentDuree(dureeDefaut(p), p.cotes)),
+    ...DUREES_COURANTES.flatMap((d) => [segmentDuree(d, false), segmentDuree(d, true)]),
     ...postures.map(segmentNom),
   ].filter(Boolean))];
   const manquants = [];

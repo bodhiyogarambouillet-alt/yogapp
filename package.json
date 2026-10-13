@@ -15,7 +15,8 @@
     "android:apk": "npm run android && cd android && JAVA_HOME=/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home ./gradlew assembleDebug",
     "pregenerer-fiches": "node scripts/pregenerer-fiches.mjs",
     "apk:publier": "node scripts/publier-apk.mjs",
-    "pregenerer-voix": "node scripts/pregenerer-voix.mjs"
+    "pregenerer-voix": "node scripts/pregenerer-voix.mjs",
+    "pregenerer-voix-batch": "node scripts/pregenerer-voix-batch.mjs"
   },
   "dependencies": {
     "@breezystack/lamejs": "1.2.7",

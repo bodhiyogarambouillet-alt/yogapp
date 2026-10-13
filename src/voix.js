@@ -54,19 +54,24 @@ export function taire() {
 // Durée lue à voix haute : « 5 respirations », « 3 min » → « 3 minutes »
 const dureeLue = (d) => (d || '').replace(/\bmin\b/g, 'minutes').replace(/\bresp\.?\b/g, 'respirations').replace(/×\s*(\d+)/, '$1 fois');
 
-// Annonce d'une posture : phase (si elle change), nom, durée, côté, puis consignes selon le niveau
+const ROLES = { preparation: 'Préparation.', cible: 'Posture cible.', contre: 'Contre-posture.' };
+const phrase = (t) => (/[.!?…]$/.test(t.trim()) ? t.trim() : `${t.trim()}.`);
+
+// Annonce d'une posture : phase (si elle change), rôle, nom, durée, la phrase qui explique son rôle
+// dans la séance (consigne écrite sous la posture), le côté, puis les consignes de la fiche selon le niveau
 export function annoncePosture({ etape, fiche, nouvellePhase, niveau }) {
   const p = etape.posture;
   const morceaux = [];
-  if (nouvellePhase) morceaux.push(`${etape.phase}.`);
-  morceaux.push(`${p.fr}.`);
-  if (etape.duree) morceaux.push(`${dureeLue(etape.duree)}${p.cotes ? ' de chaque côté' : ''}.`);
+  if (nouvellePhase) morceaux.push(phrase(etape.phase));
+  if (ROLES[etape.role]) morceaux.push(ROLES[etape.role]);
+  morceaux.push(phrase(p.fr));
+  if (etape.duree) morceaux.push(phrase(`${dureeLue(etape.duree)}${p.cotes ? ' de chaque côté' : ''}`));
+  if (etape.note) morceaux.push(phrase(etape.note));
   if (p.cotes) morceaux.push('Côté droit.');
   if (niveau === 'consignes') {
     const consignes = fiche?.resume?.length ? fiche.resume : (fiche?.alignement || []).slice(0, 3);
-    consignes.forEach((c) => morceaux.push(c.endsWith('.') ? c : `${c}.`));
-    if (fiche?.souffle_court) morceaux.push(fiche.souffle_court);
-    if (etape.note) morceaux.push(etape.note);
+    consignes.forEach((c) => morceaux.push(phrase(c)));
+    if (fiche?.souffle_court) morceaux.push(phrase(fiche.souffle_court));
   }
   return morceaux.join(' ');
 }

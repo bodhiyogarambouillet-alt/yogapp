@@ -1,6 +1,6 @@
-// Playlist Spotify d'une séance : Gemini propose (/api/proposer-musique), l'appli vérifie chaque morceau
-// dans le catalogue Spotify, ajuste la durée phase par phase, complète si besoin, puis crée la playlist
-// dans le compte de l'utilisateur.
+// Musique d'une séance : Gemini propose (/api/proposer-musique), l'appli vérifie chaque morceau dans le
+// catalogue Spotify et ajuste la durée phase par phase. La sélection est jouée telle quelle pendant la séance ;
+// l'enregistrer en playlist dans le compte Spotify est facultatif.
 
 import { urlApi } from './api.js';
 import { appelSpotify } from './spotify.js';
@@ -44,7 +44,9 @@ const nomPlaylist = (seance) => {
   return [seance.titre || seance.style || 'Séance de yoga', `${total}′`, date].filter(Boolean).join(' · ');
 };
 
-export async function creerPlaylist(seance, { style = 'Relaxation', sansParoles = false, eviter = [] } = {}, progression = () => {}) {
+// Compose la sélection musicale de la séance (sans rien créer dans Spotify) ;
+// avec `enregistrer`, elle est aussi enregistrée en playlist dans le compte Spotify.
+export async function creerPlaylist(seance, { style = 'Relaxation', sansParoles = false, eviter = [], enregistrer = false } = {}, progression = () => {}) {
   progression('Choix des morceaux…');
   const r = await fetch(urlApi('/api/proposer-musique'), {
     method: 'POST',
@@ -94,20 +96,25 @@ export async function creerPlaylist(seance, { style = 'Relaxation', sansParoles 
     throw new Error(erreurs.length ? `La recherche Spotify a échoué : ${erreurs[0]}` : 'Aucun morceau trouvé sur Spotify, essayez un autre style.');
   }
 
-  progression('Création de la playlist…');
-  const playlist = await appelSpotify('/me/playlists', {
-    method: 'POST',
-    body: { name: nomPlaylist(seance), public: false, description: `Séance ${seance.style || 'de yoga'} · musique ${style.toLowerCase()} · Mes séances Yoga` },
-  });
-  for (let i = 0; i < morceaux.length; i += 100) {
-    await appelSpotify(`/playlists/${playlist.id}/items`, { method: 'POST', body: { uris: morceaux.slice(i, i + 100).map((m) => m.uri) } });
-  }
-  return {
-    id: playlist.id, uri: playlist.uri, url: playlist.external_urls?.spotify || `https://open.spotify.com/playlist/${playlist.id}`,
-    nom: playlist.name, style, sansParoles, creeLe: new Date().toISOString(),
+  const selection = {
+    nom: nomPlaylist(seance), style, sansParoles, creeLe: new Date().toISOString(),
     duree: morceaux.reduce((s, m) => s + m.duree, 0),
     morceaux: morceaux.map(({ uri, phase, titre, artiste, duree, image }) => ({ uri, phase, titre, artiste, duree, image })),
   };
+  return enregistrer ? enregistrerDansSpotify(seance, selection, progression) : selection;
+}
+
+// Enregistre une sélection en playlist privée dans le compte Spotify (à la création ou plus tard)
+export async function enregistrerDansSpotify(seance, selection, progression = () => {}) {
+  progression('Création de la playlist…');
+  const playlist = await appelSpotify('/me/playlists', {
+    method: 'POST',
+    body: { name: selection.nom, public: false, description: `Séance ${seance.style || 'de yoga'} · musique ${selection.style.toLowerCase()} · Mes séances Yoga` },
+  });
+  for (let i = 0; i < selection.morceaux.length; i += 100) {
+    await appelSpotify(`/playlists/${playlist.id}/items`, { method: 'POST', body: { uris: selection.morceaux.slice(i, i + 100).map((m) => m.uri) } });
+  }
+  return { ...selection, id: playlist.id, uri: playlist.uri, url: playlist.external_urls?.spotify || `https://open.spotify.com/playlist/${playlist.id}` };
 }
 
 // Retire une ancienne playlist de la bibliothèque de l'utilisateur (« Autre sélection ») ; sans gravité si ça échoue

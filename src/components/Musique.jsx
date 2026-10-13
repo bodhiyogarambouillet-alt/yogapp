@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Note } from './Icones.jsx';
-import { STYLES_MUSIQUE, creerPlaylist, retirerPlaylist } from '../musique.js';
+import { STYLES_MUSIQUE, creerPlaylist, retirerPlaylist, enregistrerDansSpotify } from '../musique.js';
 import { etatSpotify, surSpotify, connecterSpotify } from '../spotify.js';
 import { estNatif } from '../natif.js';
 
-// Carte « Musique de la séance » : choix du style, création de la playlist Spotify, aperçu par phase.
-// Repliée par défaut ; la playlist créée est gardée avec la séance.
-const ETAPES = ['Choix des morceaux…', 'Recherche sur Spotify…', 'Création de la playlist…'];
+// Carte « Musique de la séance » : choix du style, sélection de morceaux par phase (jouée pendant la séance),
+// enregistrement facultatif en playlist Spotify. Repliée par défaut ; la sélection est gardée avec la séance.
+const ETAPES_BASE = ['Choix des morceaux…', 'Recherche sur Spotify…'];
+const CREATION = 'Création de la playlist…';
 
 // Pendant la création : égaliseur animé et étapes qui se cochent
-function Chargement({ etape }) {
+function Chargement({ etape, enregistrer }) {
+  const ETAPES = enregistrer || etape === CREATION ? [...ETAPES_BASE, CREATION] : ETAPES_BASE;
   const k = Math.max(0, ETAPES.indexOf(etape));
   return (
     <div className="musique-chargement" role="status" aria-live="polite">
@@ -30,6 +32,7 @@ export default function Musique({ seance, onChange }) {
   const [style, setStyle] = useState(playlist?.style && STYLES_MUSIQUE.includes(playlist.style) ? playlist.style : playlist?.style ? 'Autre' : 'Relaxation');
   const [autre, setAutre] = useState(playlist?.style && !STYLES_MUSIQUE.includes(playlist.style) ? playlist.style : '');
   const [sansParoles, setSansParoles] = useState(playlist?.sansParoles ?? true);
+  const [enregistrer, setEnregistrer] = useState(false); // aussi enregistrer la sélection en playlist Spotify
   const [enCours, setEnCours] = useState(null); // message de progression
   const [erreur, setErreur] = useState(null);
   useEffect(() => surSpotify(setSpotify), []);
@@ -40,8 +43,8 @@ export default function Musique({ seance, onChange }) {
     setErreur(null);
     setEnCours('Préparation…');
     try {
-      const nouvelle = await creerPlaylist(seance, { style: styleChoisi, sansParoles, eviter }, setEnCours);
-      if (eviter.length) retirerPlaylist(playlist);
+      const nouvelle = await creerPlaylist(seance, { style: styleChoisi, sansParoles, eviter, enregistrer }, setEnCours);
+      if (eviter.length && playlist?.uri) retirerPlaylist(playlist);
       onChange({ ...seance, playlist: nouvelle });
     } catch (e) {
       setErreur(e.message);
@@ -50,9 +53,21 @@ export default function Musique({ seance, onChange }) {
     }
   };
   const autreSelection = () => creer((playlist?.morceaux || []).map((m) => `${m.titre} — ${m.artiste}`));
+  // Enregistrer plus tard la sélection actuelle en playlist Spotify
+  const enregistrerMaintenant = async () => {
+    setErreur(null);
+    try {
+      setEnCours(CREATION);
+      onChange({ ...seance, playlist: await enregistrerDansSpotify(seance, playlist, setEnCours) });
+    } catch (e) {
+      setErreur(e.message);
+    } finally {
+      setEnCours(null);
+    }
+  };
 
   const phases = playlist ? [...new Set(playlist.morceaux.map((m) => m.phase))] : [];
-  const resume = playlist ? `${playlist.morceaux.length} titres · ${Math.round(playlist.duree / 60)} min · ${playlist.style}` : 'Créer une playlist Spotify';
+  const resume = playlist ? `${playlist.morceaux.length} titres · ${Math.round(playlist.duree / 60)} min · ${playlist.style}` : 'Choisir une musique pour la séance';
 
   return (
     <section className={`musique ${ouvert ? 'ouvert' : ''}`}>
@@ -70,10 +85,10 @@ export default function Musique({ seance, onChange }) {
           {!spotify.connecte ? (
             estNatif ? (
               <>
-                <p className="aide">Connectez votre compte Spotify pour créer une playlist adaptée à la séance.</p>
+                <p className="aide">Connectez votre compte Spotify pour choisir une musique adaptée à la séance.</p>
                 <button type="button" className="bouton-spotify" onClick={() => connecterSpotify().catch((e) => setErreur(e.message))}>Connecter Spotify</button>
               </>
-            ) : <p className="aide">Connectez votre compte Spotify dans l'écran Compte pour créer une playlist adaptée à la séance.</p>
+            ) : <p className="aide">Connectez votre compte Spotify dans l'écran Compte pour choisir une musique adaptée à la séance.</p>
           ) : (
             <>
               <div className="badges musique-styles" role="group" aria-label="Style de musique">
@@ -90,10 +105,14 @@ export default function Musique({ seance, onChange }) {
                 <span>Sans paroles</span>
                 <input type="checkbox" role="switch" checked={sansParoles} disabled={Boolean(enCours)} onChange={(e) => setSansParoles(e.target.checked)} />
               </label>
+              <label className="musique-option">
+                <span>Enregistrer aussi en playlist dans Spotify</span>
+                <input type="checkbox" role="switch" checked={enregistrer} disabled={Boolean(enCours)} onChange={(e) => setEnregistrer(e.target.checked)} />
+              </label>
               {erreur && <p className="erreur" role="alert">{erreur}</p>}
-              {enCours ? <Chargement etape={enCours} /> : (
+              {enCours ? <Chargement etape={enCours} enregistrer={enregistrer} /> : (
                 <button type="button" className={playlist ? 'secondaire' : 'principal'} onClick={() => creer()}>
-                  {playlist ? 'Nouvelle playlist avec ce style' : 'Créer la playlist'}
+                  {playlist ? 'Nouvelle sélection avec ce style' : 'Composer la musique'}
                 </button>
               )}
             </>
@@ -103,7 +122,7 @@ export default function Musique({ seance, onChange }) {
             <div className="musique-playlist">
               <div className="musique-playlist-tete">
                 <strong>{playlist.nom}</strong>
-                <span>{resume}</span>
+                <span>{resume}{playlist.uri ? ' · enregistrée dans Spotify' : ' · jouée pendant la séance'}</span>
               </div>
               <ol className="musique-morceaux">
                 {phases.map((ph) => (
@@ -126,7 +145,9 @@ export default function Musique({ seance, onChange }) {
               </ol>
               <div className="musique-actions">
                 <button type="button" className="secondaire" disabled={Boolean(enCours) || !spotify.connecte} onClick={autreSelection}>↻ Autre sélection</button>
-                <a className="principal ouvrir-spotify" href={playlist.url} target="_blank" rel="noopener noreferrer">Ouvrir dans Spotify</a>
+                {playlist.url
+                  ? <a className="principal ouvrir-spotify" href={playlist.url} target="_blank" rel="noopener noreferrer">Ouvrir dans Spotify</a>
+                  : <button type="button" className="principal ouvrir-spotify" disabled={Boolean(enCours) || !spotify.connecte} onClick={enregistrerMaintenant}>Enregistrer dans Spotify</button>}
               </div>
             </div>
           )}

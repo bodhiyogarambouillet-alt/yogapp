@@ -1,14 +1,45 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { listerSeances, supprimerSeance, enregistrerSeance } from '../stockage.js';
-import { dateDe, dateLisible } from '../dates.js';
+import { dateDe, dateLisible, aujourdhui } from '../dates.js';
 import { Retour, Poubelle } from './Icones.jsx';
 import { PAR_ID, nom } from '../bibliotheque.js';
+
+const sansAccents = (s) => (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+// Texte dans lequel cherche le filtre : titre, thème, intention, style, objectif et noms des postures
+const texteRecherche = (s) => sansAccents([
+  s.titre, s.theme, s.intention, s.style, s.niveau, s.cibleId && PAR_ID.get(s.cibleId) && nom(PAR_ID.get(s.cibleId)),
+  ...(s.phases || []).flatMap((ph) => ph.items.map((it) => { const p = PAR_ID.get(it.id); return p ? `${p.fr} ${p.sanskrit || ''}` : ''; })),
+].filter(Boolean).join(' '));
+
+// Filtres gardés le temps de la session (on les retrouve en revenant d'une séance)
+let memoire = { recherche: '', quand: null, style: null, niveau: null };
 
 export default function MesSeances({ compte, onRetour, onOuvrir }) {
   const [liste, setListe] = useState([]);
   const [message, setMessage] = useState(null);
 
   const connecte = compte?.actif && compte.email;
+
+  const [recherche, setRecherche] = useState(memoire.recherche);
+  const [quand, setQuand] = useState(memoire.quand); // null | 'avenir' | 'passees'
+  const [style, setStyle] = useState(memoire.style);
+  const [niveau, setNiveau] = useState(memoire.niveau);
+  useEffect(() => { memoire = { recherche, quand, style, niveau }; }, [recherche, quand, style, niveau]);
+  const styles = useMemo(() => [...new Set(liste.map((s) => s.style).filter(Boolean))].sort(), [liste]);
+  const niveaux = useMemo(() => [...new Set(liste.map((s) => s.niveau).filter(Boolean))], [liste]);
+  const filtrees = useMemo(() => {
+    const q = sansAccents(recherche.trim());
+    const jour = aujourdhui();
+    return liste.filter((s) => (!q || texteRecherche(s).includes(q))
+      && (!quand || (quand === 'avenir' ? (dateDe(s) || '') >= jour : (dateDe(s) || '') < jour))
+      && (!style || s.style === style) && (!niveau || s.niveau === niveau));
+  }, [liste, recherche, quand, style, niveau]);
+  const filtre = Boolean(recherche.trim() || quand || style || niveau);
+  const effacer = () => { setRecherche(''); setQuand(null); setStyle(null); setNiveau(null); };
+  const pastille = (actif, libelle, onClick) => (
+    <button type="button" key={libelle} className={`badge choix ${actif ? 'actif' : ''}`} aria-pressed={actif} onClick={onClick}>{libelle}</button>
+  );
 
   const recharger = useCallback(async () => {
     try {
@@ -51,9 +82,27 @@ export default function MesSeances({ compte, onRetour, onOuvrir }) {
         <h1 className="titre-section">Mes séances</h1>
         <p className="sous">{connecte ? 'Sur tous vos appareils.' : 'Enregistrées sur cet appareil.'}</p>
       </section>
+      {liste.length > 1 && (
+        <div className="biblio-outils seances-filtres">
+          <input type="search" value={recherche} onChange={(e) => setRecherche(e.target.value)}
+            placeholder="Titre, thème, posture…" aria-label="Rechercher une séance" />
+          <div className="biblio-filtres" role="group" aria-label="Filtres">
+            {pastille(quand === 'avenir', 'À venir', () => setQuand(quand === 'avenir' ? null : 'avenir'))}
+            {pastille(quand === 'passees', 'Passées', () => setQuand(quand === 'passees' ? null : 'passees'))}
+            {styles.length > 1 && styles.map((x) => pastille(style === x, x, () => setStyle(style === x ? null : x)))}
+            {niveaux.length > 1 && niveaux.map((x) => pastille(niveau === x, x, () => setNiveau(niveau === x ? null : x)))}
+          </div>
+          {filtre && (
+            <p className="seances-compte">{filtrees.length} séance{filtrees.length > 1 ? 's' : ''} sur {liste.length}
+              <button type="button" className="lien" onClick={effacer}>Effacer les filtres</button></p>
+          )}
+        </div>
+      )}
+
       <section className="cartes liste-seances">
         {liste.length === 0 && <div className="carte"><p>Aucune séance enregistrée pour l'instant.</p></div>}
-        {liste.map((s) => (
+        {liste.length > 0 && filtrees.length === 0 && <div className="carte"><p>Aucune séance ne correspond à ces filtres.</p></div>}
+        {filtrees.map((s) => (
           <div className="carte ligne-seance" key={s.uid}>
             <button type="button" className="ligne-lien" onClick={() => onOuvrir(s)}>
               <span className="ligne-texte">

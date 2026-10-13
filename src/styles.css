@@ -1076,3 +1076,9 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
   /* Commandes sous le lecteur (colonne de gauche) */
   .live:not(.salle):has(.live-explications) .live-commandes { left: calc((100vw - min(100vw, 1320px)) / 2 + 32px); right: auto; width: min(600px, 100vw - 64px); }
 }
+
+/* Mes séances : recherche et filtres */
+.seances-filtres { margin-top: 4px; }
+.seances-compte { display: flex; align-items: center; gap: 12px; margin: 0; font-size: 14px; color: var(--texte-doux); }
+.seances-compte .lien { min-height: 32px; padding: 0; }
+@media (min-width: 1024px) { .seances-filtres { padding: 0 0 8px; } }

@@ -609,6 +609,8 @@ input[type="search"] { height: 52px; padding: 0 18px; }
   /* Fiche ouverte à côté de la séance */
   .panneau-fiche { display: block; position: fixed; top: 0; right: 0; bottom: 0; z-index: 15; width: 460px; overflow-y: auto; background: var(--fond); box-shadow: -12px 0 40px rgba(46, 38, 34, 0.18); animation: glisse-gauche 0.3s ease both; }
   .panneau-fiche .ecran { max-width: none; min-height: 100%; padding: 0 0 var(--bas); }
+  /* Boutons Modifier / Régénérer centrés en bas du panneau */
+  .panneau-fiche .pied.deux { width: 100%; max-width: 420px; margin-left: auto; margin-right: auto; }
   body:has(.live) .panneau-fiche { display: none; }
 
   /* Séance en direct : plein écran, centré, plus grand */

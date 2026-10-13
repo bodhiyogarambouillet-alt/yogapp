@@ -1013,52 +1013,43 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
 .salle-ensuite { display: none; margin: 1.6vh 0 0; font-size: clamp(15px, 2.2vh, 24px); font-weight: 700; color: var(--texte); }
 .salle-ensuite span { margin-right: 6px; font-weight: 700; color: var(--texte-doux); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.75em; }
 .consignes-defilantes { display: none; }
-.live.salle .consignes-defilantes { display: block; position: relative; width: 100%; max-width: 60ch; margin-top: 2vh; overflow: hidden; text-align: left;
+.live.salle .consignes-defilantes, .live.vues .consignes-defilantes { display: block; position: relative; width: 100%; max-width: 60ch; margin-top: 2vh; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none; text-align: left;
   -webkit-mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent); }
 .consignes-defilantes:not(.defile) { -webkit-mask-image: none; mask-image: none; }
-.consignes-defilantes.defile .consignes-piste { animation: consignes-defilement linear infinite; }
-@keyframes consignes-defilement { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+.consignes-defilantes::-webkit-scrollbar { display: none; }
 .consignes-bloc { padding: 2vh 0; display: flex; flex-direction: column; gap: 1.6vh; font-size: clamp(15px, 2.3vh, 26px); line-height: 1.45; color: var(--texte); }
 .consignes-bloc h3 { margin: 0 0 0.6vh; font-family: var(--titre); font-weight: 400; font-size: 1.05em; color: var(--accent); }
 .consignes-bloc ol, .consignes-bloc ul { margin: 0; padding-left: 1.3em; display: flex; flex-direction: column; gap: 0.5vh; }
 .consignes-bloc li::marker { color: var(--accent); }
 .consignes-bloc p { margin: 0; }
-@media (prefers-reduced-motion: reduce) { .consignes-defilantes.defile .consignes-piste { animation: none; } .live.salle .consignes-defilantes { overflow-y: auto; } }
 
-/* Mode cours en salle sur téléphone : deux vues, la posture ou ses consignes (sélecteur, ou glisser du doigt) */
+/* Téléphone : pas de mode plein écran ; le lecteur a deux vues, la posture ou ses consignes (sélecteur, ou glisser du doigt) */
 .salle-vues, .salle-bandeau, .salle-points { display: none; }
 @media (max-width: 699px) {
-  .live.salle .salle-vues { display: flex; width: 220px; margin: 14px auto 0; padding: 3px; border-radius: 18px; background: var(--arche); }
+  .salle-bouton { display: none; }
+  .live.vues .salle-vues { display: flex; width: 220px; margin: 14px auto 0; padding: 3px; border-radius: 18px; background: var(--arche); }
   .salle-vues button { flex: 1; min-height: 32px; border: none; border-radius: 15px; background: transparent; font-size: 13px; font-weight: 700; color: var(--texte-doux); }
   .salle-vues button.actif { background: var(--surface); color: var(--accent); }
-  .live.salle .salle-points { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
+  .live.vues .salle-points { display: flex; justify-content: center; gap: 6px; margin-top: 12px; }
   .salle-points i { width: 6px; height: 6px; border-radius: 50%; background: var(--trait); transition: background-color 0.2s ease; }
   .salle-points i.actif { background: var(--accent); }
-  .live.salle .live-centre { padding-top: 12px; }
-  /* Vue posture : grand cercle, sans les consignes */
-  .live.salle.vue-posture .live-cercle { width: min(58vw, 27vh); height: min(58vw, 27vh); }
-  .live.salle .salle-ensuite { max-width: 100%; margin-top: 10px; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .live.salle .souffle-lancer { margin-top: 8px; }
-  .live.salle .live-picto .picto, .live.salle .souffle-texte { transform: scale(1.4); }
-  .live.salle .live-chrono { margin-top: 6px; font-size: 52px; }
-  .live.salle .live-nom { margin-top: 6px; font-size: 30px; }
-  .live.salle .live-cote { margin-top: 6px; font-size: 14px; padding: 4px 14px; }
-  .live.salle .live-centre .sous { font-size: 15px; }
-  .live.salle.vue-posture .live-infos { height: auto; }
-  .live.salle.vue-posture .consignes-defilantes { display: none; }
-  /* Vue consignes : bandeau compact (anneau, nom, chrono), puis le texte qui défile en plus petit */
-  .live.salle.vue-consignes .live-cercle,
-  .live.salle.vue-consignes .live-infos > :not(.consignes-defilantes):not(.salle-ensuite) { display: none; }
-  .live.salle.vue-consignes .salle-bandeau { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 14px; border-radius: 18px; background: var(--surface); text-align: left; }
+  .live.vues .live-centre { padding-top: 14px; }
+  /* Vue posture : le lecteur habituel */
+  .live.vues.vue-posture .consignes-defilantes { display: none; }
+  /* Vue consignes : bandeau compact (anneau, nom, chrono), puis le texte qui défile ; le résumé replié n'a plus lieu d'être */
+  .live.vues.vue-consignes .live-cercle,
+  .live.vues.vue-consignes .live-infos > :not(.consignes-defilantes),
+  .live.vues.vue-consignes .live-resume-bloc { display: none; }
+  .live.vues.vue-consignes .salle-bandeau { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 14px; border-radius: 18px; background: var(--surface); text-align: left; }
   .salle-bandeau svg { flex: none; width: 46px; height: 46px; transform: rotate(-90deg); }
   .salle-bandeau .fond-cercle, .salle-bandeau .avance-cercle { stroke-width: 4; }
   .salle-bandeau-texte { flex: 1; min-width: 0; display: flex; flex-direction: column; }
   .salle-bandeau-texte strong { font-family: var(--titre); font-weight: 400; font-size: 20px; line-height: 1.2; }
   .salle-bandeau-texte span { font-size: 13px; color: var(--texte-doux); }
   .salle-bandeau-chrono { font-family: var(--titre); font-size: 30px; color: var(--accent); font-variant-numeric: tabular-nums; }
-  .live.salle.vue-consignes .live-infos { height: calc(100vh - 430px); }
-  .live.salle.vue-consignes .consignes-bloc { font-size: 15px; gap: 12px; }
-  .live.salle.vue-consignes .consignes-bloc h3 { font-size: 17px; }
+  .live.vues.vue-consignes .consignes-defilantes { height: calc(100vh - 440px); min-height: 220px; margin-top: 6px; }
+  .live.vues .consignes-bloc { font-size: 15px; gap: 12px; padding: 14px 0; }
+  .live.vues .consignes-bloc h3 { font-size: 17px; }
 }
 
 /* Séance en direct sur ordinateur : le lecteur à gauche, les explications de la posture à droite */

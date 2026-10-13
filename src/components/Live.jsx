@@ -89,11 +89,13 @@ function Explications({ posture, fiche }) {
   );
 }
 
-// Mode cours en salle : consignes de la fiche en défilement vertical continu (comme un prompteur),
-// en pause avec la séance ; pas de défilement si tout tient dans le cadre
+// Consignes de la fiche en défilement vertical continu (comme un prompteur), en pause avec la séance.
+// On peut aussi les faire défiler au doigt (ou à la molette) : le défilement automatique reprend ensuite de là.
+// Pas de défilement automatique si tout tient dans le cadre.
 function ConsignesDefilantes({ posture, fiche, enCours }) {
   const cadre = useRef(null);
   const bloc = useRef(null);
+  const repos = useRef(0); // jusqu'à quand le défilement automatique attend (après un geste)
   const [defile, setDefile] = useState(false);
   const sections = fiche ? [
     ['Installation', fiche.entree, 'ol'],
@@ -104,12 +106,42 @@ function ConsignesDefilantes({ posture, fiche, enCours }) {
   if (posture.precautions) sections.push(['Précautions', posture.precautions, 'p']);
   const nbLignes = sections.reduce((n, [, v]) => n + (Array.isArray(v) ? v.length : 2), 0);
   useEffect(() => {
-    const mesurer = () => setDefile(Boolean(bloc.current && cadre.current && bloc.current.offsetHeight > cadre.current.clientHeight));
+    const mesurer = () => setDefile(Boolean(bloc.current && cadre.current && cadre.current.clientHeight && bloc.current.offsetHeight > cadre.current.clientHeight));
     mesurer();
     const obs = new ResizeObserver(mesurer);
     if (cadre.current) obs.observe(cadre.current);
     return () => obs.disconnect();
   }, [fiche, posture.id]);
+  // Défilement automatique : environ 5 s par ligne ; le contenu est doublé pour boucler sans à-coup
+  useEffect(() => {
+    if (!defile || !enCours || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return undefined;
+    let image;
+    let avant = performance.now();
+    let pos = cadre.current.scrollTop;
+    const tour = (t) => {
+      const c = cadre.current;
+      const moitie = bloc.current?.offsetHeight || 0;
+      if (c && moitie) {
+        if (t < repos.current) pos = c.scrollTop;
+        else {
+          pos += (moitie / Math.max(30, nbLignes * 5)) * ((t - avant) / 1000);
+          if (pos >= moitie) pos -= moitie;
+          c.scrollTop = pos;
+        }
+      }
+      avant = t;
+      image = requestAnimationFrame(tour);
+    };
+    image = requestAnimationFrame(tour);
+    return () => cancelAnimationFrame(image);
+  }, [defile, enCours, nbLignes]);
+  const geste = () => { repos.current = performance.now() + 3500; };
+  // Défilement à la main : on boucle aussi (fin de la 1re copie → début)
+  const auDefilement = () => {
+    const c = cadre.current;
+    const moitie = bloc.current?.offsetHeight || 0;
+    if (defile && c && moitie && c.scrollTop >= moitie) c.scrollTop -= moitie;
+  };
   if (fiche === undefined) return <div className="consignes-defilantes"><p className="aide">Chargement des consignes…</p></div>;
   if (!sections.length) return null;
   const contenu = (cache) => (
@@ -124,13 +156,11 @@ function ConsignesDefilantes({ posture, fiche, enCours }) {
       ))}
     </div>
   );
-  // Le contenu est doublé pour boucler sans à-coup ; la vitesse dépend de la longueur (environ 5 s par ligne)
   return (
-    <div className={`consignes-defilantes ${defile ? 'defile' : ''}`} ref={cadre} key={posture.id}>
-      <div className="consignes-piste" style={{ animationDuration: `${Math.max(30, nbLignes * 5)}s`, animationPlayState: enCours ? 'running' : 'paused' }}>
-        {contenu(false)}
-        {defile && contenu(true)}
-      </div>
+    <div className={`consignes-defilantes ${defile ? 'defile' : ''}`} ref={cadre} key={posture.id}
+      onWheel={geste} onTouchStart={geste} onTouchMove={geste} onPointerDown={geste} onScroll={auDefilement}>
+      {contenu(false)}
+      {defile && contenu(true)}
     </div>
   );
 }
@@ -239,6 +269,16 @@ export default function Live({ seance, onQuitter }) {
 
   // Mode cours en salle : grand affichage plein écran, lisible de loin (tablette, vidéoprojecteur)
   const [salle, setSalle] = useState(false);
+  // Téléphone : pas de plein écran, mais deux vues dans le lecteur (la posture ou ses consignes qui défilent)
+  const [mobile, setMobile] = useState(() => window.matchMedia?.('(max-width: 699px)').matches || false);
+  useEffect(() => {
+    const m = window.matchMedia?.('(max-width: 699px)');
+    if (!m) return undefined;
+    const suivre = () => setMobile(m.matches);
+    m.addEventListener('change', suivre);
+    return () => m.removeEventListener('change', suivre);
+  }, []);
+  const vues = mobile && !salle;
   // Sur téléphone, le mode salle a deux vues : la posture (grand cercle) ou ses consignes (texte défilant) ;
   // la dernière vue choisie est gardée sur l'appareil
   const [vueSalle, setVueSalle] = useState(() => { try { return localStorage.getItem('yoga:vue-salle') || 'posture'; } catch { return 'posture'; } });
@@ -249,7 +289,7 @@ export default function Live({ seance, onQuitter }) {
     onTouchEnd: (e) => {
       const d = depart.current;
       depart.current = null;
-      if (!salle || !d) return;
+      if (!vues || !d) return;
       const dx = e.changedTouches[0].clientX - d.x;
       if (Math.abs(dx) > 60 && Math.abs(dx) > 2 * Math.abs(e.changedTouches[0].clientY - d.y)) changerVue(dx < 0 ? 'consignes' : 'posture');
     },
@@ -419,7 +459,7 @@ export default function Live({ seance, onQuitter }) {
   const indexPhase = phases.findIndex((ph) => ph.phase === etape.phase);
 
   return (
-    <div className={`ecran live ${enCours ? 'en-cours' : ''} ${salle ? `salle vue-${vueSalle}` : ''}`}>
+    <div className={`ecran live ${enCours ? 'en-cours' : ''} ${salle ? 'salle' : ''} ${vues ? `vues vue-${vueSalle}` : ''}`}>
       <header className="entete compact">
         <button type="button" className="rond" aria-label="Quitter la séance" onClick={quitter}><Fermer /></button>
         <span className="sous">{bulleVoix
@@ -460,7 +500,7 @@ export default function Live({ seance, onQuitter }) {
         </section>
       ) : (
         <>
-          {salle && (
+          {vues && (
             <div className="salle-vues" role="tablist" aria-label="Affichage">
               {[['posture', 'Posture'], ['consignes', 'Consignes']].map(([v, l]) => (
                 <button type="button" key={v} role="tab" aria-selected={vueSalle === v} className={vueSalle === v ? 'actif' : ''} onClick={() => changerVue(v)}>{l}</button>
@@ -468,7 +508,7 @@ export default function Live({ seance, onQuitter }) {
             </div>
           )}
           <section className="live-centre" {...glisser}>
-            {salle && (
+            {vues && (
               <div className="salle-bandeau">
                 <svg viewBox="0 0 44 44" aria-hidden="true">
                   <circle cx="22" cy="22" r="18" className="fond-cercle" />
@@ -500,7 +540,7 @@ export default function Live({ seance, onQuitter }) {
             {variantesDe(etape).length > 0 && (
               <p className="live-variantes"><strong>Variantes :</strong> {variantesDe(etape).map(nom).join(' · ')}</p>
             )}
-            {salle && <ConsignesDefilantes posture={etape.posture} fiche={fiches[etape.id]} enCours={enCours} />}
+            {(salle || vues) && <ConsignesDefilantes posture={etape.posture} fiche={fiches[etape.id]} enCours={enCours} />}
             {souffle
               ? <ChoixRythme rythme={souffle} onChoisir={choisirRythme} onFermer={() => setSouffle(null)} />
               : <button type="button" className="souffle-lancer" onClick={() => setSouffle(rythmeMemorise())}>Respiration guidée</button>}
@@ -511,7 +551,7 @@ export default function Live({ seance, onQuitter }) {
             )}
             </div>
           </section>
-          {salle && <div className="salle-points" aria-hidden="true"><i className={vueSalle === 'posture' ? 'actif' : ''} /><i className={vueSalle === 'consignes' ? 'actif' : ''} /></div>}
+          {vues && <div className="salle-points" aria-hidden="true"><i className={vueSalle === 'posture' ? 'actif' : ''} /><i className={vueSalle === 'consignes' ? 'actif' : ''} /></div>}
 
           <section className="live-resume-bloc">
             <Resume posture={etape.posture} fiche={fiches[etape.id]} />

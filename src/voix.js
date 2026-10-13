@@ -33,6 +33,24 @@ export async function preparerVoix(textes, progression = () => {}) {
   }
 }
 
+// Récupère tout de suite les voix manquantes d'une annonce (déjà générées pour la plupart : réponse immédiate),
+// sans attendre plus de quelques secondes ; ce qui n'arrive pas à temps sera dit par la voix du téléphone
+async function assurerSons(textes) {
+  const manquants = [...new Set(textes.filter((t) => !sons.has(t)))];
+  for (let i = 0; i < manquants.length; i += 6) {
+    const lot = manquants.slice(i, i + 6);
+    const arret = new AbortController();
+    const minuteur = setTimeout(() => arret.abort(), 6000);
+    try {
+      const r = await fetch(urlApi('/api/voix'), {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ textes: lot }), signal: arret.signal,
+      });
+      const d = await r.json();
+      (d.urls || []).forEach((u, k) => { if (u) sons.set(lot[k], u); });
+    } catch { /* délai dépassé ou hors connexion */ } finally { clearTimeout(minuteur); }
+  }
+}
+
 function jouer(url) {
   return new Promise((resoudre, rejeter) => {
     lecteur = new Audio(url);
@@ -96,6 +114,7 @@ export async function parler(segments) {
   if (!liste.length) return;
   taire();
   const moi = ++jeton;
+  await assurerSons(liste);
   for (const t of liste) {
     if (moi !== jeton) return;
     const son = sons.get(t);

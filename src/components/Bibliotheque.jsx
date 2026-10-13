@@ -11,7 +11,7 @@ const sansAccents = (t) => (t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').to
 const NIVEAUX = [[1, 'Niveau 1'], [2, 'Niveau 2'], [3, 'Niveau 3']];
 let memoire = { recherche: '', famille: null, niveau: null, defilement: 0 };
 
-function Ligne({ p, actif, onOuvrir, variante = false, children = null }) {
+function Ligne({ p, actif, onOuvrir, variante = false }) {
   return (
     <div className={`ligne ${actif ? 'actif' : ''} ${variante ? 'biblio-variante' : ''}`}>
       <button type="button" className="ligne-lien" aria-current={actif ? 'true' : undefined} onClick={() => onOuvrir(p)}>
@@ -22,7 +22,6 @@ function Ligne({ p, actif, onOuvrir, variante = false, children = null }) {
         </span>
         <span className={`biblio-niveau n${p.niveau}`} aria-label={`Niveau ${p.niveau}`}>{p.niveau}</span>
       </button>
-      {children}
     </div>
   );
 }
@@ -151,14 +150,12 @@ export default function Bibliotheque({ onRetour, onOuvrirPosture, selection = nu
                     const ouverte = ouvertes.has(p.id);
                     return (
                       <div className="biblio-bloc" key={p.id}>
-                        <Ligne p={p} actif={selection === p.id} onOuvrir={ouvrir}>
-                          {vars.length > 0 && (
-                            <button type="button" className={`biblio-variantes ${ouverte ? 'ouvert' : ''}`} aria-expanded={ouverte}
-                              aria-label={`${ouverte ? 'Masquer' : 'Afficher'} les ${vars.length} variante${vars.length > 1 ? 's' : ''}`} onClick={() => basculer(p.id)}>
-                              {vars.length} variante{vars.length > 1 ? 's' : ''}<span aria-hidden="true">▾</span>
-                            </button>
-                          )}
-                        </Ligne>
+                        <Ligne p={p} actif={selection === p.id} onOuvrir={ouvrir} />
+                        {vars.length > 0 && (
+                          <button type="button" className="biblio-variantes" aria-expanded={ouverte} onClick={() => basculer(p.id)}>
+                            {ouverte ? 'Masquer les variantes' : `+ ${vars.length} variante${vars.length > 1 ? 's' : ''}`}
+                          </button>
+                        )}
                         {ouverte && vars.map((v) => <Ligne key={v.id} p={v} actif={selection === v.id} onOuvrir={ouvrir} variante />)}
                       </div>
                     );

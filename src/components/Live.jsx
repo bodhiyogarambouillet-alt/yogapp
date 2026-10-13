@@ -206,6 +206,21 @@ export default function Live({ seance, onQuitter }) {
 
   // Mode cours en salle : grand affichage plein écran, lisible de loin (tablette, vidéoprojecteur)
   const [salle, setSalle] = useState(false);
+  // Sur téléphone, le mode salle a deux vues : la posture (grand cercle) ou ses consignes (texte défilant) ;
+  // la dernière vue choisie est gardée sur l'appareil
+  const [vueSalle, setVueSalle] = useState(() => { try { return localStorage.getItem('yoga:vue-salle') || 'posture'; } catch { return 'posture'; } });
+  const changerVue = (v) => { setVueSalle(v); try { localStorage.setItem('yoga:vue-salle', v); } catch { /* stockage indisponible */ } };
+  const depart = useRef(null);
+  const glisser = {
+    onTouchStart: (e) => { depart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY }; },
+    onTouchEnd: (e) => {
+      const d = depart.current;
+      depart.current = null;
+      if (!salle || !d) return;
+      const dx = e.changedTouches[0].clientX - d.x;
+      if (Math.abs(dx) > 60 && Math.abs(dx) > 2 * Math.abs(e.changedTouches[0].clientY - d.y)) changerVue(dx < 0 ? 'consignes' : 'posture');
+    },
+  };
   const basculerSalle = () => {
     const suivant = !salle;
     setSalle(suivant);
@@ -371,7 +386,7 @@ export default function Live({ seance, onQuitter }) {
   const indexPhase = phases.findIndex((ph) => ph.phase === etape.phase);
 
   return (
-    <div className={`ecran live ${enCours ? 'en-cours' : ''} ${salle ? 'salle' : ''}`}>
+    <div className={`ecran live ${enCours ? 'en-cours' : ''} ${salle ? `salle vue-${vueSalle}` : ''}`}>
       <header className="entete compact">
         <button type="button" className="rond" aria-label="Quitter la séance" onClick={quitter}><Fermer /></button>
         <span className="sous">{bulleVoix
@@ -412,7 +427,27 @@ export default function Live({ seance, onQuitter }) {
         </section>
       ) : (
         <>
-          <section className="live-centre">
+          {salle && (
+            <div className="salle-vues" role="tablist" aria-label="Affichage">
+              {[['posture', 'Posture'], ['consignes', 'Consignes']].map(([v, l]) => (
+                <button type="button" key={v} role="tab" aria-selected={vueSalle === v} className={vueSalle === v ? 'actif' : ''} onClick={() => changerVue(v)}>{l}</button>
+              ))}
+            </div>
+          )}
+          <section className="live-centre" {...glisser}>
+            {salle && (
+              <div className="salle-bandeau">
+                <svg viewBox="0 0 44 44" aria-hidden="true">
+                  <circle cx="22" cy="22" r="18" className="fond-cercle" />
+                  <circle cx="22" cy="22" r="18" className="avance-cercle" strokeDasharray={2 * Math.PI * 18} strokeDashoffset={2 * Math.PI * 18 * (1 - fraction)} />
+                </svg>
+                <span className="salle-bandeau-texte">
+                  <strong>{nom(etape.posture)}</strong>
+                  <span>{[cote && (coteGauche ? 'Côté gauche' : 'Côté droit'), etape.duree].filter(Boolean).join(' · ')}</span>
+                </span>
+                <span className="salle-bandeau-chrono">{mmss(restant)}</span>
+              </div>
+            )}
             <div className="live-cercle">
               <svg viewBox="0 0 200 200" aria-hidden="true">
                 <circle cx="100" cy="100" r={rayon} className="fond-cercle" />
@@ -443,6 +478,7 @@ export default function Live({ seance, onQuitter }) {
             )}
             </div>
           </section>
+          {salle && <div className="salle-points" aria-hidden="true"><i className={vueSalle === 'posture' ? 'actif' : ''} /><i className={vueSalle === 'consignes' ? 'actif' : ''} /></div>}
 
           <section className="live-resume-bloc">
             <Resume posture={etape.posture} fiche={fiches[etape.id]} />

@@ -1024,3 +1024,39 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
 .consignes-bloc li::marker { color: var(--accent); }
 .consignes-bloc p { margin: 0; }
 @media (prefers-reduced-motion: reduce) { .consignes-defilantes.defile .consignes-piste { animation: none; } .live.salle .consignes-defilantes { overflow-y: auto; } }
+
+/* Mode cours en salle sur téléphone : deux vues, la posture ou ses consignes (sélecteur, ou glisser du doigt) */
+.salle-vues, .salle-bandeau, .salle-points { display: none; }
+@media (max-width: 699px) {
+  .live.salle .salle-vues { display: flex; width: 220px; margin: 14px auto 0; padding: 3px; border-radius: 18px; background: var(--arche); }
+  .salle-vues button { flex: 1; min-height: 32px; border: none; border-radius: 15px; background: transparent; font-size: 13px; font-weight: 700; color: var(--texte-doux); }
+  .salle-vues button.actif { background: var(--surface); color: var(--accent); }
+  .live.salle .salle-points { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
+  .salle-points i { width: 6px; height: 6px; border-radius: 50%; background: var(--trait); transition: background-color 0.2s ease; }
+  .salle-points i.actif { background: var(--accent); }
+  .live.salle .live-centre { padding-top: 12px; }
+  /* Vue posture : grand cercle, sans les consignes */
+  .live.salle.vue-posture .live-cercle { width: min(58vw, 27vh); height: min(58vw, 27vh); }
+  .live.salle .salle-ensuite { max-width: 100%; margin-top: 10px; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .live.salle .souffle-lancer { margin-top: 8px; }
+  .live.salle .live-picto .picto, .live.salle .souffle-texte { transform: scale(1.4); }
+  .live.salle .live-chrono { margin-top: 6px; font-size: 52px; }
+  .live.salle .live-nom { margin-top: 6px; font-size: 30px; }
+  .live.salle .live-cote { margin-top: 6px; font-size: 14px; padding: 4px 14px; }
+  .live.salle .live-centre .sous { font-size: 15px; }
+  .live.salle.vue-posture .live-infos { height: auto; }
+  .live.salle.vue-posture .consignes-defilantes { display: none; }
+  /* Vue consignes : bandeau compact (anneau, nom, chrono), puis le texte qui défile en plus petit */
+  .live.salle.vue-consignes .live-cercle,
+  .live.salle.vue-consignes .live-infos > :not(.consignes-defilantes):not(.salle-ensuite) { display: none; }
+  .live.salle.vue-consignes .salle-bandeau { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 14px; border-radius: 18px; background: var(--surface); text-align: left; }
+  .salle-bandeau svg { flex: none; width: 46px; height: 46px; transform: rotate(-90deg); }
+  .salle-bandeau .fond-cercle, .salle-bandeau .avance-cercle { stroke-width: 4; }
+  .salle-bandeau-texte { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .salle-bandeau-texte strong { font-family: var(--titre); font-weight: 400; font-size: 20px; line-height: 1.2; }
+  .salle-bandeau-texte span { font-size: 13px; color: var(--texte-doux); }
+  .salle-bandeau-chrono { font-family: var(--titre); font-size: 30px; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .live.salle.vue-consignes .live-infos { height: calc(100vh - 430px); }
+  .live.salle.vue-consignes .consignes-bloc { font-size: 15px; gap: 12px; }
+  .live.salle.vue-consignes .consignes-bloc h3 { font-size: 17px; }
+}

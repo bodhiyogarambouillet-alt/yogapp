@@ -3,6 +3,7 @@ import Picto from './Picto.jsx';
 import { nom, nomSecondaire, variantesDe } from '../bibliotheque.js';
 import { Fermer, Lecture, Pause, Suivant, Precedent, Attention, Agrandir, Reduire } from './Icones.jsx';
 import { DisqueSouffle, ChoixRythme, rythmeMemorise, memoriserRythme } from './Souffle.jsx';
+import { afficherSeanceLive, arreterSeanceLive, ecouterActionsSeance } from '../seance-live.js';
 import { obtenirFiche } from '../stockage.js';
 import { useRetour, vibrer } from '../natif.js';
 import { useMusiqueLive, CarteMorceau } from './MusiqueLive.jsx';
@@ -423,12 +424,38 @@ export default function Live({ seance, onQuitter }) {
     activer();
     const ecoule = etape.secondes - restant;
     allerA(ecoule > 5 ? index : index - 1, enCours);
+    setMajLive((n) => n + 1); // même posture recommencée : la notification repart aussi
   };
   const suivant = () => { activer(); allerA(index + 1, enCours); };
   const ajouter = (s) => {
     setRestant((r) => r + s);
     if (fin.current) fin.current += s * 1000;
+    setMajLive((n) => n + 1);
   };
+
+  // Android : séance en notification Live Update dès qu'elle a été lancée (posture, compte à rebours, progression,
+  // boutons Pause / Suivante) ; retirée à la fin ou en quittant
+  const [majLive, setMajLive] = useState(0);
+  const lancee = useRef(false);
+  const restantRef = useRef(restant);
+  restantRef.current = restant;
+  const planLive = useMemo(() => etapes.map((e) => ({ nom: nom(e.posture), phase: e.phase, cotes: Boolean(e.posture.cotes), secondes: e.secondes })), [etapes]);
+  useEffect(() => {
+    if (enCours) lancee.current = true;
+    if (terminee) { arreterSeanceLive(); return; }
+    if (!lancee.current) return;
+    afficherSeanceLive({
+      etapes: planLive, index, enCours,
+      restant: enCours && fin.current ? Math.max(0, (fin.current - Date.now()) / 1000) : restantRef.current,
+    });
+  }, [enCours, index, terminee, planLive, majLive]);
+  useEffect(() => () => arreterSeanceLive(), []);
+  const actionsLive = useRef({});
+  actionsLive.current = { basculer, suivant };
+  useEffect(() => ecouterActionsSeance((a) => {
+    if (a === 'pause') actionsLive.current.basculer();
+    else if (a === 'suivante') actionsLive.current.suivant();
+  }), []);
 
   const quitter = async () => {
     if (enCours && !(await confirmer({

@@ -2,9 +2,18 @@ import { useEffect, useRef, useState } from 'react';
 import Picto from './Picto.jsx';
 import { nom, nomSecondaire } from '../bibliotheque.js';
 import { Retour, Attention, Valide, Etincelle, Fermer } from './Icones.jsx';
-import { useRetour } from '../natif.js';
+import { useRetour, estNatif } from '../natif.js';
+import { Browser } from '@capacitor/browser';
 import { obtenirFiche, regenererFiche, enregistrerFiche, revenirReference as revenirRef, aUneReference } from '../stockage.js';
 import { confirmer } from './Dialogue.jsx';
+
+// Recherche Google de la posture (noms sanskrit et français), dans le navigateur
+function chercherSurGoogle(posture) {
+  const q = [posture.sanskrit, posture.fr, 'posture yoga'].filter(Boolean).join(' ');
+  const url = `https://www.google.com/search?q=${encodeURIComponent(q)}`;
+  if (estNatif) Browser.open({ url }).catch(() => {});
+  else window.open(url, '_blank', 'noopener');
+}
 
 // Listes éditées une ligne par élément
 const CHAMPS_LISTE = [
@@ -110,6 +119,10 @@ export default function Fiche({ posture, contexte, compte, onRetour, panneau = f
             {posture.zones.map((z) => <span key={z} className="badge">{z}</span>)}
           </div>
         )}
+        <button type="button" className="fiche-google" onClick={() => chercherSurGoogle(posture)}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+          Rechercher sur Google
+        </button>
       </section>
       {(posture.cotes || posture.accessoires || posture.preparations?.length > 0 || posture.contres?.length > 0) && (
         <p className="fiche-liens">

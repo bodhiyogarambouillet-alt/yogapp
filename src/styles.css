@@ -1089,3 +1089,8 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
 .seances-compte { display: flex; align-items: center; gap: 12px; margin: 0; font-size: 14px; color: var(--texte-doux); }
 .seances-compte .lien { min-height: 32px; padding: 0; }
 @media (min-width: 1024px) { .seances-filtres { padding: 0 0 8px; } }
+
+/* Fiche : recherche de la posture sur Google */
+.fiche-google { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; min-height: 38px; padding: 0 16px; border: 1.5px solid var(--trait);
+  border-radius: 19px; background: transparent; font-size: 14px; font-weight: 700; color: var(--texte-doux); }
+.fiche-google:active { transform: scale(0.97); }

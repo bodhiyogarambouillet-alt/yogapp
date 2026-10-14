@@ -12,8 +12,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      /* Écran d'ouverture : affiché dès la première image, avant le chargement de l'appli (retiré par src/main.jsx) */
+      #ouverture { position: fixed; inset: 0; z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 44px;
+        background: #F3ECE1; transition: opacity 0.7s ease, visibility 0.7s; }
+      .ouverture-logo { position: relative; width: 116px; height: 116px; transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+      .ouverture-logo span { position: absolute; border-radius: 50%; animation: ouverture-cercle 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+      .ouverture-logo .c1 { inset: 0; background: #EBDCC7; }
+      .ouverture-logo .c2 { inset: 15px; background: #E5D0B4; animation-delay: 0.12s; }
+      .ouverture-logo .c3 { inset: 30px; background: #DDBE98; animation-delay: 0.24s; }
+      .ouverture-logo .c4 { inset: 47px; background: #A9472A; animation-delay: 0.36s; }
+      .ouverture-logo .onde { inset: 0; background: none; border: 1px solid #CFA47A; opacity: 0; animation: ouverture-onde 2.6s ease-out 0.7s infinite; }
+      .ouverture-logo .onde.o2 { animation-delay: 2s; }
+      .ouverture-nom { margin: 0; font-family: 'Marcellus', Georgia, serif; font-size: 30px; color: #2E2622; animation: ouverture-nom 0.9s ease 0.45s both; }
+      #ouverture.sortie { opacity: 0; visibility: hidden; }
+      #ouverture.sortie .ouverture-logo { transform: scale(1.35); }
+      @keyframes ouverture-cercle { from { transform: scale(0); } to { transform: scale(1); } }
+      @keyframes ouverture-onde { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.9); opacity: 0; } }
+      @keyframes ouverture-nom { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+      @media (prefers-reduced-motion: reduce) { .ouverture-logo span, .ouverture-nom { animation: none !important; } .ouverture-logo .onde { display: none; } }
+    </style>
   </head>
   <body>
+    <div id="ouverture" aria-hidden="true">
+      <div class="ouverture-logo"><span class="onde"></span><span class="onde o2"></span><span class="c1"></span><span class="c2"></span><span class="c3"></span><span class="c4"></span></div>
+      <p class="ouverture-nom">Mes séances Yoga</p>
+    </div>
+    <script>
+      // Sur le site, une fois par session (pas à chaque rechargement) ; dans l'appli, à chaque lancement
+      try {
+        if (!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform())) {
+          if (sessionStorage.getItem('yoga:ouverture')) document.getElementById('ouverture').remove();
+          else sessionStorage.setItem('yoga:ouverture', '1');
+        }
+      } catch (e) { /* stockage indisponible : l'écran s'affiche */ }
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

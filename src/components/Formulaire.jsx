@@ -181,7 +181,7 @@ export default function Formulaire({ initial, erreur, compte, brouillon, onRepre
             <button type="button" className="rond nu" aria-label="Oublier cette séance" onClick={onOublier}><Fermer /></button>
           </div>
         )}
-        {initial && !brouillon && (
+        {initial && (
           <button type="button" className="carte-reprise" onClick={() => aller(5)}>
             <span className="carte-reprise-titre">Reprendre mes derniers choix</span>
             <span className="carte-reprise-detail">{libelleStyles(styles)} · {duree} min · {niveau}</span>

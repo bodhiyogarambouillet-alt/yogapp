@@ -71,7 +71,16 @@ export default function App() {
     setBrouillon(null);
     aller('seance');
   };
-  const oublier = () => { oublierBrouillon(); setBrouillon(null); };
+  const oublier = () => {
+    oublierBrouillon();
+    setBrouillon(null);
+    setSeance(null);
+    setEnregistree(false);
+  };
+  // Séance à proposer sur l'accueil : celle en cours (appli restée ouverte) ou le brouillon retrouvé au démarrage,
+  // si elle a été quittée avant la fin (non enregistrée, ou lancée et pas terminée)
+  const enAttente = seance ? { seance, enregistree } : brouillon;
+  const brouillonAccueil = enAttente && (!enAttente.enregistree || lireProgression(enAttente.seance.uid)) ? enAttente : null;
   // Compte : { actif: Supabase configuré, email, admin }
   const [compte, setCompte] = useState({ actif: Boolean(supabase), email: null, admin: false });
 
@@ -197,7 +206,7 @@ export default function App() {
   } else {
     ecran = (
       <Formulaire initial={params} erreur={erreur} compte={compte}
-        brouillon={!seance && brouillon ? brouillon : null} onReprendre={reprendreBrouillon} onOublier={oublier}
+        brouillon={brouillonAccueil} onReprendre={seance ? () => aller('seance') : reprendreBrouillon} onOublier={oublier}
         onGenerer={generer} onMesSeances={() => aller('mes-seances')} onBibliotheque={() => aller('bibliotheque')} onCompte={() => aller('compte')} />
     );
   }

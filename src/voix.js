@@ -10,9 +10,9 @@ import { MODELE_VOIX, VOIX_DEFAUT, TON_VOIX, corrigerPrononciation } from './voi
 // ---------- Fichiers audio : adresse recalculée sur l'appareil, copie locale pour le hors connexion ----------
 const BASE_STOCKAGE = (import.meta.env.VITE_SUPABASE_URL || '').replace(/\/$/, '');
 const CACHE_VOIX = 'yoga-voix';
-// Même empreinte que le serveur (lib/voix.js) : sha256 de « modèle|voix|ton|texte », 32 premiers caractères
+// Même empreinte que le serveur (lib/voix.js) : sha256 de « modèle|voix|ton|texte corrigé », 32 premiers caractères
 async function urlCalculee(texte) {
-  const octets = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${MODELE_VOIX}|${VOIX_DEFAUT}|${TON_VOIX}|${texte}`));
+  const octets = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${MODELE_VOIX}|${VOIX_DEFAUT}|${TON_VOIX}|${corrigerPrononciation(texte)}`));
   const hex = [...new Uint8Array(octets)].map((b) => b.toString(16).padStart(2, '0')).join('').slice(0, 32);
   return `${BASE_STOCKAGE}/storage/v1/object/public/voix/${VOIX_DEFAUT}/${hex}.mp3`;
 }

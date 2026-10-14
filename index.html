@@ -27,11 +27,10 @@
       .ouverture-logo .point { inset: 51px; background: #A9472A; animation-delay: 0.5s; transition: opacity 0.5s ease; }
       .ouverture-logo .onde { inset: 0; background: none; border: 1px solid #CFA47A; opacity: 0; animation: ouverture-onde 2.6s ease-out 0.7s infinite; }
       .ouverture-logo .onde.o2 { animation-delay: 2s; }
-      .ouverture-nom { margin: 0; font-family: 'Marcellus', Georgia, serif; font-size: 30px; color: #2E2622; animation: ouverture-nom 0.9s ease 0.45s both;
-        transition: opacity 0.35s ease, transform 0.35s ease; }
+      .ouverture-nom { margin: 0; font-family: 'Marcellus', Georgia, serif; font-size: 30px; color: #2E2622; animation: ouverture-nom 0.9s ease 0.45s both; }
       /* Transition vers l'accueil : fond qui s'efface, nom qui s'éclipse, cercles qui rejoignent le décor */
       #ouverture.vers-accueil { background-color: rgba(243, 236, 225, 0); }
-      #ouverture.vers-accueil .ouverture-nom { opacity: 0; transform: translateY(-10px); }
+      #ouverture.vers-accueil .ouverture-nom { animation: ouverture-nom-sortie 0.4s ease both; }
       #ouverture.vers-accueil .onde { display: none; }
       #ouverture.vers-accueil .point { opacity: 0; }
       #ouverture.sortie { opacity: 0; visibility: hidden; }
@@ -41,6 +40,7 @@
       @keyframes ouverture-cercle { from { transform: scale(0); } to { transform: scale(1); } }
       @keyframes ouverture-onde { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.9); opacity: 0; } }
       @keyframes ouverture-nom { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+      @keyframes ouverture-nom-sortie { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-10px); } }
       @media (prefers-reduced-motion: reduce) { .ouverture-logo span, .ouverture-nom { animation: none !important; } .ouverture-logo .onde { display: none; } }
     </style>
   </head>

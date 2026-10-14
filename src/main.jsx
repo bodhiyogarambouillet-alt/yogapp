@@ -26,13 +26,20 @@ if (ouverture) {
     const dx = g.left - (l.left + l.width / 2);
     const dy = g.top - (l.top + l.height / 2);
     const echelle = rayon / (l.width / 2);
-    logo.style.transition = 'transform 1.1s cubic-bezier(0.65, 0, 0.35, 1)';
-    ouverture.classList.add('vers-accueil');
-    requestAnimationFrame(() => { logo.style.transform = `translate(${dx}px, ${dy}px) scale(${echelle})`; });
-    setTimeout(() => {
+    // L'accueil n'apparaît que lorsque les cercles sont arrivés (fin réelle du mouvement, pas un délai fixe :
+    // sur téléphone, le mouvement peut démarrer avec un peu de retard)
+    let fini = false;
+    const arrivee = () => {
+      if (fini) return;
+      fini = true;
       document.documentElement.classList.remove('ouverture');
       ouverture.remove();
-    }, 1150);
+    };
+    logo.addEventListener('transitionend', (e) => { if (e.target === logo && e.propertyName === 'transform') arrivee(); });
+    setTimeout(arrivee, 2500); // filet de sécurité si la fin du mouvement n'est pas signalée
+    ouverture.classList.add('vers-accueil');
+    logo.style.transition = 'transform 1.1s cubic-bezier(0.65, 0, 0.35, 1) 0.15s';
+    requestAnimationFrame(() => requestAnimationFrame(() => { logo.style.transform = `translate(${dx}px, ${dy}px) scale(${echelle})`; }));
   };
   Promise.race([document.fonts?.ready, new Promise((ok) => setTimeout(ok, 2500))])
     .then(() => setTimeout(fermer, Math.max(0, 1600 - performance.now())));

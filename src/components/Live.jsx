@@ -90,9 +90,9 @@ function Explications({ posture, fiche }) {
   );
 }
 
-// Consignes de la fiche en défilement vertical continu (comme un prompteur), en pause avec la séance.
-// On peut aussi les faire défiler au doigt (ou à la molette) : le défilement automatique reprend ensuite de là.
-// Pas de défilement automatique si tout tient dans le cadre.
+// Consignes de la fiche en défilement vertical lent (comme un prompteur), en pause avec la séance, et qui s'arrête
+// à la fin du texte. On peut aussi les faire défiler au doigt (ou à la molette) : le défilement automatique reprend
+// ensuite de là. Pas de défilement automatique si tout tient dans le cadre.
 function ConsignesDefilantes({ posture, fiche, enCours }) {
   const cadre = useRef(null);
   const bloc = useRef(null);
@@ -113,7 +113,7 @@ function ConsignesDefilantes({ posture, fiche, enCours }) {
     if (cadre.current) obs.observe(cadre.current);
     return () => obs.disconnect();
   }, [fiche, posture.id]);
-  // Défilement automatique : environ 5 s par ligne ; le contenu est doublé pour boucler sans à-coup
+  // Défilement automatique : environ 5 s par ligne, jusqu'à la fin du texte
   useEffect(() => {
     if (!defile || !enCours || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return undefined;
     let image;
@@ -121,12 +121,12 @@ function ConsignesDefilantes({ posture, fiche, enCours }) {
     let pos = cadre.current.scrollTop;
     const tour = (t) => {
       const c = cadre.current;
-      const moitie = bloc.current?.offsetHeight || 0;
-      if (c && moitie) {
+      const hauteur = bloc.current?.offsetHeight || 0;
+      if (c && hauteur) {
+        const fin = c.scrollHeight - c.clientHeight;
         if (t < repos.current) pos = c.scrollTop;
-        else {
-          pos += (moitie / Math.max(30, nbLignes * 5)) * ((t - avant) / 1000);
-          if (pos >= moitie) pos -= moitie;
+        else if (pos < fin) {
+          pos = Math.min(fin, pos + (hauteur / Math.max(30, nbLignes * 5)) * ((t - avant) / 1000));
           c.scrollTop = pos;
         }
       }
@@ -137,16 +137,12 @@ function ConsignesDefilantes({ posture, fiche, enCours }) {
     return () => cancelAnimationFrame(image);
   }, [defile, enCours, nbLignes]);
   const geste = () => { repos.current = performance.now() + 3500; };
-  // Défilement à la main : on boucle aussi (fin de la 1re copie → début)
-  const auDefilement = () => {
-    const c = cadre.current;
-    const moitie = bloc.current?.offsetHeight || 0;
-    if (defile && c && moitie && c.scrollTop >= moitie) c.scrollTop -= moitie;
-  };
   if (fiche === undefined) return <div className="consignes-defilantes"><p className="aide">Chargement des consignes…</p></div>;
   if (!sections.length) return null;
-  const contenu = (cache) => (
-    <div className="consignes-bloc" ref={cache ? undefined : bloc} aria-hidden={cache || undefined}>
+  return (
+    <div className={`consignes-defilantes ${defile ? 'defile' : ''}`} ref={cadre} key={posture.id}
+      onWheel={geste} onTouchStart={geste} onTouchMove={geste} onPointerDown={geste}>
+    <div className="consignes-bloc" ref={bloc}>
       {sections.map(([titre, v, balise]) => (
         <section key={titre}>
           <h3>{titre}</h3>
@@ -156,12 +152,6 @@ function ConsignesDefilantes({ posture, fiche, enCours }) {
         </section>
       ))}
     </div>
-  );
-  return (
-    <div className={`consignes-defilantes ${defile ? 'defile' : ''}`} ref={cadre} key={posture.id}
-      onWheel={geste} onTouchStart={geste} onTouchMove={geste} onPointerDown={geste} onScroll={auDefilement}>
-      {contenu(false)}
-      {defile && contenu(true)}
     </div>
   );
 }

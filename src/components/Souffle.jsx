@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 // Le rythme choisi est gardé sur l'appareil.
 
 export const RYTHMES = [
-  { id: '4-4', nom: '4 · 4', aide: 'Souffle régulier', temps: [['Inspirez', 4, 1], ['Expirez', 4, 0]] },
-  { id: '5-5', nom: 'Cohérence', aide: '5 s · 5 s', temps: [['Inspirez', 5, 1], ['Expirez', 5, 0]] },
-  { id: '4-7-8', nom: '4 · 7 · 8', aide: 'Apaisant', temps: [['Inspirez', 4, 1], ['Retenez', 7, 1], ['Expirez', 8, 0]] },
-  { id: 'carre', nom: 'Carré', aide: '4 · 4 · 4 · 4', temps: [['Inspirez', 4, 1], ['Retenez', 4, 1], ['Expirez', 4, 0], ['Poumons vides', 4, 0]] },
+  { id: '4-4', nom: '4 · 4', titre: 'Respiration égale', aide: 'Inspirez 4 s, expirez 4 s', temps: [['Inspirez', 4, 1], ['Expirez', 4, 0]] },
+  { id: '5-5', nom: 'Cohérence', titre: 'Cohérence cardiaque', aide: 'Inspirez 5 s, expirez 5 s (6 respirations par minute)', temps: [['Inspirez', 5, 1], ['Expirez', 5, 0]] },
+  { id: '4-7-8', nom: '4 · 7 · 8', titre: 'Respiration 4 · 7 · 8', aide: 'Inspirez 4 s, retenez 7 s, expirez 8 s : apaisante', temps: [['Inspirez', 4, 1], ['Retenez', 7, 1], ['Expirez', 8, 0]] },
+  { id: 'carre', nom: 'Carré', titre: 'Respiration carrée', aide: 'Inspirez, retenez, expirez, poumons vides : 4 s chacun', temps: [['Inspirez', 4, 1], ['Retenez', 4, 1], ['Expirez', 4, 0], ['Poumons vides', 4, 0]] },
 ];
 
 const CLE = 'yoga:rythme-souffle';
@@ -41,15 +41,30 @@ export function DisqueSouffle({ rythme, enCours }) {
   );
 }
 
-// Choix du rythme, sous le nom de la posture
+// Choix du rythme : une seule pastille sous le nom de la posture, qui ouvre un panneau de choix
 export function ChoixRythme({ rythme, onChoisir, onFermer }) {
+  const [ouvert, setOuvert] = useState(false);
+  const actuel = RYTHMES.find((x) => x.id === rythme) || RYTHMES[0];
   return (
-    <div className="souffle-choix" role="group" aria-label="Rythme de la respiration guidée">
-      {RYTHMES.map((x) => (
-        <button type="button" key={x.id} className={`badge choix ${x.id === rythme ? 'actif' : ''}`} aria-pressed={x.id === rythme}
-          title={x.aide} onClick={() => onChoisir(x.id)}>{x.nom}</button>
-      ))}
-      <button type="button" className="badge choix" onClick={onFermer} aria-label="Arrêter la respiration guidée">✕</button>
-    </div>
+    <>
+      <button type="button" className="souffle-pastille" aria-haspopup="dialog" onClick={() => setOuvert(true)}>
+        Respiration · {actuel.nom} <span aria-hidden="true">▾</span>
+      </button>
+      {ouvert && (
+        <div className="voile" onClick={() => setOuvert(false)}>
+          <div className="feuille" role="dialog" aria-label="Rythme de la respiration guidée" onClick={(e) => e.stopPropagation()}>
+            <h2>Respiration guidée</h2>
+            {RYTHMES.map((x) => (
+              <button type="button" key={x.id} className={`choix-export ${x.id === rythme ? 'actif' : ''}`} aria-pressed={x.id === rythme}
+                onClick={() => { onChoisir(x.id); setOuvert(false); }}>
+                <strong>{x.titre}</strong>
+                <span>{x.aide}</span>
+              </button>
+            ))}
+            <button type="button" className="lien" onClick={() => { onFermer(); setOuvert(false); }}>Arrêter la respiration guidée</button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

@@ -46,7 +46,11 @@ function hydrater(seance) {
 export default function App() {
   const [pret, setPret] = useState(false);
   const [vue, setVue] = useState(retourSpotifyWeb ? 'compte' : 'formulaire'); // formulaire | seance | fiche | mes-seances
-  const [params, setParams] = useState(null);
+  // Derniers choix du formulaire, gardés sur l'appareil (« Reprendre mes derniers choix » aussi au lancement de l'appli)
+  const [params, setParams] = useState(() => { try { return JSON.parse(localStorage.getItem('yoga:derniers-choix')); } catch { return null; } });
+  useEffect(() => {
+    if (params) { try { localStorage.setItem('yoga:derniers-choix', JSON.stringify(params)); } catch { /* stockage indisponible */ } }
+  }, [params]);
   const [seance, setSeance] = useState(null);
   const [posture, setPosture] = useState(null);
   const [retourFiche, setRetourFiche] = useState(null); // écran où revenir en quittant une fiche (ex. bibliothèque)

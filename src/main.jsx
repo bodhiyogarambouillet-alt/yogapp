@@ -32,8 +32,9 @@ if (ouverture) {
     const arrivee = () => {
       if (fini) return;
       fini = true;
-      document.documentElement.classList.remove('ouverture');
-      ouverture.remove();
+      document.documentElement.classList.remove('ouverture'); // le décor apparaît sous le logo, la page en fondu
+      ouverture.classList.add('fondu');
+      setTimeout(() => ouverture.remove(), 500);
     };
     logo.addEventListener('transitionend', (e) => { if (e.target === logo && e.propertyName === 'transform') arrivee(); });
     setTimeout(arrivee, 2500); // filet de sécurité si la fin du mouvement n'est pas signalée

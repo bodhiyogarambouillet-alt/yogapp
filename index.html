@@ -17,7 +17,7 @@
          Ses cercles reprennent ceux du décor de l'accueil : à la fin, ils glissent et grandissent jusqu'à lui. */
       #ouverture { position: fixed; inset: 0; z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 44px;
         background: #F3ECE1; transition: background-color 0.7s ease, opacity 0.7s ease, visibility 0.7s; }
-      .ouverture-logo { position: relative; width: 116px; height: 116px; }
+      .ouverture-logo { position: relative; width: 116px; height: 116px; will-change: transform; }
       .ouverture-logo span { position: absolute; border-radius: 50%; animation: ouverture-cercle 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
       .ouverture-logo .c1 { inset: 0; background: #F0E5D6; }
       .ouverture-logo .c2 { inset: 11.6px; background: #EBDCC7; animation-delay: 0.1s; }
@@ -34,6 +34,9 @@
       #ouverture.vers-accueil .onde { display: none; }
       #ouverture.vers-accueil .point { opacity: 0; }
       #ouverture.sortie { opacity: 0; visibility: hidden; }
+      /* Arrivée sur l'accueil : le logo passe sous la page et sous le décor (identique, au même endroit) puis s'efface :
+         pas de remplacement brusque, et le titre n'est jamais masqué */
+      #ouverture.fondu { z-index: 0; transition: opacity 0.45s ease, visibility 0.45s; opacity: 0; visibility: hidden; }
       /* Pendant l'ouverture, l'accueil et son décor attendent ; ils apparaissent quand les cercles sont en place */
       /* La page reste toujours au-dessus du décor (rendu à part dans <body>), y compris pendant son fondu d'apparition :
          sans ce calque, la page semi-transparente passait sous le décor le temps du fondu */

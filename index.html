@@ -13,20 +13,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <style>
-      /* Écran d'ouverture : affiché dès la première image, avant le chargement de l'appli (retiré par src/main.jsx) */
+      /* Écran d'ouverture : affiché dès la première image, avant le chargement de l'appli (géré par src/main.jsx).
+         Ses cercles reprennent ceux du décor de l'accueil : à la fin, ils glissent et grandissent jusqu'à lui. */
       #ouverture { position: fixed; inset: 0; z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 44px;
-        background: #F3ECE1; transition: opacity 0.7s ease, visibility 0.7s; }
-      .ouverture-logo { position: relative; width: 116px; height: 116px; transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+        background: #F3ECE1; transition: background-color 0.7s ease, opacity 0.7s ease, visibility 0.7s; }
+      .ouverture-logo { position: relative; width: 116px; height: 116px; }
       .ouverture-logo span { position: absolute; border-radius: 50%; animation: ouverture-cercle 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
-      .ouverture-logo .c1 { inset: 0; background: #EBDCC7; }
-      .ouverture-logo .c2 { inset: 15px; background: #E5D0B4; animation-delay: 0.12s; }
-      .ouverture-logo .c3 { inset: 30px; background: #DDBE98; animation-delay: 0.24s; }
-      .ouverture-logo .c4 { inset: 47px; background: #A9472A; animation-delay: 0.36s; }
+      .ouverture-logo .c1 { inset: 0; background: #F0E5D6; }
+      .ouverture-logo .c2 { inset: 11.6px; background: #EBDCC7; animation-delay: 0.1s; }
+      .ouverture-logo .c3 { inset: 23.2px; background: #E5D0B4; animation-delay: 0.2s; }
+      .ouverture-logo .c4 { inset: 34.8px; background: #DDBE98; animation-delay: 0.3s; }
+      .ouverture-logo .c5 { inset: 46.4px; background: #CFA47A; animation-delay: 0.4s; }
+      .ouverture-logo .point { inset: 51px; background: #A9472A; animation-delay: 0.5s; transition: opacity 0.5s ease; }
       .ouverture-logo .onde { inset: 0; background: none; border: 1px solid #CFA47A; opacity: 0; animation: ouverture-onde 2.6s ease-out 0.7s infinite; }
       .ouverture-logo .onde.o2 { animation-delay: 2s; }
-      .ouverture-nom { margin: 0; font-family: 'Marcellus', Georgia, serif; font-size: 30px; color: #2E2622; animation: ouverture-nom 0.9s ease 0.45s both; }
+      .ouverture-nom { margin: 0; font-family: 'Marcellus', Georgia, serif; font-size: 30px; color: #2E2622; animation: ouverture-nom 0.9s ease 0.45s both;
+        transition: opacity 0.35s ease, transform 0.35s ease; }
+      /* Transition vers l'accueil : fond qui s'efface, nom qui s'éclipse, cercles qui rejoignent le décor */
+      #ouverture.vers-accueil { background-color: rgba(243, 236, 225, 0); }
+      #ouverture.vers-accueil .ouverture-nom { opacity: 0; transform: translateY(-10px); }
+      #ouverture.vers-accueil .onde { display: none; }
+      #ouverture.vers-accueil .point { opacity: 0; }
       #ouverture.sortie { opacity: 0; visibility: hidden; }
-      #ouverture.sortie .ouverture-logo { transform: scale(1.35); }
+      /* Pendant l'ouverture, l'accueil et son décor attendent ; ils apparaissent quand les cercles sont en place */
+      #root { transition: opacity 0.6s ease; }
+      html.ouverture #root, html.ouverture .fond-ondes { opacity: 0; }
       @keyframes ouverture-cercle { from { transform: scale(0); } to { transform: scale(1); } }
       @keyframes ouverture-onde { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.9); opacity: 0; } }
       @keyframes ouverture-nom { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
@@ -35,7 +46,7 @@
   </head>
   <body>
     <div id="ouverture" aria-hidden="true">
-      <div class="ouverture-logo"><span class="onde"></span><span class="onde o2"></span><span class="c1"></span><span class="c2"></span><span class="c3"></span><span class="c4"></span></div>
+      <div class="ouverture-logo"><span class="onde"></span><span class="onde o2"></span><span class="c1"></span><span class="c2"></span><span class="c3"></span><span class="c4"></span><span class="c5"></span><span class="point"></span></div>
       <p class="ouverture-nom">Mes séances Yoga</p>
     </div>
     <script>
@@ -46,6 +57,7 @@
           else sessionStorage.setItem('yoga:ouverture', '1');
         }
       } catch (e) { /* stockage indisponible : l'écran s'affiche */ }
+      if (document.getElementById('ouverture')) document.documentElement.classList.add('ouverture');
     </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

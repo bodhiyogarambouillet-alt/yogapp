@@ -734,8 +734,8 @@ input[type="search"] { height: 52px; padding: 0 18px; }
 .chargement-barre span::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent); transform: translateX(-100%); animation: chargement-reflet 1.6s ease-in-out infinite; }
 
 /* Étapes qui se cochent */
-.chargement-etapes { list-style: none; margin: 24px 0 0; padding: 0; width: 250px; display: flex; flex-direction: column; gap: 10px; text-align: left; }
-.chargement-etapes li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--texte-pale); transition: color 0.4s ease; animation: apparition 0.5s ease both; }
+.chargement-etapes { list-style: none; margin: 24px 0 0; padding: 0; width: min(290px, 100%); display: flex; flex-direction: column; gap: 10px; text-align: left; }
+.chargement-etapes li { display: flex; align-items: center; gap: 12px; font-size: 15px; white-space: nowrap; color: var(--texte-pale); transition: color 0.4s ease; animation: apparition 0.5s ease both; }
 .chargement-etapes li:nth-child(1) { animation-delay: 0.8s; } .chargement-etapes li:nth-child(2) { animation-delay: 0.9s; }
 .chargement-etapes li:nth-child(3) { animation-delay: 1s; } .chargement-etapes li:nth-child(4) { animation-delay: 1.1s; }
 .chargement-etapes li:nth-child(5) { animation-delay: 1.2s; }
@@ -1140,3 +1140,6 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
 .carte-brouillon .carte-reprise-titre { color: var(--accent); }
 .lien.recommencer { align-self: center; margin: -4px auto 4px; min-height: 36px; font-size: 14px; }
 .carte-reprise + .carte-reprise { margin-top: 10px; }
+
+/* Très petits écrans : les étapes réduisent un peu plutôt que de passer à la ligne en gras */
+@media (max-width: 340px) { .chargement-etapes li { font-size: 13.5px; gap: 10px; } }

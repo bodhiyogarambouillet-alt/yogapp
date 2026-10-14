@@ -1,12 +1,52 @@
 import { useEffect, useState } from 'react';
 import { donneesLocales, transfererDonneesLocales } from '../stockage.js';
 import { connexionParMotDePasse, connexionGoogle, deconnexion } from '../supabase.js';
-import { Retour, Oeil, OeilBarre, Google } from './Icones.jsx';
+import { Retour, Oeil, OeilBarre, Google, Utilisateur, Note, Cloche, HautParleur, Lune, Nuage, Sortie, Info, Chrono } from './Icones.jsx';
 import { etatSpotify, surSpotify, connecterSpotify, deconnecterSpotify } from '../spotify.js';
 import { alerter } from './Dialogue.jsx';
 import { voixAuto, enregistrerVoixAuto, savasanaGuide, enregistrerSavasana } from '../voix.js';
+import { notifDisponible, notifSeance, enregistrerNotifSeance, autoriserNotifications } from '../seance-live.js';
 
-// Écran « Compte » : connexion administrateur, déconnexion et transfert des séances de l'appareil
+// Écran « Compte » : profil, réglages de la séance en direct, musique, transfert des séances de l'appareil.
+// Les textes explicatifs ne s'affichent qu'à la demande (bouton ⓘ).
+
+// Bouton ⓘ : montre ou cache le texte d'explication qui le suit
+function BoutonInfo({ ouvert, onClick, sujet }) {
+  return (
+    <button type="button" className={`bouton-info ${ouvert ? 'actif' : ''}`} aria-expanded={ouvert} aria-label={`${ouvert ? 'Masquer' : 'Afficher'} l'explication : ${sujet}`} onClick={onClick}><Info /></button>
+  );
+}
+
+// Titre de carte avec picto, et explication facultative
+function TitreCarte({ icone, titre, aide, children }) {
+  const [ouvert, setOuvert] = useState(false);
+  return (
+    <>
+      <div className="carte-titre">
+        <span className="pastille-icone">{icone}</span>
+        <h2>{titre}</h2>
+        {children}
+        {aide && <BoutonInfo ouvert={ouvert} sujet={titre} onClick={() => setOuvert(!ouvert)} />}
+      </div>
+      {aide && ouvert && <p className="aide carte-aide">{aide}</p>}
+    </>
+  );
+}
+
+// Ligne de réglage : picto, libellé, ⓘ, interrupteur ; explication sous la ligne à la demande
+function Reglage({ icone, titre, aide, actif, onChange }) {
+  const [ouvert, setOuvert] = useState(false);
+  const id = `reglage-${titre.normalize('NFD').replace(/[^a-zA-Z]+/g, '-').toLowerCase()}`;
+  return (
+    <div className="reglage-ligne">
+      <span className="pastille-icone petite">{icone}</span>
+      <label className="reglage-libelle" htmlFor={id}>{titre}</label>
+      <BoutonInfo ouvert={ouvert} sujet={titre} onClick={() => setOuvert(!ouvert)} />
+      <input id={id} type="checkbox" role="switch" className="interrupteur" checked={actif} onChange={(e) => onChange(e.target.checked)} />
+      {ouvert && <p className="reglage-aide">{aide}</p>}
+    </div>
+  );
+}
 
 function Connexion() {
   const [email, setEmail] = useState('');
@@ -34,8 +74,8 @@ function Connexion() {
   };
   return (
     <form className="carte connexion" onSubmit={envoyer}>
-      <h2>Connexion administrateur</h2>
-      <p className="aide" style={{ marginTop: 0 }}>Réservée aux administrateurs : eux seuls peuvent modifier et régénérer les fiches. Avec Google, utilisez l'adresse enregistrée comme administrateur.</p>
+      <TitreCarte icone={<Utilisateur />} titre="Connexion"
+        aide="Réservée aux administrateurs : eux seuls peuvent modifier et régénérer les fiches. Avec Google, utilisez l'adresse enregistrée comme administrateur. Sans connexion, vos séances restent sur cet appareil." />
       <button type="button" className="bouton-google" onClick={google} disabled={etat === 'envoi'}><Google /> Continuer avec Google</button>
       <p className="separateur"><span>ou</span></p>
       <label htmlFor="email" className="etiquette">Email</label>
@@ -69,16 +109,17 @@ function Spotify() {
   };
   return (
     <div className="carte carte-compte">
-      <h2>Musique · Spotify</h2>
+      <TitreCarte icone={<Note />} titre="Musique"
+        aide={etat.connecte ? 'La musique de vos séances est choisie et jouée depuis ce compte Spotify (Premium requis pour la lecture automatique).' : 'Connectez votre compte Spotify pour accompagner chaque séance d\'une musique adaptée. Réservé aux comptes autorisés par l\'administrateur.'}>
+        {etat.connecte && <span className="badge badge-spotify">Connecté</span>}
+      </TitreCarte>
       {etat.connecte ? (
-        <>
-          <p className="compte-ligne"><span className="compte-nom">{etat.profil?.nom || 'Compte Spotify'}</span><span className="badge badge-spotify">Connecté</span></p>
-          <p className="aide">Les playlists de vos séances sont créées dans ce compte.</p>
-          <button type="button" className="lien" onClick={deconnecterSpotify}>Déconnecter Spotify</button>
-        </>
+        <div className="compte-action">
+          <span className="compte-nom">{etat.profil?.nom || 'Compte Spotify'}</span>
+          <button type="button" className="lien" onClick={deconnecterSpotify}>Déconnecter</button>
+        </div>
       ) : (
         <>
-          <p className="aide">Connectez votre compte Spotify pour créer une playlist adaptée à chaque séance. Réservé aux comptes autorisés par l'administrateur.</p>
           {etat.erreur && <p className="erreur" role="alert">{etat.erreur}</p>}
           <button type="button" className="bouton-spotify" onClick={connecter} disabled={envoi}>{envoi ? 'Ouverture de Spotify…' : 'Connecter Spotify'}</button>
         </>
@@ -87,25 +128,37 @@ function Spotify() {
   );
 }
 
-// Réglage administrateur : guide audio lancé ou non dès le début de la séance
-function GuideAudio() {
+// Réglages de la séance en direct : notification (appli Android), guide audio et Savasana (administrateur)
+function ReglagesSeance({ admin }) {
+  const [notif, setNotif] = useState(notifSeance);
   const [auto, setAuto] = useState(voixAuto);
-  const changer = (oui) => { enregistrerVoixAuto(oui); setAuto(oui); };
   const [savasana, setSavasana] = useState(savasanaGuide);
-  const changerSavasana = (oui) => { enregistrerSavasana(oui); setSavasana(oui); };
+  const changerNotif = async (oui) => {
+    if (oui && !(await autoriserNotifications())) {
+      alerter({ titre: 'Notifications désactivées', message: 'Autorisez les notifications de « Mes séances Yoga » dans les paramètres d\'Android, puis réessayez.' });
+      return;
+    }
+    enregistrerNotifSeance(oui);
+    setNotif(oui);
+  };
+  if (!notifDisponible && !admin) return null;
   return (
     <div className="carte carte-compte">
-      <h2>Guide audio</h2>
-      <label className="reglage">
-        <span>Lancer le guide audio au début de la séance</span>
-        <input type="checkbox" role="switch" className="interrupteur" checked={auto} onChange={(e) => changer(e.target.checked)} />
-      </label>
-      <p className="aide">{auto ? 'La voix démarre dès l\'ouverture de la séance (elle se coupe toujours depuis le lecteur).' : 'La voix reste coupée au départ : on l\'active depuis le lecteur de la séance.'} </p>
-      <label className="reglage">
-        <span>Accompagner la relaxation finale (Savasana)</span>
-        <input type="checkbox" role="switch" className="interrupteur" checked={savasana} onChange={(e) => changerSavasana(e.target.checked)} />
-      </label>
-      <p className="aide">{savasana ? 'Avec la voix activée, une détente guidée accompagne la relaxation de fin de séance, puis le retour.' : 'La relaxation finale se fait en silence.'} Réglages propres à cet appareil.</p>
+      <TitreCarte icone={<Chrono />} titre="Séance en direct" aide="Réglages propres à cet appareil." />
+      <div className="reglages">
+        {notifDisponible && (
+          <Reglage icone={<Cloche />} titre="Notification pendant la séance" actif={notif} onChange={changerNotif}
+            aide="Posture en cours, compte à rebours et progression dans les notifications (en Live Update sur Android 16), avec Pause et Suivante. La séance continue aussi écran éteint." />
+        )}
+        {admin && (
+          <Reglage icone={<HautParleur />} titre="Guide audio dès le début" actif={auto} onChange={(oui) => { enregistrerVoixAuto(oui); setAuto(oui); }}
+            aide={auto ? 'La voix démarre dès l\'ouverture de la séance (elle se coupe toujours depuis le lecteur).' : 'La voix reste coupée au départ : on l\'active depuis le lecteur de la séance.'} />
+        )}
+        {admin && (
+          <Reglage icone={<Lune />} titre="Relaxation guidée (Savasana)" actif={savasana} onChange={(oui) => { enregistrerSavasana(oui); setSavasana(oui); }}
+            aide={savasana ? 'Avec la voix activée, une détente guidée accompagne la relaxation de fin de séance, puis le retour.' : 'La relaxation finale se fait en silence.'} />
+        )}
+      </div>
     </div>
   );
 }
@@ -136,31 +189,34 @@ export default function Compte({ compte, onRetour }) {
 
       <section className="bloc">
         <h1 className="titre-section">Compte</h1>
-        <p className="sous">{connecte ? 'Vos séances sont enregistrées sur tous vos appareils.' : 'Sans connexion, vos séances restent sur cet appareil.'}</p>
       </section>
 
-      {/* Ordinateur : le compte à gauche, les réglages (guide audio, musique) à droite */}
+      {/* Ordinateur : le compte à gauche, les réglages (séance en direct, musique) à droite */}
       <section className="cartes compte-cartes">
         <div className="compte-colonne">
         {!compte?.actif && <div className="carte"><p>La connexion n'est pas disponible sur cette version.</p></div>}
         {compte?.actif && (connecte ? (
           <div className="carte carte-compte">
-            <h2>Votre compte</h2>
-            <p className="compte-ligne"><span className="compte-nom">{compte.email}</span>{compte.admin && <span className="badge badge-admin">Admin</span>}</p>
-            <p className="aide">{compte.admin ? 'Vous pouvez modifier et régénérer les fiches des postures.' : 'Vos séances sont synchronisées sur vos appareils.'}</p>
-            <button type="button" className="lien" onClick={() => deconnexion()}>Se déconnecter</button>
+            <TitreCarte icone={<Utilisateur />} titre="Votre compte"
+              aide={`Vos séances sont enregistrées sur tous vos appareils.${compte.admin ? ' En tant qu\'administrateur, vous pouvez modifier et régénérer les fiches des postures.' : ''}`}>
+              {compte.admin && <span className="badge badge-admin">Admin</span>}
+            </TitreCarte>
+            <div className="compte-action">
+              <span className="compte-nom">{compte.email}</span>
+              <button type="button" className="lien lien-icone" onClick={() => deconnexion()}><Sortie /> Se déconnecter</button>
+            </div>
           </div>
         ) : <Connexion />)}
         {aTransferer && (
           <div className="carte carte-compte">
-            <h2>Séances de cet appareil</h2>
+            <TitreCarte icone={<Nuage />} titre="Séances de cet appareil" aide="Séances créées sur cet appareil avant la connexion : une fois transférées, elles sont disponibles sur tous vos appareils." />
             <p>Cet appareil contient {locales.seances.length} séance{locales.seances.length > 1 ? 's enregistrées' : ' enregistrée'} avant la connexion.</p>
             <button type="button" className="principal bouton-compte" onClick={transferer}>Les transférer sur mon compte</button>
           </div>
         )}
         </div>
         <div className="compte-colonne">
-        {connecte && compte.admin && <GuideAudio />}
+        <ReglagesSeance admin={connecte && compte.admin} />
         <Spotify />
         </div>
       </section>

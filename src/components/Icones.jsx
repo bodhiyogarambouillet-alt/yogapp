@@ -34,3 +34,10 @@ export const Utilisateur = () => <svg width="20" height="20" viewBox="0 0 24 24"
 export const Agrandir = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M4 9V4h5" /><path d="M20 9V4h-5" /><path d="M4 15v5h5" /><path d="M20 15v5h-5" /></svg>;
 export const Reduire = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M9 4v5H4" /><path d="M15 4v5h5" /><path d="M9 20v-5H4" /><path d="M15 20v-5h5" /></svg>;
 export const Note = () => <svg width="18" height="18" viewBox="0 0 24 24" {...base} strokeWidth="1.8"><path d="M9 18V5l11-2v13" /><circle cx="6.5" cy="18" r="2.5" /><circle cx="17.5" cy="16" r="2.5" /></svg>;
+export const Cloche = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z" /><path d="M10 20.5a2.2 2.2 0 0 0 4 0" /></svg>;
+export const HautParleur = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" /><path d="M15.5 9a4 4 0 0 1 0 6" /><path d="M18.3 6.5a7.5 7.5 0 0 1 0 11" /></svg>;
+export const Lune = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z" /></svg>;
+export const Nuage = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9a4.75 4.75 0 0 1-.5 9.5z" /><path d="M12 16v-5.5M9.6 12.8L12 10.4l2.4 2.4" /></svg>;
+export const Sortie = () => <svg width="18" height="18" viewBox="0 0 24 24" {...base}><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4" /><path d="M10 16l4-4-4-4" /><path d="M14 12H4" /></svg>;
+export const Info = () => <svg width="16" height="16" viewBox="0 0 24 24" {...base} strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M12 11v5.5" /><path d="M12 7.6h.01" /></svg>;
+export const Chrono = () => <svg width="20" height="20" viewBox="0 0 24 24" {...base}><circle cx="12" cy="13.5" r="7.5" /><path d="M12 9.5v4l2.5 2" /><path d="M10 2.8h4" /><path d="M12 2.8V6" /></svg>;

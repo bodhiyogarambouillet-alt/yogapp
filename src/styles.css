@@ -1094,3 +1094,20 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
 .fiche-google { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; min-height: 38px; padding: 0 16px; border: 1.5px solid var(--trait);
   border-radius: 19px; background: transparent; font-size: 14px; font-weight: 700; color: var(--texte-doux); }
 .fiche-google:active { transform: scale(0.97); }
+
+/* Page Compte : titres de carte avec picto, réglages en lignes, explications à la demande (ⓘ) */
+.carte-titre { align-self: stretch; display: flex; align-items: center; gap: 12px; }
+.carte-titre h2 { flex: 1; min-width: 0; margin: 0; }
+.pastille-icone { flex: none; width: 40px; height: 40px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: var(--arche); color: var(--accent); }
+.pastille-icone.petite { width: 34px; height: 34px; border-radius: 12px; background: var(--fond); }
+.bouton-info { flex: none; width: 30px; height: 30px; padding: 0; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: transparent; color: var(--texte-pale); transition: background-color 0.2s ease, color 0.2s ease; }
+.bouton-info.actif { background: var(--arche); color: var(--accent); }
+.carte-aide { align-self: stretch; margin: 2px 0 0 !important; padding: 10px 14px; border-radius: 14px; background: var(--fond); font-size: 14px; animation: apparition 0.25s ease both; }
+.compte-action { align-self: stretch; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; margin-top: 6px; }
+.lien-icone { display: inline-flex; align-items: center; gap: 6px; }
+.reglages { align-self: stretch; margin-top: 4px; }
+.reglage-ligne { display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; column-gap: 10px; padding: 12px 0; border-top: 1px solid var(--trait); }
+.reglage-ligne:first-child { border-top: none; padding-top: 6px; }
+.reglage-libelle { font-size: 15px; font-weight: 700; line-height: 1.3; cursor: pointer; }
+.reglage-aide { grid-column: 2 / -1; margin: 8px 0 0 !important; font-size: 14px; line-height: 1.45; color: var(--texte-doux); animation: apparition 0.25s ease both; }

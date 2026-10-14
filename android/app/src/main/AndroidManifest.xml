@@ -61,6 +61,11 @@
         </provider>
     </application>
 
+    <!-- Applis que l'appli peut ouvrir (Android 11 et plus) : Spotify, pour lancer la musique de la séance -->
+    <queries>
+        <package android:name="com.spotify.music" />
+    </queries>
+
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />

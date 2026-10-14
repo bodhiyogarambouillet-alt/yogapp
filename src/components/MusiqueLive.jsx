@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { appelSpotify, etatSpotify } from '../spotify.js';
 import { estNatif } from '../natif.js';
+import { ouvrirSpotify } from '../seance-live.js';
 
 // Musique pendant la séance en direct : la sélection de la séance démarre avec le minuteur,
 // se met en pause et reprend avec lui, et le morceau en cours s'affiche au-dessus des commandes.
@@ -34,6 +35,20 @@ export function useMusiqueLive(playlist, enCours, terminee) {
   const [morceau, setMorceau] = useState(null); // { titre, artiste, image, joue }
   const [erreur, setErreur] = useState(null);
   const demarree = useRef(false); // la playlist a été lancée par la séance
+  // Spotify absent des appareils du téléphone : bouton « Ouvrir Spotify », puis nouvel essai au retour dans l'appli
+  const [absent, setAbsent] = useState(false);
+  const [essai, setEssai] = useState(0);
+  useEffect(() => {
+    if (!absent) return undefined;
+    // Spotify met parfois quelques secondes à apparaître : deux essais
+    const auRetour = () => {
+      if (document.visibilityState !== 'visible') return;
+      setTimeout(() => setEssai((n) => n + 1), 1200);
+      setTimeout(() => setEssai((n) => n + 1), 4500);
+    };
+    document.addEventListener('visibilitychange', auRetour);
+    return () => document.removeEventListener('visibilitychange', auRetour);
+  }, [absent]);
   const file = useRef(Promise.resolve()); // les ordres lecture / pause partent l'un après l'autre
 
   const lireEnCours = useCallback(async () => {
@@ -56,9 +71,10 @@ export function useMusiqueLive(playlist, enCours, terminee) {
           const corps = demarree.current ? undefined : contenu(playlist);
           if (estNatif && !demarree.current) {
             const t = await telephone();
-            if (!t) { setErreur('Ouvrez Spotify sur ce téléphone pour y jouer la musique, puis relancez.'); return; }
+            if (!t) { setAbsent(true); setErreur('Spotify n\'est pas ouvert sur ce téléphone.'); return; }
             await appelSpotify(`/me/player/play?device_id=${encodeURIComponent(t.id)}`, { method: 'PUT', body: corps });
             demarree.current = true;
+            setAbsent(false);
             setErreur(null);
             return;
           }
@@ -83,7 +99,7 @@ export function useMusiqueLive(playlist, enCours, terminee) {
       }
     };
     file.current = file.current.then(lancer);
-  }, [actif, enCours, playlist, lireEnCours]);
+  }, [actif, enCours, playlist, lireEnCours, essai]);
 
   // Fin de séance : la musique s'arrête
   useEffect(() => {
@@ -110,12 +126,12 @@ export function useMusiqueLive(playlist, enCours, terminee) {
     }
   };
 
-  return { actif, morceau, erreur, suivant };
+  return { actif, morceau, erreur, absent, suivant };
 }
 
 export function CarteMorceau({ musique, playlist }) {
   if (!musique.actif) return null;
-  const { morceau, erreur, suivant } = musique;
+  const { morceau, erreur, absent, suivant } = musique;
   return (
     <section className="live-musique" aria-label="Musique">
       <span className="etiquette">Musique</span>
@@ -125,7 +141,9 @@ export function CarteMorceau({ musique, playlist }) {
         {erreur ? (
           <>
             <span className="morceau-titre">{erreur}</span>
-            {playlist.url && <a className="morceau-ouvrir" href={playlist.url} target="_blank" rel="noopener noreferrer">Ouvrir dans Spotify</a>}
+            {absent
+              ? <button type="button" className="morceau-ouvrir lien" onClick={ouvrirSpotify}>Ouvrir Spotify</button>
+              : playlist.url && <a className="morceau-ouvrir" href={playlist.url} target="_blank" rel="noopener noreferrer">Ouvrir dans Spotify</a>}
           </>
         ) : morceau ? (
           <>

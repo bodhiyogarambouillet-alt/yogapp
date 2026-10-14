@@ -1121,3 +1121,4 @@ body:has(.chargement-seance) .fond-groupe { opacity: 0; transition: opacity 0.25
 .consignes-defilantes.defile .consignes-bloc { padding-top: 28px; padding-bottom: 64px; }
 /* Téléphone : le résumé repliable fait doublon avec la vue Consignes */
 @media (max-width: 699px) { .live.vues .live-resume-bloc { display: none; } }
+.morceau-ouvrir.lien { align-self: flex-start; min-height: 0; padding: 2px 0 0; border: none; background: none; }

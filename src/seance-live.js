@@ -38,3 +38,11 @@ export function ecouterActionsSeance(rappel) {
   const abonnement = SeanceLive.addListener('action', (d) => rappel(d.action));
   return () => { abonnement.then((a) => a.remove()).catch(() => {}); };
 }
+
+// Ouvre l'appli Spotify du téléphone (pour qu'elle apparaisse dans les appareils de lecture) ; à défaut, le site
+export async function ouvrirSpotify() {
+  if (SeanceLive) {
+    try { await SeanceLive.ouvrirAppli({ paquet: 'com.spotify.music' }); return; } catch { /* Spotify absent : le site */ }
+  }
+  window.open('https://open.spotify.com', '_blank', 'noopener');
+}

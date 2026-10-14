@@ -77,6 +77,20 @@ public class SeanceLivePlugin extends Plugin {
         }
     }
 
+    /** Ouvre une autre appli installée (Spotify, pour qu'il apparaisse dans les appareils de lecture). */
+    @PluginMethod
+    public void ouvrirAppli(PluginCall call) {
+        String paquet = call.getString("paquet", "");
+        Intent i = getContext().getPackageManager().getLaunchIntentForPackage(paquet);
+        if (i == null) {
+            call.reject("Appli absente");
+            return;
+        }
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getContext().startActivity(i);
+        call.resolve();
+    }
+
     @PluginMethod
     public void arreter(PluginCall call) {
         getContext().stopService(new Intent(getContext(), SeanceService.class));

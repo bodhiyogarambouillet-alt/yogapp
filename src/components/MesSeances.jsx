@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { listerSeances, supprimerSeance, enregistrerSeance } from '../stockage.js';
+import { listerSeances, supprimerSeance, enregistrerSeance, seancesEnCache } from '../stockage.js';
 import { dateDe, dateLisible, aujourdhui } from '../dates.js';
 import { Retour, Poubelle } from './Icones.jsx';
 import { PAR_ID, nom } from '../bibliotheque.js';
@@ -16,7 +16,9 @@ const texteRecherche = (s) => sansAccents([
 let memoire = { recherche: '', quand: null, style: null, niveau: null };
 
 export default function MesSeances({ compte, onRetour, onOuvrir }) {
-  const [liste, setListe] = useState([]);
+  // Copie gardée sur l'appareil : affichée tout de suite, puis remplacée par la liste à jour
+  const [liste, setListe] = useState(() => seancesEnCache(compte?.email) || []);
+  const [chargement, setChargement] = useState(() => !seancesEnCache(compte?.email));
   const [message, setMessage] = useState(null);
 
   const connecte = compte?.actif && compte.email;
@@ -45,9 +47,13 @@ export default function MesSeances({ compte, onRetour, onOuvrir }) {
     try {
       setListe(await listerSeances());
     } catch (e) {
-      setMessage(`Lecture impossible : ${e.message}`);
+      // Hors connexion : on garde la copie de l'appareil, sans alarmer
+      if (!navigator.onLine && seancesEnCache(compte?.email)) setMessage('Hors connexion : séances gardées sur cet appareil.');
+      else setMessage(`Lecture impossible : ${e.message}`);
+    } finally {
+      setChargement(false);
     }
-  }, []);
+  }, [compte?.email]);
 
   useEffect(() => { recharger(); }, [recharger, compte?.email]);
 
@@ -100,7 +106,13 @@ export default function MesSeances({ compte, onRetour, onOuvrir }) {
       )}
 
       <section className="cartes liste-seances">
-        {liste.length === 0 && <div className="carte"><p>Aucune séance enregistrée pour l'instant.</p></div>}
+        {chargement && liste.length === 0 && [0, 1, 2].map((i) => (
+          <div key={i} className="carte squelette" aria-hidden="true">
+            <span className="squelette-ligne longue" /><span className="squelette-ligne" /><span className="squelette-ligne courte" />
+          </div>
+        ))}
+        {chargement && liste.length === 0 && <p className="sr-only" role="status">Chargement de vos séances…</p>}
+        {!chargement && liste.length === 0 && <div className="carte"><p>Aucune séance enregistrée pour l'instant.</p></div>}
         {liste.length > 0 && filtrees.length === 0 && <div className="carte"><p>Aucune séance ne correspond à ces filtres.</p></div>}
         {filtrees.map((s) => (
           <div className="carte ligne-seance" key={s.uid}>

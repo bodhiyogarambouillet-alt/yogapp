@@ -55,23 +55,42 @@ const alleger = (seance) => ({
 // Plus récentes d'abord, selon la date prévue de la séance
 const parDate = (liste) => [...liste].sort((a, b) => (dateDe(b) || '').localeCompare(dateDe(a) || ''));
 
+// Copie de la liste des séances du compte, gardée sur l'appareil : « Mes séances » s'affiche aussitôt (et hors
+// connexion), puis se met à jour. Rattachée à l'adresse du compte pour ne pas montrer celles d'un autre.
+const CLE_CACHE = 'yoga:seances-cache';
+const majCache = (email, fn) => {
+  const c = lire(CLE_CACHE, null);
+  if (c && c.email === email) ecrire(CLE_CACHE, { email, seances: fn(c.seances) });
+};
+export function seancesEnCache(email) {
+  if (!email) return parDate(lire(CLE_SEANCES, [])); // sans compte : les séances sont déjà sur l'appareil
+  const c = lire(CLE_CACHE, null);
+  return c && c.email === email ? parDate(c.seances) : null;
+}
+export const viderCacheSeances = () => effacer(CLE_CACHE);
+
 export async function listerSeances() {
-  if (await sessionActive()) {
+  const session = await sessionActive();
+  if (session) {
     const { data, error } = await supabase.from('seances').select('id, contenu, maj_le').order('maj_le', { ascending: false }).limit(200);
     if (error) throw error;
-    return parDate(data.map((l) => ({ ...l.contenu, uid: l.id, enregistreeLe: l.maj_le })));
+    const seances = data.map((l) => ({ ...l.contenu, uid: l.id, enregistreeLe: l.maj_le }));
+    ecrire(CLE_CACHE, { email: session.user.email, seances });
+    return parDate(seances);
   }
   return parDate(lire(CLE_SEANCES, []));
 }
 
 export async function enregistrerSeance(seance) {
   const legere = alleger(seance);
-  if (await sessionActive()) {
+  const session = await sessionActive();
+  if (session) {
     const { error } = await supabase.from('seances').upsert({
       id: legere.uid, style: legere.style, duree: legere.duree, niveau: legere.niveau,
       cible_id: legere.cibleId || null, titre: legere.titre || null, contenu: legere,
     });
     if (error) throw error;
+    majCache(session.user.email, (l) => [{ ...legere, enregistreeLe: new Date().toISOString() }, ...l.filter((s) => s.uid !== legere.uid)]);
     return true;
   }
   const liste = lire(CLE_SEANCES, []).filter((s) => s.uid !== legere.uid);
@@ -80,9 +99,11 @@ export async function enregistrerSeance(seance) {
 }
 
 export async function supprimerSeance(uid) {
-  if (await sessionActive()) {
+  const session = await sessionActive();
+  if (session) {
     const { error } = await supabase.from('seances').delete().eq('id', uid);
     if (error) throw error;
+    majCache(session.user.email, (l) => l.filter((s) => s.uid !== uid));
     return true;
   }
   return ecrire(CLE_SEANCES, lire(CLE_SEANCES, []).filter((s) => s.uid !== uid));

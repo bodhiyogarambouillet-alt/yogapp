@@ -59,5 +59,6 @@ if (estNatif && supabase) {
 }
 
 export async function deconnexion() {
+  try { localStorage.removeItem('yoga:seances-cache'); } catch { /* stockage indisponible */ } // copie des séances du compte
   if (supabase) await supabase.auth.signOut();
 }

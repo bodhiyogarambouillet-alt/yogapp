@@ -42,8 +42,20 @@ if (ouverture) {
     logo.style.transition = 'transform 1.1s cubic-bezier(0.65, 0, 0.35, 1) 0.15s';
     requestAnimationFrame(() => requestAnimationFrame(() => { logo.style.transform = `translate(${dx}px, ${dy}px) scale(${echelle})`; }));
   };
+  // L'accueil peut n'être prêt qu'après le chargement de la bibliothèque : on l'attend (10 s au plus), le logo
+  // continue ses ondes pendant ce temps ; si l'appli s'ouvre sur un autre écran, simple fondu
+  const accueilPret = () => new Promise((ok) => {
+    const verifier = () => {
+      if (document.querySelector('.fond-ondes.accueil .fond-groupe')) ok(true);
+      else if (performance.now() > 10000 || (document.querySelector('#root .ecran') && !document.querySelector('.chargement-ecran'))) ok(false);
+      else setTimeout(verifier, 80);
+    };
+    verifier();
+  });
   Promise.race([document.fonts?.ready, new Promise((ok) => setTimeout(ok, 2500))])
-    .then(() => setTimeout(fermer, Math.max(0, 1600 - performance.now())));
+    .then(() => new Promise((ok) => setTimeout(ok, Math.max(0, 1600 - performance.now()))))
+    .then(accueilPret)
+    .then((accueil) => (accueil ? fermer() : terminer()));
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(

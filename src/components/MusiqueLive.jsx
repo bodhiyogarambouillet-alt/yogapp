@@ -24,7 +24,7 @@ async function telephone() {
 // Ce qu'on demande à Spotify de jouer : la playlist si elle est enregistrée, sinon les morceaux dans l'ordre
 const contenu = (playlist) => (playlist.uri ? { context_uri: playlist.uri } : { uris: playlist.morceaux.map((m) => m.uri) });
 
-const messageErreur = (e) => (e.raison === 'PREMIUM_REQUIRED' || e.statut === 403
+const messageErreur = (e) => (e.raison === 'PREMIUM_REQUIRED'
   ? 'Lecture automatique réservée à Spotify Premium.'
   : e.raison === 'NO_ACTIVE_DEVICE' || e.statut === 404
     ? 'Ouvrez Spotify sur le téléphone, puis relancez.'
@@ -37,14 +37,17 @@ export function useMusiqueLive(playlist, enCours, terminee) {
   const demarree = useRef(false); // la playlist a été lancée par la séance
   // Spotify absent des appareils du téléphone : bouton « Ouvrir Spotify », puis nouvel essai au retour dans l'appli
   const [absent, setAbsent] = useState(false);
+  const absentRef = useRef(false);
+  absentRef.current = absent;
   const [essai, setEssai] = useState(0);
   useEffect(() => {
     if (!absent) return undefined;
     // Spotify met parfois quelques secondes à apparaître : deux essais
     const auRetour = () => {
       if (document.visibilityState !== 'visible') return;
-      setTimeout(() => setEssai((n) => n + 1), 1200);
-      setTimeout(() => setEssai((n) => n + 1), 4500);
+      // (le second seulement si la musique n'a toujours pas démarré)
+      setTimeout(() => { if (absentRef.current) setEssai((n) => n + 1); }, 1200);
+      setTimeout(() => { if (absentRef.current) setEssai((n) => n + 1); }, 4500);
     };
     document.addEventListener('visibilitychange', auRetour);
     return () => document.removeEventListener('visibilitychange', auRetour);
@@ -55,6 +58,7 @@ export function useMusiqueLive(playlist, enCours, terminee) {
     try {
       const d = await appelSpotify('/me/player/currently-playing');
       const it = d?.item;
+      if (d?.is_playing) { setErreur(null); setAbsent(false); } // la musique joue : plus d'erreur à afficher
       setMorceau(it ? {
         titre: it.name, artiste: (it.artists || []).map((a) => a.name).join(', '),
         image: it.album?.images?.at(-1)?.url || null, joue: Boolean(d.is_playing),
@@ -93,7 +97,9 @@ export function useMusiqueLive(playlist, enCours, terminee) {
           await appelSpotify('/me/player/pause', { method: 'PUT' });
         }
       } catch (e) {
-        if (enCours) setErreur(messageErreur(e));
+        // Reprise refusée parce que la musique joue déjà (« Restriction violated ») : rien à signaler
+        const dejaEnLecture = e.statut === 403 && e.raison !== 'PREMIUM_REQUIRED' && demarree.current;
+        if (enCours && !dejaEnLecture) setErreur(messageErreur(e));
       } finally {
         setTimeout(lireEnCours, 800);
       }

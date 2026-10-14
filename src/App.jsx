@@ -3,6 +3,7 @@ import Formulaire from './components/Formulaire.jsx';
 import Seance from './components/Seance.jsx';
 import Fiche from './components/Fiche.jsx';
 import MesSeances from './components/MesSeances.jsx';
+import { lireBrouillon, ecrireBrouillon, oublierBrouillon, lireProgression } from './brouillon.js';
 import ChargementSeance from './components/ChargementSeance.jsx';
 import Compte from './components/Compte.jsx';
 import { PAR_ID, chargerBibliotheque } from './bibliotheque.js';
@@ -54,6 +55,23 @@ export default function App() {
   const grandEcran = useGrandEcran();
   const [erreur, setErreur] = useState(null);
   const [enregistree, setEnregistree] = useState(false);
+  // Brouillon : la séance en cours est gardée sur l'appareil à chaque changement ; à la réouverture de l'appli,
+  // l'accueil propose de la reprendre (si elle n'était pas enregistrée, ou si elle avait été lancée)
+  const [brouillon, setBrouillon] = useState(() => {
+    const b = lireBrouillon();
+    return b?.seance && (!b.enregistree || lireProgression(b.seance.uid)) ? b : null;
+  });
+  useEffect(() => {
+    if (seance) ecrireBrouillon({ seance, enregistree, params });
+  }, [seance, enregistree, params]);
+  const reprendreBrouillon = () => {
+    setSeance(hydrater(brouillon.seance));
+    setEnregistree(Boolean(brouillon.enregistree));
+    if (brouillon.params) setParams(brouillon.params);
+    setBrouillon(null);
+    aller('seance');
+  };
+  const oublier = () => { oublierBrouillon(); setBrouillon(null); };
   // Compte : { actif: Supabase configuré, email, admin }
   const [compte, setCompte] = useState({ actif: Boolean(supabase), email: null, admin: false });
 
@@ -179,6 +197,7 @@ export default function App() {
   } else {
     ecran = (
       <Formulaire initial={params} erreur={erreur} compte={compte}
+        brouillon={!seance && brouillon ? brouillon : null} onReprendre={reprendreBrouillon} onOublier={oublier}
         onGenerer={generer} onMesSeances={() => aller('mes-seances')} onBibliotheque={() => aller('bibliotheque')} onCompte={() => aller('compte')} />
     );
   }

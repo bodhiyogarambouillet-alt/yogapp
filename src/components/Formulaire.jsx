@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { STYLES, DUREES, PAR_ID, nom } from '../bibliotheque.js';
-import { Logo, Retour, Utilisateur } from './Icones.jsx';
+import { Logo, Retour, Utilisateur, Fermer } from './Icones.jsx';
 import ChoixCible from './ChoixCible.jsx';
 import { ACCESSOIRES } from '../accessoires.js';
 import { useRetour } from '../natif.js';
@@ -90,7 +90,7 @@ function Option({ titre, valeur, ouvert, onBasculer, children }) {
   );
 }
 
-export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSeances, onBibliotheque, onCompte }) {
+export default function Formulaire({ initial, erreur, compte, brouillon, onReprendre, onOublier, onGenerer, onMesSeances, onBibliotheque, onCompte }) {
   // Styles choisis : aucun = séance libre (toutes les postures), plusieurs = mélange
   const [styles, setStyles] = useState(initial?.styles || (initial?.style ? [initial.style] : ['Hatha']));
   const [duree, setDuree] = useState(initial?.duree || 45);
@@ -172,7 +172,16 @@ export default function Formulaire({ initial, erreur, compte, onGenerer, onMesSe
         </div>
         <h1 className="etape-titre accueil-titre">Prépare<br />ton prochain cours</h1>
         <p className="etape-aide">Une séance sur mesure en quelques questions.</p>
-        {initial && (
+        {brouillon && (
+          <div className="carte-reprise carte-brouillon">
+            <button type="button" className="carte-brouillon-lien" onClick={onReprendre}>
+              <span className="carte-reprise-titre">Reprendre la séance en cours</span>
+              <span className="carte-reprise-detail">{[brouillon.seance.titre || brouillon.seance.style, brouillon.enregistree ? null : 'non enregistrée'].filter(Boolean).join(' · ')}</span>
+            </button>
+            <button type="button" className="rond nu" aria-label="Oublier cette séance" onClick={onOublier}><Fermer /></button>
+          </div>
+        )}
+        {initial && !brouillon && (
           <button type="button" className="carte-reprise" onClick={() => aller(5)}>
             <span className="carte-reprise-titre">Reprendre mes derniers choix</span>
             <span className="carte-reprise-detail">{libelleStyles(styles)} · {duree} min · {niveau}</span>

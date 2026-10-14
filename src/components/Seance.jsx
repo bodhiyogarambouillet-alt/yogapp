@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { PAR_ID, bilanZones, variantes, variantesDe, dureeParDefaut, nom, nomSecondaire, rechercherPostures } from '../bibliotheque.js';
 import { stylesDe } from '../styles-seance.js';
 import Picto from './Picto.jsx';
@@ -10,6 +10,7 @@ import { Retour, Remplacer, Attention, Valide, Points, Exporter, Etincelle, Ferm
 import { exporterSeance } from '../export.js';
 import { alerter } from './Dialogue.jsx';
 import { horsLigne, telechargerVoix, segmentsAnnonce, PHRASES_FIXES, savasanaGuide, textesSavasana } from '../voix.js';
+import { lireProgression, oublierProgression } from '../brouillon.js';
 import { obtenirFiche } from '../stockage.js';
 
 // Durées plus compactes dans la liste (le détail reste dans la fiche)
@@ -133,6 +134,9 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
   const [variantesOuvertes, setVariantesOuvertes] = useState(null); // [phase, posture] dont on choisit les variantes
 
   const nbPostures = seance.phases.reduce((s, ph) => s + ph.items.length, 0);
+  // Séance déjà commencée puis interrompue : le bouton propose de la reprendre (relu au retour du direct)
+  const [progression, setProgression] = useState(() => lireProgression(seance.uid));
+  useEffect(() => { if (!live) setProgression(lireProgression(seance.uid)); }, [live, seance.uid]);
   const total = seance.phases.reduce((s, ph) => s + ph.minutes, 0);
   const cible = seance.cibleId ? PAR_ID.get(seance.cibleId) : null;
   const bilan = bilanZones(seance);
@@ -264,9 +268,12 @@ export default function Seance({ seance, onChange, onRetour, onRegenerer, onEnre
         {seance.intention && <p className="intention seance-intention">{seance.intention}</p>}
 
         <button type="button" className="composer lancer" onClick={() => { setLive(true); window.scrollTo(0, 0); }}>
-          <span>Lancer la séance</span>
+          <span>{progression ? `Reprendre la séance · ${progression.index + 1}/${nbPostures}` : 'Lancer la séance'}</span>
           <Lecture />
         </button>
+        {progression && (
+          <button type="button" className="lien recommencer" onClick={() => { oublierProgression(); setProgression(null); }}>Recommencer depuis le début</button>
+        )}
 
         <label className="date-seance">
           <span>Date de la séance</span>

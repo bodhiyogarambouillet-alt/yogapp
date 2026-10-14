@@ -4,6 +4,7 @@ import { nom, nomSecondaire, variantesDe } from '../bibliotheque.js';
 import { Fermer, Lecture, Pause, Suivant, Precedent, Attention, Agrandir, Reduire } from './Icones.jsx';
 import { DisqueSouffle, ChoixRythme, rythmeMemorise, memoriserRythme } from './Souffle.jsx';
 import { afficherSeanceLive, arreterSeanceLive, ecouterActionsSeance } from '../seance-live.js';
+import { lireProgression, ecrireProgression, oublierProgression } from '../brouillon.js';
 import { obtenirFiche } from '../stockage.js';
 import { useRetour, vibrer } from '../natif.js';
 import { useMusiqueLive, CarteMorceau } from './MusiqueLive.jsx';
@@ -230,8 +231,13 @@ function useEcranAllume(actif) {
 export default function Live({ seance, onQuitter }) {
   const etapes = useMemo(() => etapesDe(seance), [seance]);
   const total = useMemo(() => etapes.reduce((s, e) => s + e.secondes, 0), [etapes]);
-  const [index, setIndex] = useState(0);
-  const [restant, setRestant] = useState(etapes[0]?.secondes || 0); // secondes restantes sur l'étape
+  // Séance interrompue (appli fermée, quittée) : on reprend là où on en était, en pause
+  const [reprise] = useState(() => {
+    const p = lireProgression(seance.uid);
+    return p && p.index < etapes.length && p.restant > 0 ? p : null;
+  });
+  const [index, setIndex] = useState(reprise?.index || 0);
+  const [restant, setRestant] = useState(reprise ? Math.min(reprise.restant, etapes[reprise.index].secondes) : etapes[0]?.secondes || 0); // secondes restantes sur l'étape
   const [enCours, setEnCours] = useState(false);
   const [terminee, setTerminee] = useState(false);
   const fin = useRef(null); // horodatage de fin de l'étape en cours (si en marche)
@@ -245,7 +251,12 @@ export default function Live({ seance, onQuitter }) {
   const [voix, setVoix] = useState(niveauVoix);
   const voixRef = useRef(voix);
   voixRef.current = voix;
-  const [bulleVoix, setBulleVoix] = useState(null); // rappel du niveau choisi, affiché brièvement
+  const [bulleVoix, setBulleVoix] = useState(reprise ? 'Reprise là où vous en étiez' : null); // message bref dans l'en-tête
+  useEffect(() => {
+    if (!reprise) return undefined;
+    const t = setTimeout(() => setBulleVoix((b) => (b === 'Reprise là où vous en étiez' ? null : b)), 3500);
+    return () => clearTimeout(t);
+  }, [reprise]);
   const annoncee = useRef(-1);
   const [preparation, setPreparation] = useState(null); // { fait, total } pendant la préparation de la voix naturelle
   const voixEnPreparation = Boolean(preparation && preparation.fait < preparation.total);
@@ -317,6 +328,7 @@ export default function Live({ seance, onQuitter }) {
     if (i >= etapes.length) {
       setEnCours(false);
       setTerminee(true);
+      oublierProgression();
       fin.current = null;
       sonner(520, 3);
       vibrer(600);
@@ -429,6 +441,18 @@ export default function Live({ seance, onQuitter }) {
   const lancee = useRef(false);
   const restantRef = useRef(restant);
   restantRef.current = restant;
+  // Avancement gardé sur l'appareil : à chaque posture, en pause, et toutes les 5 s pendant la séance
+  useEffect(() => {
+    if (terminee) return undefined;
+    const garder = () => ecrireProgression({
+      uid: seance.uid, index,
+      restant: enCours && fin.current ? Math.max(0, (fin.current - Date.now()) / 1000) : restantRef.current,
+    });
+    if (enCours || index > 0 || reprise) garder();
+    if (!enCours) return undefined;
+    const t = setInterval(garder, 5000);
+    return () => clearInterval(t);
+  }, [enCours, index, terminee, seance.uid, reprise, majLive]);
   const planLive = useMemo(() => etapes.map((e) => ({ nom: nom(e.posture), phase: e.phase, cotes: Boolean(e.posture.cotes), secondes: e.secondes })), [etapes]);
   useEffect(() => {
     if (enCours) lancee.current = true;
